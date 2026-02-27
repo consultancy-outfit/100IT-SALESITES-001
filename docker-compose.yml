@@ -1,0 +1,15 @@
+services:
+  blessday:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: blessday-salesite
+    restart: unless-stopped
+    ports:
+      - "9047:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
