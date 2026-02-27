@@ -1,9 +1,9 @@
 export const COMPANY_DETAILS = {
   name: "Wigan Supported Living",
-  address: "12 Market Street, Wigan, WN1 1HX, United Kingdom",
-  crn: "08421576",
-  phone: "+44 1942 555 0123",
-  email: "hello@wigansupportedliving.co.uk",
+  address: "#####",
+  crn: "#####",
+  phone: "#######",
+  email: "########",
   hours: "Mon - Fri: 09:00 - 17:30",
 };
 
