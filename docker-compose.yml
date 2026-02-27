@@ -1,0 +1,15 @@
+services:
+  centurion:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: centurion-salesite
+    restart: unless-stopped
+    ports:
+      - "9043:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
