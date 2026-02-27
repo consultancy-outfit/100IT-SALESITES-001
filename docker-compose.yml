@@ -1,0 +1,15 @@
+services:
+  eleanor-live-well:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eleanor-live-well-salesite
+    restart: unless-stopped
+    ports:
+      - "9029:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
