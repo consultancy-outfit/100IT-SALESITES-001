@@ -4,8 +4,8 @@ export const COMPANY_DETAILS = {
   name: 'Disabled Children Community Support Team',
   address: '85 Great Portland Street, First Floor, London, W1W 7LT, United Kingdom',
   crn: '12345678',
-  phone: '+44 20 7946 0000',
-  email: 'info@disabledchildrencommunitysupportteam.co.uk',
+  phone: '+0208 088 5954',
+  email: 'info@gogentlecareltd.co.uk',
   hours: 'Mon - Fri: 09:00 - 17:30',
 };
 
