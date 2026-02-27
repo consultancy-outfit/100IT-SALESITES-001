@@ -3,165 +3,175 @@ import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import { COMPANY_DETAILS } from '../constants';
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Simulate form submission
     setSubmitted(true);
   };
 
   return (
-    <div className="pt-20">
+    <div className="pt-24">
       {/* Header */}
-      <section className="py-24 bg-zinc-50 border-b border-zinc-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-slate-50 py-24">
+        <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold tracking-tight text-zinc-900 mb-6">Contact Us</h1>
-            <p className="text-xl text-zinc-600 leading-relaxed">
-              Have a question or ready to upgrade your IT? Our UK-based team is here to help. Reach out via the form or use our direct contact details.
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Get in Touch</h1>
+            <p className="text-xl text-slate-600 leading-relaxed">
+              Have a project in mind or need technical support? Our London-based team is ready to help you navigate your IT challenges.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <section className="py-24 bg-white">
+        <div className="container-custom">
+          <div className="flex flex-col lg:flex-row gap-16">
             {/* Contact Form */}
-            <div className="space-y-12">
-              {!submitted ? (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">Full Name</label>
-                      <input
-                        required
-                        type="text"
-                        className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-900 transition-all"
-                        placeholder="John Smith"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">Email Address</label>
-                      <input
-                        required
-                        type="email"
-                        className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-900 transition-all"
-                        placeholder="john@company.co.uk"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">Company Name</label>
-                    <input
-                      required
-                      type="text"
-                      className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-900 transition-all"
-                      placeholder="Your Business Ltd"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">How can we help?</label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-900 transition-all bg-white">
-                      <option>Managed IT Support</option>
-                      <option>Cybersecurity Audit</option>
-                      <option>Cloud Migration</option>
-                      <option>IT Consultancy</option>
-                      <option>Other Enquiry</option>
-                    </select>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">Message</label>
-                    <textarea
-                      required
-                      rows={5}
-                      className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-900 transition-all resize-none"
-                      placeholder="Tell us about your requirements..."
-                    />
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <input required type="checkbox" className="mt-1 w-4 h-4 rounded border-zinc-300 text-zinc-900 focus:ring-zinc-900" />
-                    <label className="text-xs text-zinc-500 leading-relaxed">
-                      I consent to Draycombe House processing my personal data in accordance with their Privacy Policy for the purpose of responding to my enquiry.
-                    </label>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-zinc-900 text-white py-4 rounded-xl font-bold hover:bg-zinc-800 transition-colors flex items-center justify-center gap-2"
-                  >
-                    Send Message <Send size={18} />
-                  </button>
-                </form>
-              ) : (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
+            <div className="lg:w-3/5">
+              {submitted ? (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="bg-zinc-50 p-12 rounded-3xl border border-zinc-100 text-center space-y-6"
+                  className="bg-green-50 border border-green-100 p-12 rounded-3xl text-center"
                 >
-                  <div className="w-20 h-20 bg-zinc-900 rounded-full flex items-center justify-center text-white mx-auto">
-                    <CheckCircle2 size={40} />
+                  <div className="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="text-white w-10 h-10" />
                   </div>
-                  <h2 className="text-3xl font-bold text-zinc-900">Message Sent!</h2>
-                  <p className="text-zinc-600">
-                    Thank you for reaching out. One of our IT specialists will be in touch within 2 business hours.
+                  <h2 className="text-2xl font-bold text-green-900 mb-4">Message Sent Successfully!</h2>
+                  <p className="text-green-700 mb-8">
+                    Thank you for reaching out. One of our IT consultants will be in touch with you within 2 business hours.
                   </p>
-                  <button
+                  <button 
                     onClick={() => setSubmitted(false)}
-                    className="text-zinc-900 font-bold underline"
+                    className="text-green-700 font-bold hover:underline"
                   >
                     Send another message
                   </button>
                 </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-700 uppercase tracking-wider">Full Name</label>
+                      <input 
+                        required 
+                        type="text" 
+                        placeholder="John Doe"
+                        className="w-full px-5 py-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-700 uppercase tracking-wider">Business Email</label>
+                      <input 
+                        required 
+                        type="email" 
+                        placeholder="john@company.co.uk"
+                        className="w-full px-5 py-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-700 uppercase tracking-wider">Phone Number</label>
+                      <input 
+                        type="tel" 
+                        placeholder="+44 0000 000000"
+                        className="w-full px-5 py-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-700 uppercase tracking-wider">Service Required</label>
+                      <select className="w-full px-5 py-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all bg-white">
+                        <option>Managed IT Support</option>
+                        <option>Cloud Solutions</option>
+                        <option>Cyber Security</option>
+                        <option>IT Consultancy</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-700 uppercase tracking-wider">Your Message</label>
+                    <textarea 
+                      required 
+                      rows={5} 
+                      placeholder="Tell us about your requirements..."
+                      className="w-full px-5 py-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all resize-none"
+                    ></textarea>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <input required type="checkbox" className="mt-1.5 h-4 w-4 rounded border-gray-300 text-brand-accent focus:ring-brand-accent" />
+                    <p className="text-sm text-slate-500 leading-relaxed">
+                      I consent to Servoca London processing my data in accordance with the <a href="/privacy" className="text-brand-accent hover:underline">Privacy Policy</a>.
+                    </p>
+                  </div>
+                  <button type="submit" className="btn-primary w-full py-5 text-lg">
+                    Send Message <Send className="ml-2 w-5 h-5" />
+                  </button>
+                </form>
               )}
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-12">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900">
-                    <Phone size={24} />
+            <div className="lg:w-2/5 space-y-12">
+              <div>
+                <h3 className="text-xl font-bold mb-6">Company Details</h3>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-blue-50 p-3 rounded-lg">
+                      <MapPin className="text-brand-accent w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-slate-900">Registered Office</p>
+                      <p className="text-slate-600 text-sm leading-relaxed">{COMPANY_DETAILS.address}</p>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Call Us</h3>
-                  <p className="text-zinc-600">{COMPANY_DETAILS.phone}</p>
-                </div>
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900">
-                    <Mail size={24} />
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-blue-50 p-3 rounded-lg">
+                      <Phone className="text-brand-accent w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-slate-900">Phone Number</p>
+                      <p className="text-slate-600 text-sm">{COMPANY_DETAILS.phone}</p>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Email Us</h3>
-                  <p className="text-zinc-600">{COMPANY_DETAILS.email}</p>
-                </div>
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900">
-                    <MapPin size={24} />
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-blue-50 p-3 rounded-lg">
+                      <Mail className="text-brand-accent w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-slate-900">Email Address</p>
+                      <p className="text-slate-600 text-sm">{COMPANY_DETAILS.email}</p>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Visit Us</h3>
-                  <p className="text-zinc-600 leading-relaxed">{COMPANY_DETAILS.address}</p>
-                </div>
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900">
-                    <Clock size={24} />
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-blue-50 p-3 rounded-lg">
+                      <Clock className="text-brand-accent w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-slate-900">Business Hours</p>
+                      <p className="text-slate-600 text-sm">{COMPANY_DETAILS.hours}</p>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Business Hours</h3>
-                  <p className="text-zinc-600">{COMPANY_DETAILS.hours}</p>
                 </div>
               </div>
 
               {/* Map Placeholder */}
-              <div className="aspect-video bg-zinc-100 rounded-3xl border border-zinc-200 relative overflow-hidden flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <MapPin size={32} className="mx-auto text-zinc-400" />
-                  <p className="text-sm font-medium text-zinc-500">Interactive Map Placeholder</p>
-                  <p className="text-xs text-zinc-400">London Tech Quarter, EC1A</p>
-                </div>
-                {/* Visual representation of a map */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                  <div className="absolute top-1/4 left-1/4 w-full h-px bg-zinc-900 rotate-45" />
-                  <div className="absolute top-1/2 left-0 w-full h-px bg-zinc-900" />
-                  <div className="absolute top-0 left-1/2 w-px h-full bg-zinc-900" />
-                  <div className="absolute top-1/3 right-1/4 w-full h-px bg-zinc-900 -rotate-12" />
+              <div className="bg-slate-100 rounded-3xl aspect-video flex items-center justify-center border border-slate-200 overflow-hidden relative group">
+                <img 
+                  src="https://picsum.photos/seed/london-map/800/600?grayscale" 
+                  alt="Map Location" 
+                  className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center space-x-3">
+                    <div className="bg-brand-accent w-3 h-3 rounded-full animate-ping" />
+                    <span className="font-bold text-slate-900">EC3V 4AB</span>
+                  </div>
                 </div>
               </div>
             </div>

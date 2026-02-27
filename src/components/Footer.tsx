@@ -1,32 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Cpu, Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Monitor, Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
 import { COMPANY_DETAILS } from '../constants';
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-zinc-950 text-zinc-400 pt-16 pb-8 border-t border-zinc-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* Brand & Info */}
+    <footer className="bg-slate-900 text-slate-300 pt-16 pb-8">
+      <div className="container-custom">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Company Info */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-                <Cpu className="text-zinc-950 w-5 h-5" />
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="bg-brand-accent p-1.5 rounded-lg">
+                <Monitor className="text-white w-6 h-6" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white">
-                Draycombe<span className="text-zinc-500">House</span>
+                {COMPANY_DETAILS.name.split(' ')[0]}
+                <span className="text-brand-accent">{COMPANY_DETAILS.name.split(' ')[1]}</span>
               </span>
             </Link>
-            <p className="text-sm leading-relaxed">
-              Premium UK-based IT services provider delivering innovative technology solutions to businesses across the United Kingdom.
+            <p className="text-sm leading-relaxed text-slate-400">
+              Premium IT services and strategic technology solutions for forward-thinking UK businesses. Empowering your growth through innovation and reliability.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-white transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="hover:text-white transition-colors"><Linkedin size={20} /></a>
-              <a href="#" className="hover:text-white transition-colors"><Github size={20} /></a>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-brand-accent transition-colors"><Linkedin className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-brand-accent transition-colors"><Twitter className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-brand-accent transition-colors"><Github className="w-5 h-5" /></a>
             </div>
           </div>
 
@@ -34,11 +35,11 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-4 text-sm">
-              <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Our Services</Link></li>
-              <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing Plans</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link to="/" className="hover:text-brand-accent transition-colors">Home</Link></li>
+              <li><Link to="/services" className="hover:text-brand-accent transition-colors">Services</Link></li>
+              <li><Link to="/about" className="hover:text-brand-accent transition-colors">About Us</Link></li>
+              <li><Link to="/pricing" className="hover:text-brand-accent transition-colors">Pricing</Link></li>
+              <li><Link to="/contact" className="hover:text-brand-accent transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -46,43 +47,46 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-semibold mb-6">Services</h3>
             <ul className="space-y-4 text-sm">
-              <li><Link to="/services" className="hover:text-white transition-colors">Managed IT Support</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Cybersecurity</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Cloud Migration</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">IT Consultancy</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Disaster Recovery</Link></li>
+              <li><Link to="/services" className="hover:text-brand-accent transition-colors">Managed IT Support</Link></li>
+              <li><Link to="/services" className="hover:text-brand-accent transition-colors">Cloud Solutions</Link></li>
+              <li><Link to="/services" className="hover:text-brand-accent transition-colors">Cyber Security</Link></li>
+              <li><Link to="/services" className="hover:text-brand-accent transition-colors">IT Consultancy</Link></li>
+              <li><Link to="/services" className="hover:text-brand-accent transition-colors">Disaster Recovery</Link></li>
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="space-y-4 text-sm">
-            <h3 className="text-white font-semibold mb-6">Get in Touch</h3>
-            <div className="flex items-start gap-3">
-              <MapPin size={18} className="mt-0.5 shrink-0 text-zinc-500" />
-              <span>{COMPANY_DETAILS.address}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Phone size={18} className="shrink-0 text-zinc-500" />
-              <span>{COMPANY_DETAILS.phone}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Mail size={18} className="shrink-0 text-zinc-500" />
-              <span>{COMPANY_DETAILS.email}</span>
-            </div>
+          {/* Contact Details */}
+          <div>
+            <h3 className="text-white font-semibold mb-6">Contact Details</h3>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 text-brand-accent shrink-0" />
+                <span>{COMPANY_DETAILS.address}</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-brand-accent shrink-0" />
+                <span>{COMPANY_DETAILS.phone}</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Mail className="w-5 h-5 text-brand-accent shrink-0" />
+                <span>{COMPANY_DETAILS.email}</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Legal & Bottom */}
-        <div className="pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6 text-xs">
-          <div className="space-y-2 text-center md:text-left">
-            <p>&copy; {currentYear} {COMPANY_DETAILS.name}. All rights reserved.</p>
-            <p className="text-zinc-600">
-              Company Registration Number: {COMPANY_DETAILS.crn} | Registered in England and Wales
-            </p>
-          </div>
-          <div className="flex gap-6">
-            <Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-slate-800">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-xs text-slate-500 space-y-1 text-center md:text-left">
+              <p>&copy; {currentYear} {COMPANY_DETAILS.name}. All rights reserved.</p>
+              <p>Company Registration Number (CRN): {COMPANY_DETAILS.crn} | VAT: {COMPANY_DETAILS.vatNumber}</p>
+              <p>Registered in England and Wales.</p>
+            </div>
+            <div className="flex space-x-6 text-xs text-slate-500">
+              <Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            </div>
           </div>
         </div>
       </div>

@@ -1,140 +1,111 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Target, Eye, History, Users, Heart, ShieldCheck, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Target, Eye, Heart, ShieldCheck, Users2, Award } from 'lucide-react';
+import { COMPANY_DETAILS } from '../constants';
 
-const About: React.FC = () => {
+const About = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-24">
       {/* Hero */}
-      <section className="py-24 bg-zinc-950 text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-zinc-500 rounded-full blur-[120px]" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-8">
-              A Legacy of <span className="text-zinc-500 italic">Excellence</span> in IT.
-            </h1>
-            <p className="text-xl text-zinc-400 leading-relaxed">
-              Draycombe House was founded on the principle that technology should be an enabler, not a hurdle. We provide the strategic backbone for UK businesses to thrive in a digital-first world.
-            </p>
+      <section className="bg-slate-50 py-24">
+        <div className="container-custom">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2">
+              <span className="text-brand-accent font-bold uppercase tracking-widest text-sm mb-4 block">Our Story</span>
+              <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+                Pioneering IT Excellence in the Heart of <span className="text-brand-accent">London.</span>
+              </h1>
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                Founded with a vision to simplify technology for UK businesses, Servoca London has grown from a small consultancy into a leading provider of managed IT services.
+              </p>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                We believe that technology should be an enabler, not a barrier. Our mission is to provide the strategic guidance and technical support that allows our clients to focus on what they do best.
+              </p>
+            </div>
+            <div className="lg:w-1/2">
+              <div className="grid grid-cols-2 gap-4">
+                <img src="https://picsum.photos/seed/about1/400/500" alt="Office" className="rounded-2xl shadow-lg mt-12" referrerPolicy="no-referrer" />
+                <img src="https://picsum.photos/seed/about2/400/500" alt="Team" className="rounded-2xl shadow-lg" referrerPolicy="no-referrer" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div className="space-y-6 p-10 bg-zinc-50 rounded-3xl border border-zinc-100">
-              <div className="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center text-white mb-4">
-                <Target size={24} />
-              </div>
-              <h2 className="text-2xl font-bold text-zinc-900">Our Mission</h2>
-              <p className="text-zinc-600 leading-relaxed">
-                To deliver reliable, secure, and innovative IT solutions that empower UK businesses to achieve their full potential through technology.
-              </p>
-            </div>
-            <div className="space-y-6 p-10 bg-zinc-50 rounded-3xl border border-zinc-100">
-              <div className="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center text-white mb-4">
-                <Eye size={24} />
-              </div>
-              <h2 className="text-2xl font-bold text-zinc-900">Our Vision</h2>
-              <p className="text-zinc-600 leading-relaxed">
-                To be the most trusted technology partner for British enterprises, known for our integrity, expertise, and commitment to client success.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Story */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <div className="lg:w-1/2">
-              <img
-                src="https://picsum.photos/seed/office/1200/1200"
-                alt="Our Office"
-                className="rounded-3xl shadow-2xl grayscale"
-                referrerPolicy="no-referrer"
-              />
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="p-10 bg-slate-900 rounded-3xl text-white">
+              <div className="bg-brand-accent/20 p-4 rounded-2xl w-fit mb-8">
+                <Target className="w-10 h-10 text-brand-accent" />
+              </div>
+              <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+              <p className="text-slate-400 text-lg leading-relaxed">
+                To empower UK organisations by delivering innovative, secure, and reliable IT solutions that drive efficiency and sustainable growth.
+              </p>
             </div>
-            <div className="lg:w-1/2 space-y-8">
-              <div className="flex items-center gap-3 text-zinc-400 font-bold uppercase tracking-widest text-xs">
-                <History size={16} />
-                Our Story
+            <div className="p-10 bg-brand-accent rounded-3xl text-white">
+              <div className="bg-white/20 p-4 rounded-2xl w-fit mb-8">
+                <Eye className="w-10 h-10 text-white" />
               </div>
-              <h2 className="text-4xl font-bold text-zinc-900 tracking-tight">From Local Support to National Infrastructure.</h2>
-              <p className="text-lg text-zinc-600 leading-relaxed">
-                Founded in London over a decade ago, Draycombe House started as a small team of passionate engineers helping local businesses navigate the early days of cloud computing.
+              <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
+              <p className="text-blue-100 text-lg leading-relaxed">
+                To be the most trusted technology partner in the UK, recognised for our technical brilliance, integrity, and commitment to client success.
               </p>
-              <p className="text-lg text-zinc-600 leading-relaxed">
-                Today, we manage complex IT infrastructures for hundreds of clients across the UK, maintaining the same personal touch and dedication to quality that defined our early years.
-              </p>
-              <div className="pt-4">
-                <Link to="/contact" className="text-zinc-900 font-bold flex items-center gap-2 hover:gap-3 transition-all">
-                  Join our journey <ArrowRight size={20} />
-                </Link>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Leadership */}
-      <section className="py-24 bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Values */}
+      <section className="py-24 bg-slate-50">
+        <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-zinc-900 mb-4">Our Leadership</h2>
-            <p className="text-zinc-600 max-w-2xl mx-auto">
-              Meet the experts driving innovation and excellence at Draycombe House.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Core Values</h2>
+            <p className="text-slate-600">The principles that guide everything we do.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "James Draycombe", role: "Founder & CEO", bio: "20+ years in IT infrastructure and strategic consultancy." },
-              { name: "Eleanor Vance", role: "Head of Cybersecurity", bio: "Former government security consultant specializing in threat mitigation." },
-              { name: "Robert Sterling", role: "Director of Operations", bio: "Expert in scaling managed services and client success management." }
-            ].map((leader, i) => (
-              <div key={i} className="group">
-                <div className="aspect-square rounded-2xl overflow-hidden mb-6 bg-zinc-200">
-                  <img
-                    src={`https://picsum.photos/seed/leader${i}/800/800`}
-                    alt={leader.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-zinc-900">{leader.name}</h3>
-                <p className="text-sm font-medium text-zinc-500 mb-4 uppercase tracking-widest">{leader.role}</p>
-                <p className="text-sm text-zinc-600 leading-relaxed">{leader.bio}</p>
+              { icon: <Heart className="w-8 h-8 text-brand-accent" />, title: 'Client Centricity', desc: 'Your success is our success. We build long-term partnerships based on trust and mutual growth.' },
+              { icon: <ShieldCheck className="w-8 h-8 text-brand-accent" />, title: 'Integrity & Security', desc: 'We maintain the highest standards of ethics and data protection in all our operations.' },
+              { icon: <Award className="w-8 h-8 text-brand-accent" />, title: 'Excellence', desc: 'We never stop learning. We strive for perfection in every ticket we resolve and every project we deliver.' }
+            ].map((v, i) => (
+              <div key={i} className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <div className="mb-6">{v.icon}</div>
+                <h3 className="text-xl font-bold mb-3">{v.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Leadership */}
+      <section className="py-24 bg-white">
+        <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-zinc-900 mb-4">Core Values</h2>
-            <p className="text-zinc-600">The principles that guide everything we do.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Leadership</h2>
+            <p className="text-slate-600">Meet the experts behind Servoca London.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { icon: Heart, title: "Client First", desc: "Your success is our primary metric of achievement." },
-              { icon: ShieldCheck, title: "Integrity", desc: "Honest advice and transparent pricing, always." },
-              { icon: Users, title: "Collaboration", desc: "Working as an extension of your internal team." }
-            ].map((value, i) => (
-              <div key={i} className="text-center space-y-4">
-                <div className="w-16 h-16 bg-zinc-100 rounded-full flex items-center justify-center text-zinc-900 mx-auto">
-                  <value.icon size={32} />
+              { name: 'Robert Sterling', role: 'Managing Director', bio: '20+ years of experience in UK enterprise IT strategy.' },
+              { name: 'Elena Rossi', role: 'Technical Director', bio: 'Expert in cloud architecture and cyber security compliance.' },
+              { name: 'Marcus Thorne', role: 'Operations Manager', bio: 'Dedicated to delivering world-class support and client satisfaction.' }
+            ].map((m, i) => (
+              <div key={i} className="text-center group">
+                <div className="relative mb-6 overflow-hidden rounded-2xl aspect-square">
+                  <img 
+                    src={`https://picsum.photos/seed/leader${i}/600/600`} 
+                    alt={m.name} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900">{value.title}</h3>
-                <p className="text-zinc-600 text-sm leading-relaxed">{value.desc}</p>
+                <h3 className="text-xl font-bold">{m.name}</h3>
+                <p className="text-brand-accent font-medium mb-3">{m.role}</p>
+                <p className="text-slate-600 text-sm px-4">{m.bio}</p>
               </div>
             ))}
           </div>
@@ -142,18 +113,29 @@ const About: React.FC = () => {
       </section>
 
       {/* GDPR Commitment */}
-      <section className="py-24 bg-zinc-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <ShieldCheck size={64} className="mx-auto text-zinc-500" />
-            <h2 className="text-3xl font-bold">Our Commitment to GDPR</h2>
-            <p className="text-lg text-zinc-400 leading-relaxed">
-              As a UK-based company, we take data protection seriously. We are fully committed to GDPR compliance in all our operations and help our clients achieve the same level of security and regulatory adherence.
+      <section className="py-24 bg-slate-900 text-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex p-4 bg-white/10 rounded-full mb-8">
+              <ShieldCheck className="w-12 h-12 text-brand-accent" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Commitment to GDPR</h2>
+            <p className="text-xl text-slate-400 leading-relaxed mb-8">
+              As a UK-based IT provider, we take data protection seriously. We are fully committed to GDPR compliance, ensuring that all data we process for ourselves and our clients is handled with the highest level of security and transparency.
             </p>
-            <div className="pt-4">
-              <Link to="/privacy" className="inline-block border border-white/20 px-8 py-3 rounded-full hover:bg-white/5 transition-colors">
-                Read our Privacy Policy
-              </Link>
+            <div className="flex flex-wrap justify-center gap-8">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-brand-accent rounded-full" />
+                <span className="text-sm font-medium">ISO 27001 Aligned</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-brand-accent rounded-full" />
+                <span className="text-sm font-medium">Cyber Essentials Certified</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-brand-accent rounded-full" />
+                <span className="text-sm font-medium">ICO Registered</span>
+              </div>
             </div>
           </div>
         </div>
