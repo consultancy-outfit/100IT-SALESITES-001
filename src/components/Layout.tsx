@@ -1,175 +1,179 @@
-import { Link, Outlet, useLocation } from 'react-router-dom';
-import { Menu, X, Globe, Shield, Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React from 'react';
+import { motion } from 'motion/react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, ChevronRight, Mail, Phone, MapPin, ShieldCheck } from 'lucide-react';
+import { cn, COMPANY_DETAILS, NAV_LINKS } from '../constants';
 
-export default function Layout() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export const Navbar = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
 
-  // Close menu on route change
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location]);
-
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Pricing', path: '/pricing' },
-    { name: 'Contact', path: '/contact' },
-  ];
-
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-200 group-hover:scale-105 transition-transform">
-                <Globe className="w-6 h-6" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg leading-none text-slate-900">Swanton Community Services</span>
-                <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">Suffolk</span>
-              </div>
-            </Link>
+    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-black/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-20 items-center">
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
+              <ShieldCheck className="text-white w-6 h-6" />
+            </div>
+            <span className="font-bold text-xl tracking-tight text-slate-900">SureCare</span>
+          </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-sm font-medium transition-colors hover:text-indigo-600 ${
-                    location.pathname === link.path ? 'text-indigo-600' : 'text-slate-600'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+          {/* Desktop Nav */}
+          <div className="hidden md:flex space-x-8 items-center">
+            {NAV_LINKS.map((link) => (
               <Link
-                to="/contact"
-                className="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors shadow-sm"
+                key={link.name}
+                to={link.href}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-indigo-600",
+                  location.pathname === link.href ? "text-indigo-600" : "text-slate-600"
+                )}
               >
-                Get Started
+                {link.name}
               </Link>
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            ))}
+            <Link
+              to="/contact"
+              className="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-slate-800 transition-all"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              Get a Quote
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-slate-600">
+              {isOpen ? <X /> : <Menu />}
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Nav */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-slate-200 bg-white overflow-hidden"
+      {/* Mobile Nav */}
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="md:hidden bg-white border-b border-black/5 px-4 pt-2 pb-6 space-y-1"
+        >
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.name}
+              to={link.href}
+              onClick={() => setIsOpen(false)}
+              className="block px-3 py-4 text-base font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded-lg"
             >
-              <nav className="flex flex-col p-4 gap-2">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`px-4 py-3 rounded-lg text-sm font-medium ${
-                      location.pathname === link.path
-                        ? 'bg-indigo-50 text-indigo-700'
-                        : 'text-slate-600 hover:bg-slate-50'
-                    }`}
-                  >
+              {link.name}
+            </Link>
+          ))}
+          <Link
+            to="/contact"
+            onClick={() => setIsOpen(false)}
+            className="block w-full text-center bg-indigo-600 text-white px-5 py-3 rounded-lg text-base font-medium"
+          >
+            Get a Quote
+          </Link>
+        </motion.div>
+      )}
+    </nav>
+  );
+};
+
+export const Footer = () => {
+  return (
+    <footer className="bg-slate-950 text-slate-400 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="col-span-1 md:col-span-1">
+            <Link to="/" className="flex items-center space-x-2 mb-6">
+              <ShieldCheck className="text-indigo-500 w-8 h-8" />
+              <span className="font-bold text-2xl tracking-tight text-white">SureCare</span>
+            </Link>
+            <p className="text-sm leading-relaxed mb-6">
+              Empowering British businesses with world-class IT infrastructure, cybersecurity, and managed services.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-6">Quick Links</h4>
+            <ul className="space-y-4 text-sm">
+              {NAV_LINKS.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="hover:text-white transition-colors">
                     {link.name}
                   </Link>
-                ))}
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
-
-      {/* Main Content */}
-      <main className="flex-grow">
-        <Outlet />
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-300 py-16 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            {/* Brand */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 text-white">
-                <Globe className="w-6 h-6 text-indigo-400" />
-                <span className="font-bold text-lg">Swanton Community Services Suffolk</span>
-              </div>
-              <p className="text-sm leading-relaxed text-slate-400">
-                Empowering UK businesses with secure, scalable, and innovative IT solutions. Your trusted technology partner in Suffolk and beyond.
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link to="/services" className="hover:text-indigo-400 transition-colors">IT Services</Link></li>
-                <li><Link to="/about" className="hover:text-indigo-400 transition-colors">About Us</Link></li>
-                <li><Link to="/pricing" className="hover:text-indigo-400 transition-colors">Pricing Plans</Link></li>
-                <li><Link to="/contact" className="hover:text-indigo-400 transition-colors">Contact Support</Link></li>
-              </ul>
-            </div>
-
-            {/* Legal */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">Legal</h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link to="/terms" className="hover:text-indigo-400 transition-colors">Terms & Conditions</Link></li>
-                <li><Link to="/privacy" className="hover:text-indigo-400 transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/privacy" className="hover:text-indigo-400 transition-colors">GDPR Compliance</Link></li>
-              </ul>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">Contact Us</h3>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-indigo-400 mt-1 shrink-0" />
-                  <span>Registered Office Address (UK):<br />N/A</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Phone className="w-4 h-4 text-indigo-400 shrink-0" />
-                  <span>N/A</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Mail className="w-4 h-4 text-indigo-400 shrink-0" />
-                  <span>N/A</span>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
 
-          <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-            <p>&copy; {new Date().getFullYear()} Swanton Community Services Suffolk. All rights reserved.</p>
-            <div className="flex items-center gap-6">
-              <span>Company Registration Number: N/A</span>
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4" />
-                <span>Secure & GDPR Compliant</span>
-              </div>
-            </div>
+          <div>
+            <h4 className="text-white font-semibold mb-6">Legal</h4>
+            <ul className="space-y-4 text-sm">
+              <li><Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-6">Contact Details</h4>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 text-indigo-500 shrink-0" />
+                <span>{COMPANY_DETAILS.address}</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-indigo-500 shrink-0" />
+                <span>{COMPANY_DETAILS.phone}</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Mail className="w-5 h-5 text-indigo-500 shrink-0" />
+                <span>{COMPANY_DETAILS.email}</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </footer>
-    </div>
+
+        <div className="pt-8 border-t border-white/10 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="space-y-1 text-center md:text-left">
+            <p>© {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved.</p>
+            <p>Company Registration Number (CRN): {COMPANY_DETAILS.crn}</p>
+          </div>
+          <div className="flex space-x-6">
+            <p>VAT Registered: GB 123 4567 89</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
-}
+};
+
+export const Section = ({ children, className, id }: { children: React.ReactNode; className?: string; id?: string }) => (
+  <section id={id} className={cn("py-20 md:py-32", className)}>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {children}
+    </div>
+  </section>
+);
+
+export const Button = ({ children, className, variant = 'primary', as: Component = 'button', ...props }: any) => {
+  const variants = {
+    primary: "bg-indigo-600 text-white hover:bg-indigo-700",
+    secondary: "bg-white text-slate-900 border border-slate-200 hover:bg-slate-50",
+    outline: "bg-transparent text-white border border-white/20 hover:bg-white/10",
+  };
+
+  return (
+    <Component
+      className={cn(
+        "px-8 py-4 rounded-full font-semibold transition-all active:scale-95 flex items-center justify-center space-x-2",
+        variants[variant as keyof typeof variants],
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
+};
