@@ -1,0 +1,15 @@
+services:
+  hillside:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hillside-salesite
+    restart: unless-stopped
+    ports:
+      - "9021:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
