@@ -1,0 +1,15 @@
+services:
+  howse-garden:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: howse-garden-salesite
+    restart: unless-stopped
+    ports:
+      - "9019:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
