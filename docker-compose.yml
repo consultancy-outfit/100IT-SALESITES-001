@@ -1,0 +1,15 @@
+services:
+  assure-supported-living:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: assure-supported-living-salesite
+    restart: unless-stopped
+    ports:
+      - "9053:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
