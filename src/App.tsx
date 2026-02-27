@@ -34,9 +34,9 @@ type Page = 'home' | 'services' | 'about' | 'pricing' | 'contact' | 'terms' | 'p
 // --- Constants ---
 const COMPANY_DETAILS = {
   name: "Centurion Support Services",
-  address: "124 City Road, London, EC1V 2NX, United Kingdom",
-  crn: "12345678",
-  phone: "+44 20 7946 0123",
+  address: "#####",
+  crn: "#####",
+  phone: "+44 #####",
   email: "info@centurionsupportservices.co.uk",
   hours: "Mon - Fri: 08:30 - 18:00",
 };
