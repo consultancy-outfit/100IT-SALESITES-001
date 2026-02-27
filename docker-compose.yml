@@ -1,0 +1,15 @@
+services:
+  care-cast:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: care-cast-salesite
+    restart: unless-stopped
+    ports:
+      - "9042:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
