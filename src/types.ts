@@ -1,22 +1,25 @@
+import { LucideIcon } from 'lucide-react';
+
 export interface Service {
   id: string;
   title: string;
   description: string;
-  overview: string;
+  longDescription: string;
+  icon: LucideIcon;
   targetAudience: string;
   process: string[];
   benefits: string[];
-  startingPrice: number;
-  icon: string;
+  startingPrice: string;
 }
 
-export interface PricingPlan {
+export interface PricingTier {
   name: string;
-  price: number;
+  price: string;
   features: string[];
-  supportLevel: string;
+  support: string;
   idealFor: string;
-  isPopular?: boolean;
+  cta: string;
+  highlight?: boolean;
 }
 
 export interface Testimonial {
@@ -29,6 +32,7 @@ export interface Testimonial {
 export interface CaseStudy {
   title: string;
   industry: string;
+  challenge: string;
+  solution: string;
   result: string;
-  description: string;
 }

@@ -1,219 +1,237 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ChevronRight, Shield, Zap, Users, CheckCircle2, ArrowRight, Star } from 'lucide-react';
+import { 
+  ShieldCheck, 
+  Cloud, 
+  Cpu, 
+  Headset, 
+  ArrowRight, 
+  CheckCircle2, 
+  Users, 
+  TrendingUp,
+  Building2,
+  Stethoscope,
+  Scale,
+  ShoppingBag
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SERVICES, TESTIMONIALS, CASE_STUDIES } from '../constants';
+
+const stats = [
+  { label: 'Client Satisfaction', value: '99%' },
+  { label: 'Uptime Guarantee', value: '99.9%' },
+  { label: 'Average Response', value: '15m' },
+  { label: 'Projects Delivered', value: '500+' },
+];
+
+const benefits = [
+  {
+    title: 'UK-Based Support',
+    description: 'Our entire support team is based in the UK, ensuring cultural alignment and local expertise.',
+    icon: Headset,
+  },
+  {
+    title: 'Enterprise Security',
+    description: 'We implement military-grade cybersecurity protocols to protect your sensitive business data.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Scalable Solutions',
+    description: 'Our cloud-first approach allows your IT infrastructure to grow seamlessly with your business.',
+    icon: Cloud,
+  },
+  {
+    title: 'Strategic Partnership',
+    description: 'We don\'t just fix computers; we align technology with your long-term business goals.',
+    icon: TrendingUp,
+  },
+];
+
+const industries = [
+  { name: 'Legal Services', icon: Scale },
+  { name: 'Healthcare', icon: Stethoscope },
+  { name: 'Finance', icon: Building2 },
+  { name: 'Retail', icon: ShoppingBag },
+];
+
+const caseStudies = [
+  {
+    company: 'London Legal Partners',
+    result: '£45,000 Annual Savings',
+    description: 'Migrated legacy on-premise servers to a secure private cloud, reducing maintenance costs by 40%.',
+  },
+  {
+    company: 'Midlands Manufacturing',
+    result: 'Zero Downtime in 24 Months',
+    description: 'Implemented a robust disaster recovery plan and 24/7 monitoring for a multi-site factory operation.',
+  },
+];
+
+const testimonials = [
+  {
+    name: 'James Harrison',
+    role: 'Managing Director',
+    company: 'Harrison & Sons',
+    content: 'Cornwall-Place transformed our chaotic IT setup into a streamlined, secure environment. Their response times are exceptional.',
+  },
+  {
+    name: 'Sarah Jenkins',
+    role: 'Operations Manager',
+    company: 'Vanguard Logistics',
+    content: 'The peace of mind we have knowing our data is protected by their cybersecurity team is worth every penny. Highly recommended.',
+  },
+];
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
+    <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 lg:pt-32 lg:pb-48 bg-white">
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[800px] h-[800px] bg-indigo-50 rounded-full blur-3xl opacity-50" />
-          <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[600px] h-[600px] bg-blue-50 rounded-full blur-3xl opacity-50" />
+      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-900">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <div className="absolute top-0 -left-4 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+          <div className="absolute top-0 -right-4 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
         </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        
+        <div className="container-custom relative z-10">
+          <div className="max-w-3xl">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center space-x-2 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full mb-6">
-                <span className="flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse" />
-                <span className="text-xs font-bold text-indigo-700 uppercase tracking-wider">Trusted UK IT Partner</span>
-              </div>
-              <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight">
-                Empowering British Business through <span className="text-indigo-600">Smart Technology.</span>
+              <span className="inline-block py-1 px-3 rounded-full bg-primary-500/10 text-primary-400 text-sm font-bold mb-6 border border-primary-500/20">
+                UK's Leading IT Managed Services
+              </span>
+              <h1 className="text-5xl md:text-7xl text-white mb-8 leading-[1.1]">
+                Future-Proof Your <span className="text-primary-500">British Business</span> with Smart IT.
               </h1>
-              <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
-                William and Patrica Venton Centre provides enterprise-grade IT services, cybersecurity, and cloud strategy tailored for the UK market.
+              <p className="text-xl text-slate-400 mb-10 leading-relaxed">
+                We provide comprehensive IT support, cybersecurity, and cloud consultancy tailored for the unique needs of UK enterprises. Reliable, secure, and always local.
               </p>
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <Link
-                  to="/services"
-                  className="bg-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 flex items-center justify-center group"
-                >
-                  Explore Services
-                  <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
-                  className="bg-white text-slate-900 border-2 border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:border-indigo-600 hover:text-indigo-600 transition-all flex items-center justify-center"
+                  className="bg-primary-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-primary-700 transition-all flex items-center justify-center gap-2"
                 >
-                  Book a Consultation
+                  Book a Free Audit
+                  <ArrowRight className="w-5 h-5" />
                 </Link>
-              </div>
-              
-              <div className="mt-12 flex items-center space-x-8">
-                <div className="flex -space-x-3">
-                  {[1, 2, 3, 4].map((i) => (
-                    <img
-                      key={i}
-                      src={`https://picsum.photos/seed/user${i}/100/100`}
-                      alt="User"
-                      className="w-10 h-10 rounded-full border-2 border-white"
-                      referrerPolicy="no-referrer"
-                    />
-                  ))}
-                </div>
-                <div className="text-sm">
-                  <div className="flex items-center text-amber-500 mb-1">
-                    {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-3 h-3 fill-current" />)}
-                  </div>
-                  <p className="text-slate-500 font-medium">Trusted by 200+ UK Companies</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                <img
-                  src="https://picsum.photos/seed/it-office/800/600"
-                  alt="Modern IT Office"
-                  className="w-full h-auto"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              {/* Floating Stat Card */}
-              <div className="absolute -bottom-10 -left-10 z-20 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 hidden md:block">
-                <div className="flex items-center space-x-4">
-                  <div className="bg-emerald-100 p-3 rounded-xl">
-                    <Shield className="w-8 h-8 text-emerald-600" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-slate-900">99.9%</p>
-                    <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Uptime Guaranteed</p>
-                  </div>
-                </div>
+                <Link
+                  to="/services"
+                  className="bg-white/10 text-white backdrop-blur-sm border border-white/20 px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all text-center"
+                >
+                  Explore Services
+                </Link>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-indigo-600 font-bold uppercase tracking-widest text-sm mb-4">Why Choose Us</h2>
-            <p className="text-4xl font-bold text-slate-900 mb-6">Built for the demands of modern British industry.</p>
+      {/* Stats Section */}
+      <section className="py-12 bg-slate-800 border-y border-slate-700">
+        <div className="container-custom">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, idx) => (
+              <div key={idx} className="text-center">
+                <div className="text-3xl md:text-4xl font-display font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-slate-400 text-sm uppercase tracking-wider font-semibold">{stat.label}</div>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Zap className="w-8 h-8 text-indigo-600" />,
-                title: "Rapid Response",
-                desc: "Average helpdesk response time of under 15 minutes for critical issues."
-              },
-              {
-                icon: <Shield className="w-8 h-8 text-indigo-600" />,
-                title: "Security First",
-                desc: "Every solution we build has cybersecurity at its core, ensuring GDPR compliance."
-              },
-              {
-                icon: <Users className="w-8 h-8 text-indigo-600" />,
-                title: "Local Expertise",
-                desc: "UK-based engineers who understand your business environment and local regulations."
-              }
-            ].map((benefit, idx) => (
+      {/* Benefits Section */}
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl mb-6">Why Choose Cornwall-Place?</h2>
+            <p className="text-lg text-slate-600">
+              We combine deep technical expertise with a commitment to personal service, ensuring your technology works as hard as you do.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, idx) => (
               <motion.div
                 key={idx}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -10 }}
                 className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100"
               >
-                <div className="mb-6">{benefit.icon}</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{benefit.desc}</p>
+                <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-6">
+                  <benefit.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl mb-4">{benefit.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services Preview */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-            <div className="max-w-2xl">
-              <h2 className="text-indigo-600 font-bold uppercase tracking-widest text-sm mb-4">Our Services</h2>
-              <p className="text-4xl font-bold text-slate-900">Comprehensive IT solutions that scale with your business.</p>
-            </div>
-            <Link to="/services" className="mt-6 md:mt-0 text-indigo-600 font-bold flex items-center hover:underline underline-offset-4">
-              View all services <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {SERVICES.slice(0, 3).map((service) => (
-              <div key={service.id} className="group relative bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:bg-indigo-600 transition-all duration-500">
-                <div className="bg-white w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:bg-indigo-500 transition-colors">
-                  <CheckCircle2 className="w-8 h-8 text-indigo-600 group-hover:text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-white transition-colors">{service.title}</h3>
-                <p className="text-slate-600 mb-8 group-hover:text-indigo-100 transition-colors">{service.description}</p>
-                <Link to={`/services#${service.id}`} className="inline-flex items-center font-bold text-indigo-600 group-hover:text-white transition-colors">
-                  Learn more <ChevronRight className="ml-1 w-4 h-4" />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies */}
-      <section className="py-24 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-indigo-400 font-bold uppercase tracking-widest text-sm mb-4">Success Stories</h2>
-            <p className="text-4xl font-bold">Real results for British businesses.</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            {CASE_STUDIES.map((study, idx) => (
-              <div key={idx} className="bg-slate-800 p-10 rounded-3xl border border-slate-700 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-6">
-                  <span className="text-indigo-400 font-mono text-sm font-bold uppercase">{study.industry}</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-4 pr-16">{study.title}</h3>
-                <p className="text-slate-400 mb-8 leading-relaxed">{study.description}</p>
-                <div className="flex items-center space-x-2">
-                  <div className="bg-emerald-500/20 text-emerald-400 px-4 py-2 rounded-lg font-bold text-lg">
-                    {study.result}
+      {/* Industries Section */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="lg:w-1/2">
+              <h2 className="text-3xl md:text-5xl mb-8">Specialised IT for UK Industries</h2>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                Every sector has its own challenges. We've developed industry-specific IT frameworks that address compliance, security, and operational needs for Britain's key sectors.
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                {industries.map((industry, idx) => (
+                  <div key={idx} className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-primary-600 shadow-sm">
+                      <industry.icon className="w-5 h-5" />
+                    </div>
+                    <span className="font-semibold text-slate-700">{industry.name}</span>
                   </div>
-                  <span className="text-slate-500 text-sm">Return on Investment</span>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="lg:w-1/2 grid grid-cols-1 gap-6">
+              {caseStudies.map((study, idx) => (
+                <div key={idx} className="bg-slate-900 p-8 rounded-3xl text-white relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <TrendingUp className="w-24 h-24" />
+                  </div>
+                  <div className="relative z-10">
+                    <div className="text-primary-400 font-bold mb-2">{study.company}</div>
+                    <h3 className="text-2xl mb-4">{study.result}</h3>
+                    <p className="text-slate-400 mb-6">{study.description}</p>
+                    <Link to="/services" className="text-sm font-bold flex items-center gap-2 hover:text-primary-400 transition-colors">
+                      Read Full Case Study <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-12">
-            {TESTIMONIALS.map((t, idx) => (
-              <div key={idx} className="relative">
-                <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 h-full">
-                  <div className="flex text-amber-500 mb-6">
-                    {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-4 h-4 fill-current" />)}
+      <section className="section-padding bg-primary-600">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl text-white mb-6">Trusted by British Leaders</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {testimonials.map((t, idx) => (
+              <div key={idx} className="bg-white p-10 rounded-3xl shadow-xl relative">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center text-white text-4xl font-serif">
+                  "
+                </div>
+                <p className="text-lg text-slate-700 italic mb-8 leading-relaxed">
+                  {t.content}
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center font-bold text-primary-600">
+                    {t.name.charAt(0)}
                   </div>
-                  <p className="text-slate-700 italic mb-8 leading-relaxed">"{t.content}"</p>
-                  <div className="flex items-center space-x-4">
-                    <img src={`https://picsum.photos/seed/${t.name}/100/100`} className="w-12 h-12 rounded-full" alt={t.name} referrerPolicy="no-referrer" />
-                    <div>
-                      <h4 className="font-bold text-slate-900">{t.name}</h4>
-                      <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">{t.role}, {t.company}</p>
-                    </div>
+                  <div>
+                    <div className="font-bold text-slate-900">{t.name}</div>
+                    <div className="text-sm text-slate-500">{t.role}, {t.company}</div>
                   </div>
                 </div>
               </div>
@@ -222,26 +240,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-indigo-600">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Ready to secure your business future?</h2>
-          <p className="text-xl text-indigo-100 mb-12 max-w-2xl mx-auto">
-            Join hundreds of UK businesses who trust William and Patricia Venton Centre for their IT needs.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Link
-              to="/contact"
-              className="bg-white text-indigo-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-xl"
-            >
-              Get Started Today
-            </Link>
-            <Link
-              to="/pricing"
-              className="bg-indigo-500 text-white border border-indigo-400 px-10 py-4 rounded-xl font-bold text-lg hover:bg-indigo-400 transition-all"
-            >
-              View Pricing
-            </Link>
+      {/* Final CTA */}
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom">
+          <div className="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-transparent opacity-50"></div>
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-5xl text-white mb-8">Ready to Optimise Your IT?</h2>
+              <p className="text-xl text-slate-400 mb-12">
+                Join hundreds of UK businesses that trust Cornwall-Place for their technology needs. Let's build something great together.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link
+                  to="/contact"
+                  className="bg-primary-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-primary-700 transition-all shadow-lg shadow-primary-600/30"
+                >
+                  Schedule a Consultation
+                </Link>
+                <Link
+                  to="/pricing"
+                  className="bg-white text-slate-900 px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-100 transition-all"
+                >
+                  View Pricing Plans
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
