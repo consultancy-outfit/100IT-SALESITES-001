@@ -1,28 +1,26 @@
-import { ReactNode } from 'react';
-
-export interface LayoutProps {
-  children: ReactNode;
+export interface NavItem {
+  label: string;
+  path: string;
 }
 
 export interface Service {
   id: string;
   title: string;
   description: string;
-  icon: string;
   targetAudience: string;
   process: string[];
   benefits: string[];
-  startingPrice: string;
+  startingPrice: number;
+  icon: string;
 }
 
-export interface PricingPlan {
+export interface PricingTier {
   name: string;
-  price: string;
-  period: string;
+  price: number;
   features: string[];
-  support: string;
-  idealFor: string;
-  highlighted?: boolean;
+  supportLevel: string;
+  idealClient: string;
+  isPopular?: boolean;
 }
 
 export interface Testimonial {
@@ -35,6 +33,8 @@ export interface Testimonial {
 export interface CaseStudy {
   title: string;
   client: string;
+  challenge: string;
+  solution: string;
   result: string;
-  description: string;
+  savings: string;
 }
