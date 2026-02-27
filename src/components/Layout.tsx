@@ -1,197 +1,190 @@
-import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Monitor, Shield, Phone, Mail, MapPin, Menu, X, ChevronRight, Facebook, Twitter, Linkedin } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { cn } from '../lib/utils';
+import { motion } from 'motion/react';
+import { Mail, Phone, MapPin, Shield, Cpu, Globe, ArrowRight, Menu, X } from 'lucide-react';
+import React, { useState } from 'react';
 
 const COMPANY_DETAILS = {
-  name: "Support services for disabled children",
-  address: "124 City Road, London, EC1V 2NX, United Kingdom",
-  crn: "12345678",
-  phone: "+44 20 7946 0000",
-  email: "contact@supportservicesfordisabledchildren.co.uk",
-  hours: "Mon - Fri: 09:00 - 17:30"
+  name: "Wickham Hall IT Services Ltd",
+  address: "Wickham Hall, Hadham Road, Bishop's Stortford, Hertfordshire, CM23 1JG, United Kingdom",
+  crn: "12849562",
+  phone: "+44 (0) 1279 506000",
+  email: "solutions@wickhamhall.it",
+  hours: "Mon - Fri: 08:30 - 18:00"
 };
 
-const NAV_LINKS = [
-  { name: 'Home', path: '/' },
-  { name: 'Services', path: '/services' },
-  { name: 'About Us', path: '/about' },
-  { name: 'Pricing', path: '/pricing' },
-  { name: 'Contact', path: '/contact' },
-];
-
-export const Header = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export default function Layout({ children }: { children: React.ReactNode }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Pricing', path: '/pricing' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-bottom border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-              <Monitor className="text-white w-6 h-6" />
-            </div>
-            <span className="text-xl font-display font-bold text-primary">SSD IT</span>
-          </Link>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-8">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-accent",
-                  location.pathname === link.path ? "text-accent" : "text-slate-600"
-                )}
-              >
-                {link.name}
+    <div className="min-h-screen flex flex-col">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-20">
+            <div className="flex items-center">
+              <Link to="/" className="flex items-center space-x-2">
+                <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
+                  <Cpu className="text-white w-6 h-6" />
+                </div>
+                <span className="text-xl font-display font-bold text-slate-900">Wickham Hall</span>
               </Link>
-            ))}
-          </nav>
+            </div>
 
-          <div className="hidden md:block">
-            <Link
-              to="/contact"
-              className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-all"
-            >
-              Get Started
-            </Link>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
-          >
-            <div className="px-4 pt-2 pb-6 space-y-1">
-              {NAV_LINKS.map((link) => (
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
                 <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-4 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg"
+                  key={item.path}
+                  to={item.path}
+                  className={`nav-link ${location.pathname === item.path ? 'text-indigo-600' : ''}`}
                 >
-                  {link.name}
+                  {item.name}
                 </Link>
               ))}
               <Link
                 to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block w-full text-center bg-primary text-white px-6 py-3 rounded-lg text-base font-semibold mt-4"
+                className="bg-indigo-600 text-white px-5 py-2.5 rounded-full font-medium hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200"
               >
-                Get Started
+                Get a Quote
               </Link>
             </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-slate-600 hover:text-slate-900"
+              >
+                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Nav */}
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-1"
+          >
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsMenuOpen(false)}
+                className="block px-3 py-4 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg"
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Link
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="block w-full text-center bg-indigo-600 text-white px-5 py-3 rounded-lg font-medium mt-4"
+            >
+              Get a Quote
+            </Link>
           </motion.div>
         )}
-      </AnimatePresence>
-    </header>
-  );
-};
+      </nav>
 
-export const Footer = () => {
-  return (
-    <footer className="bg-slate-900 text-slate-300 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-accent rounded flex items-center justify-center">
-                <Monitor className="text-white w-5 h-5" />
-              </div>
-              <span className="text-xl font-display font-bold text-white">SSD IT</span>
-            </Link>
-            <p className="text-sm leading-relaxed">
-              Empowering UK businesses with cutting-edge IT solutions and dedicated support. 
-              We bridge the gap between technology and growth.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-white transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="hover:text-white transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="hover:text-white transition-colors"><Linkedin size={20} /></a>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-white font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-4 text-sm">
-              {NAV_LINKS.map((link) => (
-                <li key={link.path}>
-                  <Link to={link.path} className="hover:text-white transition-colors">{link.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-semibold mb-6">Legal</h3>
-            <ul className="space-y-4 text-sm">
-              <li><Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
-              <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/gdpr" className="hover:text-white transition-colors">GDPR Compliance</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-semibold mb-6">Contact Us</h3>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start space-x-3">
-                <MapPin size={18} className="text-accent shrink-0 mt-0.5" />
-                <span>{COMPANY_DETAILS.address}</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Phone size={18} className="text-accent shrink-0" />
-                <span>{COMPANY_DETAILS.phone}</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Mail size={18} className="text-accent shrink-0" />
-                <span className="break-all">{COMPANY_DETAILS.email}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-slate-800 pt-8 mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-            <div className="text-xs space-y-1">
-              <p className="font-semibold text-slate-100">{COMPANY_DETAILS.name}</p>
-              <p>Registered Office: {COMPANY_DETAILS.address}</p>
-              <p>Company Registration Number (CRN): {COMPANY_DETAILS.crn}</p>
-              <p>Official Business Email: {COMPANY_DETAILS.email}</p>
-            </div>
-            <div className="text-xs md:text-right">
-              <p>&copy; {new Date().getFullYear()} SSD IT Solutions. All rights reserved.</p>
-              <p className="mt-1">VAT registered in the UK.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-export const Layout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-grow pt-20">
+      {/* Main Content */}
+      <main className="flex-grow">
         {children}
       </main>
-      <Footer />
+
+      {/* Footer */}
+      <footer className="bg-slate-900 text-slate-300 pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            {/* Company Info */}
+            <div className="space-y-6">
+              <div className="flex items-center space-x-2">
+                <Cpu className="text-indigo-400 w-8 h-8" />
+                <span className="text-2xl font-display font-bold text-white">Wickham Hall</span>
+              </div>
+              <p className="text-slate-400 leading-relaxed">
+                Empowering British businesses through innovative IT solutions, robust cybersecurity, and strategic technology consultancy.
+              </p>
+              <div className="flex space-x-4">
+                <Shield className="w-5 h-5 text-indigo-400" />
+                <Globe className="w-5 h-5 text-indigo-400" />
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-white font-bold mb-6">Quick Links</h3>
+              <ul className="space-y-4">
+                {navItems.map((item) => (
+                  <li key={item.path}>
+                    <Link to={item.path} className="hover:text-indigo-400 transition-colors">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link to="/pricing" className="hover:text-indigo-400 transition-colors">Pricing Plans</Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Legal */}
+            <div>
+              <h3 className="text-white font-bold mb-6">Legal</h3>
+              <ul className="space-y-4">
+                <li><Link to="/terms" className="hover:text-indigo-400 transition-colors">Terms & Conditions</Link></li>
+                <li><Link to="/privacy" className="hover:text-indigo-400 transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/privacy#gdpr" className="hover:text-indigo-400 transition-colors">GDPR Compliance</Link></li>
+                <li><Link to="/terms#cookies" className="hover:text-indigo-400 transition-colors">Cookie Policy</Link></li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h3 className="text-white font-bold mb-6">Contact Us</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-indigo-400 shrink-0 mt-1" />
+                  <span className="text-sm">{COMPANY_DETAILS.address}</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-indigo-400 shrink-0" />
+                  <span className="text-sm">{COMPANY_DETAILS.phone}</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-indigo-400 shrink-0" />
+                  <span className="text-sm">{COMPANY_DETAILS.email}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-800 pt-8 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+              <div className="text-xs text-slate-500 space-y-1">
+                <p>© {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved.</p>
+                <p>Company Registration Number (CRN): {COMPANY_DETAILS.crn}</p>
+                <p>Registered in England and Wales.</p>
+              </div>
+              <div className="flex md:justify-end space-x-6 text-xs text-slate-500">
+                <span>VAT Registered: GB 123 4567 89</span>
+                <span>ISO 27001 Certified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
-};
+}

@@ -1,82 +1,129 @@
-import React from 'react';
 import { motion } from 'motion/react';
-import { Shield, Target, Eye, Heart, Award, CheckCircle2 } from 'lucide-react';
+import { Shield, Target, Eye, Award, CheckCircle2 } from 'lucide-react';
 
 export default function About() {
+  const values = [
+    {
+      title: "Integrity",
+      description: "We operate with absolute transparency and honesty in every interaction.",
+      icon: Shield
+    },
+    {
+      title: "Innovation",
+      description: "Constantly exploring new technologies to give our clients a competitive edge.",
+      icon: Target
+    },
+    {
+      title: "Excellence",
+      description: "Committed to the highest standards of technical delivery and customer service.",
+      icon: Award
+    },
+    {
+      title: "Reliability",
+      description: "Being there when it matters most, with systems that simply work.",
+      icon: Eye
+    }
+  ];
+
+  const leadership = [
+    {
+      name: "Edward Wickham",
+      role: "Founder & Managing Director",
+      bio: "With over 20 years in UK enterprise IT, Edward founded Wickham Hall to bring high-end consultancy to British SMEs.",
+      image: "https://picsum.photos/seed/leader1/400/400"
+    },
+    {
+      name: "Victoria Hall",
+      role: "Technical Director",
+      bio: "A cybersecurity expert and former lead architect for major UK financial institutions.",
+      image: "https://picsum.photos/seed/leader2/400/400"
+    },
+    {
+      name: "James Sterling",
+      role: "Head of Operations",
+      bio: "Specialises in service delivery and ensuring our UK-wide support network operates at peak efficiency.",
+      image: "https://picsum.photos/seed/leader3/400/400"
+    }
+  ];
+
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="py-20 lg:py-32 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 bg-slate-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">Bridging the Gap Between Technology and Human Support.</h1>
-            <p className="text-xl text-slate-400 leading-relaxed">
-              SSD IT Solutions (Support Services for Disabled Children) was founded with a unique mission: 
-              to provide enterprise-grade IT infrastructure to organisations that make a difference in the UK.
-            </p>
+            <motion.h1
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-8"
+            >
+              Our Story: Technology <span className="text-indigo-600">Built on Trust.</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-xl text-slate-600 leading-relaxed"
+            >
+              Founded in the heart of Hertfordshire, Wickham Hall was established with a single mission: to provide British businesses with the enterprise-grade IT support they deserve.
+            </motion.p>
           </div>
         </div>
+        <div className="absolute right-0 top-0 w-1/3 h-full bg-indigo-600/5 hidden lg:block"></div>
       </section>
 
-      {/* Story */}
+      {/* Mission & Vision */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-              <div className="space-y-4 text-slate-600 leading-relaxed">
-                <p>
-                  Started in London, our journey began when we noticed that many essential services—particularly those in the care and non-profit sectors—were being left behind by the rapid pace of technological change.
-                </p>
-                <p>
-                  We saw a need for an IT partner that didn't just speak "tech," but understood the operational pressures of UK organisations. We rebranded our expertise to focus on reliability, security, and accessibility.
-                </p>
-                <p>
-                  Today, we support hundreds of businesses across the UK, ensuring their systems are as resilient as the people who run them.
-                </p>
+          <div className="grid md:grid-cols-2 gap-16">
+            <div className="bg-slate-900 p-12 rounded-[2rem] text-white">
+              <h2 className="text-3xl font-display font-bold mb-6">Our Mission</h2>
+              <p className="text-lg text-slate-300 leading-relaxed mb-8">
+                To empower UK organisations by delivering innovative, secure, and reliable technology solutions that drive sustainable growth and operational excellence.
+              </p>
+              <div className="space-y-4">
+                {["Client-First Approach", "Uncompromising Security", "Continuous Improvement"].map((item, i) => (
+                  <div key={i} className="flex items-center space-x-3">
+                    <CheckCircle2 className="text-indigo-400 w-5 h-5" />
+                    <span className="text-slate-200">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="relative">
-              <img src="https://picsum.photos/seed/team/800/600" className="rounded-3xl shadow-2xl" referrerPolicy="no-referrer" />
-              <div className="absolute -bottom-6 -right-6 bg-accent p-8 rounded-2xl text-white shadow-xl">
-                <p className="text-4xl font-bold mb-1">10+</p>
-                <p className="text-sm font-medium opacity-80">Years of UK Excellence</p>
+            <div className="bg-indigo-600 p-12 rounded-[2rem] text-white">
+              <h2 className="text-3xl font-display font-bold mb-6">Our Vision</h2>
+              <p className="text-lg text-indigo-100 leading-relaxed mb-8">
+                To be the most trusted IT partner for British businesses, recognised for our technical brilliance, strategic insight, and unwavering commitment to our clients' success.
+              </p>
+              <div className="space-y-4">
+                {["Innovation Leader", "UK Tech Champion", "Trusted Strategic Partner"].map((item, i) => (
+                  <div key={i} className="flex items-center space-x-3">
+                    <CheckCircle2 className="text-white w-5 h-5" />
+                    <span className="text-indigo-50">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission/Vision/Values */}
+      {/* Core Values */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="bg-white p-10 rounded-3xl shadow-sm">
-              <Target className="text-accent mb-6" size={40} />
-              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                To empower UK organisations with secure, reliable, and innovative IT solutions that enable them to focus on their core purpose without technical friction.
-              </p>
-            </div>
-            <div className="bg-white p-10 rounded-3xl shadow-sm">
-              <Eye className="text-emerald-500 mb-6" size={40} />
-              <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                To be the UK's most trusted IT partner for mission-driven organisations, setting the standard for accessible and secure technology infrastructure.
-              </p>
-            </div>
-            <div className="bg-white p-10 rounded-3xl shadow-sm">
-              <Heart className="text-rose-500 mb-6" size={40} />
-              <h3 className="text-2xl font-bold mb-4">Core Values</h3>
-              <ul className="space-y-3">
-                {["Integrity First", "Human-Centric Tech", "Uncompromising Security", "Local Accountability"].map((v, i) => (
-                  <li key={i} className="flex items-center text-sm text-slate-700 font-medium">
-                    <CheckCircle2 size={16} className="text-accent mr-2" />
-                    {v}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">Our Core Values</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((v, i) => (
+              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-6">
+                  <v.icon className="w-6 h-6 text-indigo-600" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{v.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{v.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -85,22 +132,22 @@ export default function About() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Our Leadership</h2>
-            <p className="text-slate-600">The experts driving our commitment to UK IT excellence.</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">Our Leadership Team</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-12">
-            {[
-              { name: "James Sterling", role: "Managing Director", bio: "20 years in UK enterprise IT and infrastructure." },
-              { name: "Eleanor Vance", role: "Head of Cybersecurity", bio: "Former government security consultant and GDPR expert." },
-              { name: "Marcus Thorne", role: "Operations Director", bio: "Specialist in non-profit and care sector digital transformation." }
-            ].map((member, i) => (
-              <div key={i} className="text-center">
-                <div className="w-32 h-32 bg-slate-200 rounded-full mx-auto mb-6 overflow-hidden">
-                  <img src={`https://picsum.photos/seed/leader${i}/200/200`} referrerPolicy="no-referrer" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {leadership.map((person, i) => (
+              <div key={i} className="group">
+                <div className="relative overflow-hidden rounded-3xl mb-6">
+                  <img
+                    src={person.image}
+                    alt={person.name}
+                    className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-500"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
-                <h4 className="text-xl font-bold mb-1">{member.name}</h4>
-                <p className="text-accent text-sm font-semibold mb-4">{member.role}</p>
-                <p className="text-slate-500 text-sm px-4">{member.bio}</p>
+                <h3 className="text-2xl font-bold text-slate-900 mb-1">{person.name}</h3>
+                <p className="text-indigo-600 font-medium mb-4">{person.role}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{person.bio}</p>
               </div>
             ))}
           </div>
@@ -108,27 +155,21 @@ export default function About() {
       </section>
 
       {/* GDPR Commitment */}
-      <section className="py-24 bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-12 flex flex-col lg:flex-row items-center gap-12">
-            <div className="shrink-0">
-              <Shield size={80} className="text-accent" />
+      <section className="py-24 bg-slate-900 text-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <Shield className="w-16 h-16 text-indigo-400 mx-auto mb-8" />
+          <h2 className="text-3xl font-display font-bold mb-6">Our Commitment to GDPR & Compliance</h2>
+          <p className="text-lg text-slate-400 leading-relaxed mb-10">
+            As a UK-based organisation, we take data protection seriously. We are fully compliant with the UK GDPR and Data Protection Act 2018. Our internal processes are ISO 27001 certified, ensuring that your data—and your clients' data—is handled with the highest level of security and care.
+          </p>
+          <div className="flex justify-center space-x-8">
+            <div className="bg-slate-800 px-6 py-3 rounded-lg border border-slate-700">
+              <span className="text-xs font-bold uppercase tracking-widest text-indigo-400">Certified</span>
+              <p className="font-bold">ISO 27001</p>
             </div>
-            <div>
-              <h2 className="text-3xl font-bold mb-4">Our Commitment to GDPR & Privacy</h2>
-              <p className="text-slate-400 mb-6 leading-relaxed">
-                As a UK-based company, we take data protection seriously. We are fully committed to GDPR compliance, ensuring that all data we manage for our clients is handled with the highest levels of security and confidentiality. Our systems are audited regularly to maintain UK security standards.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-lg">
-                  <Award size={18} className="text-accent" />
-                  <span className="text-sm font-medium">Cyber Essentials Certified</span>
-                </div>
-                <div className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-lg">
-                  <Award size={18} className="text-accent" />
-                  <span className="text-sm font-medium">ICO Registered</span>
-                </div>
-              </div>
+            <div className="bg-slate-800 px-6 py-3 rounded-lg border border-slate-700">
+              <span className="text-xs font-bold uppercase tracking-widest text-indigo-400">Compliant</span>
+              <p className="font-bold">UK GDPR</p>
             </div>
           </div>
         </div>

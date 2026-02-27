@@ -1,75 +1,104 @@
-import React from 'react';
+import { motion } from 'motion/react';
 
 const COMPANY_DETAILS = {
-  name: "Support services for disabled children",
-  address: "124 City Road, London, EC1V 2NX, United Kingdom",
-  crn: "12345678",
-  email: "contact@supportservicesfordisabledchildren.co.uk"
+  name: "Wickham Hall IT Services Ltd",
+  address: "Wickham Hall, Hadham Road, Bishop's Stortford, Hertfordshire, CM23 1JG, United Kingdom",
+  crn: "12849562",
+  phone: "+44 (0) 1279 506000",
+  email: "solutions@wickhamhall.it"
 };
 
 export default function Terms() {
   return (
-    <div className="bg-white py-20">
+    <div className="bg-white py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold mb-8">Terms and Conditions</h1>
-        <p className="text-slate-500 mb-12">Last updated: February 27, 2026</p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="prose prose-slate max-w-none"
+        >
+          <h1 className="text-4xl font-display font-bold text-slate-900 mb-8">Terms and Conditions</h1>
+          <p className="text-slate-500 mb-12">Last Updated: February 27, 2026</p>
 
-        <div className="prose prose-slate max-w-none space-y-8 text-slate-600">
-          <section>
-            <h2 className="text-2xl font-bold text-primary mb-4">1. Introduction</h2>
-            <p>
-              These Terms and Conditions govern your use of the services provided by <strong>{COMPANY_DETAILS.name}</strong> ("the Company", "we", "us", "our"), a company registered in England and Wales under Company Registration Number {COMPANY_DETAILS.crn}. By engaging our services, you agree to be bound by these terms.
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Introduction</h2>
+            <p className="text-slate-600 leading-relaxed">
+              These Terms and Conditions ("Terms") govern the relationship between <strong>{COMPANY_DETAILS.name}</strong> ("Wickham Hall", "we", "us", or "our") and the client ("Client", "you", or "your") for the provision of IT services, consultancy, and managed solutions. By engaging our services, you agree to be bound by these Terms.
             </p>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-bold text-primary mb-4">2. Services</h2>
-            <p>
-              We provide IT support, cybersecurity, cloud migration, and related technology services as described on our website and in specific service level agreements (SLAs). All services are provided with reasonable care and skill in accordance with UK industry standards.
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Company Information</h2>
+            <ul className="text-slate-600 space-y-2">
+              <li><strong>Company Name:</strong> {COMPANY_DETAILS.name}</li>
+              <li><strong>Registered Office:</strong> {COMPANY_DETAILS.address}</li>
+              <li><strong>Company Registration Number (CRN):</strong> {COMPANY_DETAILS.crn}</li>
+              <li><strong>Registered in:</strong> England and Wales</li>
+            </ul>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">3. Services</h2>
+            <p className="text-slate-600 leading-relaxed">
+              The specific scope of services, deliverables, and service level agreements (SLAs) will be defined in a separate Statement of Work (SOW) or Service Agreement signed by both parties. We will perform the services with reasonable care and skill, in accordance with industry best practices.
             </p>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-bold text-primary mb-4">3. Payment Terms</h2>
-            <p>
-              All fees are quoted in Pounds Sterling (GBP) and are subject to VAT at the prevailing UK rate. Monthly support fees are payable in advance via Direct Debit or bank transfer. Project-based work requires a 50% deposit unless otherwise agreed in writing. Late payments may incur interest at the rate of 8% above the Bank of England base rate.
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">4. Payment Terms</h2>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              All fees are quoted in <strong>Pounds Sterling (£ / GBP)</strong> and are subject to VAT at the prevailing rate.
+            </p>
+            <ul className="text-slate-600 list-disc pl-6 space-y-2">
+              <li>Managed service fees are invoiced monthly in advance.</li>
+              <li>Project-based fees are invoiced according to the milestones defined in the SOW.</li>
+              <li>Payment is due within 14 days of the invoice date unless otherwise specified.</li>
+              <li>We reserve the right to charge interest on late payments in accordance with the Late Payment of Commercial Debts (Interest) Act 1998.</li>
+            </ul>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Intellectual Property</h2>
+            <p className="text-slate-600 leading-relaxed">
+              Unless otherwise agreed in writing, all intellectual property rights in materials created by Wickham Hall during the provision of services shall remain the property of Wickham Hall. Upon full payment of all fees, the Client is granted a non-exclusive, non-transferable license to use such materials for their internal business purposes.
             </p>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-bold text-primary mb-4">4. Intellectual Property</h2>
-            <p>
-              Unless otherwise agreed, all intellectual property rights in any software, documentation, or materials created by us during the provision of services shall remain our property. The client is granted a non-exclusive, non-transferable license to use such materials for their internal business purposes.
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Confidentiality</h2>
+            <p className="text-slate-600 leading-relaxed">
+              Both parties agree to keep confidential all non-public information disclosed by the other party during the term of the agreement. This obligation survives the termination of the agreement for a period of five years.
             </p>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-bold text-primary mb-4">5. Confidentiality</h2>
-            <p>
-              Both parties agree to maintain the confidentiality of all sensitive information disclosed during the term of the agreement. This obligation survives the termination of the services.
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">7. Limitation of Liability</h2>
+            <p className="text-slate-600 leading-relaxed">
+              To the maximum extent permitted by law, Wickham Hall's total liability for any claim arising out of or in connection with the services shall be limited to the total fees paid by the Client in the 12 months preceding the claim. We shall not be liable for any indirect, consequential, or economic loss, including loss of profits or data.
             </p>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-bold text-primary mb-4">6. Limitation of Liability</h2>
-            <p>
-              To the maximum extent permitted by English law, our total liability for any claim arising out of or in connection with our services shall be limited to the total fees paid by the client in the 12 months preceding the claim. We shall not be liable for any indirect or consequential loss, including loss of profits or data.
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">8. Governing Law</h2>
+            <p className="text-slate-600 leading-relaxed">
+              These Terms and any dispute or claim arising out of them shall be governed by and construed in accordance with the laws of <strong>England and Wales</strong>. The parties irrevocably agree that the courts of England and Wales shall have exclusive jurisdiction.
             </p>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-bold text-primary mb-4">7. Governing Law</h2>
-            <p>
-              These terms shall be governed by and construed in accordance with the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.
+          <section id="cookies" className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">9. Cookie Policy</h2>
+            <p className="text-slate-600 leading-relaxed">
+              Our website uses cookies to enhance user experience and analyse traffic. By using our website, you consent to our use of cookies in accordance with our Privacy Policy. You can manage your cookie preferences through your browser settings.
             </p>
           </section>
 
-          <section className="pt-8 border-t border-slate-100">
-            <p className="text-sm">
-              For any questions regarding these terms, please contact us at <strong>{COMPANY_DETAILS.email}</strong>.
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">10. Contact</h2>
+            <p className="text-slate-600 leading-relaxed">
+              For any questions regarding these Terms, please contact us at <strong>{COMPANY_DETAILS.email}</strong> or by post at our registered office address.
             </p>
           </section>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
