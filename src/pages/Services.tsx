@@ -1,158 +1,183 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { 
-  Headphones, 
-  Lock, 
+  Shield, 
   Cloud, 
-  BarChart3, 
+  Code2, 
+  Headphones, 
+  Database, 
   Network, 
-  CheckCircle2, 
+  Smartphone,
   ArrowRight,
-  ChevronRight
+  CheckCircle2
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SERVICES } from '../constants';
 
-const iconMap: Record<string, any> = {
-  Headphones,
-  Lock,
-  Cloud,
-  BarChart3,
-  Network
-};
+const services = [
+  {
+    id: 'cybersecurity',
+    title: 'Cybersecurity & Threat Protection',
+    icon: Shield,
+    overview: 'Comprehensive security audits, threat detection, and response systems to protect your business from evolving digital threats.',
+    target: 'SMEs and Large Enterprises handling sensitive data.',
+    process: ['Initial Audit', 'Vulnerability Assessment', 'Implementation', '24/7 Monitoring'],
+    benefits: ['Reduced Risk', 'GDPR Compliance', 'Peace of Mind'],
+    price: '£499',
+  },
+  {
+    id: 'cloud',
+    title: 'Cloud Infrastructure & Migration',
+    icon: Cloud,
+    overview: 'Seamless migration to AWS, Azure, or Google Cloud with ongoing management and cost optimisation.',
+    target: 'Businesses looking to modernize their legacy infrastructure.',
+    process: ['Strategy Planning', 'Data Migration', 'Optimisation', 'Managed Support'],
+    benefits: ['Scalability', 'Cost Efficiency', 'High Availability'],
+    price: '£750',
+  },
+  {
+    id: 'managed-it',
+    title: 'Managed IT Support',
+    icon: Headphones,
+    overview: 'End-to-end IT management including helpdesk support, hardware maintenance, and software updates.',
+    target: 'Companies without a dedicated in-house IT department.',
+    process: ['Onboarding', 'System Setup', 'Ongoing Support', 'Regular Reviews'],
+    benefits: ['Predictable Costs', 'Expert Knowledge', 'Reduced Downtime'],
+    price: '£250',
+  },
+  {
+    id: 'software',
+    title: 'Bespoke Software Development',
+    icon: Code2,
+    overview: 'Custom-built applications, APIs, and internal tools designed to solve your specific business challenges.',
+    target: 'Enterprises requiring unique digital solutions.',
+    process: ['Requirements Gathering', 'Design & Prototyping', 'Development', 'Deployment'],
+    benefits: ['Tailored Fit', 'Competitive Edge', 'Full Ownership'],
+    price: '£2,500',
+  },
+  {
+    id: 'network',
+    title: 'Network Design & Optimisation',
+    icon: Network,
+    overview: 'High-performance network architecture, Wi-Fi solutions, and secure remote access for distributed teams.',
+    target: 'Offices and remote-first organisations.',
+    process: ['Site Survey', 'Architecture Design', 'Installation', 'Testing'],
+    benefits: ['Fast Connectivity', 'Secure Access', 'Reliable Performance'],
+    price: '£600',
+  },
+  {
+    id: 'data',
+    title: 'Data Analytics & BI',
+    icon: Database,
+    overview: 'Transform your raw data into actionable insights with custom dashboards and business intelligence tools.',
+    target: 'Data-driven businesses looking to optimize operations.',
+    process: ['Data Collection', 'Cleaning & Processing', 'Visualisation', 'Insights Delivery'],
+    benefits: ['Better Decisions', 'Identified Trends', 'Operational Efficiency'],
+    price: '£1,200',
+  },
+];
 
 export default function Services() {
   return (
-    <div className="pt-20">
+    <div className="pb-24">
       {/* Header */}
-      <section className="bg-slate-950 py-24 border-b border-slate-800">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-8">
-              Comprehensive <span className="text-brand-500">IT Services</span>
-            </h1>
-            <p className="text-xl text-slate-400 leading-relaxed">
-              Tailored technology solutions designed to drive efficiency, security, and growth for UK businesses. From daily support to long-term strategy.
-            </p>
-          </motion.div>
+      <section className="bg-slate-50 py-20 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl lg:text-6xl font-display font-bold text-navy-900 mb-6">Our IT Services</h1>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            Comprehensive technology solutions designed to empower British businesses in the digital age.
+          </p>
         </div>
       </section>
 
       {/* Services List */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="space-y-24">
-            {SERVICES.map((service, index) => {
-              const Icon = iconMap[service.icon];
-              const isEven = index % 2 === 0;
-
-              return (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}
-                >
-                  <div className="flex-1 w-full">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-50 text-brand-600 mb-8 shadow-sm">
-                      <Icon size={32} />
-                    </div>
-                    <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">{service.title}</h2>
-                    <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                      {service.longDescription}
-                    </p>
-                    
-                    <div className="grid sm:grid-cols-2 gap-8 mb-10">
-                      <div>
-                        <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                          <CheckCircle2 size={18} className="text-brand-600" />
-                          Key Benefits
-                        </h4>
-                        <ul className="space-y-2">
-                          {service.benefits.map((benefit, i) => (
-                            <li key={i} className="text-slate-600 text-sm flex items-center gap-2">
-                              <div className="w-1 h-1 rounded-full bg-brand-400" />
-                              {benefit}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                          <ArrowRight size={18} className="text-brand-600" />
-                          Our Process
-                        </h4>
-                        <ul className="space-y-2">
-                          {service.process.map((step, i) => (
-                            <li key={i} className="text-slate-600 text-sm flex items-center gap-2">
-                              <span className="text-brand-600 font-bold text-xs">{i + 1}.</span>
-                              {step}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-6">
-                      <div>
-                        <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Target Audience</div>
-                        <div className="text-slate-700 font-medium">{service.targetAudience}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Starting From</div>
-                        <div className="text-2xl font-display font-bold text-brand-600">{service.startingPrice}</div>
-                      </div>
-                    </div>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 space-y-32">
+        {services.map((service, idx) => (
+          <motion.div
+            key={service.id}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className={`flex flex-col lg:flex-row gap-16 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+          >
+            {/* Visual Part */}
+            <div className="flex-1 w-full">
+              <div className="relative">
+                <div className="aspect-square rounded-3xl bg-brand-50 flex items-center justify-center p-12 overflow-hidden">
+                  <service.icon className="w-full h-full text-brand-600 opacity-20 absolute -bottom-10 -right-10 rotate-12" />
+                  <div className="relative z-10 bg-white p-8 rounded-2xl shadow-xl border border-brand-100">
+                    <service.icon className="w-16 h-16 text-brand-600 mb-6" />
+                    <h3 className="text-2xl font-bold text-navy-900 mb-4">{service.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{service.overview}</p>
                   </div>
+                </div>
+                <div className="absolute -top-4 -right-4 bg-navy-900 text-white px-6 py-3 rounded-full font-bold shadow-lg">
+                  Starting from {service.price}
+                </div>
+              </div>
+            </div>
 
-                  <div className="flex-1 w-full">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-brand-600 rounded-3xl rotate-3 opacity-10" />
-                      <div className="relative bg-slate-900 rounded-3xl p-12 overflow-hidden shadow-2xl">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 blur-3xl rounded-full" />
-                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-brand-500/10 blur-3xl rounded-full" />
-                        
-                        <div className="relative z-10">
-                          <div className="text-brand-500 mb-6">
-                            <Icon size={48} />
-                          </div>
-                          <h3 className="text-2xl font-display font-bold text-white mb-6">Service Overview</h3>
-                          <p className="text-slate-400 mb-8 leading-relaxed">
-                            {service.description}
-                          </p>
-                          <Link 
-                            to="/contact" 
-                            className="inline-flex items-center gap-2 text-white font-bold hover:text-brand-400 transition-colors"
-                          >
-                            Enquire about this service <ChevronRight size={20} />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
+            {/* Content Part */}
+            <div className="flex-1 space-y-8">
+              <div>
+                <h2 className="text-3xl font-display font-bold text-navy-900 mb-4">{service.title}</h2>
+                <div className="flex items-center gap-2 text-brand-600 font-semibold text-sm uppercase tracking-wider">
+                  <span>Ideal for:</span>
+                  <span className="text-slate-600 normal-case tracking-normal font-medium">{service.target}</span>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <h4 className="font-bold text-navy-900 flex items-center gap-2">
+                    <ArrowRight className="w-4 h-4 text-brand-600" />
+                    The Process
+                  </h4>
+                  <ul className="space-y-2">
+                    {service.process.map((step) => (
+                      <li key={step} className="text-slate-600 text-sm flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-500" />
+                        {step}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="space-y-4">
+                  <h4 className="font-bold text-navy-900 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-brand-600" />
+                    Key Benefits
+                  </h4>
+                  <ul className="space-y-2">
+                    {service.benefits.map((benefit) => (
+                      <li key={benefit} className="text-slate-600 text-sm flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-500" />
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="pt-6">
+                <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+                  Enquire About This Service
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-slate-50">
-        <div className="container-custom text-center">
-          <h2 className="text-4xl font-display font-bold text-slate-900 mb-8">Not sure which service you need?</h2>
-          <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-            Our experts are here to help you navigate the complex world of IT. Book a free consultation today.
+      {/* CTA */}
+      <section className="mt-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-slate-900 rounded-3xl p-12 lg:p-20 text-center text-white">
+          <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">Need a Custom Solution?</h2>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-10">
+            Every business is unique. We offer bespoke IT packages tailored to your specific goals and budget.
           </p>
-          <Link
-            to="/contact"
-            className="bg-brand-600 text-white px-10 py-4 rounded-full font-bold hover:bg-brand-700 transition-all shadow-lg"
-          >
-            Book Free Consultation
+          <Link to="/contact" className="btn-primary bg-brand-600 hover:bg-brand-700">
+            Contact Our Experts
           </Link>
         </div>
       </section>
