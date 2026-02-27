@@ -2,8 +2,8 @@ export const COMPANY_DETAILS = {
   name: "Dasil Support Services London",
   registeredOfficeAddress: "[Registered Office Address (UK) - Not Available]",
   companyRegistrationNumber: "[Company Registration Number (CRN) - Not Available]",
-  ukPhoneNumber: "[UK Phone Number - Not Available]",
-  officialBusinessEmail: "info@dasilsupportserviceslondon.co.uk",
+  ukPhoneNumber: "+0153 666 5148",
+  officialBusinessEmail: "info@gianthealthcarecorby.co.uk",
 };
 
 export const NAV_LINKS = [
