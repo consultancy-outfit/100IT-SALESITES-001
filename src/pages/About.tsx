@@ -1,138 +1,78 @@
 import { motion } from 'motion/react';
-import { Target, Eye, Heart, ShieldCheck, Award, Users } from 'lucide-react';
-
-const values = [
-  {
-    title: "Integrity",
-    description: "We operate with complete transparency and honesty in every interaction.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Excellence",
-    description: "We strive for the highest standards in technical delivery and client service.",
-    icon: Award,
-  },
-  {
-    title: "Collaboration",
-    description: "We work as an extension of your team, not just a third-party vendor.",
-    icon: Users,
-  },
-];
-
-const leadership = [
-  {
-    name: "David Sterling",
-    role: "Managing Director",
-    bio: "With over 20 years in IT infrastructure, David leads our strategic vision with a focus on client success.",
-  },
-  {
-    name: "Emma Richardson",
-    role: "Technical Director",
-    bio: "Emma oversees our service delivery and cybersecurity operations, ensuring technical excellence.",
-  },
-  {
-    name: "Mark Thompson",
-    role: "Head of Client Relations",
-    bio: "Mark ensures our services are perfectly aligned with our clients' evolving business needs.",
-  },
-];
+import { ShieldCheck, Award, Users } from 'lucide-react';
 
 export default function About() {
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero */}
-      <section className="bg-slate-900 py-24 text-white">
+      <section className="bg-slate-900 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-              Your Trusted <span className="text-primary-400">Technology Partner</span> in Greater Manchester
+              Empowering Manchester through Technology
             </h1>
-            <p className="text-xl text-slate-300 leading-relaxed">
-              Founded on the principles of reliability and expertise, we've grown into a leading IT 
-              services provider, supporting businesses across the North West and beyond.
+            <p className="text-xl text-slate-300">
+              We are Visiting Angels Manchester West. Not your typical IT firm—we are partners in your growth, guardians of your data, and architects of your digital future.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Story */}
+      {/* Story & Mission */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Our Story</h2>
-              <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
-                <p>
-                  Greater Manchester Specialist Support Service was established with a clear mission: 
-                  to bridge the gap between complex technology and business growth. We saw too many 
-                  companies struggling with IT that hindered rather than helped.
+              <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">Our Story</h2>
+              <div className="prose prose-lg text-slate-600">
+                <p className="mb-4">
+                  Founded with a clear vision to bring enterprise-level IT services to the SME market in the North West, Visiting Angels Manchester West has grown from a small consultancy to a full-service managed service provider.
+                </p>
+                <p className="mb-4">
+                  We recognised that many British businesses were underserved by generic, faceless IT support. They needed a local partner who understood the specific challenges of the UK regulatory landscape and the operational needs of modern British industry.
                 </p>
                 <p>
-                  Over the years, we've assembled a team of the brightest technical minds in the region. 
-                  Our journey has been defined by a commitment to staying ahead of the curve, 
-                  investing in the latest cybersecurity tools, and never losing sight of the human 
-                  element in IT support.
-                </p>
-                <p>
-                  Today, we are proud to be the backbone of technology for hundreds of UK firms, 
-                  providing the stability and innovation they need to thrive in a digital-first world.
+                  Today, we support hundreds of users across Manchester, ensuring their technology is an asset, not a liability.
                 </p>
               </div>
             </div>
-            <div className="relative">
-              <img 
-                src="https://picsum.photos/seed/about-team/800/600" 
-                className="rounded-3xl shadow-2xl" 
-                alt="Our Team"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-primary-600 text-white p-8 rounded-2xl shadow-xl">
-                <div className="text-4xl font-bold mb-1">15+</div>
-                <div className="text-primary-100 text-sm">Years of Excellence</div>
+            <div className="grid grid-cols-1 gap-8">
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center">
+                  <Award className="h-5 w-5 text-indigo-600 mr-2" />
+                  Our Mission
+                </h3>
+                <p className="text-slate-600">
+                  To provide reliable, secure, and human-centric IT solutions that enable Manchester businesses to thrive in a digital-first world.
+                </p>
+              </div>
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center">
+                  <ShieldCheck className="h-5 w-5 text-indigo-600 mr-2" />
+                  Our Vision
+                </h3>
+                <p className="text-slate-600">
+                  To be the most trusted IT partner in the North West, known for our technical excellence and unwavering commitment to client success.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Core Values */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
-              <Target className="w-12 h-12 text-primary-600 mb-6" />
-              <h3 className="text-2xl font-display font-bold mb-4">Our Mission</h3>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                To provide innovative, reliable, and secure IT solutions that empower our clients 
-                to achieve their full potential through the strategic use of technology.
-              </p>
-            </div>
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
-              <Eye className="w-12 h-12 text-primary-600 mb-6" />
-              <h3 className="text-2xl font-display font-bold mb-4">Our Vision</h3>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                To be the most trusted IT partner in the UK, recognised for our technical 
-                excellence, proactive approach, and unwavering commitment to client success.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Our Core Values</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {values.map((v, i) => (
-              <div key={i} className="text-center p-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-50 text-primary-600 mb-6">
-                  <v.icon className="w-8 h-8" />
-                </div>
-                <h4 className="text-xl font-bold mb-3">{v.title}</h4>
-                <p className="text-slate-600">{v.description}</p>
+          <h2 className="text-3xl font-display font-bold text-center text-slate-900 mb-16">Core Values</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Integrity", desc: "We do what we say. No hidden fees, no jargon, just honest advice." },
+              { title: "Security First", desc: "We treat your data with the same vigilance as our own. GDPR compliance is in our DNA." },
+              { title: "Excellence", desc: "We don't settle for 'good enough'. We aim for 'outstanding' in every ticket we resolve." }
+            ].map((val, i) => (
+              <div key={i} className="bg-white p-8 rounded-xl shadow-sm text-center">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{val.title}</h3>
+                <p className="text-slate-600">{val.desc}</p>
               </div>
             ))}
           </div>
@@ -140,25 +80,21 @@ export default function About() {
       </section>
 
       {/* Leadership */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Our Leadership</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {leadership.map((person, i) => (
-              <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
-                <img 
-                  src={`https://picsum.photos/seed/leader-${i}/400/400`} 
-                  className="w-full h-64 object-cover" 
-                  alt={person.name}
-                  referrerPolicy="no-referrer"
-                />
-                <div className="p-8">
-                  <h4 className="text-xl font-bold mb-1">{person.name}</h4>
-                  <div className="text-primary-600 text-sm font-medium mb-4">{person.role}</div>
-                  <p className="text-slate-600 text-sm leading-relaxed">{person.bio}</p>
+          <h2 className="text-3xl font-display font-bold text-slate-900 mb-12">Leadership Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { name: "Sarah Jenkins", role: "Managing Director", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop" },
+              { name: "David Thorne", role: "Technical Director", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" },
+              { name: "Emily Clarke", role: "Head of Operations", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" }
+            ].map((person, i) => (
+              <div key={i} className="group">
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-4">
+                  <img src={person.img} alt={person.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
+                <h3 className="text-xl font-bold text-slate-900">{person.name}</h3>
+                <p className="text-indigo-600">{person.role}</p>
               </div>
             ))}
           </div>
@@ -166,21 +102,13 @@ export default function About() {
       </section>
 
       {/* GDPR Commitment */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-emerald-50 border border-emerald-100 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
-            <div className="bg-emerald-600 p-4 rounded-2xl">
-              <ShieldCheck className="w-12 h-12 text-white" />
-            </div>
-            <div>
-              <h3 className="text-2xl font-display font-bold text-emerald-900 mb-2">Our GDPR Commitment</h3>
-              <p className="text-emerald-800 leading-relaxed">
-                We take data privacy seriously. As a UK-based IT provider, we are fully committed to 
-                GDPR compliance, ensuring that both our internal processes and the solutions we 
-                provide to our clients meet the highest standards of data protection.
-              </p>
-            </div>
-          </div>
+      <section className="py-24 bg-indigo-900 text-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <ShieldCheck className="h-16 w-16 text-indigo-400 mx-auto mb-6" />
+          <h2 className="text-3xl font-display font-bold mb-6">Our Commitment to GDPR</h2>
+          <p className="text-indigo-100 text-lg leading-relaxed">
+            We understand the critical importance of data privacy in the UK. All our processes, tools, and storage solutions are rigorously vetted to ensure full compliance with the General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. When you partner with us, you partner with a compliant, secure, and responsible data handler.
+          </p>
         </div>
       </section>
     </div>

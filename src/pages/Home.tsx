@@ -1,251 +1,199 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Shield, Cloud, Cpu, Users, BarChart3, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Server, Shield, Users, BarChart3, Globe2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const benefits = [
-  {
-    title: "Proactive Monitoring",
-    description: "We identify and resolve issues before they impact your business operations.",
-    icon: Shield,
-  },
-  {
-    title: "Cloud Excellence",
-    description: "Seamless migration and management of your cloud infrastructure.",
-    icon: Cloud,
-  },
-  {
-    title: "Strategic Consulting",
-    description: "Technology roadmaps aligned with your long-term business goals.",
-    icon: BarChart3,
-  },
-];
-
-const industries = [
-  "Legal & Professional Services",
-  "Manufacturing & Logistics",
-  "Healthcare & Life Sciences",
-  "Education & Non-Profit",
-  "Finance & FinTech",
-  "Retail & E-commerce",
-];
-
-const testimonials = [
-  {
-    name: "James Harrison",
-    role: "Operations Director, Northern Logistics",
-    content: "The team at GM Specialist Support transformed our legacy infrastructure. Their proactive approach saved us thousands in potential downtime.",
-  },
-  {
-    name: "Sarah Jenkins",
-    role: "Partner, Jenkins & Co Solicitors",
-    content: "Cybersecurity was our biggest worry. Now, we have complete peace of mind knowing our clients' data is protected by the best in the business.",
-  },
-];
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 }
+};
 
 export default function Home() {
   return (
-    <div className="pt-20">
+    <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-slate-50 py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block py-1 px-3 rounded-full bg-primary-100 text-primary-700 text-xs font-bold uppercase tracking-wider mb-6">
-                Greater Manchester's Premier IT Partner
-              </span>
-              <h1 className="text-5xl lg:text-6xl font-display font-bold text-slate-900 leading-[1.1] mb-6">
-                Reliable IT Support for <span className="text-primary-600">Ambitious Businesses</span>
-              </h1>
-              <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
-                We provide specialist IT services that empower UK businesses to scale securely, 
-                innovate faster, and operate without technical friction.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/services" className="btn-primary group">
-                  Explore Services
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link to="/contact" className="btn-secondary">
-                  Book a Free Audit
-                </Link>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://picsum.photos/seed/it-office/800/800" 
-                  alt="Modern IT Office" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl max-w-xs hidden md:block">
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="bg-emerald-100 p-2 rounded-lg">
-                    <CheckCircle2 className="w-6 h-6 text-emerald-600" />
-                  </div>
-                  <span className="font-bold text-slate-900">99.9% Uptime</span>
-                </div>
-                <p className="text-sm text-slate-500">Guaranteed service levels for all our managed clients across the UK.</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
+      <section className="relative bg-slate-900 text-white pt-24 pb-32 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900" />
         
-        {/* Background Elements */}
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-primary-100/50 rounded-full blur-3xl -z-0" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="max-w-3xl"
+            initial="initial"
+            animate="animate"
+            variants={fadeIn}
+          >
+            <div className="inline-flex items-center space-x-2 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-4 py-1.5 mb-8">
+              <span className="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
+              <span className="text-sm font-medium text-indigo-300">Manchester's Premier IT Partner</span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight mb-8 leading-tight">
+              Enterprise IT Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">British Business</span>
+            </h1>
+            <p className="text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
+              We deliver robust, secure, and scalable technology infrastructure. From cloud migration to 24/7 support, we keep Manchester working.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/25">
+                Book a Consultation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <Link to="/services" className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/10 border border-white/10 rounded-lg hover:bg-white/20 transition-all backdrop-blur-sm">
+                Explore Services
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Company Overview */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Why Businesses Trust Us</h2>
-            <p className="text-lg text-slate-600">We don't just fix computers; we build resilient technology foundations that drive growth.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((benefit, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ y: -5 }}
-                className="p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-xl transition-all"
-              >
-                <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center mb-6">
-                  <benefit.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Section */}
-      <section className="py-24 bg-slate-950 text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Specialist Support Across UK Industries</h2>
-              <p className="text-slate-400 text-lg mb-8">
-                Our expertise spans multiple sectors, allowing us to provide tailored solutions that meet 
-                specific regulatory and operational requirements.
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">
+                Strategic IT for the Modern UK Workplace
+              </h2>
+              <p className="text-lg text-slate-600 mb-6">
+                At Visiting Angels Manchester West, we don't just fix computers; we engineer business continuity. Our focus is on proactive management, ensuring your systems are resilient against threats and optimised for performance.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {industries.map((industry, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary-500" />
-                    <span className="text-slate-300">{industry}</span>
-                  </div>
+              <ul className="space-y-4">
+                {[
+                  'GDPR Compliant Data Handling',
+                  '24/7 UK-Based Support Desk',
+                  'Proactive Threat Monitoring',
+                  'Cloud-First Strategy Implementation'
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center text-slate-700">
+                    <CheckCircle2 className="h-5 w-5 text-indigo-600 mr-3" />
+                    {item}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
             <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <img src="https://picsum.photos/seed/ind1/400/500" className="rounded-2xl w-full h-64 object-cover" alt="Industry 1" referrerPolicy="no-referrer" />
-                  <img src="https://picsum.photos/seed/ind2/400/300" className="rounded-2xl w-full h-40 object-cover" alt="Industry 2" referrerPolicy="no-referrer" />
-                </div>
-                <div className="space-y-4 pt-8">
-                  <img src="https://picsum.photos/seed/ind3/400/300" className="rounded-2xl w-full h-40 object-cover" alt="Industry 3" referrerPolicy="no-referrer" />
-                  <img src="https://picsum.photos/seed/ind4/400/500" className="rounded-2xl w-full h-64 object-cover" alt="Industry 4" referrerPolicy="no-referrer" />
-                </div>
+              <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1553877616-15280ed54729?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Modern IT Office in Manchester" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-8 -left-8 bg-slate-900 p-8 rounded-xl shadow-xl max-w-xs">
+                <div className="text-4xl font-bold text-indigo-400 mb-2">99.9%</div>
+                <div className="text-sm text-slate-300">Uptime guarantee for all managed service clients across the North West.</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Case Study / Results */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-primary-600 rounded-3xl p-8 md:p-16 text-white relative overflow-hidden">
-            <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Measurable Impact</h2>
-                <p className="text-primary-100 text-lg mb-8">
-                  We recently helped a Manchester-based manufacturing firm migrate to a hybrid cloud model, 
-                  resulting in significant operational savings.
-                </p>
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <div className="text-4xl font-bold mb-1">£42,000</div>
-                    <div className="text-primary-200 text-sm">Annual IT Cost Reduction</div>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold mb-1">35%</div>
-                    <div className="text-primary-200 text-sm">Increase in Staff Productivity</div>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl">
-                <blockquote className="text-xl italic mb-6">
-                  "The transition was seamless. We saw an immediate ROI and our team can now work securely from anywhere."
-                </blockquote>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary-400 overflow-hidden">
-                    <img src="https://picsum.photos/seed/ceo/100/100" alt="CEO" referrerPolicy="no-referrer" />
-                  </div>
-                  <div>
-                    <div className="font-bold">Robert Thompson</div>
-                    <div className="text-primary-200 text-sm">CEO, Precision Engineering Ltd</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
+      {/* Key Benefits */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">What Our Clients Say</h2>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">Why Partner With Us?</h2>
+            <p className="text-slate-600">We bring enterprise-grade technology to SMEs across Manchester and the wider UK.</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((t, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                <p className="text-slate-600 text-lg mb-6 italic">"{t.content}"</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-slate-200" />
-                  <div>
-                    <div className="font-bold text-slate-900">{t.name}</div>
-                    <div className="text-slate-500 text-sm">{t.role}</div>
-                  </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Shield,
+                title: "Cyber Security First",
+                desc: "Bank-grade encryption and threat detection to protect your proprietary data."
+              },
+              {
+                icon: Server,
+                title: "Reliable Infrastructure",
+                desc: "Robust network solutions designed to handle high-bandwidth modern workflows."
+              },
+              {
+                icon: Users,
+                title: "Dedicated Support",
+                desc: "No call centres abroad. Speak directly to Manchester-based engineers."
+              }
+            ].map((feature, idx) => (
+              <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <div className="bg-indigo-50 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                  <feature.icon className="h-6 w-6 text-indigo-600" />
                 </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                <p className="text-slate-600">{feature.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Ready to Modernise Your IT?</h2>
-            <p className="text-xl text-slate-600 mb-10">
-              Join hundreds of UK businesses that rely on GM Specialist Support for their technology needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="btn-primary px-10">
-                Get a Quote
-              </Link>
-              <Link to="/services" className="btn-secondary px-10">
-                View All Services
-              </Link>
+      {/* Industries Served */}
+      <section className="py-24 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-display font-bold text-slate-900 mb-12">Industries We Serve</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {['Finance & Fintech', 'Legal Services', 'Healthcare', 'Manufacturing', 'Retail & E-commerce', 'Education', 'Real Estate', 'Logistics'].map((industry) => (
+              <div key={industry} className="p-6 bg-slate-50 rounded-xl text-center font-medium text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 transition-colors cursor-default">
+                {industry}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Study */}
+      <section className="py-24 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="text-indigo-400 font-medium mb-4">CASE STUDY</div>
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Saving £45,000 annually for a Manchester Logistics Firm</h2>
+              <p className="text-slate-300 mb-8 text-lg">
+                By migrating their legacy on-premise servers to a hybrid cloud solution, we reduced downtime by 98% and cut hardware maintenance costs significantly.
+              </p>
+              <div className="grid grid-cols-3 gap-8 border-t border-slate-800 pt-8">
+                <div>
+                  <div className="text-3xl font-bold text-white mb-1">£45k</div>
+                  <div className="text-sm text-slate-400">Annual Savings</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white mb-1">98%</div>
+                  <div className="text-sm text-slate-400">Less Downtime</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white mb-1">3x</div>
+                  <div className="text-sm text-slate-400">Faster Backups</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+              <blockquote className="italic text-lg text-slate-300 mb-6">
+                "Visiting Angels Manchester West transformed our IT infrastructure. We went from constant fire-fighting to a smooth, silent operation. The ROI was evident within three months."
+              </blockquote>
+              <div className="flex items-center">
+                <div className="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center font-bold text-white mr-3">
+                  JD
+                </div>
+                <div>
+                  <div className="font-bold text-white">James Davies</div>
+                  <div className="text-sm text-indigo-300">Operations Director, SwiftLogistics UK</div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-indigo-600">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">Ready to upgrade your IT infrastructure?</h2>
+          <p className="text-indigo-100 text-lg mb-10">
+            Join the leading Manchester businesses trusting us with their technology.
+          </p>
+          <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-indigo-600 bg-white rounded-lg hover:bg-indigo-50 transition-all">
+            Get Your Free Audit
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </div>
       </section>
     </div>

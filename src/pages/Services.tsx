@@ -1,176 +1,146 @@
 import { motion } from 'motion/react';
-import { Shield, Cloud, Lock, Headphones, Network, Database, Server, ArrowRight } from 'lucide-react';
+import { Check, Shield, Cloud, Database, Headphones, Code, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const services = [
   {
+    icon: Shield,
     title: "Managed IT Support",
-    icon: Headphones,
-    overview: "Comprehensive 24/7 helpdesk and proactive maintenance for your entire IT estate.",
-    target: "SMEs looking for a complete outsourced IT department.",
-    process: ["Audit", "Onboarding", "Monitoring", "Support"],
-    benefits: ["Fixed monthly costs", "Unlimited remote support", "Proactive health checks"],
-    startingPrice: "£25 per user/month",
+    price: "From £50/user/mo",
+    description: "Comprehensive day-to-day IT management for your entire team.",
+    audience: "SMEs with 10-200 employees",
+    benefits: ["Unlimited Remote Support", "Patch Management", "Hardware Monitoring"],
+    steps: ["Initial Audit", "Onboarding", "Active Monitoring"]
   },
   {
-    title: "Cybersecurity Solutions",
     icon: Lock,
-    overview: "Multi-layered defence strategies to protect your business from evolving digital threats.",
-    target: "Businesses handling sensitive data or requiring compliance.",
-    process: ["Risk Assessment", "Implementation", "Training", "Response"],
-    benefits: ["GDPR compliance", "Reduced breach risk", "Cyber Essentials readiness"],
-    startingPrice: "£495 per audit",
+    title: "Cyber Security Audits",
+    price: "From £1,200 one-off",
+    description: "Deep-dive vulnerability assessment to protect your business assets.",
+    audience: "Regulated industries (Finance, Legal, Health)",
+    benefits: ["Penetration Testing", "GDPR Compliance Check", "Staff Training"],
+    steps: ["Vulnerability Scan", "Risk Report", "Remediation Plan"]
   },
   {
-    title: "Cloud Infrastructure",
     icon: Cloud,
-    overview: "Strategic migration and management of Microsoft Azure, AWS, and Hybrid Cloud environments.",
-    target: "Firms looking to modernize their infrastructure and enable remote work.",
-    process: ["Planning", "Migration", "Optimisation", "Management"],
-    benefits: ["Scalability", "Cost efficiency", "High availability"],
-    startingPrice: "£150 per month",
+    title: "Cloud Migration",
+    price: "Custom Quote",
+    description: "Seamless transition of your data and apps to Azure or AWS.",
+    audience: "Growing businesses needing scalability",
+    benefits: ["Reduced Hardware Cost", "Remote Work Enablement", "Scalability"],
+    steps: ["Strategy", "Data Migration", "Go-Live Support"]
   },
   {
-    title: "Network & Connectivity",
-    icon: Network,
-    overview: "High-speed business broadband, leased lines, and secure SD-WAN solutions.",
-    target: "Multi-site businesses requiring reliable, fast connectivity.",
-    process: ["Site Survey", "Design", "Installation", "Monitoring"],
-    benefits: ["Low latency", "Failover protection", "Secure site-to-site links"],
-    startingPrice: "£45 per month",
-  },
-  {
-    title: "Disaster Recovery",
     icon: Database,
-    overview: "Robust backup and recovery plans to ensure business continuity in any scenario.",
-    target: "Any business where downtime results in significant loss.",
-    process: ["BIA", "Strategy", "Implementation", "Testing"],
-    benefits: ["Rapid recovery", "Data integrity", "Peace of mind"],
-    startingPrice: "£95 per month",
+    title: "Data Recovery & Backup",
+    price: "From £100/mo",
+    description: "Bulletproof backup solutions ensuring business continuity.",
+    audience: "All businesses",
+    benefits: ["Ransomware Protection", "Hourly Snapshots", "Rapid Restoration"],
+    steps: ["Assessment", "Implementation", "Daily Verification"]
   },
   {
+    icon: Code,
     title: "IT Consultancy",
-    icon: Server,
-    overview: "Expert guidance on digital transformation, budgeting, and technology roadmaps.",
-    target: "Growing companies needing high-level strategic technical input.",
-    process: ["Discovery", "Analysis", "Roadmap", "Execution"],
-    benefits: ["Strategic alignment", "Future-proofing", "Expert insights"],
-    startingPrice: "£850 per day",
+    price: "£150/hour",
+    description: "Strategic advice to align technology with your business goals.",
+    audience: "Executives & Directors",
+    benefits: ["Digital Transformation", "Vendor Management", "Cost Reduction"],
+    steps: ["Discovery", "Strategy Formulation", "Execution Oversight"]
   },
+  {
+    icon: Headphones,
+    title: "VoIP Solutions",
+    price: "From £15/user/mo",
+    description: "Modern internet telephony for crystal clear communication.",
+    audience: "Remote & Hybrid Teams",
+    benefits: ["Mobile App Integration", "Call Recording", "Lower Bills"],
+    steps: ["Network Check", "Number Porting", "Handset Setup"]
+  }
 ];
 
 export default function Services() {
   return (
-    <div className="pt-20">
+    <div className="bg-slate-50 min-h-screen">
       {/* Header */}
-      <section className="bg-slate-50 py-20 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-              Specialist IT Services <br />
-              <span className="text-primary-600">Tailored for Your Success</span>
-            </h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              We provide a full spectrum of IT solutions designed to solve complex business challenges 
-              and drive operational efficiency.
-            </p>
-          </div>
+      <div className="bg-slate-900 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Our Services</h1>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            End-to-end technology solutions tailored for the UK market.
+          </p>
         </div>
-      </section>
+      </div>
 
       {/* Services Grid */}
-      <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col"
+            >
+              <div className="bg-indigo-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <service.icon className="h-7 w-7 text-indigo-600" />
+              </div>
+              
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">{service.title}</h3>
+              <div className="text-indigo-600 font-semibold mb-4">{service.price}</div>
+              <p className="text-slate-600 mb-6 flex-grow">{service.description}</p>
+              
+              <div className="space-y-4 mb-8">
+                <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">Key Benefits</div>
+                <ul className="space-y-2">
+                  {service.benefits.map((benefit, i) => (
+                    <li key={i} className="flex items-center text-sm text-slate-700">
+                      <Check className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="pt-6 border-t border-slate-100 mt-auto">
+                <div className="text-xs text-slate-500 mb-1">Ideal for:</div>
+                <div className="text-sm font-medium text-slate-900 mb-4">{service.audience}</div>
+                <Link 
+                  to="/contact" 
+                  className="block w-full text-center py-3 px-4 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium text-sm"
+                >
+                  Enquire Now
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Process Section */}
+      <div className="bg-white py-24 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-16">
-            {services.map((service, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-50 text-primary-600 mb-6">
-                    <service.icon className="w-8 h-8" />
-                  </div>
-                  <h2 className="text-3xl font-display font-bold mb-4">{service.title}</h2>
-                  <p className="text-lg text-slate-600 mb-6">{service.overview}</p>
-                  
-                  <div className="space-y-6 mb-8">
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Ideal For</h4>
-                      <p className="text-slate-600">{service.target}</p>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Key Benefits</h4>
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {service.benefits.map((b, i) => (
-                          <li key={i} className="flex items-center gap-2 text-slate-600">
-                            <Shield className="w-4 h-4 text-primary-500" />
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div>
-                      <span className="text-sm text-slate-500">Starting from</span>
-                      <div className="text-2xl font-bold text-slate-900">{service.startingPrice}</div>
-                    </div>
-                    <Link to="/contact" className="btn-primary">
-                      Enquire Now
-                    </Link>
-                  </div>
-                </div>
-
-                <div className={`relative ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className="aspect-video rounded-3xl overflow-hidden shadow-lg">
-                    <img 
-                      src={`https://picsum.photos/seed/service-${idx}/800/600`} 
-                      className="w-full h-full object-cover" 
-                      alt={service.title}
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <div className="absolute -bottom-6 -right-6 bg-white p-8 rounded-2xl shadow-xl border border-slate-100 hidden md:block max-w-xs">
-                    <h4 className="font-bold mb-4 flex items-center gap-2">
-                      <ArrowRight className="w-4 h-4 text-primary-600" />
-                      Our Process
-                    </h4>
-                    <div className="space-y-3">
-                      {service.process.map((step, i) => (
-                        <div key={i} className="flex items-center gap-3">
-                          <span className="w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs flex items-center justify-center font-bold">
-                            {i + 1}
-                          </span>
-                          <span className="text-slate-600 text-sm">{step}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-display font-bold text-slate-900">How We Work</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              { step: "01", title: "Audit", desc: "We analyse your current infrastructure." },
+              { step: "02", title: "Strategy", desc: "We design a roadmap tailored to your goals." },
+              { step: "03", title: "Implement", desc: "Seamless deployment with minimal disruption." },
+              { step: "04", title: "Support", desc: "Ongoing monitoring and UK-based helpdesk." }
+            ].map((item, i) => (
+              <div key={i} className="relative">
+                <div className="text-6xl font-display font-bold text-slate-100 mb-4">{item.step}</div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600">{item.desc}</p>
+              </div>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 bg-slate-950 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Not Sure What You Need?</h2>
-          <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
-            Our consultants are here to help you navigate the complex technology landscape. 
-            Book a free, no-obligation discovery call today.
-          </p>
-          <Link to="/contact" className="btn-primary px-12">
-            Book Discovery Call
-          </Link>
-        </div>
-      </section>
+      </div>
     </div>
   );
 }

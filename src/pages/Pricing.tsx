@@ -1,161 +1,99 @@
-import { Check, X } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const plans = [
-  {
-    name: "Foundation",
-    price: "£25",
-    period: "per user/month",
-    description: "Essential support for small teams needing reliable helpdesk assistance.",
-    features: [
-      "Unlimited Remote Support",
-      "9:00 - 17:30 Helpdesk",
-      "Antivirus & Patch Management",
-      "Basic Microsoft 365 Support",
-      "Next Business Day Response",
-    ],
-    notIncluded: [
-      "On-site Support",
-      "Advanced Cybersecurity",
-      "Strategic IT Roadmap",
-    ],
-    idealFor: "Startups and small businesses with up to 10 employees.",
-    support: "Remote Only",
-  },
-  {
-    name: "Professional",
-    price: "£45",
-    period: "per user/month",
-    description: "Our most popular plan, providing comprehensive managed services.",
-    features: [
-      "Everything in Foundation",
-      "Inclusive On-site Support",
-      "Advanced Threat Protection",
-      "Cloud Backup Management",
-      "4-Hour Response SLA",
-      "Quarterly Strategy Reviews",
-    ],
-    notIncluded: [
-      "24/7 Monitoring",
-    ],
-    idealFor: "Growing SMEs needing a proactive IT partner.",
-    support: "Remote & On-site",
-    featured: true,
-  },
-  {
-    name: "Enterprise",
-    price: "£75",
-    period: "per user/month",
-    description: "High-performance IT management for demanding business environments.",
-    features: [
-      "Everything in Professional",
-      "24/7 Critical Monitoring",
-      "Dedicated Account Manager",
-      "Cyber Essentials Certification",
-      "1-Hour Critical Response",
-      "Full IT Roadmap & Budgeting",
-      "vCIO Services",
-    ],
-    idealFor: "Established firms requiring maximum uptime and security.",
-    support: "Priority 24/7",
-  },
-];
 
 export default function Pricing() {
   return (
-    <div className="pt-20">
-      <section className="bg-slate-50 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Transparent, Value-Driven Pricing</h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Choose a plan that fits your business needs. All prices are in GBP and exclude VAT.
+    <div className="bg-slate-50 min-h-screen py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">Transparent Pricing</h1>
+          <p className="text-xl text-slate-600">
+            Simple, predictable monthly pricing for your IT support. No hidden fees, no surprises.
           </p>
         </div>
-      </section>
 
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8">
-            {plans.map((plan, i) => (
-              <div 
-                key={i}
-                className={`relative p-8 rounded-3xl border transition-all ${
-                  plan.featured 
-                    ? 'border-primary-600 shadow-2xl scale-105 z-10 bg-white' 
-                    : 'border-slate-200 shadow-sm bg-slate-50'
-                }`}
-              >
-                {plan.featured && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
-                    Most Popular
-                  </div>
-                )}
-                
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                  <p className="text-slate-500 text-sm mb-6">{plan.description}</p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-slate-900">{plan.price}</span>
-                    <span className="text-slate-500">{plan.period}</span>
-                  </div>
-                  <div className="mt-2 text-xs text-slate-400 italic">* Prices exclude VAT at 20%</div>
-                </div>
-
-                <div className="space-y-4 mb-8">
-                  <div className="text-sm font-bold text-slate-900 uppercase tracking-wider">What's Included</div>
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
-                        <Check className="w-5 h-5 text-emerald-500 shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                    {plan.notIncluded?.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-400">
-                        <X className="w-5 h-5 text-slate-300 shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="pt-6 border-t border-slate-200 mb-8">
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Ideal For</div>
-                  <p className="text-sm text-slate-600">{plan.idealFor}</p>
-                </div>
-
-                <Link 
-                  to="/contact" 
-                  className={`w-full py-3 rounded-xl font-bold text-center block transition-colors ${
-                    plan.featured 
-                      ? 'bg-primary-600 text-white hover:bg-primary-700' 
-                      : 'bg-slate-900 text-white hover:bg-slate-800'
-                  }`}
-                >
-                  Get Started
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-12 rounded-3xl shadow-sm border border-slate-200">
-            <h2 className="text-3xl font-display font-bold mb-6 text-center">Need a Custom Solution?</h2>
-            <p className="text-slate-600 text-center mb-10">
-              For larger enterprises or specific project-based requirements, we offer bespoke pricing 
-              models tailored to your unique infrastructure.
-            </p>
-            <div className="flex justify-center">
-              <Link to="/contact" className="btn-secondary px-12">
-                Request a Custom Quote
-              </Link>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Starter Plan */}
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 flex flex-col">
+            <h3 className="text-xl font-bold text-slate-900 mb-2">Starter</h3>
+            <div className="text-sm text-slate-500 mb-6">Essential support for small teams</div>
+            <div className="mb-6">
+              <span className="text-4xl font-bold text-slate-900">£35</span>
+              <span className="text-slate-500">/user/mo</span>
             </div>
+            <p className="text-xs text-slate-400 mb-8">+ VAT. Billed monthly.</p>
+            
+            <ul className="space-y-4 mb-8 flex-grow">
+              {['Remote Helpdesk (9am-5pm)', 'Basic Antivirus', 'Patch Management', 'Microsoft 365 Support', 'Quarterly Reports'].map((feature) => (
+                <li key={feature} className="flex items-start text-sm text-slate-700">
+                  <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            
+            <Link to="/contact" className="w-full block text-center py-3 px-4 rounded-lg border border-slate-200 text-slate-700 font-medium hover:bg-slate-50 transition-colors">
+              Choose Starter
+            </Link>
+          </div>
+
+          {/* Growth Plan */}
+          <div className="bg-slate-900 rounded-2xl shadow-xl border border-slate-800 p-8 flex flex-col relative transform md:-translate-y-4">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-500 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide">
+              MOST POPULAR
+            </div>
+            <h3 className="text-xl font-bold text-white mb-2">Growth</h3>
+            <div className="text-sm text-slate-400 mb-6">Full protection for growing firms</div>
+            <div className="mb-6">
+              <span className="text-4xl font-bold text-white">£55</span>
+              <span className="text-slate-400">/user/mo</span>
+            </div>
+            <p className="text-xs text-slate-500 mb-8">+ VAT. Billed monthly.</p>
+            
+            <ul className="space-y-4 mb-8 flex-grow">
+              {['Unlimited Remote Support', 'Advanced Endpoint Security', '24/7 Monitoring', 'Cloud Backup (1TB)', 'Priority SLA', 'On-site Support (Discounted)'].map((feature) => (
+                <li key={feature} className="flex items-start text-sm text-slate-300">
+                  <Check className="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            
+            <Link to="/contact" className="w-full block text-center py-3 px-4 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-500/25">
+              Choose Growth
+            </Link>
+          </div>
+
+          {/* Enterprise Plan */}
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 flex flex-col">
+            <h3 className="text-xl font-bold text-slate-900 mb-2">Enterprise</h3>
+            <div className="text-sm text-slate-500 mb-6">Strategic partnership & compliance</div>
+            <div className="mb-6">
+              <span className="text-4xl font-bold text-slate-900">£85</span>
+              <span className="text-slate-500">/user/mo</span>
+            </div>
+            <p className="text-xs text-slate-400 mb-8">+ VAT. Billed monthly.</p>
+            
+            <ul className="space-y-4 mb-8 flex-grow">
+              {['Everything in Growth', 'Dedicated Account Manager', 'Quarterly Strategy Reviews', 'Cyber Essentials Certification', 'Unlimited On-site Support', 'Disaster Recovery Planning'].map((feature) => (
+                <li key={feature} className="flex items-start text-sm text-slate-700">
+                  <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            
+            <Link to="/contact" className="w-full block text-center py-3 px-4 rounded-lg border border-slate-200 text-slate-700 font-medium hover:bg-slate-50 transition-colors">
+              Contact Sales
+            </Link>
           </div>
         </div>
-      </section>
+
+        <div className="mt-16 text-center text-slate-500 text-sm">
+          <p>All prices exclude VAT at the prevailing rate. Minimum contract term of 12 months applies.</p>
+          <p className="mt-2">Need a custom project quote? <Link to="/contact" className="text-indigo-600 underline">Contact us</Link>.</p>
+        </div>
+      </div>
     </div>
   );
 }
