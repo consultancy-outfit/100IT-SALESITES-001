@@ -1,5 +1,9 @@
 {
-  "name": "Greater Manchester Specialist Support Service",
-  "description": "Professional IT services and support for businesses across the UK, specializing in managed IT, cybersecurity, and cloud solutions.",
-  "requestFramePermissions": []
+  "name": "Thurrock Essex IT Services",
+  "description": "Premium UK-based IT services, managed infrastructure, and cyber-security solutions for British businesses.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
 }
