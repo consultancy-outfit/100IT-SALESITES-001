@@ -2,7 +2,6 @@ export interface Service {
   id: string;
   title: string;
   description: string;
-  overview: string;
   targetAudience: string;
   process: string[];
   benefits: string[];
@@ -22,14 +21,12 @@ export interface PricingPlan {
 export interface Testimonial {
   name: string;
   role: string;
-  company: string;
   content: string;
 }
 
 export interface CaseStudy {
   title: string;
   client: string;
-  challenge: string;
-  solution: string;
   result: string;
+  description: string;
 }
