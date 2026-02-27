@@ -1,166 +1,113 @@
-import { motion } from 'motion/react';
-import { Shield, Cloud, Headphones, Lock, Network, Database, CheckCircle2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { motion } from "framer-motion";
+import { SERVICES } from "../constants";
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const services = [
-  {
-    icon: <Headphones className="w-10 h-10" />,
-    title: "24/7 Managed IT Support",
-    overview: "Comprehensive helpdesk support for care staff, ensuring technology never gets in the way of care delivery.",
-    target: "Small to large care providers needing reliable, round-the-clock technical assistance.",
-    process: ["Audit", "Onboarding", "24/7 Monitoring", "Proactive Maintenance"],
-    benefits: ["Reduced downtime", "Fixed monthly costs", "Expert UK-based support"],
-    price: "£25"
-  },
-  {
-    icon: <Lock className="w-10 h-10" />,
-    title: "Cybersecurity & GDPR",
-    overview: "Advanced protection for sensitive resident data, including encryption, MFA, and threat detection.",
-    target: "Providers handling sensitive medical and personal data requiring high-level compliance.",
-    process: ["Risk Assessment", "Implementation", "Staff Training", "Continuous Monitoring"],
-    benefits: ["Data breach prevention", "Regulatory compliance", "Peace of mind"],
-    price: "£45"
-  },
-  {
-    icon: <Cloud className="w-10 h-10" />,
-    title: "Cloud Migration & Hosting",
-    overview: "Transition your legacy systems to secure, scalable UK-based cloud environments.",
-    target: "Organisations looking to move away from on-premise servers to flexible remote working.",
-    process: ["Strategy", "Data Migration", "Testing", "Go-Live Support"],
-    benefits: ["Access from anywhere", "Automatic backups", "Scalability"],
-    price: "£150"
-  },
-  {
-    icon: <Network className="w-10 h-10" />,
-    title: "Network Infrastructure",
-    overview: "Robust Wi-Fi and wired networking designed for multi-site care facilities and residential homes.",
-    target: "New builds or existing sites with poor connectivity affecting staff or resident experience.",
-    process: ["Site Survey", "Design", "Installation", "Certification"],
-    benefits: ["Seamless roaming", "High-speed access", "Secure guest networks"],
-    price: "£499"
-  },
-  {
-    icon: <Database className="w-10 h-10" />,
-    title: "Disaster Recovery",
-    overview: "Automated off-site backups and rapid recovery plans to ensure business continuity.",
-    target: "Any provider for whom data loss would be catastrophic for operations.",
-    process: ["BIA Analysis", "Backup Setup", "Recovery Testing", "Annual Review"],
-    benefits: ["Zero data loss", "Fast restoration", "Insurance compliance"],
-    price: "£85"
-  },
-  {
-    icon: <Shield className="w-10 h-10" />,
-    title: "Compliance Auditing",
-    overview: "Regular IT health checks and CQC-ready technology compliance reports.",
-    target: "Management teams preparing for inspections or seeking ISO certifications.",
-    process: ["Documentation Review", "Technical Scan", "Gap Analysis", "Report Delivery"],
-    benefits: ["Audit readiness", "Risk identification", "Strategic roadmap"],
-    price: "£750"
-  }
-];
-
-export default function Services() {
+export const Services = () => {
   return (
-    <div className="pt-20">
-      <section className="bg-slate-50 py-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-display font-bold mb-6"
-          >
-            Specialised IT Services
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-slate-600 max-w-2xl mx-auto"
-          >
-            We provide a full suite of technology solutions designed specifically for the UK healthcare and supported living landscape.
-          </motion.p>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="bg-white"
+    >
+      {/* Header */}
+      <section className="bg-slate-900 py-24 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl">Our IT Services</h1>
+          <p className="mt-6 text-xl text-slate-400 max-w-3xl mx-auto">
+            Tailored technology solutions designed to drive efficiency, security, and growth for your UK business.
+          </p>
         </div>
       </section>
 
-      <section className="py-24 px-6">
-        <div className="max-w-7xl mx-auto space-y-24">
-          {services.map((service, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}
-            >
-              <div className="flex-1 space-y-6">
-                <div className="inline-flex p-4 rounded-2xl bg-brand-50 text-brand-600 shadow-sm">
-                  {service.icon}
-                </div>
-                <h2 className="text-3xl font-display font-bold">{service.title}</h2>
-                <p className="text-slate-600 leading-relaxed">{service.overview}</p>
-                
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-bold text-sm uppercase text-slate-400 mb-3">Target Audience</h4>
-                    <p className="text-sm text-slate-600">{service.target}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-sm uppercase text-slate-400 mb-3">Key Benefits</h4>
-                    <ul className="space-y-2">
-                      {service.benefits.map((b, j) => (
-                        <li key={j} className="flex items-center gap-2 text-sm text-slate-600">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
+      {/* Services List */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-24">
+            {SERVICES.map((service, index) => (
+              <div
+                key={service.id}
+                className={`flex flex-col lg:items-center gap-12 ${
+                  index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
+                }`}
+              >
+                <div className="lg:w-1/2">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-video">
+                    <img
+                      src={`https://picsum.photos/seed/${service.id}/800/600`}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-indigo-600/10" />
                   </div>
                 </div>
+                <div className="lg:w-1/2 space-y-6">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-indigo-50 text-indigo-600">
+                    Starting from {service.price}
+                  </div>
+                  <h2 className="text-3xl font-bold text-slate-900">{service.title}</h2>
+                  <p className="text-lg text-slate-600 leading-relaxed">{service.description}</p>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                    <div className="space-y-3">
+                      <h4 className="font-bold text-slate-900 text-sm uppercase tracking-wider">Key Benefits</h4>
+                      <ul className="space-y-2">
+                        {service.benefits.map((benefit, i) => (
+                          <li key={i} className="flex items-center text-slate-600 text-sm">
+                            <CheckCircle2 size={16} className="text-emerald-500 mr-2 shrink-0" />
+                            {benefit}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="space-y-3">
+                      <h4 className="font-bold text-slate-900 text-sm uppercase tracking-wider">Our Process</h4>
+                      <ul className="space-y-2">
+                        {service.process.map((step, i) => (
+                          <li key={i} className="flex items-center text-slate-600 text-sm">
+                            <span className="w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-[10px] font-bold mr-2 shrink-0">
+                              {i + 1}
+                            </span>
+                            {step}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
 
-                <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
-                  <div>
-                    <span className="text-slate-400 text-sm">Starting from</span>
-                    <div className="text-2xl font-bold text-slate-900">{service.price}<span className="text-sm font-normal text-slate-500"> / month</span></div>
+                  <div className="pt-6">
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center text-indigo-600 font-bold hover:translate-x-1 transition-transform"
+                    >
+                      Enquire about this service <ArrowRight size={18} className="ml-2" />
+                    </Link>
                   </div>
-                  <Link to="/contact" className="bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition-colors">
-                    Enquire Now
-                  </Link>
                 </div>
               </div>
-
-              <div className="flex-1 w-full">
-                <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100 relative overflow-hidden">
-                  <h4 className="font-bold mb-6">Our Process</h4>
-                  <div className="space-y-4 relative">
-                    {service.process.map((step, k) => (
-                      <div key={k} className="flex items-center gap-4 relative z-10">
-                        <div className="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-xs">
-                          {k + 1}
-                        </div>
-                        <span className="font-medium text-slate-700">{step}</span>
-                      </div>
-                    ))}
-                    <div className="absolute top-4 left-4 w-0.5 h-[calc(100%-2rem)] bg-brand-100 z-0" />
-                  </div>
-                  <div className="absolute -bottom-10 -right-10 opacity-5">
-                    {service.icon}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-slate-900 text-white text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Need a Custom Solution?</h2>
-          <p className="text-slate-400 mb-10">Every care provider is different. We offer bespoke IT consultancy to match your specific operational needs and budget.</p>
-          <Link to="/contact" className="inline-block bg-brand-600 text-white px-10 py-4 rounded-full font-bold hover:bg-brand-700 transition-all">
-            Schedule a Consultation
+      {/* CTA */}
+      <section className="bg-slate-50 py-24">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Not sure what you need?</h2>
+          <p className="text-lg text-slate-600 mb-10">
+            Our experts can provide a comprehensive IT audit to identify gaps in your current infrastructure and recommend the best path forward.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center px-10 py-4 border border-transparent text-lg font-bold rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200"
+          >
+            Get a Free Consultation
           </Link>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
-}
+};

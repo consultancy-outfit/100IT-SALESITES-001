@@ -1,225 +1,226 @@
-import { motion } from 'motion/react';
-import { ArrowRight, ShieldCheck, Zap, Users, BarChart3, CheckCircle2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { motion } from "framer-motion";
+import { ChevronRight, Shield, Zap, Globe, Users, BarChart3, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
-export default function Home() {
-  return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-slate-50 py-24 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+const Hero = () => (
+  <section className="relative overflow-hidden bg-white pt-16 pb-24 lg:pt-32 lg:pb-40">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+        <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-6">
-              <ShieldCheck className="w-4 h-4" />
-              Trusted UK IT Partners
-            </div>
-            <h1 className="text-5xl md:text-6xl font-display font-bold text-slate-900 leading-[1.1] mb-6">
-              Empowering Care with <span className="text-brand-600">Intelligent IT</span>
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-indigo-50 text-indigo-600 mb-6">
+              Premier IT Services in Luton & Dunstable
+            </span>
+            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl leading-tight">
+              Powering Your Business with <span className="text-indigo-600">Smarter Technology</span>
             </h1>
-            <p className="text-lg text-slate-600 mb-8 max-w-lg leading-relaxed">
-              We provide specialized IT infrastructure and managed services tailored for the UK's supported living and healthcare sectors. Secure, reliable, and compliant.
+            <p className="mt-6 text-lg text-slate-600 leading-relaxed">
+              We provide comprehensive managed IT support, cybersecurity, and cloud solutions tailored for UK businesses. Let us handle the tech while you focus on growth.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4">
               <Link
                 to="/services"
-                className="bg-brand-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-brand-700 transition-all shadow-lg hover:shadow-xl flex items-center gap-2 group"
+                className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 group"
               >
                 Explore Services
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </Link>
               <Link
                 to="/contact"
-                className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-full font-semibold hover:bg-slate-50 transition-all shadow-sm"
+                className="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-base font-bold rounded-full text-slate-700 bg-white hover:bg-slate-50 transition-all"
               >
-                Contact Us
+                Get a Free Audit
               </Link>
             </div>
           </motion.div>
-          
+        </div>
+        <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative mx-auto w-full rounded-3xl shadow-2xl overflow-hidden"
           >
-            <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://picsum.photos/seed/it-office/800/800" 
-                alt="Modern IT Office" 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 glass p-6 rounded-2xl shadow-xl max-w-xs">
-              <div className="flex items-center gap-4 mb-3">
-                <div className="bg-emerald-100 p-2 rounded-lg">
-                  <BarChart3 className="w-6 h-6 text-emerald-600" />
-                </div>
-                <span className="font-bold text-slate-900">99.9% Uptime</span>
-              </div>
-              <p className="text-sm text-slate-500">Guaranteed service levels for critical care environments.</p>
-            </div>
+            <img
+              src="https://picsum.photos/seed/it-office/800/600"
+              alt="Modern IT Office"
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-indigo-600/10 mix-blend-multiply" />
           </motion.div>
         </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Why Choose Teesside Supported Living?</h2>
-            <p className="text-slate-600">We understand the unique pressures of the care sector, where technology must be invisible yet infallible.</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <ShieldCheck className="w-8 h-8 text-brand-600" />,
-                title: "GDPR & Care Compliance",
-                desc: "Full alignment with UK healthcare data standards and CQC technology requirements."
-              },
-              {
-                icon: <Zap className="w-8 h-8 text-brand-600" />,
-                title: "Rapid Response Support",
-                desc: "UK-based helpdesk providing 24/7 support for your critical frontline staff."
-              },
-              {
-                icon: <Users className="w-8 h-8 text-brand-600" />,
-                title: "Sector Specialists",
-                desc: "Over 15 years experience specifically serving the supported living and social care industry."
-              }
-            ].map((benefit, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-xl hover:border-brand-100 transition-all group"
-              >
-                <div className="mb-6 p-3 bg-white rounded-xl shadow-sm w-fit group-hover:scale-110 transition-transform">
-                  {benefit.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{benefit.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies */}
-      <section className="py-24 px-6 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Measurable Impact</h2>
-              <p className="text-slate-400">Real results delivered to our partners across the North East and beyond.</p>
-            </div>
-            <Link to="/services" className="text-brand-400 font-semibold flex items-center gap-2 hover:text-brand-300">
-              View all services <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-slate-800/50 rounded-3xl p-8 border border-slate-700">
-              <div className="text-brand-400 font-bold text-sm uppercase tracking-widest mb-4">Case Study: North East Care Group</div>
-              <h3 className="text-2xl font-bold mb-4">Infrastructure Modernisation</h3>
-              <p className="text-slate-400 mb-6">We overhauled the legacy network of a 12-site provider, implementing secure cloud sync and VoIP.</p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-slate-900/50 p-4 rounded-xl">
-                  <div className="text-2xl font-bold text-white">£45,000</div>
-                  <div className="text-xs text-slate-500 uppercase">Annual Savings</div>
-                </div>
-                <div className="bg-slate-900/50 p-4 rounded-xl">
-                  <div className="text-2xl font-bold text-white">40%</div>
-                  <div className="text-xs text-slate-500 uppercase">Efficiency Gain</div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-slate-800/50 rounded-3xl p-8 border border-slate-700">
-              <div className="text-brand-400 font-bold text-sm uppercase tracking-widest mb-4">Case Study: Tees Valley Housing</div>
-              <h3 className="text-2xl font-bold mb-4">Cybersecurity Fortification</h3>
-              <p className="text-slate-400 mb-6">Implemented multi-layer security and staff training to protect sensitive resident data.</p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-slate-900/50 p-4 rounded-xl">
-                  <div className="text-2xl font-bold text-white">0</div>
-                  <div className="text-xs text-slate-500 uppercase">Security Breaches</div>
-                </div>
-                <div className="bg-slate-900/50 p-4 rounded-xl">
-                  <div className="text-2xl font-bold text-white">£12,000</div>
-                  <div className="text-xs text-slate-500 uppercase">Insurance Reduction</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-16">What Our Clients Say</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sarah Jenkins",
-                role: "Operations Director, Haven Care",
-                quote: "Teesside Supported Living transformed our IT from a daily headache into a strategic asset. Their understanding of care compliance is unmatched."
-              },
-              {
-                name: "David Thompson",
-                role: "CEO, Tees Valley Housing",
-                quote: "The transition to their managed services was seamless. We now have 24/7 peace of mind knowing our systems and data are secure."
-              },
-              {
-                name: "Alistair Cook",
-                role: "IT Manager, North East Social Services",
-                quote: "Professional, responsive, and truly local. They feel like an extension of our own team rather than just a third-party vendor."
-              }
-            ].map((t, i) => (
-              <div key={i} className="p-8 rounded-2xl bg-slate-50 border border-slate-100 italic relative">
-                <div className="text-brand-600 text-4xl absolute top-4 left-4 opacity-20">"</div>
-                <p className="text-slate-700 mb-6 relative z-10">{t.quote}</p>
-                <div className="flex items-center gap-4 not-italic">
-                  <div className="w-10 h-10 rounded-full bg-brand-200 flex items-center justify-center font-bold text-brand-700">
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <div className="font-bold text-slate-900">{t.name}</div>
-                    <div className="text-xs text-slate-500">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto bg-brand-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-900/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
-          
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 relative z-10">Ready to Modernise Your Care IT?</h2>
-          <p className="text-brand-100 text-lg mb-10 max-w-2xl mx-auto relative z-10">
-            Join dozens of UK care providers who trust us with their digital infrastructure. Let's build a more efficient future together.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 relative z-10">
-            <Link to="/contact" className="bg-white text-brand-600 px-10 py-4 rounded-full font-bold hover:bg-brand-50 transition-all shadow-lg">
-              Book a Free Audit
-            </Link>
-            <Link to="/services" className="bg-brand-700 text-white px-10 py-4 rounded-full font-bold hover:bg-brand-800 transition-all border border-brand-500">
-              View Services
-            </Link>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
+  </section>
+);
+
+const Stats = () => (
+  <section className="bg-slate-900 py-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        {[
+          { label: "Clients Supported", value: "250+" },
+          { label: "Uptime Guarantee", value: "99.9%" },
+          { label: "Response Time", value: "< 15m" },
+          { label: "Projects Delivered", value: "1.2k" },
+        ].map((stat, i) => (
+          <div key={i} className="space-y-2">
+            <p className="text-3xl md:text-4xl font-bold text-white">{stat.value}</p>
+            <p className="text-sm text-slate-400 uppercase tracking-wider font-semibold">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const Benefits = () => (
+  <section className="py-24 bg-slate-50">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Why Choose Team24?</h2>
+        <p className="mt-4 text-lg text-slate-600">
+          We combine local expertise with world-class technology to deliver IT services that actually make a difference.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            icon: <Shield className="text-indigo-600" size={32} />,
+            title: "Security First",
+            desc: "Every solution we build has security baked in from the ground up, protecting your data and reputation.",
+          },
+          {
+            icon: <Zap className="text-indigo-600" size={32} />,
+            title: "Proactive Support",
+            desc: "We don't just fix things when they break; we monitor your systems 24/7 to prevent issues before they occur.",
+          },
+          {
+            icon: <Globe className="text-indigo-600" size={32} />,
+            title: "Local Expertise",
+            desc: "Based in Luton, we understand the local business landscape and can be on-site whenever you need us.",
+          },
+        ].map((benefit, i) => (
+          <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+            <div className="mb-6">{benefit.icon}</div>
+            <h3 className="text-xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
+            <p className="text-slate-600 leading-relaxed">{benefit.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const CaseStudies = () => (
+  <section className="py-24 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Success Stories</h2>
+          <p className="mt-4 text-lg text-slate-600">
+            Real results for real UK businesses. See how we've helped our clients save money and improve efficiency.
+          </p>
+        </div>
+        <Link to="/services" className="text-indigo-600 font-semibold flex items-center hover:underline">
+          View all services <ChevronRight size={20} />
+        </Link>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {[
+          {
+            company: "Luton Logistics Ltd",
+            result: "Saved £12,000/year",
+            desc: "Optimised cloud infrastructure and consolidated legacy servers, resulting in significant annual savings and 40% faster data access.",
+            image: "https://picsum.photos/seed/logistics/600/400",
+          },
+          {
+            company: "Dunstable Legal Associates",
+            result: "Zero Downtime in 2 Years",
+            desc: "Implemented a robust disaster recovery plan and 24/7 managed support, ensuring continuous operation for critical legal services.",
+            image: "https://picsum.photos/seed/legal/600/400",
+          },
+        ].map((study, i) => (
+          <div key={i} className="group cursor-pointer">
+            <div className="relative h-64 rounded-2xl overflow-hidden mb-6">
+              <img src={study.image} alt={study.company} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+              <div className="absolute top-4 left-4 bg-white px-4 py-2 rounded-full text-sm font-bold text-indigo-600 shadow-lg">
+                {study.result}
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-2">{study.company}</h3>
+            <p className="text-slate-600 leading-relaxed">{study.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const Testimonials = () => (
+  <section className="py-24 bg-slate-50">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 className="text-3xl font-bold text-slate-900 text-center mb-16">What Our Clients Say</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { name: "James Harrison", role: "Director, Harrison & Co", text: "Team24 transformed our IT from a constant headache into a strategic asset. Their response times are incredible." },
+          { name: "Sarah Miller", role: "Operations Manager, Bedford Tech", text: "The cybersecurity audit they performed was eye-opening. We feel much more secure knowing they are monitoring our systems." },
+          { name: "David Thompson", role: "Founder, Luton Creative", text: "Professional, knowledgeable, and local. It's great to have an IT partner who actually understands our business needs." },
+        ].map((t, i) => (
+          <div key={i} className="bg-white p-8 rounded-2xl border border-slate-100 italic text-slate-600 relative">
+            <p className="mb-6">"{t.text}"</p>
+            <div className="flex items-center space-x-3 not-italic">
+              <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold">
+                {t.name[0]}
+              </div>
+              <div>
+                <p className="font-bold text-slate-900 text-sm">{t.name}</p>
+                <p className="text-xs text-slate-500">{t.role}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const CTA = () => (
+  <section className="py-20 bg-indigo-600">
+    <div className="max-w-4xl mx-auto px-4 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Modernise Your IT?</h2>
+      <p className="text-indigo-100 text-lg mb-10">
+        Join hundreds of UK businesses that trust Team24 for their technology needs. Get a free, no-obligation IT audit today.
+      </p>
+      <Link
+        to="/contact"
+        className="inline-flex items-center justify-center px-10 py-4 border border-transparent text-lg font-bold rounded-full text-indigo-600 bg-white hover:bg-indigo-50 transition-all shadow-2xl"
+      >
+        Book Your Free Audit
+      </Link>
+    </div>
+  </section>
+);
+
+export const Home = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <Hero />
+      <Stats />
+      <Benefits />
+      <CaseStudies />
+      <Testimonials />
+      <CTA />
+    </motion.div>
   );
-}
+};
