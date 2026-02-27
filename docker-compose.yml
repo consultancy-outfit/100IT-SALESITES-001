@@ -1,9 +1,9 @@
 services:
-  HCF-THE-SPRINGS:
+  hcf-the-springs:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: HCF-THE-SPRINGS-salesite
+    container_name: hcf-the-springs-salesite
     restart: unless-stopped
     ports:
       - "9024:80"
