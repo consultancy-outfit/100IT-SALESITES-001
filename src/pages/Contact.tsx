@@ -1,6 +1,14 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, ShieldCheck } from 'lucide-react';
+
+const COMPANY_DETAILS = {
+  name: "Support services for disabled children",
+  address: "124 City Road, London, EC1V 2NX, United Kingdom",
+  phone: "+44 20 7946 0000",
+  email: "contact@supportservicesfordisabledchildren.co.uk",
+  hours: "Monday - Friday: 09:00 - 17:30"
+};
 
 export default function Contact() {
   const [submitted, setSubmitted] = React.useState(false);
@@ -12,13 +20,13 @@ export default function Contact() {
 
   return (
     <div className="bg-white">
-      <section className="py-20 bg-zinc-50 border-b border-zinc-200">
+      {/* Hero */}
+      <section className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold text-zinc-900 sm:text-5xl mb-6">Get in Touch</h1>
-            <p className="text-xl text-zinc-600 leading-relaxed">
-              Have a question about our services or need immediate IT assistance? 
-              Our UK-based team is ready to help your business thrive.
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6">Get in Touch</h1>
+            <p className="text-xl text-slate-600">
+              Have a question or ready to upgrade your IT? Our UK-based team is here to help.
             </p>
           </div>
         </div>
@@ -26,157 +34,151 @@ export default function Contact() {
 
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Form */}
+          <div className="grid lg:grid-cols-2 gap-20">
+            {/* Contact Info */}
             <div>
+              <h2 className="text-3xl font-bold mb-8">Contact Details</h2>
+              <div className="space-y-8">
+                <div className="flex items-start space-x-6">
+                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+                    <MapPin className="text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-1">Registered Office</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">{COMPANY_DETAILS.address}</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-6">
+                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+                    <Phone className="text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-1">Phone Number</h4>
+                    <p className="text-slate-600 text-sm">{COMPANY_DETAILS.phone}</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-6">
+                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+                    <Mail className="text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-1">Email Address</h4>
+                    <p className="text-slate-600 text-sm break-all">{COMPANY_DETAILS.email}</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-6">
+                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+                    <Clock className="text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-1">Business Hours</h4>
+                    <p className="text-slate-600 text-sm">{COMPANY_DETAILS.hours}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Map Placeholder */}
+              <div className="mt-12 aspect-video bg-slate-100 rounded-3xl border border-slate-200 flex items-center justify-center overflow-hidden relative">
+                <img 
+                  src="https://picsum.photos/seed/london-map/800/450?grayscale" 
+                  alt="Map Location" 
+                  className="w-full h-full object-cover opacity-50"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                    <span className="text-sm font-bold">Our London HQ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="bg-slate-50 p-8 lg:p-12 rounded-3xl border border-slate-200">
               {submitted ? (
-                <motion.div
+                <motion.div 
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="p-12 rounded-3xl bg-emerald-50 border border-emerald-100 text-center"
+                  className="text-center py-12"
                 >
-                  <div className="w-16 h-16 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Send className="w-8 h-8" />
+                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <ShieldCheck className="text-green-600" size={40} />
                   </div>
-                  <h2 className="text-2xl font-bold text-emerald-900 mb-4">Message Sent!</h2>
-                  <p className="text-emerald-700">
-                    Thank you for reaching out. One of our IT specialists will contact you within 
-                    the next 2 business hours.
-                  </p>
-                  <button
+                  <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
+                  <p className="text-slate-600">Thank you for reaching out. A member of our UK team will contact you within 2 business hours.</p>
+                  <button 
                     onClick={() => setSubmitted(false)}
-                    className="mt-8 text-emerald-600 font-bold hover:underline"
+                    className="mt-8 text-accent font-bold hover:underline"
                   >
                     Send another message
                   </button>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-bold text-zinc-900 mb-2">Full Name</label>
-                      <input
-                        type="text"
-                        id="name"
+                      <label className="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
+                      <input 
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
-                        placeholder="John Smith"
+                        type="text" 
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+                        placeholder="John Doe"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-bold text-zinc-900 mb-2">Business Email</label>
-                      <input
-                        type="email"
-                        id="email"
+                      <label className="block text-sm font-bold text-slate-700 mb-2">Company Name</label>
+                      <input 
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
-                        placeholder="john@company.co.uk"
+                        type="text" 
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+                        placeholder="Acme Ltd"
                       />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="company" className="block text-sm font-bold text-zinc-900 mb-2">Company Name</label>
-                    <input
-                      type="text"
-                      id="company"
-                      className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
-                      placeholder="Your Business Ltd"
+                    <label className="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
+                    <input 
+                      required
+                      type="email" 
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+                      placeholder="john@example.co.uk"
                     />
                   </div>
                   <div>
-                    <label htmlFor="service" className="block text-sm font-bold text-zinc-900 mb-2">Interested Service</label>
-                    <select
-                      id="service"
-                      className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all bg-white"
-                    >
+                    <label className="block text-sm font-bold text-slate-700 mb-2">Service Interested In</label>
+                    <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none bg-white">
                       <option>Managed IT Support</option>
                       <option>Cybersecurity</option>
                       <option>Cloud Migration</option>
-                      <option>Custom Software</option>
+                      <option>IT Audit</option>
                       <option>Other</option>
                     </select>
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-bold text-zinc-900 mb-2">Message</label>
-                    <textarea
-                      id="message"
-                      rows={5}
+                    <label className="block text-sm font-bold text-slate-700 mb-2">Message</label>
+                    <textarea 
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
                       placeholder="How can we help you?"
                     ></textarea>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <input type="checkbox" id="consent" required className="mt-1.5 h-4 w-4 rounded border-zinc-300 text-indigo-600 focus:ring-indigo-500" />
-                    <label htmlFor="consent" className="text-sm text-zinc-500">
-                      I consent to Supported Living Services Uxbridge processing my data in accordance with the 
-                      <a href="/privacy" className="text-indigo-600 hover:underline ml-1">Privacy Policy</a>.
-                    </label>
+                  <div className="flex items-start space-x-3">
+                    <input required type="checkbox" className="mt-1 w-4 h-4 text-accent border-slate-300 rounded focus:ring-accent" />
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      I consent to SSD IT Solutions processing my personal data in accordance with the Privacy Policy. We will only use your details to respond to your enquiry.
+                    </p>
                   </div>
-                  <button
+                  <button 
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200"
+                    className="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary/90 transition-all flex items-center justify-center space-x-2"
                   >
-                    Send Message
+                    <span>Send Message</span>
+                    <Send size={18} />
                   </button>
                 </form>
               )}
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-12">
-              <div>
-                <h2 className="text-2xl font-bold text-zinc-900 mb-8">Contact Information</h2>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-indigo-50 rounded-xl text-indigo-600">
-                      <MapPin className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-zinc-900">Registered Office</p>
-                      <p className="text-zinc-600">not available</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-indigo-50 rounded-xl text-indigo-600">
-                      <Phone className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-zinc-900">Phone</p>
-                      <p className="text-zinc-600">not available</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-indigo-50 rounded-xl text-indigo-600">
-                      <Mail className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-zinc-900">Email</p>
-                      <p className="text-zinc-600">not available</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-indigo-50 rounded-xl text-indigo-600">
-                      <Clock className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-zinc-900">Business Hours</p>
-                      <p className="text-zinc-600">Monday - Friday: 09:00 - 17:30</p>
-                      <p className="text-zinc-600">Weekend: Emergency Support Only</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-bold text-zinc-900 mb-6">Location</h2>
-                <div className="aspect-video rounded-3xl bg-zinc-100 border border-zinc-200 flex items-center justify-center overflow-hidden">
-                  <div className="text-center p-8">
-                    <MapPin className="w-12 h-12 text-zinc-300 mx-auto mb-4" />
-                    <p className="text-zinc-400 font-medium italic">Map placeholder for Uxbridge area</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
