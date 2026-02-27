@@ -1,0 +1,15 @@
+services:
+  cornwall-place:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cornwall-place-salesite
+    restart: unless-stopped
+    ports:
+      - "9038:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
