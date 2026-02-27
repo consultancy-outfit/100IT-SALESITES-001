@@ -14,71 +14,89 @@ jobs:
 
     steps:
 
-    # ==================================
-    # Checkout Selected Branch
-    # ==================================
-    - name: Checkout Repository
-      uses: actions/checkout@v3
-      with:
-        ref: ${{ github.event.inputs.branch }}
+      # ==================================
+      # Checkout Selected Branch
+      # ==================================
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.branch }}
 
-    # ==================================
-    # Setup NodeJS
-    # ==================================
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
+      # ==================================
+      # Setup NodeJS
+      # ==================================
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-    # ==================================
-    # Install Dependencies
-    # ==================================
-    - name: Install Dependencies
-      run: npm install
+      # ==================================
+      # Install Dependencies
+      # ==================================
+      - name: Install Dependencies
+        run: npm install
 
-    # ==================================
-    # Build Static Website
-    # ==================================
-    - name: Build Website
-      run: npm run build
+      # ==================================
+      # Build Static Website
+      # ==================================
+      - name: Build Website
+        run: npm run build
 
-    # ==================================
-    # Prepare Target Folder on Server
-    # ==================================
-    - name: Prepare Deployment Directory
-      uses: appleboy/ssh-action@v0.1.9
-      with:
-        host: ${{ secrets.AZURE_VM_HOST }}
-        username: ${{ secrets.AZURE_VM_USERNAME }}
-        password: ${{ secrets.AZURE_VM_PASSWORD }}
-        port: ${{ secrets.SSH_PORT }}
-        script: |
-          BRANCH="${{ github.event.inputs.branch }}"
-          TARGET_DIR="/home/ubuntu/${BRANCH}"
+      # ==================================
+      # Prepare Target Folder on Server
+      # ==================================
+      - name: Prepare Deployment Directory
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+          host: ${{ secrets.AZURE_VM_HOST }}
+          username: ${{ secrets.AZURE_VM_USERNAME }}
+          password: ${{ secrets.AZURE_VM_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            BRANCH="${{ github.event.inputs.branch }}"
+            TARGET_DIR="/var/www/${BRANCH}"
 
-          echo "Deploying branch: $BRANCH"
-          echo "Target directory: $TARGET_DIR"
+            echo "Deploying branch: $BRANCH"
+            echo "Target directory: $TARGET_DIR"
 
-          # Create directory if not exists
-          if [ ! -d "$TARGET_DIR" ]; then
-            mkdir -p "$TARGET_DIR"
-            echo "Directory created"
-          else
-            echo "Directory already exists"
-          fi
+            # Create directory if it does not exist
+            if [ ! -d "$TARGET_DIR" ]; then
+              sudo mkdir -p "$TARGET_DIR"
+              echo "Directory created"
+            else
+              echo "Directory already exists"
+            fi
 
-          # Clean old deployment safely
-          rm -rf ${TARGET_DIR:?}/*
+            # Clean old deployment safely
+            sudo rm -rf ${TARGET_DIR:?}/*
 
-    # ==================================
-    # Upload Build Files
-    # ==================================
-    - name: Upload Website Files
-      uses: appleboy/scp-action@v0.1.7
-      with:
-        host: ${{ secrets.AZURE_VM_HOST }}
-        username: ${{ secrets.AZURE_VM_USERNAME }}
-        password: ${{ secrets.AZURE_VM_PASSWORD }}
-        port: ${{ secrets.SSH_PORT }}
-        source: "dist/*"
-        target: "/home/ubuntu/${{ github.event.inputs.branch }}"
+            # Set correct ownership & permissions for Nginx
+            sudo chown -R www-data:www-data "$TARGET_DIR"
+            sudo chmod -R 755 "$TARGET_DIR"
+
+      # ==================================
+      # Upload Build Files
+      # ==================================
+      - name: Upload Website Files
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.AZURE_VM_HOST }}
+          username: ${{ secrets.AZURE_VM_USERNAME }}
+          password: ${{ secrets.AZURE_VM_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "dist/*"
+          target: "/var/www/${{ github.event.inputs.branch }}"
+
+      # ==================================
+      # Optional: Reload Nginx (if configs already exist)
+      # ==================================
+      - name: Reload Nginx
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+          host: ${{ secrets.AZURE_VM_HOST }}
+          username: ${{ secrets.AZURE_VM_USERNAME }}
+          password: ${{ secrets.AZURE_VM_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            sudo systemctl reload nginx
+            echo "Nginx reloaded"
