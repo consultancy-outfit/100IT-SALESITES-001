@@ -1,0 +1,15 @@
+services:
+  centenary:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: centenary-salesite
+    restart: unless-stopped
+    ports:
+      - "9044:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
