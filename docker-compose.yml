@@ -1,0 +1,15 @@
+services:
+  vibrance-outreach:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vibrance-outreach-salesite
+    restart: unless-stopped
+    ports:
+      - "9005:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
