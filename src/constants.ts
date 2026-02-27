@@ -2,8 +2,8 @@ export const COMPANY_DETAILS = {
   name: "ECL Regaining Independence Service",
   address: "United Kingdom",
   crn: "#####",
-  phone: "#####",
-  email: "info@eclregainingindependenceservice.co.uk",
+  phone: "0120 497 4237",
+  email: "info@highfieldshouseltd.co.uk",
   hours: "#####",
   vat: "#####"
 };
