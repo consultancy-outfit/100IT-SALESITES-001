@@ -2,12 +2,11 @@ export interface Service {
   id: string;
   title: string;
   description: string;
-  audience: string;
+  targetAudience: string;
   process: string[];
   benefits: string[];
   startingPrice: string;
   icon: string;
-  image: string;
 }
 
 export interface PricingPlan {
@@ -28,7 +27,8 @@ export interface Testimonial {
 
 export interface CaseStudy {
   title: string;
-  industry: string;
+  client: string;
+  challenge: string;
+  solution: string;
   result: string;
-  description: string;
 }

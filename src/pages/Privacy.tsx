@@ -1,71 +1,86 @@
-export default function Privacy() {
+import React from 'react';
+import { Layout } from '../components/Layout';
+import { COMPANY_DETAILS } from '../constants';
+
+const Privacy = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <h1 className="text-4xl font-bold text-zinc-900 mb-8">Privacy Policy</h1>
-      <div className="prose prose-zinc max-w-none space-y-8">
-        <section>
-          <h2 className="text-2xl font-bold text-zinc-900 mb-4">1. Information We Collect</h2>
-          <p className="text-zinc-600 leading-relaxed">
-            Kanmore House ("we", "us") is committed to protecting your privacy. We collect personal data such as your name, email address, phone number, and company details when you contact us or use our services.
-          </p>
-        </section>
+    <Layout>
+      <section className="pt-32 pb-16 bg-slate-900 text-white">
+        <div className="container-custom">
+          <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
+          <p className="text-slate-400">Last updated: February 2026</p>
+        </div>
+      </section>
 
-        <section>
-          <h2 className="text-2xl font-bold text-zinc-900 mb-4">2. Purpose of Processing</h2>
-          <p className="text-zinc-600 leading-relaxed">
-            We process your data to:
-          </p>
-          <ul className="list-disc pl-6 text-zinc-600 space-y-2">
-            <li>Provide and manage our IT services.</li>
-            <li>Respond to your enquiries and provide quotes.</li>
-            <li>Comply with our legal and regulatory obligations in the UK.</li>
-            <li>Improve our website and service offerings.</li>
-          </ul>
-        </section>
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-4xl">
+          <div className="prose prose-slate max-w-none space-y-8 text-slate-600 leading-relaxed">
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Overview</h2>
+              <p>
+                {COMPANY_DETAILS.name} is committed to protecting the privacy and security of your personal data. This policy explains how we collect, use, and protect your information in compliance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+              </p>
+            </div>
 
-        <section>
-          <h2 className="text-2xl font-bold text-zinc-900 mb-4">3. Data Retention</h2>
-          <p className="text-zinc-600 leading-relaxed">
-            We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements.
-          </p>
-        </section>
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Data We Collect</h2>
+              <p>We may collect and process the following types of data:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Identity Data: Name, job title, company name.</li>
+                <li>Contact Data: Email address, phone number, business address.</li>
+                <li>Technical Data: IP address, browser type, usage data from our website.</li>
+                <li>Service Data: Details of IT systems and infrastructure required to provide support.</li>
+              </ul>
+            </div>
 
-        <section>
-          <h2 className="text-2xl font-bold text-zinc-900 mb-4">4. Your Rights (GDPR)</h2>
-          <p className="text-zinc-600 leading-relaxed">
-            Under the UK General Data Protection Regulation (GDPR), you have the following rights:
-          </p>
-          <ul className="list-disc pl-6 text-zinc-600 space-y-2">
-            <li>The right to access your personal data.</li>
-            <li>The right to rectification of inaccurate data.</li>
-            <li>The right to erasure ("right to be forgotten").</li>
-            <li>The right to restrict processing.</li>
-            <li>The right to data portability.</li>
-            <li>The right to object to processing.</li>
-          </ul>
-        </section>
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">3. Purposes of Processing</h2>
+              <p>We use your data for the following purposes:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>To provide and manage IT support services.</li>
+                <li>To communicate with you regarding service updates or enquiries.</li>
+                <li>To comply with legal and regulatory obligations.</li>
+                <li>To improve our website and service offerings.</li>
+              </ul>
+            </div>
 
-        <section>
-          <h2 className="text-2xl font-bold text-zinc-900 mb-4">5. Cookies</h2>
-          <p className="text-zinc-600 leading-relaxed">
-            Our website uses cookies to enhance your browsing experience. You can manage your cookie preferences through your browser settings.
-          </p>
-        </section>
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">4. Data Retention</h2>
+              <p>
+                We retain personal data only for as long as necessary to fulfil the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements. Typically, client data is retained for 7 years following the termination of a contract.
+              </p>
+            </div>
 
-        <section>
-          <h2 className="text-2xl font-bold text-zinc-900 mb-4">6. Security Measures</h2>
-          <p className="text-zinc-600 leading-relaxed">
-            We implement robust technical and organizational measures to protect your data, including encryption, access controls, and regular security audits.
-          </p>
-        </section>
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Your Rights</h2>
+              <p>Under UK GDPR, you have the following rights:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Right of access to your personal data.</li>
+                <li>Right to rectification of inaccurate data.</li>
+                <li>Right to erasure ("right to be forgotten").</li>
+                <li>Right to restrict or object to processing.</li>
+                <li>Right to data portability.</li>
+              </ul>
+            </div>
 
-        <section>
-          <h2 className="text-2xl font-bold text-zinc-900 mb-4">7. Contact Us</h2>
-          <p className="text-zinc-600 leading-relaxed">
-            If you have any questions about this Privacy Policy or our data practices, please contact our Data Protection Officer at info@kanmorehouse.co.uk or by post at our registered office.
-          </p>
-        </section>
-      </div>
-    </div>
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Cookies</h2>
+              <p>
+                Our website uses cookies to enhance user experience and analyse traffic. You can manage your cookie preferences through your browser settings. For more details, please see our Cookie Policy.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">7. Contact Us</h2>
+              <p>
+                If you have any questions about this Privacy Policy or our data protection practices, please contact our Data Protection Officer at {COMPANY_DETAILS.email} or by post at our registered office: {COMPANY_DETAILS.address}.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
   );
-}
+};
+
+export default Privacy;

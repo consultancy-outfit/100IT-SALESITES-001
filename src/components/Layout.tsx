@@ -1,22 +1,26 @@
-import { Outlet, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import React from 'react';
+import { motion } from 'motion/react';
+import { Navbar } from './Navbar';
+import { Footer } from './Footer';
 
-export default function Layout() {
-  const { pathname } = useLocation();
+interface LayoutProps {
+  children: React.ReactNode;
+}
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-white font-sans text-zinc-900">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow pt-20">
-        <Outlet />
+      <main className="flex-grow">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {children}
+        </motion.div>
       </main>
       <Footer />
     </div>
   );
-}
+};

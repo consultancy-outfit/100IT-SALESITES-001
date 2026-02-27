@@ -1,122 +1,129 @@
 import { Service, PricingPlan, Testimonial, CaseStudy } from './types';
 
+export const COMPANY_DETAILS = {
+  name: "Community Short Breaks",
+  tradingName: "Community Short Breaks IT Services",
+  address: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom",
+  crn: "12345678",
+  phone: "+44 (0) 20 7946 0000",
+  email: "info@communityshortbreaks.it",
+  hours: "Mon - Fri: 09:00 - 17:30",
+};
+
 export const SERVICES: Service[] = [
   {
-    id: 'managed-it',
-    title: 'Managed IT Support',
-    description: 'Comprehensive 24/7 proactive monitoring and support for your entire IT infrastructure.',
-    audience: 'SMEs and growing UK businesses needing reliable IT oversight.',
-    process: ['Initial Audit', 'Infrastructure Setup', '24/7 Monitoring', 'Monthly Reporting'],
-    benefits: ['Reduced Downtime', 'Predictable Costs', 'Expert Guidance', 'Scalability'],
-    startingPrice: '£450',
-    icon: 'ShieldCheck',
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800&h=600'
+    id: "managed-it",
+    title: "Managed IT Support",
+    description: "Comprehensive 24/7 monitoring and proactive maintenance for your entire IT infrastructure.",
+    targetAudience: "SMEs looking for a reliable external IT department.",
+    process: ["Audit & Assessment", "Onboarding", "24/7 Monitoring", "Remote & On-site Support"],
+    benefits: ["Reduced downtime", "Predictable monthly costs", "Access to expert engineers"],
+    startingPrice: "£250/month",
+    icon: "ShieldCheck",
   },
   {
-    id: 'cybersecurity',
-    title: 'Cybersecurity Solutions',
-    description: 'Advanced threat protection, vulnerability assessments, and employee security training.',
-    audience: 'Businesses handling sensitive data or operating in regulated UK sectors.',
-    process: ['Risk Assessment', 'Security Implementation', 'Employee Training', 'Incident Response Plan'],
-    benefits: ['Data Protection', 'Regulatory Compliance', 'Peace of Mind', 'Brand Reputation'],
-    startingPrice: '£750',
-    icon: 'Lock',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800&h=600'
+    id: "cybersecurity",
+    title: "Cybersecurity Solutions",
+    description: "Protecting your business from evolving digital threats with advanced security protocols.",
+    targetAudience: "Businesses handling sensitive data or regulated industries.",
+    process: ["Vulnerability Scanning", "Threat Detection", "Employee Training", "Incident Response"],
+    benefits: ["Data protection", "Regulatory compliance", "Peace of mind"],
+    startingPrice: "£500/month",
+    icon: "Lock",
   },
   {
-    id: 'cloud-migration',
-    title: 'Cloud Migration & Strategy',
-    description: 'Seamless transition to Microsoft Azure or AWS with minimal business disruption.',
-    audience: 'Companies looking to modernize their legacy systems and enable remote work.',
-    process: ['Cloud Readiness Assessment', 'Migration Planning', 'Execution', 'Post-Migration Optimization'],
-    benefits: ['Remote Accessibility', 'Cost Efficiency', 'Enhanced Collaboration', 'Disaster Recovery'],
-    startingPrice: '£1,200',
-    icon: 'Cloud',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800&h=600'
+    id: "cloud-migration",
+    title: "Cloud Migration & Hosting",
+    description: "Seamlessly transition your workflows to secure, scalable cloud environments.",
+    targetAudience: "Companies looking to modernise and enable remote work.",
+    process: ["Cloud Strategy", "Data Migration", "Optimisation", "Ongoing Management"],
+    benefits: ["Scalability", "Cost efficiency", "Enhanced collaboration"],
+    startingPrice: "£1,000 (one-off)",
+    icon: "Cloud",
   },
   {
-    id: 'it-consultancy',
-    title: 'Strategic IT Consultancy',
-    description: 'Expert advice to align your technology roadmap with your business objectives.',
-    audience: 'Leadership teams seeking to leverage technology for competitive advantage.',
-    process: ['Business Goal Alignment', 'Technology Gap Analysis', 'Roadmap Development', 'Implementation Oversight'],
-    benefits: ['Strategic Growth', 'Optimized ROI', 'Future-Proofing', 'Efficiency Gains'],
-    startingPrice: '£950',
-    icon: 'Lightbulb',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800&h=600'
+    id: "it-consultancy",
+    title: "Strategic IT Consultancy",
+    description: "Expert advice to align your technology roadmap with your business goals.",
+    targetAudience: "Leadership teams planning growth or digital transformation.",
+    process: ["Business Analysis", "Roadmap Creation", "Technology Selection", "Implementation Oversight"],
+    benefits: ["Strategic alignment", "ROI focus", "Future-proofed tech"],
+    startingPrice: "£150/hour",
+    icon: "Lightbulb",
   },
   {
-    id: 'network-infrastructure',
-    title: 'Network Infrastructure',
-    description: 'Design and implementation of robust, high-speed wired and wireless networks.',
-    audience: 'Offices and warehouses requiring high-performance connectivity.',
-    process: ['Site Survey', 'Network Design', 'Installation', 'Performance Testing'],
-    benefits: ['High Speed', 'Reliability', 'Secure Access', 'Future Scalability'],
-    startingPrice: '£1,500',
-    icon: 'Network',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800&h=600'
+    id: "disaster-recovery",
+    title: "Disaster Recovery & Backup",
+    description: "Ensuring business continuity with robust data backup and rapid recovery plans.",
+    targetAudience: "All businesses requiring zero data loss guarantees.",
+    process: ["Risk Assessment", "Backup Strategy", "Regular Testing", "Recovery Execution"],
+    benefits: ["Business continuity", "Data integrity", "Compliance"],
+    startingPrice: "£150/month",
+    icon: "RefreshCcw",
   }
 ];
 
 export const PRICING_PLANS: PricingPlan[] = [
   {
-    name: 'Essential',
-    price: '£299',
-    features: ['Remote Support', 'Antivirus Management', 'Patch Management', 'Monthly Health Check'],
-    support: '9am - 5pm Mon-Fri',
-    idealFor: 'Micro-businesses (1-5 users)',
-    vatInfo: 'Excluding VAT'
+    name: "Essential",
+    price: "250",
+    features: ["Remote Support", "Antivirus Protection", "Cloud Backups", "Monthly Reports"],
+    support: "9am - 5pm Business Days",
+    idealFor: "Small startups and micro-businesses",
+    vatInfo: "Excluding VAT",
   },
   {
-    name: 'Professional',
-    price: '£649',
-    features: ['On-site & Remote Support', 'Advanced Security Suite', 'Cloud Backup (1TB)', 'Priority Response', 'Vulnerability Scanning'],
-    support: '8am - 6pm Mon-Fri',
-    idealFor: 'Growing SMEs (6-25 users)',
-    vatInfo: 'Excluding VAT'
+    name: "Professional",
+    price: "750",
+    features: ["On-site Support", "Advanced Security", "Network Monitoring", "vCIO Consulting"],
+    support: "24/7 Critical Support",
+    idealFor: "Growing SMEs with 10-50 employees",
+    vatInfo: "Excluding VAT",
   },
   {
-    name: 'Enterprise',
-    price: '£1,499',
-    features: ['24/7 Support', 'Dedicated Account Manager', 'Unlimited Cloud Backup', 'Disaster Recovery Planning', 'Full Compliance Auditing'],
-    support: '24/7/365',
-    idealFor: 'Large Organizations (25+ users)',
-    vatInfo: 'Excluding VAT'
+    name: "Enterprise",
+    price: "Custom",
+    features: ["Dedicated Engineer", "Full Infrastructure Management", "Custom Compliance", "Unlimited Support"],
+    support: "24/7 Priority Support",
+    idealFor: "Large organisations with complex needs",
+    vatInfo: "Contact for Quote",
   }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: 'James Harrison',
-    role: 'Managing Director',
-    company: 'Thames Logistics Ltd',
-    content: 'Kanmore House transformed our IT infrastructure. Their proactive approach to security has given us complete peace of mind.'
+    name: "James Harrington",
+    role: "Managing Director",
+    company: "Harrington Logistics",
+    content: "Community Short Breaks transformed our IT infrastructure. Their proactive approach saved us over £15,000 in potential downtime last year alone.",
   },
   {
-    name: 'Sarah Jenkins',
-    role: 'Operations Manager',
-    company: 'Kent Creative Agency',
-    content: 'The transition to the cloud was seamless. We haven\'t had a single hour of downtime since switching to their managed services.'
+    name: "Sarah Jenkins",
+    role: "Operations Manager",
+    company: "Thames Valley Legal",
+    content: "The cybersecurity audit was eye-opening. We now feel completely secure and compliant with all UK data regulations.",
   },
   {
-    name: 'Robert Miller',
-    role: 'Finance Director',
-    company: 'Surrey Legal Partners',
-    content: 'Expert consultancy that actually understands the UK legal sector. Their ROI-focused strategy has been a game-changer for us.'
+    name: "Robert Smith",
+    role: "Founder",
+    company: "TechScale UK",
+    content: "Reliable, professional, and truly British. They understand the local market and provide support that actually works for us.",
   }
 ];
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    title: 'Retail Chain Digital Overhaul',
-    industry: 'Retail',
-    result: '£45,000 annual savings',
-    description: 'Consolidated legacy servers into a hybrid cloud model, reducing energy costs and maintenance overheads.'
+    title: "Digital Transformation for Retail",
+    client: "London Fashion Hub",
+    challenge: "Outdated legacy systems causing slow transactions.",
+    solution: "Full cloud migration and POS integration.",
+    result: "30% increase in transaction speed and £20k annual savings.",
   },
   {
-    title: 'Cybersecurity Fortification',
-    industry: 'Financial Services',
-    result: '100% threat mitigation',
-    description: 'Implemented multi-layered security protocols for a London-based firm, preventing multiple high-level phishing attempts.'
+    title: "Cybersecurity Overhaul",
+    client: "Midlands Health Clinic",
+    challenge: "High risk of data breaches due to weak protocols.",
+    solution: "Implementation of multi-factor authentication and encryption.",
+    result: "100% compliance audit pass and zero security incidents in 12 months.",
   }
 ];
