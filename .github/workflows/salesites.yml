@@ -1,0 +1,84 @@
+name: Multi-Website-Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Enter branch name to deploy"
+        required: true
+        default: "main"
+
+jobs:
+  Build-and-Deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # ==================================
+    # Checkout Selected Branch
+    # ==================================
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.inputs.branch }}
+
+    # ==================================
+    # Setup NodeJS
+    # ==================================
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    # ==================================
+    # Install Dependencies
+    # ==================================
+    - name: Install Dependencies
+      run: npm install
+
+    # ==================================
+    # Build Static Website
+    # ==================================
+    - name: Build Website
+      run: npm run build
+
+    # ==================================
+    # Prepare Target Folder on Server
+    # ==================================
+    - name: Prepare Deployment Directory
+      uses: appleboy/ssh-action@v0.1.9
+      with:
+        host: ${{ secrets.AZURE_VM_HOST }}
+        username: ${{ secrets.AZURE_VM_USERNAME }}
+        password: ${{ secrets.AZURE_VM_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          BRANCH="${{ github.event.inputs.branch }}"
+          TARGET_DIR="/home/ubuntu/${BRANCH}"
+
+          echo "Deploying branch: $BRANCH"
+          echo "Target directory: $TARGET_DIR"
+
+          # Create directory if not exists
+          if [ ! -d "$TARGET_DIR" ]; then
+            mkdir -p "$TARGET_DIR"
+            echo "Directory created"
+          else
+            echo "Directory already exists"
+          fi
+
+          # Clean old deployment safely
+          rm -rf ${TARGET_DIR:?}/*
+
+    # ==================================
+    # Upload Build Files
+    # ==================================
+    - name: Upload Website Files
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.AZURE_VM_HOST }}
+        username: ${{ secrets.AZURE_VM_USERNAME }}
+        password: ${{ secrets.AZURE_VM_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        source: "dist/*"
+        target: "/home/ubuntu/${{ github.event.inputs.branch }}"
