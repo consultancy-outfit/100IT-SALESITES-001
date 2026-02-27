@@ -1,0 +1,15 @@
+services:
+  basildon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: basildon-salesite
+    restart: unless-stopped
+    ports:
+      - "9049:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
