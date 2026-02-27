@@ -4,8 +4,8 @@ export const COMPANY_DETAILS = {
   name: "Draycombe House",
   address: "Not Available",
   crn: "Not Available",
-  phone: "Not Available",
-  email: "info@draycombehouse.co.uk",
+  phone: "0161 410 1874",
+  email: "info@greatermanchesterspecialistsupportservice.co.uk",
   hours: "Not Available",
 };
 
