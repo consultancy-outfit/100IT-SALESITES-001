@@ -1,0 +1,15 @@
+services:
+  city-gate-house:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: city-gate-house-salesite
+    restart: unless-stopped
+    ports:
+      - "9041:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
