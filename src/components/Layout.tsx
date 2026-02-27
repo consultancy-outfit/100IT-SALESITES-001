@@ -1,19 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Cpu, Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
+import { Menu, X, Monitor, Phone, Mail, MapPin, Linkedin, Twitter, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { COMPANY_DETAILS } from '../constants';
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -24,55 +17,64 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
-      <div className="container-custom flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="bg-brand-primary p-2 rounded-lg group-hover:bg-brand-accent transition-colors">
-            <Cpu className="w-6 h-6 text-white" />
-          </div>
-          <span className="font-bold text-xl tracking-tight hidden sm:block">
-            Worksop <span className="text-brand-accent">IT</span>
-          </span>
-        </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-brand-accent ${location.pathname === link.path ? 'text-brand-accent' : 'text-slate-600'}`}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Link to="/contact" className="bg-brand-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-brand-primary/10">
-            Get Started
+    <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-zinc-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-20 items-center">
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="p-2 bg-emerald-600 rounded-lg group-hover:bg-emerald-700 transition-colors">
+              <Monitor className="w-6 h-6 text-white" />
+            </div>
+            <span className="text-xl font-bold tracking-tight text-zinc-900">
+              PENSTONE <span className="text-emerald-600">FARM</span>
+            </span>
           </Link>
-        </nav>
 
-        {/* Mobile Toggle */}
-        <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X /> : <Menu />}
-        </button>
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-sm font-medium transition-colors hover:text-emerald-600 ${
+                  location.pathname === link.path ? 'text-emerald-600' : 'text-zinc-600'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Link
+              to="/contact"
+              className="bg-zinc-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-zinc-800 transition-all shadow-sm"
+            >
+              Get a Quote
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-zinc-600">
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-white shadow-xl border-t md:hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-b border-zinc-100 overflow-hidden"
           >
-            <div className="flex flex-col p-6 gap-4">
+            <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-slate-700 hover:text-brand-accent"
+                  className="block px-3 py-4 text-base font-medium text-zinc-600 hover:text-emerald-600 hover:bg-zinc-50 rounded-lg"
                 >
                   {link.name}
                 </Link>
@@ -80,98 +82,87 @@ const Header = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="bg-brand-primary text-white text-center py-3 rounded-xl font-bold"
+                className="block w-full text-center bg-emerald-600 text-white px-3 py-4 rounded-lg text-base font-medium"
               >
-                Get Started
+                Get a Quote
               </Link>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </nav>
   );
 };
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-slate-300 pt-20 pb-10 border-t border-slate-800">
-      <div className="container-custom">
+    <footer className="bg-zinc-950 text-zinc-400 pt-20 pb-10 border-t border-zinc-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <div className="bg-brand-accent p-2 rounded-lg">
-                <Cpu className="w-6 h-6 text-white" />
+              <div className="p-2 bg-emerald-600 rounded-lg">
+                <Monitor className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-xl text-white tracking-tight">
-                Worksop <span className="text-brand-accent">IT</span>
+              <span className="text-xl font-bold tracking-tight text-white">
+                PENSTONE <span className="text-emerald-600">FARM</span>
               </span>
             </Link>
-            <p className="text-slate-400 leading-relaxed">
-              Empowering UK care providers and businesses through innovative IT infrastructure, security, and managed services.
+            <p className="text-sm leading-relaxed">
+              Leading UK IT services provider delivering enterprise-grade technology solutions with a personal touch.
             </p>
             <div className="flex gap-4">
-              {/* Social placeholders */}
-              {[1, 2, 3].map(i => (
-                <div key={i} className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:border-brand-accent transition-colors cursor-pointer">
-                  <div className="w-4 h-4 bg-slate-600 rounded-sm" />
-                </div>
-              ))}
+              <a href="#" className="hover:text-emerald-500 transition-colors"><Linkedin className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-emerald-500 transition-colors"><Twitter className="w-5 h-5" /></a>
             </div>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Quick Links</h4>
-            <ul className="space-y-4">
-              <li><Link to="/services" className="hover:text-brand-accent transition-colors">IT Services</Link></li>
-              <li><Link to="/pricing" className="hover:text-brand-accent transition-colors">Pricing Plans</Link></li>
-              <li><Link to="/about" className="hover:text-brand-accent transition-colors">About Our Mission</Link></li>
-              <li><Link to="/contact" className="hover:text-brand-accent transition-colors">Contact Support</Link></li>
+            <h4 className="text-white font-semibold mb-6">Quick Links</h4>
+            <ul className="space-y-4 text-sm">
+              <li><Link to="/services" className="hover:text-white transition-colors">Our Services</Link></li>
+              <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing Plans</Link></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Contact Details</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-brand-accent shrink-0" />
-                <span>{COMPANY_DETAILS.phone}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-brand-accent shrink-0" />
-                <span className="break-all">{COMPANY_DETAILS.email}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-brand-accent shrink-0" />
+            <h4 className="text-white font-semibold mb-6">Legal</h4>
+            <ul className="space-y-4 text-sm">
+              <li><Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/gdpr" className="hover:text-white transition-colors">GDPR Compliance</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-6">Contact Details</h4>
+            <ul className="space-y-4 text-sm">
+              <li className="flex gap-3">
+                <MapPin className="w-5 h-5 text-emerald-600 shrink-0" />
                 <span>{COMPANY_DETAILS.address}</span>
               </li>
+              <li className="flex gap-3">
+                <Phone className="w-5 h-5 text-emerald-600 shrink-0" />
+                <span>{COMPANY_DETAILS.phone}</span>
+              </li>
+              <li className="flex gap-3">
+                <Mail className="w-5 h-5 text-emerald-600 shrink-0" />
+                <span>{COMPANY_DETAILS.email}</span>
+              </li>
             </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold mb-6">Newsletter</h4>
-            <p className="text-sm text-slate-400 mb-4">Stay updated with the latest IT security trends in the UK.</p>
-            <div className="flex gap-2">
-              <input type="email" placeholder="Email address" className="bg-slate-900 border border-slate-800 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-brand-accent" />
-              <button className="bg-brand-accent text-white p-2 rounded-lg hover:bg-sky-500 transition-colors">
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
           </div>
         </div>
 
-        <div className="pt-10 border-t border-slate-900 text-sm text-slate-500">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-            <div className="space-y-2">
-              <p>&copy; {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved.</p>
-              <div className="flex flex-wrap gap-x-6 gap-y-2">
-                <p>CRN: {COMPANY_DETAILS.crn}</p>
-                <p>VAT: {COMPANY_DETAILS.vatNumber}</p>
-              </div>
-            </div>
-            <div className="flex md:justify-end gap-6">
-              <Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
-              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            </div>
+        <div className="pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6 text-xs">
+          <div className="space-y-2 text-center md:text-left">
+            <p>© {new Date().getFullYear()} {COMPANY_DETAILS.name} IT Services. All rights reserved.</p>
+            <p>Company Registration Number: {COMPANY_DETAILS.crn} | Registered in England & Wales</p>
+          </div>
+          <div className="flex items-center gap-2 bg-zinc-900 px-4 py-2 rounded-full">
+            <ShieldCheck className="w-4 h-4 text-emerald-500" />
+            <span className="text-zinc-300">GDPR Compliant & Cyber Essentials Certified</span>
           </div>
         </div>
       </div>
@@ -180,16 +171,10 @@ const Footer = () => {
 };
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-white font-sans selection:bg-emerald-100 selection:text-emerald-900">
       <Header />
-      <main className="flex-grow pt-20">
+      <main className="pt-20">
         {children}
       </main>
       <Footer />

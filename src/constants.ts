@@ -1,134 +1,90 @@
-import { LucideIcon, Shield, Cloud, Monitor, Lock, Database, Cpu, Globe } from 'lucide-react';
+export const COMPANY_DETAILS = {
+  name: "Penstone Farm",
+  address: "12 Penstone Way, London, EC1A 1BB, United Kingdom",
+  crn: "08421357",
+  phone: "+44 20 7946 0123",
+  email: "hello@penstonefarm.it",
+  hours: "Mon - Fri: 09:00 - 17:30",
+};
 
-export interface Service {
-  id: string;
-  title: string;
-  icon: LucideIcon;
-  description: string;
-  targetAudience: string;
-  process: string[];
-  benefits: string[];
-  startingPrice: string;
-}
-
-export const SERVICES: Service[] = [
+export const SERVICES = [
   {
-    id: 'managed-it',
-    title: 'Managed IT Support',
-    icon: Monitor,
-    description: 'Comprehensive 24/7 proactive monitoring and support for your entire IT infrastructure.',
-    targetAudience: 'SMEs and Care Providers requiring reliable uptime.',
-    process: ['Audit', 'Onboarding', '24/7 Monitoring', 'Helpdesk Support'],
-    benefits: ['Reduced downtime', 'Predictable costs', 'Expert advice'],
-    startingPrice: '£250/month'
+    id: "managed-it",
+    title: "Managed IT Support",
+    description: "Proactive 24/7 monitoring and helpdesk support for your entire infrastructure.",
+    audience: "SMEs looking for a reliable external IT department.",
+    process: ["Audit", "Onboarding", "Monitoring", "Support"],
+    benefits: ["Reduced downtime", "Predictable costs", "Expert advice"],
+    startingPrice: 499,
   },
   {
-    id: 'cloud-solutions',
-    title: 'Cloud Migration & Hosting',
-    icon: Cloud,
-    description: 'Secure cloud hosting and seamless migration services to Microsoft Azure and AWS.',
-    targetAudience: 'Businesses looking to modernize and enable remote work.',
-    process: ['Assessment', 'Strategy', 'Migration', 'Optimization'],
-    benefits: ['Scalability', 'Remote access', 'Cost efficiency'],
-    startingPrice: '£500'
+    id: "cloud-solutions",
+    title: "Cloud Infrastructure",
+    description: "Seamless migration and management of Azure, AWS, and Google Cloud environments.",
+    audience: "Businesses transitioning to remote or hybrid work models.",
+    process: ["Strategy", "Migration", "Optimisation", "Security"],
+    benefits: ["Scalability", "Cost efficiency", "Remote accessibility"],
+    startingPrice: 750,
   },
   {
-    id: 'cyber-security',
-    title: 'Cyber Security & Compliance',
-    icon: Shield,
-    description: 'Advanced threat protection, GDPR compliance audits, and staff security training.',
-    targetAudience: 'Organizations handling sensitive client data.',
-    process: ['Risk Assessment', 'Implementation', 'Training', 'Monitoring'],
-    benefits: ['Data protection', 'Regulatory compliance', 'Peace of mind'],
-    startingPrice: '£750'
+    id: "cyber-security",
+    title: "Cyber Security & Compliance",
+    description: "Advanced threat protection, GDPR compliance audits, and employee training.",
+    audience: "Firms handling sensitive data or requiring Cyber Essentials certification.",
+    process: ["Risk Assessment", "Implementation", "Training", "Audit"],
+    benefits: ["Data protection", "Legal compliance", "Peace of mind"],
+    startingPrice: 999,
   },
   {
-    id: 'network-infrastructure',
-    title: 'Network Infrastructure',
-    icon: Globe,
-    description: 'Design and installation of high-speed, secure wired and wireless networks.',
-    targetAudience: 'New office setups or infrastructure upgrades.',
-    process: ['Site Survey', 'Design', 'Installation', 'Testing'],
-    benefits: ['High performance', 'Secure connectivity', 'Future-proof'],
-    startingPrice: '£1,200'
+    id: "it-consultancy",
+    title: "Strategic IT Consultancy",
+    description: "Long-term technology roadmapping aligned with your business objectives.",
+    audience: "Leadership teams planning digital transformation.",
+    process: ["Discovery", "Analysis", "Roadmap", "Execution"],
+    benefits: ["Future-proofing", "ROI focus", "Competitive edge"],
+    startingPrice: 1200,
   },
   {
-    id: 'disaster-recovery',
-    title: 'Backup & Disaster Recovery',
-    icon: Database,
-    description: 'Automated off-site backups and rapid recovery plans to protect your business continuity.',
-    targetAudience: 'Any business with critical digital assets.',
-    process: ['Data Mapping', 'Backup Setup', 'Recovery Testing', 'Maintenance'],
-    benefits: ['Business continuity', 'Zero data loss', 'Fast recovery'],
-    startingPrice: '£150/month'
+    id: "disaster-recovery",
+    title: "Backup & Disaster Recovery",
+    description: "Robust data protection strategies to ensure business continuity in any crisis.",
+    audience: "Enterprises where data loss is not an option.",
+    process: ["Planning", "Setup", "Testing", "Maintenance"],
+    benefits: ["Business continuity", "Minimal RTO", "Secure backups"],
+    startingPrice: 350,
   },
   {
-    id: 'it-consultancy',
-    title: 'Strategic IT Consultancy',
-    icon: Cpu,
-    description: 'Expert guidance on digital transformation and long-term technology roadmaps.',
-    targetAudience: 'Leadership teams planning for growth.',
-    process: ['Discovery', 'Analysis', 'Roadmap Creation', 'Execution'],
-    benefits: ['Strategic alignment', 'ROI focus', 'Innovation'],
-    startingPrice: '£95/hour'
+    id: "network-solutions",
+    title: "Network & Connectivity",
+    description: "High-speed business broadband, leased lines, and secure Wi-Fi installations.",
+    audience: "Offices requiring stable and fast connectivity.",
+    process: ["Site Survey", "Design", "Installation", "Testing"],
+    benefits: ["Reliable speed", "Secure access", "Full coverage"],
+    startingPrice: 200,
   }
 ];
 
 export const PRICING_PLANS = [
   {
-    name: 'Essential Support',
-    price: '£25',
-    period: 'per user / month',
-    features: [
-      'Remote Helpdesk (9-5)',
-      'Antivirus & Patch Management',
-      'Email Security',
-      'Basic Performance Monitoring',
-      'Monthly Health Reports'
-    ],
-    support: 'Standard Business Hours',
-    idealFor: 'Small teams needing reliable basics',
-    vat: 'Excluding VAT'
+    name: "Essential",
+    price: 499,
+    features: ["Business Hours Support", "Remote Helpdesk", "Antivirus Management", "Patch Management"],
+    support: "Standard (9-5)",
+    idealFor: "Small businesses with basic needs",
   },
   {
-    name: 'Professional Care',
-    price: '£45',
-    period: 'per user / month',
-    features: [
-      'Remote & On-site Support',
-      '24/7 Infrastructure Monitoring',
-      'Advanced Cyber Security',
-      'Cloud Backup (100GB)',
-      'Quarterly IT Strategy Reviews'
-    ],
-    support: 'Priority 24/7 for Critical Issues',
-    idealFor: 'Growing businesses and care facilities',
-    vat: 'Excluding VAT',
-    popular: true
+    name: "Professional",
+    price: 999,
+    features: ["24/7 Monitoring", "On-site Support", "Advanced Security", "Backup Management", "Cloud Support"],
+    support: "Priority 24/7",
+    idealFor: "Growing SMEs requiring high uptime",
+    popular: true,
   },
   {
-    name: 'Enterprise Managed',
-    price: '£75',
-    period: 'per user / month',
-    features: [
-      'Dedicated Account Manager',
-      'Unlimited On-site Support',
-      'Full Compliance Management',
-      'Unlimited Cloud Backup',
-      'vCIO Strategic Planning'
-    ],
-    support: '24/7/365 VIP Support',
-    idealFor: 'Compliance-heavy organizations',
-    vat: 'Excluding VAT'
+    name: "Enterprise",
+    price: 1999,
+    features: ["Dedicated Account Manager", "Unlimited Support", "Strategic Roadmap", "Compliance Audits", "Full DRaaS"],
+    support: "Dedicated 24/7",
+    idealFor: "Larger organisations with complex estates",
   }
 ];
-
-export const COMPANY_DETAILS = {
-  name: 'Worksop Supported Living Service',
-  address: 'Unit 12, Worksop Business Hub, Bridge Place, Worksop, Nottinghamshire, S80 1JS',
-  crn: '12845678',
-  phone: '01909 555 0123',
-  email: 'info@worksopsupportedlivingservice.co.uk',
-  hours: 'Mon - Fri: 08:30 - 17:30',
-  vatNumber: 'GB 123 4567 89'
-};
