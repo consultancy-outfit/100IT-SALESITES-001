@@ -1,0 +1,15 @@
+services:
+  kanmore-house:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kanmore-house-salesite
+    restart: unless-stopped
+    ports:
+      - "9016:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
