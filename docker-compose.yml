@@ -1,0 +1,15 @@
+services:
+  community-recovery:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: community-recovery-salesite
+    restart: unless-stopped
+    ports:
+      - "9040:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
