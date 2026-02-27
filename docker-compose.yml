@@ -1,0 +1,15 @@
+services:
+  HCF-THE-SPRINGS:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: HCF-THE-SPRINGS-salesite
+    restart: unless-stopped
+    ports:
+      - "9024:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
