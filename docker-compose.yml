@@ -1,0 +1,15 @@
+services:
+  the-bridgewater:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: the-bridgewater-salesite
+    restart: unless-stopped
+    ports:
+      - "9006:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
