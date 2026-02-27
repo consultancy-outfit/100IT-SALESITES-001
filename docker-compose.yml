@@ -1,0 +1,15 @@
+services:
+  draycombe-house:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: draycombe-house-salesite
+    restart: unless-stopped
+    ports:
+      - "9031:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
