@@ -1,0 +1,15 @@
+services:
+  monaveen:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: monaveen-salesite
+    restart: unless-stopped
+    ports:
+      - "9013:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
