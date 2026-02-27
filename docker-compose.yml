@@ -1,0 +1,15 @@
+services:
+  disabled-children-community-support-team:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: disabled-children-community-support-team-salesite
+    restart: unless-stopped
+    ports:
+      - "9032:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
