@@ -1,0 +1,15 @@
+services:
+  ecl-regaining-independence-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecl-regaining-independence-service-salesite
+    restart: unless-stopped
+    ports:
+      - "9030:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
