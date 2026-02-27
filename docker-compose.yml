@@ -1,0 +1,15 @@
+services:
+  barnsley:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: barnsley-salesite
+    restart: unless-stopped
+    ports:
+      - "9050:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
