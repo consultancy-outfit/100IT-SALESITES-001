@@ -1,0 +1,15 @@
+services:
+  oaklands-respite:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: oaklands-respite-salesite
+    restart: unless-stopped
+    ports:
+      - "9012:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
