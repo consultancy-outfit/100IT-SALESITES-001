@@ -1,0 +1,15 @@
+services:
+  emma-le-grand-case-management:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: emma-le-grand-case-management-salesite
+    restart: unless-stopped
+    ports:
+      - "9028:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
