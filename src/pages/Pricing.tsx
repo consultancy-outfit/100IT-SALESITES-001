@@ -1,126 +1,171 @@
-import { Check } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Check, HelpCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const tiers = [
   {
-    name: 'Essential',
-    price: '250',
-    description: 'Basic support for small teams and startups.',
+    name: 'Essential Support',
+    price: '£299',
+    description: 'Perfect for small teams needing reliable IT assistance.',
     features: [
-      'Remote Helpdesk (9am-5pm)',
-      'Basic Antivirus Protection',
-      'Microsoft 365 Management',
-      'Patch Management',
-      'Monthly Health Report'
+      'Remote Helpdesk Support',
+      'Mon-Fri 9am-5pm',
+      'Antivirus Management',
+      'Cloud Backup (50GB)',
+      'Quarterly IT Review',
     ],
-    support: 'Standard Response (4hrs)',
-    idealFor: 'Small businesses (1-10 users)',
+    support: 'Business Hours',
+    ideal: 'Startups & Small Offices',
+    cta: 'Get Started',
+    popular: false,
   },
   {
-    name: 'Professional',
-    price: '500',
-    description: 'Comprehensive managed services for growing businesses.',
+    name: 'Managed Pro',
+    price: '£599',
+    description: 'Comprehensive IT management for growing businesses.',
     features: [
-      'Unlimited Remote Support',
-      'Advanced Endpoint Security',
-      'Cloud Backup (1TB)',
-      'Network Monitoring',
-      'Quarterly Strategy Review',
-      'Priority Response (1hr)'
+      'Everything in Essential',
+      'On-site Support Included',
+      '24/7 Server Monitoring',
+      'Cybersecurity Suite',
+      'Cloud Backup (500GB)',
+      'Monthly Strategy Call',
     ],
-    support: 'Priority Response',
-    idealFor: 'Growing SMEs (10-50 users)',
-    highlighted: true,
+    support: 'Priority 24/7',
+    ideal: 'Medium-sized Enterprises',
+    cta: 'Most Popular',
+    popular: true,
   },
   {
-    name: 'Enterprise',
-    price: '1,200',
-    description: 'Full-scale IT partnership for established organisations.',
+    name: 'Enterprise Elite',
+    price: '£1,299',
+    description: 'Full-scale technology partnership for large organisations.',
     features: [
-      '24/7 Support Coverage',
+      'Everything in Pro',
       'Dedicated Account Manager',
-      'On-site Support Days',
-      'Disaster Recovery Planning',
-      'Cyber Security Audits',
-      'Compliance Management'
+      'Full Infrastructure Management',
+      'Advanced Threat Hunting',
+      'Unlimited Cloud Storage',
+      'Weekly Compliance Audits',
     ],
-    support: 'Immediate Response',
-    idealFor: 'Large organisations (50+ users)',
+    support: 'Dedicated VIP Support',
+    ideal: 'Large Corporations',
+    cta: 'Contact Sales',
+    popular: false,
   },
 ];
 
 export default function Pricing() {
   return (
-    <div className="bg-slate-50 min-h-screen py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl font-extrabold text-slate-900 sm:text-5xl">
-            Transparent Pricing
-          </h1>
-          <p className="mt-4 text-xl text-slate-600">
-            Simple, predictable monthly pricing plans designed to scale with your business.
-          </p>
+    <div className="pb-20">
+      {/* Header */}
+      <section className="py-32 px-6 text-center space-y-6">
+        <h1 className="text-4xl md:text-6xl font-bold">Simple, Transparent <span className="text-indigo-600">Pricing.</span></h1>
+        <p className="text-slate-600 text-xl max-w-2xl mx-auto">
+          Choose the plan that fits your business needs. All prices are in GBP and exclude VAT at 20%.
+        </p>
+      </section>
+
+      {/* Tiers */}
+      <section className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-8">
+        {tiers.map((tier, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.1 }}
+            className={`relative p-10 rounded-[2.5rem] border ${
+              tier.popular ? 'border-indigo-600 bg-white shadow-2xl scale-105 z-10' : 'border-slate-100 bg-white shadow-sm'
+            } flex flex-col`}
+          >
+            {tier.popular && (
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                Most Popular
+              </div>
+            )}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold mb-2">{tier.name}</h3>
+              <div className="flex items-baseline gap-1">
+                <span className="text-4xl font-bold">{tier.price}</span>
+                <span className="text-slate-400 font-medium">/month</span>
+              </div>
+              <p className="text-slate-500 mt-4 text-sm">{tier.description}</p>
+            </div>
+
+            <div className="space-y-4 mb-10 flex-grow">
+              <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">What's included</p>
+              {tier.features.map((feature, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-indigo-50 flex items-center justify-center shrink-0">
+                    <Check className="w-3 h-3 text-indigo-600" />
+                  </div>
+                  <span className="text-slate-700 text-sm">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-8 border-t border-slate-50 space-y-6">
+              <div className="grid grid-cols-2 gap-4 text-xs">
+                <div>
+                  <p className="text-slate-400 font-bold uppercase mb-1">Support</p>
+                  <p className="font-semibold">{tier.support}</p>
+                </div>
+                <div>
+                  <p className="text-slate-400 font-bold uppercase mb-1">Ideal For</p>
+                  <p className="font-semibold">{tier.ideal}</p>
+                </div>
+              </div>
+              <Link
+                to="/contact"
+                className={`block w-full py-4 rounded-xl text-center font-bold transition-all ${
+                  tier.popular ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-200' : 'bg-slate-900 text-white hover:bg-slate-800'
+                }`}
+              >
+                {tier.cta}
+              </Link>
+            </div>
+          </motion.div>
+        ))}
+      </section>
+
+      {/* FAQ Placeholder */}
+      <section className="max-w-3xl mx-auto py-32 px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
         </div>
-
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {tiers.map((tier) => (
-            <div 
-              key={tier.name}
-              className={`relative flex flex-col bg-white rounded-2xl shadow-lg border ${tier.highlighted ? 'border-blue-500 ring-2 ring-blue-500 ring-opacity-50' : 'border-slate-200'} p-8`}
-            >
-              {tier.highlighted && (
-                <div className="absolute top-0 right-0 -mt-4 mr-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                  Most Popular
-                </div>
-              )}
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-slate-900">{tier.name}</h3>
-                <p className="text-sm text-slate-500 mt-2">{tier.description}</p>
-              </div>
-              <div className="mb-6">
-                <span className="text-4xl font-extrabold text-slate-900">£{tier.price}</span>
-                <span className="text-slate-500 font-medium">/month</span>
-                <p className="text-xs text-slate-400 mt-1">+ VAT</p>
-              </div>
-              
-              <div className="flex-grow">
-                <ul className="space-y-4 mb-8">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start">
-                      <Check className="h-5 w-5 text-emerald-500 flex-shrink-0 mr-3" />
-                      <span className="text-slate-600 text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="border-t border-slate-100 pt-6 mt-auto">
-                <div className="mb-4">
-                    <span className="block text-xs font-semibold text-slate-900 uppercase tracking-wide">Ideal For</span>
-                    <span className="text-sm text-slate-600">{tier.idealFor}</span>
-                </div>
-                <Link
-                  to="/contact"
-                  className={`block w-full text-center py-3 px-4 rounded-lg font-semibold transition-colors ${
-                    tier.highlighted 
-                      ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                      : 'bg-slate-100 text-slate-900 hover:bg-slate-200'
-                  }`}
-                >
-                  Choose Plan
-                </Link>
-              </div>
+        <div className="space-y-6">
+          {[
+            { q: 'Are there any hidden setup fees?', a: 'No, our pricing is transparent. Some complex migrations may require a one-off project fee, which will be agreed upon upfront.' },
+            { q: 'Can I change my plan later?', a: 'Absolutely. You can upgrade or downgrade your plan at any time with 30 days notice.' },
+            { q: 'Does pricing include VAT?', a: 'All prices shown exclude UK VAT at the standard rate of 20%.' },
+          ].map((faq, idx) => (
+            <div key={idx} className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm space-y-2">
+              <h4 className="font-bold flex items-center gap-2">
+                <HelpCircle className="w-5 h-5 text-indigo-500" />
+                {faq.q}
+              </h4>
+              <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>
+      </section>
 
-        <div className="mt-12 text-center">
-            <p className="text-slate-500 text-sm">
-                All prices exclude VAT. Minimum 12-month contract applies. 
-                <Link to="/contact" className="text-blue-600 hover:underline ml-1">Contact us</Link> for custom enterprise quotes.
-            </p>
+      {/* Custom Quote */}
+      <section className="max-w-7xl mx-auto px-6">
+        <div className="bg-indigo-50 p-12 rounded-[3rem] flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="space-y-2">
+            <h3 className="text-2xl font-bold">Need a bespoke plan?</h3>
+            <p className="text-slate-600">We offer custom packages for unique requirements.</p>
+          </div>
+          <Link
+            to="/contact"
+            className="px-8 py-4 bg-white text-indigo-600 border border-indigo-200 rounded-full font-bold hover:bg-indigo-600 hover:text-white transition-all flex items-center gap-2"
+          >
+            Request a Custom Quote
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

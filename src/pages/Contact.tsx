@@ -1,124 +1,215 @@
-import { Mail, MapPin, Phone, Clock } from 'lucide-react';
+import { useState, FormEvent } from 'react';
+import { motion } from 'motion/react';
+import { Mail, Phone, MapPin, Clock, Send, MessageSquare, CheckCircle2 } from 'lucide-react';
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
-    <div className="bg-slate-50 min-h-screen py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl font-extrabold text-slate-900 sm:text-5xl">
-            Get in Touch
-          </h1>
-          <p className="mt-4 text-xl text-slate-600">
-            Have a project in mind or need IT support? Our UK-based team is ready to help.
+    <div className="pb-20">
+      {/* Header */}
+      <section className="bg-slate-900 text-white py-32 px-6">
+        <div className="max-w-7xl mx-auto text-center space-y-6">
+          <h1 className="text-4xl md:text-6xl font-bold">Get in <span className="text-indigo-600">Touch.</span></h1>
+          <p className="text-slate-400 text-xl max-w-2xl mx-auto">
+            Have a question or ready to start your project? Our team is here to help you navigate your IT journey.
           </p>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="max-w-7xl mx-auto px-6 -mt-16">
+        <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Info */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-8">Contact Information</h2>
-            
-            <div className="space-y-8">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 bg-blue-50 p-3 rounded-lg">
-                  <MapPin className="h-6 w-6 text-blue-600" />
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium text-slate-900">Registered Office</h3>
-                  <p className="text-slate-600 mt-1">N/A</p>
-                  <p className="text-slate-500 text-sm mt-1">United Kingdom</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex-shrink-0 bg-blue-50 p-3 rounded-lg">
-                  <Phone className="h-6 w-6 text-blue-600" />
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium text-slate-900">Phone</h3>
-                  <p className="text-slate-600 mt-1">N/A</p>
-                  <p className="text-slate-500 text-sm mt-1">Mon-Fri, 9am - 5pm GMT</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex-shrink-0 bg-blue-50 p-3 rounded-lg">
-                  <Mail className="h-6 w-6 text-blue-600" />
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium text-slate-900">Email</h3>
-                  <p className="text-slate-600 mt-1">N/A</p>
-                  <p className="text-slate-500 text-sm mt-1">We aim to respond within 24 hours.</p>
+          <div className="lg:col-span-1 space-y-8">
+            <div className="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 space-y-10">
+              <div className="space-y-6">
+                <h3 className="text-xl font-bold">Contact Details</h3>
+                <div className="space-y-4">
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
+                      <Phone className="w-6 h-6 text-indigo-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Phone</p>
+                      <p className="font-semibold">0000</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
+                      <Mail className="w-6 h-6 text-indigo-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Email</p>
+                      <p className="font-semibold">0000</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
+                      <MapPin className="w-6 h-6 text-indigo-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Office</p>
+                      <p className="font-semibold">N/A</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start">
-                <div className="flex-shrink-0 bg-blue-50 p-3 rounded-lg">
-                  <Clock className="h-6 w-6 text-blue-600" />
+              <div className="space-y-6 pt-8 border-t border-slate-50">
+                <h3 className="text-xl font-bold">Business Hours</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-500">Monday - Friday</span>
+                    <span className="font-semibold">09:00 - 17:30</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-500">Saturday</span>
+                    <span className="font-semibold">Closed</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-500">Sunday</span>
+                    <span className="font-semibold">Closed</span>
+                  </div>
                 </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium text-slate-900">Business Hours</h3>
-                  <p className="text-slate-600 mt-1">Monday - Friday: 09:00 - 17:00</p>
-                  <p className="text-slate-600">Saturday - Sunday: Closed</p>
+                <div className="p-4 bg-indigo-50 rounded-xl flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-indigo-600" />
+                  <p className="text-xs text-indigo-900 font-medium">24/7 Support available for Managed Pro & Elite clients.</p>
                 </div>
               </div>
             </div>
 
             {/* Map Placeholder */}
-            <div className="mt-8 h-64 bg-slate-100 rounded-xl border border-slate-200 flex items-center justify-center">
-              <p className="text-slate-400 font-medium">Map Placeholder</p>
+            <div className="bg-slate-200 aspect-square rounded-[2.5rem] overflow-hidden relative group">
+              <img src="https://picsum.photos/seed/map/600/600" className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" alt="Map" referrerPolicy="no-referrer" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="bg-white px-6 py-3 rounded-full shadow-xl flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-red-500" />
+                  <span className="font-bold">Find Us in Newbury</span>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-8">Send us a Message</h2>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="first-name" className="block text-sm font-medium text-slate-700">First Name</label>
-                  <input type="text" id="first-name" className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-3 border" placeholder="John" />
+          <div className="lg:col-span-2">
+            <div className="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-xl border border-slate-100 h-full">
+              {submitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="h-full flex flex-col items-center justify-center text-center space-y-6"
+                >
+                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="w-10 h-10 text-green-600" />
+                  </div>
+                  <h2 className="text-3xl font-bold">Message Sent!</h2>
+                  <p className="text-slate-600 max-w-sm">Thank you for reaching out. One of our IT experts will be in touch within 2 business hours.</p>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="text-indigo-600 font-bold hover:underline"
+                  >
+                    Send another message
+                  </button>
+                </motion.div>
+              ) : (
+                <div className="space-y-10">
+                  <div className="space-y-4">
+                    <h2 className="text-3xl font-bold">Send a Message</h2>
+                    <p className="text-slate-600">Fill out the form below and we'll get back to you shortly.</p>
+                  </div>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700">Full Name</label>
+                        <input
+                          required
+                          type="text"
+                          placeholder="John Doe"
+                          className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700">Email Address</label>
+                        <input
+                          required
+                          type="email"
+                          placeholder="john@company.co.uk"
+                          className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                        />
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700">Phone Number</label>
+                        <input
+                          type="tel"
+                          placeholder="07123 456789"
+                          className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700">Service Required</label>
+                        <select className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all appearance-none">
+                          <option>Managed IT Support</option>
+                          <option>Cybersecurity</option>
+                          <option>Cloud Migration</option>
+                          <option>Software Development</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-700">Your Message</label>
+                      <textarea
+                        required
+                        rows={5}
+                        placeholder="How can we help your business?"
+                        className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none"
+                      ></textarea>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <input required type="checkbox" className="mt-1 w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+                      <p className="text-xs text-slate-500 leading-relaxed">
+                        I consent to Sylvian Care Newbury processing my personal data in accordance with their <a href="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</a> to respond to my enquiry.
+                      </p>
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full py-5 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 flex items-center justify-center gap-2"
+                    >
+                      Send Message
+                      <Send className="w-5 h-5" />
+                    </button>
+                  </form>
                 </div>
-                <div>
-                  <label htmlFor="last-name" className="block text-sm font-medium text-slate-700">Last Name</label>
-                  <input type="text" id="last-name" className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-3 border" placeholder="Smith" />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700">Email Address</label>
-                <input type="email" id="email" className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-3 border" placeholder="john@company.co.uk" />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-slate-700">Phone Number</label>
-                <input type="tel" id="phone" className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-3 border" placeholder="020 1234 5678" />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700">How can we help?</label>
-                <textarea id="message" rows={4} className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-3 border" placeholder="Tell us about your IT needs..."></textarea>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex items-center h-5">
-                  <input id="privacy" name="privacy" type="checkbox" className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-slate-300 rounded" />
-                </div>
-                <div className="ml-3 text-sm">
-                  <label htmlFor="privacy" className="font-medium text-slate-700">Privacy Policy</label>
-                  <p className="text-slate-500">I agree to the processing of my personal data as described in the Privacy Policy.</p>
-                </div>
-              </div>
-
-              <div>
-                <button type="submit" className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
-                  Send Message
-                </button>
-              </div>
-            </form>
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Support CTA */}
+      <section className="max-w-7xl mx-auto px-6 mt-32">
+        <div className="bg-indigo-50 p-12 rounded-[3rem] border border-indigo-100 flex flex-col md:flex-row gap-12 items-center justify-between">
+          <div className="flex gap-6 items-center">
+            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+              <MessageSquare className="w-8 h-8 text-indigo-600" />
+            </div>
+            <div className="space-y-1">
+              <h3 className="text-2xl font-bold">Existing Client?</h3>
+              <p className="text-slate-600">Access our support portal for faster ticket resolution.</p>
+            </div>
+          </div>
+          <button className="px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-all">
+            Open Support Portal
+          </button>
+        </div>
+      </section>
     </div>
   );
 }

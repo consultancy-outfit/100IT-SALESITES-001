@@ -1,88 +1,127 @@
-import { motion } from 'framer-motion';
-import { Users, Target, ShieldCheck, Award } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Target, Eye, History, Users, Heart, ShieldCheck, Award, Globe } from 'lucide-react';
+
+const values = [
+  { icon: Heart, title: 'Integrity', description: 'Honest advice and transparent pricing in every interaction.' },
+  { icon: ShieldCheck, title: 'Security First', description: 'Protecting your data is at the core of everything we build.' },
+  { icon: Award, title: 'Excellence', description: 'Striving for the highest standards in technical delivery.' },
+  { icon: Globe, title: 'Sustainability', description: 'Promoting energy-efficient IT infrastructure solutions.' },
+];
+
+const leaders = [
+  { name: 'David Sylvian', role: 'Founder & CEO', image: 'https://i.pravatar.cc/300?u=david' },
+  { name: 'Sarah Newbury', role: 'Technical Director', image: 'https://i.pravatar.cc/300?u=sarah' },
+  { name: 'Michael Chen', role: 'Head of Cybersecurity', image: 'https://i.pravatar.cc/300?u=michael' },
+];
 
 export default function About() {
   return (
-    <div className="bg-white">
+    <div className="pb-20">
       {/* Hero */}
-      <div className="bg-slate-900 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl">About Us</h1>
-          <p className="mt-4 text-xl text-slate-300 max-w-2xl mx-auto">
-            We are Tameside Supported Living. A dedicated team of IT professionals committed to empowering UK businesses through technology.
-          </p>
+      <section className="relative py-32 px-6 overflow-hidden">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">Our Story. <br /><span className="text-indigo-600">Our Mission.</span></h1>
+            <p className="text-xl text-slate-600 leading-relaxed">
+              Founded in the heart of the UK, Sylvian Care Newbury started with a simple vision: to make enterprise-grade IT accessible to businesses of all sizes.
+            </p>
+          </div>
+          <div className="relative">
+            <img src="https://picsum.photos/seed/team/800/600" className="rounded-3xl shadow-2xl" alt="Our Team" referrerPolicy="no-referrer" />
+            <div className="absolute -bottom-6 -right-6 bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+              <p className="text-4xl font-bold text-indigo-600">15+</p>
+              <p className="text-sm font-medium text-slate-500 uppercase tracking-widest">Years of Excellence</p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Mission & Vision */}
-      <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100">
-            <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
-              <Target className="h-6 w-6 text-white" />
+      <section className="bg-slate-50 py-32 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+          <div className="bg-white p-12 rounded-[2.5rem] shadow-sm space-y-6 border border-slate-100">
+            <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center">
+              <Target className="w-7 h-7 text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h2>
-            <p className="text-slate-700 leading-relaxed">
-              To provide accessible, enterprise-level IT services to UK businesses of all sizes. We strive to remove technical barriers, allowing our clients to focus on what they do best—growing their business.
+            <h2 className="text-3xl font-bold">Our Mission</h2>
+            <p className="text-slate-600 text-lg leading-relaxed">
+              To empower British organisations by providing innovative, secure, and reliable technology solutions that drive sustainable growth and operational efficiency.
             </p>
           </div>
-          <div className="bg-emerald-50 rounded-2xl p-8 border border-emerald-100">
-            <div className="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center mb-6">
-              <Award className="h-6 w-6 text-white" />
+          <div className="bg-white p-12 rounded-[2.5rem] shadow-sm space-y-6 border border-slate-100">
+            <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center">
+              <Eye className="w-7 h-7 text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Our Vision</h2>
-            <p className="text-slate-700 leading-relaxed">
-              To be the most trusted IT partner in the UK, known for our integrity, technical excellence, and unwavering commitment to data security and client success.
+            <h2 className="text-3xl font-bold">Our Vision</h2>
+            <p className="text-slate-600 text-lg leading-relaxed">
+              To be the UK's most trusted IT partner, recognised for our technical expertise, human-centric approach, and unwavering commitment to client success.
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Company Story */}
-      <div className="py-16 bg-slate-50">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">Our Story</h2>
-          <div className="prose prose-lg prose-slate mx-auto text-slate-600">
-            <p>
-              Founded with a clear purpose, Tameside Supported Living began as a response to the growing need for reliable, locally-based IT support in the North West of England. We recognised that many businesses were being underserved by generic, impersonal support providers.
-            </p>
-            <p>
-              Over the years, we have grown from a small consultancy into a full-service IT firm, supporting clients across the UK. Despite our growth, we have maintained our core philosophy: treating every client's business with the same care and attention as our own.
-            </p>
-            <p>
-              Today, we are proud to support a diverse range of industries, from healthcare and finance to logistics and retail, providing them with the digital infrastructure they need to compete in a modern economy.
-            </p>
-          </div>
+      {/* Values */}
+      <section className="max-w-7xl mx-auto py-32 px-6">
+        <div className="text-center mb-20 space-y-4">
+          <h2 className="text-3xl font-bold">Our Core Values</h2>
+          <p className="text-slate-600">The principles that guide every decision we make.</p>
         </div>
-      </div>
-
-      {/* Core Values */}
-      <div className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">Core Values</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { title: 'Integrity', desc: 'We believe in honest, transparent advice. We never oversell or recommend unnecessary solutions.' },
-            { title: 'Excellence', desc: 'We hold ourselves to the highest technical standards, constantly updating our skills to stay ahead.' },
-            { title: 'Security', desc: 'We adopt a security-first approach in everything we do, ensuring your data is always protected.' },
-          ].map((value, idx) => (
-            <div key={idx} className="text-center p-6">
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{value.title}</h3>
-              <p className="text-slate-600">{value.desc}</p>
+        <div className="grid md:grid-cols-4 gap-8">
+          {values.map((v, idx) => (
+            <div key={idx} className="text-center space-y-4">
+              <div className="w-16 h-16 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <v.icon className="w-8 h-8 text-indigo-600" />
+              </div>
+              <h3 className="text-xl font-bold">{v.title}</h3>
+              <p className="text-slate-600 text-sm">{v.description}</p>
             </div>
           ))}
         </div>
-      </div>
+      </section>
+
+      {/* Leadership */}
+      <section className="bg-slate-900 py-32 px-6 text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold">Meet Our Leadership</h2>
+              <p className="text-slate-400">The experts driving our technical strategy.</p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-12">
+            {leaders.map((l, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -10 }}
+                className="space-y-6 group"
+              >
+                <div className="aspect-[4/5] rounded-3xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                  <img src={l.image} alt={l.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold">{l.name}</h3>
+                  <p className="text-indigo-400 font-medium">{l.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* GDPR Commitment */}
-      <div className="bg-slate-900 py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ShieldCheck className="h-16 w-16 text-emerald-500 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Committed to GDPR Compliance</h2>
-          <p className="text-lg text-slate-300 mb-8">
-            We understand the importance of data privacy. All our processes and solutions are designed with strict adherence to the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. We help you stay compliant while keeping your data secure.
-          </p>
+      <section className="max-w-4xl mx-auto py-32 px-6">
+        <div className="bg-indigo-50 p-12 rounded-[2.5rem] border border-indigo-100 flex flex-col md:flex-row gap-12 items-center">
+          <div className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center shrink-0 shadow-sm">
+            <ShieldCheck className="w-12 h-12 text-indigo-600" />
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold">GDPR & Data Compliance</h2>
+            <p className="text-slate-600 leading-relaxed">
+              As a UK-based company, we take data protection seriously. We are fully committed to GDPR compliance and ensure that all IT solutions we implement for our clients adhere to the strictest security standards. Your data privacy is our top priority.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
