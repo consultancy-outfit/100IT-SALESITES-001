@@ -11,11 +11,11 @@ import { Service, PricingPlan, Testimonial, CaseStudy } from './types';
 
 export const COMPANY_DETAILS = {
   name: 'Bruntsfield House',
-  address: '10 Bruntsfield Terrace, Edinburgh, EH10 4ER, United Kingdom',
-  crn: 'SC654321',
-  phone: '+44 131 555 0123',
+  address: '#',
+  crn: '#',
+  phone: '#',
   email: 'info@bruntsfieldhouse.co.uk',
-  hours: 'Mon - Fri: 08:30 - 18:00',
+  hours: '#',
 };
 
 export const SERVICES: Service[] = [
