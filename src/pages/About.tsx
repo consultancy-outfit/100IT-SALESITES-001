@@ -1,129 +1,88 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { ShieldCheck, Target, Heart, Lightbulb, Users, Zap } from "lucide-react";
+import { motion } from 'framer-motion';
+import { Users, Target, ShieldCheck, Award } from 'lucide-react';
 
-export const About = () => {
+export default function About() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="bg-white"
-    >
-      {/* Hero Section */}
-      <section className="relative py-24 bg-slate-900 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
-              Our Mission is Your <span className="text-indigo-400">Digital Success</span>
-            </h1>
-            <p className="mt-6 text-xl text-slate-400 leading-relaxed">
-              Based in the heart of Luton, Team24 was founded on the principle that technology should empower businesses, not hinder them. We bridge the gap between complex IT and business growth.
+    <div className="bg-white">
+      {/* Hero */}
+      <div className="bg-slate-900 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl">About Us</h1>
+          <p className="mt-4 text-xl text-slate-300 max-w-2xl mx-auto">
+            We are Tameside Supported Living. A dedicated team of IT professionals committed to empowering UK businesses through technology.
+          </p>
+        </div>
+      </div>
+
+      {/* Mission & Vision */}
+      <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100">
+            <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+              <Target className="h-6 w-6 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h2>
+            <p className="text-slate-700 leading-relaxed">
+              To provide accessible, enterprise-level IT services to UK businesses of all sizes. We strive to remove technical barriers, allowing our clients to focus on what they do best—growing their business.
+            </p>
+          </div>
+          <div className="bg-emerald-50 rounded-2xl p-8 border border-emerald-100">
+            <div className="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center mb-6">
+              <Award className="h-6 w-6 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Our Vision</h2>
+            <p className="text-slate-700 leading-relaxed">
+              To be the most trusted IT partner in the UK, known for our integrity, technical excellence, and unwavering commitment to data security and client success.
             </p>
           </div>
         </div>
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-indigo-600/10 skew-x-12 transform translate-x-1/2" />
-      </section>
+      </div>
 
-      {/* Story Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">The Team24 Story</h2>
-              <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
-                <p>
-                  Team24 Luton and Dunstable started as a small team of passionate IT engineers who saw a need for reliable, local IT support. We noticed that many small businesses were being underserved by large, impersonal national providers.
-                </p>
-                <p>
-                  Since our inception, we have grown into a full-service IT partner, supporting hundreds of businesses across Bedfordshire and beyond. Our growth is built on a foundation of trust, technical excellence, and a "client-first" mentality.
-                </p>
-                <p>
-                  Today, we are proud to be a leading provider of managed IT services, helping our clients navigate the complexities of the modern digital landscape with confidence.
-                </p>
-              </div>
-            </div>
-            <div className="mt-12 lg:mt-0">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://picsum.photos/seed/team/800/600"
-                  alt="Our Team"
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </div>
+      {/* Company Story */}
+      <div className="py-16 bg-slate-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">Our Story</h2>
+          <div className="prose prose-lg prose-slate mx-auto text-slate-600">
+            <p>
+              Founded with a clear purpose, Tameside Supported Living began as a response to the growing need for reliable, locally-based IT support in the North West of England. We recognised that many businesses were being underserved by generic, impersonal support providers.
+            </p>
+            <p>
+              Over the years, we have grown from a small consultancy into a full-service IT firm, supporting clients across the UK. Despite our growth, we have maintained our core philosophy: treating every client's business with the same care and attention as our own.
+            </p>
+            <p>
+              Today, we are proud to support a diverse range of industries, from healthcare and finance to logistics and retail, providing them with the digital infrastructure they need to compete in a modern economy.
+            </p>
           </div>
         </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
-              <div className="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6">
-                <Target size={28} />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h3>
-              <p className="text-slate-600 leading-relaxed">
-                To provide UK businesses with innovative, secure, and reliable IT solutions that drive efficiency and foster sustainable growth. We aim to be the silent engine behind our clients' success.
-              </p>
-            </div>
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
-              <div className="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6">
-                <Lightbulb size={28} />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Vision</h3>
-              <p className="text-slate-600 leading-relaxed">
-                To be the most trusted and respected IT service provider in the UK, known for our technical expertise, integrity, and unwavering commitment to our clients' digital well-being.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
 
       {/* Core Values */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900">Our Core Values</h2>
-            <p className="mt-4 text-lg text-slate-600">The principles that guide everything we do.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: <ShieldCheck />, title: "Integrity", desc: "We are honest, transparent, and always act in our clients' best interests." },
-              { icon: <Users />, title: "Collaboration", desc: "We work as an extension of your team, not just an external vendor." },
-              { icon: <Zap />, title: "Innovation", desc: "We stay ahead of the curve to bring you the latest and most effective tech." },
-              { icon: <Heart />, title: "Excellence", desc: "We strive for perfection in every project and support ticket we handle." },
-            ].map((value, i) => (
-              <div key={i} className="text-center p-6">
-                <div className="w-16 h-16 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 mx-auto mb-6">
-                  {React.cloneElement(value.icon as React.ReactElement, { size: 32 })}
-                </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-2">{value.title}</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">{value.desc}</p>
-              </div>
-            ))}
-          </div>
+      <div className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">Core Values</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { title: 'Integrity', desc: 'We believe in honest, transparent advice. We never oversell or recommend unnecessary solutions.' },
+            { title: 'Excellence', desc: 'We hold ourselves to the highest technical standards, constantly updating our skills to stay ahead.' },
+            { title: 'Security', desc: 'We adopt a security-first approach in everything we do, ensuring your data is always protected.' },
+          ].map((value, idx) => (
+            <div key={idx} className="text-center p-6">
+              <h3 className="text-xl font-bold text-slate-900 mb-3">{value.title}</h3>
+              <p className="text-slate-600">{value.desc}</p>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
 
       {/* GDPR Commitment */}
-      <section className="py-24 bg-indigo-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <ShieldCheck size={48} className="mx-auto mb-6 text-indigo-200" />
-          <h2 className="text-3xl font-bold mb-6">Our Commitment to GDPR</h2>
-          <p className="text-lg text-indigo-100 leading-relaxed mb-8">
-            As a UK-based company, we take data privacy and security extremely seriously. We are fully committed to GDPR compliance, ensuring that both our internal processes and the solutions we provide for our clients meet the highest standards of data protection.
+      <div className="bg-slate-900 py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <ShieldCheck className="h-16 w-16 text-emerald-500 mx-auto mb-6" />
+          <h2 className="text-3xl font-bold text-white mb-4">Committed to GDPR Compliance</h2>
+          <p className="text-lg text-slate-300 mb-8">
+            We understand the importance of data privacy. All our processes and solutions are designed with strict adherence to the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. We help you stay compliant while keeping your data secure.
           </p>
-          <div className="inline-flex items-center space-x-2 text-sm font-semibold bg-indigo-700 px-4 py-2 rounded-full">
-            <span>ICO Registered</span>
-            <span className="w-1 h-1 bg-indigo-400 rounded-full" />
-            <span>Cyber Essentials Certified</span>
-          </div>
         </div>
-      </section>
-    </motion.div>
+      </div>
+    </div>
   );
-};
+}

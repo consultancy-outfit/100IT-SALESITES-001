@@ -1,226 +1,201 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { ChevronRight, Shield, Zap, Globe, Users, BarChart3, CheckCircle2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
+import { ArrowRight, CheckCircle, Server, Shield, Cloud, Users, BarChart, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const Hero = () => (
-  <section className="relative overflow-hidden bg-white pt-16 pb-24 lg:pt-32 lg:pb-40">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-        <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase bg-indigo-50 text-indigo-600 mb-6">
-              Premier IT Services in Luton & Dunstable
-            </span>
-            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl leading-tight">
-              Powering Your Business with <span className="text-indigo-600">Smarter Technology</span>
-            </h1>
-            <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-              We provide comprehensive managed IT support, cybersecurity, and cloud solutions tailored for UK businesses. Let us handle the tech while you focus on growth.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4">
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 group"
-              >
-                Explore Services
-                <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-base font-bold rounded-full text-slate-700 bg-white hover:bg-slate-50 transition-all"
-              >
-                Get a Free Audit
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-        <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative mx-auto w-full rounded-3xl shadow-2xl overflow-hidden"
-          >
-            <img
-              src="https://picsum.photos/seed/it-office/800/600"
-              alt="Modern IT Office"
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-indigo-600/10 mix-blend-multiply" />
-          </motion.div>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-const Stats = () => (
-  <section className="bg-slate-900 py-20">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        {[
-          { label: "Clients Supported", value: "250+" },
-          { label: "Uptime Guarantee", value: "99.9%" },
-          { label: "Response Time", value: "< 15m" },
-          { label: "Projects Delivered", value: "1.2k" },
-        ].map((stat, i) => (
-          <div key={i} className="space-y-2">
-            <p className="text-3xl md:text-4xl font-bold text-white">{stat.value}</p>
-            <p className="text-sm text-slate-400 uppercase tracking-wider font-semibold">{stat.label}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-const Benefits = () => (
-  <section className="py-24 bg-slate-50">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Why Choose Team24?</h2>
-        <p className="mt-4 text-lg text-slate-600">
-          We combine local expertise with world-class technology to deliver IT services that actually make a difference.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {[
-          {
-            icon: <Shield className="text-indigo-600" size={32} />,
-            title: "Security First",
-            desc: "Every solution we build has security baked in from the ground up, protecting your data and reputation.",
-          },
-          {
-            icon: <Zap className="text-indigo-600" size={32} />,
-            title: "Proactive Support",
-            desc: "We don't just fix things when they break; we monitor your systems 24/7 to prevent issues before they occur.",
-          },
-          {
-            icon: <Globe className="text-indigo-600" size={32} />,
-            title: "Local Expertise",
-            desc: "Based in Luton, we understand the local business landscape and can be on-site whenever you need us.",
-          },
-        ].map((benefit, i) => (
-          <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-            <div className="mb-6">{benefit.icon}</div>
-            <h3 className="text-xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
-            <p className="text-slate-600 leading-relaxed">{benefit.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-const CaseStudies = () => (
-  <section className="py-24 bg-white">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Success Stories</h2>
-          <p className="mt-4 text-lg text-slate-600">
-            Real results for real UK businesses. See how we've helped our clients save money and improve efficiency.
-          </p>
-        </div>
-        <Link to="/services" className="text-indigo-600 font-semibold flex items-center hover:underline">
-          View all services <ChevronRight size={20} />
-        </Link>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {[
-          {
-            company: "Luton Logistics Ltd",
-            result: "Saved £12,000/year",
-            desc: "Optimised cloud infrastructure and consolidated legacy servers, resulting in significant annual savings and 40% faster data access.",
-            image: "https://picsum.photos/seed/logistics/600/400",
-          },
-          {
-            company: "Dunstable Legal Associates",
-            result: "Zero Downtime in 2 Years",
-            desc: "Implemented a robust disaster recovery plan and 24/7 managed support, ensuring continuous operation for critical legal services.",
-            image: "https://picsum.photos/seed/legal/600/400",
-          },
-        ].map((study, i) => (
-          <div key={i} className="group cursor-pointer">
-            <div className="relative h-64 rounded-2xl overflow-hidden mb-6">
-              <img src={study.image} alt={study.company} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
-              <div className="absolute top-4 left-4 bg-white px-4 py-2 rounded-full text-sm font-bold text-indigo-600 shadow-lg">
-                {study.result}
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-2">{study.company}</h3>
-            <p className="text-slate-600 leading-relaxed">{study.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-const Testimonials = () => (
-  <section className="py-24 bg-slate-50">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-bold text-slate-900 text-center mb-16">What Our Clients Say</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {[
-          { name: "James Harrison", role: "Director, Harrison & Co", text: "Team24 transformed our IT from a constant headache into a strategic asset. Their response times are incredible." },
-          { name: "Sarah Miller", role: "Operations Manager, Bedford Tech", text: "The cybersecurity audit they performed was eye-opening. We feel much more secure knowing they are monitoring our systems." },
-          { name: "David Thompson", role: "Founder, Luton Creative", text: "Professional, knowledgeable, and local. It's great to have an IT partner who actually understands our business needs." },
-        ].map((t, i) => (
-          <div key={i} className="bg-white p-8 rounded-2xl border border-slate-100 italic text-slate-600 relative">
-            <p className="mb-6">"{t.text}"</p>
-            <div className="flex items-center space-x-3 not-italic">
-              <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold">
-                {t.name[0]}
-              </div>
-              <div>
-                <p className="font-bold text-slate-900 text-sm">{t.name}</p>
-                <p className="text-xs text-slate-500">{t.role}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-const CTA = () => (
-  <section className="py-20 bg-indigo-600">
-    <div className="max-w-4xl mx-auto px-4 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Modernise Your IT?</h2>
-      <p className="text-indigo-100 text-lg mb-10">
-        Join hundreds of UK businesses that trust Team24 for their technology needs. Get a free, no-obligation IT audit today.
-      </p>
-      <Link
-        to="/contact"
-        className="inline-flex items-center justify-center px-10 py-4 border border-transparent text-lg font-bold rounded-full text-indigo-600 bg-white hover:bg-indigo-50 transition-all shadow-2xl"
-      >
-        Book Your Free Audit
-      </Link>
-    </div>
-  </section>
-);
-
-export const Home = () => {
+export default function Home() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <Hero />
-      <Stats />
-      <Benefits />
-      <CaseStudies />
-      <Testimonials />
-      <CTA />
-    </motion.div>
+    <div className="bg-white">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-slate-900 pt-16 pb-32 lg:pt-32 lg:pb-40">
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20">
+           <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-blue-600 blur-[100px]" />
+           <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-indigo-900 blur-[120px]" />
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl lg:leading-tight">
+                <span className="block">Enterprise-Grade IT</span>
+                <span className="block text-blue-500">For UK Businesses</span>
+              </h1>
+              <p className="mt-4 text-lg text-slate-300 sm:mt-6 max-w-2xl mx-auto lg:mx-0">
+                Tameside Supported Living delivers robust, secure, and scalable technology solutions. We empower British organisations to thrive in the digital economy with managed services, cloud migration, and cyber security.
+              </p>
+              <div className="mt-8 flex justify-center lg:justify-start gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:text-lg transition-all shadow-lg hover:shadow-blue-500/25"
+                >
+                  Get a Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center px-8 py-3 border border-slate-600 text-base font-medium rounded-md text-slate-200 bg-transparent hover:bg-slate-800 md:text-lg transition-all"
+                >
+                  View Services
+                </Link>
+              </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-12 lg:mt-0 relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-800/50 backdrop-blur-sm p-6">
+                 <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-slate-700/50 p-4 rounded-xl">
+                        <Server className="h-8 w-8 text-blue-400 mb-2" />
+                        <div className="text-2xl font-bold text-white">99.9%</div>
+                        <div className="text-xs text-slate-400">Uptime Guarantee</div>
+                    </div>
+                    <div className="bg-slate-700/50 p-4 rounded-xl">
+                        <Shield className="h-8 w-8 text-emerald-400 mb-2" />
+                        <div className="text-2xl font-bold text-white">24/7</div>
+                        <div className="text-xs text-slate-400">Cyber Monitoring</div>
+                    </div>
+                    <div className="bg-slate-700/50 p-4 rounded-xl col-span-2">
+                        <div className="flex items-center justify-between mb-2">
+                            <div className="text-sm text-slate-300">System Status</div>
+                            <div className="flex items-center space-x-2">
+                                <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                                <span className="text-xs text-emerald-400">Operational</span>
+                            </div>
+                        </div>
+                        <div className="w-full bg-slate-600 rounded-full h-2">
+                            <div className="bg-blue-500 h-2 rounded-full" style={{ width: '92%' }}></div>
+                        </div>
+                    </div>
+                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Benefits */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Why Choose Us</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              IT Solutions That Drive Growth
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-slate-500 mx-auto">
+              We don't just fix computers; we engineer the infrastructure that powers your business success.
+            </p>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                icon: Shield,
+                title: 'Cyber Security First',
+                desc: 'GDPR-compliant security protocols protecting your data from modern threats.'
+              },
+              {
+                icon: Cloud,
+                title: 'Cloud Native',
+                desc: 'Seamless migration and management of Azure, AWS, and Google Cloud environments.'
+              },
+              {
+                icon: Users,
+                title: 'UK-Based Support',
+                desc: 'Local helpdesk support available during your business hours, not an overseas call centre.'
+              },
+            ].map((feature, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-sm border border-slate-100 p-8 hover:shadow-md transition-shadow">
+                <div className="bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                  <feature.icon className="h-6 w-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Study */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl mb-6">
+                Delivering Measurable ROI
+              </h2>
+              <p className="text-lg text-slate-600 mb-8">
+                We helped a Manchester-based logistics firm modernise their legacy infrastructure, resulting in significant cost savings and efficiency gains.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 bg-emerald-100 rounded-md p-3">
+                    <BarChart className="h-6 w-6 text-emerald-600" />
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-lg font-bold text-slate-900">£45,000 Saved Annually</h4>
+                    <p className="text-slate-500">Reduced server maintenance and energy costs.</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 bg-blue-100 rounded-md p-3">
+                    <Zap className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-lg font-bold text-slate-900">300% Speed Increase</h4>
+                    <p className="text-slate-500">Faster data processing and order fulfilment.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-10 lg:mt-0">
+               <div className="bg-slate-900 rounded-2xl p-8 text-white relative overflow-hidden">
+                  <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-500 rounded-full opacity-20 blur-xl"></div>
+                  <blockquote className="relative z-10">
+                    <div className="text-4xl text-blue-400 font-serif mb-4">"</div>
+                    <p className="text-xl leading-relaxed font-medium">
+                      Tameside Supported Living transformed our IT infrastructure. Their team was professional, knowledgeable, and the transition was seamless. We've seen a direct impact on our bottom line.
+                    </p>
+                    <footer className="mt-8 flex items-center">
+                      <div className="h-10 w-10 rounded-full bg-slate-700 flex items-center justify-center text-sm font-bold">JD</div>
+                      <div className="ml-4">
+                        <div className="font-bold">James Davies</div>
+                        <div className="text-slate-400 text-sm">Operations Director, Mancunian Logistics</div>
+                      </div>
+                    </footer>
+                  </blockquote>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-blue-600 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+            Ready to upgrade your IT infrastructure?
+          </h2>
+          <p className="mt-4 text-xl text-blue-100 max-w-2xl mx-auto">
+            Join hundreds of UK businesses trusting Tameside Supported Living with their technology needs.
+          </p>
+          <div className="mt-8">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 md:text-lg transition-colors"
+            >
+              Get Started Today
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
   );
-};
+}
