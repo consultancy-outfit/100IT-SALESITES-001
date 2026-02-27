@@ -1,26 +1,28 @@
-export interface NavItem {
-  label: string;
-  path: string;
+import { ReactNode } from 'react';
+
+export interface LayoutProps {
+  children: ReactNode;
 }
 
 export interface Service {
   id: string;
   title: string;
   description: string;
+  icon: string;
   targetAudience: string;
   process: string[];
   benefits: string[];
-  startingPrice: number;
-  icon: string;
+  startingPrice: string;
 }
 
-export interface PricingTier {
+export interface PricingPlan {
   name: string;
-  price: number;
+  price: string;
+  period: string;
   features: string[];
-  supportLevel: string;
-  idealClient: string;
-  isPopular?: boolean;
+  support: string;
+  idealFor: string;
+  highlighted?: boolean;
 }
 
 export interface Testimonial {
@@ -33,8 +35,6 @@ export interface Testimonial {
 export interface CaseStudy {
   title: string;
   client: string;
-  challenge: string;
-  solution: string;
   result: string;
-  savings: string;
+  description: string;
 }
