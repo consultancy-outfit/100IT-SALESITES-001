@@ -1,20 +1,37 @@
 export interface Service {
   id: string;
   title: string;
-  overview: string;
-  target: string;
+  description: string;
+  longDescription: string;
+  targetAudience: string;
   process: string[];
   benefits: string[];
-  startingPrice: number;
+  startingPrice: string;
+  icon: string;
 }
 
-export interface PricingPlan {
+export interface PricingTier {
   name: string;
-  price: number | string;
-  unit: string;
+  price: string;
+  period: string;
   features: string[];
-  supportLevel: string;
+  support: string;
   idealFor: string;
-  vatInfo: string;
+  cta: string;
   popular?: boolean;
+}
+
+export interface Testimonial {
+  name: string;
+  role: string;
+  company: string;
+  content: string;
+}
+
+export interface CaseStudy {
+  title: string;
+  challenge: string;
+  solution: string;
+  result: string;
+  value: string;
 }
