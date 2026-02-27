@@ -1,0 +1,15 @@
+services:
+  telegraph-house:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: telegraph-house-salesite
+    restart: unless-stopped
+    ports:
+      - "9007:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
