@@ -1,164 +1,161 @@
-import React from 'react';
 import { motion } from 'motion/react';
-import { Monitor, Shield, Cloud, Cpu, Database, Headphones, Briefcase, ArrowRight } from 'lucide-react';
+import { 
+  Headphones, 
+  Lock, 
+  Cloud, 
+  BarChart3, 
+  Network, 
+  CheckCircle2, 
+  ArrowRight,
+  ChevronRight
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SERVICES } from '../constants';
 
-const services = [
-  {
-    icon: <Headphones className="text-brand-600" size={32} />,
-    title: 'Managed IT Support',
-    overview: 'Comprehensive 24/7 helpdesk and proactive maintenance for your entire IT estate.',
-    target: 'SMEs and growing UK enterprises needing reliable day-to-day tech management.',
-    process: ['Audit & Onboarding', 'Proactive Monitoring', 'Helpdesk Support', 'Quarterly Reviews'],
-    benefits: ['Reduced Downtime', 'Predictable Monthly Costs', 'Expert Knowledge Access'],
-    price: 499
-  },
-  {
-    icon: <Shield className="text-brand-600" size={32} />,
-    title: 'Cybersecurity Solutions',
-    overview: 'Multi-layered defense strategies to protect your business from evolving digital threats.',
-    target: 'Businesses handling sensitive data or operating in regulated UK sectors.',
-    process: ['Vulnerability Assessment', 'Strategy Design', 'Implementation', 'Continuous Monitoring'],
-    benefits: ['Risk Mitigation', 'Regulatory Compliance', 'Peace of Mind'],
-    price: 750
-  },
-  {
-    icon: <Cloud className="text-brand-600" size={32} />,
-    title: 'Cloud Infrastructure',
-    overview: 'Seamless migration and management of cloud environments (Azure, AWS, Google Cloud).',
-    target: 'Companies looking to modernize infrastructure and enable remote work.',
-    process: ['Readiness Assessment', 'Migration Planning', 'Execution', 'Optimization'],
-    benefits: ['Scalability', 'Cost Efficiency', 'Enhanced Collaboration'],
-    price: 1200
-  },
-  {
-    icon: <Database className="text-brand-600" size={32} />,
-    title: 'Disaster Recovery',
-    overview: 'Robust backup and business continuity planning to ensure you never lose critical data.',
-    target: 'Any business where data loss would result in significant financial impact.',
-    process: ['Data Mapping', 'Backup Strategy', 'Recovery Testing', 'Real-time Sync'],
-    benefits: ['Data Integrity', 'Rapid Recovery', 'Business Resilience'],
-    price: 350
-  },
-  {
-    icon: <Briefcase className="text-brand-600" size={32} />,
-    title: 'IT Consultancy',
-    overview: 'Strategic technology advice to align your IT roadmap with your business objectives.',
-    target: 'Leadership teams planning for digital transformation or major scaling.',
-    process: ['Discovery Session', 'Gap Analysis', 'Strategic Roadmap', 'Execution Support'],
-    benefits: ['Strategic Alignment', 'Informed Decision Making', 'Future-Proofing'],
-    price: 950
-  },
-  {
-    icon: <Cpu className="text-brand-600" size={32} />,
-    title: 'Network Infrastructure',
-    overview: 'Design and implementation of high-performance, secure wired and wireless networks.',
-    target: 'Offices and facilities requiring high-speed, reliable connectivity.',
-    process: ['Site Survey', 'Network Design', 'Installation', 'Performance Tuning'],
-    benefits: ['High Speed', 'Secure Connectivity', 'Reliable Coverage'],
-    price: 1500
-  }
-];
+const iconMap: Record<string, any> = {
+  Headphones,
+  Lock,
+  Cloud,
+  BarChart3,
+  Network
+};
 
-export const Services = () => {
+export default function Services() {
   return (
-    <main className="pt-20">
+    <div className="pt-20">
       {/* Header */}
-      <section className="bg-slate-900 py-24 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">Our IT Services</h1>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-            Tailored technology solutions designed to drive efficiency, security, and growth for UK businesses.
-          </p>
+      <section className="bg-slate-950 py-24 border-b border-slate-800">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-3xl"
+          >
+            <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-8">
+              Comprehensive <span className="text-brand-500">IT Services</span>
+            </h1>
+            <p className="text-xl text-slate-400 leading-relaxed">
+              Tailored technology solutions designed to drive efficiency, security, and growth for UK businesses. From daily support to long-term strategy.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Services List */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col lg:flex-row"
-              >
-                <div className="p-8 lg:p-12 lg:w-1/2">
-                  <div className="mb-6">{service.icon}</div>
-                  <h2 className="text-3xl font-display font-bold text-slate-900 mb-4">{service.title}</h2>
-                  <p className="text-lg text-slate-600 mb-8">{service.overview}</p>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Ideal For</h4>
-                      <p className="text-slate-700">{service.target}</p>
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="space-y-24">
+            {SERVICES.map((service, index) => {
+              const Icon = iconMap[service.icon];
+              const isEven = index % 2 === 0;
+
+              return (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}
+                >
+                  <div className="flex-1 w-full">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-50 text-brand-600 mb-8 shadow-sm">
+                      <Icon size={32} />
                     </div>
+                    <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">{service.title}</h2>
+                    <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                      {service.longDescription}
+                    </p>
                     
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div className="grid sm:grid-cols-2 gap-8 mb-10">
                       <div>
-                        <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Our Process</h4>
+                        <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                          <CheckCircle2 size={18} className="text-brand-600" />
+                          Key Benefits
+                        </h4>
                         <ul className="space-y-2">
-                          {service.process.map((p, i) => (
-                            <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                              <span className="w-1.5 h-1.5 bg-brand-500 rounded-full"></span>
-                              {p}
+                          {service.benefits.map((benefit, i) => (
+                            <li key={i} className="text-slate-600 text-sm flex items-center gap-2">
+                              <div className="w-1 h-1 rounded-full bg-brand-400" />
+                              {benefit}
                             </li>
                           ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Key Benefits</h4>
+                        <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                          <ArrowRight size={18} className="text-brand-600" />
+                          Our Process
+                        </h4>
                         <ul className="space-y-2">
-                          {service.benefits.map((b, i) => (
-                            <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                              <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
-                              {b}
+                          {service.process.map((step, i) => (
+                            <li key={i} className="text-slate-600 text-sm flex items-center gap-2">
+                              <span className="text-brand-600 font-bold text-xs">{i + 1}.</span>
+                              {step}
                             </li>
                           ))}
                         </ul>
                       </div>
                     </div>
-                  </div>
-                </div>
-                
-                <div className="bg-slate-50 p-8 lg:p-12 lg:w-1/2 flex flex-col justify-center items-center text-center border-t lg:border-t-0 lg:border-l border-slate-100">
-                  <div className="mb-8">
-                    <span className="text-slate-500 text-sm font-medium">Starting from</span>
-                    <div className="text-5xl font-display font-bold text-slate-900 mt-1">
-                      £{service.price}<span className="text-lg text-slate-400 font-normal">/mo</span>
+
+                    <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-6">
+                      <div>
+                        <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Target Audience</div>
+                        <div className="text-slate-700 font-medium">{service.targetAudience}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Starting From</div>
+                        <div className="text-2xl font-display font-bold text-brand-600">{service.startingPrice}</div>
+                      </div>
                     </div>
-                    <p className="text-xs text-slate-400 mt-2">*Excluding VAT. Custom quotes available.</p>
                   </div>
-                  <Link
-                    to="/contact"
-                    className="w-full max-w-xs py-4 bg-brand-600 text-white rounded-full font-bold hover:bg-brand-700 transition-all flex items-center justify-center gap-2"
-                  >
-                    Request a Proposal <ArrowRight size={18} />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+
+                  <div className="flex-1 w-full">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-brand-600 rounded-3xl rotate-3 opacity-10" />
+                      <div className="relative bg-slate-900 rounded-3xl p-12 overflow-hidden shadow-2xl">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 blur-3xl rounded-full" />
+                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-brand-500/10 blur-3xl rounded-full" />
+                        
+                        <div className="relative z-10">
+                          <div className="text-brand-500 mb-6">
+                            <Icon size={48} />
+                          </div>
+                          <h3 className="text-2xl font-display font-bold text-white mb-6">Service Overview</h3>
+                          <p className="text-slate-400 mb-8 leading-relaxed">
+                            {service.description}
+                          </p>
+                          <Link 
+                            to="/contact" 
+                            className="inline-flex items-center gap-2 text-white font-bold hover:text-brand-400 transition-colors"
+                          >
+                            Enquire about this service <ChevronRight size={20} />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-display font-bold mb-6">Need a Custom Solution?</h2>
-          <p className="text-slate-600 mb-10 text-lg">
-            Every business is unique. We can combine our services into a bespoke package that perfectly matches your requirements and budget.
+      {/* CTA Section */}
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom text-center">
+          <h2 className="text-4xl font-display font-bold text-slate-900 mb-8">Not sure which service you need?</h2>
+          <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+            Our experts are here to help you navigate the complex world of IT. Book a free consultation today.
           </p>
           <Link
             to="/contact"
-            className="inline-block px-8 py-4 border-2 border-brand-600 text-brand-600 rounded-full font-bold hover:bg-brand-50 transition-all"
+            className="bg-brand-600 text-white px-10 py-4 rounded-full font-bold hover:bg-brand-700 transition-all shadow-lg"
           >
-            Schedule a Discovery Call
+            Book Free Consultation
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
-};
+}

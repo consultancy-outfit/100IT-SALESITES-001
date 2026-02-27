@@ -1,76 +1,62 @@
-import React from 'react';
-import { COMPANY_DETAILS } from '../constants';
+import { motion } from 'motion/react';
 
-export const Terms = () => {
+export default function Terms() {
   return (
-    <main className="pt-32 pb-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-display font-bold text-slate-900 mb-8">Terms and Conditions</h1>
-        <div className="prose prose-slate max-w-none space-y-6 text-slate-600">
-          <p className="text-sm italic">Last Updated: February 27, 2026</p>
-          
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-4">1. Introduction</h2>
-            <p>
-              These Terms and Conditions govern your use of the website and services provided by {COMPANY_DETAILS.name} ("the Company", "we", "us"). By accessing our website or engaging our services, you agree to be bound by these terms.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-4">2. Company Information</h2>
-            <p>
-              {COMPANY_DETAILS.name} is a company registered in England and Wales. <br />
-              Registered Office: {COMPANY_DETAILS.address} <br />
-              Company Registration Number (CRN): {COMPANY_DETAILS.crn}
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-4">3. Services and Quotations</h2>
-            <p>
-              All services provided are subject to a formal Service Level Agreement (SLA) or Statement of Work (SOW). Quotations are valid for 30 days from the date of issue unless otherwise stated.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-4">4. Payment Terms</h2>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>All financial transactions are conducted in Pounds Sterling (GBP).</li>
-              <li>Invoices are subject to VAT at the prevailing UK rate.</li>
-              <li>Standard payment terms are 14 days from the date of invoice unless otherwise agreed in writing.</li>
-              <li>We reserve the right to charge interest on late payments in accordance with the Late Payment of Commercial Debts (Interest) Act 1998.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-4">5. Intellectual Property</h2>
-            <p>
-              All content on this website, including text, graphics, logos, and software, is the property of {COMPANY_DETAILS.name} or its content suppliers and is protected by UK and international copyright laws.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-4">6. Confidentiality</h2>
-            <p>
-              Both parties agree to keep confidential all information obtained from the other party that is identified as confidential or which ought reasonably to be considered confidential.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-4">7. Limitation of Liability</h2>
-            <p>
-              To the maximum extent permitted by law, {COMPANY_DETAILS.name} shall not be liable for any indirect, incidental, or consequential damages, including loss of profits or data, arising from the use of our services. Our total liability shall not exceed the amount paid for the specific service giving rise to the claim.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-4">8. Governing Law</h2>
-            <p>
-              These terms shall be governed by and construed in accordance with the laws of England and Wales. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.
-            </p>
-          </section>
+    <div className="pt-20">
+      <section className="bg-slate-950 py-24 text-white">
+        <div className="container-custom">
+          <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">Terms & Conditions</h1>
+          <p className="text-slate-400">Last Updated: February 2026</p>
         </div>
-      </div>
-    </main>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-4xl prose prose-slate prose-lg">
+            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">1. Introduction</h2>
+            <p className="text-slate-600 mb-8">
+              These Terms and Conditions govern the use of services provided by Centenary Close ("the Company"). By engaging our services, you agree to be bound by these terms.
+            </p>
+
+            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">2. Services</h2>
+            <p className="text-slate-600 mb-8">
+              The Company provides IT support, consultancy, cyber security, and cloud services as defined in individual Service Level Agreements (SLAs) or project proposals.
+            </p>
+
+            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">3. Payment Terms</h2>
+            <p className="text-slate-600 mb-8">
+              All financial references and invoices are in Great British Pounds (GBP £). Managed service invoices are issued monthly in advance and are payable within 14 days. Project-based work may require a deposit as specified in the proposal. All prices are subject to VAT at the prevailing UK rate.
+            </p>
+
+            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">4. Intellectual Property</h2>
+            <p className="text-slate-600 mb-8">
+              All intellectual property rights in materials created by the Company during the provision of services shall remain the property of the Company until full payment is received, at which point a non-exclusive license is granted to the client.
+            </p>
+
+            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">5. Confidentiality</h2>
+            <p className="text-slate-600 mb-8">
+              Both parties agree to keep all confidential information obtained during the course of the engagement strictly private and not to disclose it to any third party without prior written consent.
+            </p>
+
+            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">6. Limitation of Liability</h2>
+            <p className="text-slate-600 mb-8">
+              The Company's total liability for any claim arising out of or in connection with the services shall be limited to the total fees paid by the client in the 12 months preceding the claim.
+            </p>
+
+            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">7. Governing Law</h2>
+            <p className="text-slate-600 mb-8">
+              These terms shall be governed by and construed in accordance with the laws of England and Wales.
+            </p>
+            
+            <div className="mt-12 p-8 bg-slate-50 rounded-2xl border border-slate-200">
+              <h3 className="font-bold mb-4">Company Details</h3>
+              <p className="text-sm text-slate-500">Company Name: Centenary Close</p>
+              <p className="text-sm text-slate-500">Registered Office: Not Available</p>
+              <p className="text-sm text-slate-500">Official Email: info@centenaryclose.co.uk</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
-};
+}

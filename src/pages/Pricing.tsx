@@ -1,163 +1,116 @@
-import React from 'react';
-import { Check, Info, ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Check, Info, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { PRICING_TIERS } from '../constants';
 
-const tiers = [
-  {
-    name: 'Essential Support',
-    price: 499,
-    idealFor: 'Small businesses with up to 10 users',
-    features: [
-      'Mon-Fri 9am-6pm Helpdesk',
-      'Remote Support Only',
-      'Antivirus & Endpoint Security',
-      'Basic Patch Management',
-      'Monthly Health Reports',
-      'Email Security Filtering'
-    ],
-    support: 'Next Business Day Response',
-    highlight: false
-  },
-  {
-    name: 'Professional Managed',
-    price: 999,
-    idealFor: 'Growing SMEs with 10-50 users',
-    features: [
-      '24/7 Critical Support',
-      'Remote & On-site Support',
-      'Advanced Threat Protection',
-      'Full Cloud Management',
-      'Managed Backup & Recovery',
-      'Dedicated Account Manager',
-      'Quarterly Strategy Reviews'
-    ],
-    support: '1 Hour Response Time',
-    highlight: true
-  },
-  {
-    name: 'Enterprise Strategic',
-    price: 2499,
-    idealFor: 'Large organisations with complex needs',
-    features: [
-      'Priority 24/7/365 Support',
-      'Unlimited On-site Visits',
-      'Full SOC Monitoring',
-      'vCTO Advisory Services',
-      'Compliance & Audit Support',
-      'Custom Disaster Recovery',
-      'Infrastructure Modernisation'
-    ],
-    support: '15 Minute Priority Response',
-    highlight: false
-  }
-];
-
-export const Pricing = () => {
+export default function Pricing() {
   return (
-    <main className="pt-20">
+    <div className="pt-20">
       {/* Header */}
-      <section className="bg-slate-50 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-6">Transparent Pricing</h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            No hidden fees. No complex contracts. Just reliable IT support tailored to your business scale.
-          </p>
+      <section className="bg-slate-950 py-24 text-white">
+        <div className="container-custom text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-3xl mx-auto"
+          >
+            <h1 className="text-5xl md:text-6xl font-display font-bold mb-8">
+              Transparent <span className="text-brand-500">Pricing</span>
+            </h1>
+            <p className="text-xl text-slate-400 leading-relaxed">
+              Simple, predictable pricing plans designed to scale with your business. No hidden fees, just expert IT support.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Pricing Grid */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {tiers.map((tier, i) => (
-              <div
-                key={i}
-                className={`relative p-8 rounded-3xl border ${
-                  tier.highlight
-                    ? 'border-brand-600 shadow-2xl shadow-brand-100 bg-white scale-105 z-10'
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-3 gap-8">
+            {PRICING_TIERS.map((tier, i) => (
+              <motion.div
+                key={tier.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className={`relative flex flex-col p-8 rounded-3xl border ${
+                  tier.highlighted 
+                    ? 'border-brand-500 shadow-2xl shadow-brand-500/10 bg-white z-10' 
                     : 'border-slate-200 bg-slate-50'
                 }`}
               >
-                {tier.highlight && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                {tier.highlighted && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                     Most Popular
                   </div>
                 )}
                 
                 <div className="mb-8">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{tier.name}</h3>
-                  <p className="text-sm text-slate-500 mb-6">{tier.idealFor}</p>
-                  <div className="flex items-baseline">
-                    <span className="text-4xl font-display font-bold text-slate-900">£{tier.price}</span>
-                    <span className="text-slate-500 ml-2">/month</span>
-                  </div>
-                  <p className="text-xs text-slate-400 mt-2">All prices exclude VAT at 20%.</p>
+                  <h3 className="text-2xl font-display font-bold text-slate-900 mb-2">{tier.name}</h3>
+                  <p className="text-sm text-slate-500">{tier.idealFor}</p>
                 </div>
-                
-                <div className="space-y-4 mb-10">
-                  <div className="text-sm font-bold text-slate-900 uppercase tracking-wider">Features</div>
+
+                <div className="mb-8">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-display font-bold text-slate-900">{tier.price}</span>
+                    <span className="text-slate-500 font-medium">/user/month</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-2 italic">* Prices exclude VAT at 20%</p>
+                </div>
+
+                <div className="flex-1 space-y-4 mb-10">
+                  <div className="text-sm font-bold text-slate-900 uppercase tracking-wider">What's Included:</div>
                   <ul className="space-y-3">
-                    {tier.features.map((feature, j) => (
-                      <li key={j} className="flex items-start gap-3 text-sm text-slate-600">
-                        <Check className="text-emerald-500 shrink-0" size={18} />
-                        <span>{feature}</span>
+                    {tier.features.map((feature, fIndex) => (
+                      <li key={fIndex} className="flex items-start gap-3 text-sm text-slate-600">
+                        <Check size={18} className="text-brand-600 shrink-0 mt-0.5" />
+                        {feature}
                       </li>
                     ))}
                   </ul>
+                  <div className="pt-4 border-t border-slate-200">
+                    <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Support Hours</div>
+                    <div className="text-sm font-medium text-slate-700">{tier.supportLevel}</div>
+                  </div>
                 </div>
-                
-                <div className="pt-6 border-t border-slate-200 mb-10">
-                  <div className="text-xs font-bold text-slate-400 uppercase mb-2">Support Level</div>
-                  <div className="text-sm font-semibold text-slate-900">{tier.support}</div>
-                </div>
-                
+
                 <Link
                   to="/contact"
-                  className={`w-full py-4 rounded-full font-bold text-center transition-all flex items-center justify-center gap-2 ${
-                    tier.highlight
-                      ? 'bg-brand-600 text-white hover:bg-brand-700'
+                  className={`w-full py-4 rounded-xl font-bold text-center transition-all flex items-center justify-center gap-2 ${
+                    tier.highlighted
+                      ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-lg shadow-brand-600/20'
                       : 'bg-white text-slate-900 border border-slate-200 hover:bg-slate-50'
                   }`}
                 >
-                  Choose Plan <ArrowRight size={18} />
+                  Choose {tier.name} <ChevronRight size={18} />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ / Info */}
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-start gap-4 p-8 bg-white rounded-2xl border border-slate-200 shadow-sm">
+              <Info className="text-brand-600 shrink-0" size={24} />
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">Custom Requirements?</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  If your business has unique needs, more than 50 users, or requires specialised compliance support, we can create a bespoke package tailored specifically to your organisation.
+                </p>
+                <Link to="/contact" className="text-brand-600 font-bold hover:underline">
+                  Speak to an advisor about a custom plan
                 </Link>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
-
-      {/* VAT Note */}
-      <section className="py-12 bg-slate-50">
-        <div className="max-w-3xl mx-auto px-4 flex items-start gap-4 bg-white p-6 rounded-2xl border border-slate-200">
-          <Info className="text-brand-600 shrink-0" size={24} />
-          <div className="text-sm text-slate-600">
-            <p className="font-bold text-slate-900 mb-1">VAT & Billing Information</p>
-            <p>
-              All prices listed are subject to VAT at the standard UK rate (currently 20%). Billing is processed monthly in advance via Direct Debit. Minimum contract terms apply to all plans. For organisations with over 100 users, please contact us for a bespoke enterprise quote.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Preview */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-display font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            {[
-              { q: 'Is there a setup fee?', a: 'We charge a one-time onboarding fee equivalent to one month of service to cover the initial audit and security hardening.' },
-              { q: 'Can I change plans later?', a: 'Yes, you can upgrade your plan at any time. Downgrades require 30 days notice after the initial contract term.' },
-              { q: 'Do you offer multi-site discounts?', a: 'Absolutely. For businesses with multiple UK locations, we offer volume-based pricing. Contact us for details.' }
-            ].map((faq, i) => (
-              <div key={i} className="p-6 bg-slate-50 rounded-2xl">
-                <h4 className="font-bold text-slate-900 mb-2">{faq.q}</h4>
-                <p className="text-sm text-slate-600">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </main>
+    </div>
   );
-};
+}
