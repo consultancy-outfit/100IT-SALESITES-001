@@ -1,0 +1,56 @@
+export const COMPANY_DETAILS = {
+  name: "Hillside IT Solutions Ltd",
+  address: "########################",
+  crn: "########################",
+  phone: "########################",
+  email: "info@hillsideplymouth.co.uk",
+  hours: "########################",
+};
+
+export const SERVICES = [
+  {
+    id: "managed-it",
+    title: "Managed IT Support",
+    description: "Comprehensive 24/7 monitoring and proactive support for your entire IT infrastructure.",
+    audience: "SMEs looking for a reliable, outsourced IT department.",
+    process: ["Audit", "Onboarding", "Monitoring", "Support"],
+    benefits: ["Reduced downtime", "Predictable costs", "Expert advice"],
+    startingPrice: 250,
+  },
+  {
+    id: "cloud-solutions",
+    title: "Cloud Solutions & Migration",
+    description: "Seamless transition to Microsoft 365, Azure, or AWS with ongoing management.",
+    audience: "Businesses aiming for better scalability and remote work capabilities.",
+    process: ["Assessment", "Strategy", "Migration", "Optimization"],
+    benefits: ["Work from anywhere", "Enhanced security", "Cost efficiency"],
+    startingPrice: 500,
+  },
+  {
+    id: "cyber-security",
+    title: "Cyber Security Services",
+    description: "Protecting your business from evolving threats with advanced security protocols.",
+    audience: "Companies handling sensitive data or requiring compliance.",
+    process: ["Risk Assessment", "Implementation", "Training", "Monitoring"],
+    benefits: ["Data protection", "Peace of mind", "Compliance ready"],
+    startingPrice: 400,
+  },
+  {
+    id: "it-consultancy",
+    title: "IT Consultancy & Strategy",
+    description: "Strategic technology planning to align your IT with business goals.",
+    audience: "Leadership teams needing expert guidance on digital transformation.",
+    process: ["Discovery", "Analysis", "Roadmap", "Execution"],
+    benefits: ["Strategic alignment", "Future-proofing", "ROI focus"],
+    startingPrice: 750,
+  },
+  {
+    id: "disaster-recovery",
+    title: "Backup & Disaster Recovery",
+    description: "Ensuring your data is safe and your business can recover quickly from any incident.",
+    audience: "Any business that cannot afford data loss or extended downtime.",
+    process: ["Planning", "Backup Setup", "Testing", "Recovery Support"],
+    benefits: ["Business continuity", "Data integrity", "Rapid recovery"],
+    startingPrice: 150,
+  },
+];
