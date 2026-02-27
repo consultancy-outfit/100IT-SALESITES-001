@@ -1,0 +1,15 @@
+services:
+  jackson-salesite:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jackson-gardens-salesite
+    restart: unless-stopped
+    ports:
+      - "9001:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
