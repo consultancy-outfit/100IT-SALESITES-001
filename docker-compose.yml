@@ -1,0 +1,15 @@
+services:
+  highfields:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: highfields-salesite
+    restart: unless-stopped
+    ports:
+      - "9022:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
