@@ -1,0 +1,15 @@
+services:
+  wrekin-villa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wrekin-villa-salesite
+    restart: unless-stopped
+    ports:
+      - "9002:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
