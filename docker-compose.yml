@@ -1,0 +1,15 @@
+services:
+  penstone-farm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: penstone-farm-salesite
+    restart: unless-stopped
+    ports:
+      - "9011:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
