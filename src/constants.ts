@@ -13,8 +13,8 @@ export const COMPANY_DETAILS = {
   name: 'Bruntsfield House',
   address: '#',
   crn: '#',
-  phone: '#',
-  email: 'info@bruntsfieldhouse.co.uk',
+  phone: '0190 037 7058',
+  email: 'info@centenaryclose.co.uk',
   hours: '#',
 };
 
