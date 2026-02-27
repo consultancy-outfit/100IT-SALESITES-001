@@ -1,0 +1,16 @@
+
+services:
+  daisy-haye:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: daisy-haye-salesite
+    restart: unless-stopped
+    ports:
+      - "9034:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
