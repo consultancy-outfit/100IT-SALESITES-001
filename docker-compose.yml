@@ -1,0 +1,15 @@
+services:
+  rosewood-lodge:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rosewood-lodge-salesite
+    restart: unless-stopped
+    ports:
+      - "9010:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
