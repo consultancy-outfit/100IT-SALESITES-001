@@ -1,0 +1,15 @@
+services:
+  dasil-support-services-london:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dasil-support-services-london-salesite
+    restart: unless-stopped
+    ports:
+      - "9033:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
