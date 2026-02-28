@@ -1,9 +1,9 @@
 export const COMPANY_DETAILS = {
   name: "Servoca London",
-  address: "Level 30, The Leadenhall Building, 122 Leadenhall Street, London, EC3V 4AB",
-  crn: "12345678",
-  phone: "+44 (0) 20 7123 4567",
-  email: "contact@servoca.london",
+  address: "38 Brennan House 610 High Road Leyton, London, England, E10 6RN",
+  crn: "17048423",
+  phone: "0208 088 5962",
+  email: "info@servocalondon.co.uk",
   hours: "Mon - Fri: 09:00 - 18:00",
   vatNumber: "GB 123 4567 89",
 };
