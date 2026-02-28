@@ -1,9 +1,9 @@
 export const COMPANY_DETAILS = {
   name: "Penstone Farm",
-  address: "12 Penstone Way, London, EC1A 1BB, United Kingdom",
-  crn: "08421357",
-  phone: "+44 20 7946 0123",
-  email: "hello@penstonefarm.it",
+  address: "7 Chase Side, London, England, N14 4PN",
+  crn: "17046336",
+  phone: "0193 424 5236",
+  email: "info@penstonefarm.co.uk",
   hours: "Mon - Fri: 09:00 - 17:30",
 };
 
