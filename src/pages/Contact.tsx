@@ -148,7 +148,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="font-bold text-slate-900">Registered Office</div>
-                      <div className="text-slate-600">124 City Road, London, EC1V 2NX, UK</div>
+                      <div className="text-slate-600">20 Holmleigh Avenue, Dartford, England, DA1 5AS</div>
                     </div>
                   </div>
                 </div>
