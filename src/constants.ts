@@ -9,10 +9,10 @@ export interface CompanyDetails {
 
 export const COMPANY_DETAILS: CompanyDetails = {
   name: "The Bridgewater Complex",
-  address: "N/A",
-  crn: "12345678",
-  phone: "+44 (0) 20 7946 0123",
-  email: "Info@thebridgewatercomplex.co.uk",
+  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
+  crn: "17048321",
+  phone: "0151 380 0787",
+  email: "info@thebridgewatercomplex.co.uk",
   hours: "Mon - Fri: 09:00 - 17:30 GMT"
 };
 
