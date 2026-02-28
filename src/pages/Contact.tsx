@@ -53,7 +53,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">Our Office</h4>
-                    <p className="text-slate-600">Unit 4, Eastbourne Business Park<br />Eastbourne, East Sussex, BN23 6PW</p>
+                    <p className="text-slate-600">38 Brennan House 610 High Road Leyton, London, England, E10 6RN</p>
                   </div>
                 </div>
 
@@ -63,7 +63,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">Phone</h4>
-                    <p className="text-slate-600">+44 1323 555123</p>
+                    <p className="text-slate-600">0132 336 0382</p>
                   </div>
                 </div>
 
