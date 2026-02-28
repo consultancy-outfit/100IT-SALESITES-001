@@ -31,10 +31,10 @@ type Page = 'home' | 'services' | 'about' | 'pricing' | 'contact' | 'terms' | 'p
 // --- Constants ---
 const COMPANY_DETAILS = {
   name: "Sunburst House",
-  address: "Sunburst House, 12-14 High Street, London, EC1A 1BB, United Kingdom",
-  crn: "12345678",
-  phone: "+44 20 7946 0000",
-  email: "hello@sunbursthouse.co.uk",
+  address: "1 Highfield Love Lane, Kings Langley, England, WD4 9JT",
+  crn: "17050427",
+  phone: "0120 292 3406",
+  email: "info@sunbursthouse.co.uk",
   hours: "Mon - Fri: 09:00 - 18:00 GMT"
 };
 
