@@ -1,8 +1,9 @@
 export const COMPANY_DETAILS = {
   name: "Telegraph House",
-  address: "United Kingdom",
-  crn: "12345678",
-  email: "Info@telegraphhouseltd.co.uk",
+  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
+  crn: "17046268",
+  email: "info@telegraphhouseltd.co.uk",
+  contact:"0130 469 9098",
 };
 
 export const SERVICES = [
