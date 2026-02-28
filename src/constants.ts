@@ -2,9 +2,9 @@ import { Service, PricingTier, Testimonial, CaseStudy } from './types';
 
 export const COMPANY_DETAILS = {
   name: "Rosewood Lodge IT Services Ltd",
-  address: "Rosewood Lodge, 12-14 High Street, Reading, Berkshire, RG1 1EY, United Kingdom",
-  crn: "12345678",
-  phone: "+44 (0) 118 950 1234",
+  address: "133 Hazel Avenue, Guildford, England, GU1 1NU",
+  crn: "17046282",
+  phone: "0190 259 5313",
   email: "info@rosewoodlodge.co.uk",
   hours: "Mon - Fri: 09:00 - 17:30",
 };
