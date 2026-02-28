@@ -1,8 +1,8 @@
 export const COMPANY_DETAILS = {
   name: "Vibrance Outreach",
-  address: "124 City Road, London, EC1V 2NX, United Kingdom",
-  crn: "14529831",
-  phone: "+44 (0) 20 7946 0123",
+  address: "78 Neptune Drive, Hemel Hempstead, England, HP2 5QD",
+  crn: "17048815",
+  phone: "0132 336 0903",
   email: "info@vibranceoutreach.co.uk",
   hours: "Mon - Fri: 09:00 - 18:00 GMT",
 };
