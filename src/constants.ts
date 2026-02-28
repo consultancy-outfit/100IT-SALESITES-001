@@ -2,10 +2,10 @@ import { Service, PricingTier, Testimonial, CaseStudy } from './types';
 
 export const COMPANY_DETAILS = {
   name: "Wrekin Villa",
-  address: "Abihealth Southwest Office, UK",
+  address: "97 Broad Walk, London, England, SE3 8NF",
   crn: "17045936",
-  phone: "020 7946 0123", // Example UK number as none provided
-  email: "info@caredukltd.co.uk",
+  phone: "0195 230 1263", // Example UK number as none provided
+  email: "info@wrekinvilla.co.uk",
   hours: "Mon - Fri: 09:00 - 17:30",
 };
 
