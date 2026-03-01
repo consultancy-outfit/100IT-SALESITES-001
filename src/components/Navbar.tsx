@@ -32,7 +32,7 @@ export function Navbar() {
               <Cpu className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold tracking-tight text-slate-900">
-              Aspire<span className="text-indigo-600">IT</span>
+              Aspire<span className="text-indigo-600">SWL</span>
             </span>
           </Link>
 
