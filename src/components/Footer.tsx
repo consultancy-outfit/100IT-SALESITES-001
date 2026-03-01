@@ -55,15 +55,15 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-brand-accent shrink-0" />
-                <span>info@fradellodge.co.uk</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-brand-accent shrink-0" />
                 <span>info@daisyhaye.co.uk</span>
               </li>
               <li className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 text-brand-accent shrink-0" />
+                <span>Flat 21 Napier House 17-21 Napier Road, Luton, England, LU1 1DU</span>
+              </li>
+              <li className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-brand-accent shrink-0" />
-                <span>+0208 088 5683</span>
+                <span>0153 881 9062</span>
               </li>
             </ul>
           </div>
