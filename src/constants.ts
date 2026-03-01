@@ -2,9 +2,9 @@ import { Service, PricingTier, Testimonial, CaseStudy } from './types';
 
 export const COMPANY_DETAILS = {
   name: "Eleanor Live Well",
-  address: "Not available",
-  crn: "Not available",
-  phone: "Not available",
+  address: "174 Warrensway, Telford, England, TF7 5QG",
+  crn: "17049272",
+  phone: "0173 265 5162",
   email: "info@eleanorlivewellltd.co.uk",
   hours: "Mon - Fri: 09:00 - 17:30 GMT",
 };
