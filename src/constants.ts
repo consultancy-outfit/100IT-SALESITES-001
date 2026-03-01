@@ -2,10 +2,10 @@ import { NavItem, Service, PricingTier, Testimonial, CaseStudy } from './types';
 
 export const COMPANY_DETAILS = {
   name: 'Disabled Children Community Support Team',
-  address: '85 Great Portland Street, First Floor, London, W1W 7LT, United Kingdom',
-  crn: '12345678',
-  phone: '+0208 088 5954',
-  email: 'info@gogentlecareltd.co.uk',
+  address: '15 Queens Road, Donnington, Telford, England, TF2 8DB',
+  crn: '17049357',
+  phone: '0133 231 4215',
+  email: 'info@disabledchildrencommunitysupportteam.co.uk',
   hours: 'Mon - Fri: 09:00 - 17:30',
 };
 
