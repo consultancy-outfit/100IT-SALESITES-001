@@ -1,9 +1,9 @@
 export const COMPANY_DETAILS = {
   name: "ECL Regaining Independence Service",
-  address: "United Kingdom",
-  crn: "#####",
-  phone: "0120 497 4237",
-  email: "info@highfieldshouseltd.co.uk",
+  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
+  crn: "17047984",
+  phone: "0190 329 9180",
+  email: "info@eclregainingindependenceservice.co.uk",
   hours: "#####",
   vat: "#####"
 };
