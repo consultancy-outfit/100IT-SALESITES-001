@@ -37,9 +37,9 @@ export interface CaseStudy {
 
 export const COMPANY_DETAILS = {
   name: "Community Recovery",
-  address: "Not Available",
-  crn: "Not Available",
-  phone: "Not Available",
-  email: "Not Available",
+  address: "98 Burrows Road, London, England, NW10 5SH",
+  crn: "17045961",
+  phone: "0122 697 9109",
+  email: "info@communityrecoveryltd.co.uk",
   hours: "Mon - Fri: 09:00 - 17:30",
 };
