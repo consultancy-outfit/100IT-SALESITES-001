@@ -1,8 +1,8 @@
 export const COMPANY_DETAILS = {
   name: "CORNWALL- PLACE",
-  address: "124 City Road, London, EC1V 2NX, United Kingdom",
-  crn: "12345678",
-  phone: "+44 20 7946 0000",
+  address: "160a Croydon Road, Caterham, England, CR3 6QE",
+  crn: "17047728",
+  phone: "0127 496 3186",
   email: "info@cornwallplaceltd.co.uk",
   hours: "Mon - Fri: 09:00 - 18:00",
 };
