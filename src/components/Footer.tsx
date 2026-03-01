@@ -58,15 +58,15 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <Mail size={18} className="text-brand-500 shrink-0" />
-                <a href="mailto:info@centenaryclose.co.uk" className="hover:text-brand-400 transition-colors">info@centenaryclose.co.uk</a>
+                <a href="mailto:info@centenaryclose.co.uk" className="hover:text-brand-400 transition-colors">info@centurionsupportservices.co.uk</a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={18} className="text-brand-500 shrink-0" />
-                <span>Not Available</span>
+                <span>0190 037 7058</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-brand-500 shrink-0" />
-                <span>Registered Office: Not Available</span>
+                <span>Registered Office: 97 Broad Walk, London, England, SE3 8NF</span>
               </li>
             </ul>
           </div>
@@ -77,7 +77,7 @@ export default function Footer() {
           <div className="text-xs text-slate-500 space-y-1 text-center md:text-left">
             <p>&copy; {currentYear} Centenary Close. All rights reserved.</p>
             <p>Company Name: Centenary Close</p>
-            <p>Company Registration Number (CRN): Not Available</p>
+            <p>Company Registration Number (CRN):17045941</p>
             <p>Registered in England and Wales.</p>
           </div>
           <div className="flex gap-6 text-xs text-slate-500">
