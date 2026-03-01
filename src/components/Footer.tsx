@@ -61,8 +61,8 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-zinc-400">
             <div className="text-center md:text-left space-y-1">
               <p>© {currentYear} Kanmore House. All rights reserved.</p>
-              <p>Company Registration Number (CRN): 12345678</p>
-              <p>Registered Office: United Kingdom</p>
+              <p>Company Registration Number (CRN):17048537</p>
+              <p>38 Brennan House 610 High Road Leyton, London, England, E10 6RN</p>
             </div>
             <div className="flex space-x-6">
               <p>VAT Registered: GB 123 4567 89</p>
