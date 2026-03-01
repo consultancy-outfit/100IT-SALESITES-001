@@ -65,7 +65,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-zinc-900 mb-1">Call Us</h4>
-                      <p className="text-zinc-500">#####</p>
+                      <p className="text-zinc-500">0126 895 5147</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-6">
@@ -74,7 +74,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-zinc-900 mb-1">Visit Us</h4>
-                      <p className="text-zinc-500">#####</p>
+                      <p className="text-zinc-500">82 Reddicliff Close, Plymouth, England, PL9 9QJ</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-6">
@@ -93,7 +93,7 @@ const Contact = () => {
                   <h4 className="font-bold text-zinc-900 mb-4">Company Details</h4>
                   <div className="text-zinc-500 text-xs space-y-1">
                     <p>Basildon Supported Living Service</p>
-                    <p>CRN: #####</p>
+                    <p>CRN: 17046350</p>
                     <p>Registered in England & Wales</p>
                   </div>
                 </div>
