@@ -3,10 +3,10 @@ import { Mail, Phone, MapPin, ShieldCheck } from 'lucide-react';
 
 export const COMPANY_DETAILS = {
   name: "Greater Manchester Specialist Support Service",
-  address: "124 Deansgate, Manchester, M3 2QS, United Kingdom",
-  crn: "12345678",
-  phone: "0161 410 1874",
-  email: "info@greatermanchesterspecialistsupportservice.co.uk",
+  address: "38 Eade Road, London, England, N4 1DH",
+  crn: "17049309",
+  phone: "0161 410 1860",
+  email: "info@greatermanchesterltd.co.uk",
   hours: "Mon - Fri: 09:00 - 17:30",
 };
 
