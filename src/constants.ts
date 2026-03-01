@@ -2,10 +2,10 @@ import { Service, PricingPlan, Testimonial, CaseStudy } from './types';
 
 export const COMPANY_DETAILS = {
   name: "Draycombe House",
-  address: "Not Available",
-  crn: "Not Available",
-  phone: "0161 410 1874",
-  email: "info@greatermanchesterspecialistsupportservice.co.uk",
+  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
+  crn: "17049143",
+  phone: "0152 457 4107",
+  email: "info@draycombehouse.co.uk",
   hours: "Not Available",
 };
 
