@@ -69,7 +69,7 @@ export default function Contact() {
                     <div>
                       <div className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-1">Office</div>
                       <div className="text-lg font-medium text-zinc-900 leading-relaxed">
-                        United Kingdom
+                       38 Brennan House 610 High Road Leyton, London, England, E10 6RN
                       </div>
                     </div>
                   </div>
