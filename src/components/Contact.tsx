@@ -4,11 +4,10 @@ import { COMPANY_DETAILS } from '../constants';
 
 export const Contact = () => {
   const [formState, setFormState] = React.useState({
-    name: '',
-    email: '',
-    company: '',
-    message: '',
-    consent: false
+    name: 'Bruntsfield House',
+    email: 'info@bruntsfieldhouse.co.uk',
+    consent: "0125 556 4041",
+    crn: "17048758"
   });
 
   const handleSubmit = (e: React.FormEvent) => {
