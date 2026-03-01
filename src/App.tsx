@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { Layout } from './components/Layout';
-import { HomePage } from './pages/HomePage';
-import { ServicesPage } from './pages/ServicesPage';
-import { AboutPage } from './pages/AboutPage';
-import { PricingPage } from './pages/PricingPage';
-import { ContactPage } from './pages/ContactPage';
-import { TermsPage } from './pages/TermsPage';
-import { PrivacyPage } from './pages/PrivacyPage';
+import { Header, Footer } from './components/Layout';
+import { Home } from './pages/Home';
+import { Services } from './pages/Services';
+import { About } from './pages/About';
+import { Pricing } from './pages/Pricing';
+import { Contact } from './pages/Contact';
+import { Terms } from './pages/Terms';
+import { Privacy } from './pages/Privacy';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -22,17 +22,21 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-        </Routes>
-      </Layout>
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
