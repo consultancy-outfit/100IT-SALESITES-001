@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 
 const COMPANY_DETAILS = {
   name: "HCF The Springs",
-  address: "The Springs Business Park, Unit 12, Leeds, LS15 8GB, United Kingdom",
-  phone: "+44 (0) 113 456 7890",
+  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
+  crn: "17048704"
+  phone: "0197 730 5123",
   email: "info@hcfthesprings.co.uk",
   hours: "Monday - Friday: 09:00 - 17:30",
   support: "24/7 Emergency Support Available for Enterprise Clients"
