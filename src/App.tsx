@@ -34,9 +34,9 @@ type Page = 'home' | 'services' | 'about' | 'pricing' | 'contact' | 'terms' | 'p
 // --- Constants ---
 const COMPANY_DETAILS = {
   name: "Centurion Support Services",
-  address: "#####",
-  crn: "#####",
-  phone: "+44 #####",
+  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
+  crn: "17048927",
+  phone: "0149 470 6278",
   email: "info@centurionsupportservices.co.uk",
   hours: "Mon - Fri: 08:30 - 18:00",
 };
