@@ -7,10 +7,10 @@ export function cn(...inputs: ClassValue[]) {
 
 export const COMPANY_DETAILS = {
   name: "City Gate House",
-  address: "123 London Wall, London, EC2Y 5AS, United Kingdom",
-  crn: "12345678",
-  phone: "+44 20 7946 0000",
-  email: "contact@citygatehouse.it",
+  address: "Flat 21 Napier House 17-21 Napier Road, Luton, England, LU1 1DU",
+  crn: "17049918",
+  phone: "0170 857 8206",
+  email: "info@citygatehouse.co.uk",
   hours: "Mon - Fri: 09:00 - 18:00",
   vat: "GB 123 4567 89"
 };
