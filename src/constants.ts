@@ -1,8 +1,8 @@
 export const COMPANY_DETAILS = {
   name: "Isaac Newton House",
-  address: "124 Cambridge Science Park, Milton Road, Cambridge, CB4 0WZ, United Kingdom",
-  crn: "08429173",
-  phone: "+44 (0) 1223 456 789",
+  address: "220 Lythalls Lane, Coventry, England, CV6 6GF",
+  crn: "17048397",
+  phone: "0148 253 0287",
   email: "info@isaacnewtonhouse.co.uk",
   hours: "Mon - Fri: 09:00 - 18:00 GMT",
 };
