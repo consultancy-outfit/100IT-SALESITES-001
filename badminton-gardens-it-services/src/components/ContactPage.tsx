@@ -116,7 +116,7 @@ export const ContactPage = () => {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-slate-900">Phone</p>
-                    <p className="text-slate-600">{COMPANY_DETAILS.phone}</p>
+                    <p className="text-slate-600">0121 405 2129</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -125,7 +125,7 @@ export const ContactPage = () => {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-slate-900">Email</p>
-                    <p className="text-slate-600">{COMPANY_DETAILS.email}</p>
+                    <p className="text-slate-600">Info@attainingindependence.co.uk</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -134,7 +134,7 @@ export const ContactPage = () => {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-slate-900">Registered Office</p>
-                    <p className="text-slate-600">{COMPANY_DETAILS.address}</p>
+                    <p className="text-slate-600">15 Queens Road, Donnington, Telford, England, TF2 8DB</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -164,7 +164,7 @@ export const ContactPage = () => {
                       <MapPin size={20} />
                     </div>
                     <div>
-                      <p className="font-bold text-slate-900">Badminton Gardens</p>
+                      <p className="font-bold text-slate-900">15 Queens Road, Donnington, Telford, England, TF2 8DB</p>
                       <p className="text-xs text-slate-500">London, EC1V 2NX</p>
                     </div>
                   </div>
