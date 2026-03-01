@@ -33,9 +33,10 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const COMPANY_DETAILS = {
   name: "Benfleet Essex",
-  address: "Business Centre, High Road, Benfleet, Essex, SS7 1AA",
+  address: "1 Love Lane, Kings Langley, England, WD4 9JT",
   email: "info@benfleetessex.co.uk",
-  crn: "08421567",
+  crn: "17048677",
+  phone: "0126 895 5145"
   hours: "Mon - Fri: 09:00 - 17:30",
 };
 
