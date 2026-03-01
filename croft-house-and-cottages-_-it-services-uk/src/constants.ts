@@ -2,9 +2,9 @@ import { Service, PricingTier, Testimonial, CaseStudy } from './types';
 
 export const COMPANY_DETAILS = {
   name: 'Croft House and Cottages',
-  address: '12 Croft Business Park, Bromborough, Wirral, CH62 3PQ, United Kingdom',
-  crn: '08421579',
-  phone: '+44 (0) 151 555 0123',
+  address: 'Flat 30 Wilton Court, Wilton Road, London, England, N10 1LU',
+  crn: '17051825',
+  phone: '0176 833 0465',
   email: 'info@crofthhouseandcottages.co.uk',
   hours: 'Mon - Fri: 09:00 - 17:30',
 };
