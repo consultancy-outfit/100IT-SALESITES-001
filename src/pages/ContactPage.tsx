@@ -130,7 +130,7 @@ export const ContactPage = () => {
                       <MapPin className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-1">Registered Office</h4>
+                      <h4 className="font-bold text-slate-900 mb-1">17052072</h4>
                       <p className="text-slate-600 text-sm leading-relaxed">{COMPANY_DETAILS.address}</p>
                     </div>
                   </div>
@@ -139,7 +139,7 @@ export const ContactPage = () => {
                       <Phone className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-1">Phone Number</h4>
+                      <h4 className="font-bold text-slate-900 mb-1">0161 410 1874</h4>
                       <p className="text-slate-600 text-sm">{COMPANY_DETAILS.phone}</p>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ export const ContactPage = () => {
                       <Mail className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-1">Email Address</h4>
+                      <h4 className="font-bold text-slate-900 mb-1">info@greatermanchesterspecialistsupportservice.co.uk</h4>
                       <p className="text-slate-600 text-sm">{COMPANY_DETAILS.email}</p>
                     </div>
                   </div>
@@ -158,7 +158,7 @@ export const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Business Hours</h4>
-                      <p className="text-slate-600 text-sm">{COMPANY_DETAILS.hours}</p>
+                      <p className="text-slate-600 text-sm">51 East Parade, Ilkley, England, LS29 8JP</p>
                     </div>
                   </div>
                 </div>
