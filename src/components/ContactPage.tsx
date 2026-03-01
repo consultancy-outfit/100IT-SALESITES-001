@@ -116,7 +116,7 @@ export const ContactPage = () => {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-slate-900">Phone</p>
-                    <p className="text-slate-600">{COMPANY_DETAILS.phone}</p>
+                    <p className="text-slate-600">0238 104 0326</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -125,7 +125,7 @@ export const ContactPage = () => {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-slate-900">Email</p>
-                    <p className="text-slate-600">{COMPANY_DETAILS.email}</p>
+                    <p className="text-slate-600">info@assuresupportedliving.co.uk</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -134,7 +134,7 @@ export const ContactPage = () => {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-slate-900">Registered Office</p>
-                    <p className="text-slate-600">{COMPANY_DETAILS.address}</p>
+                    <p className="text-slate-600">Flat 21 Napier House 17-21 Napier Road, Luton, England, LU1 1DU</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
