@@ -76,18 +76,18 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-6">Contact Us</h3>
             <div className="flex gap-3 text-sm">
               <MapPin className="w-5 h-5 text-indigo-500 shrink-0" />
-              <span>{COMPANY_DETAILS.address}</span>
+              <span>Flat 21 Napier House 17-21 Napier Road, Luton, England, LU1 1DU</span>
             </div>
             <div className="flex gap-3 text-sm">
               <Phone className="w-5 h-5 text-indigo-500 shrink-0" />
               <a href={`tel:${COMPANY_DETAILS.phone}`} className="hover:text-indigo-400 transition-colors">
-                {COMPANY_DETAILS.phone}
+               0208 088 5472
               </a>
             </div>
             <div className="flex gap-3 text-sm">
               <Mail className="w-5 h-5 text-indigo-500 shrink-0" />
               <a href={`mailto:${COMPANY_DETAILS.email}`} className="hover:text-indigo-400 transition-colors">
-                {COMPANY_DETAILS.email}
+                info@aspiresouthwestlondon.co.uk
               </a>
             </div>
           </div>
