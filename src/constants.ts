@@ -1,9 +1,10 @@
 export const COMPANY_DETAILS = {
   name: "Dasil Support Services London",
-  registeredOfficeAddress: "[Registered Office Address (UK) - Not Available]",
+  registeredOfficeAddress: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
   companyRegistrationNumber: "[Company Registration Number (CRN) - Not Available]",
-  ukPhoneNumber: "+0153 666 5148",
-  officialBusinessEmail: "info@gianthealthcarecorby.co.uk",
+  ukPhoneNumber: "0208 088 5981",
+  officialBusinessEmail: "info@dasilsupportserviceslondon.co.uk",
+  crn:"17046307",
 };
 
 export const NAV_LINKS = [
