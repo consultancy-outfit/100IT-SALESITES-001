@@ -2,9 +2,9 @@ import { Service, PricingPlan, Testimonial, CaseStudy } from './types';
 
 export const COMPANY_DETAILS = {
   name: "Innovate UK IT Services",
-  address: "#",
-  crn: "000000000",
-  phone: "00000",
+  address: "82 Reddicliff Close, Plymouth, England, PL9 9QJ",
+  crn: "17046337",
+  phone: "0122 697 9080",
   email: "Info@barnsleybusinessinnovationcentre.co.uk",
   hours: "Mon - Fri: 09:00 - 17:30",
 };
