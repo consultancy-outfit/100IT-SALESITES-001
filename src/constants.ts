@@ -3,10 +3,10 @@ import { Service, PricingPlan, Testimonial, CaseStudy } from './types';
 export const COMPANY_DETAILS = {
   name: "Community Short Breaks",
   tradingName: "Community Short Breaks IT Services",
-  address: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom",
-  crn: "12345678",
-  phone: "+44 (0) 20 7946 0000",
-  email: "info@communityshortbreaks.it",
+  address: "133 Hazel Avenue, Guildford, England, GU1 1NU",
+  crn: "17046278",
+  phone: "0190 459 9230",
+  email: "info@communityshortbreaks.co.uk",
   hours: "Mon - Fri: 09:00 - 17:30",
 };
 
