@@ -32,9 +32,9 @@ export interface CaseStudy {
 
 export const COMPANY_DETAILS = {
   name: "Cera Castleham Lodge",
-  address: "12 Castleham Road, St Leonards-on-Sea, East Sussex, TN38 9NR, United Kingdom",
-  crn: "12345678",
-  phone: "+44 20 7946 0000",
+  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
+  crn: "17048491",
+  phone: "0183 733 2050",
   email: "info@ceracastlehamlodge.co.uk",
   hours: "Mon - Fri: 09:00 - 17:30",
 };
