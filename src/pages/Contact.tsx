@@ -150,7 +150,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Registered Office</h4>
-                      <p className="text-slate-600 leading-relaxed">{COMPANY_DETAILS.address}</p>
+                      <p className="text-slate-600 leading-relaxed">133 Hazel Avenue, Guildford, England, GU1 1NU</p>
                     </div>
                   </div>
 
@@ -160,7 +160,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Phone Number</h4>
-                      <p className="text-slate-600 leading-relaxed">{COMPANY_DETAILS.phone}</p>
+                      <p className="text-slate-600 leading-relaxed">0151 380 0831</p>
                     </div>
                   </div>
 
@@ -170,7 +170,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Email Address</h4>
-                      <p className="text-slate-600 leading-relaxed">{COMPANY_DETAILS.email}</p>
+                      <p className="text-slate-600 leading-relaxed">info@jacksongardens.co.uk</p>
                     </div>
                   </div>
 
