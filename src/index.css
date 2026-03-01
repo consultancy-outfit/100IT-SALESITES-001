@@ -6,21 +6,15 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
   body {
     @apply antialiased text-slate-900 bg-white;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight;
-  }
 }
 
-@layer components {
-  .glass {
-    @apply bg-white/80 backdrop-blur-md border border-white/20;
-  }
+.prose h3 {
+  @apply text-slate-900 font-bold mt-8 mb-4;
+}
+
+.prose p {
+  @apply mb-4 text-slate-600;
 }
