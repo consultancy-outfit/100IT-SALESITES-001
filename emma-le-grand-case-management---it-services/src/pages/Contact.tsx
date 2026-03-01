@@ -4,8 +4,9 @@ import { Mail, Phone, MapPin, Clock, Send, ShieldCheck } from 'lucide-react';
 
 const COMPANY_DETAILS = {
   name: "EMMA-LE-GRAND-CASE-MANAGEMENT",
-  address: "124 City Road, London, EC1V 2NX, United Kingdom",
-  phone: "+44 20 7946 0000",
+  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
+  phone: "0124 237 5259",
+  crn: "17048536"
   email: "info@emmalegrandcasemanagement.co.uk",
   hours: "Monday - Friday, 9:00 AM - 5:30 PM GMT"
 };
