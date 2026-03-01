@@ -36,7 +36,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-1">Phone</h4>
-                    <p className="text-lg font-bold text-slate-900">{COMPANY_DETAILS.phone}</p>
+                    <p className="text-lg font-bold text-slate-900">0208 088 5683</{p>
                     <p className="text-sm text-slate-500">Available Mon-Fri, 9:00 - 17:30</p>
                   </div>
                 </div>
@@ -47,7 +47,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-1">Email</h4>
-                    <p className="text-lg font-bold text-slate-900">{COMPANY_DETAILS.email}</p>
+                    <p className="text-lg font-bold text-slate-900">info@fradellodge.co.uk</p>
                     <p className="text-sm text-slate-500">We aim to respond within 4 business hours.</p>
                   </div>
                 </div>
@@ -59,7 +59,7 @@ export const Contact = () => {
                   <div>
                     <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-1">Office</h4>
                     <p className="text-lg font-bold text-slate-900 leading-snug">
-                      {COMPANY_DETAILS.address}
+                     1 Highfield, Love Lane, Kings Langley, United Kingdom, WD4 9JT
                     </p>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ export const Contact = () => {
                 <div className="absolute inset-0 flex items-center justify-center text-slate-400 flex-col gap-2">
                   <MapPin size={48} className="opacity-20" />
                   <span className="text-sm font-medium">Interactive Map Placeholder</span>
-                  <span className="text-xs">{COMPANY_DETAILS.address}</span>
+                  <span className="text-xs">1 Highfield, Love Lane, Kings Langley, United Kingdom, WD4 9JT</span>
                 </div>
               </div>
             </div>
