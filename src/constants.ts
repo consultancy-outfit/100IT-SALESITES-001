@@ -1,8 +1,8 @@
 export const COMPANY_DETAILS = {
   name: "Howse Garden",
-  address: "27 Old Gloucester Street, London, WC1N 3AX, United Kingdom",
-  crn: "14582930",
-  phone: "+44 (0) 20 7946 0123",
+  address: "174 Warrensway, Telford, England, TF7 5QG",
+  crn: "17050014",
+  phone: "0179 362 6235",
   email: "Info@howsegarden.co.uk",
   hours: "Mon - Fri: 09:00 - 18:00 GMT",
 };
