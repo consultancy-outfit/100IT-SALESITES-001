@@ -172,8 +172,9 @@ export default function Contact() {
               </div>
               <div className="space-y-2">
                 <p className="font-bold text-navy-900">Blessday House Ltd</p>
-                <p className="text-slate-600 text-sm">Registered in England & Wales</p>
-                <p className="text-slate-600 text-sm">CRN: N/A</p>
+                <p className="text-slate-600 text-sm">1 Highfield Love Lane, Kings Langley, United Kingdom, WD4 9JT</p>
+                <p className="text-slate-600 text-sm">CRN:17046962</p>
+                 <p className="text-slate-600 text-sm">Phone: 0170 857 8178</p>
               </div>
             </div>
           </div>
