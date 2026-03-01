@@ -1,10 +1,10 @@
 export const COMPANY_DETAILS = {
   name: "Hillside IT Solutions Ltd",
-  address: "########################",
-  crn: "########################",
-  phone: "########################",
+  address: "Flat 30 Wilton Court, Wilton Road, London, England, N10 1LU",
+  crn: "17049159",
+  phone: "0175 290 5186",
   email: "info@hillsideplymouth.co.uk",
-  hours: "########################",
+  
 };
 
 export const SERVICES = [
