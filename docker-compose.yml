@@ -1,0 +1,15 @@
+services:
+  badminton-gardens:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: badminton-gardens-salesite
+    restart: unless-stopped
+    ports:
+      - "9051:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
