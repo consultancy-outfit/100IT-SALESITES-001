@@ -1,0 +1,15 @@
+services:
+  island-business:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: island-business-salesite
+    restart: unless-stopped
+    ports:
+      - "9017:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
