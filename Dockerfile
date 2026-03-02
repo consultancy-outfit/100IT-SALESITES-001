@@ -1,3 +1,8 @@
+# ---------- Build Stage ----------
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
 # copy package files
 COPY package*.json ./
 
@@ -16,6 +21,7 @@ FROM nginx:alpine
 
 RUN rm -rf /usr/share/nginx/html/*
 
+# copy build files from builder
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
