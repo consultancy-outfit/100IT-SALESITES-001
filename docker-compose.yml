@@ -1,0 +1,15 @@
+services:
+  aspire-south-west-london:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aspire-south-west-london-salesite
+    restart: unless-stopped
+    ports:
+      - "9054:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
