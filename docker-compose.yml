@@ -1,0 +1,15 @@
+services:
+  attaining:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: attaining-salesite
+    restart: unless-stopped
+    ports:
+      - "9052:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
