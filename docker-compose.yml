@@ -1,0 +1,15 @@
+services:
+  cumbria:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cumbria-salesite
+    restart: unless-stopped
+    ports:
+      - "9036:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
