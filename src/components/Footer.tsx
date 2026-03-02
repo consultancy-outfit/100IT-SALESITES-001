@@ -67,18 +67,18 @@ export default function Footer() {
               <li className="flex gap-3">
                 <Mail className="w-5 h-5 text-primary-400 shrink-0" />
                 <a href={`mailto:${COMPANY_DETAILS.email}`} className="hover:text-primary-400 transition-colors">
-                  {COMPANY_DETAILS.email}
+                  info@cornwallplaceltd.co.uk
                 </a>
               </li>
               <li className="flex gap-3">
                 <Phone className="w-5 h-5 text-primary-400 shrink-0" />
                 <a href={`tel:${COMPANY_DETAILS.phone}`} className="hover:text-primary-400 transition-colors">
-                  {COMPANY_DETAILS.phone}
+                  0127 496 3186
                 </a>
               </li>
               <li className="flex gap-3">
                 <MapPin className="w-5 h-5 text-primary-400 shrink-0" />
-                <span>{COMPANY_DETAILS.address}</span>
+                <span>160a Croydon Road, Caterham, England, CR3 6QE</span>
               </li>
             </ul>
           </div>
@@ -90,7 +90,7 @@ export default function Footer() {
             <div className="text-sm text-slate-500 space-y-2">
               <p>© {new Date().getFullYear()} {COMPANY_DETAILS.name} Limited. All rights reserved.</p>
               <div className="flex flex-wrap gap-x-6 gap-y-2">
-                <span>CRN: {COMPANY_DETAILS.crn}</span>
+                <span>CRN: 17047728</span>
                 <span>VAT: GB 987 6543 21</span>
                 <span>Registered in England & Wales</span>
               </div>
