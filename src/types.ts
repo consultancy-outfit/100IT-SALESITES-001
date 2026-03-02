@@ -1,41 +1,48 @@
-import { LucideIcon } from 'lucide-react';
+export interface CompanyDetails {
+  name: string;
+  address: string;
+  crn: string;
+  phone: string;
+  email: string;
+  hours: string;
+}
+
+export interface NavItem {
+  label: string;
+  id: string;
+}
 
 export interface Service {
   id: string;
   title: string;
   description: string;
-  overview: string;
-  targetAudience: string;
+  target: string;
   process: string[];
   benefits: string[];
-  startingPrice: number;
+  startingPrice: string;
   icon: string;
 }
 
+export interface PricingPlan {
+  name: string;
+  price: string;
+  features: string[];
+  support: string;
+  idealFor: string;
+  cta: string;
+  popular?: boolean;
+}
+
 export interface Testimonial {
-  id: string;
   name: string;
   role: string;
   company: string;
   content: string;
 }
 
-export interface PricingPlan {
-  id: string;
-  name: string;
-  price: number;
-  features: string[];
-  support: string;
-  idealFor: string;
-  isPopular?: boolean;
-}
-
 export interface CaseStudy {
-  id: string;
   title: string;
   client: string;
-  challenge: string;
-  solution: string;
   result: string;
-  roi: string;
+  description: string;
 }
