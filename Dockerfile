@@ -1,7 +1,10 @@
 # ---------- Build Stage ----------
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
+
+# install build tools
+RUN apk add --no-cache python3 make g++
 
 # copy package files
 COPY package*.json ./
@@ -9,7 +12,7 @@ COPY package*.json ./
 # install dependencies
 RUN npm install
 
-# copy source code
+# copy source
 COPY . .
 
 # build project
@@ -21,7 +24,6 @@ FROM nginx:alpine
 
 RUN rm -rf /usr/share/nginx/html/*
 
-# copy build files from builder
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
