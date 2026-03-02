@@ -1,222 +1,142 @@
-import { useState, FormEvent } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Phone, Mail, MapPin, Clock, Send, ShieldCheck } from 'lucide-react';
+import { COMPANY_DETAILS } from '../constants';
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:text-center mb-16">
-          <h2 className="text-base font-semibold leading-7 text-brand-600 uppercase tracking-wide">Contact Us</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Let's Start a Conversation
-          </p>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            Have a question or ready to upgrade your IT? Our team is here to help.
-          </p>
+    <div className="bg-white">
+      {/* Header */}
+      <section className="pt-24 pb-20 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <h1 className="text-5xl font-bold text-slate-900 mb-6 tracking-tight">Contact Us</h1>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Have a question or ready to start your digital transformation? Our UK-based team is here to help.
+            </p>
+          </motion.div>
         </div>
+      </section>
 
-        <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact Info */}
-          <div className="space-y-12">
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900">Get in Touch</h3>
-              <p className="mt-4 text-slate-600">
-                Reach out via any of the channels below. We aim to respond to all enquiries within 2 business hours.
-              </p>
-            </div>
-
-            <dl className="space-y-8">
-              <div className="flex gap-x-4">
-                <dt className="flex-none">
-                  <span className="sr-only">Address</span>
-                  <MapPin className="h-7 w-6 text-brand-600" aria-hidden="true" />
-                </dt>
-                <dd className="text-slate-600">
-                  <strong className="text-slate-900 block mb-1">Registered Office</strong>
-                  15 Queens Road, Donnington,<br />
-                  Telford, England, TF2 8DB
-                </dd>
-              </div>
-              <div className="flex gap-x-4">
-                <dt className="flex-none">
-                  <span className="sr-only">Telephone</span>
-                  <Phone className="h-7 w-6 text-brand-600" aria-hidden="true" />
-                </dt>
-                <dd>
-                  <strong className="text-slate-900 block mb-1">Phone Number</strong>
-                  <a className="hover:text-brand-600 text-slate-600" href="tel:01214052129">
-                    0121 405 2129
-                  </a>
-                </dd>
-              </div>
-              <div className="flex gap-x-4">
-                <dt className="flex-none">
-                  <span className="sr-only">Email</span>
-                  <Mail className="h-7 w-6 text-brand-600" aria-hidden="true" />
-                </dt>
-                <dd>
-                  <strong className="text-slate-900 block mb-1">Official Email</strong>
-                  <a className="hover:text-brand-600 text-slate-600" href="mailto:Info@attainingindependence.co.uk">
-                    Info@attainingindependence.co.uk
-                  </a>
-                </dd>
-              </div>
-              <div className="flex gap-x-4">
-                <dt className="flex-none">
-                  <span className="sr-only">Hours</span>
-                  <Clock className="h-7 w-6 text-brand-600" aria-hidden="true" />
-                </dt>
-                <dd className="text-slate-600">
-                  <strong className="text-slate-900 block mb-1">Business Hours</strong>
-                  Monday – Friday: 09:00 – 17:30<br />
-                  Saturday – Sunday: Closed (Emergency Support Only)
-                </dd>
-              </div>
-            </dl>
-
-            {/* Map Placeholder */}
-            <div className="aspect-video w-full bg-slate-100 rounded-2xl flex items-center justify-center border border-slate-200 overflow-hidden relative group">
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=1000')] bg-cover opacity-20 grayscale group-hover:grayscale-0 transition-all duration-500"></div>
-              <div className="relative z-10 text-center p-6">
-                <MapPin className="h-10 w-10 text-brand-600 mx-auto mb-2" />
-                <p className="text-sm font-semibold text-slate-900 uppercase tracking-widest">Telford, Shropshire</p>
-                <p className="text-xs text-slate-500 mt-1">Visit our headquarters</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
-            {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-12">
-                <div className="bg-brand-100 p-4 rounded-full mb-6">
-                  <CheckCircle2 className="h-12 w-12 text-brand-600" />
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            {/* Contact Form */}
+            <div className="bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-xl shadow-slate-200/50">
+              <h3 className="text-2xl font-bold text-slate-900 mb-8">Send us a message</h3>
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-700 uppercase tracking-widest">Full Name</label>
+                    <input 
+                      type="text" 
+                      className="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                      placeholder="John Doe"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-700 uppercase tracking-widest">Email Address</label>
+                    <input 
+                      type="email" 
+                      className="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                      placeholder="john@example.com"
+                      required
+                    />
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900">Message Received!</h3>
-                <p className="mt-4 text-slate-600 max-w-xs">
-                  Thank you for reaching out. One of our IT specialists will contact you shortly.
-                </p>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700 uppercase tracking-widest">Subject</label>
+                  <select className="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                    <option>General Enquiry</option>
+                    <option>Managed IT Support</option>
+                    <option>Cloud Migration</option>
+                    <option>Cyber Security</option>
+                    <option>Strategic Consultancy</option>
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700 uppercase tracking-widest">Message</label>
+                  <textarea 
+                    rows={5}
+                    className="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none"
+                    placeholder="How can we help you?"
+                    required
+                  ></textarea>
+                </div>
+                <div className="flex items-start gap-4 p-4 bg-indigo-50 rounded-2xl border border-indigo-100">
+                  <input type="checkbox" className="mt-1.5 w-4 h-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-500" required />
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    I consent to SENSE IT processing my personal data in accordance with the Privacy Policy. We take your privacy seriously and will only use your information to manage your enquiry.
+                  </p>
+                </div>
                 <button 
-                  onClick={() => setSubmitted(false)}
-                  className="mt-8 text-brand-600 font-semibold hover:text-brand-500"
-                >
-                  Send another message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-slate-900">
-                      First name
-                    </label>
-                    <div className="mt-2.5">
-                      <input
-                        type="text"
-                        name="first-name"
-                        id="first-name"
-                        autoComplete="given-name"
-                        required
-                        className="block w-full rounded-xl border-0 px-3.5 py-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="last-name" className="block text-sm font-semibold leading-6 text-slate-900">
-                      Last name
-                    </label>
-                    <div className="mt-2.5">
-                      <input
-                        type="text"
-                        name="last-name"
-                        id="last-name"
-                        autoComplete="family-name"
-                        required
-                        className="block w-full rounded-xl border-0 px-3.5 py-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="company" className="block text-sm font-semibold leading-6 text-slate-900">
-                    Company
-                  </label>
-                  <div className="mt-2.5">
-                    <input
-                      type="text"
-                      name="company"
-                      id="company"
-                      autoComplete="organization"
-                      className="block w-full rounded-xl border-0 px-3.5 py-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold leading-6 text-slate-900">
-                    Email
-                  </label>
-                  <div className="mt-2.5">
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      autoComplete="email"
-                      required
-                      className="block w-full rounded-xl border-0 px-3.5 py-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold leading-6 text-slate-900">
-                    Message
-                  </label>
-                  <div className="mt-2.5">
-                    <textarea
-                      name="message"
-                      id="message"
-                      rows={4}
-                      required
-                      className="block w-full rounded-xl border-0 px-3.5 py-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-                <div className="flex gap-x-4">
-                  <div className="flex h-6 items-center">
-                    <input
-                      id="privacy-consent"
-                      name="privacy-consent"
-                      type="checkbox"
-                      required
-                      className="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-600"
-                    />
-                  </div>
-                  <label htmlFor="privacy-consent" className="text-sm leading-6 text-slate-600">
-                    I agree to the processing of my data in accordance with the{' '}
-                    <a href="/privacy" className="font-semibold text-brand-600">
-                      privacy&nbsp;policy
-                    </a>
-                    .
-                  </label>
-                </div>
-                <button
                   type="submit"
-                  className="w-full rounded-full bg-brand-600 px-8 py-3.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-brand-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 transition-all flex items-center justify-center gap-2"
+                  className="w-full bg-indigo-600 text-white py-5 rounded-full font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2"
                 >
-                  Send Message
-                  <Send className="h-4 w-4" />
+                  Send Message <Send size={20} />
                 </button>
               </form>
-            )}
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-8">Get in touch</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                    <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 mb-6 shadow-sm">
+                      <Phone size={24} />
+                    </div>
+                    <h4 className="font-bold text-slate-900 mb-2">Call Us</h4>
+                    <p className="text-slate-600 text-sm">{COMPANY_DETAILS.phone}</p>
+                  </div>
+                  <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                    <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 mb-6 shadow-sm">
+                      <Mail size={24} />
+                    </div>
+                    <h4 className="font-bold text-slate-900 mb-2">Email Us</h4>
+                    <p className="text-slate-600 text-sm break-all">{COMPANY_DETAILS.email}</p>
+                  </div>
+                  <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                    <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 mb-6 shadow-sm">
+                      <MapPin size={24} />
+                    </div>
+                    <h4 className="font-bold text-slate-900 mb-2">Visit Us</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">{COMPANY_DETAILS.address}</p>
+                  </div>
+                  <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                    <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 mb-6 shadow-sm">
+                      <Clock size={24} />
+                    </div>
+                    <h4 className="font-bold text-slate-900 mb-2">Business Hours</h4>
+                    <p className="text-slate-600 text-sm">{COMPANY_DETAILS.hours}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-10 bg-slate-900 rounded-[2.5rem] text-white overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-600/20 rounded-full blur-3xl" />
+                <h4 className="text-xl font-bold mb-6 flex items-center gap-2">
+                  <ShieldCheck className="text-indigo-400" />
+                  Our Location
+                </h4>
+                <div className="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center border border-slate-700">
+                  <p className="text-slate-500 text-sm font-medium italic">Interactive Map Placeholder</p>
+                </div>
+                <div className="mt-8 space-y-2">
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Registered Office</p>
+                  <p className="text-sm text-slate-300">{COMPANY_DETAILS.name}</p>
+                  <p className="text-sm text-slate-300">{COMPANY_DETAILS.address}</p>
+                  <p className="text-xs text-slate-500 mt-4">CRN: {COMPANY_DETAILS.crn}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

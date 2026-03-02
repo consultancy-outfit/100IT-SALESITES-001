@@ -1,148 +1,182 @@
-import { Shield, Target, Heart, Users, Award, Building2 } from 'lucide-react';
-
-const values = [
-  {
-    name: 'Integrity',
-    description: 'We believe in honest, transparent communication. No technical jargon, just clear solutions.',
-    icon: Shield,
-  },
-  {
-    name: 'Excellence',
-    description: 'We strive for perfection in every ticket, project, and strategic roadmap we deliver.',
-    icon: Award,
-  },
-  {
-    name: 'Innovation',
-    description: 'We stay ahead of the curve so you don’t have to, bringing the latest tech to your business.',
-    icon: Target,
-  },
-  {
-    name: 'Client-Centric',
-    description: 'Your success is our success. We build long-term partnerships, not just client lists.',
-    icon: Heart,
-  },
-];
-
-const leadership = [
-  {
-    name: 'Alistair Sterling',
-    role: 'Founder & Managing Director',
-    bio: 'With over 20 years in UK enterprise IT, Alistair founded Attaining Independence to bring corporate-level tech to the SME market.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-  },
-  {
-    name: 'Eleanor Vance',
-    role: 'Technical Operations Director',
-    bio: 'Eleanor leads our support and engineering teams, ensuring our 15-minute response time guarantee is always met.',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-  },
-];
+import { motion } from 'motion/react';
+import { Target, Eye, Heart, ShieldCheck, Users, Award } from 'lucide-react';
+import { COMPANY_DETAILS } from '../constants';
 
 export default function About() {
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative py-24 sm:py-32 overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">Our Story</h2>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              Founded in Telford, Attaining Independence was born from a simple observation: UK small and medium businesses were being underserved by traditional IT providers. We set out to change that by providing enterprise-grade technology with a personal, local touch.
-            </p>
+      {/* Hero */}
+      <section className="pt-24 pb-20 bg-indigo-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+            >
+              <h1 className="text-5xl font-bold mb-8 tracking-tight">About SENSE IT</h1>
+              <p className="text-xl text-indigo-100 leading-relaxed">
+                We are a Birmingham-based technology partner dedicated to helping UK businesses thrive through intelligent, reliable, and secure IT services.
+              </p>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Mission & Vision */}
-      <div className="bg-slate-900 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-16">
+      {/* Story Section */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <h3 className="text-3xl font-bold tracking-tight text-white">Our Mission</h3>
-              <p className="mt-4 text-lg text-slate-300">
-                To empower UK businesses by providing seamless, secure, and scalable IT solutions that foster growth and independence from technical limitations.
-              </p>
+              <h2 className="text-xs font-bold text-indigo-600 uppercase tracking-[0.2em] mb-4">Our Story</h2>
+              <h3 className="text-4xl font-bold text-slate-900 mb-8">A decade of technical excellence in the West Midlands.</h3>
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <p>
+                  Founded in Birmingham, SENSE IT began with a simple mission: to provide enterprise-grade technology support to small and medium-sized businesses that were being underserved by traditional IT providers.
+                </p>
+                <p>
+                  Over the years, we have grown into a full-service technology partner, supporting hundreds of clients across logistics, healthcare, and professional services. Our name, SENSE, reflects our approach—making sense of complex technology and providing sensible, ROI-driven solutions.
+                </p>
+                <p>
+                  Today, we are proud to be a leading IT provider in the West Midlands, known for our technical expertise, British reliability, and commitment to our clients' success.
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-3xl font-bold tracking-tight text-white">Our Vision</h3>
-              <p className="mt-4 text-lg text-slate-300">
-                To be the most trusted IT partner in the UK, recognised for our technical excellence, proactive support, and commitment to client success.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Values */}
-      <div className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-brand-600 uppercase tracking-wide">Our Values</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              The principles that guide our work
-            </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-4">
-              {values.map((value) => (
-                <div key={value.name} className="flex flex-col">
-                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-slate-900">
-                    <value.icon className="h-5 w-5 flex-none text-brand-600" aria-hidden="true" />
-                    {value.name}
-                  </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-600">
-                    <p className="flex-auto">{value.description}</p>
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </div>
-
-      {/* Leadership */}
-      <div className="bg-slate-50 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Leadership Team</h2>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              Our experienced directors bring decades of expertise to help steer your business toward technical success.
-            </p>
-          </div>
-          <ul role="list" className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-            {leadership.map((person) => (
-              <li key={person.name} className="flex flex-col gap-6 sm:flex-row">
-                <img className="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src={person.image} alt="" referrerPolicy="no-referrer" />
-                <div className="flex-auto">
-                  <h3 className="text-lg font-semibold leading-8 tracking-tight text-slate-900">{person.name}</h3>
-                  <p className="text-base leading-7 text-brand-600">{person.role}</p>
-                  <p className="mt-6 text-base leading-7 text-slate-600">{person.bio}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* GDPR Commitment */}
-      <div className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="rounded-3xl bg-brand-600 px-6 py-16 sm:p-16 lg:flex lg:items-center lg:justify-between">
-            <div className="lg:max-w-xl">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Commitment to GDPR Compliance</h2>
-              <p className="mt-6 text-lg leading-8 text-brand-100">
-                Data privacy isn't just a legal requirement for us; it's a core value. We ensure all our systems and processes are fully GDPR compliant, protecting both your business and your clients' information.
-              </p>
-            </div>
-            <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-none">
-              <div className="flex items-center gap-x-2 text-white font-semibold">
-                <Shield className="h-8 w-8" />
-                <span>ISO 27001 Certified</span>
+            <div className="relative">
+              <div className="aspect-[4/5] bg-slate-100 rounded-[3rem] overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" 
+                  alt="SENSE Supported Living Office" 
+                  className="w-full h-full object-cover grayscale"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="absolute -bottom-10 -left-10 bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 max-w-xs">
+                <p className="text-5xl font-bold text-indigo-600 mb-2">10+</p>
+                <p className="text-sm font-bold text-slate-900 uppercase tracking-widest">Years of Excellence</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="bg-white p-12 rounded-[2.5rem] border border-slate-100 shadow-sm">
+              <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-8">
+                <Target size={28} />
+              </div>
+              <h4 className="text-2xl font-bold text-slate-900 mb-6">Our Mission</h4>
+              <p className="text-slate-600 leading-relaxed">
+                To empower UK businesses by delivering innovative, secure, and reliable IT solutions that drive efficiency and foster sustainable growth. We aim to be the invisible engine behind our clients' success.
+              </p>
+            </div>
+            <div className="bg-white p-12 rounded-[2.5rem] border border-slate-100 shadow-sm">
+              <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-8">
+                <Eye size={28} />
+              </div>
+              <h4 className="text-2xl font-bold text-slate-900 mb-6">Our Vision</h4>
+              <p className="text-slate-600 leading-relaxed">
+                To be the most trusted technology partner in the UK, recognized for our technical brilliance, ethical approach, and unwavering commitment to client satisfaction in an ever-evolving digital landscape.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-xs font-bold text-indigo-600 uppercase tracking-[0.2em] mb-4">Our Values</h2>
+            <h3 className="text-4xl font-bold text-slate-900">The principles that guide us.</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-indigo-600 mx-auto mb-6">
+                <ShieldCheck size={32} />
+              </div>
+              <h5 className="text-xl font-bold text-slate-900 mb-4">Integrity First</h5>
+              <p className="text-slate-600 text-sm leading-relaxed">We provide honest advice, even if it means recommending a simpler, lower-cost solution. Your trust is our most valuable asset.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-indigo-600 mx-auto mb-6">
+                <Award size={32} />
+              </div>
+              <h5 className="text-xl font-bold text-slate-900 mb-4">Technical Excellence</h5>
+              <p className="text-slate-600 text-sm leading-relaxed">We never stop learning. Our team stays at the forefront of technology to ensure you always have the best tools for the job.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-indigo-600 mx-auto mb-6">
+                <Heart size={32} />
+              </div>
+              <h5 className="text-xl font-bold text-slate-900 mb-4">Client Centricity</h5>
+              <p className="text-slate-600 text-sm leading-relaxed">We don't just support systems; we support people. We take the time to understand your business goals and align our services accordingly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section className="py-24 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-xs font-bold text-indigo-400 uppercase tracking-[0.2em] mb-4">Leadership</h2>
+              <h3 className="text-4xl font-bold">The experts behind SENSE IT.</h3>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {[
+              { name: "James Harrison", role: "Chief Executive Officer", bio: "20+ years in IT infrastructure and strategic consultancy." },
+              { name: "Eleanor Wright", role: "Chief Technology Officer", bio: "Specialist in cloud architecture and cyber security compliance." },
+              { name: "Robert Palmer", role: "Director of Operations", bio: "Ensuring world-class support delivery across all client accounts." }
+            ].map((member, i) => (
+              <div key={i} className="group">
+                <div className="aspect-square bg-slate-800 rounded-3xl mb-6 overflow-hidden">
+                  <img 
+                    src={`https://images.unsplash.com/photo-${i === 0 ? '1560250097-0b93528c311a' : i === 1 ? '1573496359142-b8d87734a5a2' : '1519085360753-af0119f7cbe7'}?auto=format&fit=crop&w=600&q=80`} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <h5 className="text-xl font-bold mb-1">{member.name}</h5>
+                <p className="text-indigo-400 text-sm font-medium mb-4">{member.role}</p>
+                <p className="text-slate-400 text-sm leading-relaxed">{member.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GDPR Commitment */}
+      <section className="py-24 bg-indigo-50">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-indigo-600 mx-auto mb-8 shadow-xl shadow-indigo-200">
+            <ShieldCheck size={40} />
+          </div>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Our Commitment to GDPR & Security</h2>
+          <p className="text-lg text-slate-600 mb-10 leading-relaxed">
+            As a UK-based company, we take data protection seriously. We are fully GDPR compliant and help our clients achieve and maintain Cyber Essentials certification. Your data security is integrated into every service we provide.
+          </p>
+          <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex items-center gap-2 text-slate-900 font-bold">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+              Cyber Essentials Certified
+            </div>
+            <div className="flex items-center gap-2 text-slate-900 font-bold">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+              ICO Registered
+            </div>
+            <div className="flex items-center gap-2 text-slate-900 font-bold">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+              ISO 27001 Aligned
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
