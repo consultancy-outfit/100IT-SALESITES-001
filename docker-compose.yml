@@ -1,0 +1,15 @@
+services:
+  bridlington:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bridlington-salesite
+    restart: unless-stopped
+    ports:
+      - "9046:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
