@@ -1,0 +1,15 @@
+services:
+  house-of-st:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: house-of-st-salesite
+    restart: unless-stopped
+    ports:
+      - "9020:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
