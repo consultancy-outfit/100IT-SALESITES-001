@@ -1,22 +1,15 @@
-# ---------- Build Stage ----------
-FROM node:18-alpine AS builder
+FROM node:18 AS builder
 
 WORKDIR /app
 
-# copy package files
 COPY package*.json ./
 
-# install dependencies
 RUN npm install
 
-# copy source code
 COPY . .
 
-# build project
 RUN npm run build
 
-
-# ---------- Production Stage ----------
 FROM nginx:alpine
 
 RUN rm -rf /usr/share/nginx/html/*
