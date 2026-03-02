@@ -6,7 +6,7 @@ const COMPANY_DETAILS = {
   name: "EMMA-LE-GRAND-CASE-MANAGEMENT",
   address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
   phone: "0124 237 5259",
-  crn: "17048536"
+  crn: "17048536",
   email: "info@emmalegrandcasemanagement.co.uk",
   hours: "Monday - Friday, 9:00 AM - 5:30 PM GMT"
 };
