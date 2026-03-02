@@ -1,76 +1,104 @@
-import { Link } from "react-router-dom";
-import { COMPANY_DETAILS, NAV_LINKS } from "../constants";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from 'react-router-dom';
+import { Monitor, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { COMPANY_DETAILS, NAV_LINKS } from '../constants';
 
-export default function Footer() {
+export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-slate-950 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+    <footer className="bg-slate-900 text-slate-300 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          <div className="space-y-4">
-            <h3 className="text-white font-bold text-xl tracking-tight">Vibrance Outreach</h3>
-            <p className="text-sm leading-relaxed max-w-xs">
-              Empowering British businesses through innovative IT solutions and strategic technology consultancy.
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand Column */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-2">
+              <div className="bg-brand-600 p-2 rounded-lg">
+                <Monitor className="w-5 h-5 text-white" />
+              </div>
+              <span className="font-bold text-lg text-white">
+                {COMPANY_DETAILS.name}
+              </span>
+            </div>
+            <p className="text-sm leading-relaxed">
+              Leading IT services provider in the UK, specializing in healthcare technology solutions and managed IT support for local businesses.
             </p>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-3 text-sm">
+            <h3 className="text-white font-semibold mb-6">Quick Links</h3>
+            <ul className="space-y-4 text-sm">
               {NAV_LINKS.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.href} className="hover:text-white transition-colors">
+                <li key={link.path}>
+                  <Link to={link.path} className="hover:text-brand-400 transition-colors">
                     {link.name}
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="text-white font-semibold mb-6">Legal</h3>
+            <ul className="space-y-4 text-sm">
               <li>
-                <Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+                <Link to="/terms" className="hover:text-brand-400 transition-colors">
+                  Terms & Conditions
+                </Link>
               </li>
               <li>
-                <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                <Link to="/privacy" className="hover:text-brand-400 transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/cookies" className="hover:text-brand-400 transition-colors">
+                  Cookie Policy
+                </Link>
               </li>
             </ul>
           </div>
 
+          {/* Contact Info */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Contact Us</h4>
+            <h3 className="text-white font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 mt-1 shrink-0 text-emerald-500" />
+                <MapPin className="w-5 h-5 text-brand-500 shrink-0" />
                 <span>{COMPANY_DETAILS.address}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 shrink-0 text-emerald-500" />
+                <Phone className="w-5 h-5 text-brand-500 shrink-0" />
                 <span>{COMPANY_DETAILS.phone}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 shrink-0 text-emerald-500" />
+                <Mail className="w-5 h-5 text-brand-500 shrink-0" />
                 <span>{COMPANY_DETAILS.email}</span>
               </li>
             </ul>
           </div>
+        </div>
 
-          <div>
-            <h4 className="text-white font-semibold mb-6">Business Hours</h4>
-            <p className="text-sm">{COMPANY_DETAILS.hours}</p>
-            <div className="mt-6 p-4 bg-slate-900 rounded-lg border border-slate-800">
-              <p className="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-1">Company Info</p>
-              <p className="text-xs">CRN: {COMPANY_DETAILS.crn}</p>
-              <p className="text-xs">Registered in England & Wales</p>
+        {/* Company Details Bar */}
+        <div className="border-t border-slate-800 pt-8 pb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-500">
+            <div className="space-y-1">
+              <p>Company Name: {COMPANY_DETAILS.name}</p>
+              <p>Registered Office: {COMPANY_DETAILS.address}</p>
+            </div>
+            <div className="space-y-1 md:text-right">
+              <p>Company Registration Number (CRN): {COMPANY_DETAILS.crn}</p>
+              <p>Official Business Email: {COMPANY_DETAILS.email}</p>
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link to="/privacy" className="hover:text-slate-300">Privacy</Link>
-            <Link to="/terms" className="hover:text-slate-300">Terms</Link>
-            <Link to="/cookies" className="hover:text-slate-300">Cookies</Link>
-          </div>
+        <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+          <p>© {currentYear} {COMPANY_DETAILS.name}. All rights reserved.</p>
+          <p>Built with precision in the UK.</p>
         </div>
       </div>
     </footer>
   );
-}
+};

@@ -1,68 +1,75 @@
-import { COMPANY_DETAILS } from "../constants";
+import React from 'react';
+import { COMPANY_DETAILS } from '../constants';
 
-export default function Terms() {
+const Terms = () => {
   return (
-    <div className="pt-32 pb-20">
+    <div className="bg-white py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-slate-900 mb-8">Terms & Conditions</h1>
-        <div className="prose prose-slate max-w-none space-y-8 text-slate-600">
+        <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Terms and Conditions</h1>
+        <p className="text-gray-500 mb-12">Last Updated: {new Date().toLocaleDateString('en-GB')}</p>
+
+        <div className="prose prose-indigo max-w-none space-y-8 text-gray-600">
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Introduction</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
             <p>
-              These Terms and Conditions govern your use of the website and services provided by {COMPANY_DETAILS.name} ("the Company", "we", "us", "our"). By accessing our website or engaging our services, you agree to be bound by these terms.
+              These Terms and Conditions govern the use of the services provided by {COMPANY_DETAILS.name} ("the Company", "we", "us", "our"). By engaging our services or using our website, you agree to comply with and be bound by these terms.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Company Information</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Company Information</h2>
             <p>
-              {COMPANY_DETAILS.name} is a company registered in England and Wales. 
-              <br />CRN: {COMPANY_DETAILS.crn}
-              <br />Registered Office: {COMPANY_DETAILS.address}
+              {COMPANY_DETAILS.name} is a company registered in England and Wales.<br />
+              Registered Office: {COMPANY_DETAILS.address}<br />
+              Company Registration Number: {COMPANY_DETAILS.crn}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">3. Services & Payments</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Services</h2>
             <p>
-              All service descriptions and pricing on this website are for informational purposes. Formal engagement requires a signed Service Level Agreement (SLA).
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>All financial references and payments are in Great British Pounds (£/GBP).</li>
-              <li>Prices quoted are exclusive of VAT unless otherwise stated.</li>
-              <li>Payment terms are strictly 30 days from the date of invoice unless otherwise agreed in writing.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">4. Intellectual Property</h2>
-            <p>
-              All content on this website, including text, graphics, logos, and software, is the property of {COMPANY_DETAILS.name} or its content suppliers and is protected by UK and international copyright laws.
+              We provide various IT services, including but not limited to Managed IT Support, Cybersecurity, Cloud Migration, and IT Consultancy. The specific scope of services will be defined in a separate Service Level Agreement (SLA) or Statement of Work (SOW) for each client.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Confidentiality</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Payment Terms</h2>
             <p>
-              We maintain strict confidentiality regarding all client data and business information. Both parties agree not to disclose confidential information to third parties without prior written consent.
+              All prices are quoted in Great British Pounds (GBP £) and are exclusive of VAT at the prevailing rate unless otherwise stated. Payment for managed services is typically due monthly in advance via Direct Debit. Project-based work requires a 50% deposit upon commencement, with the balance due upon completion.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Limitation of Liability</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Intellectual Property</h2>
             <p>
-              To the maximum extent permitted by law, {COMPANY_DETAILS.name} shall not be liable for any indirect, incidental, or consequential damages arising out of the use or inability to use our services.
+              Unless otherwise agreed in writing, all intellectual property rights in materials created by us during the provision of services remain our property. Clients are granted a non-exclusive, non-transferable license to use such materials for their internal business purposes.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">7. Governing Law</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Confidentiality</h2>
             <p>
-              These terms are governed by and construed in accordance with the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.
+              Both parties agree to keep confidential all sensitive information disclosed during the course of the business relationship. This obligation survives the termination of any agreement.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Limitation of Liability</h2>
+            <p>
+              To the maximum extent permitted by law, our liability for any claim arising out of the provision of services shall be limited to the total fees paid by the client in the 12 months preceding the claim. We shall not be liable for any indirect or consequential loss, including loss of profits or data.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Governing Law</h2>
+            <p>
+              These terms are governed by and construed in accordance with the laws of {COMPANY_DETAILS.governingLaw}. Any disputes shall be subject to the exclusive jurisdiction of the courts of {COMPANY_DETAILS.governingLaw}.
             </p>
           </section>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Terms;
