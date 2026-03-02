@@ -1,0 +1,15 @@
+services:
+  croft-house:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: croft-house-salesite
+    restart: unless-stopped
+    ports:
+      - "9037:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
