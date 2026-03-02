@@ -1,0 +1,15 @@
+services:
+  mavyl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mavyl-salesite
+    restart: unless-stopped
+    ports:
+      - "9014:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
