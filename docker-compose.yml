@@ -1,0 +1,15 @@
+services:
+  greater-mainchester:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: greater-mainchester-salesite
+    restart: unless-stopped
+    ports:
+      - "9026:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
