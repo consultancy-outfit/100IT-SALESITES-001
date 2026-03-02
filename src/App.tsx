@@ -1,94 +1,118 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Menu, X, Shield, Lock, Cloud, BarChart, RefreshCw, 
-  CheckCircle, ArrowRight, Mail, Phone, MapPin, Clock,
-  ChevronRight, Facebook, Twitter, Linkedin, ExternalLink
+  Shield, 
+  Cloud, 
+  Cpu, 
+  Globe, 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Clock, 
+  CheckCircle2, 
+  ChevronRight, 
+  Menu, 
+  X, 
+  ArrowRight,
+  Server,
+  Lock,
+  Users,
+  BarChart3,
+  Zap,
+  Check
 } from 'lucide-react';
-import { COMPANY, NAV_ITEMS, SERVICES, PRICING, TESTIMONIALS, CASE_STUDIES } from './constants';
-import { Service, PricingPlan } from './types';
+import { motion, AnimatePresence } from 'motion/react';
+
+// --- Types ---
+
+type Page = 'home' | 'services' | 'about' | 'pricing' | 'contact' | 'terms' | 'privacy';
 
 // --- Components ---
 
-const IconMap: Record<string, any> = {
-  Shield, Lock, Cloud, BarChart, RefreshCw
-};
-
-const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePage: (id: string) => void }) => {
+const Navbar = ({ currentPage, setCurrentPage }: { currentPage: Page, setCurrentPage: (p: Page) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const navLinks: { name: string, id: Page }[] = [
+    { name: 'Home', id: 'home' },
+    { name: 'Services', id: 'services' },
+    { name: 'About Us', id: 'about' },
+    { name: 'Pricing', id: 'pricing' },
+    { name: 'Contact', id: 'contact' },
+  ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-3 shadow-sm' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div 
           className="flex items-center gap-2 cursor-pointer" 
-          onClick={() => setActivePage('home')}
+          onClick={() => setCurrentPage('home')}
         >
-          <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
-            SC
+          <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
+            <Cpu className="text-white w-6 h-6" />
           </div>
-          <span className="font-bold text-xl tracking-tight hidden sm:block">St Crispin Village</span>
+          <span className="font-display font-bold text-xl tracking-tight">St Helens IT</span>
         </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {NAV_ITEMS.map((item) => (
+          {navLinks.map((link) => (
             <button
-              key={item.id}
-              onClick={() => setActivePage(item.id)}
-              className={`text-sm font-medium transition-colors hover:text-brand-accent ${activePage === item.id ? 'text-brand-accent' : 'text-slate-600'}`}
+              key={link.id}
+              onClick={() => setCurrentPage(link.id)}
+              className={`text-sm font-medium transition-colors hover:text-indigo-600 ${
+                currentPage === link.id ? 'text-indigo-600' : 'text-slate-600'
+              }`}
             >
-              {item.label}
+              {link.name}
             </button>
           ))}
           <button 
-            onClick={() => setActivePage('contact')}
-            className="bg-brand-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-800 transition-all"
+            onClick={() => setCurrentPage('contact')}
+            className="btn-primary py-2 px-5 text-sm"
           >
             Get Started
           </button>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-white border-b border-slate-100 p-6 flex flex-col gap-4 md:hidden shadow-xl"
+            className="md:hidden absolute top-20 left-0 right-0 bg-white border-b border-slate-200 p-6 flex flex-col gap-4 shadow-xl"
           >
-            {NAV_ITEMS.map((item) => (
+            {navLinks.map((link) => (
               <button
-                key={item.id}
+                key={link.id}
                 onClick={() => {
-                  setActivePage(item.id);
+                  setCurrentPage(link.id);
                   setIsOpen(false);
                 }}
-                className={`text-left text-lg font-medium ${activePage === item.id ? 'text-brand-accent' : 'text-slate-600'}`}
+                className={`text-left text-lg font-medium ${
+                  currentPage === link.id ? 'text-indigo-600' : 'text-slate-600'
+                }`}
               >
-                {item.label}
+                {link.name}
               </button>
             ))}
             <button 
               onClick={() => {
-                setActivePage('contact');
+                setCurrentPage('contact');
                 setIsOpen(false);
               }}
-              className="bg-brand-primary text-white p-4 rounded-xl text-center font-semibold"
+              className="btn-primary justify-center"
             >
               Get Started
             </button>
@@ -99,471 +123,582 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
   );
 };
 
-const Footer = ({ setActivePage }: { setActivePage: (id: string) => void }) => {
+const Footer = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
   return (
-    <footer className="bg-slate-950 text-slate-400 pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-        <div className="col-span-1 md:col-span-1">
-          <div className="flex items-center gap-2 text-white mb-6">
-            <div className="w-8 h-8 bg-brand-accent rounded flex items-center justify-center font-bold text-slate-950">SC</div>
-            <span className="font-bold text-lg">St Crispin Village</span>
+    <footer className="bg-slate-900 text-slate-300 pt-20 pb-10 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div>
+          <div className="flex items-center gap-2 mb-6">
+            <div className="w-8 h-8 bg-indigo-500 rounded flex items-center justify-center">
+              <Cpu className="text-white w-5 h-5" />
+            </div>
+            <span className="font-display font-bold text-xl text-white">St Helens IT</span>
           </div>
           <p className="text-sm leading-relaxed mb-6">
-            Providing enterprise-grade IT solutions to British businesses since 2015. Credible, professional, and reliable.
+            Providing enterprise-grade IT solutions for UK businesses. We focus on security, scalability, and seamless digital transformation.
           </p>
           <div className="flex gap-4">
-            <Facebook className="w-5 h-5 cursor-pointer hover:text-white transition-colors" />
-            <Twitter className="w-5 h-5 cursor-pointer hover:text-white transition-colors" />
-            <Linkedin className="w-5 h-5 cursor-pointer hover:text-white transition-colors" />
+            {/* Social Icons Placeholder */}
+            <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-indigo-500 transition-colors cursor-pointer">
+              <Globe size={16} />
+            </div>
           </div>
         </div>
 
         <div>
-          <h4 className="text-white font-semibold mb-6">Quick Links</h4>
+          <h4 className="text-white font-bold mb-6">Quick Links</h4>
           <ul className="space-y-4 text-sm">
-            {NAV_ITEMS.map(item => (
-              <li key={item.id}>
-                <button onClick={() => setActivePage(item.id)} className="hover:text-white transition-colors">{item.label}</button>
-              </li>
-            ))}
+            <li><button onClick={() => setCurrentPage('home')} className="hover:text-white transition-colors">Home</button></li>
+            <li><button onClick={() => setCurrentPage('services')} className="hover:text-white transition-colors">Services</button></li>
+            <li><button onClick={() => setCurrentPage('about')} className="hover:text-white transition-colors">About Us</button></li>
+            <li><button onClick={() => setCurrentPage('pricing')} className="hover:text-white transition-colors">Pricing</button></li>
+            <li><button onClick={() => setCurrentPage('contact')} className="hover:text-white transition-colors">Contact</button></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-white font-semibold mb-6">Legal</h4>
+          <h4 className="text-white font-bold mb-6">Legal</h4>
           <ul className="space-y-4 text-sm">
-            <li><button onClick={() => setActivePage('terms')} className="hover:text-white transition-colors">Terms & Conditions</button></li>
-            <li><button onClick={() => setActivePage('privacy')} className="hover:text-white transition-colors">Privacy Policy</button></li>
-            <li><button className="hover:text-white transition-colors">Cookie Policy</button></li>
-            <li><button className="hover:text-white transition-colors">GDPR Compliance</button></li>
+            <li><button onClick={() => setCurrentPage('terms')} className="hover:text-white transition-colors">Terms & Conditions</button></li>
+            <li><button onClick={() => setCurrentPage('privacy')} className="hover:text-white transition-colors">Privacy Policy</button></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-white font-semibold mb-6">Company Details</h4>
-          <ul className="space-y-3 text-sm">
-            <li className="flex gap-2"><MapPin className="w-4 h-4 shrink-0" /> {COMPANY.address}</li>
-            <li className="flex gap-2"><Phone className="w-4 h-4 shrink-0" /> {COMPANY.phone}</li>
-            <li className="flex gap-2"><Mail className="w-4 h-4 shrink-0" /> {COMPANY.email}</li>
-            <li className="pt-2 text-xs opacity-60">CRN: {COMPANY.crn}</li>
+          <h4 className="text-white font-bold mb-6">Company Details</h4>
+          <ul className="space-y-4 text-sm">
+            <li className="flex items-start gap-3">
+              <Users size={16} className="mt-1 text-indigo-400" />
+              <span>Company Name: St Helens Supported Living</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <MapPin size={16} className="mt-1 text-indigo-400" />
+              <span>Registered Office: Not Available</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <BarChart3 size={16} className="mt-1 text-indigo-400" />
+              <span>CRN: Not Available</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Phone size={16} className="mt-1 text-indigo-400" />
+              <span>Phone: Not Available</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Mail size={16} className="mt-1 text-indigo-400" />
+              <span>Email: Not Available</span>
+            </li>
           </ul>
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-800 text-center text-xs">
-        <p>© {new Date().getFullYear()} {COMPANY.name} IT Services. All rights reserved. Registered in England & Wales.</p>
+      <div className="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-xs opacity-60">
+        <p>&copy; {new Date().getFullYear()} St Helens Supported Living. All rights reserved. Registered in England & Wales.</p>
       </div>
     </footer>
   );
 };
 
-// --- Pages ---
+// --- Page Components ---
 
-const HomePage = ({ setActivePage }: { setActivePage: (id: string) => void }) => {
-  return (
-    <div className="pt-20">
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-slate-50 section-padding">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-accent/10 text-brand-accent text-xs font-bold uppercase tracking-wider mb-6">
-              <Shield className="w-3 h-3" /> UK Managed IT Services
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-950 leading-[1.1] mb-6">
-              Empowering British Business Through <span className="text-brand-accent">Smart IT</span>
-            </h1>
-            <p className="text-lg text-slate-600 mb-8 max-w-lg">
-              We provide proactive, secure, and scalable IT infrastructure tailored for the UK market. From cybersecurity to cloud migration, we're your local technology partner.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button 
-                onClick={() => setActivePage('services')}
-                className="bg-brand-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition-all flex items-center gap-2"
-              >
-                Explore Services <ArrowRight className="w-4 h-4" />
-              </button>
-              <button 
-                onClick={() => setActivePage('contact')}
-                className="bg-white border border-slate-200 text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all"
-              >
-                Book a Free Audit
-              </button>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-              <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" 
-                alt="Modern UK Office" 
-                className="w-full h-auto"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 z-20 glass p-6 rounded-xl shadow-lg hidden md:block">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-white">
-                  <CheckCircle className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 font-medium">Uptime Guarantee</p>
-                  <p className="text-xl font-bold">99.9%</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose St Crispin Village?</h2>
-            <p className="text-slate-600">We combine technical excellence with a deep understanding of the UK business landscape.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "Local UK Support", desc: "Our helpdesk is based in the UK, ensuring no language barriers and GMT-aligned support.", icon: <MapPin className="text-brand-accent" /> },
-              { title: "GDPR Compliant", desc: "We ensure your data handling meets the strictest UK GDPR and DPA 2018 standards.", icon: <Shield className="text-brand-accent" /> },
-              { title: "Cost Efficiency", desc: "Predictable monthly billing in GBP with no hidden international transaction fees.", icon: <BarChart className="text-brand-accent" /> }
-            ].map((item, i) => (
-              <div key={i} className="p-8 rounded-2xl border border-slate-100 hover:border-brand-accent/20 hover:shadow-xl transition-all group">
-                <div className="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-accent/10 transition-colors">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies */}
-      <section className="section-padding bg-slate-950 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div className="max-w-xl">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Measurable Results</h2>
-              <p className="text-slate-400">Real-world impact for British organisations across multiple sectors.</p>
-            </div>
-            <button 
-              onClick={() => setActivePage('services')}
-              className="text-brand-accent font-bold flex items-center gap-2 hover:underline"
-            >
-              View All Services <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {CASE_STUDIES.map((study, i) => (
-              <div key={i} className="bg-slate-900 p-8 rounded-2xl border border-slate-800">
-                <div className="text-brand-accent font-mono text-sm mb-2 uppercase tracking-widest">{study.client}</div>
-                <h3 className="text-2xl font-bold mb-4">{study.title}</h3>
-                <p className="text-slate-400 mb-6">{study.description}</p>
-                <div className="inline-block px-4 py-2 bg-emerald-500/10 text-emerald-400 rounded-lg font-bold">
-                  {study.result}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section-padding bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-16">What Our Clients Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 italic text-slate-600 relative">
-                <span className="text-6xl text-slate-100 absolute top-4 left-4 font-serif">"</span>
-                <p className="relative z-10 mb-6">{t.content}</p>
-                <div className="flex items-center gap-4 not-italic">
-                  <div className="w-10 h-10 bg-slate-200 rounded-full"></div>
-                  <div>
-                    <p className="font-bold text-slate-900 text-sm">{t.name}</p>
-                    <p className="text-xs">{t.role}, {t.company}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="section-padding">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-brand-primary rounded-3xl p-12 text-center text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 relative z-10">Ready to Secure Your IT Future?</h2>
-            <p className="text-slate-300 mb-10 text-lg max-w-2xl mx-auto relative z-10">
-              Join hundreds of UK businesses that trust St Crispin Village for their technology needs. Let's build something resilient together.
-            </p>
-            <button 
-              onClick={() => setActivePage('contact')}
-              className="bg-brand-accent text-slate-950 px-10 py-4 rounded-xl font-bold hover:bg-sky-400 transition-all relative z-10"
-            >
-              Get a Free Quote
-            </button>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-const ServicesPage = () => {
-  return (
-    <div className="pt-32 pb-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mb-16">
-          <h1 className="text-5xl font-bold mb-6">Our Core IT Services</h1>
-          <p className="text-xl text-slate-600">Specialised technology solutions designed for the unique challenges of the UK business environment.</p>
-        </div>
-
-        <div className="space-y-20">
-          {SERVICES.map((service, i) => {
-            const Icon = IconMap[service.icon] || Shield;
-            return (
-              <div key={service.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
-                <div className={i % 2 !== 0 ? 'lg:order-2' : ''}>
-                  <div className="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-2xl flex items-center justify-center mb-6">
-                    <Icon className="w-8 h-8" />
-                  </div>
-                  <h2 className="text-3xl font-bold mb-4">{service.title}</h2>
-                  <p className="text-lg text-slate-600 mb-6">{service.description}</p>
-                  
-                  <div className="mb-8">
-                    <h4 className="font-bold text-sm uppercase tracking-wider text-slate-400 mb-3">Ideal For</h4>
-                    <p className="text-slate-700">{service.target}</p>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-6 mb-8">
-                    <div>
-                      <h4 className="font-bold text-sm uppercase tracking-wider text-slate-400 mb-3">Key Benefits</h4>
-                      <ul className="space-y-2">
-                        {service.benefits.map((b, idx) => (
-                          <li key={idx} className="flex items-center gap-2 text-sm text-slate-600">
-                            <CheckCircle className="w-4 h-4 text-emerald-500" /> {b}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-sm uppercase tracking-wider text-slate-400 mb-3">Our Process</h4>
-                      <ul className="space-y-2">
-                        {service.process.map((p, idx) => (
-                          <li key={idx} className="flex items-center gap-2 text-sm text-slate-600">
-                            <span className="w-5 h-5 bg-slate-100 rounded-full flex items-center justify-center text-[10px] font-bold">{idx + 1}</span> {p}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-6 pt-6 border-t border-slate-100">
-                    <div>
-                      <p className="text-xs text-slate-400 font-bold uppercase">Starting From</p>
-                      <p className="text-2xl font-bold text-brand-primary">{service.startingPrice}</p>
-                    </div>
-                    <button className="bg-slate-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-slate-800 transition-all">
-                      Enquire Now
-                    </button>
-                  </div>
-                </div>
-                <div className={`rounded-3xl overflow-hidden shadow-2xl ${i % 2 !== 0 ? 'lg:order-1' : ''}`}>
-                   <img 
-                    src={`https://images.unsplash.com/photo-${i === 0 ? '1551434678-e076c223a692' : i === 1 ? '1550751827-4bd374c3f58b' : i === 2 ? '1451187580459-43490279c0fa' : '1519389950473-47ba0277781c'}?auto=format&fit=crop&w=800&q=80`}
-                    alt={service.title}
-                    className="w-full h-[400px] object-cover"
-                    referrerPolicy="no-referrer"
-                   />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const AboutPage = () => {
-  return (
-    <div className="pt-32 pb-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mb-20">
-          <h1 className="text-5xl font-bold mb-6">Our Story & Mission</h1>
-          <p className="text-xl text-slate-600 leading-relaxed">
-            Founded in Northamptonshire, St Crispin Village was born from a simple observation: British SMEs were underserved by large, impersonal IT firms. We set out to build a consultancy that combines enterprise-grade technology with the personal touch of a local partner.
+const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => (
+  <motion.div 
+    initial={{ opacity: 0 }} 
+    animate={{ opacity: 1 }} 
+    className="pt-20"
+  >
+    {/* Hero Section */}
+    <section className="section-padding bg-slate-50 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <span className="inline-block py-1 px-3 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-6">
+            UK's Leading IT Partner
+          </span>
+          <h1 className="text-5xl lg:text-7xl font-display font-bold text-slate-900 leading-[1.1] mb-6">
+            Empowering British Business Through <span className="text-indigo-600">Smart IT</span>
+          </h1>
+          <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
+            From managed cloud services to robust cybersecurity, we provide the technical foundation your business needs to thrive in the digital age.
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-            <p className="text-slate-600 mb-8">
-              To provide resilient, secure, and forward-thinking IT infrastructure that allows UK businesses to focus on growth without technical friction.
-            </p>
-            <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-            <p className="text-slate-600">
-              To become the most trusted IT partner for SMEs across the UK, recognised for our integrity, technical prowess, and commitment to client success.
-            </p>
+          <div className="flex flex-wrap gap-4">
+            <button onClick={() => setCurrentPage('services')} className="btn-primary">
+              Explore Our Services <ArrowRight size={18} />
+            </button>
+            <button onClick={() => setCurrentPage('contact')} className="btn-secondary">
+              Book a Consultation
+            </button>
           </div>
-          <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100">
-            <h2 className="text-2xl font-bold mb-8">Core Values</h2>
-            <div className="space-y-6">
-              {[
-                { title: "Integrity", desc: "We provide honest advice, even if it means a smaller project for us." },
-                { title: "Excellence", desc: "We don't settle for 'good enough'. Our standards are enterprise-level." },
-                { title: "Local Focus", desc: "We understand the UK market, regulations, and business culture." },
-                { title: "Security First", desc: "Security isn't an add-on; it's baked into every solution we build." }
-              ].map((v, i) => (
-                <div key={i} className="flex gap-4">
-                  <div className="w-8 h-8 bg-brand-accent rounded-full flex items-center justify-center text-white shrink-0">
-                    <CheckCircle className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold">{v.title}</h4>
-                    <p className="text-sm text-slate-600">{v.desc}</p>
-                  </div>
+        </motion.div>
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="relative"
+        >
+          <div className="aspect-square rounded-3xl bg-indigo-600/5 border border-indigo-100 flex items-center justify-center p-12">
+            <div className="grid grid-cols-2 gap-6 w-full">
+              {[Shield, Cloud, Server, Lock].map((Icon, i) => (
+                <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
+                  <Icon className="text-indigo-600 w-10 h-10 mb-4" />
+                  <span className="text-sm font-bold text-slate-800">
+                    {['Security', 'Cloud', 'Infrastructure', 'Compliance'][i]}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
-        </div>
+          {/* Decorative elements */}
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-400/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-emerald-400/10 rounded-full blur-3xl" />
+        </motion.div>
+      </div>
+    </section>
 
-        <div className="mb-24">
-          <h2 className="text-3xl font-bold mb-12 text-center">Leadership Team</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { name: "Robert St Crispin", role: "Founder & CEO", bio: "20+ years in enterprise IT infrastructure." },
-              { name: "Eleanor Vance", role: "CTO", bio: "Cybersecurity expert and former government consultant." },
-              { name: "David Miller", role: "Head of Support", bio: "Passionate about delivering world-class client experiences." }
-            ].map((member, i) => (
-              <div key={i} className="text-center group">
-                <div className="w-48 h-48 bg-slate-200 rounded-full mx-auto mb-6 overflow-hidden grayscale group-hover:grayscale-0 transition-all">
-                  <img 
-                    src={`https://images.unsplash.com/photo-${i === 0 ? '1507003211169-0a1dd7228f2d' : i === 1 ? '1494790108377-be9c29b29330' : '1500648767791-00dcc994a43e'}?auto=format&fit=crop&w=300&q=80`} 
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <h4 className="text-xl font-bold">{member.name}</h4>
-                <p className="text-brand-accent font-medium text-sm mb-2">{member.role}</p>
-                <p className="text-slate-500 text-sm max-w-xs mx-auto">{member.bio}</p>
+    {/* Key Benefits */}
+    <section className="section-padding bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Why Choose St Helens IT?</h2>
+          <p className="text-slate-600 max-w-2xl mx-auto">We combine local British expertise with global technology standards to deliver unmatched service.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            { title: '24/7 UK Support', desc: 'Our dedicated team is always available to handle your technical issues, day or night.', icon: Clock },
+            { title: 'GDPR Compliant', desc: 'We ensure all your data handling meets strict UK and EU regulatory requirements.', icon: Shield },
+            { title: 'Scalable Solutions', desc: 'IT that grows with you. From startups to enterprises, we have the right fit.', icon: Zap },
+          ].map((item, i) => (
+            <div key={i} className="p-8 rounded-2xl border border-slate-100 hover:border-indigo-200 hover:shadow-xl transition-all group">
+              <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-colors">
+                <item.icon className="text-indigo-600 group-hover:text-white transition-colors" />
               </div>
+              <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+              <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Industries */}
+    <section className="section-padding bg-slate-50">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Industries We Serve in the UK</h2>
+          <p className="text-slate-600 mb-8 leading-relaxed">
+            Every sector has unique challenges. We provide tailored IT strategies for diverse British industries, ensuring efficiency and competitive advantage.
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {['Financial Services', 'Healthcare & NHS', 'Legal & Professional', 'Manufacturing', 'Retail & E-commerce', 'Education'].map((industry, i) => (
+              <li key={i} className="flex items-center gap-3 font-medium text-slate-700">
+                <CheckCircle2 className="text-indigo-600 w-5 h-5" />
+                {industry}
+              </li>
             ))}
+          </ul>
+        </div>
+        <div className="bg-indigo-600 rounded-3xl p-12 text-white relative overflow-hidden">
+          <div className="relative z-10">
+            <h3 className="text-2xl font-bold mb-4">Case Study: Legal Firm Transformation</h3>
+            <p className="opacity-90 mb-6 italic">"St Helens IT overhauled our legacy systems, moving us to a secure cloud environment."</p>
+            <div className="flex items-center gap-8">
+              <div>
+                <p className="text-3xl font-bold">£45,000</p>
+                <p className="text-xs uppercase tracking-widest opacity-70">Annual Savings</p>
+              </div>
+              <div className="w-px h-10 bg-white/20" />
+              <div>
+                <p className="text-3xl font-bold">99.9%</p>
+                <p className="text-xs uppercase tracking-widest opacity-70">Uptime Achieved</p>
+              </div>
+            </div>
           </div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl" />
+        </div>
+      </div>
+    </section>
+
+    {/* Testimonials */}
+    <section className="section-padding bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Trusted by British Business Leaders</h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { name: 'James Montgomery', role: 'CEO, London Logistics', text: 'St Helens IT has been instrumental in our digital expansion. Their proactive approach to security is world-class.' },
+            { name: 'Sarah Jenkins', role: 'Director, Manchester Health', text: 'The transition to managed services was seamless. We finally have an IT partner that understands our specific compliance needs.' },
+            { name: 'Robert Thorne', role: 'CTO, Birmingham Tech', text: 'Exceptional support and technical expertise. They feel like an extension of our own team rather than a vendor.' },
+          ].map((t, i) => (
+            <div key={i} className="p-8 rounded-2xl bg-slate-50 border border-slate-100">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => <Zap key={i} size={16} className="text-amber-400 fill-amber-400" />)}
+              </div>
+              <p className="text-slate-700 mb-6 italic">"{t.text}"</p>
+              <div>
+                <p className="font-bold text-slate-900">{t.name}</p>
+                <p className="text-sm text-slate-500">{t.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Final CTA */}
+    <section className="section-padding bg-indigo-600 text-white text-center">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-4xl font-display font-bold mb-6">Ready to Modernise Your IT?</h2>
+        <p className="text-xl opacity-90 mb-10">Join hundreds of UK businesses that trust St Helens IT for their digital infrastructure.</p>
+        <button onClick={() => setCurrentPage('contact')} className="bg-white text-indigo-600 px-8 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors inline-flex items-center gap-2">
+          Contact Us Today <ArrowRight size={20} />
+        </button>
+      </div>
+    </section>
+  </motion.div>
+);
+
+const ServicesPage = () => {
+  const services = [
+    {
+      title: 'Managed IT Support',
+      icon: Users,
+      desc: 'Comprehensive day-to-day management of your IT environment, ensuring everything runs smoothly.',
+      audience: 'SMEs and growing businesses without in-house IT.',
+      process: ['Audit', 'Onboarding', '24/7 Monitoring', 'Monthly Review'],
+      benefits: ['Reduced Downtime', 'Predictable Costs', 'Expert Advice'],
+      price: 'From £499 / month'
+    },
+    {
+      title: 'Cybersecurity Solutions',
+      icon: Shield,
+      desc: 'Advanced threat detection, firewall management, and employee security training.',
+      audience: 'Businesses handling sensitive client data or regulated sectors.',
+      process: ['Vulnerability Assessment', 'Implementation', 'Continuous Monitoring'],
+      benefits: ['Data Protection', 'Regulatory Compliance', 'Peace of Mind'],
+      price: 'From £750 / month'
+    },
+    {
+      title: 'Cloud Infrastructure',
+      icon: Cloud,
+      desc: 'Migration, management, and optimization of Azure, AWS, or Private Cloud environments.',
+      audience: 'Companies looking to modernize legacy hardware and enable remote work.',
+      process: ['Strategy', 'Migration', 'Optimization', 'Support'],
+      benefits: ['Scalability', 'Remote Access', 'Cost Efficiency'],
+      price: 'From £1,200 / project'
+    },
+    {
+      title: 'Network Management',
+      icon: Server,
+      desc: 'Design and maintenance of high-speed, secure business networks and Wi-Fi solutions.',
+      audience: 'Office-based businesses requiring high-performance connectivity.',
+      process: ['Site Survey', 'Design', 'Installation', 'Maintenance'],
+      benefits: ['High Performance', 'Secure Connectivity', 'Reliability'],
+      price: 'From £300 / month'
+    },
+    {
+      title: 'Disaster Recovery',
+      icon: Lock,
+      desc: 'Automated backups and rapid recovery plans to protect your business from data loss.',
+      audience: 'All businesses where data continuity is critical.',
+      process: ['Risk Analysis', 'Backup Setup', 'Testing', 'Recovery Support'],
+      benefits: ['Business Continuity', 'Zero Data Loss', 'Fast Recovery'],
+      price: 'From £250 / month'
+    },
+    {
+      title: 'IT Consultancy',
+      icon: BarChart3,
+      desc: 'Strategic guidance on technology adoption, digital transformation, and budgeting.',
+      audience: 'Leadership teams planning significant growth or digital shifts.',
+      process: ['Discovery', 'Strategy Design', 'Roadmap', 'Execution Support'],
+      benefits: ['Strategic Alignment', 'ROI Optimization', 'Future-Proofing'],
+      price: 'From £150 / hour'
+    }
+  ];
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }} 
+      animate={{ opacity: 1, y: 0 }} 
+      className="pt-32 pb-20 px-6"
+    >
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">Our IT Services</h1>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            Tailored technology solutions designed to solve real-world business challenges in the UK.
+          </p>
         </div>
 
-        <div className="bg-emerald-50 border border-emerald-100 p-8 rounded-2xl flex flex-col md:flex-row items-center gap-8">
-          <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shrink-0">
-            <Lock className="w-8 h-8" />
+        <div className="grid gap-12">
+          {services.map((s, i) => (
+            <div key={i} className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden grid lg:grid-cols-3">
+              <div className="p-10 bg-slate-50 border-r border-slate-100">
+                <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-200">
+                  <s.icon className="text-white w-8 h-8" />
+                </div>
+                <h2 className="text-2xl font-bold mb-4">{s.title}</h2>
+                <p className="text-slate-600 mb-6 leading-relaxed">{s.desc}</p>
+                <div className="pt-6 border-t border-slate-200">
+                  <p className="text-xs font-bold text-indigo-600 uppercase tracking-widest mb-2">Starting Price</p>
+                  <p className="text-2xl font-bold text-slate-900">{s.price}</p>
+                </div>
+              </div>
+              
+              <div className="p-10 lg:col-span-2 grid md:grid-cols-2 gap-10">
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <Users size={18} className="text-indigo-600" /> Target Audience
+                  </h3>
+                  <p className="text-slate-600 text-sm mb-8">{s.audience}</p>
+                  
+                  <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <Zap size={18} className="text-indigo-600" /> Key Benefits
+                  </h3>
+                  <ul className="space-y-3">
+                    {s.benefits.map((b, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-sm text-slate-700">
+                        <Check size={16} className="text-emerald-500" /> {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <Clock size={18} className="text-indigo-600" /> Our Process
+                  </h3>
+                  <div className="space-y-6 relative before:absolute before:left-[9px] before:top-2 before:bottom-2 before:w-px before:bg-slate-200">
+                    {s.process.map((step, idx) => (
+                      <div key={idx} className="flex items-start gap-4 relative">
+                        <div className="w-[19px] h-[19px] rounded-full bg-white border-2 border-indigo-600 z-10" />
+                        <p className="text-sm font-medium text-slate-700">{step}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const AboutPage = () => (
+  <motion.div 
+    initial={{ opacity: 0 }} 
+    animate={{ opacity: 1 }} 
+    className="pt-32 pb-20 px-6"
+  >
+    <div className="max-w-7xl mx-auto">
+      <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+        <div>
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-8">Our Story</h1>
+          <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+            Founded in the heart of the North West, St Helens IT (operating under St Helens Supported Living) began with a simple mission: to provide enterprise-level IT support to businesses that were being underserved by traditional providers.
+          </p>
+          <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+            Over the years, we have grown into a nationwide partner, known for our technical precision and deeply personal approach to client relationships. We don't just fix computers; we build the digital foundations for British success.
+          </p>
+          <div className="grid grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-indigo-600 font-bold text-3xl mb-1">15+</h4>
+              <p className="text-sm text-slate-500 uppercase tracking-widest font-bold">Years Experience</p>
+            </div>
+            <div>
+              <h4 className="text-indigo-600 font-bold text-3xl mb-1">250+</h4>
+              <p className="text-sm text-slate-500 uppercase tracking-widest font-bold">Clients Nationwide</p>
+            </div>
           </div>
-          <div>
-            <h3 className="text-xl font-bold text-emerald-900 mb-2">GDPR & Data Protection Commitment</h3>
-            <p className="text-emerald-800/80 text-sm leading-relaxed">
-              We take data protection seriously. As a UK-based company, we are fully registered with the Information Commissioner's Office (ICO) and ensure all our services and internal processes are strictly GDPR compliant. Your data never leaves the UK/EEA without explicit consent and robust protection.
-            </p>
+        </div>
+        <div className="relative">
+          <div className="aspect-video bg-slate-200 rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
+              alt="Team working" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="absolute -bottom-6 -right-6 bg-white p-8 rounded-2xl shadow-xl border border-slate-100 max-w-xs">
+            <p className="text-sm font-medium text-slate-600 italic">"Our commitment to excellence is matched only by our dedication to our clients' growth."</p>
+            <p className="mt-4 font-bold">- Leadership Team</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-12 mb-24">
+        <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm">
+          <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+          <p className="text-slate-600 leading-relaxed">To simplify technology for businesses, enabling them to focus on what they do best while we handle the complexities of the digital world.</p>
+        </div>
+        <div className="bg-indigo-600 p-10 rounded-3xl text-white shadow-xl shadow-indigo-200">
+          <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+          <p className="opacity-90 leading-relaxed">To be the UK's most trusted IT partner, recognized for innovation, integrity, and our contribution to the British digital economy.</p>
+        </div>
+      </div>
+
+      <div className="mb-24">
+        <h2 className="text-3xl font-display font-bold text-center mb-16">Our Core Values</h2>
+        <div className="grid md:grid-cols-4 gap-8">
+          {[
+            { title: 'Integrity', desc: 'Honest advice, even when it means recommending a cheaper solution.' },
+            { title: 'Innovation', desc: 'Always looking for the next technology that can give our clients an edge.' },
+            { title: 'Reliability', desc: 'When you need us, we are there. No excuses, just solutions.' },
+            { title: 'Security', desc: 'Protection is at the core of everything we build and manage.' },
+          ].map((v, i) => (
+            <div key={i} className="text-center">
+              <div className="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle2 className="text-indigo-600" />
+              </div>
+              <h4 className="font-bold mb-2">{v.title}</h4>
+              <p className="text-sm text-slate-600">{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="bg-slate-900 rounded-3xl p-12 text-white">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl font-display font-bold mb-6">GDPR & Compliance Commitment</h2>
+          <p className="text-slate-400 mb-8 leading-relaxed">
+            As a UK-based company, we take data privacy with the utmost seriousness. We are fully committed to GDPR compliance and help our clients navigate the complex landscape of data protection. Our internal processes are audited regularly to ensure your data—and your clients' data—remains secure and private.
+          </p>
+          <div className="flex items-center gap-4">
+            <div className="px-4 py-2 border border-white/20 rounded-lg text-xs font-bold uppercase tracking-widest">GDPR Ready</div>
+            <div className="px-4 py-2 border border-white/20 rounded-lg text-xs font-bold uppercase tracking-widest">Cyber Essentials</div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  </motion.div>
+);
 
 const PricingPage = () => {
+  const plans = [
+    {
+      name: 'Essential Support',
+      price: '499',
+      ideal: 'Small businesses needing reliable reactive support.',
+      features: [
+        'Mon-Fri 9am-5pm Support',
+        'Remote Troubleshooting',
+        'Basic Endpoint Security',
+        'Monthly Health Checks',
+        'Email Support'
+      ],
+      support: 'Standard Response (4h)',
+      cta: 'Start Essential'
+    },
+    {
+      name: 'Managed Business',
+      price: '950',
+      ideal: 'Growing companies requiring proactive management.',
+      popular: true,
+      features: [
+        '24/7 Monitoring',
+        'Priority Remote & On-site',
+        'Advanced Threat Protection',
+        'Cloud Backup (1TB)',
+        'Strategic IT Roadmap',
+        'Patch Management'
+      ],
+      support: 'Priority Response (1h)',
+      cta: 'Go Managed'
+    },
+    {
+      name: 'Enterprise Elite',
+      price: '2,400',
+      ideal: 'Large organizations with complex infrastructure.',
+      features: [
+        'Full 24/7/365 Support',
+        'Dedicated Account Manager',
+        'SIEM & SOC Monitoring',
+        'Unlimited Cloud Storage',
+        'Disaster Recovery as a Service',
+        'Quarterly Security Audits'
+      ],
+      support: 'Instant Response (15m)',
+      cta: 'Contact for Enterprise'
+    }
+  ];
+
   return (
-    <div className="pt-32 pb-20 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-5xl font-bold mb-6">Transparent Pricing</h1>
-          <p className="text-xl text-slate-600">No hidden fees. No complex contracts. Just reliable IT support billed in GBP.</p>
-          <p className="mt-4 text-sm font-medium text-slate-400 italic">* All prices exclude VAT at the prevailing rate.</p>
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      className="pt-32 pb-20 px-6"
+    >
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">Transparent Pricing</h1>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            Choose the level of support that fits your business needs. No hidden fees, just clear value.
+          </p>
+          <p className="mt-4 text-sm font-medium text-slate-500 italic">All prices are exclusive of VAT at 20%.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          {PRICING.map((plan, i) => (
+        <div className="grid lg:grid-cols-3 gap-8">
+          {plans.map((plan, i) => (
             <div 
               key={i} 
-              className={`bg-white rounded-3xl p-8 shadow-sm border ${plan.popular ? 'border-brand-accent ring-4 ring-brand-accent/5 scale-105 z-10' : 'border-slate-200'} flex flex-col h-full`}
+              className={`relative p-10 rounded-3xl border ${
+                plan.popular ? 'border-indigo-600 shadow-2xl shadow-indigo-100 scale-105 z-10' : 'border-slate-100 shadow-sm'
+              } bg-white flex flex-col`}
             >
               {plan.popular && (
-                <div className="bg-brand-accent text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full self-start mb-6">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                   Most Popular
                 </div>
               )}
-              <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-              <p className="text-slate-500 text-sm mb-6">{plan.idealFor}</p>
               <div className="mb-8">
-                <span className="text-4xl font-bold">{plan.price}</span>
-                <span className="text-slate-400 font-medium"> / month</span>
+                <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                <p className="text-sm text-slate-500 h-10">{plan.ideal}</p>
               </div>
-              
-              <div className="space-y-4 mb-8 flex-grow">
-                <div className="pb-4 border-b border-slate-50">
-                  <p className="text-xs font-bold text-slate-400 uppercase mb-2">Support Level</p>
-                  <p className="text-sm font-medium flex items-center gap-2"><Clock className="w-4 h-4 text-brand-accent" /> {plan.support}</p>
+              <div className="mb-8">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-bold text-slate-900">£</span>
+                  <span className="text-5xl font-bold text-slate-900">{plan.price}</span>
+                  <span className="text-slate-500 font-medium">/month</span>
                 </div>
-                <ul className="space-y-3">
+              </div>
+              <div className="mb-10 flex-grow">
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">What's Included</p>
+                <ul className="space-y-4">
                   {plan.features.map((f, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
-                      <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> {f}
+                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-700">
+                      <CheckCircle2 size={18} className="text-indigo-600 shrink-0" />
+                      {f}
                     </li>
                   ))}
                 </ul>
+                <div className="mt-6 pt-6 border-t border-slate-100">
+                  <p className="text-sm font-bold text-slate-900">Support Level:</p>
+                  <p className="text-sm text-slate-600">{plan.support}</p>
+                </div>
               </div>
-
-              <button className={`w-full py-4 rounded-xl font-bold transition-all ${plan.popular ? 'bg-brand-accent text-white hover:bg-sky-600' : 'bg-slate-100 text-slate-900 hover:bg-slate-200'}`}>
+              <button className={`w-full py-4 rounded-xl font-bold transition-all ${
+                plan.popular ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-slate-100 text-slate-900 hover:bg-slate-200'
+              }`}>
                 {plan.cta}
               </button>
             </div>
           ))}
         </div>
 
-        <div className="mt-20 bg-white p-10 rounded-3xl border border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-2xl font-bold mb-4">Need a Custom Solution?</h2>
-            <p className="text-slate-600 mb-6">
-              For larger enterprises or specific project-based work, we offer bespoke pricing tailored to your exact requirements.
-            </p>
-            <ul className="space-y-2 mb-8">
-              <li className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-brand-accent" /> Multi-site infrastructure</li>
-              <li className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-brand-accent" /> Dedicated on-site engineers</li>
-              <li className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-brand-accent" /> Global cloud architecture</li>
-            </ul>
-            <button className="text-brand-accent font-bold flex items-center gap-2 hover:underline">
-              Speak to our consultants <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-            <h4 className="font-bold mb-4">Frequently Asked Questions</h4>
-            <div className="space-y-4">
-              <div>
-                <p className="text-sm font-bold mb-1">Is there a minimum contract term?</p>
-                <p className="text-xs text-slate-500">Our standard managed services have a 12-month initial term, followed by a 30-day rolling notice.</p>
-              </div>
-              <div>
-                <p className="text-sm font-bold mb-1">Do you charge for onboarding?</p>
-                <p className="text-xs text-slate-500">We typically waive onboarding fees for 24-month contracts. Otherwise, a one-off setup fee applies.</p>
-              </div>
-            </div>
-          </div>
+        <div className="mt-20 p-10 bg-slate-50 rounded-3xl border border-slate-100 text-center">
+          <h3 className="text-2xl font-bold mb-4">Need a Custom Solution?</h3>
+          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
+            We understand that some businesses have unique requirements. Contact our team for a bespoke quote tailored to your specific infrastructure and goals.
+          </p>
+          <button className="btn-secondary">Request Custom Quote</button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -576,114 +711,113 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="pt-32 pb-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      className="pt-32 pb-20 px-6"
+    >
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16">
           <div>
-            <h1 className="text-5xl font-bold mb-6">Get in Touch</h1>
-            <p className="text-xl text-slate-600 mb-12">
-              Have a question or ready to start? Our UK-based team is here to help.
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-8">Get in Touch</h1>
+            <p className="text-lg text-slate-600 mb-12">
+              Have a question or ready to start your IT transformation? Our team is here to help. Reach out via the form or use our contact details below.
             </p>
 
-            <div className="space-y-8">
-              <div className="flex gap-6">
-                <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-brand-primary shrink-0">
-                  <MapPin className="w-6 h-6" />
+            <div className="space-y-8 mb-12">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
+                  <MapPin className="text-indigo-600" />
                 </div>
                 <div>
-                  <h4 className="font-bold mb-1">Registered Office</h4>
-                  <p className="text-slate-600 text-sm">{COMPANY.address}</p>
+                  <h4 className="font-bold text-slate-900">Registered Office</h4>
+                  <p className="text-slate-600">Not Available</p>
                 </div>
               </div>
-              <div className="flex gap-6">
-                <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-brand-primary shrink-0">
-                  <Phone className="w-6 h-6" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
+                  <Phone className="text-indigo-600" />
                 </div>
                 <div>
-                  <h4 className="font-bold mb-1">Phone Number</h4>
-                  <p className="text-slate-600 text-sm">{COMPANY.phone}</p>
+                  <h4 className="font-bold text-slate-900">Phone Number</h4>
+                  <p className="text-slate-600">Not Available</p>
                 </div>
               </div>
-              <div className="flex gap-6">
-                <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-brand-primary shrink-0">
-                  <Mail className="w-6 h-6" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
+                  <Mail className="text-indigo-600" />
                 </div>
                 <div>
-                  <h4 className="font-bold mb-1">Email Address</h4>
-                  <p className="text-slate-600 text-sm">{COMPANY.email}</p>
+                  <h4 className="font-bold text-slate-900">Email Address</h4>
+                  <p className="text-slate-600">Not Available</p>
                 </div>
               </div>
-              <div className="flex gap-6">
-                <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-brand-primary shrink-0">
-                  <Clock className="w-6 h-6" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
+                  <Clock className="text-indigo-600" />
                 </div>
                 <div>
-                  <h4 className="font-bold mb-1">Business Hours</h4>
-                  <p className="text-slate-600 text-sm">{COMPANY.hours}</p>
+                  <h4 className="font-bold text-slate-900">Business Hours</h4>
+                  <p className="text-slate-600">Monday - Friday: 09:00 - 17:30</p>
+                  <p className="text-slate-600 text-sm italic">24/7 Support available for Managed Clients</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-12 p-6 bg-slate-50 rounded-2xl border border-slate-100">
-              <h4 className="font-bold mb-4">Location</h4>
-              <div className="w-full h-48 bg-slate-200 rounded-xl flex items-center justify-center text-slate-400">
-                <p className="text-sm font-medium">Interactive Map Placeholder</p>
+            <div className="h-64 bg-slate-200 rounded-3xl overflow-hidden relative grayscale">
+              <div className="absolute inset-0 flex items-center justify-center text-slate-500 font-medium">
+                Map Placeholder (UK Office Location)
               </div>
             </div>
           </div>
 
-          <div className="bg-white p-10 rounded-3xl shadow-2xl border border-slate-100">
+          <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-xl">
             {submitted ? (
-              <div className="text-center py-20">
-                <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-10 h-10" />
+              <div className="h-full flex flex-col items-center justify-center text-center py-20">
+                <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mb-6">
+                  <CheckCircle2 className="text-emerald-600 w-10 h-10" />
                 </div>
-                <h2 className="text-2xl font-bold mb-2">Message Sent!</h2>
-                <p className="text-slate-600">Thank you for reaching out. A member of our team will contact you within 24 business hours.</p>
-                <button 
-                  onClick={() => setSubmitted(false)}
-                  className="mt-8 text-brand-accent font-bold"
-                >
-                  Send another message
-                </button>
+                <h2 className="text-2xl font-bold mb-4">Message Sent!</h2>
+                <p className="text-slate-600 mb-8">Thank you for reaching out. One of our IT specialists will be in touch within 24 business hours.</p>
+                <button onClick={() => setSubmitted(false)} className="btn-secondary">Send Another Message</button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-bold mb-2">Full Name</label>
-                    <input type="text" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all" placeholder="John Smith" />
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-700">Full Name</label>
+                    <input required type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all" placeholder="John Doe" />
                   </div>
-                  <div>
-                    <label className="block text-sm font-bold mb-2">Email Address</label>
-                    <input type="email" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all" placeholder="john@company.co.uk" />
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-700">Company Name</label>
+                    <input required type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all" placeholder="Acme Ltd" />
                   </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-bold mb-2">Company Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all" placeholder="Acme Ltd" />
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700">Work Email</label>
+                  <input required type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all" placeholder="john@company.co.uk" />
                 </div>
-                <div>
-                  <label className="block text-sm font-bold mb-2">Service of Interest</label>
-                  <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all">
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700">Service of Interest</label>
+                  <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all bg-white">
                     <option>Managed IT Support</option>
                     <option>Cybersecurity</option>
-                    <option>Cloud Migration</option>
+                    <option>Cloud Services</option>
                     <option>IT Consultancy</option>
                     <option>Other</option>
                   </select>
                 </div>
-                <div>
-                  <label className="block text-sm font-bold mb-2">Message</label>
-                  <textarea required rows={5} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all" placeholder="Tell us about your requirements..."></textarea>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700">Your Message</label>
+                  <textarea required rows={5} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all resize-none" placeholder="Tell us about your IT needs..."></textarea>
                 </div>
                 <div className="flex items-start gap-3">
-                  <input type="checkbox" required className="mt-1" />
-                  <p className="text-xs text-slate-500 leading-relaxed">
-                    I consent to St Crispin Village processing my personal data in accordance with their Privacy Policy to respond to this enquiry.
-                  </p>
+                  <input required type="checkbox" className="mt-1 w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" />
+                  <label className="text-xs text-slate-500 leading-relaxed">
+                    I consent to St Helens Supported Living processing my personal data in accordance with the Privacy Policy to respond to my enquiry.
+                  </label>
                 </div>
-                <button type="submit" className="w-full bg-brand-primary text-white py-4 rounded-xl font-bold hover:bg-slate-800 transition-all">
+                <button type="submit" className="w-full btn-primary justify-center py-4">
                   Send Message
                 </button>
               </form>
@@ -691,35 +825,37 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-const LegalPage = ({ title, content }: { title: string, content: React.ReactNode }) => {
-  return (
-    <div className="pt-32 pb-20">
-      <div className="max-w-4xl mx-auto px-6">
-        <h1 className="text-4xl font-bold mb-12">{title}</h1>
-        <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-8">
-          {content}
-        </div>
+const LegalPage = ({ title, content }: { title: string, content: React.ReactNode }) => (
+  <motion.div 
+    initial={{ opacity: 0 }} 
+    animate={{ opacity: 1 }} 
+    className="pt-32 pb-20 px-6"
+  >
+    <div className="max-w-4xl mx-auto bg-white p-12 rounded-3xl border border-slate-100 shadow-sm">
+      <h1 className="text-4xl font-display font-bold mb-10">{title}</h1>
+      <div className="prose prose-slate max-w-none prose-headings:font-display prose-headings:font-bold prose-p:leading-relaxed prose-li:leading-relaxed">
+        {content}
       </div>
     </div>
-  );
-};
+  </motion.div>
+);
 
 // --- Main App ---
 
 export default function App() {
-  const [activePage, setActivePage] = useState('home');
+  const [currentPage, setCurrentPage] = useState<Page>('home');
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [activePage]);
+  }, [currentPage]);
 
   const renderPage = () => {
-    switch (activePage) {
-      case 'home': return <HomePage setActivePage={setActivePage} />;
+    switch (currentPage) {
+      case 'home': return <HomePage setCurrentPage={setCurrentPage} />;
       case 'services': return <ServicesPage />;
       case 'about': return <AboutPage />;
       case 'pricing': return <PricingPage />;
@@ -728,36 +864,32 @@ export default function App() {
         <LegalPage 
           title="Terms and Conditions" 
           content={
-            <>
+            <div className="space-y-6 text-slate-600">
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">1. Introduction</h3>
-                <p>These terms and conditions govern your use of the St Crispin Village website and our IT services. By accessing this website or engaging our services, you accept these terms in full.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">1. Introduction</h2>
+                <p>Welcome to St Helens IT, a trading name of St Helens Supported Living. These terms and conditions outline the rules and regulations for the use of our website and services.</p>
               </section>
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">2. Company Details</h3>
-                <p>St Crispin Village is a trading name of St Crispin Village IT Services. Registered in England & Wales. CRN: {COMPANY.crn}. Registered Office: {COMPANY.address}.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">2. Payment Terms</h2>
+                <p>All services are invoiced in Great British Pounds (GBP). Standard payment terms are 14 days from the date of invoice unless otherwise agreed in writing. Late payments may incur interest charges in accordance with the Late Payment of Commercial Debts (Interest) Act 1998.</p>
               </section>
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">3. Payment Terms</h3>
-                <p>All fees are quoted in Pounds Sterling (GBP) and are subject to VAT at the prevailing UK rate. Managed service invoices are issued monthly in advance and are payable within 14 days of the invoice date.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">3. Intellectual Property</h2>
+                <p>Unless otherwise stated, St Helens Supported Living and/or its licensors own the intellectual property rights for all material on this website. All intellectual property rights are reserved.</p>
               </section>
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">4. Intellectual Property</h3>
-                <p>Unless otherwise stated, we or our licensors own the intellectual property rights in the website and material on the website. All these intellectual property rights are reserved.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">4. Confidentiality</h2>
+                <p>We maintain strict confidentiality regarding all client data and business operations. We will not disclose any sensitive information to third parties without prior written consent, except as required by law.</p>
               </section>
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">5. Confidentiality</h3>
-                <p>Both parties agree to maintain the confidentiality of any proprietary information shared during the course of business engagement. This obligation survives the termination of any service agreement.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">5. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website. We will not be liable for any loss or damage of any nature.</p>
               </section>
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">6. Limitation of Liability</h3>
-                <p>To the extent permitted by English law, St Crispin Village shall not be liable for any indirect, special, or consequential loss or damage arising under these terms and conditions or in connection with our services.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">6. Governing Law</h2>
+                <p>These terms and conditions are governed by and construed in accordance with the laws of England and Wales and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
               </section>
-              <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">7. Governing Law</h3>
-                <p>These terms and conditions will be governed by and construed in accordance with the laws of England and Wales, and any disputes relating to these terms and conditions will be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
-              </section>
-            </>
+            </div>
           } 
         />
       );
@@ -765,56 +897,48 @@ export default function App() {
         <LegalPage 
           title="Privacy Policy" 
           content={
-            <>
+            <div className="space-y-6 text-slate-600">
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">1. Data Collection</h3>
-                <p>We collect personal data that you provide to us, including name, email address, phone number, and company details, primarily through our contact forms and service engagement process.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">1. Data Collection</h2>
+                <p>We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and services. This may include names, contact information, and business details.</p>
               </section>
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">2. Processing Purposes</h3>
-                <p>We process your data to provide IT support services, manage your account, respond to enquiries, and comply with legal obligations. We only process data where we have a lawful basis to do so under UK GDPR.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">2. Processing Purposes</h2>
+                <p>We process your information for purposes based on legitimate business interests, the fulfillment of our contract with you, compliance with our legal obligations, and/or your consent.</p>
               </section>
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">3. Data Retention</h3>
-                <p>We retain personal data for as long as necessary to fulfil the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">3. Data Retention</h2>
+                <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy policy, unless a longer retention period is required or permitted by law (such as tax, accounting or other legal requirements).</p>
               </section>
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">4. Subject Rights</h3>
-                <p>Under UK GDPR, you have rights including the right to access, correct, or erase your personal data. You also have the right to object to or restrict certain processing. To exercise these rights, please contact us at {COMPANY.email}.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">4. Your Rights (GDPR)</h2>
+                <p>Under the GDPR, you have rights including the right to access, rectify, or erase your personal data. You also have the right to object to processing and the right to data portability.</p>
               </section>
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">5. Cookies</h3>
-                <p>Our website uses cookies to enhance user experience and analyse traffic. You can manage your cookie preferences through your browser settings.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">5. Cookies</h2>
+                <p>We use cookies and similar tracking technologies to access or store information. You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies.</p>
               </section>
               <section>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">6. Security Measures</h3>
-                <p>We implement robust technical and organisational security measures to protect your data from unauthorised access, loss, or disclosure. This includes encryption, access controls, and regular security audits.</p>
+                <h2 className="text-xl font-bold text-slate-900 mb-3">6. Security Measures</h2>
+                <p>We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, please also remember that we cannot guarantee that the internet itself is 100% secure.</p>
               </section>
-            </>
+            </div>
           } 
         />
       );
-      default: return <HomePage setActivePage={setActivePage} />;
+      default: return <HomePage setCurrentPage={setCurrentPage} />;
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar activePage={activePage} setActivePage={setActivePage} />
+    <div className="min-h-screen flex flex-col font-sans">
+      <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main className="flex-grow">
         <AnimatePresence mode="wait">
-          <motion.div
-            key={activePage}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-          >
-            {renderPage()}
-          </motion.div>
+          {renderPage()}
         </AnimatePresence>
       </main>
-      <Footer setActivePage={setActivePage} />
+      <Footer setCurrentPage={setCurrentPage} />
     </div>
   );
 }
