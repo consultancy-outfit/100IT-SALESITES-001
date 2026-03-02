@@ -1,0 +1,15 @@
+services:
+  fardel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fardel-salesite
+    restart: unless-stopped
+    ports:
+      - "9027:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
