@@ -1,142 +1,235 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Check, Info, ArrowRight, ShieldCheck, Zap, Globe } from 'lucide-react';
-import { PRICING_PLANS } from '../constants';
-import { Link } from 'react-router-dom';
+import { Phone, Mail, MapPin, Clock, Send, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { COMPANY_DETAILS } from '../constants';
 
-export default function Pricing() {
+export default function Contact() {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: 'Managed IT',
+    message: '',
+    consent: false
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate form submission
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 5000);
+  };
+
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="pt-20 pb-24 bg-slate-50 relative overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+      <section className="pt-20 pb-24 bg-slate-50 border-b border-slate-100">
+        <div className="container mx-auto px-4 md:px-6 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900">Transparent Pricing</h1>
+            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900">Get in Touch</h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Simple, predictable monthly plans designed to scale with your business. No hidden fees, just expert IT support.
+              Have a question or ready to start your digital transformation? Our team is here to help you navigate your IT challenges.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Pricing Grid */}
       <section className="py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-3 gap-8">
-            {PRICING_PLANS.map((plan, idx) => (
-              <motion.div
-                key={plan.name}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                className={`relative flex flex-col p-8 rounded-3xl border-2 transition-all hover:shadow-2xl ${
-                  plan.name === 'Professional' 
-                    ? 'border-indigo-600 bg-white shadow-xl scale-105 z-10' 
-                    : 'border-slate-100 bg-slate-50'
-                }`}
-              >
-                {plan.name === 'Professional' && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    Most Popular
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Contact Info */}
+            <div className="space-y-12">
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-slate-900">Contact Details</h2>
+                <p className="text-slate-600">
+                  Reach out to us via any of the channels below. Our team typically responds to all enquiries within one business hour.
+                </p>
+              </div>
+
+              <div className="space-y-8">
+                <div className="flex gap-6">
+                  <div className="shrink-0 w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center">
+                    <MapPin size={28} />
                   </div>
-                )}
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-1">Registered Office</h4>
+                    <p className="text-slate-600 leading-relaxed">{COMPANY_DETAILS.address}</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-6">
+                  <div className="shrink-0 w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center">
+                    <Phone size={28} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-1">Phone Number</h4>
+                    <p className="text-slate-600">{COMPANY_DETAILS.phone}</p>
+                    <p className="text-xs text-slate-400 mt-1">Available during business hours</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-6">
+                  <div className="shrink-0 w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center">
+                    <Mail size={28} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-1">Email Address</h4>
+                    <p className="text-slate-600">{COMPANY_DETAILS.email}</p>
+                    <p className="text-xs text-slate-400 mt-1">General & Support Enquiries</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-6">
+                  <div className="shrink-0 w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center">
+                    <Clock size={28} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-1">Business Hours</h4>
+                    <p className="text-slate-600">{COMPANY_DETAILS.hours}</p>
+                    <p className="text-xs text-slate-400 mt-1">Closed on Bank Holidays</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 bg-slate-900 rounded-3xl text-white space-y-4">
+                <h4 className="text-xl font-bold">Company Registration</h4>
+                <div className="space-y-2 text-slate-400 text-sm">
+                  <p>Company Name: {COMPANY_DETAILS.name}</p>
+                  <p>CRN: {COMPANY_DETAILS.crn}</p>
+                  <p>Registered in England & Wales</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="relative">
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-100">
+                <h3 className="text-2xl font-bold text-slate-900 mb-8">Send us a Message</h3>
                 
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-extrabold text-slate-900">{plan.price}</span>
-                    <span className="text-slate-500 font-medium">/user/month</span>
-                  </div>
-                  <p className="text-xs text-slate-400 mt-2">{plan.vatInfo}</p>
-                </div>
+                {isSubmitted ? (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="py-12 text-center space-y-4"
+                  >
+                    <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle2 size={40} />
+                    </div>
+                    <h4 className="text-2xl font-bold text-slate-900">Message Sent!</h4>
+                    <p className="text-slate-600">Thank you for reaching out. One of our experts will be in touch shortly.</p>
+                    <button 
+                      onClick={() => setIsSubmitted(false)}
+                      className="text-indigo-600 font-bold hover:underline pt-4"
+                    >
+                      Send another message
+                    </button>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700">Full Name</label>
+                        <input 
+                          type="text" 
+                          required
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all"
+                          placeholder="John Doe"
+                          value={formState.name}
+                          onChange={(e) => setFormState({...formState, name: e.target.value})}
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700">Email Address</label>
+                        <input 
+                          type="email" 
+                          required
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all"
+                          placeholder="john@company.co.uk"
+                          value={formState.email}
+                          onChange={(e) => setFormState({...formState, email: e.target.value})}
+                        />
+                      </div>
+                    </div>
 
-                <div className="space-y-6 mb-10 flex-grow">
-                  <div className="pt-6 border-t border-slate-200">
-                    <div className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">What's Included</div>
-                    <ul className="space-y-3">
-                      {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-600 text-sm">
-                          <Check size={18} className="text-emerald-500 shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="pt-6 border-t border-slate-200">
-                    <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Support Level</div>
-                    <p className="text-sm font-semibold text-slate-900">{plan.supportLevel}</p>
-                  </div>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700">Phone Number</label>
+                        <input 
+                          type="tel" 
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all"
+                          placeholder="07123 456789"
+                          value={formState.phone}
+                          onChange={(e) => setFormState({...formState, phone: e.target.value})}
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700">Interested Service</label>
+                        <select 
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all bg-white"
+                          value={formState.service}
+                          onChange={(e) => setFormState({...formState, service: e.target.value})}
+                        >
+                          <option>Managed IT Support</option>
+                          <option>Cybersecurity</option>
+                          <option>Cloud Infrastructure</option>
+                          <option>Network Design</option>
+                          <option>Consultancy</option>
+                        </select>
+                      </div>
+                    </div>
 
-                  <div className="pt-6 border-t border-slate-200">
-                    <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Ideal For</div>
-                    <p className="text-sm text-slate-600">{plan.idealFor}</p>
-                  </div>
-                </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-700">Message</label>
+                      <textarea 
+                        required
+                        rows={4}
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all resize-none"
+                        placeholder="Tell us about your requirements..."
+                        value={formState.message}
+                        onChange={(e) => setFormState({...formState, message: e.target.value})}
+                      />
+                    </div>
 
-                <Link
-                  to="/contact"
-                  className={`w-full py-4 rounded-xl font-bold text-center transition-all ${
-                    plan.name === 'Professional'
-                      ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-200'
-                      : 'bg-slate-900 text-white hover:bg-slate-800'
-                  }`}
-                >
-                  {plan.cta}
-                </Link>
-              </motion.div>
-            ))}
+                    <div className="flex items-start gap-3">
+                      <input 
+                        type="checkbox" 
+                        required
+                        id="consent"
+                        className="mt-1 w-4 h-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-500"
+                        checked={formState.consent}
+                        onChange={(e) => setFormState({...formState, consent: e.target.checked})}
+                      />
+                      <label htmlFor="consent" className="text-xs text-slate-500 leading-relaxed">
+                        I consent to {COMPANY_DETAILS.name} collecting my data for the purpose of responding to this enquiry. View our <a href="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</a> for more details.
+                      </label>
+                    </div>
+
+                    <button 
+                      type="submit"
+                      className="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2 group"
+                    >
+                      Send Message <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </button>
+
+                    <div className="flex items-center justify-center gap-2 text-xs text-slate-400 pt-4">
+                      <ShieldCheck size={14} />
+                      Secure & Confidential Communication
+                    </div>
+                  </form>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Comparison / Features Table */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl font-bold text-slate-900">Enterprise-Grade Standards</h2>
-              <p className="text-slate-600">All our plans come with these core guarantees as standard.</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                { icon: ShieldCheck, title: "Cyber Essentials Ready", desc: "All support plans are built around Cyber Essentials standards to keep you secure." },
-                { icon: Zap, title: "15-Minute Response", desc: "Our average response time for critical issues is under 15 minutes." },
-                { icon: Globe, title: "UK-Based Support", desc: "No overseas call centres. Speak directly to our engineers in Telford." },
-                { icon: Info, title: "No Long Contracts", desc: "We believe in earning your business every month. Flexible rolling terms available." }
-              ].map((item, idx) => (
-                <div key={idx} className="flex gap-6 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                  <div className="shrink-0 w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center">
-                    <item.icon size={24} />
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="font-bold text-slate-900">{item.title}</h4>
-                    <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bespoke CTA */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="bg-indigo-600 rounded-[2.5rem] p-12 md:p-20 text-white flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="lg:w-2/3 space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight">Need a Bespoke Enterprise Quote?</h2>
-              <p className="text-xl text-indigo-100">
-                For organisations with over 50 users or complex multi-site requirements, we offer custom pricing and dedicated infrastructure management.
-              </p>
-            </div>
-            <Link 
-              to="/contact" 
-              className="shrink-0 px-10 py-5 bg-white text-indigo-600 rounded-full font-bold text-lg hover:bg-indigo-50 transition-all shadow-xl flex items-center gap-2 group"
-            >
-              Contact Our Sales Team <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+      {/* Map Placeholder */}
+      <section className="h-[400px] bg-slate-200 relative overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center bg-slate-100">
+          <div className="text-center space-y-4">
+            <MapPin size={48} className="text-slate-300 mx-auto" />
+            <p className="text-slate-400 font-medium">Interactive Map Placeholder - Telford, TF2 8DB</p>
           </div>
         </div>
       </section>
