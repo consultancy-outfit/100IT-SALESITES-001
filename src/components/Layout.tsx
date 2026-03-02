@@ -1,218 +1,196 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail, MapPin, ChevronRight, Linkedin, Twitter, Facebook } from 'lucide-react';
-import { COMPANY_DETAILS } from '../constants';
 import { motion, AnimatePresence } from 'motion/react';
+import { Menu, X, Cpu, Phone, Mail, MapPin, Linkedin, Twitter, ShieldCheck } from 'lucide-react';
+import { COMPANY_DETAILS, NAV_LINKS } from '../constants';
 import { cn } from '../lib/utils';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const navLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'Services', path: '/services' },
-  { label: 'About Us', path: '/about' },
-  { label: 'Pricing', path: '/pricing' },
-  { label: 'Contact', path: '/contact' },
-];
-
-export default function Layout({ children }: LayoutProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+const Header = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setIsMenuOpen(false);
-  }, [location.pathname]);
-
   return (
-    <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-white">
-      {/* Header */}
-      <header 
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-          isScrolled 
-            ? "bg-white/90 backdrop-blur-md py-3 border-slate-200 shadow-sm" 
-            : "bg-transparent py-5 border-transparent"
-        )}
-      >
-        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:bg-indigo-700 transition-colors">
-              CWD
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white group-hover:bg-indigo-700 transition-colors">
+              <Cpu size={24} />
             </div>
-            <span className="font-bold text-xl tracking-tight hidden sm:block">
-              Outreach Service
+            <span className="text-xl font-bold text-slate-900 tracking-tight">
+              Cumbria <span className="text-indigo-600">IT</span>
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+          <nav className="hidden md:flex items-center space-x-8">
+            {NAV_LINKS.map((link) => (
               <Link
-                key={link.path}
-                to={link.path}
+                key={link.name}
+                to={link.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-indigo-600",
-                  location.pathname === link.path ? "text-indigo-600" : "text-slate-600"
+                  location.pathname === link.href ? "text-indigo-600" : "text-slate-600"
                 )}
               >
-                {link.label}
+                {link.name}
               </Link>
             ))}
-            <Link 
-              to="/contact" 
-              className="bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-indigo-700 transition-all shadow-md hover:shadow-lg active:scale-95"
+            <Link
+              to="/contact"
+              className="bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200"
             >
               Get a Quote
             </Link>
           </nav>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden p-2 text-slate-600 hover:text-indigo-600 transition-colors"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 text-slate-600"
+            onClick={() => setIsOpen(!isOpen)}
           >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </header>
+      </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Nav */}
       <AnimatePresence>
-        {isMenuOpen && (
+        {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
           >
-            <nav className="flex flex-col gap-6">
-              {navLinks.map((link) => (
+            <div className="px-4 py-6 space-y-4">
+              {NAV_LINKS.map((link) => (
                 <Link
-                  key={link.path}
-                  to={link.path}
-                  className={cn(
-                    "text-2xl font-bold transition-colors",
-                    location.pathname === link.path ? "text-indigo-600" : "text-slate-900"
-                  )}
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block text-lg font-medium text-slate-900"
                 >
-                  {link.label}
+                  {link.name}
                 </Link>
               ))}
-              <Link 
-                to="/contact" 
-                className="bg-indigo-600 text-white px-6 py-4 rounded-xl text-center font-bold text-lg"
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="block w-full text-center bg-indigo-600 text-white px-5 py-3 rounded-xl font-semibold"
               >
                 Get a Quote
               </Link>
-            </nav>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
+    </header>
+  );
+};
 
-      {/* Main Content */}
-      <main className="flex-grow pt-20">
-        {children}
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-slate-950 text-slate-300 pt-16 pb-8 border-t border-slate-800">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            {/* Company Info */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center text-white font-bold">C</div>
-                <span className="font-bold text-lg text-white">CWD Outreach</span>
+const Footer = () => {
+  return (
+    <footer className="bg-slate-900 text-slate-300 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="space-y-6">
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-indigo-500 rounded flex items-center justify-center text-white">
+                <Cpu size={20} />
               </div>
-              <p className="text-sm leading-relaxed text-slate-400">
-                Leading UK IT services provider delivering innovative technology solutions, robust cybersecurity, and managed support to businesses across the nation.
-              </p>
-              <div className="flex gap-4">
-                <a href="#" className="p-2 bg-slate-900 rounded-full hover:text-indigo-400 transition-colors"><Linkedin size={18} /></a>
-                <a href="#" className="p-2 bg-slate-900 rounded-full hover:text-indigo-400 transition-colors"><Twitter size={18} /></a>
-                <a href="#" className="p-2 bg-slate-900 rounded-full hover:text-indigo-400 transition-colors"><Facebook size={18} /></a>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="font-bold text-white mb-6">Quick Links</h4>
-              <ul className="space-y-4 text-sm">
-                {navLinks.map((link) => (
-                  <li key={link.path}>
-                    <Link to={link.path} className="hover:text-indigo-400 transition-colors flex items-center gap-2">
-                      <ChevronRight size={14} /> {link.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link to="/terms" className="hover:text-indigo-400 transition-colors flex items-center gap-2">
-                    <ChevronRight size={14} /> Terms & Conditions
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/privacy" className="hover:text-indigo-400 transition-colors flex items-center gap-2">
-                    <ChevronRight size={14} /> Privacy Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h4 className="font-bold text-white mb-6">Contact Us</h4>
-              <ul className="space-y-4 text-sm">
-                <li className="flex gap-3">
-                  <MapPin size={18} className="text-indigo-500 shrink-0" />
-                  <span>{COMPANY_DETAILS.address}</span>
-                </li>
-                <li className="flex gap-3">
-                  <Phone size={18} className="text-indigo-500 shrink-0" />
-                  <span>{COMPANY_DETAILS.phone}</span>
-                </li>
-                <li className="flex gap-3">
-                  <Mail size={18} className="text-indigo-500 shrink-0" />
-                  <span>{COMPANY_DETAILS.email}</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Legal */}
-            <div>
-              <h4 className="font-bold text-white mb-6">Company Details</h4>
-              <div className="space-y-4 text-sm text-slate-400">
-                <p>Company Name: <span className="text-slate-200">{COMPANY_DETAILS.name}</span></p>
-                <p>CRN: <span className="text-slate-200">{COMPANY_DETAILS.crn}</span></p>
-                <p>Registered in England & Wales</p>
-                <div className="pt-4">
-                  <p className="text-xs italic">Expert IT support for the modern British enterprise.</p>
-                </div>
-              </div>
+              <span className="text-xl font-bold text-white tracking-tight">
+                Cumbria <span className="text-indigo-400">IT</span>
+              </span>
+            </Link>
+            <p className="text-sm leading-relaxed">
+              Leading the way in British IT services. We provide innovative, secure, and scalable technology solutions for businesses across the UK.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-white transition-colors"><Linkedin size={20} /></a>
+              <a href="#" className="hover:text-white transition-colors"><Twitter size={20} /></a>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-            <p>© {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved.</p>
-            <div className="flex gap-6">
-              <Link to="/terms" className="hover:text-slate-300">Terms</Link>
+          <div>
+            <h3 className="text-white font-semibold mb-6">Quick Links</h3>
+            <ul className="space-y-4 text-sm">
+              {NAV_LINKS.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="hover:text-indigo-400 transition-colors">{link.name}</Link>
+                </li>
+              ))}
+              <li><Link to="/terms" className="hover:text-indigo-400 transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/privacy" className="hover:text-indigo-400 transition-colors">Privacy Policy</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-6">Contact Us</h3>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start space-x-3">
+                <Phone size={18} className="text-indigo-400 shrink-0" />
+                <span>{COMPANY_DETAILS.phone}</span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <Mail size={18} className="text-indigo-400 shrink-0" />
+                <span className="break-all">{COMPANY_DETAILS.email}</span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <MapPin size={18} className="text-indigo-400 shrink-0" />
+                <span>{COMPANY_DETAILS.address}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-6">Accreditations</h3>
+            <div className="flex flex-wrap gap-4">
+              <div className="flex items-center space-x-2 bg-slate-800 p-3 rounded-lg border border-slate-700">
+                <ShieldCheck size={24} className="text-emerald-400" />
+                <span className="text-xs font-bold uppercase tracking-wider">Cyber Essentials</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-slate-800 p-3 rounded-lg border border-slate-700">
+                <div className="text-indigo-400 font-black text-lg">GDPR</div>
+                <span className="text-[10px] font-bold uppercase tracking-wider leading-tight">Compliant<br/>Certified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-slate-800">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+            <div className="space-y-1 text-center md:text-left">
+              <p>&copy; {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved.</p>
+              <p>Company Registration Number (CRN): {COMPANY_DETAILS.crn}</p>
+              <p>Registered Office: {COMPANY_DETAILS.address}</p>
+            </div>
+            <div className="flex space-x-6">
               <Link to="/privacy" className="hover:text-slate-300">Privacy</Link>
+              <Link to="/terms" className="hover:text-slate-300">Terms</Link>
               <Link to="/cookies" className="hover:text-slate-300">Cookies</Link>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
+  );
+};
+
+export const Layout = ({ children }: { children: React.ReactNode }) => {
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return (
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+      <Header />
+      <main className="pt-20">
+        {children}
+      </main>
+      <Footer />
     </div>
   );
-}
+};

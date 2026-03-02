@@ -1,222 +1,184 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
-import { Phone, Mail, MapPin, Clock, Send, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import { COMPANY_DETAILS } from '../constants';
 
-export default function Contact() {
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: 'Managed IT',
-    message: '',
-    consent: false
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+const Contact = () => {
+  const [submitted, setSubmitted] = React.useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
+    setSubmitted(true);
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-slate-50 min-h-screen pb-24">
       {/* Header */}
-      <section className="pt-20 pb-24 bg-slate-50 border-b border-slate-100">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <div className="max-w-3xl mx-auto space-y-6">
-            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900">Get in Touch</h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              Have a question or ready to start your digital transformation? Our team is here to help you navigate your IT challenges.
+      <section className="bg-indigo-900 text-white py-24 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-3xl"
+          >
+            <h1 className="text-5xl font-bold mb-6 tracking-tight">Get in Touch</h1>
+            <p className="text-xl text-indigo-100 leading-relaxed">
+              Have a question or ready to start your IT transformation? Our team of experts is ready to assist you.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section className="py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-3 gap-16">
             {/* Contact Info */}
-            <div className="space-y-12">
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold text-slate-900">Contact Details</h2>
-                <p className="text-slate-600">
-                  Reach out to us via any of the channels below. Our team typically responds to all enquiries within one business hour.
+            <div className="lg:col-span-1 space-y-12">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-8">Contact Details</h3>
+                <div className="space-y-8">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center text-indigo-600 shrink-0">
+                      <Phone size={24} />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Phone</div>
+                      <div className="text-lg font-semibold text-slate-900">{COMPANY_DETAILS.phone}</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center text-indigo-600 shrink-0">
+                      <Mail size={24} />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Email</div>
+                      <div className="text-lg font-semibold text-slate-900 break-all">{COMPANY_DETAILS.email}</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center text-indigo-600 shrink-0">
+                      <MapPin size={24} />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Office</div>
+                      <div className="text-lg font-semibold text-slate-900">{COMPANY_DETAILS.address}</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center text-indigo-600 shrink-0">
+                      <Clock size={24} />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Hours</div>
+                      <div className="text-lg font-semibold text-slate-900">{COMPANY_DETAILS.hours}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-900 p-8 rounded-[2rem] text-white">
+                <h4 className="text-xl font-bold mb-4">Emergency Support?</h4>
+                <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                  Existing clients with 24/7 support contracts can access our emergency helpdesk via the dedicated portal or their account manager's direct line.
                 </p>
-              </div>
-
-              <div className="space-y-8">
-                <div className="flex gap-6">
-                  <div className="shrink-0 w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center">
-                    <MapPin size={28} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 mb-1">Registered Office</h4>
-                    <p className="text-slate-600 leading-relaxed">{COMPANY_DETAILS.address}</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-6">
-                  <div className="shrink-0 w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center">
-                    <Phone size={28} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 mb-1">Phone Number</h4>
-                    <p className="text-slate-600">{COMPANY_DETAILS.phone}</p>
-                    <p className="text-xs text-slate-400 mt-1">Available during business hours</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-6">
-                  <div className="shrink-0 w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center">
-                    <Mail size={28} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 mb-1">Email Address</h4>
-                    <p className="text-slate-600">{COMPANY_DETAILS.email}</p>
-                    <p className="text-xs text-slate-400 mt-1">General & Support Enquiries</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-6">
-                  <div className="shrink-0 w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center">
-                    <Clock size={28} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 mb-1">Business Hours</h4>
-                    <p className="text-slate-600">{COMPANY_DETAILS.hours}</p>
-                    <p className="text-xs text-slate-400 mt-1">Closed on Bank Holidays</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-8 bg-slate-900 rounded-3xl text-white space-y-4">
-                <h4 className="text-xl font-bold">Company Registration</h4>
-                <div className="space-y-2 text-slate-400 text-sm">
-                  <p>Company Name: {COMPANY_DETAILS.name}</p>
-                  <p>CRN: {COMPANY_DETAILS.crn}</p>
-                  <p>Registered in England & Wales</p>
-                </div>
+                <a href="#" className="inline-flex items-center text-indigo-400 font-bold hover:underline">
+                  Client Portal Login <Send size={16} className="ml-2" />
+                </a>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="relative">
-              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-100">
-                <h3 className="text-2xl font-bold text-slate-900 mb-8">Send us a Message</h3>
-                
-                {isSubmitted ? (
-                  <motion.div 
+            <div className="lg:col-span-2">
+              <div className="bg-white p-10 md:p-16 rounded-[3rem] shadow-xl border border-slate-100 relative overflow-hidden">
+                {submitted ? (
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="py-12 text-center space-y-4"
+                    className="text-center py-12"
                   >
-                    <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle2 size={40} />
+                    <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-8">
+                      <CheckCircle2 size={48} />
                     </div>
-                    <h4 className="text-2xl font-bold text-slate-900">Message Sent!</h4>
-                    <p className="text-slate-600">Thank you for reaching out. One of our experts will be in touch shortly.</p>
-                    <button 
-                      onClick={() => setIsSubmitted(false)}
-                      className="text-indigo-600 font-bold hover:underline pt-4"
+                    <h3 className="text-3xl font-bold text-slate-900 mb-4">Message Sent!</h3>
+                    <p className="text-slate-600 text-lg mb-8">
+                      Thank you for contacting Cumbria IT. One of our specialists will be in touch within 2 business hours.
+                    </p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="text-indigo-600 font-bold hover:underline"
                     >
                       Send another message
                     </button>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-6">
+                  <>
+                    <h3 className="text-3xl font-bold text-slate-900 mb-8">Send us a Message</h3>
+                    <form onSubmit={handleSubmit} className="space-y-8">
+                      <div className="grid md:grid-cols-2 gap-8">
+                        <div className="space-y-2">
+                          <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Full Name</label>
+                          <input
+                            required
+                            type="text"
+                            placeholder="John Smith"
+                            className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Email Address</label>
+                          <input
+                            required
+                            type="email"
+                            placeholder="john@company.co.uk"
+                            className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all"
+                          />
+                        </div>
+                      </div>
+                      <div className="grid md:grid-cols-2 gap-8">
+                        <div className="space-y-2">
+                          <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Phone Number</label>
+                          <input
+                            type="tel"
+                            placeholder="01234 567 890"
+                            className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Service Interest</label>
+                          <select className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all appearance-none">
+                            <option>Managed IT Support</option>
+                            <option>Cloud Solutions</option>
+                            <option>Cyber Security</option>
+                            <option>Network Infrastructure</option>
+                            <option>Other Enquiry</option>
+                          </select>
+                        </div>
+                      </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-700">Full Name</label>
-                        <input 
-                          type="text" 
+                        <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Your Message</label>
+                        <textarea
                           required
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all"
-                          placeholder="John Doe"
-                          value={formState.name}
-                          onChange={(e) => setFormState({...formState, name: e.target.value})}
-                        />
+                          rows={5}
+                          placeholder="How can we help you?"
+                          className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all resize-none"
+                        ></textarea>
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-700">Email Address</label>
-                        <input 
-                          type="email" 
-                          required
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all"
-                          placeholder="john@company.co.uk"
-                          value={formState.email}
-                          onChange={(e) => setFormState({...formState, email: e.target.value})}
-                        />
+                      
+                      <div className="flex items-start space-x-3">
+                        <input required type="checkbox" className="mt-1.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+                        <p className="text-sm text-slate-500 leading-relaxed">
+                          I consent to {COMPANY_DETAILS.name} storing my data to process my enquiry in accordance with the <a href="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</a>.
+                        </p>
                       </div>
-                    </div>
 
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-700">Phone Number</label>
-                        <input 
-                          type="tel" 
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all"
-                          placeholder="07123 456789"
-                          value={formState.phone}
-                          onChange={(e) => setFormState({...formState, phone: e.target.value})}
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-700">Interested Service</label>
-                        <select 
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all bg-white"
-                          value={formState.service}
-                          onChange={(e) => setFormState({...formState, service: e.target.value})}
-                        >
-                          <option>Managed IT Support</option>
-                          <option>Cybersecurity</option>
-                          <option>Cloud Infrastructure</option>
-                          <option>Network Design</option>
-                          <option>Consultancy</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-slate-700">Message</label>
-                      <textarea 
-                        required
-                        rows={4}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 outline-none transition-all resize-none"
-                        placeholder="Tell us about your requirements..."
-                        value={formState.message}
-                        onChange={(e) => setFormState({...formState, message: e.target.value})}
-                      />
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <input 
-                        type="checkbox" 
-                        required
-                        id="consent"
-                        className="mt-1 w-4 h-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-500"
-                        checked={formState.consent}
-                        onChange={(e) => setFormState({...formState, consent: e.target.checked})}
-                      />
-                      <label htmlFor="consent" className="text-xs text-slate-500 leading-relaxed">
-                        I consent to {COMPANY_DETAILS.name} collecting my data for the purpose of responding to this enquiry. View our <a href="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</a> for more details.
-                      </label>
-                    </div>
-
-                    <button 
-                      type="submit"
-                      className="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2 group"
-                    >
-                      Send Message <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </button>
-
-                    <div className="flex items-center justify-center gap-2 text-xs text-slate-400 pt-4">
-                      <ShieldCheck size={14} />
-                      Secure & Confidential Communication
-                    </div>
-                  </form>
+                      <button
+                        type="submit"
+                        className="w-full bg-indigo-600 text-white py-5 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 flex items-center justify-center"
+                      >
+                        Send Message <Send size={20} className="ml-3" />
+                      </button>
+                    </form>
+                  </>
                 )}
               </div>
             </div>
@@ -225,14 +187,23 @@ export default function Contact() {
       </section>
 
       {/* Map Placeholder */}
-      <section className="h-[400px] bg-slate-200 relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center bg-slate-100">
-          <div className="text-center space-y-4">
-            <MapPin size={48} className="text-slate-300 mx-auto" />
-            <p className="text-slate-400 font-medium">Interactive Map Placeholder - Telford, TF2 8DB</p>
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="h-[500px] bg-slate-100 rounded-[3rem] overflow-hidden relative border border-slate-200 shadow-inner">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <MapPin size={48} className="text-indigo-600 mx-auto mb-4" />
+                <p className="text-slate-500 font-medium">Interactive Map Placeholder</p>
+                <p className="text-slate-400 text-sm">{COMPANY_DETAILS.address}</p>
+              </div>
+            </div>
+            {/* In a real app, we'd embed a Google Map here */}
+            <div className="absolute inset-0 bg-indigo-600/5 pointer-events-none" />
           </div>
         </div>
       </section>
     </div>
   );
-}
+};
+
+export default Contact;

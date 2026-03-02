@@ -1,109 +1,123 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Check, ArrowRight, ChevronDown } from 'lucide-react';
+import { Check, ArrowRight, Server, Cloud, ShieldAlert, Network, Database, Lightbulb } from 'lucide-react';
 import { SERVICES } from '../constants';
 import { Link } from 'react-router-dom';
 
-export default function Services() {
+const serviceIcons: Record<string, React.ReactNode> = {
+  'managed-it': <Server size={32} />,
+  'cloud-solutions': <Cloud size={32} />,
+  'cyber-security': <ShieldAlert size={32} />,
+  'network-infrastructure': <Network size={32} />,
+  'disaster-recovery': <Database size={32} />,
+  'it-consultancy': <Lightbulb size={32} />,
+};
+
+const Services = () => {
   return (
-    <div className="bg-white">
-      {/* Page Header */}
-      <section className="pt-20 pb-24 bg-slate-950 text-white relative overflow-hidden">
+    <div className="bg-slate-50 min-h-screen pb-24">
+      {/* Header */}
+      <section className="bg-indigo-900 text-white py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full blur-[120px]" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-400 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         </div>
-        
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6">Our Services</h1>
-            <p className="text-xl text-slate-400 leading-relaxed">
-              Tailored IT solutions designed to drive efficiency, security, and growth for modern British businesses.
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-3xl"
+          >
+            <h1 className="text-5xl font-bold mb-6">Our IT Services</h1>
+            <p className="text-xl text-indigo-100 leading-relaxed">
+              We provide a comprehensive suite of technology solutions designed to help British businesses scale, secure their data, and stay ahead of the competition.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services List */}
       <section className="py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="space-y-32">
-            {SERVICES.map((service, idx) => (
-              <motion.div 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-24">
+            {SERVICES.map((service, index) => (
+              <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className={`flex flex-col lg:flex-row gap-16 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
+                className={`flex flex-col lg:flex-row gap-16 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
               >
-                <div className="lg:w-1/2 space-y-8">
-                  <div className="inline-flex p-4 bg-indigo-50 rounded-2xl text-indigo-600">
-                    <service.icon size={40} />
+                <div className="flex-1 space-y-8">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl">
+                    {serviceIcons[service.id]}
                   </div>
-                  
-                  <div className="space-y-4">
-                    <h2 className="text-4xl font-bold text-slate-900">{service.title}</h2>
+                  <div>
+                    <h2 className="text-4xl font-bold text-slate-900 mb-4">{service.title}</h2>
                     <p className="text-lg text-slate-600 leading-relaxed">{service.description}</p>
                   </div>
-
+                  
                   <div className="grid sm:grid-cols-2 gap-8">
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <span className="w-1.5 h-6 bg-indigo-600 rounded-full" />
+                      <h4 className="font-bold text-slate-900 mb-3 flex items-center">
+                        <span className="w-1.5 h-6 bg-indigo-600 rounded-full mr-3" />
                         Target Audience
                       </h4>
-                      <p className="text-slate-600 text-sm">{service.targetAudience}</p>
+                      <p className="text-sm text-slate-600">{service.target}</p>
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <span className="w-1.5 h-6 bg-emerald-500 rounded-full" />
-                        Starting From
+                      <h4 className="font-bold text-slate-900 mb-3 flex items-center">
+                        <span className="w-1.5 h-6 bg-indigo-600 rounded-full mr-3" />
+                        Key Benefits
                       </h4>
-                      <p className="text-2xl font-bold text-indigo-600">{service.startingPrice}</p>
-                      <p className="text-xs text-slate-400">Excl. VAT</p>
+                      <ul className="space-y-2">
+                        {service.benefits.map((benefit, i) => (
+                          <li key={i} className="text-sm text-slate-600 flex items-center">
+                            <Check size={14} className="text-emerald-500 mr-2" />
+                            {benefit}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
 
-                  <div className="space-y-4">
-                    <h4 className="font-bold text-slate-900">Key Benefits</h4>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {service.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-center gap-3 text-slate-600">
-                          <div className="w-5 h-5 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center shrink-0">
-                            <Check size={12} strokeWidth={3} />
-                          </div>
-                          <span className="text-sm">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Link 
-                    to="/contact" 
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-all group"
-                  >
-                    Enquire About This Service <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-
-                <div className="lg:w-1/2 w-full">
-                  <div className="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-100 relative">
-                    <h4 className="text-xl font-bold text-slate-900 mb-8">Our Process</h4>
-                    <div className="space-y-6 relative">
-                      <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-indigo-100" />
+                  <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h4 className="font-bold text-slate-900 mb-4">Our Process</h4>
+                    <div className="flex flex-wrap gap-4">
                       {service.process.map((step, i) => (
-                        <div key={i} className="flex gap-6 relative z-10">
-                          <div className="w-8 h-8 bg-white border-2 border-indigo-600 rounded-full flex items-center justify-center text-indigo-600 font-bold text-sm shrink-0 shadow-sm">
+                        <div key={i} className="flex items-center">
+                          <span className="text-xs font-bold bg-slate-100 text-slate-500 w-6 h-6 rounded-full flex items-center justify-center mr-2">
                             {i + 1}
-                          </div>
-                          <div className="pt-1">
-                            <h5 className="font-bold text-slate-900">{step}</h5>
-                            <p className="text-sm text-slate-500">Standard delivery phase {i + 1}</p>
-                          </div>
+                          </span>
+                          <span className="text-sm font-medium text-slate-700">{step}</span>
+                          {i < service.process.length - 1 && <ArrowRight size={14} className="mx-3 text-slate-300" />}
                         </div>
                       ))}
                     </div>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4">
+                    <div className="text-2xl font-bold text-slate-900">
+                      Starting from <span className="text-indigo-600">£{service.startingPrice}</span>
+                    </div>
+                    <Link
+                      to="/contact"
+                      className="bg-indigo-600 text-white px-6 py-3 rounded-full font-bold hover:bg-indigo-700 transition-all"
+                    >
+                      Enquire Now
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="flex-1 w-full">
+                  <div className="relative">
+                    <div className="absolute -inset-4 bg-indigo-600/5 rounded-[2.5rem] -rotate-2" />
+                    <img
+                      src={`https://picsum.photos/seed/${service.id}/800/600`}
+                      alt={service.title}
+                      className="relative rounded-[2rem] shadow-xl w-full object-cover aspect-[4/3]"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                 </div>
               </motion.div>
@@ -112,31 +126,23 @@ export default function Services() {
         </div>
       </section>
 
-      {/* FAQ/CTA Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto bg-white rounded-3xl p-12 shadow-xl border border-slate-100 text-center space-y-8">
-            <h3 className="text-3xl font-bold text-slate-900">Need a Custom Solution?</h3>
-            <p className="text-lg text-slate-600">
-              Every business is unique. If you don't see exactly what you're looking for, our consultants can design a bespoke IT package that fits your specific requirements and budget.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link 
-                to="/contact" 
-                className="w-full sm:w-auto px-10 py-5 bg-indigo-600 text-white rounded-full font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg"
-              >
-                Schedule a Consultation
-              </Link>
-              <Link 
-                to="/about" 
-                className="w-full sm:w-auto px-10 py-5 bg-white text-slate-900 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all"
-              >
-                Learn About Our Team
-              </Link>
-            </div>
-          </div>
+      {/* Final CTA */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-8">Not sure which service you need?</h2>
+          <p className="text-lg text-slate-600 mb-10">
+            Our experts are here to help. We can conduct a full IT audit of your business and provide a tailored roadmap for your technology.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center bg-slate-900 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-800 transition-all"
+          >
+            Book Free IT Audit
+          </Link>
         </div>
       </section>
     </div>
   );
-}
+};
+
+export default Services;

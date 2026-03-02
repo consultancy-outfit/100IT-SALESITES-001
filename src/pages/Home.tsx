@@ -1,297 +1,261 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2, Shield, Zap, Users, BarChart3, ChevronRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Users, Zap, Shield, Globe, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SERVICES, TESTIMONIALS, CASE_STUDIES } from '../constants';
+import { SERVICES } from '../constants';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
-};
-
-export default function Home() {
+const Hero = () => {
   return (
-    <div className="overflow-hidden">
-      {/* Hero Section */}
-      <section className="relative pt-20 pb-32 lg:pt-32 lg:pb-48 bg-slate-50">
-        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-400 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
-        </div>
+    <section className="relative overflow-hidden bg-white pt-16 pb-24 lg:pt-32 lg:pb-40">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-3xl opacity-50" />
+        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-blue-50 rounded-full blur-3xl opacity-50" />
+      </div>
 
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-6"
-            >
-              <span className="flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse" />
-              Empowering UK Businesses with Elite IT
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]"
-            >
-              Your Strategic Partner in <span className="text-indigo-600">Digital Excellence</span>
-            </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed"
-            >
-              CWD Outreach Service provides managed IT support, robust cybersecurity, and cloud solutions tailored for the unique challenges of British enterprises.
-            </motion.p>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            >
-              <Link 
-                to="/services" 
-                className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white rounded-full font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl hover:shadow-indigo-200 flex items-center justify-center gap-2 group"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center space-x-2 bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+              </span>
+              <span>Trusted UK IT Partner</span>
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight">
+              Empowering British Business with <span className="text-indigo-600">Smart IT</span>
+            </h1>
+            <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
+              From managed support to cloud transformation, we provide the technical backbone your business needs to thrive in the digital age.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/services"
+                className="bg-indigo-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 flex items-center justify-center group"
               >
-                Explore Services <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                Explore Services
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link 
-                to="/contact" 
-                className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all shadow-sm"
+              <Link
+                to="/contact"
+                className="bg-white text-slate-900 border-2 border-slate-200 px-8 py-4 rounded-full font-bold text-lg hover:border-indigo-600 hover:text-indigo-600 transition-all flex items-center justify-center"
               >
-                Book a Free Audit
+                Book a Consultation
               </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats/Trust Section */}
-      <section className="py-12 bg-white border-y border-slate-100">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-1">
-              <div className="text-3xl font-bold text-indigo-600">99.9%</div>
-              <div className="text-sm text-slate-500 font-medium uppercase tracking-wide">Uptime Guarantee</div>
             </div>
-            <div className="space-y-1">
-              <div className="text-3xl font-bold text-indigo-600">15m</div>
-              <div className="text-sm text-slate-500 font-medium uppercase tracking-wide">Avg Response Time</div>
-            </div>
-            <div className="space-y-1">
-              <div className="text-3xl font-bold text-indigo-600">500+</div>
-              <div className="text-sm text-slate-500 font-medium uppercase tracking-wide">Projects Delivered</div>
-            </div>
-            <div className="space-y-1">
-              <div className="text-3xl font-bold text-indigo-600">£1M+</div>
-              <div className="text-sm text-slate-500 font-medium uppercase tracking-wide">Client Cost Savings</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Focus Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <div className="lg:w-1/2 space-y-8">
-              <div className="space-y-4">
-                <h2 className="text-indigo-600 font-bold tracking-wider uppercase text-sm">Why Choose CWD?</h2>
-                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
-                  IT Infrastructure That Works As Hard As You Do
-                </h3>
-                <p className="text-lg text-slate-600 leading-relaxed">
-                  We don't just fix computers; we build resilient digital foundations that enable your business to scale. Based in Telford, we serve clients across the UK with a focus on reliability, security, and measurable ROI.
-                </p>
-              </div>
-              
-              <div className="grid sm:grid-cols-2 gap-6">
-                {[
-                  { icon: Shield, title: "GDPR Compliant", desc: "Full data protection alignment." },
-                  { icon: Zap, title: "Proactive Support", desc: "Fixing issues before they occur." },
-                  { icon: Users, title: "Expert Team", desc: "UK-based certified engineers." },
-                  { icon: BarChart3, title: "ROI Driven", desc: "Technology that pays for itself." }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="shrink-0 w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600">
-                      <item.icon size={24} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900">{item.title}</h4>
-                      <p className="text-sm text-slate-500">{item.desc}</p>
-                    </div>
-                  </div>
+            
+            <div className="mt-12 flex items-center space-x-8">
+              <div className="flex -space-x-3">
+                {[1, 2, 3, 4].map((i) => (
+                  <img
+                    key={i}
+                    src={`https://picsum.photos/seed/user${i}/100/100`}
+                    className="w-12 h-12 rounded-full border-4 border-white object-cover"
+                    alt="User"
+                    referrerPolicy="no-referrer"
+                  />
                 ))}
               </div>
+              <div>
+                <div className="flex text-amber-400 mb-1">
+                  {[1, 2, 3, 4, 5].map((i) => <Zap key={i} size={16} fill="currentColor" />)}
+                </div>
+                <p className="text-sm font-medium text-slate-600">Trusted by 200+ UK Companies</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+              <img
+                src="https://picsum.photos/seed/it-office/800/600"
+                alt="Modern IT Office"
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
             </div>
             
-            <div className="lg:w-1/2 relative">
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Modern Office" 
-                  className="w-full h-auto"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 z-20 bg-indigo-600 text-white p-8 rounded-2xl shadow-xl hidden sm:block">
-                <div className="text-4xl font-bold mb-1">10+</div>
-                <div className="text-sm font-medium opacity-90 uppercase tracking-wider">Years of Excellence</div>
-              </div>
+            {/* Floating Stats */}
+            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 max-w-[200px]">
+              <div className="text-3xl font-bold text-indigo-600 mb-1">99.9%</div>
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Uptime Guaranteed</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Preview */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-indigo-600 font-bold tracking-wider uppercase text-sm">Our Expertise</h2>
-            <h3 className="text-4xl font-bold text-slate-900">Comprehensive IT Solutions</h3>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              From managed support to complex cloud migrations, we provide the tools your business needs to thrive in the digital age.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {SERVICES.slice(0, 6).map((service, idx) => (
-              <motion.div
-                key={service.id}
-                variants={itemVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 group"
-              >
-                <div className="w-14 h-14 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                  <service.icon size={28} />
-                </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h4>
-                <p className="text-slate-600 mb-6 line-clamp-2">{service.description}</p>
-                <Link to="/services" className="text-indigo-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
-                  Learn More <ChevronRight size={18} />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div className="space-y-4">
-              <h2 className="text-indigo-600 font-bold tracking-wider uppercase text-sm">Success Stories</h2>
-              <h3 className="text-4xl font-bold text-slate-900">Real Results for UK Clients</h3>
+            <div className="absolute -top-6 -right-6 bg-indigo-600 p-6 rounded-2xl shadow-xl text-white max-w-[200px]">
+              <div className="text-3xl font-bold mb-1">£2.4M</div>
+              <p className="text-xs font-semibold text-indigo-100 uppercase tracking-wider">Client Savings in 2025</p>
             </div>
-            <Link to="/contact" className="text-indigo-600 font-bold flex items-center gap-2 hover:underline">
-              View All Case Studies <ArrowRight size={18} />
-            </Link>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12">
-            {CASE_STUDIES.map((study, idx) => (
-              <div key={idx} className="bg-slate-900 rounded-3xl overflow-hidden flex flex-col sm:flex-row">
-                <div className="sm:w-1/3 bg-indigo-600 p-8 flex flex-col justify-between text-white">
-                  <div className="text-xs font-bold uppercase tracking-widest opacity-80">Case Study</div>
-                  <div className="text-2xl font-bold leading-tight">{study.client}</div>
-                </div>
-                <div className="sm:w-2/3 p-8 space-y-6">
-                  <h4 className="text-xl font-bold text-white">{study.title}</h4>
-                  <div className="space-y-4">
-                    <div>
-                      <div className="text-indigo-400 text-xs font-bold uppercase tracking-wider mb-1">The Challenge</div>
-                      <p className="text-slate-400 text-sm">{study.challenge}</p>
-                    </div>
-                    <div>
-                      <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">The Result</div>
-                      <p className="text-slate-200 font-medium">{study.result}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-24 bg-indigo-600 text-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-indigo-200 font-bold tracking-wider uppercase text-sm">Testimonials</h2>
-            <h3 className="text-4xl font-bold">Trusted by Business Leaders</h3>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {TESTIMONIALS.map((t, idx) => (
-              <div key={idx} className="bg-indigo-700/50 p-8 rounded-2xl backdrop-blur-sm border border-indigo-500/30">
-                <div className="flex gap-1 text-yellow-400 mb-6">
-                  {[...Array(5)].map((_, i) => <CheckCircle2 key={i} size={16} fill="currentColor" />)}
-                </div>
-                <p className="text-lg italic mb-8 text-indigo-50">"{t.content}"</p>
-                <div>
-                  <div className="font-bold text-white">{t.name}</div>
-                  <div className="text-sm text-indigo-300">{t.role}, {t.company}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="bg-slate-950 rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-              <div className="absolute top-0 left-1/4 w-64 h-64 bg-indigo-500 rounded-full blur-[100px]" />
-              <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-500 rounded-full blur-[100px]" />
-            </div>
-            
-            <div className="relative z-10 max-w-3xl mx-auto space-y-8">
-              <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                Ready to Future-Proof Your Business?
-              </h2>
-              <p className="text-xl text-slate-400">
-                Join hundreds of UK companies who trust CWD Outreach Service for their technology needs. Let's build something great together.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link 
-                  to="/contact" 
-                  className="w-full sm:w-auto px-10 py-5 bg-indigo-600 text-white rounded-full font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl hover:shadow-indigo-500/20"
-                >
-                  Get Started Today
-                </Link>
-                <Link 
-                  to="/pricing" 
-                  className="w-full sm:w-auto px-10 py-5 bg-transparent text-white border border-slate-700 rounded-full font-bold text-lg hover:bg-slate-900 transition-all"
-                >
-                  View Pricing
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
-}
+};
+
+const Features = () => {
+  const features = [
+    { icon: <Shield className="text-indigo-600" />, title: "UK GDPR Compliant", desc: "Your data stays safe and compliant with UK regulations." },
+    { icon: <Zap className="text-indigo-600" />, title: "Proactive Monitoring", desc: "We fix issues before they impact your business operations." },
+    { icon: <Users className="text-indigo-600" />, title: "Dedicated Support", desc: "Direct access to senior engineers who know your business." },
+    { icon: <Globe className="text-indigo-600" />, title: "Nationwide Coverage", desc: "Remote support and on-site assistance across the UK." },
+  ];
+
+  return (
+    <section className="py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Why Choose Cumbria IT?</h2>
+          <p className="text-slate-600 max-w-2xl mx-auto">We combine technical excellence with a deep understanding of the British business landscape.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((f, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ y: -5 }}
+              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100"
+            >
+              <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-6">
+                {f.icon}
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 mb-3">{f.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">{f.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ServicesPreview = () => {
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">Our Core IT Solutions</h2>
+            <p className="text-lg text-slate-600">Tailored technology services designed to drive efficiency and growth for your organisation.</p>
+          </div>
+          <Link to="/services" className="text-indigo-600 font-bold flex items-center hover:underline">
+            View all services <ArrowRight className="ml-2" size={20} />
+          </Link>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          {SERVICES.slice(0, 3).map((service) => (
+            <div key={service.id} className="group relative bg-slate-50 rounded-3xl p-8 overflow-hidden transition-all hover:bg-indigo-600 hover:text-white">
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                <p className="text-slate-600 group-hover:text-indigo-50 mb-8 leading-relaxed">{service.description}</p>
+                <div className="flex items-center text-sm font-bold">
+                  Starting from £{service.startingPrice} <span className="mx-2 opacity-50">|</span> 
+                  <Link to="/services" className="underline underline-offset-4">Learn More</Link>
+                </div>
+              </div>
+              <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-indigo-500/10 rounded-full group-hover:bg-white/10 transition-colors" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Testimonials = () => {
+  const testimonials = [
+    { name: "Alistair Graham", role: "CEO, Northern Logistics", text: "Cumbria IT transformed our infrastructure. The migration to the cloud was seamless and saved us over £15,000 in hardware costs in the first year." },
+    { name: "Sarah Jenkins", role: "Director, Ilkley Creative", text: "Their support team is exceptional. Whenever we have an issue, they're on it instantly. It's like having our own in-house IT department." },
+    { name: "David Thompson", role: "Operations Manager, Cumbria Care", text: "Security was our main concern. Cumbria IT implemented a robust system that gives us total peace of mind and full GDPR compliance." },
+  ];
+
+  return (
+    <section className="py-24 bg-indigo-900 text-white overflow-hidden relative">
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-400 rounded-full blur-3xl" />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <MessageSquare className="mx-auto mb-6 text-indigo-400" size={48} />
+          <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
+          <p className="text-indigo-200">Real feedback from businesses across the United Kingdom.</p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((t, i) => (
+            <div key={i} className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/10">
+              <div className="flex text-amber-400 mb-6">
+                {[1, 2, 3, 4, 5].map((s) => <Zap key={s} size={16} fill="currentColor" />)}
+              </div>
+              <p className="text-lg italic mb-8 leading-relaxed">"{t.text}"</p>
+              <div>
+                <div className="font-bold text-white">{t.name}</div>
+                <div className="text-sm text-indigo-300">{t.role}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const CTA = () => {
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-indigo-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-indigo-200">
+          <div className="absolute top-0 left-0 w-full h-full opacity-20">
+            <div className="absolute -top-24 -left-24 w-64 h-64 bg-white rounded-full blur-3xl" />
+            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-indigo-400 rounded-full blur-3xl" />
+          </div>
+          
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to Modernise Your IT?</h2>
+            <p className="text-xl text-indigo-100 mb-12 max-w-2xl mx-auto">
+              Contact our team today for a free infrastructure audit and see how we can help your business grow.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="bg-white text-indigo-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-indigo-50 transition-all"
+              >
+                Contact Us Now
+              </Link>
+              <Link
+                to="/pricing"
+                className="bg-indigo-500 text-white border border-indigo-400 px-10 py-4 rounded-full font-bold text-lg hover:bg-indigo-400 transition-all"
+              >
+                View Pricing
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Home = () => {
+  return (
+    <>
+      <Hero />
+      <Features />
+      <ServicesPreview />
+      <Testimonials />
+      <CTA />
+    </>
+  );
+};
+
+export default Home;

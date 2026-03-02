@@ -1,168 +1,127 @@
-import { 
-  Shield, 
-  Cloud, 
-  Monitor, 
-  Network, 
-  Database, 
-  Lock, 
-  Zap 
-} from 'lucide-react';
-import { Service, PricingPlan, Testimonial, CaseStudy } from './types';
-
 export const COMPANY_DETAILS = {
-  name: "CWD Outreach Service",
-  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
-  crn: "17049973",
-  phone: "0173 748 6141",
-  email: "info@cwdoutreachservice.co.uk",
+  name: "Cumbria Supported Living",
+  address: "51 East Parade, Ilkley, England, LS29 8JP",
+  crn: "17051760",
+  phone: "0122 891 5103",
+  email: "Info@cumbriasupportedliving.co.uk",
   hours: "Mon - Fri: 09:00 - 17:30",
 };
 
-export const SERVICES: Service[] = [
-  {
-    id: 'managed-it',
-    title: 'Managed IT Support',
-    description: 'Comprehensive 24/7 monitoring and proactive maintenance for your entire IT estate.',
-    icon: Monitor,
-    targetAudience: 'SMEs looking for a reliable external IT department.',
-    process: ['Audit', 'Onboarding', 'Monitoring', 'Support', 'Review'],
-    benefits: ['Reduced downtime', 'Predictable costs', 'Expert advice'],
-    startingPrice: '£250/month',
-  },
-  {
-    id: 'cybersecurity',
-    title: 'Cybersecurity Solutions',
-    description: 'Advanced threat protection, vulnerability assessments, and employee security training.',
-    icon: Shield,
-    targetAudience: 'Businesses handling sensitive data or requiring compliance.',
-    process: ['Risk Assessment', 'Implementation', 'Training', 'Monitoring'],
-    benefits: ['Data protection', 'Compliance', 'Peace of mind'],
-    startingPrice: '£500/audit',
-  },
-  {
-    id: 'cloud-migration',
-    title: 'Cloud Infrastructure',
-    description: 'Seamless migration to Azure, AWS, or Google Cloud with ongoing optimisation.',
-    icon: Cloud,
-    targetAudience: 'Companies looking to modernise their infrastructure.',
-    process: ['Strategy', 'Migration', 'Optimisation', 'Management'],
-    benefits: ['Scalability', 'Remote access', 'Cost efficiency'],
-    startingPrice: '£1,000/project',
-  },
-  {
-    id: 'network-design',
-    title: 'Network Design & Security',
-    description: 'Robust, high-speed networking solutions tailored to your office or remote setup.',
-    icon: Network,
-    targetAudience: 'Growing teams needing reliable connectivity.',
-    process: ['Survey', 'Design', 'Installation', 'Testing'],
-    benefits: ['High performance', 'Secure connections', 'Future-proof'],
-    startingPrice: '£750/setup',
-  },
-  {
-    id: 'data-backup',
-    title: 'Data Backup & Recovery',
-    description: 'Automated off-site backups and rapid disaster recovery planning.',
-    icon: Database,
-    targetAudience: 'Any business where data loss is not an option.',
-    process: ['Planning', 'Setup', 'Testing', 'Ongoing Backup'],
-    benefits: ['Zero data loss', 'Quick recovery', 'Compliance'],
-    startingPrice: '£150/month',
-  },
-  {
-    id: 'it-consultancy',
-    title: 'Strategic IT Consultancy',
-    description: 'Expert guidance on digital transformation and technology roadmaps.',
-    icon: Zap,
-    targetAudience: 'Leadership teams planning for growth.',
-    process: ['Discovery', 'Analysis', 'Roadmap', 'Execution'],
-    benefits: ['Aligned strategy', 'ROI focused', 'Innovation'],
-    startingPrice: '£150/hour',
-  }
+export const NAV_LINKS = [
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services" },
+  { name: "About Us", href: "/about" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Contact", href: "/contact" },
 ];
 
-export const PRICING_PLANS: PricingPlan[] = [
+export const SERVICES = [
   {
-    name: "Essential",
-    price: "£25",
+    id: "managed-it",
+    title: "Managed IT Support",
+    description: "Comprehensive 24/7 proactive monitoring and helpdesk support for your entire business infrastructure.",
+    target: "SMEs looking for a reliable outsourced IT department.",
+    process: ["Audit", "Onboarding", "Monitoring", "Support", "Review"],
+    benefits: ["Reduced downtime", "Fixed monthly costs", "Expert advice"],
+    startingPrice: 250,
+  },
+  {
+    id: "cloud-solutions",
+    title: "Cloud Migration & Hosting",
+    description: "Seamless transition to Microsoft Azure or AWS with secure, scalable hosting solutions.",
+    target: "Businesses moving away from on-premise servers.",
+    process: ["Assessment", "Planning", "Migration", "Optimization"],
+    benefits: ["Scalability", "Remote access", "Cost efficiency"],
+    startingPrice: 500,
+  },
+  {
+    id: "cyber-security",
+    title: "Cyber Security & Compliance",
+    description: "Advanced threat protection, GDPR compliance audits, and employee security training.",
+    target: "Firms handling sensitive data or requiring Cyber Essentials.",
+    process: ["Vulnerability Scan", "Hardening", "Training", "Certification"],
+    benefits: ["Data protection", "Legal compliance", "Peace of mind"],
+    startingPrice: 400,
+  },
+  {
+    id: "network-infrastructure",
+    title: "Network Infrastructure",
+    description: "Design and installation of high-speed business networks, WiFi, and structured cabling.",
+    target: "New office fit-outs or network upgrades.",
+    process: ["Site Survey", "Design", "Installation", "Testing"],
+    benefits: ["High performance", "Reliability", "Future-proofing"],
+    startingPrice: 750,
+  },
+  {
+    id: "disaster-recovery",
+    title: "Backup & Disaster Recovery",
+    description: "Robust data backup solutions and business continuity planning to protect against data loss.",
+    target: "Critical businesses needing 99.9% uptime.",
+    process: ["Risk Assessment", "Backup Setup", "Testing", "Recovery Plan"],
+    benefits: ["Data integrity", "Rapid recovery", "Risk mitigation"],
+    startingPrice: 150,
+  },
+  {
+    id: "it-consultancy",
+    title: "Strategic IT Consultancy",
+    description: "Expert guidance on digital transformation, budgeting, and long-term technology roadmaps.",
+    target: "Leadership teams needing technical direction.",
+    process: ["Discovery", "Analysis", "Strategy", "Implementation"],
+    benefits: ["ROI focus", "Competitive edge", "Modernization"],
+    startingPrice: 600,
+  },
+];
+
+export const PRICING_PLANS = [
+  {
+    name: "Essential Support",
+    price: "45",
+    period: "per user/month",
+    description: "Core IT support for small teams needing reliable helpdesk assistance.",
     features: [
-      "Remote Support",
-      "Antivirus Protection",
+      "Remote Helpdesk (9-5)",
+      "Antivirus Management",
       "Patch Management",
-      "Email Security",
-      "9/5 Helpdesk Access"
+      "Basic Cloud Backup",
+      "Email Support",
     ],
-    supportLevel: "Standard Remote",
-    idealFor: "Small businesses with basic IT needs",
-    vatInfo: "Prices exclude VAT at 20%",
-    cta: "Get Started"
+    support: "Standard Business Hours",
+    idealFor: "Small businesses with 5-15 users",
+    cta: "Get Started",
   },
   {
     name: "Professional",
-    price: "£45",
+    price: "85",
+    period: "per user/month",
+    description: "Complete IT management with proactive security and strategic planning.",
     features: [
-      "Everything in Essential",
-      "On-site Support (Local)",
-      "Cloud Backup (1TB)",
-      "Network Monitoring",
-      "Priority Response"
+      "24/7 Remote Support",
+      "On-site Support Included",
+      "Advanced Cyber Security",
+      "Disaster Recovery Planning",
+      "Quarterly Strategy Reviews",
+      "Unlimited Cloud Backup",
     ],
-    supportLevel: "Priority Remote & On-site",
-    idealFor: "Growing SMEs with critical IT dependencies",
-    vatInfo: "Prices exclude VAT at 20%",
-    cta: "Most Popular"
+    support: "24/7 Priority Support",
+    idealFor: "Growing SMEs with 15-50 users",
+    cta: "Go Pro",
+    popular: true,
   },
   {
     name: "Enterprise",
-    price: "£85",
+    price: "Custom",
+    period: "bespoke pricing",
+    description: "Tailored infrastructure and security solutions for large-scale operations.",
     features: [
-      "Everything in Professional",
       "Dedicated Account Manager",
-      "Cyber Essentials Prep",
-      "Disaster Recovery Suite",
-      "24/7 Emergency Support"
+      "Custom SLA Agreements",
+      "Full Infrastructure Hosting",
+      "Compliance Management (GDPR/ISO)",
+      "Vulnerability Testing",
+      "Hardware Procurement",
     ],
-    supportLevel: "Full Managed Service",
-    idealFor: "Larger organisations requiring 24/7 uptime",
-    vatInfo: "Prices exclude VAT at 20%",
-    cta: "Contact Sales"
-  }
-];
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    name: "James Harrison",
-    role: "Managing Director",
-    company: "Midlands Logistics Ltd",
-    content: "CWD Outreach has transformed our remote working capabilities. Their response time is exceptional, and they speak plain English, not just tech-jargon."
+    support: "Dedicated Support Team",
+    idealFor: "Large organisations & regulated sectors",
+    cta: "Contact Us",
   },
-  {
-    name: "Sarah Jenkins",
-    role: "Operations Manager",
-    company: "Telford Creative Agency",
-    content: "The cybersecurity audit they performed saved us from a potential breach. Professional, thorough, and highly recommended for any UK business."
-  },
-  {
-    name: "Robert Thompson",
-    role: "Founder",
-    company: "Thompson & Co Solicitors",
-    content: "Reliable IT is critical for our legal practice. CWD provides the peace of mind we need to focus on our clients."
-  }
-];
-
-export const CASE_STUDIES: CaseStudy[] = [
-  {
-    title: "Cloud Migration Success",
-    client: "Retail Group UK",
-    challenge: "Legacy on-premise servers causing frequent downtime during peak sales periods.",
-    solution: "Full migration to Azure with auto-scaling capabilities.",
-    result: "Zero downtime during Black Friday and a £12,000 annual saving on hardware maintenance."
-  },
-  {
-    title: "Security Infrastructure Overhaul",
-    client: "FinTech Startup",
-    challenge: "Needed Cyber Essentials Plus certification to win government contracts.",
-    solution: "Implemented end-to-end encryption, MFA, and robust access controls.",
-    result: "Achieved certification in 4 weeks, securing a £500,000 contract."
-  }
 ];
