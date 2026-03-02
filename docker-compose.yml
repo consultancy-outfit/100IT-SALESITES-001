@@ -1,0 +1,15 @@
+services:
+  marram-green:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: marram-green-salesite
+    restart: unless-stopped
+    ports:
+      - "9015:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
