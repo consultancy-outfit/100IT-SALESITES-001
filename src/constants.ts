@@ -11,10 +11,10 @@ import { Service, PricingPlan, Testimonial, CaseStudy } from './types';
 
 export const COMPANY_DETAILS = {
   name: 'Bruntsfield House',
-  address: '#',
-  crn: '#',
-  phone: '0190 037 7058',
-  email: 'info@centenaryclose.co.uk',
+  address: '1 Highfield, Love Lane, Kings Langley, United Kingdom, WD4 9JT',
+  crn: '17048758',
+  phone: '0125 556 4041',
+  email: 'info@bruntsfieldhouse.co.uk',
   hours: '#',
 };
 
