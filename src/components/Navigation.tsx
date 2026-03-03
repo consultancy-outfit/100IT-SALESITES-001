@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Monitor, Shield, Cloud, Cpu, PhoneCall, Mail, MapPin, Linkedin, Twitter, ExternalLink } from 'lucide-react';
+import { Menu, X, Monitor, Shield, Cloud, Cpu, PhoneCall, Mail, MapPin, Linkedin, Twitter, ExternalLink, Hash } from 'lucide-react';
 import { COMPANY_DETAILS } from '../constants';
 import { cn } from '../constants';
 
@@ -154,6 +154,10 @@ export const Footer = () => {
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-brand-400 shrink-0" />
                 <span>{COMPANY_DETAILS.email}</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Hash size={18} className="text-brand-400 shrink-0" />
+                <span>CRN: {COMPANY_DETAILS.crn}</span>
               </li>
             </ul>
           </div>
