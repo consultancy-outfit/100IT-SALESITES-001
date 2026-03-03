@@ -98,7 +98,7 @@ export default function Home() {
             </div>
             <div className="lg:w-1/2 bg-slate-800 relative min-h-[400px]">
               <img 
-                src="https://picsum.photos/seed/it-office/800/600" 
+                src="https://picsum.photos/id/20/800/800" 
                 alt="Modern IT Office" 
                 className="absolute inset-0 w-full h-full object-cover opacity-60"
                 referrerPolicy="no-referrer"
