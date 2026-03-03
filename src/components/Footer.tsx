@@ -73,7 +73,7 @@ const Footer = () => {
           <div className="space-y-1 text-center md:text-left">
             <p>&copy; {currentYear} Daisy Haye. All rights reserved.</p>
             <p className="opacity-60">Company Name: Daisy Haye | Registered Office: info@daisyhaye.co.uk</p>
-            <p className="opacity-60">CRN: Not available | VAT: Prices exclude VAT unless stated.</p>
+            <p className="opacity-60">CRN:17046242 | VAT: Prices exclude VAT unless stated.</p>
           </div>
           <div className="flex space-x-6">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
