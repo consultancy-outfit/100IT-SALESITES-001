@@ -4,11 +4,11 @@ import { Mail, Phone, MapPin, Shield, Cpu, Globe, ArrowRight, Menu, X } from 'lu
 import React, { useState } from 'react';
 
 const COMPANY_DETAILS = {
-  name: "Wickham Hall IT Services Ltd",
-  address: "Wickham Hall, Hadham Road, Bishop's Stortford, Hertfordshire, CM23 1JG, United Kingdom",
-  crn: "12849562",
-  phone: "+44 (0) 1279 506000",
-  email: "solutions@wickhamhall.it",
+  name: "Wickham Hall",
+  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
+  crn: "17049007",
+  phone: "0194 256 5146",
+  email: "info@wickhamhall.co.uk",
   hours: "Mon - Fri: 08:30 - 18:00"
 };
 
