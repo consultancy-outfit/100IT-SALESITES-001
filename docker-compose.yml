@@ -1,0 +1,15 @@
+services:
+  worksop-supported-living-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: worksop-supported-living-service-salesite
+    restart: unless-stopped
+    ports:
+      - "9056:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
