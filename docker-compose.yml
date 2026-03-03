@@ -1,0 +1,15 @@
+services:
+  support-health-care-middlesbrough:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: support-health-care-middlesbrough-salesite
+    restart: unless-stopped
+    ports:
+      - "9082:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
