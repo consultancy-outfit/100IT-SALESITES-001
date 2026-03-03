@@ -1,0 +1,15 @@
+services:
+  william-and-patrica-venton-centre:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: william-and-patrica-venton-centre-salesite
+    restart: unless-stopped
+    ports:
+      - "9057:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
