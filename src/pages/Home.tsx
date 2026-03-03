@@ -48,7 +48,7 @@ export default function Home() {
             >
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
                 <img 
-                  src="https://picsum.photos/seed/it-office/800/600" 
+                  src="https://picsum.photos/id/107/800/800.jpg" 
                   alt="Modern UK IT Office" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
