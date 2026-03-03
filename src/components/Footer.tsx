@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Monitor, Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Monitor, Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Building2 } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -71,6 +71,10 @@ export default function Footer() {
                       15 Queens Road, Donnington,<br />
                       Telford, England, TF2 8DB
                     </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <Building2 className="h-5 w-5 text-brand-500 shrink-0" />
+                    <span className="text-sm">17046237</span>
                   </li>
                 </ul>
               </div>
