@@ -90,7 +90,8 @@ export default function Footer() {
             <div className="text-sm text-slate-500 space-y-2">
               <p>© {new Date().getFullYear()} {COMPANY_DETAILS.name} Limited. All rights reserved.</p>
               <div className="flex flex-wrap gap-x-6 gap-y-2">
-                <span>CRN: 17047728</span>
+                <span>CRN:</span>
+                <p>17047728</p>
                 <span>VAT: GB 987 6543 21</span>
                 <span>Registered in England & Wales</span>
               </div>
