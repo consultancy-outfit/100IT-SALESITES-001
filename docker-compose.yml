@@ -1,0 +1,15 @@
+services:
+  sense-supported-living-services-west-midlands:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sense-supported-living-services-west-midlands-salesite
+    restart: unless-stopped
+    ports:
+      - "9098:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
