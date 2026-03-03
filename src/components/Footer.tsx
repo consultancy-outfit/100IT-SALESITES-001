@@ -90,6 +90,12 @@ export function Footer() {
                 info@aspiresouthwestlondon.co.uk
               </a>
             </div>
+               <div className="flex gap-3 text-sm">
+              <Phone className="w-5 h-5 text-indigo-500 shrink-0" />
+              <a className="hover:text-indigo-400 transition-colors">
+               17049977
+              </a>
+            </div>
           </div>
         </div>
 
