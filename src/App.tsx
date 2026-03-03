@@ -214,7 +214,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
             >
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://picsum.photos/seed/it-office/800/800" 
+                  src="https://picsum.photos/id/109/800/800.jpg" 
                   alt="Modern IT Office" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
