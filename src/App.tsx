@@ -8,8 +8,7 @@ import {
   MapPin, 
   Linkedin, 
   Twitter, 
-  Shield,
-  Building2 
+  Shield, 
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { COMPANY_DETAILS, Page, Button } from './components/Shared';
@@ -228,10 +227,7 @@ export default function App() {
                     <Mail size={14} className="text-emerald-500" />
                     <span><strong>Email:</strong> {COMPANY_DETAILS.email}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Building2 size={14} className="text-emerald-500" />
-                    <span><strong>CRN:</strong> {COMPANY_DETAILS.crn}</span>
-                  </div>
+                 
                 </div>
               </div>
               <div className="md:text-right text-slate-500 text-sm">
