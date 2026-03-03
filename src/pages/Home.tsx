@@ -1,229 +1,213 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Shield, Zap, Users, Globe, ArrowRight, CheckCircle2, Star, ChevronRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Users, BarChart3, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '../constants';
+import { SERVICES } from '../constants';
 
-const Hero = () => (
-  <section className="relative overflow-hidden pt-20 pb-32 lg:pt-32 lg:pb-48">
-    <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_45%_at_50%_50%,rgba(79,70,229,0.1)_0%,transparent_100%)]" />
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10 mb-6">
-            Trusted IT Partners for UK Business
-          </span>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-8">
-            Intelligent IT Solutions for the <span className="text-indigo-600">Modern Enterprise</span>
-          </h1>
-          <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">
-            From managed services to advanced cybersecurity, we provide the technical foundation your business needs to scale securely in the digital age.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              to={ROUTES.SERVICES}
-              className="w-full sm:w-auto bg-indigo-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center group"
+const Home = () => {
+  return (
+    <div className="overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative pt-20 pb-32 lg:pt-32 lg:pb-48 bg-slate-50">
+        <div className="container-custom relative z-10">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              Explore Services
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              to={ROUTES.CONTACT}
-              className="w-full sm:w-auto bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg border border-slate-200 hover:bg-slate-50 transition-all"
-            >
-              Book a Consultation
-            </Link>
+              <span className="inline-block py-1 px-3 rounded-full bg-brand-accent/10 text-brand-accent text-sm font-bold mb-6">
+                UK-Based Managed IT Experts
+              </span>
+              <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8">
+                Intelligent IT for <span className="text-brand-accent">Supported Living</span> & Care.
+              </h1>
+              <p className="text-xl text-slate-600 mb-10 leading-relaxed">
+                We provide specialist IT infrastructure and cyber security solutions tailored for the UK care sector. Ensuring your technology is as reliable as your service.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/contact" className="bg-brand-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-all flex items-center justify-center gap-2 shadow-xl shadow-brand-primary/20">
+                  Book a Free Audit <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link to="/services" className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center">
+                  Explore Services
+                </Link>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-      </div>
-    </div>
-  </section>
-);
-
-const Stats = () => (
-  <section className="bg-white py-20 border-y border-slate-100">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-        {[
-          { label: 'Uptime SLA', value: '99.9%' },
-          { label: 'Active Clients', value: '250+' },
-          { label: 'Support Response', value: '< 15m' },
-          { label: 'Projects Delivered', value: '1.2k' },
-        ].map((stat, i) => (
-          <div key={i} className="text-center">
-            <div className="text-3xl font-bold text-indigo-600 mb-2">{stat.value}</div>
-            <div className="text-sm text-slate-500 font-medium uppercase tracking-wider">{stat.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-const Benefits = () => (
-  <section className="py-24 bg-slate-50">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">Why Choose Lumina IT?</h2>
-        <p className="text-slate-600 max-w-2xl mx-auto">We combine technical excellence with a deep understanding of the UK business landscape.</p>
-      </div>
-      <div className="grid md:grid-cols-3 gap-8">
-        {[
-          {
-            icon: Shield,
-            title: 'Cybersecurity First',
-            desc: 'Every solution we build is hardened with enterprise-grade security protocols by default.',
-          },
-          {
-            icon: Zap,
-            title: 'Rapid Deployment',
-            desc: 'Our agile processes ensure your infrastructure is ready when you need it, not weeks later.',
-          },
-          {
-            icon: Users,
-            title: 'Dedicated Support',
-            desc: 'UK-based engineers available 24/7 to ensure your operations never skip a beat.',
-          },
-        ].map((item, i) => (
-          <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-6">
-              <item.icon className="text-indigo-600 w-6 h-6" />
-            </div>
-            <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-            <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-const CaseStudies = () => (
-  <section className="py-24 bg-white">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-        <div>
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Success Stories</h2>
-          <p className="text-slate-600">Real results for real British businesses.</p>
         </div>
-        <Link to={ROUTES.SERVICES} className="text-indigo-600 font-semibold flex items-center hover:underline">
-          View all services <ChevronRight className="ml-1 w-4 h-4" />
-        </Link>
-      </div>
-      <div className="grid md:grid-cols-2 gap-8">
-        {[
-          {
-            client: 'FinTech London',
-            title: 'Cloud Migration & Security Overhaul',
-            result: '£45k annual savings',
-            desc: 'We migrated their legacy infrastructure to a secure Azure environment, improving performance by 40%.',
-          },
-          {
-            client: 'Midlands Manufacturing',
-            title: 'Managed IT & Network Resilience',
-            result: 'Zero downtime in 24 months',
-            desc: 'Implemented a redundant network architecture and 24/7 monitoring for a multi-site operation.',
-          },
-        ].map((study, i) => (
-          <div key={i} className="group relative overflow-hidden rounded-3xl bg-slate-900 p-8 text-white">
-            <div className="absolute top-0 right-0 p-8 opacity-10">
-              <Globe className="w-32 h-32" />
-            </div>
-            <div className="relative z-10">
-              <span className="text-indigo-400 font-bold text-sm uppercase tracking-widest">{study.client}</span>
-              <h3 className="text-2xl font-bold mt-2 mb-4">{study.title}</h3>
-              <p className="text-slate-400 mb-6">{study.desc}</p>
-              <div className="inline-flex items-center bg-indigo-600/20 text-indigo-300 px-4 py-2 rounded-lg border border-indigo-500/30 font-semibold">
-                <CheckCircle2 className="w-4 h-4 mr-2" />
-                {study.result}
+
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-accent/5 to-transparent hidden lg:block" />
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl" />
+      </section>
+
+      {/* Stats / Benefits */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: ShieldCheck, title: 'GDPR Compliant', desc: 'Full data protection for sensitive patient & client records.' },
+              { icon: Zap, title: '99.9% Uptime', desc: 'Proactive monitoring to prevent issues before they occur.' },
+              { icon: Users, title: 'Expert Support', desc: 'UK-based helpdesk with deep knowledge of care software.' }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all"
+              >
+                <item.icon className="w-10 h-10 text-brand-accent mb-6" />
+                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                <p className="text-slate-600">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Company Overview */}
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <img 
+                src="https://picsum.photos/seed/it-office/800/600" 
+                alt="Modern IT Office" 
+                className="rounded-3xl shadow-2xl"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute -bottom-8 -left-8 bg-white p-8 rounded-2xl shadow-xl hidden md:block border border-slate-100">
+                <p className="text-4xl font-bold text-brand-accent mb-1">15+</p>
+                <p className="text-slate-600 font-medium uppercase tracking-wider text-xs">Years Experience</p>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-const Testimonials = () => (
-  <section className="py-24 bg-slate-50 overflow-hidden">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">What Our Clients Say</h2>
-      </div>
-      <div className="grid md:grid-cols-3 gap-8">
-        {[
-          {
-            name: 'Alistair Graham',
-            role: 'CTO, Sterling Logistics',
-            text: 'Lumina IT transformed our digital infrastructure. Their response times are unmatched in the UK market.',
-          },
-          {
-            name: 'Sarah Jenkins',
-            role: 'Director, Oakwood Legal',
-            text: 'Professional, knowledgeable, and reliable. They handled our GDPR compliance and security with absolute precision.',
-          },
-          {
-            name: 'David Thompson',
-            role: 'Founder, TechPulse UK',
-            text: 'The managed services plan has saved us thousands in potential downtime. Highly recommended for any growing firm.',
-          },
-        ].map((t, i) => (
-          <div key={i} className="bg-white p-8 rounded-2xl border border-slate-100 relative">
-            <div className="flex text-amber-400 mb-4">
-              {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-            </div>
-            <p className="text-slate-600 italic mb-6">"{t.text}"</p>
             <div>
-              <div className="font-bold text-slate-900">{t.name}</div>
-              <div className="text-sm text-slate-500">{t.role}</div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Bridging the Gap Between <span className="text-brand-accent">Care & Technology</span></h2>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                At Worksop Supported Living Service, we understand that in the care sector, IT isn't just about computers—it's about the people you support. A system failure can mean more than just lost productivity; it can impact care delivery.
+              </p>
+              <ul className="space-y-4 mb-10">
+                {[
+                  'Specialist knowledge of Care Management Systems',
+                  'Secure remote access for mobile care workers',
+                  'NHS-grade security protocols and encryption',
+                  'Cost-effective solutions for non-profits and SMEs'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link to="/about" className="text-brand-primary font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                Learn more about our mission <ArrowRight className="w-5 h-5" />
+              </Link>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-const CTA = () => (
-  <section className="py-24">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-indigo-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-64 h-64 bg-indigo-400 rounded-full blur-3xl" />
         </div>
-        <div className="relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready to Secure Your Digital Future?</h2>
-          <p className="text-indigo-100 text-lg mb-12 max-w-2xl mx-auto">
-            Join hundreds of British businesses that trust Lumina IT for their critical infrastructure and support.
+      </section>
+
+      {/* Case Studies */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Measurable Results</h2>
+            <p className="text-slate-600">How we've helped UK organizations optimize their digital operations.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="group relative overflow-hidden rounded-3xl bg-slate-900 text-white p-10">
+              <div className="relative z-10">
+                <BarChart3 className="w-12 h-12 text-brand-accent mb-6" />
+                <h3 className="text-2xl font-bold mb-4">Regional Care Provider</h3>
+                <p className="text-slate-400 mb-8">Full infrastructure overhaul across 12 sites, implementing secure cloud sync and VOIP.</p>
+                <div className="flex gap-8">
+                  <div>
+                    <p className="text-3xl font-bold text-brand-accent">£12k</p>
+                    <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">Annual Saving</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-bold text-brand-accent">40%</p>
+                    <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">Speed Increase</p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-brand-accent/20 transition-colors" />
+            </div>
+            <div className="group relative overflow-hidden rounded-3xl bg-brand-primary text-white p-10">
+              <div className="relative z-10">
+                <ShieldCheck className="w-12 h-12 text-brand-accent mb-6" />
+                <h3 className="text-2xl font-bold mb-4">Nottinghamshire SME</h3>
+                <p className="text-slate-400 mb-8">Cyber security audit and implementation of MFA and advanced threat protection.</p>
+                <div className="flex gap-8">
+                  <div>
+                    <p className="text-3xl font-bold text-brand-accent">0</p>
+                    <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">Security Breaches</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-bold text-brand-accent">100%</p>
+                    <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">GDPR Compliance</p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-brand-accent/20 transition-colors" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { name: 'Sarah Jenkins', role: 'Operations Manager', text: 'The transition to cloud hosting was seamless. The team at Worksop IT really understood our specific needs as a care provider.' },
+              { name: 'David Thompson', role: 'Director, DT Logistics', text: 'Reliable, professional, and always there when we need them. Their managed support has saved us thousands in potential downtime.' },
+              { name: 'Emily Wright', role: 'Compliance Officer', text: 'Their security audit was thorough and eye-opening. We now feel completely confident in our GDPR compliance and data safety.' }
+            ].map((t, i) => (
+              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div className="flex gap-1 mb-4">
+                  {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+                </div>
+                <p className="text-slate-600 italic mb-6">"{t.text}"</p>
+                <div>
+                  <p className="font-bold text-slate-900">{t.name}</p>
+                  <p className="text-sm text-slate-500">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-brand-primary text-white overflow-hidden relative">
+        <div className="container-custom relative z-10 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to Transform Your IT?</h2>
+          <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
+            Join dozens of UK businesses who trust us with their technology. Let's build a secure, scalable future together.
           </p>
-          <Link
-            to={ROUTES.CONTACT}
-            className="inline-flex items-center bg-white text-indigo-600 px-10 py-5 rounded-full font-bold text-xl hover:bg-indigo-50 transition-all shadow-xl"
-          >
-            Contact Our Experts
-            <ArrowRight className="ml-2 w-6 h-6" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/contact" className="bg-brand-accent text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-sky-500 transition-all shadow-xl shadow-brand-accent/20">
+              Get a Free Quote
+            </Link>
+            <Link to="/pricing" className="bg-white/10 text-white border border-white/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
+              View Pricing
+            </Link>
+          </div>
         </div>
-      </div>
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute top-10 left-10 w-64 h-64 border border-white rounded-full" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 border border-white rounded-full" />
+        </div>
+      </section>
     </div>
-  </section>
-);
-
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <Stats />
-      <Benefits />
-      <CaseStudies />
-      <Testimonials />
-      <CTA />
-    </>
   );
-}
+};
+
+export default Home;

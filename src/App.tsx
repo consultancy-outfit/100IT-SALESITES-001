@@ -7,20 +7,19 @@ import Pricing from './pages/Pricing';
 import Contact from './pages/Contact';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
-import { ROUTES } from './constants';
 
 export default function App() {
   return (
     <Router>
       <Layout>
         <Routes>
-          <Route path={ROUTES.HOME} element={<Home />} />
-          <Route path={ROUTES.SERVICES} element={<Services />} />
-          <Route path={ROUTES.ABOUT} element={<About />} />
-          <Route path={ROUTES.PRICING} element={<Pricing />} />
-          <Route path={ROUTES.CONTACT} element={<Contact />} />
-          <Route path={ROUTES.TERMS} element={<Terms />} />
-          <Route path={ROUTES.PRIVACY} element={<Privacy />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </Layout>
     </Router>

@@ -1,153 +1,124 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { PRICING_PLANS } from '../constants';
 import { Check, Info, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '../constants';
 
-const plans = [
-  {
-    name: 'Essential Support',
-    price: '25',
-    period: 'per user/mo',
-    desc: 'Perfect for small businesses needing reliable remote support.',
-    features: [
-      'Unlimited Remote Support',
-      'Mon-Fri 9am-6pm Support',
-      'Antivirus & Security Patching',
-      'Basic Microsoft 365 Management',
-      '4-Hour Response SLA',
-    ],
-    support: 'Remote Only',
-    ideal: 'Startups & Micro-businesses',
-    highlight: false,
-  },
-  {
-    name: 'Professional Managed',
-    price: '45',
-    period: 'per user/mo',
-    desc: 'Comprehensive IT management for growing UK firms.',
-    features: [
-      'Everything in Essential',
-      'On-Site Support Included',
-      '24/7 Server Monitoring',
-      'Advanced Cybersecurity Suite',
-      '1-Hour Response SLA',
-      'Quarterly IT Strategy Reviews',
-    ],
-    support: 'Remote & On-Site',
-    ideal: 'Growing SMEs (10-50 users)',
-    highlight: true,
-  },
-  {
-    name: 'Enterprise Secure',
-    price: '85',
-    period: 'per user/mo',
-    desc: 'High-level security and infrastructure for complex environments.',
-    features: [
-      'Everything in Professional',
-      'Dedicated Account Manager',
-      'SIEM & SOC Monitoring',
-      'Disaster Recovery as a Service',
-      '15-Min Critical Response SLA',
-      'Compliance & Audit Support',
-    ],
-    support: 'Priority 24/7/365',
-    ideal: 'Large Firms & Regulated Industries',
-    highlight: false,
-  },
-];
-
-export default function Pricing() {
+const Pricing = () => {
   return (
-    <div className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">Simple, Transparent Pricing</h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            No hidden fees. All prices are in GBP and exclude VAT at the prevailing rate.
-          </p>
+    <div className="bg-slate-50 min-h-screen">
+      {/* Header */}
+      <section className="pt-20 pb-16 bg-white border-b border-slate-200">
+        <div className="container-custom text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-3xl mx-auto"
+          >
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Simple, Transparent Pricing</h1>
+            <p className="text-xl text-slate-600">
+              No hidden fees. No long-term lock-ins. Just professional IT support tailored to your scale.
+            </p>
+          </motion.div>
         </div>
+      </section>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-20">
-          {plans.map((plan, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              className={`relative bg-white rounded-3xl p-8 border ${
-                plan.highlight ? 'border-indigo-600 shadow-2xl scale-105 z-10' : 'border-slate-100 shadow-sm'
-              }`}
-            >
-              {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
-                  Most Popular
-                </div>
-              )}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{plan.name}</h3>
-                <p className="text-slate-500 text-sm">{plan.desc}</p>
-              </div>
-              <div className="mb-8">
-                <div className="flex items-baseline">
-                  <span className="text-4xl font-bold text-slate-900">£{plan.price}</span>
-                  <span className="text-slate-500 ml-2">{plan.period}</span>
-                </div>
-                <div className="text-xs text-slate-400 mt-1">+ VAT</div>
-              </div>
-
-              <div className="space-y-4 mb-10">
-                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">What's Included</div>
-                {plan.features.map((feature, i) => (
-                  <div key={i} className="flex items-start">
-                    <Check className="w-5 h-5 text-emerald-500 mr-3 shrink-0" />
-                    <span className="text-slate-600 text-sm">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="pt-8 border-t border-slate-50 space-y-4">
-                <div className="flex justify-between text-sm">
-                  <span className="text-slate-500">Support Level:</span>
-                  <span className="font-semibold text-slate-900">{plan.support}</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-slate-500">Ideal For:</span>
-                  <span className="font-semibold text-slate-900">{plan.ideal}</span>
-                </div>
-              </div>
-
-              <Link
-                to={ROUTES.CONTACT}
-                className={`mt-10 w-full inline-flex items-center justify-center px-6 py-4 rounded-xl font-bold transition-all ${
-                  plan.highlight
-                    ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-200'
-                    : 'bg-slate-900 text-white hover:bg-slate-800'
-                }`}
+      {/* Pricing Cards */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {PRICING_PLANS.map((plan, i) => (
+              <motion.div
+                key={plan.name}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className={`relative bg-white rounded-3xl p-10 border-2 transition-all hover:shadow-2xl ${plan.popular ? 'border-brand-accent shadow-xl scale-105 z-10' : 'border-slate-100'}`}
               >
-                Choose Plan
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+                {plan.popular && (
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-accent text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest">
+                    Most Popular
+                  </div>
+                )}
+                
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                  <p className="text-slate-500 text-sm font-medium">{plan.idealFor}</p>
+                </div>
 
-        {/* FAQ/Info Section */}
-        <div className="max-w-3xl mx-auto bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-100">
-          <div className="flex items-start space-x-4">
-            <Info className="w-6 h-6 text-indigo-600 shrink-0 mt-1" />
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Custom Requirements?</h3>
-              <p className="text-slate-600 leading-relaxed mb-6">
-                If your business has unique needs, multi-site requirements, or requires specialized compliance support, we can build a bespoke package for you.
-              </p>
-              <Link to={ROUTES.CONTACT} className="text-indigo-600 font-bold hover:underline">
-                Speak to an advisor
-              </Link>
+                <div className="mb-8">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-extrabold text-slate-900">{plan.price}</span>
+                    <span className="text-slate-500 font-medium">{plan.period}</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1">{plan.vat}</p>
+                </div>
+
+                <div className="space-y-4 mb-10">
+                  <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">What's Included</p>
+                  {plan.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-3 text-slate-600">
+                      <Check className="w-5 h-5 text-emerald-500 shrink-0" />
+                      <span className="text-sm font-medium">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-8 border-t border-slate-100 mb-8">
+                  <div className="flex items-center gap-2 text-slate-700 mb-2">
+                    <Info className="w-4 h-4 text-brand-accent" />
+                    <span className="text-sm font-bold">Support Level:</span>
+                  </div>
+                  <p className="text-sm text-slate-600">{plan.support}</p>
+                </div>
+
+                <Link
+                  to="/contact"
+                  className={`w-full py-4 rounded-xl font-bold text-center block transition-all ${plan.popular ? 'bg-brand-accent text-white hover:bg-sky-500 shadow-lg shadow-brand-accent/20' : 'bg-slate-100 text-slate-900 hover:bg-slate-200'}`}
+                >
+                  Choose {plan.name}
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ / Info */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center">Pricing FAQ</h2>
+            <div className="space-y-8">
+              <div>
+                <h4 className="text-lg font-bold mb-2">Is there a minimum contract term?</h4>
+                <p className="text-slate-600">We typically work on a 12-month rolling basis, but we offer flexible monthly terms for specific project-based work.</p>
+              </div>
+              <div>
+                <h4 className="text-lg font-bold mb-2">What happens if we need on-site support?</h4>
+                <p className="text-slate-600">Professional and Enterprise plans include on-site visits. For Essential plans, on-site support is available at a discounted hourly rate for contract clients.</p>
+              </div>
+              <div>
+                <h4 className="text-lg font-bold mb-2">Do you offer discounts for charities?</h4>
+                <p className="text-slate-600">Yes! We provide a 15% discount on all managed service plans for registered UK charities and non-profit care organizations.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="section-padding bg-brand-primary text-white">
+        <div className="container-custom text-center">
+          <h2 className="text-3xl font-bold mb-6">Not sure which plan is right?</h2>
+          <p className="text-lg text-slate-400 mb-10">Our consultants can help you assess your current infrastructure and recommend the best fit.</p>
+          <Link to="/contact" className="inline-flex items-center gap-2 text-brand-accent font-bold text-lg hover:gap-4 transition-all">
+            Request a Free Consultation <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </section>
     </div>
   );
-}
+};
+
+export default Pricing;
