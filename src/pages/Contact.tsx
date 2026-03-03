@@ -167,7 +167,7 @@ export default function Contact() {
                   <div>
                     <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Call Us</div>
                     <a href={`tel:${COMPANY_DETAILS.phone}`} className="text-xl font-semibold text-slate-900 hover:text-primary-600 transition-colors">
-                      {COMPANY_DETAILS.phone}
+                    0127 496 3186
                     </a>
                   </div>
                 </div>
@@ -178,7 +178,7 @@ export default function Contact() {
                   <div>
                     <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Our Office</div>
                     <div className="text-xl font-semibold text-slate-900">
-                      {COMPANY_DETAILS.address}
+                     160a Croydon Road, Caterham, England, CR3 6QE
                     </div>
                   </div>
                 </div>
