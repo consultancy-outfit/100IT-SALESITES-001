@@ -1,0 +1,15 @@
+services:
+  st-helens-supported-living:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: st-helens-supported-living-salesite
+    restart: unless-stopped
+    ports:
+      - "9086:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
