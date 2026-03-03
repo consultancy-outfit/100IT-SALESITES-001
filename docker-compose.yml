@@ -1,0 +1,15 @@
+services:
+  thurrock-essex:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: thurrock-essex-salesite
+    restart: unless-stopped
+    ports:
+      - "9067:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
