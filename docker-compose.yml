@@ -1,0 +1,15 @@
+services:
+  wigan-supported-living:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wigan-supported-living-salesite
+    restart: unless-stopped
+    ports:
+      - "9058:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
