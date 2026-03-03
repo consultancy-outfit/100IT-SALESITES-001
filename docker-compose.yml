@@ -1,0 +1,15 @@
+services:
+  surecare-batley-wakefield:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: surecare-batley-wakefield-salesite
+    restart: unless-stopped
+    ports:
+      - "9078:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
