@@ -1,0 +1,15 @@
+services:
+  teesside-supported-living:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: teesside-supported-living-salesite
+    restart: unless-stopped
+    ports:
+      - "9069:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
