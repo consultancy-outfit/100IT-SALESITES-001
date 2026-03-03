@@ -141,6 +141,15 @@ export function Contact() {
                       <p className="text-slate-600">{COMPANY_DETAILS.email}</p>
                     </div>
                   </div>
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-indigo-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-slate-900">Phone Number</h3>
+                      <p className="text-slate-600">{COMPANY_DETAILS.contact}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 

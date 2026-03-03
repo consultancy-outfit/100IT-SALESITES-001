@@ -150,6 +150,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-slate-400">
               <li>{COMPANY_DETAILS.address}</li>
               <li>{COMPANY_DETAILS.email}</li>
+              <li>{COMPANY_DETAILS.contact}</li>
             </ul>
           </div>
         </div>
