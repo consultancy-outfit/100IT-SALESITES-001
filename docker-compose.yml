@@ -1,0 +1,15 @@
+services:
+  west-lancs-domiciliary-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: west-lancs-domiciliary-service-salesite
+    restart: unless-stopped
+    ports:
+      - "9060:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
