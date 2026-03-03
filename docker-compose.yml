@@ -1,0 +1,15 @@
+services:
+  south-central-supported-living:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: south-central-supported-living-salesite
+    restart: unless-stopped
+    ports:
+      - "9090:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
