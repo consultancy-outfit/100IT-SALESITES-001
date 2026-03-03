@@ -55,7 +55,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-1">Call Us</div>
-                      <div className="text-slate-700 font-medium">Not Available</div>
+                      <div className="text-slate-700 font-medium">0190 037 7058</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -64,7 +64,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-1">Registered Office</div>
-                      <div className="text-slate-700 font-medium">Not Available</div>
+                      <div className="text-slate-700 font-medium">97 Broad Walk, London, England, SE3 8NF</div>
                     </div>
                   </div>
                 </div>

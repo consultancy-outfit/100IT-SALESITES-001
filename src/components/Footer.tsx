@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Shield, Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Shield, Mail, Phone, MapPin, Linkedin, Twitter, Github, Hash } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -67,6 +67,10 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-brand-500 shrink-0" />
                 <span>Registered Office: 97 Broad Walk, London, England, SE3 8NF</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Hash size={18} className="text-brand-500 shrink-0" />
+                <span>Company Registration Number (CRN): 17045941</span>
               </li>
             </ul>
           </div>
