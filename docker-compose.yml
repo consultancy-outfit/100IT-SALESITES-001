@@ -1,0 +1,15 @@
+services:
+  tameside-supported-living:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tameside-supported-living-salesite
+    restart: unless-stopped
+    ports:
+      - "9071:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
