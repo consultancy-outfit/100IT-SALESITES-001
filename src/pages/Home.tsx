@@ -53,7 +53,7 @@ const Hero = () => {
                 {[1, 2, 3, 4].map((i) => (
                   <img
                     key={i}
-                    src={`https://picsum.photos/seed/user${i}/100/100`}
+                    src={`https://picsum.photos/id/110/800/800.jpg`}
                     className="w-12 h-12 rounded-full border-4 border-white object-cover"
                     alt="User"
                     referrerPolicy="no-referrer"
