@@ -1,0 +1,15 @@
+services:
+  surecare-trafford:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: surecare-trafford-salesite
+    restart: unless-stopped
+    ports:
+      - "9077:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
