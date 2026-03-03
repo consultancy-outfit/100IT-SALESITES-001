@@ -63,7 +63,7 @@ export const Footer = () => {
 
         <div className="pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6 text-xs uppercase tracking-widest">
           <div className="space-y-2 text-center md:text-left">
-            <p>© {currentYear} {COMPANY_DETAILS.name}. All rights reserved.</p>
+            <p>© {currentYear} Community Recovery. All rights reserved.</p>
             <p>Company Registration Number (CRN):17045961</p>
           </div>
           <div className="flex gap-8">
