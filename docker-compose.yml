@@ -1,0 +1,15 @@
+services:
+  st-crispin-village:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: st-crispin-village-salesite
+    restart: unless-stopped
+    ports:
+      - "9087:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
