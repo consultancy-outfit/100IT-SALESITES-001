@@ -77,7 +77,7 @@ const Hero = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
               <img
-                src="https://picsum.photos/seed/it-office/800/600"
+                src="https://picsum.photos/id/110/800/800.jpg"
                 alt="Modern IT Office"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
