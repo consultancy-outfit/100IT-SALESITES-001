@@ -1,0 +1,15 @@
+services:
+  support-health-care-cirencester:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: support-health-care-cirencester-salesite
+    restart: unless-stopped
+    ports:
+      - "9083:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
