@@ -133,15 +133,15 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
-                <span>{COMPANY_DETAILS.address}</span>
+                <span>15 Queens Road, Donnington, Telford, England, TF2 8DB</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-indigo-400 shrink-0" />
-                <span>{COMPANY_DETAILS.phone}</span>
+                <span>0133 231 4215</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-indigo-400 shrink-0" />
-                <span>{COMPANY_DETAILS.email}</span>
+                <span>info@disabledchildrencommunitysupportteam.co.uk</span>
               </li>
             </ul>
           </div>
@@ -153,7 +153,7 @@ const Footer = () => {
               <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               <li className="pt-4 border-t border-slate-800">
                 <p className="text-xs text-slate-500">
-                  CRN: {COMPANY_DETAILS.crn}<br />
+                  CRN:17049357<br />
                   Registered in England & Wales
                 </p>
               </li>
