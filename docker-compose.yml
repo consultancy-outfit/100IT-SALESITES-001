@@ -1,0 +1,15 @@
+services:
+  walsall-domiciliary-care-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: walsall-domiciliary-care-service-salesite
+    restart: unless-stopped
+    ports:
+      - "9062:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
