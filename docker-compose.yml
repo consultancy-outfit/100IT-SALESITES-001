@@ -1,0 +1,15 @@
+services:
+  visiting-angels-east-london:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: visiting-angels-east-london-salesite
+    restart: unless-stopped
+    ports:
+      - "9066:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
