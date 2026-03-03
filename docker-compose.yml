@@ -1,0 +1,15 @@
+services:
+  sefton-supported-living:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sefton-supported-living-salesite
+    restart: unless-stopped
+    ports:
+      - "9100:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
