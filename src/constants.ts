@@ -124,11 +124,11 @@ export const PRICING_PLANS = [
 ];
 
 export const COMPANY_DETAILS = {
-  name: 'Worksop Supported Living Service',
-  address: 'Unit 12, Worksop Business Hub, Bridge Place, Worksop, Nottinghamshire, S80 1JS',
-  crn: '12845678',
-  phone: '01909 555 0123',
-  email: 'info@worksopsupportedlivingservice.co.uk',
+  name: 'Visiting Angels East London',
+  address: 'East London Business Centre, 221 Grove Green Road, London, E11 4AE',
+  crn: '17049338',
+  phone: '0208 088 5943',
+  email: 'info@visitingangelseastlondon.co.uk',
   hours: 'Mon - Fri: 08:30 - 17:30',
   vatNumber: 'GB 123 4567 89'
 };
