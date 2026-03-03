@@ -1,0 +1,15 @@
+services:
+  sterling-standard-care-group-liverpool:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sterling-standard-care-group-liverpool-salesite
+    restart: unless-stopped
+    ports:
+      - "9084:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
