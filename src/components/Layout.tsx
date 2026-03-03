@@ -140,7 +140,7 @@ export const Footer = () => {
               </li>
               <li className="flex flex-col">
                 <span className="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-1">Phone</span>
-                <span0132 336 0382</span>
+                <span>0132 336 0382</span>
               </li>
               <li className="flex flex-col">
                 <span className="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-1">CRN</span>
