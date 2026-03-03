@@ -1,0 +1,15 @@
+services:
+  shapes-domiciliary-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shapes-domiciliary-service-salesite
+    restart: unless-stopped
+    ports:
+      - "9097:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
