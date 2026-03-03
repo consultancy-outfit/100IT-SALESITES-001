@@ -1,0 +1,15 @@
+services:
+  seeability-oxfordshire-south-support-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: seeability-oxfordshire-south-support-service-salesite
+    restart: unless-stopped
+    ports:
+      - "9101:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
