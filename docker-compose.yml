@@ -1,0 +1,15 @@
+services:
+  visiting-angels-manchester-west:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: visiting-angels-manchester-west-salesite
+    restart: unless-stopped
+    ports:
+      - "9065:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
