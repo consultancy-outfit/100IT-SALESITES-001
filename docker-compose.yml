@@ -1,0 +1,15 @@
+services:
+  visiting-angels-croydon-purley:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: visiting-angels-croydon-purley-salesite
+    restart: unless-stopped
+    ports:
+      - "9064:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
