@@ -1,0 +1,15 @@
+services:
+  standon-gardens-domiciliary-services:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: standon-gardens-domiciliary-services-salesite
+    restart: unless-stopped
+    ports:
+      - "9085:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
