@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Cpu, Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Cpu, Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Building2 } from "lucide-react";
 import { COMPANY_DETAILS, NAV_LINKS } from "../constants";
 
 export function Footer() {
@@ -90,11 +90,11 @@ export function Footer() {
                 info@aspiresouthwestlondon.co.uk
               </a>
             </div>
-               <div className="flex gap-3 text-sm">
-              <Phone className="w-5 h-5 text-indigo-500 shrink-0" />
-              <a className="hover:text-indigo-400 transition-colors">
-               17049977
-              </a>
+            <div className="flex gap-3 text-sm">
+              <Building2 className="w-5 h-5 text-indigo-500 shrink-0" />
+              <span className="hover:text-indigo-400 transition-colors">
+                17049977
+              </span>
             </div>
           </div>
         </div>
