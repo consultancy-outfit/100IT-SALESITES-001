@@ -47,15 +47,15 @@ export const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-emerald-500 shrink-0" />
-                <span>{COMPANY_DETAILS.address}</span>
+                <span>98 Burrows Road, London, England, NW10 5SH</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
-                <span>{COMPANY_DETAILS.phone}</span>
+                <span>0122 697 9109</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-emerald-500 shrink-0" />
-                <span>{COMPANY_DETAILS.email}</span>
+                <span>info@communityrecoveryltd.co.uk</span>
               </li>
             </ul>
           </div>
@@ -64,7 +64,7 @@ export const Footer = () => {
         <div className="pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6 text-xs uppercase tracking-widest">
           <div className="space-y-2 text-center md:text-left">
             <p>© {currentYear} {COMPANY_DETAILS.name}. All rights reserved.</p>
-            <p>Company Registration Number (CRN): {COMPANY_DETAILS.crn}</p>
+            <p>Company Registration Number (CRN):17045961</p>
           </div>
           <div className="flex gap-8">
             <span>UK Based</span>
