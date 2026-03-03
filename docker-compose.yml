@@ -1,0 +1,15 @@
+services:
+  st-annes-leeds-domiciliary-care-3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: st-annes-leeds-domiciliary-care-3-salesite
+    restart: unless-stopped
+    ports:
+      - "9088:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
