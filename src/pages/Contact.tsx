@@ -139,7 +139,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Registered Office</h4>
-                      <p className="text-slate-500 text-sm leading-relaxed">{COMPANY_DETAILS.address}</p>
+                      <p className="text-slate-500 text-sm leading-relaxed">15 Queens Road, Donnington, Telford, England, TF2 8DB</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
@@ -148,7 +148,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Phone Number</h4>
-                      <p className="text-slate-500 text-sm">{COMPANY_DETAILS.phone}</p>
+                      <p className="text-slate-500 text-sm">0124 237 5259</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
@@ -157,7 +157,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Email Address</h4>
-                      <p className="text-slate-500 text-sm">{COMPANY_DETAILS.email}</p>
+                      <p className="text-slate-500 text-sm">info@emmalegrandcasemanagement.co.uk</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
