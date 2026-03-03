@@ -6,9 +6,9 @@ import { useState, useEffect } from 'react';
 
 const COMPANY_DETAILS = {
   name: "EMMA-LE-GRAND-CASE-MANAGEMENT",
-  address: "124 City Road, London, EC1V 2NX, United Kingdom",
-  crn: "12345678",
-  phone: "+44 20 7946 0000",
+  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
+  crn: "17048536",
+  phone: "0124 237 5259",
   email: "info@emmalegrandcasemanagement.co.uk"
 };
 
