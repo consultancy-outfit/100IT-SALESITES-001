@@ -1,7 +1,7 @@
 export const COMPANY_DETAILS = {
   name: "Dasil Support Services London",
   registeredOfficeAddress: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
-  companyRegistrationNumber: "[Company Registration Number (CRN) - Not Available]",
+  companyRegistrationNumber: "17046307",
   ukPhoneNumber: "0208 088 5981",
   officialBusinessEmail: "info@dasilsupportserviceslondon.co.uk",
   crn:"17046307",
