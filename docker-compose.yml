@@ -1,0 +1,15 @@
+services:
+  shared-lives-northumberland:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shared-lives-northumberland-salesite
+    restart: unless-stopped
+    ports:
+      - "9096:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
