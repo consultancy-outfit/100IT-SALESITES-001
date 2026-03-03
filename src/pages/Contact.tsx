@@ -48,7 +48,7 @@ export default function Contact() {
             </div>
             <h3 className="font-bold text-navy-900 mb-2">Call Us</h3>
             <p className="text-slate-500 text-sm mb-4">Speak directly with our IT experts.</p>
-            <p className="text-brand-600 font-bold">N/A</p>
+            <p className="text-brand-600 font-bold">0170 857 8178</p>
           </div>
 
           <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center text-center">
@@ -57,7 +57,7 @@ export default function Contact() {
             </div>
             <h3 className="font-bold text-navy-900 mb-2">Visit Us</h3>
             <p className="text-slate-500 text-sm mb-4">Our registered UK office.</p>
-            <p className="text-brand-600 font-bold">N/A</p>
+            <p className="text-brand-600 font-bold">1 Highfield Love Lane, Kings Langley, United Kingdom, WD4 9JT</p>
           </div>
         </div>
       </section>

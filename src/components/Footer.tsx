@@ -58,11 +58,11 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-500 shrink-0" />
-                <span>Registered Office: N/A</span>
+                <span>Registered Office: 1 Highfield Love Lane, Kings Langley, United Kingdom, WD4 9JT</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-brand-500 shrink-0" />
-                <span>Phone: N/A</span>
+                <span>Phone: 0170 857 8178</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-brand-500 shrink-0" />
@@ -70,7 +70,7 @@ export default function Footer() {
               </li>
               <li className="pt-2 border-t border-slate-800">
                 <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Company Registration</p>
-                <p className="mt-1">CRN: N/A</p>
+                <p className="mt-1">CRN: 17046962</p>
               </li>
             </ul>
           </div>
