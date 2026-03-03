@@ -1,0 +1,15 @@
+services:
+  social-care-recruitment-agency:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: social-care-recruitment-agency-salesite
+    restart: unless-stopped
+    ports:
+      - "9092:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
