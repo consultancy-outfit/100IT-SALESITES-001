@@ -130,7 +130,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="font-bold text-slate-900">Phone</div>
-                      <div className="text-slate-600">+44 20 7946 0000</div>
+                      <div className="text-slate-600">0170 640 7193</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">

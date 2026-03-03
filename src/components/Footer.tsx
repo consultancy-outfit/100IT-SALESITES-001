@@ -77,7 +77,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <p>© {currentYear} Monaveen IT Services Ltd. All rights reserved.</p>
-              <p className="mt-1">Registered in England and Wales. Company No: 17046244</p>
+              <p className="mt-1">Registered in England and Wales. Company No: 17051882</p>
             </div>
             <div className="md:text-right">
               <p>Registered Office: 20 Holmleigh Avenue, Dartford, England, DA1 5AS</p>
