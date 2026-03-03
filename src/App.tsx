@@ -24,7 +24,8 @@ import {
   Target,
   Award,
   Lock,
-  ExternalLink
+  ExternalLink,
+  Hash
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -189,6 +190,10 @@ const Footer = ({ setPage }: { setPage: (p: Page) => void }) => {
               <li className="flex items-center">
                 <Clock className="h-5 w-5 text-blue-500 mr-3 shrink-0" />
                 <span>{COMPANY_DETAILS.hours}</span>
+              </li>
+              <li className="flex items-center">
+                <Hash className="h-5 w-5 text-blue-500 mr-3 shrink-0" />
+                <span>CRN: {COMPANY_DETAILS.crn}</span>
               </li>
             </ul>
           </div>
