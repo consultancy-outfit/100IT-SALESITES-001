@@ -1,0 +1,15 @@
+services:
+  sylvian-care-newbury:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sylvian-care-newbury-salesite
+    restart: unless-stopped
+    ports:
+      - "9072:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
