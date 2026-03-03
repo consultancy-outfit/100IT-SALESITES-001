@@ -1,0 +1,15 @@
+services:
+  shauna-healthcare-services-solutions-midlands:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shauna-healthcare-services-solutions-midlands-salesite
+    restart: unless-stopped
+    ports:
+      - "9095:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
