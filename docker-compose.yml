@@ -1,0 +1,15 @@
+services:
+  westcliff-on-sea:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: westcliff-on-sea-salesite
+    restart: unless-stopped
+    ports:
+      - "9059:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
