@@ -44,7 +44,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-brand-accent shrink-0" />
-                <span>+44 20 7946 0000</span>
+                <span>0170 640 7193</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-brand-accent shrink-0" />
@@ -52,7 +52,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-accent shrink-0" />
-                <span>124 City Road, London, EC1V 2NX, United Kingdom</span>
+                <span>20 Holmleigh Avenue, Dartford, England, DA1 5AS</span>
               </li>
             </ul>
           </div>
@@ -77,11 +77,11 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <p>© {currentYear} Monaveen IT Services Ltd. All rights reserved.</p>
-              <p className="mt-1">Registered in England and Wales. Company No: 01234567</p>
+              <p className="mt-1">Registered in England and Wales. Company No: 17046244</p>
             </div>
             <div className="md:text-right">
-              <p>Registered Office: 124 City Road, London, EC1V 2NX</p>
-              <p className="mt-1">VAT Registration: GB 123 4567 89</p>
+              <p>Registered Office: 20 Holmleigh Avenue, Dartford, England, DA1 5AS</p>
+              
             </div>
           </div>
         </div>
