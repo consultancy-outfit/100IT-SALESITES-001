@@ -11,11 +11,11 @@ function cn(...inputs: ClassValue[]) {
 
 export const COMPANY_DETAILS = {
   name: 'Jackson Gardens',
-  address: '####',
-  crn: '####',
-  phone: '####',
+  address: '133 Hazel Avenue, Guildford, England, GU1 1NU',
+  crn: '17046287',
+  phone: '0151 380 0831',
   email: 'info@jacksongardens.co.uk',
-  hours: '####',
+  hours: '8:00 AM - 5:00 PM',
 };
 
 const navLinks = [
