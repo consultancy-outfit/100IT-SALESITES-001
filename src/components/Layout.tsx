@@ -134,7 +134,7 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <Phone className="w-4 h-4 text-zinc-400 mt-0.5" />
-                <span className="text-zinc-500 text-sm">#####</span>
+                <span className="text-zinc-500 text-sm">0126 895 5147</span>
               </li>
               <li className="flex items-start space-x-3">
                 <Monitor className="w-4 h-4 text-zinc-400 mt-0.5" />
@@ -149,9 +149,9 @@ export const Footer = () => {
             <div className="text-zinc-400 text-xs leading-relaxed">
               <p className="font-semibold text-zinc-600 mb-2">Company Details:</p>
               <p>Company Name: Basildon Supported Living Service</p>
-              <p>Registered Office Address (UK): #####</p>
-              <p>Company Registration Number (CRN): #####</p>
-              <p>UK Phone Number: #####</p>
+              <p>Registered Office Address (UK): 82 Reddicliff Close, Plymouth, England, PL9 9QJ</p>
+              <p>Company Registration Number (CRN): 17046350</p>
+              <p>UK Phone Number: 0126 895 5147</p>
               <p>Official Business Email: info@basildonsupportedlivingservice.co.uk</p>
             </div>
             <div className="flex md:justify-end items-end">
