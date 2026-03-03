@@ -28,9 +28,9 @@ export type Page = 'home' | 'services' | 'about' | 'pricing' | 'contact' | 'term
 // --- Constants ---
 export const COMPANY_DETAILS = {
   name: "Badminton Gardens",
-  address: "#####",
-  crn: "#####",
-  phone: "#####",
+  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
+  crn: "17049956",
+  phone: "0117 290 0574",
   email: "info@badmintongardens.co.uk",
   hours: "#####"
 };
