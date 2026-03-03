@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import React, { useState } from 'react';
 
 const COMPANY_DETAILS = {
-  name: "Wickham Hall IT Services Ltd",
+  name: "Wickham Hall",
   address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
   crn: "17049007",
   phone: "0194 256 5146",
