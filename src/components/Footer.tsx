@@ -59,15 +59,15 @@ export const Footer: React.FC = () => {
             <h3 className="text-white font-semibold mb-6">Get in Touch</h3>
             <div className="flex items-start gap-3">
               <MapPin size={18} className="mt-0.5 shrink-0 text-zinc-500" />
-              <span>{COMPANY_DETAILS.address}</span>
+              <span>15 Queens Road, Donnington, Telford, England, TF2 8DB</span>
             </div>
             <div className="flex items-center gap-3">
               <Phone size={18} className="shrink-0 text-zinc-500" />
-              <span>{COMPANY_DETAILS.phone}</span>
+              <span>0152 457 4107</span>
             </div>
             <div className="flex items-center gap-3">
               <Mail size={18} className="shrink-0 text-zinc-500" />
-              <span>{COMPANY_DETAILS.email}</span>
+              <span>info@draycombehouse.co.uk</span>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-2 text-center md:text-left">
             <p>&copy; {currentYear} {COMPANY_DETAILS.name}. All rights reserved.</p>
             <p className="text-zinc-600">
-              Company Registration Number: {COMPANY_DETAILS.crn} | Registered in England and Wales
+              Company Registration Number: 17049143 | Registered in England and Wales
             </p>
           </div>
           <div className="flex gap-6">
