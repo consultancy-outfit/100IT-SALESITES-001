@@ -136,15 +136,15 @@ export const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex flex-col">
                 <span className="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-1">Address</span>
-                <span>#####</span>
+                <span>38 Brennan House 610 High Road Leyton, London, England, E10 6RN</span>
               </li>
               <li className="flex flex-col">
                 <span className="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-1">Phone</span>
-                <span>#####</span>
+                <span0132 336 0382</span>
               </li>
               <li className="flex flex-col">
                 <span className="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-1">CRN</span>
-                <span>#####</span>
+                <span>17048584</span>
               </li>
               <li className="flex flex-col">
                 <span className="text-slate-500 uppercase text-[10px] font-bold tracking-wider mb-1">Email</span>
@@ -161,8 +161,8 @@ export const Footer = () => {
               <p>Walfinch Eastbourne is a trading name of Walfinch IT Solutions Ltd.</p>
             </div>
             <div className="md:text-right space-y-1">
-              <p>Registered Office: Unit 4, Eastbourne Business Park, Eastbourne, BN23 6PW</p>
-              <p>Company Registration Number: 12345678 | Registered in England & Wales</p>
+              <p>Registered Office: 38 Brennan House 610 High Road Leyton, London, England, E10 6RN</p>
+              <p>Company Registration Number: 17048584</p>
             </div>
           </div>
         </div>
