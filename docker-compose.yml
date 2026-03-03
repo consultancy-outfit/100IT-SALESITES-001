@@ -1,0 +1,15 @@
+services:
+  south-east-supported-living:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: south-east-supported-living-salesite
+    restart: unless-stopped
+    ports:
+      - "9089:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
