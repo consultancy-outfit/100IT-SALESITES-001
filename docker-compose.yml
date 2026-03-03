@@ -1,0 +1,15 @@
+services:
+  supported-living-services-uxbridge:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: supported-living-services-uxbridge-salesite
+    restart: unless-stopped
+    ports:
+      - "9080:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
