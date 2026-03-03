@@ -1,0 +1,15 @@
+services:
+  sense-supported-living-services-lincolnshire:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sense-supported-living-services-lincolnshire-salesite
+    restart: unless-stopped
+    ports:
+      - "9099:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
