@@ -1,0 +1,15 @@
+services:
+  siete-care-services:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: siete-care-services-salesite
+    restart: unless-stopped
+    ports:
+      - "9093:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
