@@ -110,7 +110,7 @@ const Industries = () => (
         <div className="lg:w-1/2 grid grid-cols-2 gap-4">
           <div className="space-y-4">
             <div className="h-48 rounded-2xl bg-indigo-100 overflow-hidden">
-              <img src="https://picsum.photos/seed/it1/600/400" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" referrerPolicy="no-referrer" />
+              <img src="https://picsum.photos/id/20/800/800" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" referrerPolicy="no-referrer" />
             </div>
             <div className="h-64 rounded-2xl bg-slate-200 overflow-hidden">
               <img src="https://picsum.photos/seed/it2/600/400" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" referrerPolicy="no-referrer" />
