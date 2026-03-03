@@ -1,0 +1,15 @@
+services:
+  team24-luton-and-dunstable:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: team24-luton-and-dunstable-salesite
+    restart: unless-stopped
+    ports:
+      - "9070:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
