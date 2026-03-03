@@ -55,15 +55,15 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <MapPin className="w-5 h-5 text-brand-accent shrink-0" />
-                <span className="text-sm">{COMPANY_DETAILS.address}</span>
+                <span className="text-sm">133 Hazel Avenue, Guildford, England, GU1 1NU</span>
               </li>
               <li className="flex gap-3">
                 <Phone className="w-5 h-5 text-brand-accent shrink-0" />
-                <span className="text-sm">{COMPANY_DETAILS.phone}</span>
+                <span className="text-sm">0190 459 9230</span>
               </li>
               <li className="flex gap-3">
                 <Mail className="w-5 h-5 text-brand-accent shrink-0" />
-                <span className="text-sm">{COMPANY_DETAILS.email}</span>
+                <span className="text-sm">info@communityshortbreaks.co.uk</span>
               </li>
             </ul>
           </div>
@@ -73,7 +73,7 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
             <div className="flex flex-col gap-1">
               <p>&copy; {currentYear} {COMPANY_DETAILS.name}. All rights reserved.</p>
-              <p>Company Registration Number: {COMPANY_DETAILS.crn}</p>
+              <p>Company Registration Number:17046278</p>
               <p>Registered in England and Wales.</p>
             </div>
             <div className="flex gap-6">
