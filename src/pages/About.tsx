@@ -43,7 +43,7 @@ export default function About() {
             <div className="relative">
               <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1522071823991-b9671f9d7f1f?auto=format&fit=crop&q=80&w=1000"
+                  src="modern-it-about.png"
                   alt="Team Meeting"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

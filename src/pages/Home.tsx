@@ -102,7 +102,7 @@ export default function Home() {
             >
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1573161158521-8034a8186917?auto=format&fit=crop&q=80&w=1000"
+                  src="/modern-it-office.png"
                   alt="Modern IT Office"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
