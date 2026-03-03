@@ -131,7 +131,7 @@ export const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Registered Office</h4>
-                      <p className="text-slate-600 text-sm leading-relaxed">{COMPANY_DETAILS.address}</p>
+                      <p className="text-slate-600 text-sm leading-relaxed">15 Queens Road, Donnington, Telford, England, TF2 8DB</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -140,7 +140,7 @@ export const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Phone Number</h4>
-                      <p className="text-slate-600 text-sm">{COMPANY_DETAILS.phone}</p>
+                      <p className="text-slate-600 text-sm">0133 231 4215</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -149,7 +149,7 @@ export const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Email Address</h4>
-                      <p className="text-slate-600 text-sm">{COMPANY_DETAILS.email}</p>
+                      <p className="text-slate-600 text-sm">info@disabledchildrencommunitysupportteam.co.uk</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
