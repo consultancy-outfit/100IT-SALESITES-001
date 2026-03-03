@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Cpu, Linkedin, Twitter, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Cpu, Linkedin, Twitter, ShieldCheck, Hash } from 'lucide-react';
 import { COMPANY_DETAILS } from '../constants';
 
 export const Footer = () => {
@@ -74,6 +74,10 @@ export const Footer = () => {
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-brand-500 shrink-0" />
                 <span>{COMPANY_DETAILS.email}</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Hash className="w-5 h-5 text-brand-500 shrink-0" />
+                <span>CRN: {COMPANY_DETAILS.crn}</span>
               </li>
             </ul>
           </div>
