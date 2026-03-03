@@ -1,0 +1,15 @@
+services:
+  warm-embrace-care-agency:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: warm-embrace-care-agency-salesite
+    restart: unless-stopped
+    ports:
+      - "9061:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
