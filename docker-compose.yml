@@ -1,0 +1,15 @@
+services:
+  soma-healthcare-central-london:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: soma-healthcare-central-london-salesite
+    restart: unless-stopped
+    ports:
+      - "9091:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
