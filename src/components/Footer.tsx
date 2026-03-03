@@ -12,10 +12,10 @@ export default function Footer() {
           <div className="w-full md:w-1/2 lg:w-1/3 mb-6 md:mb-0">
             <h3 className="text-lg font-semibold text-white mb-4">Company Details</h3>
             <p className="text-sm"><strong>Company Name:</strong> {COMPANY_DETAILS.name}</p>
-            <p className="text-sm"><strong>Registered Office Address (UK):</strong> {COMPANY_DETAILS.registeredOfficeAddress}</p>
-            <p className="text-sm"><strong>Company Registration Number (CRN):</strong> {COMPANY_DETAILS.companyRegistrationNumber}</p>
-            <p className="text-sm"><strong>UK Phone Number:</strong> {COMPANY_DETAILS.ukPhoneNumber}</p>
-            <p className="text-sm"><strong>Official Business Email:</strong> <a href={`mailto:${COMPANY_DETAILS.officialBusinessEmail}`} className="text-blue-400 hover:underline">{COMPANY_DETAILS.officialBusinessEmail}</a></p>
+            <p className="text-sm"><strong>Registered Office Address (UK):</strong> 15 Queens Road, Donnington, Telford, England, TF2 8DB</p>
+            <p className="text-sm"><strong>Company Registration Number (CRN):</strong> 17046307</p>
+            <p className="text-sm"><strong>UK Phone Number:</strong> 0208 088 5981</p>
+            <p className="text-sm"><strong>Official Business Email:</strong> <a href={`mailto:${COMPANY_DETAILS.officialBusinessEmail}`} className="text-blue-400 hover:underline">info@dasilsupportserviceslondon.co.uk</a></p>
           </div>
           <div className="w-full lg:w-1/3">
             <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
