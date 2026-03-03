@@ -1,0 +1,15 @@
+services:
+  swanton-community-services-south-yorkshire:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: swanton-community-services-south-yorkshire-salesite
+    restart: unless-stopped
+    ports:
+      - "9074:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
