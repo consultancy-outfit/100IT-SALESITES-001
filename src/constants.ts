@@ -15,7 +15,7 @@ export const COMPANY_DETAILS = {
   crn: '17048758',
   phone: '0125 556 4041',
   email: 'info@bruntsfieldhouse.co.uk',
-  hours: '#',
+  hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
 };
 
 export const SERVICES: Service[] = [
