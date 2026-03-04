@@ -76,7 +76,6 @@ export const Footer = () => {
 
       <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
         <p>© {currentYear} {COMPANY_DETAILS.name}. All rights reserved.</p>
-        <p>VAT Registration: GB 987 6543 21</p>
       </div>
     </footer>
   );

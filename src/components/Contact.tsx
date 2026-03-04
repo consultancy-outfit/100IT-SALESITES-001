@@ -148,25 +148,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200">
-              <h3 className="text-xl font-bold mb-4">Our Location</h3>
-              <div className="aspect-video bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 overflow-hidden relative">
-                <img 
-                  src="https://picsum.photos/seed/edinburgh/800/450" 
-                  alt="Edinburgh Map Placeholder" 
-                  className="w-full h-full object-cover opacity-50 grayscale"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3">
-                    <div className="w-8 h-8 bg-brand-600 rounded-full flex items-center justify-center text-white">
-                      <MapPin size={16} />
-                    </div>
-                    <span className="text-sm font-bold text-slate-900">Bruntsfield House HQ</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          
           </div>
         </div>
       </section>
