@@ -151,16 +151,6 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="relative h-64 rounded-3xl bg-slate-100 overflow-hidden border border-slate-200">
-                <div className="absolute inset-0 flex items-center justify-center text-slate-400 flex-col gap-2">
-                  <MapPin size={48} className="opacity-20" />
-                  <p className="text-sm font-medium">Interactive Map Placeholder</p>
-                  <p className="text-xs">Reading, RG1 2BH</p>
-                </div>
-                {/* In a real app, you'd embed a Google Map here */}
-              </div>
-
               <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center gap-4">
                 <ShieldCheck className="text-emerald-600 shrink-0" size={32} />
                 <p className="text-sm text-emerald-800">
