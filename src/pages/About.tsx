@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Target, Eye, Heart, ShieldCheck, Users, Award, CheckCircle2 } from 'lucide-react';
+import { COMPANY_DETAILS } from '../constants';
 
 const VALUES = [
   {
@@ -24,7 +25,7 @@ const LEADERSHIP = [
   {
     name: "James Harrison",
     role: "Founder & CEO",
-    bio: "With over 20 years in UK enterprise IT, James founded HCF The Springs to bring high-level technology strategy to SMEs.",
+    getBio: (companyName: string) => `With over 20 years in UK enterprise IT, James founded ${companyName} to bring high-level technology strategy to SMEs.`,
     image: "https://picsum.photos/seed/ceo/400/400"
   },
   {
@@ -54,7 +55,7 @@ export default function About() {
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6">Our Story</h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Founded in Leeds, HCF The Springs was born from a simple observation: UK small and medium businesses were being underserved by traditional IT providers.
+              Founded in Leeds, {COMPANY_DETAILS.name} was born from a simple observation: UK small and medium businesses were being underserved by traditional IT providers.
             </p>
           </motion.div>
         </div>
@@ -93,7 +94,7 @@ export default function About() {
               <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-8">A Legacy of Technical Excellence</h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  HCF The Springs began as a boutique consultancy in 2012, helping local Yorkshire firms navigate the early days of cloud computing. As technology evolved, so did we, expanding our services to include comprehensive managed IT and enterprise-grade cybersecurity.
+                  {COMPANY_DETAILS.name} began as a boutique consultancy in 2012, helping local Yorkshire firms navigate the early days of cloud computing. As technology evolved, so did we, expanding our services to include comprehensive managed IT and enterprise-grade cybersecurity.
                 </p>
                 <p>
                   Today, we support hundreds of businesses across the UK, from London startups to established manufacturing firms in the North. Our growth has been fueled by one thing: the success of our clients.
@@ -141,7 +142,7 @@ export default function About() {
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-1">{person.name}</h3>
                 <p className="text-indigo-600 font-bold mb-4">{person.role}</p>
-                <p className="text-slate-600 leading-relaxed">{person.bio}</p>
+                <p className="text-slate-600 leading-relaxed">{'getBio' in person ? person.getBio(COMPANY_DETAILS.name) : person.bio}</p>
               </motion.div>
             ))}
           </div>

@@ -4,19 +4,11 @@ import { Menu, X, Phone, Mail, MapPin, Shield, Cpu, Globe, ChevronRight } from '
 import { motion, AnimatePresence } from 'motion/react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { COMPANY_DETAILS } from '../constants';
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-
-const COMPANY_DETAILS = {
-  name: "HCF The Springs",
-  address: "The Springs Business Park, Unit 12, Leeds, LS15 8GB, United Kingdom",
-  crn: "12345678",
-  phone: "+44 (0) 113 456 7890",
-  email: "info@hcfthesprings.co.uk",
-  hours: "Mon - Fri: 09:00 - 17:30"
-};
 
 const NAV_LINKS = [
   { name: 'Home', path: '/' },

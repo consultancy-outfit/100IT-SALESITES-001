@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ChevronRight, Shield, Zap, Users, BarChart3, Globe, CheckCircle2, ArrowRight, Quote, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { COMPANY_DETAILS } from '../constants';
 
 const BENEFITS = [
   {
@@ -45,20 +46,19 @@ const CASE_STUDIES = [
   }
 ];
 
-const TESTIMONIALS = [
-  {
-    name: "Alistair Graham",
-    role: "Managing Director, Graham & Co",
-    content: "HCF The Springs transformed our IT from a constant headache into a competitive advantage. Their UK team is exceptional."
-  },
-  {
-    name: "Sarah Jenkins",
-    role: "Operations Manager, BioTech UK",
-    content: "The level of expertise and responsiveness is unmatched. They truly understand the needs of growing British businesses."
-  }
-];
-
 export default function Home() {
+  const TESTIMONIALS = [
+    {
+      name: "Alistair Graham",
+      role: "Managing Director, Graham & Co",
+      content: `${COMPANY_DETAILS.name} transformed our IT from a constant headache into a competitive advantage. Their UK team is exceptional.`
+    },
+    {
+      name: "Sarah Jenkins",
+      role: "Operations Manager, BioTech UK",
+      content: "The level of expertise and responsiveness is unmatched. They truly understand the needs of growing British businesses."
+    }
+  ];
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
@@ -77,7 +77,7 @@ export default function Home() {
                 Future-Proof Your <span className="text-indigo-600">Business Technology</span>
               </h1>
               <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl">
-                HCF The Springs delivers managed IT support, cloud solutions, and cybersecurity tailored for the unique challenges of the UK market.
+                {COMPANY_DETAILS.name} delivers managed IT support, cloud solutions, and cybersecurity tailored for the unique challenges of the UK market.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -134,7 +134,7 @@ export default function Home() {
                 Your Strategic IT Partner in the Heart of the UK
               </h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Based in Leeds, HCF The Springs provides comprehensive IT management that goes beyond just fixing computers. We act as your outsourced CTO, ensuring your technology infrastructure is a robust foundation for growth.
+                {COMPANY_DETAILS.name} provides comprehensive IT management that goes beyond just fixing computers. We act as your outsourced CTO, ensuring your technology infrastructure is a robust foundation for growth.
               </p>
               <ul className="space-y-4 mb-10">
                 {["Proactive 24/7 Monitoring", "GDPR & Cyber Essentials Compliance", "Strategic IT Roadmap Planning", "Dedicated UK Account Management"].map((item, idx) => (
@@ -156,7 +156,7 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Why Choose HCF The Springs?</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Why Choose {COMPANY_DETAILS.name}?</h2>
             <p className="text-slate-600">We combine technical excellence with a deep understanding of the British business landscape.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -282,7 +282,7 @@ export default function Home() {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8 relative z-10">Ready to Elevate Your IT?</h2>
             <p className="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto relative z-10">
-              Join hundreds of UK businesses that trust HCF The Springs for their technology needs. Let's build a secure, scalable future together.
+              Join hundreds of UK businesses that trust {COMPANY_DETAILS.name} for their technology needs. Let's build a secure, scalable future together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
               <Link

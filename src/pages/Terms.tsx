@@ -1,12 +1,5 @@
 import React from 'react';
-
-const COMPANY_DETAILS = {
-  name: "HCF The Springs",
-  address: "The Springs Business Park, Unit 12, Leeds, LS15 8GB, United Kingdom",
-  crn: "12345678",
-  phone: "+44 (0) 113 456 7890",
-  email: "info@hcfthesprings.co.uk"
-};
+import { COMPANY_DETAILS } from '../constants';
 
 export default function Terms() {
   return (

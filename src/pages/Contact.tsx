@@ -2,16 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const COMPANY_DETAILS = {
-  name: "HCF The Springs",
-  address: "15 Queens Road, Donnington, Telford, England, TF2 8DB",
-  crn: "17048704"
-  phone: "0197 730 5123",
-  email: "info@hcfthesprings.co.uk",
-  hours: "Monday - Friday: 09:00 - 17:30",
-  support: "24/7 Emergency Support Available for Enterprise Clients"
-};
+import { COMPANY_DETAILS } from '../constants';
 
 export default function Contact() {
   const [formStatus, setFormStatus] = React.useState<'idle' | 'submitting' | 'success'>('idle');
@@ -117,7 +108,7 @@ export default function Contact() {
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900 mb-4">Message Sent!</h3>
                   <p className="text-slate-600 text-lg">
-                    Thank you for contacting HCF The Springs. One of our IT specialists will be in touch shortly.
+                    Thank you for contacting {COMPANY_DETAILS.name}. One of our IT specialists will be in touch shortly.
                   </p>
                   <button
                     onClick={() => setFormStatus('idle')}
@@ -190,7 +181,7 @@ export default function Contact() {
                     <div className="flex items-start gap-3">
                       <input required type="checkbox" className="mt-1 w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-600" />
                       <p className="text-sm text-slate-500">
-                        I consent to HCF The Springs processing my data in accordance with the <Link to="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</Link>.
+                        I consent to {COMPANY_DETAILS.name} processing my data in accordance with the <Link to="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</Link>.
                       </p>
                     </div>
                     <button
