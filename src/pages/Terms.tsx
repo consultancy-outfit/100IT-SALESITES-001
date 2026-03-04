@@ -1,4 +1,4 @@
-import { COMPANY_DETAILS } from '../components/Footer';
+import { COMPANY_DETAILS } from '../constants';
 
 export default function Terms() {
   return (
