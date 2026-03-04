@@ -14,14 +14,12 @@ Welcome to the website of **${COMPANY_DETAILS.name}**. By accessing or using our
 **${COMPANY_DETAILS.name}** is a company registered in England and Wales.
 - **Registered Office:** ${COMPANY_DETAILS.address}
 - **Company Registration Number (CRN):** ${COMPANY_DETAILS.crn}
-- **VAT Number:** ${COMPANY_DETAILS.vatNumber}
 
 ## 2. Services
 The specific scope of IT services provided will be governed by a separate Service Level Agreement (SLA) or Statement of Work (SOW) signed between the Client and ${COMPANY_DETAILS.name}.
 
 ## 3. Payment Terms
 - All prices are quoted in British Pounds (GBP).
-- Invoices are subject to VAT at the prevailing UK rate.
 - Standard payment terms are 14 days from the date of invoice unless otherwise agreed in writing.
 - We reserve the right to suspend services in the event of non-payment.
 

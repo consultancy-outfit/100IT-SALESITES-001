@@ -80,7 +80,7 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-xs text-slate-500 space-y-1 text-center md:text-left">
               <p>&copy; {currentYear} {COMPANY_DETAILS.name}. All rights reserved.</p>
-              <p>Company Registration Number (CRN): {COMPANY_DETAILS.crn} | VAT: {COMPANY_DETAILS.vatNumber}</p>
+              <p>Company Registration Number (CRN): {COMPANY_DETAILS.crn}</p>
               <p>Registered in England and Wales.</p>
             </div>
             <div className="flex space-x-6 text-xs text-slate-500">

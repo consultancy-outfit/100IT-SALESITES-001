@@ -54,9 +54,6 @@ const Pricing = () => {
                     </span>
                     <span className="text-slate-500 text-sm">{plan.unit}</span>
                   </div>
-                  <p className="text-xs text-slate-400 mt-2 flex items-center">
-                    <Info className="w-3 h-3 mr-1" /> {plan.vatInfo}
-                  </p>
                 </div>
 
                 <div className="flex-grow space-y-4 mb-10">

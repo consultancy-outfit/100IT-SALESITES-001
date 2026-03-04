@@ -5,7 +5,6 @@ export const COMPANY_DETAILS = {
   phone: "0208 088 5962",
   email: "info@servocalondon.co.uk",
   hours: "Mon - Fri: 09:00 - 18:00",
-  vatNumber: "GB 123 4567 89",
 };
 
 export const SERVICES = [
@@ -115,7 +114,6 @@ export const PRICING_PLANS = [
     ],
     supportLevel: "Standard (9am - 5pm)",
     idealFor: "Small teams with basic IT needs",
-    vatInfo: "Excluding VAT",
   },
   {
     name: "Professional",
@@ -130,7 +128,6 @@ export const PRICING_PLANS = [
     ],
     supportLevel: "Priority 24/7",
     idealFor: "Growing businesses requiring high uptime",
-    vatInfo: "Excluding VAT",
     popular: true,
   },
   {
@@ -146,6 +143,5 @@ export const PRICING_PLANS = [
     ],
     supportLevel: "Dedicated VIP Support",
     idealFor: "Large organisations with complex requirements",
-    vatInfo: "Contact for Quote",
   },
 ];
