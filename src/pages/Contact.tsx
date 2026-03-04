@@ -62,7 +62,6 @@ export default function Contact() {
                     {COMPANY_DETAILS.name}<br />
                     {COMPANY_DETAILS.address.split(', ').map((line, i) => <span key={i}>{line}<br/></span>)}
                   </p>
-                  <p className="mt-2 text-sm text-slate-500">CRN: {COMPANY_DETAILS.crn}</p>
                 </div>
               </div>
 
