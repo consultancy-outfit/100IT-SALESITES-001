@@ -178,7 +178,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <p>Registered in England and Wales.</p>
               </div>
               <div className="flex md:justify-end space-x-6 text-xs text-slate-500">
-                <span>VAT Registered: GB 123 4567 89</span>
                 <span>ISO 27001 Certified</span>
               </div>
             </div>
