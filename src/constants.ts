@@ -1,7 +1,7 @@
 import { Service, PricingPlan, Testimonial, CaseStudy } from './types';
 
 export const COMPANY_DETAILS = {
-  name: "Innovate UK IT Services",
+  name: "Barnsley Business Innovation Center",
   address: "82 Reddicliff Close, Plymouth, England, PL9 9QJ",
   crn: "17046337",
   phone: "0122 697 9080",
@@ -172,7 +172,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Alistair Cook",
     role: "Managing Director",
     company: "Yorkshire Manufacturing Ltd",
-    content: "Innovate UK IT Services transformed our legacy systems. Their migration to the cloud was seamless, and we've seen a 30% increase in productivity since."
+    content: "Barnsley Business Innovation Center transformed our legacy systems. Their migration to the cloud was seamless, and we've seen a 30% increase in productivity since."
   },
   {
     name: "Sarah Jenkins",
