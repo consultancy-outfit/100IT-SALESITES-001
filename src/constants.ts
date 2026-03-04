@@ -4,7 +4,7 @@ export const COMPANY_DETAILS = {
   crn: "17047984",
   phone: "0190 329 9180",
   email: "info@eclregainingindependenceservice.co.uk",
-  hours: "#####",
+  hours: "Monday to Friday: 9:00 AM - 5:00 PM",
   vat: "#####"
 };
 

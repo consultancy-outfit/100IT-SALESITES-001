@@ -164,7 +164,6 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <div className="space-y-4 text-sm text-slate-500">
                 <p><strong>Company Name:</strong><br />{COMPANY_DETAILS.name}</p>
                 <p><strong>Registration Number (CRN):</strong><br />{COMPANY_DETAILS.crn}</p>
-                <p><strong>VAT Number:</strong><br />{COMPANY_DETAILS.vat}</p>
               </div>
             </div>
           </div>
