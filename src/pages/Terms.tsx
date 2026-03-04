@@ -28,7 +28,7 @@ export default function Terms() {
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4">4. Payment Terms</h2>
-            <p>All prices are quoted in Great British Pounds (GBP) and are subject to VAT at the prevailing rate. Invoices are typically issued monthly in advance and are payable within 30 days of the invoice date unless otherwise agreed in writing.</p>
+            <p>All prices are quoted in Great British Pounds (GBP). Invoices are typically issued monthly in advance and are payable within 30 days of the invoice date unless otherwise agreed in writing.</p>
           </section>
 
           <section>

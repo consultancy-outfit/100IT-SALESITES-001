@@ -110,7 +110,6 @@ export default function Pricing() {
                     <span className="text-4xl font-display font-bold text-slate-900">£{plan.price}</span>
                     <span className="text-slate-500 ml-2">{plan.period}</span>
                   </div>
-                  <p className="text-xs text-slate-400 mt-2">* All prices are subject to VAT at the prevailing rate.</p>
                 </div>
                 
                 <div className="space-y-4 mb-10">

@@ -164,7 +164,6 @@ const Footer = () => {
             <p className="mt-1 opacity-60">Company Registration Number: {COMPANY_DETAILS.crn} | Registered in England & Wales</p>
           </div>
           <div className="flex items-center space-x-6">
-            <span>VAT Registration: GB 928 3746 55</span>
             <span>GDPR Compliant</span>
           </div>
         </div>
