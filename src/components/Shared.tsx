@@ -32,7 +32,7 @@ export const COMPANY_DETAILS = {
   crn: "17049956",
   phone: "0117 290 0574",
   email: "info@badmintongardens.co.uk",
-  hours: "#####"
+  hours: "Monday - Friday: 9am - 5pm"
 };
 
 // --- Components ---
