@@ -4,7 +4,7 @@ export const COMPANY_DETAILS = {
   crn: "17049159",
   phone: "0175 290 5186",
   email: "info@hillsideplymouth.co.uk",
-  
+  hours: "Monday - Friday: 9:00 AM - 5:00 PM",
 };
 
 export const SERVICES = [

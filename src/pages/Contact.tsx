@@ -1,5 +1,5 @@
 import { COMPANY_DETAILS } from "../constants";
-import { Mail, Phone, MapPin, Clock, Send, ShieldCheck } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, ShieldCheck, FileText } from "lucide-react";
 import { useState, FormEvent } from "react";
 
 export default function Contact() {
@@ -46,20 +46,18 @@ export default function Contact() {
               </div>
               <div className="space-y-4">
                 <div className="h-12 w-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                  <FileText className="h-6 w-6" />
+                </div>
+                <h3 className="font-bold text-slate-900">CRN Number</h3>
+                <p className="text-slate-600">{COMPANY_DETAILS.crn}</p>
+              </div>
+              <div className="space-y-4">
+                <div className="h-12 w-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
                   <Clock className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-slate-900">Business Hours</h3>
                 <p className="text-slate-600">{COMPANY_DETAILS.hours}</p>
               </div>
-            </div>
-
-            <div className="rounded-2xl overflow-hidden border border-slate-200 h-64 bg-slate-100 flex items-center justify-center relative">
-              <div className="text-center p-8">
-                <MapPin className="h-12 w-12 text-slate-400 mx-auto mb-4" />
-                <p className="text-slate-500 font-medium">Interactive Map Placeholder</p>
-                <p className="text-xs text-slate-400 mt-2">Plymouth, Devon, PL1 1AA</p>
-              </div>
-              <div className="absolute inset-0 bg-emerald-600/5"></div>
             </div>
           </div>
 

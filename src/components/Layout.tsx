@@ -83,13 +83,6 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-          <div className="text-center md:text-left">
-            <p>© {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved.</p>
-            <p className="mt-1">Registered in England & Wales. CRN: {COMPANY_DETAILS.crn}</p>
-          </div>
-          <p>VAT registered. All prices exclude VAT unless stated otherwise.</p>
-        </div>
       </div>
     </footer>
   );
