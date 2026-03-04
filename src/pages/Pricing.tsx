@@ -82,11 +82,8 @@ export default function Pricing() {
           >
             <h1 className="text-4xl md:text-6xl font-bold">Transparent Pricing for <span className="text-brand-600">UK Businesses</span></h1>
             <p className="text-xl text-slate-600">
-              No hidden fees, no complex contracts. Just reliable IT support billed in GBP (£) with clear VAT breakdowns.
+              No hidden fees, no complex contracts. Just reliable IT support with clear, simple pricing in GBP (£).
             </p>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-sm font-medium text-slate-600 shadow-sm">
-              <Info size={16} className="text-brand-600" /> All prices exclude VAT at 20%
-            </div>
           </motion.div>
         </div>
       </section>

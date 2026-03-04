@@ -223,7 +223,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <p>Company Registration Number (CRN): {COMPANY_DETAILS.crn} | Registered in England & Wales</p>
               </div>
               <div className="flex gap-6">
-                <span>VAT Registered: GB 123 4567 89</span>
                 <span>Secure Payments in GBP (£)</span>
               </div>
             </div>

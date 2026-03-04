@@ -186,15 +186,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="relative rounded-[40px] overflow-hidden aspect-video bg-slate-100 border border-slate-200 group">
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-400 p-8 text-center">
-                  <MapPin size={48} className="mb-4 opacity-20 group-hover:scale-110 transition-transform" />
-                  <p className="font-medium">Interactive Map Placeholder</p>
-                  <p className="text-xs mt-2">Our office is located in the heart of London's Tech City.</p>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-200/50 to-transparent"></div>
-              </div>
+        
 
               {/* Emergency Support Box */}
               <div className="p-8 rounded-[32px] bg-emerald-50 border border-emerald-100 space-y-4">
