@@ -51,7 +51,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-zinc-400 shrink-0" />
-                <span className="text-zinc-500 text-sm">United Kingdom</span>
+                <span className="text-zinc-500 text-sm">38 Brennan House 610 High Road Leyton, London, England, E10 6RN</span>
               </li>
             </ul>
           </div>
