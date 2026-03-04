@@ -171,16 +171,8 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="rounded-3xl overflow-hidden h-64 bg-slate-200 relative">
-                <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-medium">
-                  <div className="text-center">
-                    <MapPin size={48} className="mx-auto mb-2 opacity-20" />
-                    <p>Interactive Map Placeholder</p>
-                    <p className="text-xs">London, United Kingdom</p>
-                  </div>
-                </div>
-              </div>
+           
+              
             </motion.div>
           </div>
         </div>
