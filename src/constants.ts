@@ -2,7 +2,7 @@ export const COMPANY_DETAILS = {
   name: "Howse Garden",
   address: "174 Warrensway, Telford, England, TF7 5QG",
   crn: "17050014",
-  phone: "+44 (0) 179 362 6235",
+  phone: "0179 362 6235",
   email: "Info@howsegarden.co.uk",
   hours: "Mon - Fri: 09:00 - 18:00 GMT",
 };
