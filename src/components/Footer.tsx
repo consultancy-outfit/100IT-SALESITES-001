@@ -76,10 +76,10 @@ export const Footer = () => {
               <p>Company Registration Number:17046278</p>
               <p>Registered in England and Wales.</p>
             </div>
-            <div className="flex gap-6">
+            {/* <div className="flex gap-6">
               <span>VAT Registered: GB 123 4567 89</span>
               <span>Cyber Essentials Certified</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

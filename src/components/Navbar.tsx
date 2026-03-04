@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Cpu } from 'lucide-react';
-import { COMPANY_DETAILS } from '../constants';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "motion/react";
+import { Menu, X, Cpu } from "lucide-react";
+import { COMPANY_DETAILS } from "../constants";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,28 +11,28 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Pricing', path: '/pricing' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "About Us", path: "/about" },
+    { name: "Pricing", path: "/pricing" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"}`}
+    >
       <div className="container-custom flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="p-2 bg-brand-primary rounded-lg group-hover:bg-brand-accent transition-colors">
             <Cpu className="w-6 h-6 text-white" />
           </div>
-          <span className="font-bold text-xl tracking-tight">
-            Community<span className="text-brand-accent">ShortBreaks</span>
-          </span>
+          <span className="text-brand-accent">CommunityShortBreaks</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -41,7 +41,7 @@ export const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-brand-accent ${location.pathname === link.path ? 'text-brand-accent' : 'text-slate-600'}`}
+              className={`text-sm font-medium transition-colors hover:text-brand-accent ${location.pathname === link.path ? "text-brand-accent" : "text-slate-600"}`}
             >
               {link.name}
             </Link>
@@ -65,7 +65,7 @@ export const Navbar = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
           >
@@ -75,7 +75,7 @@ export const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`text-lg font-medium ${location.pathname === link.path ? 'text-brand-accent' : 'text-slate-600'}`}
+                  className={`text-lg font-medium ${location.pathname === link.path ? "text-brand-accent" : "text-slate-600"}`}
                 >
                   {link.name}
                 </Link>
