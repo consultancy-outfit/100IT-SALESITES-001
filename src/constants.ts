@@ -16,7 +16,7 @@ export const SERVICES = [
     icon: "Shield",
     targetAudience: "SMEs looking for a reliable outsourced IT department.",
     process: ["Audit", "Onboarding", "Monitoring", "Support", "Review"],
-    benefits: ["Reduced downtime", "Predictable costs", "Expert advice"],
+    benefits: ["Reduced downtime","Predictable costs", "Expert advice"],
     startingPrice: "£450",
   },
   {
