@@ -1,21 +1,31 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail, MapPin, Shield, Cpu, Globe, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-import { COMPANY_DETAILS } from '../constants';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  Menu,
+  X,
+  Phone,
+  Mail,
+  MapPin,
+  Shield,
+  Cpu,
+  Globe,
+  ChevronRight,
+} from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+import { COMPANY_DETAILS } from "../constants";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
 const NAV_LINKS = [
-  { name: 'Home', path: '/' },
-  { name: 'Services', path: '/services' },
-  { name: 'About Us', path: '/about' },
-  { name: 'Pricing', path: '/pricing' },
-  { name: 'Contact', path: '/contact' },
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "About Us", path: "/about" },
+  { name: "Pricing", path: "/pricing" },
+  { name: "Contact", path: "/contact" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -28,8 +38,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="bg-slate-900 text-slate-300 py-2 px-4 hidden md:block border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-xs font-medium tracking-wide uppercase">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2"><Phone size={14} className="text-indigo-400" /> {COMPANY_DETAILS.phone}</span>
-            <span className="flex items-center gap-2"><Mail size={14} className="text-indigo-400" /> {COMPANY_DETAILS.email}</span>
+            <span className="flex items-center gap-2">
+              <Phone size={14} className="text-indigo-400" />{" "}
+              {COMPANY_DETAILS.phone}
+            </span>
+            <span className="flex items-center gap-2">
+              <Mail size={14} className="text-indigo-400" />{" "}
+              {COMPANY_DETAILS.email}
+            </span>
           </div>
           <div className="flex items-center gap-4">
             <span>UK Registered Company: {COMPANY_DETAILS.crn}</span>
@@ -44,7 +60,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-200 group-hover:scale-105 transition-transform">
               <Cpu size={24} />
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">HCF <span className="text-indigo-600">The Springs</span></span>
+            <span className="text-xl font-bold tracking-tight text-slate-900">
+              HCF <span className="text-indigo-600">The Springs</span>
+            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -55,7 +73,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 to={link.path}
                 className={cn(
                   "text-sm font-semibold transition-colors hover:text-indigo-600",
-                  location.pathname === link.path ? "text-indigo-600" : "text-slate-600"
+                  location.pathname === link.path
+                    ? "text-indigo-600"
+                    : "text-slate-600",
                 )}
               >
                 {link.name}
@@ -83,7 +103,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
             >
@@ -122,10 +142,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center text-white">
                   <Cpu size={18} />
                 </div>
-                <span className="text-xl font-bold text-white">HCF <span className="text-indigo-400">The Springs</span></span>
+                <span className="text-xl font-bold text-white">
+                  HCF <span className="text-indigo-400">The Springs</span>
+                </span>
               </Link>
               <p className="text-sm leading-relaxed text-slate-400">
-                Empowering UK businesses with cutting-edge IT solutions, managed services, and strategic technology consulting.
+                Empowering UK businesses with cutting-edge IT solutions, managed
+                services, and strategic technology consulting.
               </p>
               <div className="flex gap-4">
                 {/* Social placeholders */}
@@ -141,22 +164,92 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="text-white font-bold mb-6">Our Services</h4>
               <ul className="space-y-4 text-sm">
-                <li><Link to="/services" className="hover:text-indigo-400 transition-colors">Managed IT Support</Link></li>
-                <li><Link to="/services" className="hover:text-indigo-400 transition-colors">Cloud Infrastructure</Link></li>
-                <li><Link to="/services" className="hover:text-indigo-400 transition-colors">Cybersecurity Solutions</Link></li>
-                <li><Link to="/services" className="hover:text-indigo-400 transition-colors">IT Consulting</Link></li>
-                <li><Link to="/services" className="hover:text-indigo-400 transition-colors">Disaster Recovery</Link></li>
+                <li>
+                  <Link
+                    to="/services"
+                    className="hover:text-indigo-400 transition-colors"
+                  >
+                    Managed IT Support
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services"
+                    className="hover:text-indigo-400 transition-colors"
+                  >
+                    Cloud Infrastructure
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services"
+                    className="hover:text-indigo-400 transition-colors"
+                  >
+                    Cybersecurity Solutions
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services"
+                    className="hover:text-indigo-400 transition-colors"
+                  >
+                    IT Consulting
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services"
+                    className="hover:text-indigo-400 transition-colors"
+                  >
+                    Disaster Recovery
+                  </Link>
+                </li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-white font-bold mb-6">Quick Links</h4>
               <ul className="space-y-4 text-sm">
-                <li><Link to="/about" className="hover:text-indigo-400 transition-colors">About Us</Link></li>
-                <li><Link to="/pricing" className="hover:text-indigo-400 transition-colors">Pricing Plans</Link></li>
-                <li><Link to="/contact" className="hover:text-indigo-400 transition-colors">Contact Us</Link></li>
-                <li><Link to="/terms" className="hover:text-indigo-400 transition-colors">Terms & Conditions</Link></li>
-                <li><Link to="/privacy" className="hover:text-indigo-400 transition-colors">Privacy Policy</Link></li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="hover:text-indigo-400 transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/pricing"
+                    className="hover:text-indigo-400 transition-colors"
+                  >
+                    Pricing Plans
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className="hover:text-indigo-400 transition-colors"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="hover:text-indigo-400 transition-colors"
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/privacy"
+                    className="hover:text-indigo-400 transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -180,10 +273,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
 
           <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-500 uppercase tracking-widest">
-            <p>© {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved.</p>
+            <p>
+              © {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights
+              reserved.
+            </p>
             <div className="flex gap-6">
               <span>CRN: {COMPANY_DETAILS.crn}</span>
-              <span>VAT: GB 987 6543 21</span>
             </div>
           </div>
         </div>
