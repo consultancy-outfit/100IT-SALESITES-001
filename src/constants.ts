@@ -116,7 +116,7 @@ export const COMPANY_DETAILS = {
   name: 'Assure Supported Living',
   address: 'Flat 21 Napier House 17-21 Napier Road, Luton, England, LU1 1DU',
   crn: '17046314',
-  phone: '01582 345 678', // Using a realistic Luton number instead of address duplicate
+  phone: '0238 104 0326', // Using a realistic Luton number instead of address duplicate
   email: 'info@assuresupportedliving.co.uk',
   hours: 'Mon - Fri: 09:00 - 17:30'
 };
