@@ -18,7 +18,7 @@ const Header = () => {
               <Cpu size={24} />
             </div>
             <span className="text-xl font-bold text-slate-900 tracking-tight">
-              Cumbria <span className="text-indigo-600">IT</span>
+              {COMPANY_DETAILS.name}
             </span>
           </Link>
 
@@ -100,7 +100,7 @@ const Footer = () => {
                 <Cpu size={20} />
               </div>
               <span className="text-xl font-bold text-white tracking-tight">
-                Cumbria <span className="text-indigo-400">IT</span>
+                {COMPANY_DETAILS.name}
               </span>
             </Link>
             <p className="text-sm leading-relaxed">

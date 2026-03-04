@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2, Users, Zap, Shield, Globe, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SERVICES } from '../constants';
+import { SERVICES, COMPANY_DETAILS } from '../constants';
 
 const Hero = () => {
   return (
@@ -113,7 +113,7 @@ const Features = () => {
     <section className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Why Choose Cumbria IT?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Why Choose {COMPANY_DETAILS.name}?</h2>
           <p className="text-slate-600 max-w-2xl mx-auto">We combine technical excellence with a deep understanding of the British business landscape.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -172,9 +172,21 @@ const ServicesPreview = () => {
 
 const Testimonials = () => {
   const testimonials = [
-    { name: "Alistair Graham", role: "CEO, Northern Logistics", text: "Cumbria IT transformed our infrastructure. The migration to the cloud was seamless and saved us over £15,000 in hardware costs in the first year." },
-    { name: "Sarah Jenkins", role: "Director, Ilkley Creative", text: "Their support team is exceptional. Whenever we have an issue, they're on it instantly. It's like having our own in-house IT department." },
-    { name: "David Thompson", role: "Operations Manager, Cumbria Care", text: "Security was our main concern. Cumbria IT implemented a robust system that gives us total peace of mind and full GDPR compliance." },
+    {
+      name: "Alistair Graham",
+      role: "CEO, Northern Logistics",
+      text: `${COMPANY_DETAILS.name} transformed our infrastructure. The migration to the cloud was seamless and saved us over £15,000 in hardware costs in the first year.`,
+    },
+    {
+      name: "Sarah Jenkins",
+      role: "Director, Ilkley Creative",
+      text: "Their support team is exceptional. Whenever we have an issue, they're on it instantly. It's like having our own in-house IT department.",
+    },
+    {
+      name: "David Thompson",
+      role: "Operations Manager, Cumbria Care",
+      text: `Security was our main concern. ${COMPANY_DETAILS.name} implemented a robust system that gives us total peace of mind and full GDPR compliance.`,
+    },
   ];
 
   return (
