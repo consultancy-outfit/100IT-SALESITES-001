@@ -63,7 +63,7 @@ export const About: React.FC = () => {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">A Decade of Excellence</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  Founded in Reading, the heart of the UK's tech corridor, ECL Regaining Independence Service started with a simple goal: to help local businesses navigate the increasingly complex world of IT.
+                  Founded in Reading, the heart of the UK's tech corridor, {COMPANY_DETAILS.name} started with a simple goal: to help local businesses navigate the increasingly complex world of IT.
                 </p>
                 <p>
                   Over the past ten years, we have grown from a small consultancy into a full-service IT provider, supporting hundreds of clients across London, the Midlands, and the South East. Our name reflects our core philosophy—helping businesses regain independence from unreliable systems and restrictive technology debt.
@@ -76,7 +76,7 @@ export const About: React.FC = () => {
             <div className="lg:w-1/2">
               <img
                 src="https://picsum.photos/seed/office-team/800/600"
-                alt="ECL Team"
+                alt={`${COMPANY_DETAILS.brand} Team`}
                 className="rounded-3xl shadow-2xl border border-white"
                 referrerPolicy="no-referrer"
               />
@@ -122,7 +122,7 @@ export const About: React.FC = () => {
             {[
               { name: "James Harrison", role: "Founder & CEO", bio: "20+ years in enterprise IT. Former infrastructure lead at a major UK bank." },
               { name: "Eleanor Wright", role: "CTO", bio: "Cloud architecture specialist with a passion for cybersecurity and digital ethics." },
-              { name: "Sanjay Patel", role: "Head of Client Success", bio: "Dedicated to ensuring every ECL client receives world-class support and strategy." }
+              { name: "Sanjay Patel", role: "Head of Client Success", bio: `Dedicated to ensuring every ${COMPANY_DETAILS.brand} client receives world-class support and strategy.` }
             ].map((member, i) => (
               <div key={i} className="group">
                 <div className="aspect-square rounded-3xl bg-slate-200 mb-6 overflow-hidden">

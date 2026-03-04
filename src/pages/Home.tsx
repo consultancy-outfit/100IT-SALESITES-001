@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2, Shield, Zap, Users, BarChart3, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { COMPANY_DETAILS } from '../constants';
 
 export const Home: React.FC = () => {
   return (
@@ -27,7 +28,7 @@ export const Home: React.FC = () => {
                 Regain Your <span className="text-indigo-400">Digital Independence</span>
               </h1>
               <p className="text-lg text-slate-300 mb-10 max-w-xl mx-auto lg:mx-0">
-                ECL provides world-class IT services tailored for British enterprises. From cloud migration to cybersecurity, we help you master your technology stack.
+                {COMPANY_DETAILS.brand} provides world-class IT services tailored for British enterprises. From cloud migration to cybersecurity, we help you master your technology stack.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
@@ -81,7 +82,7 @@ export const Home: React.FC = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4">
-              Why British Businesses Choose ECL
+              Why British Businesses Choose {COMPANY_DETAILS.brand}
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               We combine local expertise with global standards to deliver IT solutions that actually drive growth.
@@ -213,19 +214,19 @@ export const Home: React.FC = () => {
                 name: "Alistair Cook",
                 role: "CTO",
                 company: "Thames Valley Logistics",
-                content: "ECL transformed our IT from a bottleneck into a competitive advantage. Their UK-based support is second to none."
+                content: `${COMPANY_DETAILS.brand} transformed our IT from a bottleneck into a competitive advantage. Their UK-based support is second to none.`
               },
               {
                 name: "Sarah Jenkins",
                 role: "Operations Director",
                 company: "Manchester Creative Hub",
-                content: "The transition to remote working was seamless thanks to ECL. They understood our budget and delivered beyond expectations."
+                content: `The transition to remote working was seamless thanks to ${COMPANY_DETAILS.brand}. They understood our budget and delivered beyond expectations.`
               },
               {
                 name: "Dr. Robert Sterling",
                 role: "Managing Partner",
                 company: "Sterling Medical Group",
-                content: "GDPR compliance was our biggest worry. ECL provided a clear roadmap and implemented robust security measures that give us peace of mind."
+                content: `GDPR compliance was our biggest worry. ${COMPANY_DETAILS.brand} provided a clear roadmap and implemented robust security measures that give us peace of mind.`
               }
             ].map((t, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
@@ -252,7 +253,7 @@ export const Home: React.FC = () => {
             Ready to Master Your Technology?
           </h2>
           <p className="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto">
-            Join hundreds of UK businesses that trust ECL for their IT infrastructure and digital strategy.
+            Join hundreds of UK businesses that trust {COMPANY_DETAILS.brand} for their IT infrastructure and digital strategy.
           </p>
           <Link
             to="/contact"

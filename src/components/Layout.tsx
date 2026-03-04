@@ -1,10 +1,22 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Cpu, Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
-import { COMPANY_DETAILS, NAV_LINKS } from '../constants';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  Menu,
+  X,
+  Cpu,
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Github,
+} from "lucide-react";
+import { COMPANY_DETAILS, NAV_LINKS } from "../constants";
 
-export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const Layout: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const location = useLocation();
 
@@ -15,11 +27,17 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white transition-transform group-hover:scale-110">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-white transition-transform group-hover:scale-110">
                 <Cpu size={24} />
               </div>
               <span className="text-xl font-bold tracking-tight text-slate-900">
-                ECL <span className="text-indigo-600">IT</span>
+                <span className="md:hidden">{COMPANY_DETAILS.brand}</span>
+                <span className="hidden md:inline">
+                  {COMPANY_DETAILS.brand}{" "}
+                  <span className="text-indigo-600">
+                    {COMPANY_DETAILS.name.replace(COMPANY_DETAILS.brand, "").trim()}
+                  </span>
+                </span>
               </span>
             </Link>
 
@@ -30,7 +48,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   key={link.path}
                   to={link.path}
                   className={`text-sm font-medium transition-colors hover:text-indigo-600 ${
-                    location.pathname === link.path ? 'text-indigo-600' : 'text-slate-600'
+                    location.pathname === link.path
+                      ? "text-indigo-600"
+                      : "text-slate-600"
                   }`}
                 >
                   {link.name}
@@ -59,7 +79,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden border-t border-slate-100 bg-white"
             >
@@ -101,40 +121,74 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-6">
               <Link to="/" className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded bg-indigo-600 text-white">
-                  <Cpu size={18} />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-white transition-transform group-hover:scale-110">
+                  <Cpu size={24} />
                 </div>
                 <span className="text-lg font-bold tracking-tight text-slate-900">
-                  ECL <span className="text-indigo-600">IT</span>
+                  <span className="md:hidden">{COMPANY_DETAILS.brand}</span>
+                  <span className="hidden md:inline">
+                    {COMPANY_DETAILS.brand}{" "}
+                    <span className="text-indigo-600">
+                      {COMPANY_DETAILS.name.replace(COMPANY_DETAILS.brand, "").trim()}
+                    </span>
+                  </span>
                 </span>
               </Link>
               <p className="text-sm leading-relaxed text-slate-500">
-                Empowering UK businesses through innovative IT solutions and strategic digital transformation. Regaining independence through technology.
+                Empowering UK businesses through innovative IT solutions and
+                strategic digital transformation. Regaining independence through
+                technology.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors"><Linkedin size={20} /></a>
-                <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors"><Twitter size={20} /></a>
-                <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors"><Github size={20} /></a>
+                <a
+                  href="#"
+                  className="text-slate-400 hover:text-indigo-600 transition-colors"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a
+                  href="#"
+                  className="text-slate-400 hover:text-indigo-600 transition-colors"
+                >
+                  <Twitter size={20} />
+                </a>
+                <a
+                  href="#"
+                  className="text-slate-400 hover:text-indigo-600 transition-colors"
+                >
+                  <Github size={20} />
+                </a>
               </div>
             </div>
 
             <div>
-              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-slate-900">Quick Links</h3>
+              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-slate-900">
+                Quick Links
+              </h3>
               <ul className="space-y-4">
                 {NAV_LINKS.map((link) => (
                   <li key={link.path}>
-                    <Link to={link.path} className="text-sm text-slate-500 hover:text-indigo-600 transition-colors">
+                    <Link
+                      to={link.path}
+                      className="text-sm text-slate-500 hover:text-indigo-600 transition-colors"
+                    >
                       {link.name}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link to="/terms" className="text-sm text-slate-500 hover:text-indigo-600 transition-colors">
+                  <Link
+                    to="/terms"
+                    className="text-sm text-slate-500 hover:text-indigo-600 transition-colors"
+                  >
                     Terms & Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link to="/privacy" className="text-sm text-slate-500 hover:text-indigo-600 transition-colors">
+                  <Link
+                    to="/privacy"
+                    className="text-sm text-slate-500 hover:text-indigo-600 transition-colors"
+                  >
                     Privacy Policy
                   </Link>
                 </li>
@@ -142,7 +196,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </div>
 
             <div>
-              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-slate-900">Contact Details</h3>
+              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-slate-900">
+                Contact Details
+              </h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-sm text-slate-500">
                   <MapPin size={18} className="shrink-0 text-indigo-600" />
@@ -160,17 +216,28 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </div>
 
             <div>
-              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-slate-900">Company Info</h3>
+              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-slate-900">
+                Company Info
+              </h3>
               <div className="space-y-4 text-sm text-slate-500">
-                <p><strong>Company Name:</strong><br />{COMPANY_DETAILS.name}</p>
-                <p><strong>Registration Number (CRN):</strong><br />{COMPANY_DETAILS.crn}</p>
+                <p>
+                  <strong>Company Name:</strong>
+                  <br />
+                  {COMPANY_DETAILS.name}
+                </p>
+                <p>
+                  <strong>Registration Number (CRN):</strong>
+                  <br />
+                  {COMPANY_DETAILS.crn}
+                </p>
               </div>
             </div>
           </div>
 
           <div className="mt-16 border-t border-slate-200 pt-8 text-center">
             <p className="text-xs text-slate-400">
-              © {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved. Registered in England & Wales.
+              © {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights
+              reserved. Registered in England & Wales.
             </p>
           </div>
         </div>
