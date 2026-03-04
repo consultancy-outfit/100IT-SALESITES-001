@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
-import { COMPANY_DETAILS } from '../constants';
+import React, { useState } from "react";
+import { motion } from "motion/react";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
+import { COMPANY_DETAILS } from "../constants";
 
 const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -17,9 +17,13 @@ const Contact: React.FC = () => {
       <section className="py-24 bg-zinc-50 border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold tracking-tight text-zinc-900 mb-6">Contact Us</h1>
+            <h1 className="text-5xl font-bold tracking-tight text-zinc-900 mb-6">
+              Contact Us
+            </h1>
             <p className="text-xl text-zinc-600 leading-relaxed">
-              Have a question or ready to upgrade your IT? Our UK-based team is here to help. Reach out via the form or use our direct contact details.
+              Have a question or ready to upgrade your IT? Our UK-based team is
+              here to help. Reach out via the form or use our direct contact
+              details.
             </p>
           </div>
         </div>
@@ -34,7 +38,9 @@ const Contact: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">Full Name</label>
+                      <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">
+                        Full Name
+                      </label>
                       <input
                         required
                         type="text"
@@ -43,7 +49,9 @@ const Contact: React.FC = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">Email Address</label>
+                      <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">
+                        Email Address
+                      </label>
                       <input
                         required
                         type="email"
@@ -53,7 +61,9 @@ const Contact: React.FC = () => {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">Company Name</label>
+                    <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">
+                      Company Name
+                    </label>
                     <input
                       required
                       type="text"
@@ -62,7 +72,9 @@ const Contact: React.FC = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">How can we help?</label>
+                    <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">
+                      How can we help?
+                    </label>
                     <select className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-900 transition-all bg-white">
                       <option>Managed IT Support</option>
                       <option>Cybersecurity Audit</option>
@@ -72,7 +84,9 @@ const Contact: React.FC = () => {
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">Message</label>
+                    <label className="text-sm font-bold text-zinc-900 uppercase tracking-widest">
+                      Message
+                    </label>
                     <textarea
                       required
                       rows={5}
@@ -81,9 +95,15 @@ const Contact: React.FC = () => {
                     />
                   </div>
                   <div className="flex items-start gap-3">
-                    <input required type="checkbox" className="mt-1 w-4 h-4 rounded border-zinc-300 text-zinc-900 focus:ring-zinc-900" />
+                    <input
+                      required
+                      type="checkbox"
+                      className="mt-1 w-4 h-4 rounded border-zinc-300 text-zinc-900 focus:ring-zinc-900"
+                    />
                     <label className="text-xs text-zinc-500 leading-relaxed">
-                      I consent to Draycombe House processing my personal data in accordance with their Privacy Policy for the purpose of responding to my enquiry.
+                      I consent to Draycombe House processing my personal data
+                      in accordance with their Privacy Policy for the purpose of
+                      responding to my enquiry.
                     </label>
                   </div>
                   <button
@@ -102,9 +122,12 @@ const Contact: React.FC = () => {
                   <div className="w-20 h-20 bg-zinc-900 rounded-full flex items-center justify-center text-white mx-auto">
                     <CheckCircle2 size={40} />
                   </div>
-                  <h2 className="text-3xl font-bold text-zinc-900">Message Sent!</h2>
+                  <h2 className="text-3xl font-bold text-zinc-900">
+                    Message Sent!
+                  </h2>
                   <p className="text-zinc-600">
-                    Thank you for reaching out. One of our IT specialists will be in touch within 2 business hours.
+                    Thank you for reaching out. One of our IT specialists will
+                    be in touch within 2 business hours.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -123,45 +146,39 @@ const Contact: React.FC = () => {
                   <div className="w-12 h-12 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900">
                     <Phone size={24} />
                   </div>
-                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Call Us</h3>
+                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">
+                    Call Us
+                  </h3>
                   <p className="text-zinc-600">{COMPANY_DETAILS.phone}</p>
                 </div>
                 <div className="space-y-4">
                   <div className="w-12 h-12 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900">
                     <Mail size={24} />
                   </div>
-                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Email Us</h3>
+                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">
+                    Email Us
+                  </h3>
                   <p className="text-zinc-600">{COMPANY_DETAILS.email}</p>
                 </div>
                 <div className="space-y-4">
                   <div className="w-12 h-12 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900">
                     <MapPin size={24} />
                   </div>
-                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Visit Us</h3>
-                  <p className="text-zinc-600 leading-relaxed">{COMPANY_DETAILS.address}</p>
+                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">
+                    Visit Us
+                  </h3>
+                  <p className="text-zinc-600 leading-relaxed">
+                    {COMPANY_DETAILS.address}
+                  </p>
                 </div>
                 <div className="space-y-4">
                   <div className="w-12 h-12 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900">
                     <Clock size={24} />
                   </div>
-                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">Business Hours</h3>
+                  <h3 className="font-bold text-zinc-900 uppercase tracking-widest text-xs">
+                    Business Hours
+                  </h3>
                   <p className="text-zinc-600">{COMPANY_DETAILS.hours}</p>
-                </div>
-              </div>
-
-              {/* Map Placeholder */}
-              <div className="aspect-video bg-zinc-100 rounded-3xl border border-zinc-200 relative overflow-hidden flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <MapPin size={32} className="mx-auto text-zinc-400" />
-                  <p className="text-sm font-medium text-zinc-500">Interactive Map Placeholder</p>
-                  <p className="text-xs text-zinc-400">London Tech Quarter, EC1A</p>
-                </div>
-                {/* Visual representation of a map */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                  <div className="absolute top-1/4 left-1/4 w-full h-px bg-zinc-900 rotate-45" />
-                  <div className="absolute top-1/2 left-0 w-full h-px bg-zinc-900" />
-                  <div className="absolute top-0 left-1/2 w-px h-full bg-zinc-900" />
-                  <div className="absolute top-1/3 right-1/4 w-full h-px bg-zinc-900 -rotate-12" />
                 </div>
               </div>
             </div>
