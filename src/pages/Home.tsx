@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2, Shield, Zap, Users, BarChart3, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SERVICES, TESTIMONIALS, CASE_STUDIES } from '../constants';
+import { SERVICES, TESTIMONIALS, CASE_STUDIES, COMPANY_DETAILS } from '../constants';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -56,7 +56,7 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed"
             >
-              CWD Outreach Service provides managed IT support, robust cybersecurity, and cloud solutions tailored for the unique challenges of British enterprises.
+              {COMPANY_DETAILS.name} provides managed IT support, robust cybersecurity, and cloud solutions tailored for the unique challenges of British enterprises.
             </motion.p>
             
             <motion.div 
@@ -112,7 +112,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2 space-y-8">
               <div className="space-y-4">
-                <h2 className="text-indigo-600 font-bold tracking-wider uppercase text-sm">Why Choose CWD?</h2>
+                <h2 className="text-indigo-600 font-bold tracking-wider uppercase text-sm">Why choose us?</h2>
                 <h3 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
                   IT Infrastructure That Works As Hard As You Do
                 </h3>
@@ -272,7 +272,7 @@ export default function Home() {
                 Ready to Future-Proof Your Business?
               </h2>
               <p className="text-xl text-slate-400">
-                Join hundreds of UK companies who trust CWD Outreach Service for their technology needs. Let's build something great together.
+                Join hundreds of UK companies who trust {COMPANY_DETAILS.name} for their technology needs. Let's build something great together.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link 
