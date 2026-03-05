@@ -61,7 +61,7 @@ export function About() {
           </div>
           <div className="relative">
             <img
-              src="https://picsum.photos/seed/team/800/600"
+              src="https://images.unsplash.com/photo-1522071820081-009012012a2?w=800&q=80"
               alt="Our Team"
               className="rounded-3xl shadow-2xl"
               referrerPolicy="no-referrer"

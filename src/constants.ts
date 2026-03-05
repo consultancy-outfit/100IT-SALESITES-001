@@ -24,6 +24,7 @@ export const SERVICES = [
     process: ["Audit", "Onboarding", "Monitoring", "Support"],
     benefits: ["Reduced downtime", "Fixed monthly costs", "Expert advice"],
     price: "£499",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
   },
   {
     id: "cybersecurity",
@@ -33,6 +34,7 @@ export const SERVICES = [
     process: ["Risk Assessment", "Implementation", "Training", "Review"],
     benefits: ["Data protection", "Compliance peace of mind", "Threat mitigation"],
     price: "£799",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
   },
   {
     id: "cloud-services",
@@ -42,6 +44,7 @@ export const SERVICES = [
     process: ["Planning", "Migration", "Optimization", "Management"],
     benefits: ["Scalability", "Remote access", "Cost efficiency"],
     price: "£299",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
   },
   {
     id: "it-consultancy",
@@ -51,6 +54,7 @@ export const SERVICES = [
     process: ["Discovery", "Strategy", "Roadmap", "Execution"],
     benefits: ["Strategic alignment", "Future-proofing", "ROI focus"],
     price: "£950",
+    image: "https://picsum.photos/id/18/800/600",
   },
   {
     id: "network-infrastructure",
@@ -60,6 +64,7 @@ export const SERVICES = [
     process: ["Site Survey", "Design", "Installation", "Testing"],
     benefits: ["High-speed connectivity", "Reliable hardware", "Secure access"],
     price: "£1,200",
+    image: "https://picsum.photos/id/19/800/600",
   },
 ];
 

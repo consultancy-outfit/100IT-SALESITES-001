@@ -59,12 +59,6 @@ export function Contact() {
                 </div>
               </div>
             </div>
-
-            {/* Map Placeholder */}
-            <div className="mt-12 p-4 rounded-3xl bg-slate-100 border border-slate-200 aspect-video flex flex-col items-center justify-center text-slate-400">
-              <MapPin className="w-12 h-12 mb-4 opacity-20" />
-              <span className="text-sm font-medium">Map Placeholder (Luton, LU1)</span>
-            </div>
           </div>
 
           {/* Contact Form */}

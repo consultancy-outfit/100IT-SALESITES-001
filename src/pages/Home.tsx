@@ -98,7 +98,7 @@ export function Home() {
               <div className="absolute -top-20 -right-20 w-64 h-64 bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
               <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
               <img
-                src="https://picsum.photos/seed/it-office/800/600"
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
                 alt="Modern IT Office"
                 className="rounded-3xl shadow-2xl relative z-10 border border-white/20"
                 referrerPolicy="no-referrer"

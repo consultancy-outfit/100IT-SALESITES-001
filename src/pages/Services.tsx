@@ -98,7 +98,7 @@ export function Services() {
                   <div className="relative">
                     <div className="absolute -inset-4 bg-indigo-100 rounded-[2.5rem] -rotate-2"></div>
                     <img
-                      src={`https://picsum.photos/seed/${service.id}/800/600`}
+                      src={service.image}
                       alt={service.title}
                       className="relative rounded-[2rem] shadow-2xl border border-white/20 object-cover aspect-[4/3]"
                       referrerPolicy="no-referrer"
