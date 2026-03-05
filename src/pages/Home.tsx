@@ -6,11 +6,11 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-slate-900">
-        <div className="absolute inset-0 opacity-20">
+      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-white">
+        <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#10b981_0,transparent_50%)]"></div>
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-accent/30 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-accent/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -23,23 +23,23 @@ export default function Home() {
               <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-brand-accent uppercase bg-brand-accent/10 rounded-full border border-brand-accent/20">
                 UK-Based Managed IT Experts
               </span>
-              <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-8">
+              <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8">
                 Future-Proofing <span className="text-brand-accent">British Business</span> Through Technology.
               </h1>
-              <p className="text-xl text-slate-400 mb-10 leading-relaxed">
+              <p className="text-xl text-slate-600 mb-10 leading-relaxed">
                 Monaveen provides enterprise-grade IT services, cybersecurity, and cloud solutions tailored for the unique challenges of the UK market.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-brand-accent text-slate-900 font-bold rounded-xl hover:bg-white transition-all group"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-brand-accent text-slate-900 font-bold rounded-xl hover:bg-brand-accent/90 transition-all group"
                 >
                   Book a Free Audit
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-slate-800 text-white font-bold rounded-xl hover:bg-slate-700 transition-all"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all"
                 >
                   Explore Services
                 </Link>
