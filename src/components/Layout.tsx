@@ -163,7 +163,6 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} Isaac Newton House. All rights reserved.</p>
-          <p>VAT Registration: GB 123 4567 89 (Example)</p>
         </div>
       </div>
     </footer>
