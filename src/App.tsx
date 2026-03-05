@@ -36,7 +36,7 @@ const COMPANY_DETAILS = {
   address: "1 Love Lane, Kings Langley, England, WD4 9JT",
   email: "info@benfleetessex.co.uk",
   crn: "17048677",
-  phone: "0126 895 5145"
+  phone: "0126 895 5145",
   hours: "Mon - Fri: 09:00 - 17:30",
 };
 
@@ -876,15 +876,6 @@ const Contact = () => {
                 <a href="#" className="inline-flex items-center text-indigo-400 font-bold hover:underline">
                   Client Portal Login <ExternalLink className="ml-2 w-4 h-4" />
                 </a>
-              </div>
-              
-              <div className="mt-8 aspect-video bg-zinc-100 rounded-3xl border border-zinc-200 flex items-center justify-center text-zinc-400 overflow-hidden relative">
-                <img src="https://picsum.photos/seed/map/800/450?blur=2" className="absolute inset-0 w-full h-full object-cover opacity-50" alt="Map" referrerPolicy="no-referrer" />
-                <div className="relative z-10 flex flex-col items-center">
-                  <MapPin className="w-10 h-10 mb-2" />
-                  <span className="font-bold text-zinc-900">Map Placeholder</span>
-                  <span className="text-xs">Benfleet, Essex</span>
-                </div>
               </div>
             </div>
 
