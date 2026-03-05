@@ -8,7 +8,7 @@ export default function Privacy() {
 
           <h3>1. Introduction</h3>
           <p>
-            Visiting Angels Manchester West ("we", "us", "our") is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your personal data in compliance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+            Hertfordshire and Barnet Supported Living Service ("we", "us", "our") is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your personal data in compliance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
           </p>
 
           <h3>2. Data Controller</h3>
@@ -69,9 +69,11 @@ export default function Privacy() {
           <h3>9. Contact Us</h3>
           <p>
             If you have any questions about this privacy policy or our privacy practices, please contact us at:<br/>
-            Visiting Angels Manchester West<br/>
-            Registered Office Address (UK): N/A<br/>
-            Official Business Email: N/A
+            Hertfordshire and Barnet Supported Living Service<br/>
+            Registered Office Address (UK): Not Available<br/>
+            Company Registration Number (CRN): 17048852<br/>
+            UK Phone Number: Not Available<br/>
+            Official Business Email: Not Available
           </p>
         </div>
       </div>

@@ -53,13 +53,13 @@ export default function Pricing() {
             <ul className="space-y-4 mb-8 flex-grow">
               {['Unlimited Remote Support', 'Advanced Endpoint Security', '24/7 Monitoring', 'Cloud Backup (1TB)', 'Priority SLA', 'On-site Support (Discounted)'].map((feature) => (
                 <li key={feature} className="flex items-start text-sm text-slate-300">
-                  <Check className="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-emerald-400 mr-2 flex-shrink-0" />
                   {feature}
                 </li>
               ))}
             </ul>
             
-            <Link to="/contact" className="w-full block text-center py-3 px-4 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-500/25">
+            <Link to="/contact" className="w-full block text-center py-3 px-4 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-500/25">
               Choose Growth
             </Link>
           </div>
@@ -91,7 +91,7 @@ export default function Pricing() {
 
         <div className="mt-16 text-center text-slate-500 text-sm">
           <p>All prices exclude VAT at the prevailing rate. Minimum contract term of 12 months applies.</p>
-          <p className="mt-2">Need a custom project quote? <Link to="/contact" className="text-indigo-600 underline">Contact us</Link>.</p>
+          <p className="mt-2">Need a custom project quote? <Link to="/contact" className="text-emerald-600 underline">Contact us</Link>.</p>
         </div>
       </div>
     </div>

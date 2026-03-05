@@ -8,7 +8,7 @@ export default function Terms() {
 
           <h3>1. Introduction</h3>
           <p>
-            These Terms and Conditions govern the provision of IT services by Visiting Angels Manchester West ("we", "us", "our") to you ("the Client"). By engaging our services, you agree to be bound by these terms.
+            These Terms and Conditions govern the provision of supported living services by Hertfordshire and Barnet Supported Living Service ("we", "us", "our") to you ("the Client"). By engaging our services, you agree to be bound by these terms.
           </p>
 
           <h3>2. Definitions</h3>
@@ -60,10 +60,11 @@ export default function Terms() {
 
           <h3>11. Company Details</h3>
           <p>
-            Visiting Angels Manchester West<br/>
-            Registered Office Address (UK): N/A<br/>
-            Company Registration Number: N/A<br/>
-            Official Business Email: N/A
+            Hertfordshire and Barnet Supported Living Service<br/>
+            Registered Office Address (UK): Not Available<br/>
+            Company Registration Number (CRN): 17048852<br/>
+            UK Phone Number: Not Available<br/>
+            Official Business Email: Not Available
           </p>
         </div>
       </div>

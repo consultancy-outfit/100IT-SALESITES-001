@@ -9,10 +9,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-              Empowering Manchester through Technology
+              Supporting independence across Hertfordshire and Barnet
             </h1>
             <p className="text-xl text-slate-300">
-              We are Visiting Angels Manchester West. Not your typical IT firm—we are partners in your growth, guardians of your data, and architects of your digital future.
+              We are Hertfordshire and Barnet Supported Living Service. We provide person-centred supported living so people can live as independently as possible in their own homes and communities.
             </p>
           </div>
         </div>
@@ -26,33 +26,33 @@ export default function About() {
               <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">Our Story</h2>
               <div className="prose prose-lg text-slate-600">
                 <p className="mb-4">
-                  Founded with a clear vision to bring enterprise-level IT services to the SME market in the North West, Visiting Angels Manchester West has grown from a small consultancy to a full-service managed service provider.
+                  Hertfordshire and Barnet Supported Living Service was established to provide high-quality, person-centred supported living for people who need help to live independently. We work across Hertfordshire and Barnet, putting the people we support at the heart of everything we do.
                 </p>
                 <p className="mb-4">
-                  We recognised that many British businesses were underserved by generic, faceless IT support. They needed a local partner who understood the specific challenges of the UK regulatory landscape and the operational needs of modern British industry.
+                  We believe everyone deserves to live with dignity, choice, and as much independence as possible. Our teams work in partnership with individuals, families, and commissioners to deliver flexible support that meets each person's needs and goals.
                 </p>
                 <p>
-                  Today, we support hundreds of users across Manchester, ensuring their technology is an asset, not a liability.
+                  Today, we continue to grow our services across the region, always focused on quality, safety, and the wellbeing of the people we support.
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-1 gap-8">
               <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
                 <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center">
-                  <Award className="h-5 w-5 text-indigo-600 mr-2" />
+                  <Award className="h-5 w-5 text-emerald-600 mr-2" />
                   Our Mission
                 </h3>
                 <p className="text-slate-600">
-                  To provide reliable, secure, and human-centric IT solutions that enable Manchester businesses to thrive in a digital-first world.
+                  To provide high-quality, person-centred supported living that enables people to live independently with dignity and choice in Hertfordshire and Barnet.
                 </p>
               </div>
               <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
                 <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center">
-                  <ShieldCheck className="h-5 w-5 text-indigo-600 mr-2" />
+                  <ShieldCheck className="h-5 w-5 text-emerald-600 mr-2" />
                   Our Vision
                 </h3>
                 <p className="text-slate-600">
-                  To be the most trusted IT partner in the North West, known for our technical excellence and unwavering commitment to client success.
+                  To be a leading provider of supported living in our area, known for our commitment to quality, dignity, and the independence of the people we support.
                 </p>
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { name: "Sarah Jenkins", role: "Managing Director", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop" },
-              { name: "David Thorne", role: "Technical Director", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" },
+              { name: "David Thorne", role: "Director of Operations", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" },
               { name: "Emily Clarke", role: "Head of Operations", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" }
             ].map((person, i) => (
               <div key={i} className="group">
@@ -94,7 +94,7 @@ export default function About() {
                   <img src={person.img} alt={person.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">{person.name}</h3>
-                <p className="text-indigo-600">{person.role}</p>
+                <p className="text-emerald-600">{person.role}</p>
               </div>
             ))}
           </div>
@@ -102,11 +102,11 @@ export default function About() {
       </section>
 
       {/* GDPR Commitment */}
-      <section className="py-24 bg-indigo-900 text-white">
+      <section className="py-24 bg-emerald-900 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <ShieldCheck className="h-16 w-16 text-indigo-400 mx-auto mb-6" />
-          <h2 className="text-3xl font-display font-bold mb-6">Our Commitment to GDPR</h2>
-          <p className="text-indigo-100 text-lg leading-relaxed">
+          <ShieldCheck className="h-16 w-16 text-emerald-400 mx-auto mb-6" />
+          <h2 className="text-3xl font-display font-bold mb-6">Our Commitment to Data Protection</h2>
+          <p className="text-emerald-100 text-lg leading-relaxed">
             We understand the critical importance of data privacy in the UK. All our processes, tools, and storage solutions are rigorously vetted to ensure full compliance with the General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. When you partner with us, you partner with a compliant, secure, and responsible data handler.
           </p>
         </div>
