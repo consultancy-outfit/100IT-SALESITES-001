@@ -224,15 +224,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
-      <section className="h-[400px] bg-slate-200 relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center bg-slate-100">
-          <div className="text-center space-y-4">
-            <MapPin size={48} className="text-slate-300 mx-auto" />
-            <p className="text-slate-400 font-medium">Interactive Map Placeholder - Telford, TF2 8DB</p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
