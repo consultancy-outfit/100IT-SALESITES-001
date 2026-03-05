@@ -1,0 +1,15 @@
+services:
+  hertfordshire:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hertfordshire-salesite
+    restart: unless-stopped
+    ports:
+      - "9023:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
