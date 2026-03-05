@@ -1,0 +1,15 @@
+services:
+  cwd:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cwd-salesite
+    restart: unless-stopped
+    ports:
+      - "9035:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
