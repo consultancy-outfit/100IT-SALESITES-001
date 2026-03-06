@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Cpu, Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Building2 } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Building2 } from "lucide-react";
 import { COMPANY_DETAILS, NAV_LINKS } from "../constants";
+import Icon from "../icon";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,12 +13,9 @@ export function Footer() {
           {/* Brand & Description */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <div className="bg-indigo-600 p-2 rounded-lg">
-                <Cpu className="w-6 h-6 text-white" />
+              <div className="h-8 flex items-center justify-center">
+                <Icon className="h-9 w-auto" />
               </div>
-              <span className="text-xl font-bold tracking-tight text-white">
-                Aspire<span className="text-indigo-600">SWL</span>
-              </span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
               Empowering UK businesses with cutting-edge IT solutions, robust cybersecurity, and expert managed support. Your trusted technology partner in Luton and beyond.

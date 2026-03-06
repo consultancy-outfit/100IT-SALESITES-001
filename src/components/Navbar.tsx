@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Cpu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NAV_LINKS, COMPANY_DETAILS } from "../constants";
+import Icon from "../icon";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,12 +29,9 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-indigo-600 p-2 rounded-lg group-hover:bg-indigo-700 transition-colors">
-              <Cpu className="w-6 h-6 text-white" />
+            <div className="h-10 flex items-center justify-center group-hover:opacity-90 transition-opacity">
+              <Icon className="h-8 w-auto" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">
-              Aspire<span className="text-indigo-600">SWL</span>
-            </span>
           </Link>
 
           {/* Desktop Nav */}
