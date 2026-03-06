@@ -28,6 +28,7 @@ import {
   Hash
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import brandIconSvg from './icon.tsx?raw';
 
 // --- Types ---
 type Page = 'home' | 'services' | 'about' | 'pricing' | 'contact' | 'terms' | 'privacy';
@@ -43,6 +44,18 @@ const COMPANY_DETAILS = {
 };
 
 // --- Components ---
+
+const BRAND_ICON_SVG = brandIconSvg.replace('<svg ', '<svg class="w-full h-full" ');
+
+const BrandIcon = ({ className }: { className?: string }) => {
+  return (
+    <span
+      aria-hidden="true"
+      className={['inline-block shrink-0', className].filter(Boolean).join(' ')}
+      dangerouslySetInnerHTML={{ __html: BRAND_ICON_SVG }}
+    />
+  );
+};
 
 const Navbar = ({ activePage, setPage }: { activePage: Page, setPage: (p: Page) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,8 +73,7 @@ const Navbar = ({ activePage, setPage }: { activePage: Page, setPage: (p: Page) 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center cursor-pointer" onClick={() => setPage('home')}>
-            <Shield className="h-8 w-8 text-blue-600 mr-2" />
-            <span className="text-xl font-bold tracking-tight text-slate-900">CENTURION</span>
+            <BrandIcon className="h-36 w-36 text-blue-600 mr-2" />
           </div>
           
           {/* Desktop Nav */}
@@ -134,8 +146,7 @@ const Footer = ({ setPage }: { setPage: (p: Page) => void }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center text-white mb-6">
-              <Shield className="h-7 w-7 text-blue-500 mr-2" />
-              <span className="text-xl font-bold tracking-tight">CENTURION</span>
+              <BrandIcon className="h-12 w-47 text-blue-500 mr-2" />
             </div>
             <p className="text-sm leading-relaxed mb-6">
               Providing enterprise-grade IT solutions and strategic support to businesses across the United Kingdom. Your credible partner in digital transformation.
