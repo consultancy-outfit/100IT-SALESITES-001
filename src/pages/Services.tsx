@@ -63,7 +63,7 @@ export default function Services() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="bg-slate-900 py-24 text-white">
+      <section className="bg-brand-dark py-24 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -98,7 +98,7 @@ export default function Services() {
                 {/* Image/Icon Side */}
                 <div className="w-full lg:w-1/2">
                   <div className="relative">
-                    <div className="absolute -inset-4 bg-indigo-50 rounded-3xl -z-10"></div>
+                    <div className="absolute -inset-4 bg-brand/10 rounded-3xl -z-10"></div>
                     <img
                       src={`https://picsum.photos/seed/service-${idx}/800/600`}
                       alt={service.title}
@@ -106,7 +106,7 @@ export default function Services() {
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute top-6 left-6 bg-white p-4 rounded-2xl shadow-lg">
-                      <service.icon className="w-8 h-8 text-indigo-600" />
+                      <service.icon className="w-8 h-8 text-brand" />
                     </div>
                   </div>
                 </div>
@@ -121,14 +121,14 @@ export default function Services() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                       <h4 className="font-bold text-slate-900 mb-3 flex items-center">
-                        <Check className="w-4 h-4 text-indigo-600 mr-2" />
+                        <Check className="w-4 h-4 text-brand mr-2" />
                         Target Audience
                       </h4>
                       <p className="text-sm text-slate-500">{service.target}</p>
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 mb-3 flex items-center">
-                        <Check className="w-4 h-4 text-indigo-600 mr-2" />
+                        <Check className="w-4 h-4 text-brand mr-2" />
                         Key Benefits
                       </h4>
                       <ul className="text-sm text-slate-500 space-y-1">
@@ -151,11 +151,11 @@ export default function Services() {
                   <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
                     <div>
                       <span className="text-sm text-slate-500 block">Starting from</span>
-                      <span className="text-2xl font-display font-bold text-indigo-600">{service.price}</span>
+                      <span className="text-2xl font-display font-bold text-brand">{service.price}</span>
                     </div>
                     <Link
                       to="/contact"
-                      className="bg-slate-900 text-white px-6 py-3 rounded-full font-bold hover:bg-slate-800 transition-all flex items-center"
+                      className="bg-brand-dark text-white px-6 py-3 rounded-full font-bold hover:bg-brand-darker transition-all flex items-center"
                     >
                       Enquire Now
                       <ArrowRight className="ml-2 w-4 h-4" />
@@ -175,7 +175,7 @@ export default function Services() {
           <p className="text-lg text-slate-600 mb-10">
             Our experts are ready to design a bespoke IT strategy that fits your unique business requirements perfectly.
           </p>
-          <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all bg-indigo-600 rounded-full hover:bg-indigo-700 shadow-xl shadow-indigo-200">
+          <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all bg-brand rounded-full hover:bg-brand-dark shadow-xl shadow-slate-200">
             Book a Free Audit
           </Link>
         </div>

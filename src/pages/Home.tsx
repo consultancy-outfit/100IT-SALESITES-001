@@ -53,11 +53,11 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-indigo-600 uppercase bg-indigo-50 rounded-full">
+              <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-brand uppercase bg-brand/10 rounded-full">
                 Leading UK IT Consultancy
               </span>
               <h1 className="text-5xl lg:text-7xl font-display font-bold text-slate-900 leading-[1.1] mb-8">
-                Technology that drives <span className="text-indigo-600">British Innovation.</span>
+                Technology that drives <span className="text-brand">British Innovation.</span>
               </h1>
               <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
                 Wickham Hall provides bespoke IT services, cybersecurity, and managed solutions tailored for the unique challenges of the UK business landscape.
@@ -65,7 +65,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all bg-indigo-600 rounded-full hover:bg-indigo-700 shadow-xl shadow-indigo-200"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all bg-brand rounded-full hover:bg-brand-dark shadow-xl shadow-slate-200"
                 >
                   Explore Services
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -94,7 +94,7 @@ export default function Home() {
                 />
               </div>
               {/* Decorative elements */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
             </motion.div>
           </div>
@@ -121,7 +121,7 @@ export default function Home() {
                 className="p-8 rounded-2xl bg-slate-50 border border-slate-100 transition-all"
               >
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm mb-6">
-                  <benefit.icon className="w-7 h-7 text-indigo-600" />
+                  <benefit.icon className="w-7 h-7 text-brand" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{benefit.description}</p>
@@ -132,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* Industries Section */}
-      <section className="py-24 bg-slate-900 text-white">
+      <section className="py-24 bg-brand-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -149,13 +149,13 @@ export default function Home() {
                   "Public Sector"
                 ].map((industry, idx) => (
                   <div key={idx} className="flex items-center space-x-3">
-                    <CheckCircle2 className="text-indigo-400 w-5 h-5" />
+                    <CheckCircle2 className="text-brand-light w-5 h-5" />
                     <span className="text-slate-300 font-medium">{industry}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-12">
-                <Link to="/about" className="text-indigo-400 font-bold flex items-center hover:text-indigo-300 transition-colors">
+                <Link to="/about" className="text-brand-light font-bold flex items-center hover:text-brand-light transition-colors">
                   Learn about our industry expertise
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
@@ -202,12 +202,12 @@ export default function Home() {
                     className="w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-1 rounded-full text-sm font-bold text-indigo-600">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-1 rounded-full text-sm font-bold text-brand">
                     {study.industry}
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">{study.client}</h3>
-                <div className="text-indigo-600 font-display font-bold text-xl mb-3">{study.result}</div>
+                <div className="text-brand font-display font-bold text-xl mb-3">{study.result}</div>
                 <p className="text-slate-600 leading-relaxed">{study.description}</p>
               </div>
             ))}
@@ -235,10 +235,10 @@ export default function Home() {
               }
             ].map((t, idx) => (
               <div key={idx} className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 relative">
-                <Quote className="absolute top-8 right-8 text-indigo-100 w-12 h-12" />
+                <Quote className="absolute top-8 right-8 text-white/90 w-12 h-12" />
                 <p className="text-xl text-slate-700 italic mb-8 leading-relaxed relative z-10">"{t.text}"</p>
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 font-bold">
+                  <div className="w-12 h-12 bg-brand/20 rounded-full flex items-center justify-center text-brand font-bold">
                     {t.name[0]}
                   </div>
                   <div>
@@ -255,24 +255,24 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-indigo-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
+          <div className="bg-brand rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">Ready to elevate your business technology?</h2>
-              <p className="text-xl text-indigo-100 mb-12">
+              <p className="text-xl text-white/90 mb-12">
                 Join hundreds of UK businesses that rely on Wickham Hall for their critical IT infrastructure and strategy.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <Link to="/contact" className="bg-white text-indigo-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-indigo-50 transition-all shadow-xl">
+                <Link to="/contact" className="bg-white text-brand px-10 py-4 rounded-full font-bold text-lg hover:bg-brand/10 transition-all shadow-xl">
                   Get Started Today
                 </Link>
-                <Link to="/pricing" className="bg-indigo-700 text-white border border-indigo-500 px-10 py-4 rounded-full font-bold text-lg hover:bg-indigo-800 transition-all">
+                <Link to="/pricing" className="bg-brand-dark text-white border border-brand px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-darker transition-all">
                   View Pricing
                 </Link>
               </div>
             </div>
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-indigo-500 rounded-full opacity-20"></div>
-            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-indigo-500 rounded-full opacity-20"></div>
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-brand rounded-full opacity-20"></div>
+            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand rounded-full opacity-20"></div>
           </div>
         </div>
       </section>

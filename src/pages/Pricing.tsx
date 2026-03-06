@@ -68,7 +68,7 @@ export default function Pricing() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-6"
           >
-            Transparent <span className="text-indigo-600">UK Pricing</span>
+            Transparent <span className="text-brand">UK Pricing</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export default function Pricing() {
           >
             Simple, predictable pricing plans designed to scale with your business. No hidden fees, just expert IT support.
           </motion.p>
-          <div className="mt-6 inline-flex items-center px-4 py-2 bg-indigo-50 text-indigo-700 rounded-full text-sm font-medium border border-indigo-100">
+          <div className="mt-6 inline-flex items-center px-4 py-2 bg-brand/10 text-brand-dark rounded-full text-sm font-medium border border-brand/20">
             <Info className="w-4 h-4 mr-2" />
             All prices exclude VAT at the prevailing UK rate (20%).
           </div>
@@ -93,12 +93,12 @@ export default function Pricing() {
               transition={{ delay: idx * 0.1 }}
               className={`relative flex flex-col p-10 rounded-[2.5rem] transition-all duration-300 ${
                 plan.highlight
-                  ? 'bg-slate-900 text-white shadow-2xl scale-105 z-10'
+                  ? 'bg-brand-dark text-white shadow-2xl scale-105 z-10'
                   : 'bg-white text-slate-900 border border-slate-200 shadow-sm hover:shadow-md'
               }`}
             >
               {plan.highlight && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white px-6 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand text-white px-6 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest">
                   Most Popular
                 </div>
               )}
@@ -122,18 +122,18 @@ export default function Pricing() {
               </div>
 
               <div className="flex-grow space-y-4 mb-10">
-                <p className={`text-xs font-bold uppercase tracking-wider ${plan.highlight ? 'text-indigo-400' : 'text-indigo-600'}`}>
+                <p className={`text-xs font-bold uppercase tracking-wider ${plan.highlight ? 'text-brand-light' : 'text-brand'}`}>
                   What's Included:
                 </p>
                 {plan.features.map((feature, i) => (
                   <div key={i} className="flex items-start">
-                    <Check className={`w-5 h-5 mr-3 shrink-0 ${plan.highlight ? 'text-indigo-400' : 'text-indigo-600'}`} />
+                    <Check className={`w-5 h-5 mr-3 shrink-0 ${plan.highlight ? 'text-brand-light' : 'text-brand'}`} />
                     <span className="text-sm leading-tight">{feature}</span>
                   </div>
                 ))}
               </div>
 
-              <div className={`pt-8 border-t mb-10 ${plan.highlight ? 'border-slate-800' : 'border-slate-100'}`}>
+              <div className={`pt-8 border-t mb-10 ${plan.highlight ? 'border-white/20' : 'border-slate-100'}`}>
                 <div className="mb-4">
                   <span className={`text-xs font-bold uppercase tracking-wider block mb-1 ${plan.highlight ? 'text-slate-500' : 'text-slate-400'}`}>
                     Support Level
@@ -152,8 +152,8 @@ export default function Pricing() {
                 to="/contact"
                 className={`w-full py-4 rounded-full font-bold text-center transition-all flex items-center justify-center ${
                   plan.highlight
-                    ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-900/20'
-                    : 'bg-slate-900 text-white hover:bg-slate-800 shadow-lg shadow-slate-200'
+                    ? 'bg-brand text-white hover:bg-brand-dark shadow-lg shadow-slate-900/20'
+                    : 'bg-brand-dark text-white hover:bg-brand-darker shadow-lg shadow-slate-200'
                 }`}
               >
                 Get Started
@@ -168,8 +168,8 @@ export default function Pricing() {
           <h2 className="text-2xl font-display font-bold text-slate-900 mb-8 text-center">Important Information</h2>
           <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-indigo-50 rounded-full flex items-center justify-center shrink-0">
-                <span className="text-indigo-600 font-bold text-sm">1</span>
+              <div className="w-8 h-8 bg-brand/10 rounded-full flex items-center justify-center shrink-0">
+                <span className="text-brand font-bold text-sm">1</span>
               </div>
               <div>
                 <h4 className="font-bold text-slate-900 mb-1">Contract Terms</h4>
@@ -177,8 +177,8 @@ export default function Pricing() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-indigo-50 rounded-full flex items-center justify-center shrink-0">
-                <span className="text-indigo-600 font-bold text-sm">2</span>
+              <div className="w-8 h-8 bg-brand/10 rounded-full flex items-center justify-center shrink-0">
+                <span className="text-brand font-bold text-sm">2</span>
               </div>
               <div>
                 <h4 className="font-bold text-slate-900 mb-1">Onboarding Fee</h4>
@@ -186,8 +186,8 @@ export default function Pricing() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-indigo-50 rounded-full flex items-center justify-center shrink-0">
-                <span className="text-indigo-600 font-bold text-sm">3</span>
+              <div className="w-8 h-8 bg-brand/10 rounded-full flex items-center justify-center shrink-0">
+                <span className="text-brand font-bold text-sm">3</span>
               </div>
               <div>
                 <h4 className="font-bold text-slate-900 mb-1">Hardware & Software</h4>

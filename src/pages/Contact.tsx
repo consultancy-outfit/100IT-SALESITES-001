@@ -22,7 +22,7 @@ export default function Contact() {
   return (
     <div className="bg-white min-h-screen">
       {/* Header */}
-      <section className="bg-slate-900 py-24 text-white">
+      <section className="bg-brand-dark py-24 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export default function Contact() {
                       <input
                         required
                         type="text"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all"
                         placeholder="John"
                       />
                     </div>
@@ -68,7 +68,7 @@ export default function Contact() {
                       <input
                         required
                         type="text"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all"
                         placeholder="Smith"
                       />
                     </div>
@@ -79,7 +79,7 @@ export default function Contact() {
                     <input
                       required
                       type="email"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all"
                       placeholder="john.smith@company.co.uk"
                     />
                   </div>
@@ -88,14 +88,14 @@ export default function Contact() {
                     <label className="block text-sm font-bold text-slate-700 mb-2">Phone Number</label>
                     <input
                       type="tel"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all"
                       placeholder="+44 (0) 7700 900000"
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">Service Required</label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all bg-white">
+                    <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all bg-white">
                       <option>Managed IT Support</option>
                       <option>Cybersecurity</option>
                       <option>Cloud Infrastructure</option>
@@ -109,21 +109,21 @@ export default function Contact() {
                     <textarea
                       required
                       rows={4}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all"
                       placeholder="Tell us about your requirements..."
                     ></textarea>
                   </div>
 
                   <div className="flex items-start space-x-3">
-                    <input required type="checkbox" className="mt-1 w-4 h-4 text-indigo-600 rounded border-slate-300" id="consent" />
+                    <input required type="checkbox" className="mt-1 w-4 h-4 text-brand rounded border-slate-300" id="consent" />
                     <label htmlFor="consent" className="text-sm text-slate-500">
-                      I consent to Wickham Hall processing my data in accordance with the <a href="/privacy" className="text-indigo-600 underline">Privacy Policy</a>.
+                      I consent to Wickham Hall processing my data in accordance with the <a href="/privacy" className="text-brand underline">Privacy Policy</a>.
                     </label>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center"
+                    className="w-full bg-brand text-white py-4 rounded-xl font-bold text-lg hover:bg-brand-dark transition-all shadow-lg shadow-slate-200 flex items-center justify-center"
                   >
                     Send Message
                     <Send className="ml-2 w-5 h-5" />
@@ -140,7 +140,7 @@ export default function Contact() {
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="text-indigo-600 font-bold hover:underline"
+                    className="text-brand font-bold hover:underline"
                   >
                     Send another message
                   </button>
@@ -154,8 +154,8 @@ export default function Contact() {
                 <h2 className="text-3xl font-display font-bold text-slate-900 mb-8">Contact Details</h2>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
-                      <MapPin className="text-indigo-600 w-6 h-6" />
+                    <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center shrink-0">
+                      <MapPin className="text-brand w-6 h-6" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Registered Office</h4>
@@ -164,8 +164,8 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
-                      <Phone className="text-indigo-600 w-6 h-6" />
+                    <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center shrink-0">
+                      <Phone className="text-brand w-6 h-6" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Phone Number</h4>
@@ -174,8 +174,8 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
-                      <Mail className="text-indigo-600 w-6 h-6" />
+                    <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center shrink-0">
+                      <Mail className="text-brand w-6 h-6" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Email Address</h4>
@@ -184,8 +184,8 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
-                      <Clock className="text-indigo-600 w-6 h-6" />
+                    <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center shrink-0">
+                      <Clock className="text-brand w-6 h-6" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Business Hours</h4>

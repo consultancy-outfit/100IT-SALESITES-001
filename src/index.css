@@ -4,11 +4,17 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
   
+  /* Logo blue #2B8BCB – primary brand */
+  --color-brand: #2B8BCB;
+  --color-brand-dark: #2370a8;
+  --color-brand-darker: #1c5a85;
+  --color-brand-light: #5ba3d9;
+  
   --color-brand-navy: #0A192F;
   --color-brand-slate: #112240;
   --color-brand-accent: #64FFDA;
   --color-brand-text: #8892B0;
-  --color-brand-light: #CCD6F6;
+  --color-brand-light-text: #CCD6F6;
 }
 
 @layer base {
@@ -26,9 +32,9 @@
 }
 
 .nav-link {
-  @apply text-slate-600 hover:text-indigo-600 transition-colors duration-200 font-medium;
+  @apply text-slate-600 hover:text-brand transition-colors duration-200 font-medium;
 }
 
 .nav-link-active {
-  @apply text-indigo-600 border-b-2 border-indigo-600;
+  @apply text-brand border-b-2 border-brand;
 }
