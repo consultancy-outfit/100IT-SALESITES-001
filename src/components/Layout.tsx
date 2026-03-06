@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Monitor, Shield, Cloud, Cpu, Phone } from 'lucide-react';
+import { Menu, X, Monitor, Shield, Cloud, Phone } from 'lucide-react';
+import { BrandIcon } from '../icon';
 import { motion, AnimatePresence } from 'motion/react';
 
 export const Navbar = () => {
@@ -20,10 +21,9 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-zinc-900 rounded-lg flex items-center justify-center">
-              <Cpu className="text-white w-6 h-6" />
+            <div className="h-10 flex items-center shrink-0">
+              <BrandIcon className="h-10 w-auto" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-zinc-900">BASILDON IT</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -101,10 +101,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-zinc-900 rounded flex items-center justify-center">
-                <Cpu className="text-white w-5 h-5" />
+              <div className="h-8 flex items-center shrink-0">
+                <BrandIcon className="h-10 w-auto" />
               </div>
-              <span className="font-bold text-lg tracking-tight text-zinc-900">BASILDON IT</span>
             </Link>
             <p className="text-zinc-500 text-sm leading-relaxed">
               Premium IT services for British businesses. We provide the infrastructure and security you need to scale with confidence.
