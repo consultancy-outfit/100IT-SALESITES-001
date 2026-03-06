@@ -1,0 +1,15 @@
+services:
+  burntsfield:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: burntsfield-salesite
+    restart: unless-stopped
+    ports:
+      - "9045:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
