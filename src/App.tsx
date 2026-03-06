@@ -5,10 +5,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrandIcon } from './icon';
 import { 
   Shield, 
   Cloud, 
-  Cpu, 
   Headset, 
   BarChart3, 
   Network, 
@@ -171,10 +171,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
-              <Cpu className="text-white w-6 h-6" />
+            <div className="h-10 flex items-center shrink-0">
+              <BrandIcon className="h-10 w-auto" />
             </div>
-            <span className="text-xl font-bold text-zinc-900 tracking-tight">Benfleet Essex</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -252,7 +251,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-6">
-              <Cpu className="text-indigo-500 w-6 h-6" />
               <span className="text-xl font-bold text-white">Benfleet Essex</span>
             </Link>
             <p className="text-sm leading-relaxed mb-6">
