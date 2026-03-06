@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Monitor, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { COMPANY_DETAILS } from '../constants';
+import ServocaLogo from '../assets/Servoca_London.svg';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,14 +26,14 @@ export const Navbar = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
       <div className="container-custom flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-2 group">
-          <div className="bg-brand-accent p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
-            <Monitor className="text-white w-6 h-6" />
-          </div>
-          <span className={`text-xl font-bold tracking-tight ${!scrolled && location.pathname === '/' ? 'text-white' : 'text-slate-900'}`}>
-            {COMPANY_DETAILS.name.split(' ')[0]}
-            <span className="text-brand-accent">{COMPANY_DETAILS.name.split(' ')[1]}</span>
-          </span>
+        <Link to="/" className="flex items-center group">
+          <img
+            src={ServocaLogo}
+            alt="Servoca London"
+            className={`h-12 w-auto transition-all group-hover:opacity-90 ${
+              !scrolled && location.pathname === '/' ? 'brightness-0 invert' : ''
+            }`}
+          />
         </Link>
 
         {/* Desktop Nav */}

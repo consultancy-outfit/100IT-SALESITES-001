@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Monitor, Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
 import { COMPANY_DETAILS } from '../constants';
+import ServocaLogo from '../assets/Servoca_London.svg';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,14 +13,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-brand-accent p-1.5 rounded-lg">
-                <Monitor className="text-white w-6 h-6" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-white">
-                {COMPANY_DETAILS.name.split(' ')[0]}
-                <span className="text-brand-accent">{COMPANY_DETAILS.name.split(' ')[1]}</span>
-              </span>
+            <Link to="/" className="inline-block">
+              <img
+                src={ServocaLogo}
+                alt="Servoca London"
+                className="h-12 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+              />
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
               Premium IT services and strategic technology solutions for forward-thinking UK businesses. Empowering your growth through innovation and reliability.
