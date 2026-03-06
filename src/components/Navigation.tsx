@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Monitor, Shield, Cloud, Cpu, PhoneCall, Mail, MapPin, Linkedin, Twitter, ExternalLink, Hash } from 'lucide-react';
 import { COMPANY_DETAILS } from '../constants';
+import Icon from '../icon';
 import { cn } from '../constants';
 
 export const Navbar = () => {
@@ -22,12 +23,9 @@ export const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                CG
+              <div className="h-10 flex items-center justify-center">
+                <Icon className="h-11 w-auto" />
               </div>
-              <span className="text-xl font-display font-bold text-slate-900 hidden sm:block">
-                City Gate House
-              </span>
             </Link>
           </div>
 
@@ -99,12 +97,9 @@ export const Footer = () => {
           {/* Brand & Description */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-brand-500 rounded flex items-center justify-center text-white font-bold">
-                CG
+              <div className="h-8 flex items-center justify-center">
+                <Icon className="h-14 w-auto" />
               </div>
-              <span className="text-xl font-display font-bold text-white">
-                City Gate House
-              </span>
             </div>
             <p className="text-sm leading-relaxed">
               Empowering UK businesses with cutting-edge IT solutions. From cloud migration to cybersecurity, we are your trusted technology partner in the heart of London.
