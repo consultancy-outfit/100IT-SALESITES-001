@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
+import { BrandIcon } from '@/src/icon';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/src/types';
 
@@ -21,12 +22,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white shadow-lg group-hover:bg-brand-700 transition-colors">
-              <Shield size={24} />
+            <div className="h-10 flex items-center shrink-0">
+              <BrandIcon className="h-12 w-auto" />
             </div>
-            <span className="text-xl font-display font-bold tracking-tight text-slate-900">
-              Centenary<span className="text-brand-600">Close</span>
-            </span>
           </Link>
 
           {/* Desktop Nav */}

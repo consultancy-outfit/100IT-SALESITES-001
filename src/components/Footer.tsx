@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Shield, Mail, Phone, MapPin, Linkedin, Twitter, Github, Hash } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Hash } from 'lucide-react';
+import { BrandIcon } from '@/src/icon';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,12 +12,9 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-brand-600 rounded flex items-center justify-center text-white">
-                <Shield size={20} />
+              <div className="h-8 flex items-center shrink-0">
+                <BrandIcon className="h-14 w-auto" />
               </div>
-              <span className="text-xl font-display font-bold tracking-tight text-white">
-                Centenary<span className="text-brand-500">Close</span>
-              </span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
               Empowering UK businesses with cutting-edge IT solutions, robust cyber security, and scalable cloud infrastructure. Your trusted partner in digital transformation.
