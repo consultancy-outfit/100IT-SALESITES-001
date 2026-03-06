@@ -38,7 +38,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
           >
-            About <span className="text-indigo-400">Khattak IT</span>
+            About <span className="text-indigo-400">Mavyl Lodge</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export default function About() {
           <div className="space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Story</h2>
             <p className="text-slate-600 text-lg leading-relaxed">
-              Founded with a vision to simplify technology for UK businesses, Khattak IT Solutions has grown from a small consultancy to a full-service IT partner. We understand the challenges faced by modern enterprises and provide the tools and support needed to thrive in a digital-first world.
+              Founded with a vision to simplify technology for UK businesses, Mavyl Lodge has grown from a small consultancy to a full-service IT partner. We understand the challenges faced by modern enterprises and provide the tools and support needed to thrive in a digital-first world.
             </p>
           </div>
           
@@ -117,15 +117,15 @@ export default function About() {
       <section className="section-padding">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Meet Our Leadership</h2>
-          <p className="text-slate-500 max-w-2xl mx-auto">The experts behind Khattak IT Solutions.</p>
+          <p className="text-slate-500 max-w-2xl mx-auto">The experts behind Mavyl Lodge.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12">
           {[
             {
-              name: "Khalid Mehmood Khattak",
+              name: "Alex Thompson",
               role: "Founder & Managing Director",
-              bio: "With over 15 years in the IT industry, Khalid leads the company with a focus on strategic growth and technical excellence.",
+              bio: "With over 15 years in the IT industry, Alex leads the company with a focus on strategic growth and technical excellence.",
               img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
             },
             {
@@ -161,7 +161,7 @@ export default function About() {
           <Shield size={64} className="mx-auto text-indigo-200" />
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our GDPR Commitment</h2>
           <p className="text-indigo-100 text-lg leading-relaxed">
-            At Khattak IT Solutions, we take data protection seriously. We are fully committed to GDPR compliance, ensuring that all client data is handled with the highest level of security and confidentiality. Our processes are regularly audited to maintain the strictest standards of data privacy.
+            At Mavyl Lodge, we take data protection seriously. We are fully committed to GDPR compliance, ensuring that all client data is handled with the highest level of security and confidentiality. Our processes are regularly audited to maintain the strictest standards of data privacy.
           </p>
           <div className="flex flex-wrap justify-center gap-8 pt-4">
             <div className="flex items-center gap-2">

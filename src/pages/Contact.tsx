@@ -3,8 +3,8 @@ import { Phone, Mail, MapPin, Clock, Send, Shield, CheckCircle2 } from 'lucide-r
 import React from 'react';
 
 const COMPANY_DETAILS = {
-  name: "Khalid Mehmood Khattak",
-  brand: "Khattak IT Solutions",
+  name: "Mavyl Lodge",
+  brand: "Mavyl Lodge",
   address: "160a Croydon Road, Caterham, England, CR3 6QE",
   crn: "17046244",
   phone: "0189 564 6130",
@@ -207,7 +207,7 @@ export default function Contact() {
                       className="mt-1.5 w-5 h-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" 
                     />
                     <p className="text-sm text-slate-500 leading-relaxed">
-                      I consent to Khattak IT Solutions collecting my details through this form for the purpose of responding to my inquiry. I have read and agree to the <a href="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</a>.
+                      I consent to Mavyl Lodge collecting my details through this form for the purpose of responding to my inquiry. I have read and agree to the <a href="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</a>.
                     </p>
                   </div>
 

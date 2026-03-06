@@ -81,7 +81,7 @@ export default function Home() {
       {/* Benefits Section */}
       <section className="section-padding">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Why Choose Khattak IT?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Why Choose Mavyl Lodge?</h2>
           <p className="text-slate-500 max-w-2xl mx-auto">We combine technical excellence with a deep understanding of the UK business landscape.</p>
         </div>
 
@@ -180,7 +180,7 @@ export default function Home() {
             {
               name: "James Harrison",
               role: "CEO, Harrison Logistics",
-              quote: "Khattak IT transformed our fleet management system. Their UK-based support is second to none."
+              quote: "Mavyl Lodge transformed our fleet management system. Their UK-based support is second to none."
             },
             {
               name: "Sarah Jenkins",
@@ -213,7 +213,7 @@ export default function Home() {
           
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight relative z-10">Ready to Elevate Your IT?</h2>
           <p className="text-indigo-100 text-xl max-w-2xl mx-auto relative z-10">
-            Join hundreds of UK businesses that trust Khattak IT Solutions for their technology needs.
+            Join hundreds of UK businesses that trust Mavyl Lodge for their technology needs.
           </p>
           <div className="flex flex-wrap justify-center gap-4 relative z-10">
             <Link 

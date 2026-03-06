@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 
 const COMPANY_DETAILS = {
-  name: "Khalid Mehmood Khattak",
-  brand: "Khattak IT Solutions",
+  name: "Mavyl Lodge",
+  brand: "Mavyl Lodge",
   address: "160a Croydon Road, Caterham, England, CR3 6QE",
   crn: "17046244",
   phone: "0189 564 6130",
