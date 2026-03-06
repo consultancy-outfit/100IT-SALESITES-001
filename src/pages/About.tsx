@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Shield, Target, Eye, Heart, Award, CheckCircle2 } from 'lucide-react';
-import { COMPANY_DETAILS } from '../constants';
+import { Shield, Target, Eye, Heart, Award, CheckCircle2, Zap } from 'lucide-react';
 
 export default function About() {
   return (
