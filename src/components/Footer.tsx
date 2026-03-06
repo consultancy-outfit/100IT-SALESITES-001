@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Cpu, Linkedin, Twitter, ShieldCheck, Hash } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, ShieldCheck, Hash } from 'lucide-react';
+import { BrandIcon } from '../icon';
 import { COMPANY_DETAILS } from '../constants';
 
 export const Footer = () => {
@@ -13,12 +14,9 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-brand-600 p-2 rounded-lg">
-                <Cpu className="w-6 h-6 text-white" />
+              <div className="h-8 flex items-center shrink-0">
+                <BrandIcon className="h-14 w-auto" />
               </div>
-              <span className="font-bold text-xl tracking-tight text-white">
-                Bridlington<span className="text-brand-500">IT</span>
-              </span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
               Leading UK IT services provider delivering innovative technology solutions to help British businesses thrive in the digital age.

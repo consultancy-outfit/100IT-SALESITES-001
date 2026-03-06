@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Cpu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { BrandIcon } from '../icon';
 import { cn, COMPANY_DETAILS } from '../constants';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -21,12 +22,9 @@ export const Navbar = () => {
       <div className="container-custom">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="bg-brand-600 p-2 rounded-lg group-hover:bg-brand-700 transition-colors">
-              <Cpu className="w-6 h-6 text-white" />
+            <div className="h-10 flex items-center shrink-0">
+              <BrandIcon className="h-12 w-auto" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-slate-900">
-              Bridlington<span className="text-brand-600">IT</span>
-            </span>
           </Link>
 
           {/* Desktop Nav */}
