@@ -87,22 +87,6 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Map Placeholder */}
-              <div className="mt-12 aspect-video bg-slate-100 rounded-3xl border border-slate-200 flex items-center justify-center overflow-hidden relative group">
-                <img 
-                  src="https://picsum.photos/seed/map-eastbourne/800/450" 
-                  alt="Eastbourne Map" 
-                  className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white px-6 py-3 rounded-full shadow-lg border border-slate-100 flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-brand-600" />
-                    <span className="font-bold text-slate-900">Find us in Eastbourne</span>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Contact Form */}

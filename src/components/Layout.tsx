@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import logo from '../assets/Walfinch_Eastbourne.svg';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -19,11 +20,8 @@ export const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-bottom border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
-          <Link to="/" className="flex items-center gap-2">
-            <Shield className="w-8 h-8 text-brand-600" />
-            <span className="text-xl font-bold tracking-tight text-slate-900">
-              Walfinch<span className="text-brand-600">Eastbourne</span>
-            </span>
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="Walfinch Eastbourne" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -100,11 +98,8 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <div className="flex items-center gap-2 text-white">
-              <Shield className="w-8 h-8 text-brand-400" />
-              <span className="text-xl font-bold tracking-tight">
-                Walfinch<span className="text-brand-400">Eastbourne</span>
-              </span>
+            <div className="flex items-center">
+              <img src={logo} alt="Walfinch Eastbourne" className="h-10 w-auto brightness-0 invert opacity-95" />
             </div>
             <p className="text-sm leading-relaxed">
               Premium IT services and managed support for businesses across East Sussex and the UK. Empowering your growth through secure, scalable technology.

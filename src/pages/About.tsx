@@ -165,12 +165,10 @@ const About = () => {
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-64 h-64 bg-white rounded-full shadow-2xl flex items-center justify-center p-8">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/GDPR_Logo.svg/1200px-GDPR_Logo.svg.png" 
-                    alt="GDPR Compliant" 
-                    className="w-full h-auto grayscale opacity-50"
-                  />
+                <div className="w-64 h-64 bg-white rounded-full shadow-2xl flex flex-col items-center justify-center gap-4 p-8">
+                  <ShieldCheck className="w-20 h-20 text-emerald-600" />
+                  <span className="text-xl font-bold text-slate-900">GDPR Compliant</span>
+                  <span className="text-sm text-slate-500 text-center">UK Data Protection</span>
                 </div>
               </div>
             </div>
