@@ -4,6 +4,7 @@ import { Menu, X, Phone, Mail, MapPin, ChevronRight, Linkedin, Twitter, Facebook
 import { COMPANY_DETAILS } from '../constants';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
+import Icon from '../icon';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -48,12 +49,9 @@ export default function Layout({ children }: LayoutProps) {
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:bg-indigo-700 transition-colors">
-              CWD
-            </div>
-            <span className="font-bold text-xl tracking-tight hidden sm:block">
-              Outreach Service
-            </span>
+          <div className="h-8 flex items-center justify-center">
+                  <Icon className="h-10 w-auto" />
+                </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -133,8 +131,9 @@ export default function Layout({ children }: LayoutProps) {
             {/* Company Info */}
             <div className="space-y-6">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center text-white font-bold">C</div>
-                <span className="font-bold text-lg text-white">CWD Outreach</span>
+                <div className="h-8 flex items-center justify-center">
+                  <Icon className="h-12 w-auto" />
+                </div>
               </div>
               <p className="text-sm leading-relaxed text-slate-400">
                 Leading UK IT services provider delivering innovative technology solutions, robust cybersecurity, and managed support to businesses across the nation.
