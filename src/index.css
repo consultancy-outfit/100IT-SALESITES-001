@@ -5,9 +5,10 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-brand-primary: #0f172a;
-  --color-brand-accent: #10b981;
-  --color-brand-secondary: #334155;
+  /* Logo-aligned palette: Monaveen blues (#002F55, #035191, #023259) */
+  --color-brand-primary: #002F55;
+  --color-brand-accent: #035191;
+  --color-brand-secondary: #023259;
 }
 
 @layer base {

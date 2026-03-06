@@ -72,7 +72,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="bg-slate-900 py-24 text-white">
+      <section className="bg-brand-primary py-24 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
@@ -84,7 +84,7 @@ export default function About() {
               { icon: <Award className="w-8 h-8" />, title: 'Excellence', desc: 'We don\'t settle for "good enough". Our engineers are constantly training to stay at the cutting edge of technology.' },
               { icon: <Heart className="w-8 h-8" />, title: 'Human-Centric', desc: 'Technology is for people. We speak plain English, avoid jargon, and build relationships based on mutual respect.' }
             ].map((v, i) => (
-              <div key={i} className="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+              <div key={i} className="bg-brand-secondary p-8 rounded-2xl border border-brand-accent/30">
                 <div className="text-brand-accent mb-6">{v.icon}</div>
                 <h3 className="text-xl font-bold mb-4">{v.title}</h3>
                 <p className="text-slate-400 leading-relaxed">{v.desc}</p>
@@ -108,7 +108,7 @@ export default function About() {
               <div key={i} className="group">
                 <div className="relative overflow-hidden rounded-2xl mb-4">
                   <img src={leader.img} alt={leader.name} className="w-full aspect-[3/4] object-cover transition-transform group-hover:scale-105" referrerPolicy="no-referrer" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 <h3 className="text-lg font-bold">{leader.name}</h3>
                 <p className="text-sm text-slate-500">{leader.role}</p>
@@ -136,7 +136,7 @@ export default function About() {
             </ul>
           </div>
           <div className="lg:w-1/3 flex justify-center">
-            <div className="w-32 h-32 bg-brand-accent text-slate-900 rounded-full flex items-center justify-center font-black text-2xl">
+            <div className="w-32 h-32 bg-brand-accent text-white rounded-full flex items-center justify-center font-black text-2xl">
               GDPR
             </div>
           </div>

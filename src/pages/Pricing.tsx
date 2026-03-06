@@ -79,12 +79,12 @@ export default function Pricing() {
               transition={{ delay: index * 0.1 }}
               className={`relative p-8 rounded-[2.5rem] border ${
                 plan.highlight 
-                  ? 'bg-slate-900 text-white border-slate-800 shadow-2xl scale-105 z-10' 
+                  ? 'bg-brand-primary text-white border-brand-secondary shadow-2xl scale-105 z-10' 
                   : 'bg-white text-slate-900 border-slate-100 shadow-xl'
               }`}
             >
               {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-accent text-slate-900 text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-accent text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full">
                   Most Popular
                 </div>
               )}
@@ -108,7 +108,7 @@ export default function Pricing() {
                 <p className="text-[10px] mt-2 opacity-60 uppercase tracking-widest font-bold">Excluding VAT</p>
               </div>
 
-              <div className={`mb-8 p-4 rounded-2xl ${plan.highlight ? 'bg-slate-800' : 'bg-slate-50'}`}>
+              <div className={`mb-8 p-4 rounded-2xl ${plan.highlight ? 'bg-brand-secondary' : 'bg-slate-50'}`}>
                 <h4 className="text-xs font-bold uppercase tracking-widest mb-2 opacity-60">Ideal For</h4>
                 <p className="text-sm font-semibold">{plan.idealFor}</p>
               </div>
@@ -123,7 +123,7 @@ export default function Pricing() {
                 ))}
               </div>
 
-              <div className={`mb-10 pt-6 border-t ${plan.highlight ? 'border-slate-800' : 'border-slate-100'}`}>
+              <div className={`mb-10 pt-6 border-t ${plan.highlight ? 'border-brand-accent/30' : 'border-slate-100'}`}>
                 <h4 className="text-xs font-bold uppercase tracking-widest opacity-60 mb-2">Support Level</h4>
                 <p className="text-sm font-bold">{plan.supportLevel}</p>
               </div>
@@ -132,8 +132,8 @@ export default function Pricing() {
                 to="/contact"
                 className={`flex items-center justify-center w-full py-4 rounded-xl font-bold transition-all ${
                   plan.highlight 
-                    ? 'bg-brand-accent text-slate-900 hover:bg-white' 
-                    : 'bg-slate-900 text-white hover:bg-brand-accent hover:text-slate-900'
+                    ? 'bg-brand-accent text-white hover:bg-white hover:text-brand-primary' 
+                    : 'bg-brand-primary text-white hover:bg-brand-accent hover:text-white'
                 }`}
               >
                 {plan.cta}

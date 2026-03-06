@@ -206,7 +206,7 @@ export default function Services() {
       </section>
 
       {/* Trust Banner */}
-      <section className="mt-32 py-16 bg-slate-900 text-white">
+      <section className="mt-32 py-16 bg-brand-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-2xl font-bold mb-8">
             Trusted by Leading UK Organisations
