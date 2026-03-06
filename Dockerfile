@@ -1,18 +1,16 @@
 # ---------- Build Stage ----------
-  FROM node:20-bookworm-slim AS builder
+  FROM node:20-alpine AS builder
 
   WORKDIR /app
   
   # install build dependencies
-  RUN apt-get update \
-    && apt-get install -y --no-install-recommends python3 make g++ \
-    && rm -rf /var/lib/apt/lists/*
+  RUN apk add --no-cache python3 make g++
   
   # copy package files
-  COPY package.json package-lock.json ./
+  COPY package*.json ./
   
   # install dependencies
-  RUN npm ci
+  RUN npm install
   
   # copy source code
   COPY . .
