@@ -57,7 +57,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="bg-slate-50 min-h-screen py-16">
+    <div className="bg-amber-50 min-h-screen py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h1 
@@ -89,13 +89,13 @@ export default function Services() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-12">
                 {/* Service Header / Icon Area */}
-                <div className="lg:col-span-4 bg-slate-900 p-8 text-white flex flex-col justify-center">
-                  <service.icon className="h-12 w-12 text-indigo-400 mb-6" />
+                <div className="lg:col-span-4 bg-amber-100 p-8 text-slate-900 flex flex-col justify-center">
+                  <service.icon className="h-12 w-12 text-amber-700 mb-6" />
                   <h2 className="text-2xl font-bold mb-4">{service.title}</h2>
                   <div className="mt-auto pt-8">
-                    <div className="text-sm text-slate-400 uppercase tracking-wider font-semibold mb-1">Starting From</div>
-                    <div className="text-3xl font-bold text-white">{service.price}</div>
-                    <div className="text-sm text-slate-400 mt-1">excl. VAT</div>
+                    <div className="text-sm text-slate-500 uppercase tracking-wider font-semibold mb-1">Starting From</div>
+                    <div className="text-3xl font-bold text-slate-900">{service.price}</div>
+                    <div className="text-sm text-slate-500 mt-1">excl. VAT</div>
                   </div>
                 </div>
                 
@@ -116,7 +116,7 @@ export default function Services() {
                       <ul className="space-y-2">
                         {service.benefits.map((benefit, i) => (
                           <li key={i} className="flex items-start text-sm text-slate-600">
-                            <span className="text-indigo-500 mr-2">•</span>
+                            <span className="text-amber-700 mr-2">•</span>
                             {benefit}
                           </li>
                         ))}
@@ -145,12 +145,12 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-20 text-center bg-indigo-50 rounded-2xl p-10 border border-indigo-100">
+        <div className="mt-20 text-center bg-amber-50 rounded-2xl p-10 border border-amber-100">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Need a bespoke solution?</h2>
           <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
             Every business is unique. If you have specific technical requirements or need a custom IT strategy, our consultants are ready to help.
           </p>
-          <Link to="/contact" className="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-colors">
+          <Link to="/contact" className="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-amber-500 hover:bg-amber-600 transition-colors">
             Discuss Your Requirements
           </Link>
         </div>

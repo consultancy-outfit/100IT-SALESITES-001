@@ -50,7 +50,7 @@ const tiers = [
 
 export default function Pricing() {
   return (
-    <div className="bg-slate-50 py-20 min-h-screen">
+    <div className="bg-amber-50 py-20 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h1 
@@ -78,12 +78,12 @@ export default function Pricing() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className={`relative bg-white rounded-2xl shadow-sm border ${
-                tier.popular ? 'border-indigo-500 shadow-md ring-1 ring-indigo-500' : 'border-slate-200'
+                tier.popular ? 'border-amber-500 shadow-md ring-1 ring-amber-200' : 'border-slate-200'
               } flex flex-col p-8`}
             >
               {tier.popular && (
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <span className="bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest py-1 px-3 rounded-full">
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <span className="bg-amber-500 text-white text-xs font-bold uppercase tracking-widest py-1 px-3 rounded-full">
                     Most Popular
                   </span>
                 </div>
@@ -111,7 +111,7 @@ export default function Pricing() {
               <ul className="space-y-4 mb-8 flex-1">
                 {tier.features.map((feature, i) => (
                   <li key={i} className="flex items-start">
-                    <Check className="h-5 w-5 text-indigo-500 shrink-0 mr-3" />
+                    <Check className="h-5 w-5 text-amber-700 shrink-0 mr-3" />
                     <span className="text-slate-700 text-sm">{feature}</span>
                   </li>
                 ))}
@@ -121,8 +121,8 @@ export default function Pricing() {
                 to="/contact"
                 className={`w-full flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg transition-colors ${
                   tier.popular
-                    ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                    : 'bg-slate-100 text-slate-900 hover:bg-slate-200'
+                    ? 'bg-amber-500 text-white hover:bg-amber-600'
+                    : 'bg-white text-slate-900 hover:bg-amber-50 border border-amber-100'
                 }`}
               >
                 Get Started
@@ -131,7 +131,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <div className="mt-12 max-w-3xl mx-auto flex items-start p-4 bg-blue-50 rounded-lg border border-blue-100 text-blue-800">
+        <div className="mt-12 max-w-3xl mx-auto flex items-start p-4 bg-amber-50 rounded-lg border border-amber-100 text-amber-800">
           <Info className="h-5 w-5 mr-3 shrink-0 mt-0.5" />
           <p className="text-sm">
             <strong>VAT Notice:</strong> All prices quoted are exclusive of Value Added Tax (VAT) at the standard UK rate of 20%. A minimum commitment of 12 months applies to all managed service contracts.

@@ -16,7 +16,7 @@
     font-weight: 600;
   }
   .prose a {
-    color: var(--color-indigo-600);
+    color: var(--color-amber-700);
     text-decoration: underline;
   }
   .prose strong {

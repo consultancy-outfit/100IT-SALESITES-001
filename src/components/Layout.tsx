@@ -1,7 +1,8 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { COMPANY_DETAILS } from '../constants';
-import { Shield, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import HighfieldsLogo from '../assets/HIGHFIELDS HOUSE.svg';
 
 export default function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,14 +22,17 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-slate-50">
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
+      <header className="bg-white/90 backdrop-blur border-b border-amber-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <Link to="/" className="flex items-center space-x-2">
-              <Shield className="h-8 w-8 text-indigo-600" />
-              <span className="font-bold text-xl tracking-tight text-slate-900">
-                {COMPANY_DETAILS.name}
-              </span>
+              <div className="w-[180px] h-[40px] overflow-hidden flex items-center cursor-pointer">
+                <img
+                  src={HighfieldsLogo}
+                  alt={`${COMPANY_DETAILS.name} logo`}
+                  className="w-50 h-18 object-cover object-center"
+                />
+              </div>
             </Link>
 
             {/* Desktop Nav */}
@@ -37,8 +41,8 @@ export default function Layout() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`text-sm font-medium transition-colors hover:text-indigo-600 ${
-                    location.pathname === link.path ? 'text-indigo-600' : 'text-slate-600'
+                  className={`text-sm font-medium transition-colors hover:text-amber-700 ${
+                    location.pathname === link.path ? 'text-amber-700' : 'text-slate-600'
                   }`}
                 >
                   {link.name}
@@ -49,7 +53,7 @@ export default function Layout() {
             <div className="hidden md:flex">
               <Link
                 to="/contact"
-                className="bg-indigo-600 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
+                className="bg-amber-500 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-amber-600 transition-colors shadow-sm"
               >
                 Get a Quote
               </Link>
@@ -78,8 +82,8 @@ export default function Layout() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     location.pathname === link.path
-                      ? 'text-indigo-600 bg-indigo-50'
-                      : 'text-slate-600 hover:text-indigo-600 hover:bg-slate-50'
+                      ? 'text-amber-800 bg-amber-50'
+                      : 'text-slate-700 hover:text-amber-800 hover:bg-amber-50'
                   }`}
                 >
                   {link.name}
@@ -94,54 +98,57 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <footer className="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+      <footer className="bg-amber-50 text-slate-700 py-12 border-t border-amber-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center space-x-2 mb-4">
-                <Shield className="h-6 w-6 text-indigo-400" />
-                <span className="font-bold text-lg text-white tracking-tight">
-                  {COMPANY_DETAILS.name}
-                </span>
+                <div className="w-[180px] h-[40px] overflow-hidden flex items-center">
+                  <img
+                    src={HighfieldsLogo}
+                    alt={`${COMPANY_DETAILS.name} logo`}
+                    className="w-50 h-18 object-cover object-center"
+                  />
+                </div>
               </div>
-              <p className="text-sm text-slate-400 mb-4">
+              <p className="text-sm text-slate-600 mb-4">
                 Delivering enterprise-grade IT solutions and managed services to businesses across the United Kingdom.
               </p>
             </div>
             
             <div>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Quick Links</h3>
+              <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-                <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
-                <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+                <li><Link to="/" className="hover:text-amber-800 transition-colors">Home</Link></li>
+                <li><Link to="/services" className="hover:text-amber-800 transition-colors">Services</Link></li>
+                <li><Link to="/about" className="hover:text-amber-800 transition-colors">About Us</Link></li>
+                <li><Link to="/pricing" className="hover:text-amber-800 transition-colors">Pricing</Link></li>
+                <li><Link to="/contact" className="hover:text-amber-800 transition-colors">Contact Us</Link></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Legal</h3>
+              <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Legal</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
-                <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="hover:text-amber-800 transition-colors">Terms & Conditions</Link></li>
+                <li><Link to="/privacy" className="hover:text-amber-800 transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company Details</h3>
-              <ul className="space-y-2 text-sm text-slate-400">
-                <li><strong className="text-slate-300">Company Name:</strong> {COMPANY_DETAILS.name}</li>
-                <li><strong className="text-slate-300">Registered Office:</strong><br/>{COMPANY_DETAILS.address}</li>
-                <li><strong className="text-slate-300">CRN:</strong> {COMPANY_DETAILS.crn}</li>
-                <li><strong className="text-slate-300">Phone:</strong> {COMPANY_DETAILS.phone}</li>
-                <li><strong className="text-slate-300">Email:</strong> <a href={`mailto:${COMPANY_DETAILS.email}`} className="hover:text-white transition-colors">{COMPANY_DETAILS.email}</a></li>
+              <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Company Details</h3>
+              <ul className="space-y-2 text-sm text-slate-600">
+                <li><strong className="text-slate-800">Company Name:</strong> {COMPANY_DETAILS.name}</li>
+                <li><strong className="text-slate-800">Registered Office:</strong><br/>{COMPANY_DETAILS.address}</li>
+                <li><strong className="text-slate-800">CRN:</strong> {COMPANY_DETAILS.crn}</li>
+                <li><strong className="text-slate-800">Phone:</strong> {COMPANY_DETAILS.phone}</li>
+                <li><strong className="text-slate-800">Email:</strong> <a href={`mailto:${COMPANY_DETAILS.email}`} className="hover:text-amber-800 transition-colors">{COMPANY_DETAILS.email}</a></li>
               </ul>
             </div>
           </div>
           
-          <div className="mt-12 pt-8 border-t border-slate-800 text-sm text-center text-slate-500">
-            &copy; {new Date().getFullYear()} {COMPANY_DETAILS.name} Ltd. All rights reserved.
+          <div className="mt-12 pt-8 border-t border-amber-100 text-sm text-center text-slate-500">
+            &copy; {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved.
           </div>
         </div>
       </footer>

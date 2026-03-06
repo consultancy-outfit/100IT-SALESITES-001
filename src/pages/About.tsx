@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-slate-900 text-white py-20">
+      <section className="bg-amber-50 text-slate-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -18,7 +18,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-300 max-w-3xl mx-auto"
+            className="text-xl text-slate-700 max-w-3xl mx-auto"
           >
             We are a premier UK IT services provider, dedicated to transforming technology from a business challenge into a strategic advantage.
           </motion.p>
@@ -52,18 +52,18 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-slate-50 border-y border-slate-200">
+      <section className="py-20 bg-amber-50 border-y border-amber-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100">
-              <Target className="h-10 w-10 text-indigo-600 mb-6" />
+            <div className="bg-white p-10 rounded-2xl shadow-sm border border-amber-100">
+              <Target className="h-10 w-10 text-amber-700 mb-6" />
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h3>
               <p className="text-slate-600 leading-relaxed">
                 To empower UK businesses by delivering secure, scalable, and innovative IT solutions. We strive to eliminate technical friction, allowing our clients to focus entirely on their core commercial objectives.
               </p>
             </div>
-            <div className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100">
-              <Eye className="h-10 w-10 text-indigo-600 mb-6" />
+            <div className="bg-white p-10 rounded-2xl shadow-sm border border-amber-100">
+              <Eye className="h-10 w-10 text-amber-700 mb-6" />
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Vision</h3>
               <p className="text-slate-600 leading-relaxed">
                 To be the most trusted and respected managed IT services provider in the United Kingdom, renowned for our technical excellence, uncompromising security standards, and exceptional client service.
@@ -87,8 +87,8 @@ export default function About() {
               { title: 'Partnership', desc: 'We view ourselves as an extension of your team, deeply invested in your long-term success.' }
             ].map((value, i) => (
               <div key={i} className="text-center">
-                <div className="h-16 w-16 mx-auto bg-indigo-50 rounded-full flex items-center justify-center mb-4">
-                  <Award className="h-8 w-8 text-indigo-600" />
+                <div className="h-16 w-16 mx-auto bg-amber-100 rounded-full flex items-center justify-center mb-4">
+                  <Award className="h-8 w-8 text-amber-700" />
                 </div>
                 <h4 className="text-xl font-semibold text-slate-900 mb-2">{value.title}</h4>
                 <p className="text-slate-600">{value.desc}</p>
@@ -96,20 +96,20 @@ export default function About() {
             ))}
           </div>
 
-          <div className="bg-slate-900 rounded-2xl p-10 text-white flex flex-col md:flex-row items-center justify-between">
+          <div className="bg-amber-100 rounded-2xl p-10 text-slate-900 flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-2/3 mb-6 md:mb-0">
               <div className="flex items-center mb-4">
-                <ShieldCheck className="h-8 w-8 text-emerald-400 mr-3" />
+                <ShieldCheck className="h-8 w-8 text-amber-700 mr-3" />
                 <h3 className="text-2xl font-bold">Commitment to GDPR & Data Security</h3>
               </div>
-              <p className="text-slate-300 leading-relaxed">
+              <p className="text-slate-700 leading-relaxed">
                 As a UK-based company, we understand the critical importance of data sovereignty and privacy. Highfields House operates in strict accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. We implement privacy-by-design in all our solutions, ensuring your sensitive corporate data remains secure, compliant, and entirely within your control.
               </p>
             </div>
             <div className="md:w-1/4 flex justify-center">
-              <div className="bg-white/10 p-6 rounded-xl border border-white/20 text-center">
-                <div className="text-emerald-400 font-bold text-xl mb-1">100%</div>
-                <div className="text-sm text-slate-300 uppercase tracking-wider">UK Compliant</div>
+              <div className="bg-white p-6 rounded-xl border border-amber-100 text-center">
+                <div className="text-amber-700 font-bold text-xl mb-1">100%</div>
+                <div className="text-sm text-slate-600 uppercase tracking-wider">UK Compliant</div>
               </div>
             </div>
           </div>
