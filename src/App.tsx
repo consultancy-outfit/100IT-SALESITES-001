@@ -24,6 +24,7 @@ import {
   Globe,
   Zap
 } from 'lucide-react';
+import Logo from './assets/Sunburst_House.svg';
 
 // --- Types ---
 type Page = 'home' | 'services' | 'about' | 'pricing' | 'contact' | 'terms' | 'privacy';
@@ -136,13 +137,10 @@ const Navbar = ({ currentPage, setPage }: { currentPage: Page, setPage: (p: Page
     <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div 
-          className="flex items-center gap-2 cursor-pointer group"
+          className="flex items-center cursor-pointer"
           onClick={() => setPage('home')}
         >
-          <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center text-white group-hover:bg-brand-accent transition-colors">
-            <Zap size={24} />
-          </div>
-          <span className="text-xl font-bold tracking-tight text-slate-900">Sunburst House</span>
+          <img src={Logo} alt="Sunburst House" className="h-14 w-auto object-contain" />
         </div>
 
         {/* Desktop Nav */}
@@ -209,9 +207,8 @@ const Footer = ({ setPage }: { setPage: (p: Page) => void }) => (
   <footer className="bg-slate-950 text-slate-400 py-16 px-6 border-t border-slate-800">
     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
       <div className="col-span-1 md:col-span-2">
-        <div className="flex items-center gap-2 text-white mb-6">
-          <Zap size={24} className="text-brand-accent" />
-          <span className="text-xl font-bold">Sunburst House</span>
+        <div className="mb-6">
+          <img src={Logo} alt="Sunburst House" className="h-14 w-auto object-contain brightness-0 invert" />
         </div>
         <p className="max-w-md mb-8 leading-relaxed">
           Empowering British enterprises with world-class IT infrastructure, 
@@ -254,7 +251,6 @@ const Footer = ({ setPage }: { setPage: (p: Page) => void }) => (
       </div>
       <div className="md:text-right flex flex-col justify-end">
         <p>© {new Date().getFullYear()} Sunburst House. All rights reserved.</p>
-        <p className="mt-1">VAT Registration: GB 987 6543 21</p>
       </div>
     </div>
   </footer>
@@ -729,14 +725,6 @@ const ContactUs = () => {
                 <h4 className="font-bold text-slate-950 mb-1">Visit Us</h4>
                 <p className="text-slate-600">{COMPANY_DETAILS.address}</p>
               </div>
-            </div>
-          </div>
-
-          <div className="mt-12 aspect-video bg-slate-100 rounded-2xl overflow-hidden border border-slate-200 relative">
-            <div className="absolute inset-0 flex items-center justify-center text-slate-400 flex-col gap-2">
-              <MapPin size={32} />
-              <p className="text-sm font-medium">Interactive Map Placeholder</p>
-              <p className="text-xs">Central London Office</p>
             </div>
           </div>
         </div>
