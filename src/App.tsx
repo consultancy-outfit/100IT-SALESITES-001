@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from 'motion/react';
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white flex flex-col font-sans selection:bg-indigo-100 selection:text-indigo-900">
+      <div className="min-h-screen bg-white flex flex-col font-sans selection:bg-brand-200 selection:text-brand-900">
         <Header />
         <main className="flex-grow">
           <AnimatePresence mode="wait">

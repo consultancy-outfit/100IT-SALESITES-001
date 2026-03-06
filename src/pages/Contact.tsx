@@ -14,7 +14,7 @@ export function Contact() {
   return (
     <div className="pt-20">
       {/* Header */}
-      <section className="bg-slate-900 py-24">
+      <section className="bg-brand-600 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -22,7 +22,7 @@ export function Contact() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">Get in Touch</h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-white/95">
               Have a question or ready to start your IT transformation? Our London-based team is here to help.
             </p>
           </motion.div>
@@ -47,7 +47,7 @@ export function Contact() {
                   <p className="text-slate-600 mb-8">Thank you for reaching out. One of our IT specialists will contact you within 2 business hours.</p>
                   <button 
                     onClick={() => setSubmitted(false)}
-                    className="text-indigo-600 font-bold hover:underline"
+                    className="text-brand-700 font-bold hover:underline"
                   >
                     Send another message
                   </button>
@@ -61,7 +61,7 @@ export function Contact() {
                         required
                         type="text" 
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all"
                       />
                     </div>
                     <div className="space-y-2">
@@ -70,7 +70,7 @@ export function Contact() {
                         required
                         type="email" 
                         placeholder="john@company.co.uk"
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all"
                       />
                     </div>
                   </div>
@@ -80,12 +80,12 @@ export function Contact() {
                       required
                       type="text" 
                       placeholder="Your Business Ltd"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all"
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-700">Service of Interest</label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition-all bg-white">
+                    <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all bg-white">
                       <option>Managed IT Support</option>
                       <option>Cybersecurity</option>
                       <option>Cloud Migration</option>
@@ -99,18 +99,18 @@ export function Contact() {
                       required
                       rows={4}
                       placeholder="How can we help you?"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all resize-none"
                     ></textarea>
                   </div>
                   <div className="flex items-start gap-3">
-                    <input required type="checkbox" className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+                    <input required type="checkbox" className="mt-1 h-4 w-4 rounded border-slate-300 text-brand-700 focus:ring-brand-500" />
                     <span className="text-xs text-slate-500 leading-relaxed">
-                      I consent to Telegraph House processing my data in accordance with the <a href="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</a>.
+                      I consent to Telegraph House processing my data in accordance with the <a href="/privacy" className="text-brand-700 hover:underline">Privacy Policy</a>.
                     </span>
                   </div>
                   <button 
                     type="submit"
-                    className="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-brand-600 text-white rounded-xl font-bold hover:bg-brand-700 transition-all shadow-lg shadow-brand-200 flex items-center justify-center gap-2"
                   >
                     Send Message <Send className="w-4 h-4" />
                   </button>
@@ -124,8 +124,8 @@ export function Contact() {
                 <h2 className="text-2xl font-bold text-slate-900 mb-8">Contact Information</h2>
                 <div className="space-y-6">
                   <div className="flex gap-4">
-                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-indigo-600" />
+                    <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-brand-600" />
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900">Office Address</h3>
@@ -133,8 +133,8 @@ export function Contact() {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-indigo-600" />
+                    <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-brand-700" />
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900">Email Address</h3>
@@ -142,8 +142,8 @@ export function Contact() {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-indigo-600" />
+                    <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-brand-700" />
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900">Phone Number</h3>

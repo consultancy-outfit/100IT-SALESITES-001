@@ -35,12 +35,12 @@ export function Pricing() {
                 transition={{ delay: idx * 0.1 }}
                 className={`relative p-8 rounded-3xl border flex flex-col ${
                   plan.popular 
-                    ? 'border-indigo-600 shadow-2xl shadow-indigo-100 ring-4 ring-indigo-50' 
+                    ? 'border-brand-600 shadow-2xl shadow-brand-100 ring-4 ring-brand-50' 
                     : 'border-slate-200 shadow-sm'
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                     Most Popular
                   </div>
                 )}
@@ -63,7 +63,7 @@ export function Pricing() {
                   <ul className="space-y-4">
                     {plan.features.map(feature => (
                       <li key={feature} className="flex items-center gap-3 text-slate-600 text-sm">
-                        <Check className="w-5 h-5 text-indigo-600 flex-shrink-0" />
+                        <Check className="w-5 h-5 text-brand-700 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -80,8 +80,8 @@ export function Pricing() {
                   to="/contact"
                   className={`w-full py-4 rounded-xl font-bold text-center transition-all ${
                     plan.popular
-                      ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-200'
-                      : 'bg-slate-900 text-white hover:bg-slate-800'
+                      ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-lg shadow-brand-200'
+                      : 'bg-brand-600 text-white hover:bg-brand-700'
                   }`}
                 >
                   Get Started
@@ -93,7 +93,7 @@ export function Pricing() {
           <div className="mt-20 p-8 bg-slate-50 rounded-3xl border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-white rounded-xl shadow-sm">
-                <Info className="w-6 h-6 text-indigo-600" />
+                <Info className="w-6 h-6 text-brand-700" />
               </div>
               <div>
                 <h4 className="font-bold text-slate-900 mb-1">Need something different?</h4>

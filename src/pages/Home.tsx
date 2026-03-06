@@ -30,11 +30,11 @@ export function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-700 mb-6">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-brand-100 text-brand-700 mb-6">
                 Leading IT Managed Services in London
               </span>
               <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 tracking-tight mb-8 leading-[1.1]">
-                Future-Proof Your Business with <span className="text-indigo-600">Expert IT Solutions</span>
+                Future-Proof Your Business with <span className="text-brand-700">Expert IT Solutions</span>
               </h1>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed">
                 Telegraph House provides enterprise-grade IT support, cybersecurity, and cloud strategy tailored for UK businesses. We handle the technology, so you can focus on growth.
@@ -42,7 +42,7 @@ export function Home() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200"
+                  className="w-full sm:w-auto px-8 py-4 bg-brand-600 text-white rounded-xl font-bold hover:bg-brand-700 transition-all shadow-lg shadow-brand-200"
                 >
                   Book a Free Audit
                 </Link>
@@ -70,7 +70,7 @@ export function Home() {
                 transition={{ delay: idx * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl font-bold text-indigo-600 mb-2">{stat.value}</div>
+                <div className="text-4xl font-bold text-brand-700 mb-2">{stat.value}</div>
                 <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">{stat.label}</div>
               </motion.div>
             ))}
@@ -96,8 +96,8 @@ export function Home() {
                   { icon: Globe, title: 'Local Expertise', desc: 'On-site support across London and the South East.' },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center">
-                      <item.icon className="w-6 h-6 text-indigo-600" />
+                    <div className="flex-shrink-0 w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center">
+                      <item.icon className="w-6 h-6 text-brand-700" />
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900">{item.title}</h3>
@@ -108,7 +108,7 @@ export function Home() {
               </div>
             </div>
             <div className="lg:w-1/2 relative">
-              <div className="aspect-square bg-indigo-600 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="aspect-square bg-brand-600 rounded-3xl overflow-hidden shadow-2xl">
                 <img 
                   src="https://picsum.photos/seed/it-office/800/800" 
                   alt="Modern IT Office" 
@@ -138,7 +138,7 @@ export function Home() {
           <h2 className="text-3xl font-bold text-slate-900 mb-16">Industries We Serve</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {industries.map((industry) => (
-              <div key={industry} className="bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 transition-colors">
+              <div key={industry} className="bg-white p-6 rounded-xl border border-slate-200 hover:border-brand-300 transition-colors">
                 <span className="text-sm font-semibold text-slate-700">{industry}</span>
               </div>
             ))}
@@ -149,30 +149,30 @@ export function Home() {
       {/* Case Study Preview */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-slate-900 rounded-3xl overflow-hidden flex flex-col lg:flex-row">
+          <div className="bg-brand-600 rounded-3xl overflow-hidden flex flex-col lg:flex-row">
             <div className="lg:w-1/2 p-12 lg:p-20 space-y-8">
-              <span className="text-indigo-400 font-bold uppercase tracking-widest text-sm">Case Study</span>
+              <span className="text-white font-bold uppercase tracking-widest text-sm">Case Study</span>
               <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
                 Saving a London Law Firm £45,000 Annually
               </h2>
-              <p className="text-slate-400 text-lg">
+              <p className="text-white/95 text-lg">
                 By migrating legacy servers to a secure Azure environment and implementing automated workflows, we reduced operational overhead and eliminated costly hardware maintenance.
               </p>
               <div className="flex gap-8">
                 <div>
                   <div className="text-2xl font-bold text-white">£45k</div>
-                  <div className="text-sm text-slate-500">Annual Savings</div>
+                  <div className="text-sm text-white/80">Annual Savings</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-white">100%</div>
-                  <div className="text-sm text-slate-500">Uptime Post-Migration</div>
+                  <div className="text-sm text-white/80">Uptime Post-Migration</div>
                 </div>
               </div>
-              <Link to="/contact" className="inline-flex items-center text-indigo-400 font-bold hover:text-indigo-300 transition-colors">
+              <Link to="/contact" className="inline-flex items-center text-white font-bold hover:text-white/90 transition-colors">
                 Read Full Story <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </div>
-            <div className="lg:w-1/2 bg-slate-800">
+            <div className="lg:w-1/2 bg-brand-700">
               <img 
                 src="https://picsum.photos/seed/legal-it/800/600" 
                 alt="Law Firm IT" 
@@ -185,18 +185,18 @@ export function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-indigo-600 relative overflow-hidden">
+      <section className="py-24 bg-brand-600 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="text-4xl font-bold text-white mb-8">Ready to Optimise Your IT?</h2>
-          <p className="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-white/95 mb-10 max-w-2xl mx-auto">
             Join hundreds of UK businesses that trust Telegraph House for their technology needs.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center px-8 py-4 bg-white text-indigo-600 rounded-xl font-bold hover:bg-indigo-50 transition-all shadow-xl"
+            className="inline-flex items-center px-8 py-4 bg-white text-brand-700 rounded-xl font-bold hover:bg-brand-50 transition-all shadow-xl"
           >
             Get a Free Consultation
           </Link>

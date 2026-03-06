@@ -8,7 +8,7 @@ export function Services() {
   return (
     <div className="pt-20">
       {/* Header */}
-      <section className="bg-slate-900 py-24">
+      <section className="bg-brand-600 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -17,7 +17,7 @@ export function Services() {
           >
             Comprehensive IT Services
           </motion.h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="text-xl text-white/95 max-w-2xl mx-auto">
             Tailored technology solutions designed to drive efficiency, security, and growth for your business.
           </p>
         </div>
@@ -36,7 +36,7 @@ export function Services() {
                 className={`flex flex-col lg:flex-row gap-16 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className="lg:w-1/2 space-y-8">
-                  <div className="inline-block px-4 py-1 bg-indigo-50 text-indigo-600 rounded-full text-sm font-bold uppercase tracking-wider">
+                  <div className="inline-block px-4 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-bold uppercase tracking-wider">
                     Service {idx + 1}
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">{service.title}</h2>
@@ -57,14 +57,14 @@ export function Services() {
                   <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
                     <div className="flex justify-between items-center mb-4">
                       <span className="text-sm font-medium text-slate-500 uppercase">Starting From</span>
-                      <span className="text-2xl font-bold text-indigo-600">{service.price} <span className="text-sm font-normal text-slate-400">/ month</span></span>
+                      <span className="text-2xl font-bold text-brand-700">{service.price} <span className="text-sm font-normal text-slate-400">/ month</span></span>
                     </div>
                     <p className="text-sm text-slate-500 mb-6">
                       <span className="font-bold">Ideal for:</span> {service.target}
                     </p>
                     <Link 
                       to="/contact" 
-                      className="w-full inline-flex items-center justify-center px-6 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all"
+                      className="w-full inline-flex items-center justify-center px-6 py-3 bg-brand-600 text-white rounded-xl font-bold hover:bg-brand-700 transition-all"
                     >
                       Enquire Now <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
@@ -87,7 +87,7 @@ export function Services() {
                       <div className="flex gap-4">
                         {service.process.map((step, sIdx) => (
                           <div key={step} className="flex flex-col items-center gap-2">
-                            <div className="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs font-bold">
+                            <div className="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs font-bold">
                               {sIdx + 1}
                             </div>
                             <span className="text-[10px] font-bold text-slate-600 uppercase">{step}</span>
@@ -112,7 +112,7 @@ export function Services() {
           </p>
           <Link 
             to="/contact" 
-            className="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg"
+            className="px-8 py-4 bg-brand-600 text-white rounded-xl font-bold hover:bg-brand-700 transition-all shadow-lg"
           >
             Request a Bespoke Proposal
           </Link>

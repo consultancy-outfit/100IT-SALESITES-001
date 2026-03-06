@@ -27,7 +27,7 @@ export function About() {
               animate={{ opacity: 1, x: 0 }}
               className="text-4xl sm:text-6xl font-bold text-slate-900 mb-8 leading-tight"
             >
-              Building the Future of <span className="text-indigo-600">British Business IT</span>
+              Building the Future of <span className="text-brand-700">British Business IT</span>
             </motion.h1>
             <p className="text-xl text-slate-600 leading-relaxed">
               Founded in London, Telegraph House was born from a simple mission: to provide SMEs with the same level of IT excellence typically reserved for global corporations.
@@ -46,9 +46,9 @@ export function About() {
                 To empower UK businesses through resilient, secure, and innovative technology solutions that drive measurable commercial success and operational excellence.
               </p>
             </div>
-            <div className="bg-indigo-600 p-12 rounded-3xl shadow-xl text-white">
+            <div className="bg-brand-600 p-12 rounded-3xl shadow-xl text-white">
               <h2 className="text-2xl font-bold mb-6">Our Vision</h2>
-              <p className="text-indigo-100 leading-relaxed">
+              <p className="text-white/95 leading-relaxed">
                 To be the most trusted technology partner in the UK, recognised for our technical precision, unwavering integrity, and commitment to client growth.
               </p>
             </div>
@@ -72,7 +72,7 @@ export function About() {
                 className="p-8 rounded-2xl bg-slate-50 border border-slate-100"
               >
                 <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm mb-6">
-                  <value.icon className="w-6 h-6 text-indigo-600" />
+                  <value.icon className="w-6 h-6 text-brand-700" />
                 </div>
                 <h3 className="font-bold text-slate-900 mb-4">{value.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{value.desc}</p>
@@ -100,7 +100,7 @@ export function About() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">{member.name}</h3>
-                <p className="text-indigo-600 font-medium mb-4">{member.role}</p>
+                <p className="text-brand-700 font-medium mb-4">{member.role}</p>
                 <p className="text-sm text-slate-500 leading-relaxed">{member.bio}</p>
               </div>
             ))}
@@ -111,23 +111,23 @@ export function About() {
       {/* Compliance */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-slate-900 rounded-3xl p-12 lg:p-20 text-center text-white">
-            <Award className="w-16 h-16 text-indigo-400 mx-auto mb-8" />
+          <div className="bg-brand-600 rounded-3xl p-12 lg:p-20 text-center text-white">
+            <Award className="w-16 h-16 text-white mx-auto mb-8" />
             <h2 className="text-3xl font-bold mb-6">Commitment to GDPR & Security</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
+            <p className="text-white/95 max-w-2xl mx-auto mb-10 text-lg">
               Data privacy is not just a legal requirement for us; it's a fundamental promise. We are fully GDPR compliant and maintain the highest standards of cybersecurity for ourselves and our clients.
             </p>
             <div className="flex flex-wrap justify-center gap-8">
               <div className="flex items-center gap-2">
-                <CheckCircle className="text-indigo-400 w-5 h-5" />
+                <CheckCircle className="text-white w-5 h-5" />
                 <span className="text-sm font-bold uppercase tracking-widest">ISO 27001 Aligned</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="text-indigo-400 w-5 h-5" />
+                <CheckCircle className="text-white w-5 h-5" />
                 <span className="text-sm font-bold uppercase tracking-widest">Cyber Essentials Plus</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="text-indigo-400 w-5 h-5" />
+                <CheckCircle className="text-white w-5 h-5" />
                 <span className="text-sm font-bold uppercase tracking-widest">GDPR Compliant</span>
               </div>
             </div>
