@@ -3,11 +3,20 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  /* Kanmore House logo palette */
+  --color-kanmore-dark: #262626;
+  --color-kanmore-pink: #E41966;
+  --color-kanmore-pink-light: #FF1C6B;
+  --color-kanmore-pink-dark: #C81560;
+  --color-kanmore-blue: #1BA3D9;
+  --color-kanmore-blue-deep: #4A60DC;
+  --color-kanmore-yellow: #F6E823;
+  --color-kanmore-orange: #FF7031;
 }
 
 @layer base {
   body {
-    @apply antialiased text-zinc-900 bg-white;
+    @apply antialiased text-kanmore-dark bg-white;
   }
 }
 

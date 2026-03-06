@@ -27,10 +27,10 @@ export default function Pricing() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`flex flex-col p-10 rounded-[2.5rem] border ${i === 1 ? 'border-zinc-900 bg-zinc-900 text-white shadow-2xl relative' : 'border-zinc-200 bg-zinc-50 text-zinc-900'}`}
+                className={`flex flex-col p-10 rounded-[2.5rem] border ${i === 1 ? 'border-kanmore-dark bg-kanmore-dark text-white shadow-2xl relative' : 'border-zinc-200 bg-zinc-50 text-kanmore-dark'}`}
               >
                 {i === 1 && (
-                  <div className="absolute top-0 right-10 transform -translate-y-1/2 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
+                  <div className="absolute top-0 right-10 transform -translate-y-1/2 bg-kanmore-pink text-white text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
                     Most Popular
                   </div>
                 )}
@@ -51,7 +51,7 @@ export default function Pricing() {
                   <ul className="space-y-4">
                     {plan.features.map((feature, j) => (
                       <li key={j} className="flex items-start">
-                        <Check className={`h-5 w-5 mr-3 shrink-0 ${i === 1 ? 'text-emerald-400' : 'text-emerald-500'}`} />
+                        <Check className={`h-5 w-5 mr-3 shrink-0 ${i === 1 ? 'text-kanmore-pink' : 'text-kanmore-pink'}`} />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
@@ -64,7 +64,7 @@ export default function Pricing() {
 
                 <Link 
                   to="/contact" 
-                  className={`w-full py-4 rounded-full font-bold text-center transition-all ${i === 1 ? 'bg-white text-zinc-900 hover:bg-zinc-100' : 'bg-zinc-900 text-white hover:bg-zinc-800'}`}
+                  className={`w-full py-4 rounded-full font-bold text-center transition-all ${i === 1 ? 'bg-white text-kanmore-dark hover:bg-zinc-100' : 'bg-kanmore-dark text-white hover:bg-kanmore-pink'}`}
                 >
                   Get Started
                 </Link>
@@ -104,7 +104,7 @@ export default function Pricing() {
               <h2 className="text-3xl font-bold text-zinc-900 mb-4">Not sure which plan is right for you?</h2>
               <p className="text-zinc-600">Our experts can help you assess your current IT needs and recommend the most cost-effective solution for your business.</p>
             </div>
-            <Link to="/contact" className="px-10 py-5 bg-zinc-900 text-white rounded-full font-bold hover:bg-zinc-800 transition-all flex items-center">
+            <Link to="/contact" className="px-10 py-5 bg-kanmore-dark text-white rounded-full font-bold hover:bg-kanmore-pink transition-all flex items-center">
               Request a Free Quote <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>

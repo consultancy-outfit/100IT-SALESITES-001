@@ -72,7 +72,7 @@ export default function Services() {
                         <ul className="space-y-3">
                           {service.benefits.map((benefit, i) => (
                             <li key={i} className="flex items-center text-zinc-600 text-sm">
-                              <Check className="h-4 w-4 text-emerald-500 mr-3" />
+                              <Check className="h-4 w-4 text-kanmore-pink mr-3" />
                               {benefit}
                             </li>
                           ))}
@@ -85,7 +85,7 @@ export default function Services() {
                         <div className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Starting From</div>
                         <div className="text-3xl font-bold text-zinc-900">{service.startingPrice} <span className="text-sm font-normal text-zinc-500">/ month</span></div>
                       </div>
-                      <Link to="/contact" className="px-6 py-3 bg-zinc-900 text-white rounded-full font-bold hover:bg-zinc-800 transition-all text-sm">
+                      <Link to="/contact" className="px-6 py-3 bg-kanmore-dark text-white rounded-full font-bold hover:bg-kanmore-pink transition-all text-sm">
                         Enquire Now
                       </Link>
                     </div>
@@ -118,7 +118,7 @@ export default function Services() {
           <p className="text-lg text-zinc-600 mb-10 max-w-2xl mx-auto">
             Every business is different. We can design a bespoke IT package that fits your specific operational requirements and budget.
           </p>
-          <Link to="/contact" className="inline-flex items-center justify-center px-10 py-5 bg-zinc-900 text-white rounded-full font-bold hover:bg-zinc-800 transition-all">
+          <Link to="/contact" className="inline-flex items-center justify-center px-10 py-5 bg-kanmore-dark text-white rounded-full font-bold hover:bg-kanmore-pink transition-all">
             Book a Consultation <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </div>

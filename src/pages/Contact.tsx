@@ -194,7 +194,7 @@ export default function Contact() {
 
                       <button 
                         type="submit"
-                        className="w-full py-5 bg-zinc-900 text-white rounded-xl font-bold hover:bg-zinc-800 transition-all flex items-center justify-center group"
+                        className="w-full py-5 bg-kanmore-dark text-white rounded-xl font-bold hover:bg-kanmore-pink transition-all flex items-center justify-center group"
                       >
                         Send Message
                         <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -207,8 +207,8 @@ export default function Contact() {
                       animate={{ opacity: 1, scale: 1 }}
                       className="text-center py-12 space-y-6"
                     >
-                      <div className="inline-flex p-6 bg-emerald-50 rounded-full">
-                        <CheckCircle2 className="h-12 w-12 text-emerald-500" />
+                      <div className="inline-flex p-6 bg-kanmore-pink/10 rounded-full">
+                        <CheckCircle2 className="h-12 w-12 text-kanmore-pink" />
                       </div>
                       <h3 className="text-3xl font-bold text-zinc-900">Message Sent!</h3>
                       <p className="text-lg text-zinc-600 max-w-md mx-auto">

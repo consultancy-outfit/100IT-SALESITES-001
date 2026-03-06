@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Monitor, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../utils';
+import logoSvg from '../assets/Kanmore_House.svg';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -17,15 +18,12 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-bottom border-zinc-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-zinc-900 p-2 rounded-lg">
-                <Monitor className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-zinc-900">KANMORE HOUSE</span>
+            <Link to="/" className="flex items-center">
+              <img src={logoSvg} alt="Kanmore House" className="h-24 w-auto" />
             </Link>
           </div>
 
@@ -36,8 +34,8 @@ export default function Navbar() {
                 key={item.path}
                 to={item.path}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-zinc-900",
-                  location.pathname === item.path ? "text-zinc-900" : "text-zinc-500"
+                  "text-sm font-medium transition-colors hover:text-kanmore-pink",
+                  location.pathname === item.path ? "text-kanmore-dark" : "text-zinc-500"
                 )}
               >
                 {item.name}
@@ -45,7 +43,7 @@ export default function Navbar() {
             ))}
             <Link
               to="/contact"
-              className="bg-zinc-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-zinc-800 transition-all"
+              className="bg-kanmore-dark text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-kanmore-pink transition-all"
             >
               Get Started
             </Link>
@@ -55,7 +53,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-zinc-500 hover:text-zinc-900 p-2"
+              className="text-zinc-500 hover:text-kanmore-pink p-2"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -80,7 +78,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={cn(
                     "block px-3 py-4 text-base font-medium rounded-md",
-                    location.pathname === item.path ? "bg-zinc-50 text-zinc-900" : "text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900"
+                    location.pathname === item.path ? "bg-kanmore-pink/10 text-kanmore-dark" : "text-zinc-500 hover:bg-zinc-50 hover:text-kanmore-pink"
                   )}
                 >
                   {item.name}
@@ -90,7 +88,7 @@ export default function Navbar() {
                 <Link
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="block w-full text-center bg-zinc-900 text-white px-5 py-3 rounded-xl text-base font-medium"
+                  className="block w-full text-center bg-kanmore-dark text-white px-5 py-3 rounded-xl text-base font-medium hover:bg-kanmore-pink"
                 >
                   Get Started
                 </Link>

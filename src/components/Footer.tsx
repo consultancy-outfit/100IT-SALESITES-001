@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Monitor, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import logoSvg from '../assets/Kanmore_House.svg';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,11 +10,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-zinc-900 p-1.5 rounded-md">
-                <Monitor className="h-5 w-5 text-white" />
-              </div>
-              <span className="text-lg font-bold tracking-tight text-zinc-900">KANMORE HOUSE</span>
+            <Link to="/" className="flex items-center">
+              <img src={logoSvg} alt="Kanmore House" className="h-24 w-auto" />
             </Link>
             <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
               Empowering UK businesses with cutting-edge IT infrastructure, cybersecurity, and managed services.
@@ -21,25 +19,25 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-zinc-900 uppercase tracking-wider mb-6">Quick Links</h3>
+            <h3 className="text-sm font-semibold text-kanmore-dark uppercase tracking-wider mb-6">Quick Links</h3>
             <ul className="space-y-4">
-              <li><Link to="/services" className="text-zinc-500 hover:text-zinc-900 text-sm transition-colors">Our Services</Link></li>
-              <li><Link to="/about" className="text-zinc-500 hover:text-zinc-900 text-sm transition-colors">About Us</Link></li>
-              <li><Link to="/pricing" className="text-zinc-500 hover:text-zinc-900 text-sm transition-colors">Pricing Plans</Link></li>
-              <li><Link to="/contact" className="text-zinc-500 hover:text-zinc-900 text-sm transition-colors">Contact Us</Link></li>
+              <li><Link to="/services" className="text-zinc-500 hover:text-kanmore-pink text-sm transition-colors">Our Services</Link></li>
+              <li><Link to="/about" className="text-zinc-500 hover:text-kanmore-pink text-sm transition-colors">About Us</Link></li>
+              <li><Link to="/pricing" className="text-zinc-500 hover:text-kanmore-pink text-sm transition-colors">Pricing Plans</Link></li>
+              <li><Link to="/contact" className="text-zinc-500 hover:text-kanmore-pink text-sm transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-zinc-900 uppercase tracking-wider mb-6">Legal</h3>
+            <h3 className="text-sm font-semibold text-kanmore-dark uppercase tracking-wider mb-6">Legal</h3>
             <ul className="space-y-4">
-              <li><Link to="/terms" className="text-zinc-500 hover:text-zinc-900 text-sm transition-colors">Terms & Conditions</Link></li>
-              <li><Link to="/privacy" className="text-zinc-500 hover:text-zinc-900 text-sm transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="text-zinc-500 hover:text-kanmore-pink text-sm transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/privacy" className="text-zinc-500 hover:text-kanmore-pink text-sm transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-zinc-900 uppercase tracking-wider mb-6">Contact Details</h3>
+            <h3 className="text-sm font-semibold text-kanmore-dark uppercase tracking-wider mb-6">Contact Details</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-zinc-400 shrink-0" />

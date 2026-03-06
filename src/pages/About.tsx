@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <section className="bg-zinc-900 text-white pt-32 pb-24 relative overflow-hidden">
+      <section className="bg-kanmore-dark text-white pt-32 pb-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
         </div>
@@ -47,7 +47,7 @@ export default function About() {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute -bottom-10 -left-10 bg-zinc-900 text-white p-10 rounded-3xl shadow-xl hidden md:block">
+              <div className="absolute -bottom-10 -left-10 bg-kanmore-dark text-white p-10 rounded-3xl shadow-xl hidden md:block">
                 <div className="text-5xl font-bold mb-2">10+</div>
                 <div className="text-sm font-bold text-zinc-400 uppercase tracking-widest">Years of Excellence</div>
               </div>
@@ -159,8 +159,8 @@ export default function About() {
       {/* GDPR Commitment */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex p-4 bg-emerald-50 rounded-2xl mb-8">
-            <Shield className="h-8 w-8 text-emerald-600" />
+          <div className="inline-flex p-4 bg-kanmore-pink/10 rounded-2xl mb-8">
+            <Shield className="h-8 w-8 text-kanmore-pink" />
           </div>
           <h2 className="text-3xl font-bold text-zinc-900 mb-6">Our Commitment to GDPR & Data Privacy</h2>
           <p className="text-lg text-zinc-600 leading-relaxed mb-8">
@@ -168,11 +168,11 @@ export default function About() {
           </p>
           <div className="flex justify-center space-x-8">
             <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-kanmore-pink rounded-full"></div>
               <span className="text-sm font-bold text-zinc-900 uppercase tracking-widest">Cyber Essentials Plus</span>
             </div>
             <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-kanmore-pink rounded-full"></div>
               <span className="text-sm font-bold text-zinc-900 uppercase tracking-widest">ISO 27001 Aligned</span>
             </div>
           </div>
