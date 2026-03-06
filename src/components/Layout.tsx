@@ -1,14 +1,20 @@
 import { COMPANY_DETAILS } from "../constants";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, ShieldCheck, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from "lucide-react";
+import HillsidePlymouthLogo from "../assets/Hillside_Plymouth.svg";
 
 export const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/" className="flex items-center gap-2">
-          <ShieldCheck className="h-8 w-8 text-emerald-600" />
-          <span className="text-xl font-bold tracking-tight text-slate-900">Hillside IT</span>
+          <div className="w-[180px] h-[40px] overflow-hidden flex items-center">
+            <img
+              src={HillsidePlymouthLogo}
+              alt={`${COMPANY_DETAILS.name} logo`}
+              className="w-50 h-18 object-cover object-center"
+            />
+          </div>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           <Link to="/" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Home</Link>
@@ -31,8 +37,13 @@ export const Footer = () => {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 mb-12">
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <ShieldCheck className="h-6 w-6 text-emerald-600" />
-              <span className="text-lg font-bold tracking-tight text-slate-900">Hillside IT Solutions</span>
+              <div className="w-[180px] h-[40px] overflow-hidden flex items-center">
+                <img
+                  src={HillsidePlymouthLogo}
+                  alt={`${COMPANY_DETAILS.name} logo`}
+                  className="w-50 h-18 object-cover object-center"
+                />
+              </div>
             </Link>
             <p className="text-sm text-slate-500 leading-relaxed">
               Empowering Plymouth businesses with world-class IT support, cloud solutions, and cyber security expertise.
