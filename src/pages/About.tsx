@@ -7,7 +7,7 @@ export function About() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="relative py-24 bg-slate-50 overflow-hidden">
+      <section className="relative py-24 bg-brand-surface overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-bold mb-8 tracking-tighter">
@@ -51,7 +51,7 @@ export function About() {
                   Our growth has been driven by our commitment to building long-term partnerships with our clients. We don't just provide a service; we become an extension of your team.
                 </p>
               </div>
-              <div className="mt-10 p-8 bg-slate-50 rounded-3xl border border-slate-100">
+              <div className="mt-10 p-8 bg-brand-surface rounded-3xl border border-brand-accent/20">
                 <div className="flex items-center gap-4 mb-4">
                   <Award className="text-brand-accent" size={32} />
                   <h4 className="text-xl font-bold">Award-Winning Service</h4>
@@ -99,7 +99,7 @@ export function About() {
               { icon: Heart, title: 'Passion for Tech', desc: 'We love what we do and are constantly exploring new ways to innovate.' }
             ].map((value, i) => (
               <div key={i} className="text-center space-y-4">
-                <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto text-brand-accent">
+                <div className="w-16 h-16 bg-brand-surface rounded-2xl flex items-center justify-center mx-auto text-brand-accent">
                   <value.icon size={32} />
                 </div>
                 <h4 className="text-xl font-bold">{value.title}</h4>
@@ -111,7 +111,7 @@ export function About() {
       </section>
 
       {/* Leadership */}
-      <section className="section-padding bg-slate-50">
+      <section className="section-padding bg-brand-surface">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold mb-6">Our Leadership</h2>
@@ -141,7 +141,7 @@ export function About() {
       {/* Compliance */}
       <section className="py-16 bg-white border-t border-slate-100">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 bg-slate-900 rounded-3xl text-white">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 bg-brand-primary rounded-3xl text-white">
             <div className="max-w-xl">
               <h3 className="text-2xl font-bold mb-4">Commitment to GDPR & Security</h3>
               <p className="text-slate-400">

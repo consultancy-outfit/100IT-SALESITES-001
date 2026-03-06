@@ -14,7 +14,7 @@ const ICON_MAP: Record<string, any> = {
 
 export function Services() {
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-brand-surface min-h-screen">
       {/* Header */}
       <section className="bg-brand-primary text-white py-24">
         <div className="container mx-auto px-6">

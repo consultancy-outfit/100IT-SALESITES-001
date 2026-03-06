@@ -7,7 +7,7 @@ import { cn } from '../lib/utils';
 
 export function Pricing() {
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-brand-surface min-h-screen">
       {/* Header */}
       <section className="bg-brand-primary text-white py-24 text-center">
         <div className="container mx-auto px-6">
@@ -75,8 +75,8 @@ export function Pricing() {
                   className={cn(
                     "w-full py-4 rounded-xl font-bold text-center block transition-all",
                     tier.highlighted
-                      ? "bg-brand-accent text-white hover:bg-emerald-500 shadow-lg shadow-brand-accent/20"
-                      : "bg-slate-100 text-brand-primary hover:bg-slate-200"
+                      ? "bg-brand-accent text-white hover:bg-brand-accent-hover shadow-lg shadow-brand-accent/20"
+                      : "bg-brand-surface text-brand-primary hover:bg-brand-accent/20 border border-brand-accent/30"
                   )}
                 >
                   {tier.cta}
@@ -102,7 +102,7 @@ export function Pricing() {
             </div>
             <Link 
               to="/contact" 
-              className="bg-brand-accent text-white px-8 py-4 rounded-xl font-bold hover:bg-emerald-500 transition-all whitespace-nowrap"
+              className="bg-brand-accent text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-accent-hover transition-all whitespace-nowrap"
             >
               Request Custom Quote
             </Link>

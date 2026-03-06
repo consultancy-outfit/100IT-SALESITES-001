@@ -10,8 +10,8 @@ export function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center bg-brand-primary text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#10b981_0,transparent_50%)]" />
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,#10b981_0,transparent_40%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,var(--color-brand-accent)_0,transparent_50%)]" />
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,var(--color-brand-accent)_0,transparent_40%)]" />
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
@@ -33,7 +33,7 @@ export function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   to="/services" 
-                  className="bg-brand-accent text-white px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-emerald-500 transition-all shadow-lg shadow-brand-accent/20"
+                  className="bg-brand-accent text-white px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-brand-accent-hover transition-all shadow-lg shadow-brand-accent/20"
                 >
                   Explore Services <ArrowRight size={20} />
                 </Link>
@@ -83,7 +83,7 @@ export function Home() {
       </section>
 
       {/* Overview Section */}
-      <section className="section-padding bg-slate-50">
+      <section className="section-padding bg-brand-surface">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -101,7 +101,7 @@ export function Home() {
                   'Enterprise-grade cyber security for SMEs',
                   'Transparent, fixed-fee pricing models'
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 font-medium text-slate-800">
+                  <li key={item} className="flex items-center gap-3 font-medium text-brand-primary">
                     <CheckCircle2 className="text-brand-accent" size={20} />
                     {item}
                   </li>
@@ -148,7 +148,7 @@ export function Home() {
               <Link 
                 key={service.id} 
                 to="/services" 
-                className="group p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-brand-primary hover:text-white transition-all duration-300"
+                className="group p-8 rounded-3xl border border-brand-accent/20 bg-brand-surface hover:bg-brand-primary hover:text-white transition-all duration-300"
               >
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-brand-accent mb-6 shadow-sm group-hover:bg-brand-accent group-hover:text-white transition-colors">
                   <ShieldCheck size={28} />
@@ -167,7 +167,7 @@ export function Home() {
       </section>
 
       {/* Case Studies */}
-      <section className="section-padding bg-slate-900 text-white">
+      <section className="section-padding bg-brand-primary text-white">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-2xl">
@@ -221,7 +221,7 @@ export function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="p-8 rounded-3xl border border-slate-100 bg-slate-50 relative">
+              <div key={i} className="p-8 rounded-3xl border border-brand-accent/20 bg-brand-surface relative">
                 <Star className="text-brand-accent absolute top-8 right-8" size={24} fill="currentColor" />
                 <p className="text-lg text-slate-700 mb-8 italic leading-relaxed">"{t.content}"</p>
                 <div className="flex items-center gap-4">
@@ -248,19 +248,19 @@ export function Home() {
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter">
             Ready to Future-Proof Your Business?
           </h2>
-          <p className="text-xl text-emerald-900 mb-12 max-w-2xl mx-auto font-medium">
+          <p className="text-xl text-brand-primary mb-12 max-w-2xl mx-auto font-medium opacity-90">
             Join hundreds of UK businesses that trust Rosewood Lodge for their critical IT infrastructure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/contact" 
-              className="bg-brand-primary text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl"
+              className="bg-brand-primary text-white px-10 py-5 rounded-full font-bold text-lg hover:opacity-90 transition-all shadow-xl"
             >
               Get a Free IT Audit
             </Link>
             <Link 
               to="/pricing" 
-              className="bg-white text-brand-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-100 transition-all shadow-xl"
+              className="bg-white text-brand-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-brand-surface transition-all shadow-xl"
             >
               View Pricing Plans
             </Link>
