@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Cpu, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import Icon from '../icon';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,10 +12,10 @@ const Footer = () => {
           {/* Brand & Mission */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-white/10 p-2 rounded-lg">
-                <Cpu className="h-6 w-6 text-brand-accent" />
+              <div className="bg-white/10 p-2 rounded-lg flex items-center justify-center">
+                <Icon className="h-16 w-auto" />
               </div>
-              <span className="text-2xl font-bold tracking-tight text-white">Daisy Haye</span>
+  
             </Link>
             <p className="text-sm leading-relaxed">
               Leading the way in British IT excellence. Providing robust, secure, and scalable technology solutions for modern enterprises across the United Kingdom.

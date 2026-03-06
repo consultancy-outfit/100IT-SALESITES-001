@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Cpu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import Icon from '../icon';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -21,10 +22,10 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-brand-primary p-2 rounded-lg">
-                <Cpu className="h-6 w-6 text-brand-accent" />
+              <div className="bg-brand-primary p-2 rounded-lg flex items-center justify-center">
+                <Icon className="h-10 w-auto" />
               </div>
-              <span className="text-2xl font-bold tracking-tight text-brand-primary">Daisy Haye</span>
+            
             </Link>
           </div>
 
