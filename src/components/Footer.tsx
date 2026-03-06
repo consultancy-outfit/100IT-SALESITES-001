@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Cpu, Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
 import { COMPANY_DETAILS } from '../constants';
+import Icon from '../icon';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,10 +14,9 @@ export const Footer = () => {
           {/* Brand & Description */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <Cpu className="w-8 h-8 text-brand-accent" />
-              <span className="font-bold text-2xl text-white tracking-tight">
-                Community<span className="text-brand-accent">ShortBreaks</span>
-              </span>
+            <div className="h-10 flex items-center justify-center group-hover:opacity-90 transition-opacity">
+            <Icon className="h-12 w-auto" />
+          </div>
             </Link>
             <p className="text-slate-400 leading-relaxed">
               Empowering British businesses with cutting-edge IT solutions, robust cybersecurity, and strategic technology consultancy.
