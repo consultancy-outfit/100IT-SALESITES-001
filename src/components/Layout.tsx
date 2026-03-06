@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Cpu, Phone, Mail, MapPin, Linkedin, Twitter, ShieldCheck } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, Linkedin, Twitter, ShieldCheck } from 'lucide-react';
+import Icon from '../icon';
 import { COMPANY_DETAILS, NAV_LINKS } from '../constants';
 import { cn } from '../lib/utils';
 
@@ -14,12 +15,9 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white group-hover:bg-indigo-700 transition-colors">
-              <Cpu size={24} />
+            <div className="h-10 flex items-center justify-center group-hover:opacity-90 transition-opacity">
+              <Icon className="h-10 w-auto" />
             </div>
-            <span className="text-xl font-bold text-slate-900 tracking-tight">
-              Cumbria <span className="text-indigo-600">IT</span>
-            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -96,12 +94,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-indigo-500 rounded flex items-center justify-center text-white">
-                <Cpu size={20} />
+              <div className="h-8 flex items-center justify-center">
+                <Icon className="h-14 w-auto" />
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">
-                Cumbria <span className="text-indigo-400">IT</span>
-              </span>
             </Link>
             <p className="text-sm leading-relaxed">
               Leading the way in British IT services. We provide innovative, secure, and scalable technology solutions for businesses across the UK.
