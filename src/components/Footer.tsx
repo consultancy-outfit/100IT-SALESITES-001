@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Cpu, Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { BrandIcon } from '../icon';
 import { COMPANY_DETAILS } from '../constants';
 
 export const Footer = () => {
@@ -10,12 +11,9 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div className="space-y-6">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-brand-600 rounded flex items-center justify-center text-white">
-              <Cpu size={18} />
+            <div className="h-8 flex items-center shrink-0">
+              <BrandIcon className="h-14 w-auto" />
             </div>
-            <span className="font-display text-xl font-bold tracking-tight text-white">
-              Bruntsfield<span className="text-brand-400">House</span>
-            </span>
           </Link>
           <p className="text-sm leading-relaxed text-slate-400">
             Premium IT services and strategic consultancy for UK businesses. 
