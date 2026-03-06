@@ -8,7 +8,7 @@ export default function About() {
         {/* Hero */}
         <div className="max-w-3xl mb-24">
           <h1 className="text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-            Our Story & <span className="text-emerald-600">Mission</span>
+            Our Story & <span className="text-brand-600">Mission</span>
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed">
             Founded in London, Vibrance Outreach was born from a simple observation: British businesses needed IT partners who combined technical excellence with genuine commercial understanding.
@@ -17,17 +17,17 @@ export default function About() {
 
         {/* Vision/Mission */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
-          <div className="bg-slate-900 text-white p-12 rounded-[3rem] relative overflow-hidden">
-            <Target className="w-12 h-12 text-emerald-400 mb-8" />
+          <div className="bg-white border border-slate-200 text-slate-900 p-12 rounded-[3rem] relative overflow-hidden shadow-sm">
+            <Target className="w-12 h-12 text-brand-600 mb-8" />
             <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-            <p className="text-lg text-slate-300 leading-relaxed">
+            <p className="text-lg text-slate-600 leading-relaxed">
               To empower UK enterprises by providing secure, scalable, and strategic technology solutions that drive real business growth and operational resilience.
             </p>
           </div>
-          <div className="bg-emerald-600 text-white p-12 rounded-[3rem] relative overflow-hidden">
+          <div className="bg-brand-600 text-white p-12 rounded-[3rem] relative overflow-hidden">
             <Eye className="w-12 h-12 text-white mb-8 opacity-80" />
             <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-            <p className="text-lg text-emerald-50 leading-relaxed">
+            <p className="text-lg text-brand-50 leading-relaxed">
               To be the most trusted technology partner for the British mid-market, known for our integrity, innovation, and unwavering commitment to client success.
             </p>
           </div>
@@ -43,8 +43,8 @@ export default function About() {
               { icon: Heart, title: "Client Centric", desc: "Your business goals are our technology goals. We measure our success by your growth." },
             ].map((value, i) => (
               <div key={i} className="text-center">
-                <div className="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="w-8 h-8 text-emerald-600" />
+                <div className="w-16 h-16 bg-brand-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="w-8 h-8 text-brand-600" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4">{value.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{value.desc}</p>
@@ -57,7 +57,7 @@ export default function About() {
         <div className="bg-slate-50 p-12 rounded-[3rem] border border-slate-100 flex flex-col lg:flex-row gap-12 items-center mb-32">
           <div className="lg:w-1/3">
             <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-sm mb-6">
-              <Shield className="w-10 h-10 text-emerald-600" />
+              <Shield className="w-10 h-10 text-brand-600" />
             </div>
             <h2 className="text-3xl font-bold text-slate-900">GDPR & Security Commitment</h2>
           </div>
@@ -68,7 +68,7 @@ export default function About() {
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {["Data Sovereignty", "Encryption at Rest", "Regular Security Audits", "Staff Training", "DPO Oversight", "Incident Response"].map(item => (
                 <li key={item} className="flex items-center gap-2 text-slate-700 font-medium">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-brand-500" />
                   {item}
                 </li>
               ))}

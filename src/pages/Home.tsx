@@ -9,8 +9,8 @@ export default function Home() {
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl">
-            <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-50 rounded-full blur-3xl opacity-50" />
-            <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl opacity-50" />
+            <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-brand-50 rounded-full blur-3xl opacity-50" />
+            <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-brand-200 rounded-full blur-3xl opacity-40" />
           </div>
         </div>
 
@@ -21,11 +21,11 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 rounded-full">
+              <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-brand-700 uppercase bg-brand-50 rounded-full">
                 UK'S Leading IT Consultancy
               </span>
               <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-8">
-                Future-Proof Your <span className="text-emerald-600">Business</span> Technology
+                Future-Proof Your <span className="text-brand-600">Business</span> Technology
               </h1>
               <p className="text-xl text-slate-600 mb-10 leading-relaxed">
                 Vibrance Outreach provides world-class managed IT services, cyber security, and cloud strategy tailored for the British market.
@@ -33,7 +33,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to="/services"
-                  className="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-8 py-4 bg-brand-600 text-white rounded-full font-semibold hover:bg-brand-700 transition-all flex items-center justify-center gap-2"
                 >
                   Explore Services <ArrowRight className="w-5 h-5" />
                 </Link>
@@ -66,7 +66,7 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100"
               >
-                <item.icon className="w-10 h-10 text-emerald-600 mb-6" />
+                <item.icon className="w-10 h-10 text-brand-600 mb-6" />
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -96,7 +96,7 @@ export default function Home() {
                   "Retail & E-commerce",
                 ].map((industry) => (
                   <div key={industry} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-500" />
                     <span className="font-medium text-slate-700">{industry}</span>
                   </div>
                 ))}
@@ -114,44 +114,44 @@ export default function Home() {
       </section>
 
       {/* Case Study Section */}
-      <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
+      <section className="py-24 bg-brand-50 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Measurable Results</h2>
-            <p className="text-slate-400">How we've helped British businesses thrive.</p>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Measurable Results</h2>
+            <p className="text-slate-600">How we've helped British businesses thrive.</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-slate-800 p-10 rounded-3xl border border-slate-700">
-              <span className="text-emerald-400 font-bold tracking-widest uppercase text-xs">Legal Sector</span>
-              <h3 className="text-2xl font-bold mt-4 mb-6">Cloud Migration for London Law Firm</h3>
-              <p className="text-slate-300 mb-8">
+            <div className="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm">
+              <span className="text-brand-600 font-bold tracking-widest uppercase text-xs">Legal Sector</span>
+              <h3 className="text-2xl font-bold text-slate-900 mt-4 mb-6">Cloud Migration for London Law Firm</h3>
+              <p className="text-slate-600 mb-8">
                 Successfully migrated a 150-user firm to a secure private cloud, ensuring full SRA compliance.
               </p>
               <div className="grid grid-cols-2 gap-8">
                 <div>
-                  <p className="text-3xl font-bold text-emerald-400">£45,000</p>
-                  <p className="text-sm text-slate-400">Annual Savings</p>
+                  <p className="text-3xl font-bold text-brand-600">£45,000</p>
+                  <p className="text-sm text-slate-500">Annual Savings</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-emerald-400">100%</p>
-                  <p className="text-sm text-slate-400">Uptime Achieved</p>
+                  <p className="text-3xl font-bold text-brand-600">100%</p>
+                  <p className="text-sm text-slate-500">Uptime Achieved</p>
                 </div>
               </div>
             </div>
-            <div className="bg-slate-800 p-10 rounded-3xl border border-slate-700">
-              <span className="text-emerald-400 font-bold tracking-widest uppercase text-xs">Manufacturing</span>
-              <h3 className="text-2xl font-bold mt-4 mb-6">Infrastructure Overhaul in Manchester</h3>
-              <p className="text-slate-300 mb-8">
+            <div className="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm">
+              <span className="text-brand-600 font-bold tracking-widest uppercase text-xs">Manufacturing</span>
+              <h3 className="text-2xl font-bold text-slate-900 mt-4 mb-6">Infrastructure Overhaul in Manchester</h3>
+              <p className="text-slate-600 mb-8">
                 Modernised legacy server rooms with high-performance virtualised clusters.
               </p>
               <div className="grid grid-cols-2 gap-8">
                 <div>
-                  <p className="text-3xl font-bold text-emerald-400">35%</p>
-                  <p className="text-sm text-slate-400">Efficiency Boost</p>
+                  <p className="text-3xl font-bold text-brand-600">35%</p>
+                  <p className="text-sm text-slate-500">Efficiency Boost</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-emerald-400">£12,000</p>
-                  <p className="text-sm text-slate-400">IT Budget Reclaimed</p>
+                  <p className="text-3xl font-bold text-brand-600">£12,000</p>
+                  <p className="text-sm text-slate-500">IT Budget Reclaimed</p>
                 </div>
               </div>
             </div>
@@ -187,15 +187,15 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-emerald-600 rounded-[2.5rem] p-12 text-center text-white relative overflow-hidden">
+          <div className="bg-brand-600 rounded-[2.5rem] p-12 text-center text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl" />
             <h2 className="text-4xl font-bold mb-6">Ready to Elevate Your IT?</h2>
-            <p className="text-xl text-emerald-50 text-balance mb-10">
+            <p className="text-xl text-brand-50 text-balance mb-10">
               Join hundreds of UK businesses that trust Vibrance Outreach for their technology needs.
             </p>
             <Link
               to="/contact"
-              className="inline-block px-10 py-4 bg-white text-emerald-600 rounded-full font-bold hover:bg-emerald-50 transition-all shadow-xl"
+              className="inline-block px-10 py-4 bg-white text-brand-600 rounded-full font-bold hover:bg-brand-50 transition-all shadow-xl"
             >
               Get Started Today
             </Link>

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { NAV_LINKS } from "../constants";
+import Logo from "../assets/Vibrance_Outreach.svg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,12 +29,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:bg-emerald-700 transition-colors">
-              V
-            </div>
-            <span className={`font-bold text-xl tracking-tight ${scrolled ? "text-slate-900" : "text-slate-900"}`}>
-              Vibrance<span className="text-emerald-600">Outreach</span>
-            </span>
+            <img
+              src={Logo}
+              alt="Vibrance Outreach"
+              className="h-14 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -44,8 +44,8 @@ export default function Navbar() {
                 to={link.href}
                 className={`text-sm font-medium transition-colors ${
                   location.pathname === link.href
-                    ? "text-emerald-600"
-                    : "text-slate-600 hover:text-emerald-600"
+                    ? "text-brand-600"
+                    : "text-slate-600 hover:text-brand-600"
                 }`}
               >
                 {link.name}
@@ -53,7 +53,7 @@ export default function Navbar() {
             ))}
             <Link
               to="/contact"
-              className="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-slate-800 transition-all flex items-center gap-2"
+              className="bg-brand-600 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-brand-700 transition-all flex items-center gap-2"
             >
               Get a Quote <ChevronRight className="w-4 h-4" />
             </Link>
@@ -83,14 +83,14 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="block text-lg font-medium text-slate-900 hover:text-emerald-600"
+                  className="block text-lg font-medium text-slate-900 hover:text-brand-600"
                 >
                   {link.name}
                 </Link>
               ))}
               <Link
                 to="/contact"
-                className="block w-full text-center bg-emerald-600 text-white py-3 rounded-xl font-medium"
+                className="block w-full text-center bg-brand-600 text-white py-3 rounded-xl font-medium"
               >
                 Contact Us
               </Link>

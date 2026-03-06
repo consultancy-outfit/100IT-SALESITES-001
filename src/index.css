@@ -1,8 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  /* Logo palette: #4E046D (dark purple) → #FA00FF (magenta) */
+  --color-brand-50: #fdf4ff;
+  --color-brand-100: #fae8ff;
+  --color-brand-200: #f5d0fe;
+  --color-brand-300: #f0abfc;
+  --color-brand-400: #fa00ff;
+  --color-brand-500: #b91cc7;
+  --color-brand-600: #4e046d;
+  --color-brand-700: #3d0554;
+  --color-brand-800: #2e033f;
+  --color-brand-900: #1f0229;
+  --color-brand-950: #0f0114;
 }
 
 @layer base {

@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -22,7 +27,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col font-sans text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
+      <div className="min-h-screen flex flex-col font-sans text-slate-900 selection:bg-brand-100 selection:text-brand-900">
         <Navbar />
         <main className="flex-grow">
           <Routes>

@@ -9,7 +9,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-20">
           <h1 className="text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-            Our <span className="text-emerald-600">IT Services</span>
+            Our <span className="text-brand-600">IT Services</span>
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed">
             We provide a comprehensive suite of IT solutions designed to help British businesses scale securely and efficiently.
@@ -29,7 +29,7 @@ export default function Services() {
               }`}
             >
               <div className="lg:w-1/2">
-                <div className="inline-block px-4 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                <div className="inline-block px-4 py-1 bg-brand-50 text-brand-700 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
                   Service {index + 1}
                 </div>
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">{service.title}</h2>
@@ -43,7 +43,7 @@ export default function Services() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                   {service.benefits.map((benefit) => (
                     <div key={benefit} className="flex items-center gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-500 shrink-0" />
                       <span className="text-slate-700 font-medium">{benefit}</span>
                     </div>
                   ))}
@@ -56,7 +56,7 @@ export default function Services() {
                   </div>
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto px-8 py-3 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-all text-center"
+                    className="w-full sm:w-auto px-8 py-3 bg-brand-600 text-white rounded-full font-semibold hover:bg-brand-700 transition-all text-center"
                   >
                     Enquire Now
                   </Link>
@@ -65,7 +65,7 @@ export default function Services() {
 
               <div className="lg:w-1/2 w-full">
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-emerald-100 rounded-[2rem] -z-10 rotate-2" />
+                  <div className="absolute -inset-4 bg-brand-100 rounded-[2rem] -z-10 rotate-2" />
                   <div className="bg-white p-8 rounded-[2rem] shadow-xl border border-slate-100">
                     <h4 className="text-xl font-bold text-slate-900 mb-8">Our Process</h4>
                     <div className="space-y-8">
@@ -74,7 +74,7 @@ export default function Services() {
                           {i < service.process.length - 1 && (
                             <div className="absolute left-4 top-8 bottom-[-2rem] w-0.5 bg-slate-100" />
                           )}
-                          <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold shrink-0 z-10">
+                          <div className="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold shrink-0 z-10">
                             {i + 1}
                           </div>
                           <div>
