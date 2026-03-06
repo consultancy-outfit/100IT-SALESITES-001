@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Cpu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { BrandIcon } from '../icon';
 import { motion, AnimatePresence } from 'motion/react';
 
 const navigation = [
@@ -33,12 +34,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-navy-900 p-2 rounded-lg group-hover:bg-brand-600 transition-colors">
-              <Cpu className="w-6 h-6 text-white" />
+            <div className="h-10 flex items-center shrink-0">
+              <BrandIcon className="h-11 w-auto" />
             </div>
-            <span className="text-xl font-display font-bold tracking-tight text-navy-900">
-              Blessday<span className="text-brand-600">House</span>
-            </span>
+  
           </Link>
 
           {/* Desktop Nav */}

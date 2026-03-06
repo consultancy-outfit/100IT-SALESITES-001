@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Cpu, Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { BrandIcon } from '../icon';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,12 +13,9 @@ export default function Footer() {
           {/* Brand & Description */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <div className="bg-brand-600 p-2 rounded-lg">
-                <Cpu className="w-6 h-6 text-white" />
+              <div className="h-11 flex items-center shrink-0">
+                <BrandIcon className="h-11 w-auto" />
               </div>
-              <span className="text-xl font-display font-bold tracking-tight text-white">
-                Blessday<span className="text-brand-500">House</span>
-              </span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
               Empowering British businesses with cutting-edge IT solutions, robust cybersecurity, and scalable cloud infrastructure. Your trusted partner in digital transformation.
