@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { COMPANY_DETAILS, SERVICES, PRICING_PLANS } from './constants';
 import { cn } from './lib/utils';
+import Logo from './assets/The_Bridgewater_Complex.svg';
 
 // --- Components ---
 
@@ -36,13 +37,8 @@ const Header = () => {
       scrolled ? "bg-white/80 backdrop-blur-md border-slate-200 py-3" : "bg-transparent border-transparent py-5"
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center">
-            <Shield className="text-white w-6 h-6" />
-          </div>
-          <span className="font-bold text-xl tracking-tight text-slate-900">
-            Bridgewater<span className="text-slate-500">Complex</span>
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src={Logo} alt="The Bridgewater Complex" className="h-14 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
@@ -114,13 +110,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
-            <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center">
-                <Shield className="text-white w-5 h-5" />
-              </div>
-              <span className="font-bold text-lg tracking-tight text-slate-900">
-                Bridgewater<span className="text-slate-500">Complex</span>
-              </span>
+            <Link to="/" className="inline-block mb-6">
+              <img src={Logo} alt="The Bridgewater Complex" className="h-14 w-auto object-contain" />
             </Link>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
               Leading the way in British IT excellence. We provide strategic technology solutions that empower businesses to thrive in the digital age.
