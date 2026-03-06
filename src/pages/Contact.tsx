@@ -87,19 +87,6 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-
-              {/* Map Placeholder */}
-              <div className="aspect-video bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden relative group">
-                <div className="absolute inset-0 flex items-center justify-center text-zinc-400 font-medium">
-                  [ Google Maps Placeholder ]
-                </div>
-                <img 
-                  src="https://picsum.photos/seed/london-map/800/450?blur=2" 
-                  alt="London Map"
-                  className="w-full h-full object-cover opacity-50 grayscale"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
             </div>
 
             {/* Contact Form */}
