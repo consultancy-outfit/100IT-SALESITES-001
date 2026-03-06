@@ -48,7 +48,7 @@ const Hero = () => (
               <span>Explore Services</span>
               <ArrowRight size={20} />
             </Link>
-            <Link to="/contact" className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-full text-lg font-bold hover:bg-slate-50 transition-all flex items-center justify-center">
+            <Link to="/contact" className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-50 transition-all flex items-center justify-center">
               Book a Consultation
             </Link>
           </div>
@@ -133,7 +133,7 @@ const Features = () => {
             <motion.div
               key={i}
               whileHover={{ y: -5 }}
-              className="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-200 hover:bg-white hover:shadow-xl transition-all"
+              className="p-8 rounded-2xl bg-brand-50 border border-brand-100/70 hover:border-brand-200 hover:bg-white hover:shadow-xl transition-all"
             >
               <div className="w-12 h-12 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center mb-6">
                 <f.icon size={24} />
@@ -165,14 +165,14 @@ const CaseStudies = () => {
   ];
 
   return (
-    <section className="py-24 bg-slate-900 text-white overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden border-y border-brand-100/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-4xl font-display font-bold mb-6">Real Results for Real Businesses</h2>
-            <p className="text-slate-400 text-lg">We don't just provide services; we deliver measurable business value across the UK.</p>
+            <h2 className="text-4xl font-display font-bold text-slate-900 mb-6">Real Results for Real Businesses</h2>
+            <p className="text-slate-600 text-lg">We don't just provide services; we deliver measurable business value across the UK.</p>
           </div>
-          <Link to="/services" className="text-brand-400 font-bold flex items-center space-x-2 hover:text-brand-300 transition-colors">
+          <Link to="/services" className="text-brand-700 font-bold flex items-center space-x-2 hover:text-brand-800 transition-colors">
             <span>View all case studies</span>
             <ArrowRight size={20} />
           </Link>
@@ -180,14 +180,14 @@ const CaseStudies = () => {
         
         <div className="grid md:grid-cols-2 gap-8">
           {cases.map((c, i) => (
-            <div key={i} className="group relative rounded-3xl overflow-hidden bg-slate-800 border border-slate-700 p-8 md:p-12">
+            <div key={i} className="group relative rounded-3xl overflow-hidden bg-brand-50 border border-brand-100/70 p-8 md:p-12">
               <div className="mb-8">
-                <span className="text-brand-400 text-sm font-bold uppercase tracking-widest">{c.industry}</span>
-                <h3 className="text-3xl font-display font-bold mt-2 mb-4">{c.title}</h3>
-                <p className="text-slate-400 leading-relaxed">{c.desc}</p>
+                <span className="text-brand-700 text-sm font-bold uppercase tracking-widest">{c.industry}</span>
+                <h3 className="text-3xl font-display font-bold text-slate-900 mt-2 mb-4">{c.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{c.desc}</p>
               </div>
               <div className="flex items-center space-x-4">
-                <div className="bg-brand-600/20 text-brand-400 px-6 py-3 rounded-xl font-bold text-xl border border-brand-600/30">
+                <div className="bg-brand-600/10 text-brand-800 px-6 py-3 rounded-xl font-bold text-xl border border-brand-200/60">
                   {c.result}
                 </div>
               </div>
@@ -222,7 +222,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 bg-brand-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-display font-bold text-slate-900">What Our Clients Say</h2>

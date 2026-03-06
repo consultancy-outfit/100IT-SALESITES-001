@@ -60,9 +60,9 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-brand-50 min-h-screen">
       {/* Header */}
-      <section className="bg-slate-900 text-white py-24">
+      <section className="bg-brand-50 text-slate-900 py-24 border-b border-brand-100/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export default function Pricing() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-400 max-w-2xl mx-auto"
+            className="text-xl text-slate-600 max-w-2xl mx-auto"
           >
             No hidden fees. No long-term lock-ins. Just enterprise-grade IT support tailored for your business.
           </motion.p>
@@ -133,7 +133,7 @@ export default function Pricing() {
                   className={`block w-full text-center py-4 rounded-xl font-bold transition-all ${
                     plan.popular 
                       ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-lg shadow-brand-600/25' 
-                      : 'bg-slate-900 text-white hover:bg-slate-800'
+                      : 'bg-brand-700 text-white hover:bg-brand-800'
                   }`}
                 >
                   Get Started

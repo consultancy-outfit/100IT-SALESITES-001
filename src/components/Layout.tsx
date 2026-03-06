@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronRight, Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
 import { COMPANY_DETAILS, NAVIGATION_LINKS, LEGAL_LINKS } from '../constants';
+import HowseGardenLogo from '../assets/Howse_Garden.svg';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -19,12 +20,13 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-display font-bold text-xl">HG</span>
-            </div>
-            <span className="font-display font-bold text-2xl tracking-tight text-slate-900">
-              Howse<span className="text-brand-600">Garden</span>
-            </span>
+            <img
+              src={HowseGardenLogo}
+              alt={`${COMPANY_DETAILS.name} logo`}
+              className="h-22 w-auto"
+              loading="eager"
+              decoding="async"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -96,51 +98,54 @@ const Header = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-20 pb-10">
+    <footer className="bg-white text-slate-600 pt-20 pb-10 border-t border-brand-100/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-display font-bold text-lg">HG</span>
-              </div>
-              <span className="font-display font-bold text-xl tracking-tight text-white">
-                Howse<span className="text-brand-600">Garden</span>
-              </span>
+          
+                <img
+                  src={HowseGardenLogo}
+                  alt={`${COMPANY_DETAILS.name} logo`}
+                  className="h-22 w-auto"
+                  loading="lazy"
+                  decoding="async"
+                />
+           
             </Link>
-            <p className="text-sm leading-relaxed">
+            <p className="text-sm leading-relaxed ">
               Leading UK IT services provider delivering innovative technology solutions to help businesses thrive in a digital-first world.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-brand-400 transition-colors"><Linkedin size={20} /></a>
-              <a href="#" className="hover:text-brand-400 transition-colors"><Twitter size={20} /></a>
+              <a href="#" className="text-slate-500 hover:text-brand-700 transition-colors"><Linkedin size={20} /></a>
+              <a href="#" className="text-slate-500 hover:text-brand-700 transition-colors"><Twitter size={20} /></a>
             </div>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Quick Links</h4>
+            <h4 className="text-slate-900 font-bold mb-6">Quick Links</h4>
             <ul className="space-y-4 text-sm">
               {NAVIGATION_LINKS.map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="hover:text-brand-400 transition-colors">{link.name}</Link>
+                  <Link to={link.path} className="hover:text-brand-700 transition-colors">{link.name}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Legal</h4>
+            <h4 className="text-slate-900 font-bold mb-6">Legal</h4>
             <ul className="space-y-4 text-sm">
               {LEGAL_LINKS.map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="hover:text-brand-400 transition-colors">{link.name}</Link>
+                  <Link to={link.path} className="hover:text-brand-700 transition-colors">{link.name}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Contact Us</h4>
+            <h4 className="text-slate-900 font-bold mb-6">Contact Us</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start space-x-3">
                 <MapPin size={18} className="text-brand-500 shrink-0" />
@@ -158,7 +163,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
+        <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
             <p>© {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights reserved.</p>
             <p className="mt-1 opacity-60">Company Registration Number: {COMPANY_DETAILS.crn} | Registered in England & Wales</p>

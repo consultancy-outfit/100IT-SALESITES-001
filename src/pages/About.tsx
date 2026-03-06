@@ -45,8 +45,8 @@ export default function About() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <section className="relative py-24 bg-brand-50 text-slate-900 overflow-hidden border-b border-brand-100/70">
+        <div className="absolute inset-0 opacity-40">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-500 via-transparent to-transparent" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -62,7 +62,7 @@ export default function About() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-slate-400 leading-relaxed"
+              className="text-xl text-slate-600 leading-relaxed"
             >
               Founded in London, Howse Garden was born from a simple observation: British businesses needed IT partners who spoke their language and understood their unique challenges.
             </motion.p>
@@ -105,7 +105,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-brand-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-display font-bold text-slate-900">Our Core Values</h2>

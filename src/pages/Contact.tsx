@@ -12,9 +12,9 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-brand-50 min-h-screen">
       {/* Header */}
-      <section className="bg-slate-900 text-white py-24">
+      <section className="bg-brand-50 text-slate-900 py-24 border-b border-brand-100/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-400 max-w-2xl mx-auto"
+            className="text-xl text-slate-600 max-w-2xl mx-auto"
           >
             Have a question or ready to start your journey with us? Our team of UK-based experts is here to help.
           </motion.p>

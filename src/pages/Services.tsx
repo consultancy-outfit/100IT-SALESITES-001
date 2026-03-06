@@ -72,9 +72,9 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="bg-slate-50">
+    <div className="bg-brand-50">
       {/* Header */}
-      <section className="bg-slate-900 text-white py-24">
+      <section className="bg-brand-50 text-slate-900 py-24 border-b border-brand-100/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-400 max-w-3xl mx-auto"
+            className="text-xl text-slate-600 max-w-3xl mx-auto"
           >
             From day-to-day support to complex digital transformations, we provide the technology solutions your business needs to excel.
           </motion.p>
@@ -107,7 +107,7 @@ export default function Services() {
                 className="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden"
               >
                 <div className="grid lg:grid-cols-12">
-                  <div className="lg:col-span-5 p-8 md:p-12 bg-slate-50 border-r border-slate-100">
+                  <div className="lg:col-span-5 p-8 md:p-12 bg-brand-50 border-r border-brand-100/70">
                     <div className="w-16 h-16 bg-brand-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-brand-600/20">
                       <service.icon size={32} />
                     </div>
@@ -159,7 +159,7 @@ export default function Services() {
                     </div>
                     
                     <div className="mt-12 flex justify-end">
-                      <Link to="/contact" className="bg-slate-900 text-white px-8 py-3 rounded-full font-bold hover:bg-slate-800 transition-all">
+                      <Link to="/contact" className="bg-brand-700 text-white px-8 py-3 rounded-full font-bold hover:bg-brand-800 transition-all">
                         Enquire Now
                       </Link>
                     </div>
