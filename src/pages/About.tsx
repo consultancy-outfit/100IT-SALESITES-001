@@ -5,17 +5,17 @@ import { COMPANY_DETAILS } from '../constants';
 
 const VALUES = [
   {
-    icon: <ShieldCheck className="text-indigo-600" />,
+    icon: <ShieldCheck className="text-cyan-600" />,
     title: "Integrity",
     description: "We operate with total transparency, ensuring our clients always know exactly what they are paying for."
   },
   {
-    icon: <Users className="text-indigo-600" />,
+    icon: <Users className="text-cyan-600" />,
     title: "Partnership",
     description: "We don't just fix computers; we become an extension of your team, dedicated to your long-term success."
   },
   {
-    icon: <Award className="text-indigo-600" />,
+    icon: <Award className="text-cyan-600" />,
     title: "Excellence",
     description: "We hold ourselves to the highest technical standards, constantly evolving to stay ahead of the curve."
   }
@@ -59,7 +59,7 @@ export default function About() {
             </p>
           </motion.div>
         </div>
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-indigo-600/5 -z-0 hidden lg:block skew-x-12 translate-x-1/2" />
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-cyan-600/5 -z-0 hidden lg:block skew-x-12 translate-x-1/2" />
       </section>
 
       {/* Mission & Vision */}
@@ -67,17 +67,17 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16">
             <div className="p-10 bg-slate-900 rounded-[40px] text-white relative overflow-hidden">
-              <Target className="text-indigo-400 mb-6" size={48} />
+              <Target className="text-cyan-400 mb-6" size={48} />
               <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-slate-400 leading-relaxed">
                 To empower British businesses through innovative, secure, and reliable technology solutions that drive sustainable growth and operational excellence.
               </p>
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl" />
             </div>
-            <div className="p-10 bg-indigo-600 rounded-[40px] text-white relative overflow-hidden">
-              <Eye className="text-indigo-200 mb-6" size={48} />
+            <div className="p-10 bg-cyan-600 rounded-[40px] text-white relative overflow-hidden">
+              <Eye className="text-cyan-200 mb-6" size={48} />
               <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-              <p className="text-lg text-indigo-100 leading-relaxed">
+              <p className="text-lg text-cyan-100 leading-relaxed">
                 To be the UK's most trusted IT partner, recognized for our technical brilliance, unwavering integrity, and commitment to client success.
               </p>
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
@@ -108,7 +108,7 @@ export default function About() {
               <img src="https://picsum.photos/seed/team1/400/600" className="rounded-3xl shadow-lg" alt="Team 1" referrerPolicy="no-referrer" />
               <div className="space-y-4 pt-12">
                 <img src="https://picsum.photos/seed/team2/400/400" className="rounded-3xl shadow-lg" alt="Team 2" referrerPolicy="no-referrer" />
-                <div className="bg-indigo-600 p-8 rounded-3xl text-white">
+                <div className="bg-cyan-600 p-8 rounded-3xl text-white">
                   <p className="text-4xl font-bold mb-2">12+</p>
                   <p className="text-sm font-bold uppercase tracking-widest opacity-80">Years of Innovation</p>
                 </div>
@@ -141,7 +141,7 @@ export default function About() {
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-1">{person.name}</h3>
-                <p className="text-indigo-600 font-bold mb-4">{person.role}</p>
+                <p className="text-cyan-600 font-bold mb-4">{person.role}</p>
                 <p className="text-slate-600 leading-relaxed">{'getBio' in person ? person.getBio(COMPANY_DETAILS.name) : person.bio}</p>
               </motion.div>
             ))}
@@ -171,10 +171,10 @@ export default function About() {
       </section>
 
       {/* GDPR Compliance */}
-      <section className="py-24 bg-indigo-50">
+      <section className="py-24 bg-cyan-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
-            <ShieldCheck className="text-indigo-600" size={40} />
+            <ShieldCheck className="text-cyan-600" size={40} />
           </div>
           <h2 className="text-3xl font-bold text-slate-900 mb-6">Commitment to GDPR Compliance</h2>
           <p className="text-lg text-slate-600 leading-relaxed mb-8">
@@ -182,7 +182,7 @@ export default function About() {
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             {["ICO Registered", "Cyber Essentials Certified", "ISO 27001 Aligned"].map((cert, idx) => (
-              <div key={idx} className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-indigo-100 text-sm font-bold text-indigo-700">
+              <div key={idx} className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-cyan-100 text-sm font-bold text-cyan-700">
                 <CheckCircle2 size={16} />
                 {cert}
               </div>

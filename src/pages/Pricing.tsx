@@ -96,11 +96,11 @@ export default function Pricing() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               className={`relative bg-white rounded-[32px] p-8 shadow-xl border ${
-                plan.highlight ? 'border-indigo-600 ring-4 ring-indigo-600/5' : 'border-slate-100'
+                plan.highlight ? 'border-cyan-600 ring-4 ring-cyan-600/5' : 'border-slate-100'
               }`}
             >
               {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-cyan-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                   Most Popular
                 </div>
               )}
@@ -142,7 +142,7 @@ export default function Pricing() {
                 to="/contact"
                 className={`w-full py-4 rounded-xl font-bold text-center transition-all flex items-center justify-center gap-2 ${
                   plan.highlight
-                    ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-100'
+                    ? 'bg-cyan-600 text-white hover:bg-cyan-700 shadow-lg shadow-cyan-100'
                     : 'bg-slate-900 text-white hover:bg-slate-800'
                 }`}
               >
@@ -162,7 +162,7 @@ export default function Pricing() {
         <p className="mt-8 text-slate-600 leading-relaxed">
           Need a custom solution for a larger organization or specific project? We offer bespoke pricing for complex infrastructure requirements and multi-site operations.
         </p>
-        <Link to="/contact" className="mt-4 inline-block text-indigo-600 font-bold hover:underline">
+        <Link to="/contact" className="mt-4 inline-block text-cyan-600 font-bold hover:underline">
           Contact us for a custom quote
         </Link>
       </section>

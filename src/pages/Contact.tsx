@@ -39,7 +39,7 @@ export default function Contact() {
               <h2 className="text-3xl font-bold text-slate-900 mb-8">Contact Information</h2>
               <div className="space-y-8">
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 shrink-0">
+                  <div className="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center text-cyan-600 shrink-0">
                     <MapPin size={24} />
                   </div>
                   <div>
@@ -48,7 +48,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 shrink-0">
+                  <div className="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center text-cyan-600 shrink-0">
                     <Phone size={24} />
                   </div>
                   <div>
@@ -57,7 +57,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 shrink-0">
+                  <div className="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center text-cyan-600 shrink-0">
                     <Mail size={24} />
                   </div>
                   <div>
@@ -66,32 +66,19 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 shrink-0">
+                  <div className="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center text-cyan-600 shrink-0">
                     <Clock size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">Business Hours</h4>
                     <p className="text-slate-600">{COMPANY_DETAILS.hours}</p>
-                    <p className="text-xs font-bold text-indigo-600 mt-2 uppercase tracking-widest">{COMPANY_DETAILS.support}</p>
+                    <p className="text-xs font-bold text-cyan-600 mt-2 uppercase tracking-widest">{COMPANY_DETAILS.support}</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="bg-slate-100 rounded-3xl aspect-video flex items-center justify-center border border-slate-200 overflow-hidden relative group">
-              <img 
-                src="https://picsum.photos/seed/map/800/450?blur=2" 
-                className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale" 
-                alt="Map Placeholder"
-                referrerPolicy="no-referrer"
-              />
-              <div className="relative z-10 text-center p-8">
-                <MapPin size={48} className="text-slate-400 mx-auto mb-4" />
-                <p className="text-slate-500 font-medium">Interactive Map Placeholder</p>
-                <p className="text-xs text-slate-400 mt-2">Leeds, West Yorkshire</p>
-              </div>
-            </div>
+           
           </div>
 
           {/* Contact Form */}
@@ -112,7 +99,7 @@ export default function Contact() {
                   </p>
                   <button
                     onClick={() => setFormStatus('idle')}
-                    className="mt-8 text-indigo-600 font-bold hover:underline"
+                    className="mt-8 text-cyan-600 font-bold hover:underline"
                   >
                     Send another message
                   </button>
@@ -127,7 +114,7 @@ export default function Contact() {
                         <input
                           required
                           type="text"
-                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition-all"
+                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-cyan-600 focus:border-transparent outline-none transition-all"
                           placeholder="John Smith"
                         />
                       </div>
@@ -136,7 +123,7 @@ export default function Contact() {
                         <input
                           required
                           type="email"
-                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition-all"
+                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-cyan-600 focus:border-transparent outline-none transition-all"
                           placeholder="john@company.co.uk"
                         />
                       </div>
@@ -146,7 +133,7 @@ export default function Contact() {
                         <label className="text-sm font-bold text-slate-700 uppercase tracking-widest">Phone Number</label>
                         <input
                           type="tel"
-                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition-all"
+                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-cyan-600 focus:border-transparent outline-none transition-all"
                           placeholder="+44 0000 000000"
                         />
                       </div>
@@ -154,14 +141,14 @@ export default function Contact() {
                         <label className="text-sm font-bold text-slate-700 uppercase tracking-widest">Company Name</label>
                         <input
                           type="text"
-                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition-all"
+                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-cyan-600 focus:border-transparent outline-none transition-all"
                           placeholder="Acme Ltd"
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-slate-700 uppercase tracking-widest">Subject</label>
-                      <select className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition-all">
+                      <select className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-cyan-600 focus:border-transparent outline-none transition-all">
                         <option>General Enquiry</option>
                         <option>Managed IT Support</option>
                         <option>Cybersecurity Audit</option>
@@ -174,20 +161,20 @@ export default function Contact() {
                       <textarea
                         required
                         rows={5}
-                        className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition-all resize-none"
+                        className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-cyan-600 focus:border-transparent outline-none transition-all resize-none"
                         placeholder="How can we help you?"
                       ></textarea>
                     </div>
                     <div className="flex items-start gap-3">
-                      <input required type="checkbox" className="mt-1 w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-600" />
+                      <input required type="checkbox" className="mt-1 w-4 h-4 rounded border-slate-300 text-cyan-600 focus:ring-cyan-600" />
                       <p className="text-sm text-slate-500">
-                        I consent to {COMPANY_DETAILS.name} processing my data in accordance with the <Link to="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</Link>.
+                        I consent to {COMPANY_DETAILS.name} processing my data in accordance with the <Link to="/privacy" className="text-cyan-600 hover:underline">Privacy Policy</Link>.
                       </p>
                     </div>
                     <button
                       disabled={formStatus === 'submitting'}
                       type="submit"
-                      className="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                      className="w-full bg-cyan-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-cyan-700 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                     >
                       {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
                       <Send size={20} />

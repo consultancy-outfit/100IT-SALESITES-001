@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const SERVICES = [
   {
     id: 'managed-it',
-    icon: <Headphones className="text-indigo-600" />,
+    icon: <Headphones className="text-cyan-600" />,
     title: "Managed IT Support",
     overview: "Comprehensive 24/7 monitoring and helpdesk support for your entire team.",
     target: "SMEs with 10-250 employees looking for a reliable outsourced IT department.",
@@ -16,7 +16,7 @@ const SERVICES = [
   },
   {
     id: 'cloud-solutions',
-    icon: <Cloud className="text-indigo-600" />,
+    icon: <Cloud className="text-cyan-600" />,
     title: "Cloud Infrastructure",
     overview: "Secure, scalable cloud migration and management using Azure and AWS.",
     target: "Businesses looking to modernize their legacy systems and enable remote work.",
@@ -26,7 +26,7 @@ const SERVICES = [
   },
   {
     id: 'cybersecurity',
-    icon: <Shield className="text-indigo-600" />,
+    icon: <Shield className="text-cyan-600" />,
     title: "Cybersecurity Solutions",
     overview: "Multi-layered protection against evolving digital threats and ransomware.",
     target: "Companies handling sensitive data or operating in regulated UK sectors.",
@@ -36,7 +36,7 @@ const SERVICES = [
   },
   {
     id: 'it-consulting',
-    icon: <Search className="text-indigo-600" />,
+    icon: <Search className="text-cyan-600" />,
     title: "Strategic IT Consulting",
     overview: "Expert guidance to align your technology with your long-term business goals.",
     target: "Leadership teams needing high-level technical direction without a full-time CTO.",
@@ -46,7 +46,7 @@ const SERVICES = [
   },
   {
     id: 'disaster-recovery',
-    icon: <Database className="text-indigo-600" />,
+    icon: <Database className="text-cyan-600" />,
     title: "Disaster Recovery & Backup",
     overview: "Robust data protection strategies to ensure business continuity in any crisis.",
     target: "Any business where data loss or downtime would be catastrophic.",
@@ -101,10 +101,10 @@ export default function Services() {
                     <p className="text-slate-700 font-medium">{service.target}</p>
                   </div>
 
-                  <div className="p-6 bg-indigo-600 rounded-2xl text-white">
-                    <p className="text-sm font-medium text-indigo-100 mb-1">Starting Price</p>
+                  <div className="p-6 bg-cyan-600 rounded-2xl text-white">
+                    <p className="text-sm font-medium text-cyan-100 mb-1">Starting Price</p>
                     <p className="text-2xl font-bold">{service.price}</p>
-                    <p className="text-[10px] text-indigo-200 mt-2 uppercase tracking-widest font-bold">Excluding VAT</p>
+                    <p className="text-[10px] text-cyan-200 mt-2 uppercase tracking-widest font-bold">Excluding VAT</p>
                   </div>
                 </div>
 
@@ -113,12 +113,12 @@ export default function Services() {
                   <div className="grid md:grid-cols-2 gap-12">
                     <div>
                       <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                        <Cpu size={20} className="text-indigo-600" /> Our Process
+                        <Cpu size={20} className="text-cyan-600" /> Our Process
                       </h3>
                       <ul className="space-y-4">
                         {service.process.map((step, sIdx) => (
                           <li key={sIdx} className="flex items-start gap-3">
-                            <span className="w-6 h-6 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                            <span className="w-6 h-6 rounded-full bg-cyan-50 text-cyan-600 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
                               {sIdx + 1}
                             </span>
                             <span className="text-slate-600">{step}</span>
@@ -128,7 +128,7 @@ export default function Services() {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                        <CheckCircle2 size={20} className="text-indigo-600" /> Key Benefits
+                        <CheckCircle2 size={20} className="text-cyan-600" /> Key Benefits
                       </h3>
                       <ul className="space-y-4">
                         {service.benefits.map((benefit, bIdx) => (
@@ -168,7 +168,7 @@ export default function Services() {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-indigo-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100"
+            className="inline-flex items-center gap-2 bg-cyan-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-cyan-700 transition-all shadow-lg shadow-cyan-100"
           >
             Book a Consultation <ArrowRight size={20} />
           </Link>

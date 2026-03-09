@@ -7,14 +7,13 @@ import {
   Mail,
   MapPin,
   Shield,
-  Cpu,
   Globe,
-  ChevronRight,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { COMPANY_DETAILS } from "../constants";
+import HCFLogo from "../assets/HCF_The_Springs.svg";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -33,17 +32,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="min-h-screen bg-cyan-50 font-sans text-slate-900 selection:bg-cyan-100 selection:text-cyan-900">
       {/* Top Bar */}
-      <div className="bg-slate-900 text-slate-300 py-2 px-4 hidden md:block border-b border-slate-800">
+      <div className="bg-cyan-100 text-slate-700 py-2 px-4 hidden md:block border-b border-cyan-200">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-xs font-medium tracking-wide uppercase">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
-              <Phone size={14} className="text-indigo-400" />{" "}
+              <Phone size={14} className="text-cyan-600" />{" "}
               {COMPANY_DETAILS.phone}
             </span>
             <span className="flex items-center gap-2">
-              <Mail size={14} className="text-indigo-400" />{" "}
+              <Mail size={14} className="text-cyan-600" />{" "}
               {COMPANY_DETAILS.email}
             </span>
           </div>
@@ -54,15 +53,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-cyan-100">
         <nav className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-200 group-hover:scale-105 transition-transform">
-              <Cpu size={24} />
+          <Link to="/" className="flex items-center gap-2 cursor-pointer">
+            <div className="w-[160px] h-[40px] overflow-hidden flex items-center cursor-pointer">
+              <img
+                src={HCFLogo}
+                alt={`${COMPANY_DETAILS.name} logo`}
+                className="w-50 h-18 object-cover object-center"
+              />
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">
-              HCF <span className="text-indigo-600">The Springs</span>
-            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -72,9 +72,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "text-sm font-semibold transition-colors hover:text-indigo-600",
+                  "text-sm font-semibold transition-colors hover:text-cyan-600",
                   location.pathname === link.path
-                    ? "text-indigo-600"
+                    ? "text-cyan-600"
                     : "text-slate-600",
                 )}
               >
@@ -83,7 +83,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ))}
             <Link
               to="/contact"
-              className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-slate-800 transition-all shadow-md active:scale-95"
+              className="bg-cyan-600 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-cyan-700 transition-all shadow-md shadow-cyan-200 active:scale-95"
             >
               Get Started
             </Link>
@@ -120,7 +120,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 ))}
                 <Link
                   to="/contact"
-                  className="bg-indigo-600 text-white px-6 py-3 rounded-xl text-center font-bold"
+                  className="bg-cyan-600 text-white px-6 py-3 rounded-xl text-center font-bold"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Get Started
@@ -134,40 +134,40 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main>{children}</main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-300 pt-20 pb-10 border-t border-slate-800">
+      <footer className="bg-cyan-50 text-slate-700 pt-20 pb-10 border-t border-cyan-100">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="space-y-6">
-              <Link to="/" className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center text-white">
-                  <Cpu size={18} />
+              <Link to="/" className="flex items-center cursor-pointer">
+                <div className="w-[160px] h-[40px] overflow-hidden flex items-center cursor-pointer">
+                  <img
+                    src={HCFLogo}
+                    alt={`${COMPANY_DETAILS.name} logo`}
+                    className="w-50 h-18 object-cover object-center"
+                  />
                 </div>
-                <span className="text-xl font-bold text-white">
-                  HCF <span className="text-indigo-400">The Springs</span>
-                </span>
               </Link>
-              <p className="text-sm leading-relaxed text-slate-400">
+              <p className="text-sm leading-relaxed text-slate-600">
                 Empowering UK businesses with cutting-edge IT solutions, managed
                 services, and strategic technology consulting.
               </p>
               <div className="flex gap-4">
-                {/* Social placeholders */}
-                <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-indigo-600 transition-colors cursor-pointer">
+                <div className="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center hover:bg-cyan-600 hover:text-white transition-colors cursor-pointer text-cyan-600">
                   <Globe size={16} />
                 </div>
-                <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-indigo-600 transition-colors cursor-pointer">
+                <div className="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center hover:bg-cyan-600 hover:text-white transition-colors cursor-pointer text-cyan-600">
                   <Shield size={16} />
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="text-white font-bold mb-6">Our Services</h4>
+              <h4 className="text-slate-900 font-bold mb-6">Our Services</h4>
               <ul className="space-y-4 text-sm">
                 <li>
                   <Link
                     to="/services"
-                    className="hover:text-indigo-400 transition-colors"
+                    className="hover:text-cyan-600 transition-colors"
                   >
                     Managed IT Support
                   </Link>
@@ -175,7 +175,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li>
                   <Link
                     to="/services"
-                    className="hover:text-indigo-400 transition-colors"
+                    className="hover:text-cyan-600 transition-colors"
                   >
                     Cloud Infrastructure
                   </Link>
@@ -183,7 +183,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li>
                   <Link
                     to="/services"
-                    className="hover:text-indigo-400 transition-colors"
+                    className="hover:text-cyan-600 transition-colors"
                   >
                     Cybersecurity Solutions
                   </Link>
@@ -191,7 +191,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li>
                   <Link
                     to="/services"
-                    className="hover:text-indigo-400 transition-colors"
+                    className="hover:text-cyan-600 transition-colors"
                   >
                     IT Consulting
                   </Link>
@@ -199,7 +199,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li>
                   <Link
                     to="/services"
-                    className="hover:text-indigo-400 transition-colors"
+                    className="hover:text-cyan-600 transition-colors"
                   >
                     Disaster Recovery
                   </Link>
@@ -208,12 +208,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
 
             <div>
-              <h4 className="text-white font-bold mb-6">Quick Links</h4>
+              <h4 className="text-slate-900 font-bold mb-6">Quick Links</h4>
               <ul className="space-y-4 text-sm">
                 <li>
                   <Link
                     to="/about"
-                    className="hover:text-indigo-400 transition-colors"
+                    className="hover:text-cyan-600 transition-colors"
                   >
                     About Us
                   </Link>
@@ -221,7 +221,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li>
                   <Link
                     to="/pricing"
-                    className="hover:text-indigo-400 transition-colors"
+                    className="hover:text-cyan-600 transition-colors"
                   >
                     Pricing Plans
                   </Link>
@@ -229,7 +229,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li>
                   <Link
                     to="/contact"
-                    className="hover:text-indigo-400 transition-colors"
+                    className="hover:text-cyan-600 transition-colors"
                   >
                     Contact Us
                   </Link>
@@ -237,7 +237,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li>
                   <Link
                     to="/terms"
-                    className="hover:text-indigo-400 transition-colors"
+                    className="hover:text-cyan-600 transition-colors"
                   >
                     Terms & Conditions
                   </Link>
@@ -245,7 +245,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li>
                   <Link
                     to="/privacy"
-                    className="hover:text-indigo-400 transition-colors"
+                    className="hover:text-cyan-600 transition-colors"
                   >
                     Privacy Policy
                   </Link>
@@ -254,25 +254,25 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
 
             <div>
-              <h4 className="text-white font-bold mb-6">Contact Details</h4>
+              <h4 className="text-slate-900 font-bold mb-6">Contact Details</h4>
               <ul className="space-y-4 text-sm">
                 <li className="flex gap-3">
-                  <MapPin size={18} className="text-indigo-400 shrink-0" />
+                  <MapPin size={18} className="text-cyan-600 shrink-0" />
                   <span>{COMPANY_DETAILS.address}</span>
                 </li>
                 <li className="flex gap-3">
-                  <Phone size={18} className="text-indigo-400 shrink-0" />
+                  <Phone size={18} className="text-cyan-600 shrink-0" />
                   <span>{COMPANY_DETAILS.phone}</span>
                 </li>
                 <li className="flex gap-3">
-                  <Mail size={18} className="text-indigo-400 shrink-0" />
+                  <Mail size={18} className="text-cyan-600 shrink-0" />
                   <span>{COMPANY_DETAILS.email}</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-500 uppercase tracking-widest">
+          <div className="pt-8 border-t border-cyan-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-500 uppercase tracking-widest">
             <p>
               © {new Date().getFullYear()} {COMPANY_DETAILS.name}. All rights
               reserved.
