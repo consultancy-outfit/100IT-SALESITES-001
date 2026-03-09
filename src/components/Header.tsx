@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Cpu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { COMPANY_DETAILS } from '../constants';
+// @ts-ignore - SVG asset handled by bundler
+import DraycombeLogo from '../assets/Draycombe _House.svg';
 
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,12 +34,11 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-zinc-900 rounded-lg flex items-center justify-center">
-              <Cpu className="text-white w-6 h-6" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-zinc-900">
-              Draycombe<span className="text-zinc-500">House</span>
-            </span>
+            <img
+              src={DraycombeLogo}
+              alt={COMPANY_DETAILS.name}
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
