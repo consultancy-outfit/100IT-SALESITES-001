@@ -42,7 +42,7 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center cursor-pointer" onClick={() => setActivePage('Home')}>
             <div className="w-28 h-20 rounded-lg flex items-center justify-center mr-3">
-              <Icon className="h-16 w-auto" />
+              <Icon className="h-17 w-auto" />
             </div>
           </div>
           
