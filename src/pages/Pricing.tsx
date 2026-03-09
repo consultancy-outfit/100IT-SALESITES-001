@@ -66,7 +66,7 @@ export default function Pricing() {
             animate={{ opacity: 1, y: 0 }}
           >
             <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-stone-900 mb-8">
-              Transparent <span className="text-emerald-600">Pricing</span>
+              Transparent <span className="text-violet-600">Pricing</span>
             </h1>
             <p className="text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed">
               Choose the plan that best fits your business needs. All plans are billed monthly and include our commitment to excellence.
@@ -95,7 +95,7 @@ export default function Pricing() {
                 }`}
               >
                 {plan.highlight && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-violet-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                     Most Popular
                   </div>
                 )}
@@ -119,7 +119,7 @@ export default function Pricing() {
                 <div className="space-y-4 mb-10 flex-grow">
                   {plan.features.map((feature, fi) => (
                     <div key={fi} className="flex items-start">
-                      <Check className={`w-5 h-5 mr-3 shrink-0 ${plan.highlight ? 'text-emerald-400' : 'text-emerald-600'}`} />
+                      <Check className={`w-5 h-5 mr-3 shrink-0 ${plan.highlight ? 'text-violet-400' : 'text-violet-600'}`} />
                       <span className="text-sm font-medium">{feature}</span>
                     </div>
                   ))}
@@ -140,7 +140,7 @@ export default function Pricing() {
                   to="/contact"
                   className={`w-full py-4 rounded-full font-bold text-center transition-all ${
                     plan.highlight
-                      ? 'bg-emerald-600 text-white hover:bg-emerald-700 shadow-lg shadow-emerald-900/20'
+                      ? 'bg-violet-600 text-white hover:bg-violet-700 shadow-lg shadow-violet-900/20'
                       : 'bg-stone-900 text-white hover:bg-stone-800'
                   }`}
                 >
@@ -176,7 +176,7 @@ export default function Pricing() {
             ].map((faq, i) => (
               <div key={i} className="p-8 rounded-2xl bg-stone-50 border border-stone-100">
                 <div className="flex items-start space-x-4">
-                  <HelpCircle className="w-6 h-6 text-emerald-600 shrink-0 mt-1" />
+                  <HelpCircle className="w-6 h-6 text-violet-600 shrink-0 mt-1" />
                   <div>
                     <h4 className="text-lg font-bold text-stone-900 mb-2">{faq.q}</h4>
                     <p className="text-stone-600 leading-relaxed">{faq.a}</p>
@@ -198,7 +198,7 @@ export default function Pricing() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center bg-emerald-600 text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-emerald-700 transition-all shadow-xl"
+              className="inline-flex items-center bg-violet-600 text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-violet-700 transition-all shadow-xl"
             >
               Request Custom Quote
               <ArrowRight className="ml-3" />
