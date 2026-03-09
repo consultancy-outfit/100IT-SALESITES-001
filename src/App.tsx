@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronRight, Phone, Mail, MapPin, Shield, Lock, Cloud, Lightbulb, Database, CheckCircle2, Facebook, Twitter, Linkedin, ArrowRight } from 'lucide-react';
 import { COMPANY_DETAILS, NAV_ITEMS, SERVICES, PRICING_TIERS, TESTIMONIALS, CASE_STUDIES } from './constants';
 import { Service, PricingTier, Testimonial, CaseStudy } from './types';
+import Logo from './assets/Disabled_Children _Community_Support_Team.svg';
 
 // --- Components ---
 
@@ -29,12 +30,8 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string; setActivePa
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center cursor-pointer" onClick={() => setActivePage('home')}>
-            <div className="bg-indigo-600 p-2 rounded-lg mr-2">
-              <Shield className="text-white w-6 h-6" />
-            </div>
-            <span className={`font-bold text-xl tracking-tight ${scrolled ? 'text-slate-900' : 'text-slate-900'}`}>
-              DCCST <span className="text-indigo-600">IT</span>
-            </span>
+            <img src={Logo} alt="Disabled Children Community Support Team IT" className="h-10 w-auto mr-3" />
+         
           </div>
 
           {/* Desktop Nav */}
@@ -43,8 +40,8 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string; setActivePa
               <button
                 key={item.path}
                 onClick={() => setActivePage(item.path)}
-                className={`text-sm font-medium transition-colors hover:text-indigo-600 ${
-                  activePage === item.path ? 'text-indigo-600' : 'text-slate-600'
+                className={`text-sm font-medium transition-colors hover:text-sky-600 ${
+                  activePage === item.path ? 'text-sky-600' : 'text-slate-600'
                 }`}
               >
                 {item.label}
@@ -52,7 +49,7 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string; setActivePa
             ))}
             <button 
               onClick={() => setActivePage('contact')}
-              className="bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200"
+              className="bg-sky-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-sky-700 transition-all shadow-lg shadow-sky-200"
             >
               Get a Quote
             </button>
@@ -84,7 +81,7 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string; setActivePa
                     setActivePage(item.path);
                     setIsOpen(false);
                   }}
-                  className="block w-full text-left px-3 py-3 text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-indigo-600 rounded-md"
+                  className="block w-full text-left px-3 py-3 text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-sky-600 rounded-md"
                 >
                   {item.label}
                 </button>
@@ -94,7 +91,7 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string; setActivePa
                   setActivePage('contact');
                   setIsOpen(false);
                 }}
-                className="w-full mt-4 bg-indigo-600 text-white px-3 py-3 rounded-md text-base font-semibold text-center"
+                className="w-full mt-4 bg-sky-600 text-white px-3 py-3 rounded-md text-base font-semibold text-center"
               >
                 Get a Quote
               </button>
@@ -114,12 +111,10 @@ const Footer = ({ setActivePage }: { setActivePage: (p: string) => void }) => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6 cursor-pointer" onClick={() => setActivePage('home')}>
-              <div className="bg-indigo-600 p-2 rounded-lg mr-2">
-                <Shield className="text-white w-5 h-5" />
+              <div className="mr-3 bg-white rounded-md p-1">
+                <img src={Logo} alt="Disabled Children Community Support Team IT" className="h-8 w-full" />
               </div>
-              <span className="font-bold text-xl text-white tracking-tight">
-                DCCST <span className="text-indigo-400">IT</span>
-              </span>
+      
             </div>
             <p className="text-sm leading-relaxed mb-6">
               Empowering UK businesses with world-class IT infrastructure, cybersecurity, and managed support services.
@@ -137,18 +132,18 @@ const Footer = ({ setActivePage }: { setActivePage: (p: string) => void }) => {
             <ul className="space-y-4 text-sm">
               {NAV_ITEMS.map((item) => (
                 <li key={item.path}>
-                  <button onClick={() => setActivePage(item.path)} className="hover:text-indigo-400 transition-colors">
+                  <button onClick={() => setActivePage(item.path)} className="hover:text-sky-400 transition-colors">
                     {item.label}
                   </button>
                 </li>
               ))}
               <li>
-                <button onClick={() => setActivePage('terms')} className="hover:text-indigo-400 transition-colors">
+                <button onClick={() => setActivePage('terms')} className="hover:text-sky-400 transition-colors">
                   Terms & Conditions
                 </button>
               </li>
               <li>
-                <button onClick={() => setActivePage('privacy')} className="hover:text-indigo-400 transition-colors">
+                <button onClick={() => setActivePage('privacy')} className="hover:text-sky-400 transition-colors">
                   Privacy Policy
                 </button>
               </li>
@@ -161,7 +156,7 @@ const Footer = ({ setActivePage }: { setActivePage: (p: string) => void }) => {
             <ul className="space-y-4 text-sm">
               {SERVICES.map((service) => (
                 <li key={service.id}>
-                  <button onClick={() => setActivePage('services')} className="hover:text-indigo-400 transition-colors">
+                  <button onClick={() => setActivePage('services')} className="hover:text-sky-400 transition-colors">
                     {service.title}
                   </button>
                 </li>
@@ -174,15 +169,15 @@ const Footer = ({ setActivePage }: { setActivePage: (p: string) => void }) => {
             <h4 className="text-white font-semibold mb-6">Contact Us</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start">
-                <MapPin size={18} className="mr-3 text-indigo-400 shrink-0" />
+                <MapPin size={18} className="mr-3 text-sky-400 shrink-0" />
                 <span>{COMPANY_DETAILS.address}</span>
               </li>
               <li className="flex items-center">
-                <Phone size={18} className="mr-3 text-indigo-400 shrink-0" />
+                <Phone size={18} className="mr-3 text-sky-400 shrink-0" />
                 <span>{COMPANY_DETAILS.phone}</span>
               </li>
               <li className="flex items-center">
-                <Mail size={18} className="mr-3 text-indigo-400 shrink-0" />
+                <Mail size={18} className="mr-3 text-sky-400 shrink-0" />
                 <span className="break-all">{COMPANY_DETAILS.email}</span>
               </li>
             </ul>
@@ -222,11 +217,11 @@ const HomePage = ({ setActivePage }: { setActivePage: (p: string) => void }) => 
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block py-1 px-3 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-6">
+              <span className="inline-block py-1 px-3 rounded-full bg-sky-100 text-sky-700 text-xs font-bold uppercase tracking-wider mb-6">
                 Leading UK IT Partners
               </span>
               <h1 className="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-                Reliable IT Solutions for <span className="text-indigo-600">British Businesses</span>
+                Reliable IT Solutions for <span className="text-sky-600">British Businesses</span>
               </h1>
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
                 We provide managed IT support, cybersecurity, and cloud infrastructure designed to help your business thrive in the digital age.
@@ -234,7 +229,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (p: string) => void }) => 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <button 
                   onClick={() => setActivePage('services')}
-                  className="bg-indigo-600 text-white px-8 py-4 rounded-full font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 flex items-center justify-center"
+                  className="bg-sky-600 text-white px-8 py-4 rounded-full font-bold hover:bg-sky-700 transition-all shadow-xl shadow-sky-200 flex items-center justify-center"
                 >
                   Explore Services <ChevronRight className="ml-2 w-5 h-5" />
                 </button>
@@ -292,7 +287,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (p: string) => void }) => 
                 whileHover={{ y: -5 }}
                 className="p-8 rounded-2xl bg-slate-50 border border-slate-100 text-center"
               >
-                <div className="inline-block p-4 bg-indigo-100 rounded-2xl text-indigo-600 mb-6">
+                <div className="inline-block p-4 bg-sky-100 rounded-2xl text-sky-600 mb-6">
                   <benefit.icon size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
@@ -315,17 +310,17 @@ const HomePage = ({ setActivePage }: { setActivePage: (p: string) => void }) => 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {CASE_STUDIES.map((study, i) => (
               <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 flex flex-col md:flex-row">
-                <div className="md:w-1/3 bg-indigo-600 p-8 flex flex-col justify-center text-white">
-                  <p className="text-indigo-200 text-xs font-bold uppercase mb-2">Result</p>
+                <div className="md:w-1/3 bg-sky-600 p-8 flex flex-col justify-center text-white">
+                  <p className="text-sky-200 text-xs font-bold uppercase mb-2">Result</p>
                   <p className="text-2xl font-bold mb-4">{study.result}</p>
-                  <p className="text-indigo-200 text-xs font-bold uppercase mb-2">Savings</p>
+                  <p className="text-sky-200 text-xs font-bold uppercase mb-2">Savings</p>
                   <p className="text-2xl font-bold">{study.savings}</p>
                 </div>
                 <div className="md:w-2/3 p-8">
                   <h3 className="text-xl font-bold text-slate-900 mb-2">{study.title}</h3>
-                  <p className="text-indigo-600 text-sm font-semibold mb-4">{study.client}</p>
+                  <p className="text-sky-600 text-sm font-semibold mb-4">{study.client}</p>
                   <p className="text-slate-600 text-sm mb-4 line-clamp-3">{study.challenge}</p>
-                  <button className="text-indigo-600 font-bold text-sm flex items-center hover:underline">
+                  <button className="text-sky-600 font-bold text-sm flex items-center hover:underline">
                     Read Full Case Study <ArrowRight className="ml-2 w-4 h-4" />
                   </button>
                 </div>
@@ -342,7 +337,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (p: string) => void }) => 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((t, i) => (
               <div key={i} className="p-8 rounded-2xl bg-slate-50 relative">
-                <div className="text-indigo-600 mb-6 flex justify-center">
+                <div className="text-sky-600 mb-6 flex justify-center">
                   {[...Array(5)].map((_, i) => <span key={i} className="text-xl">★</span>)}
                 </div>
                 <p className="text-slate-700 italic mb-8">"{t.content}"</p>
@@ -359,18 +354,18 @@ const HomePage = ({ setActivePage }: { setActivePage: (p: string) => void }) => 
       {/* CTA Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-indigo-600 rounded-3xl p-12 text-center text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-sky-600 via-pink-500 to-amber-400 rounded-3xl p-12 text-center text-white relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -mr-32 -mt-32" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full -ml-32 -mb-32" />
             </div>
             <h2 className="text-4xl font-bold mb-6">Ready to Modernise Your IT?</h2>
-            <p className="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-sky-100 mb-10 max-w-2xl mx-auto">
               Book a free consultation with our UK-based experts today and discover how we can help your business grow.
             </p>
             <button 
               onClick={() => setActivePage('contact')}
-              className="bg-white text-indigo-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-indigo-50 transition-all shadow-xl"
+              className="bg-white text-sky-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-sky-50 transition-all shadow-xl"
             >
               Get Started Now
             </button>
@@ -407,7 +402,7 @@ const ServicesPage = () => {
                   className={`flex flex-col lg:flex-row gap-12 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
                 >
                   <div className="lg:w-1/2">
-                    <div className="inline-block p-4 bg-indigo-100 rounded-2xl text-indigo-600 mb-6">
+                    <div className="inline-block p-4 bg-sky-100 rounded-2xl text-sky-600 mb-6">
                       <Icon size={40} />
                     </div>
                     <h2 className="text-3xl font-bold text-slate-900 mb-4">{service.title}</h2>
@@ -424,7 +419,7 @@ const ServicesPage = () => {
                         <ul className="space-y-3">
                           {service.process.map((step, idx) => (
                             <li key={idx} className="flex items-center text-slate-600 text-sm">
-                              <span className="w-6 h-6 rounded-full bg-indigo-600 text-white text-[10px] flex items-center justify-center mr-3 shrink-0">{idx + 1}</span>
+                              <span className="w-6 h-6 rounded-full bg-sky-600 text-white text-[10px] flex items-center justify-center mr-3 shrink-0">{idx + 1}</span>
                               {step}
                             </li>
                           ))}
@@ -446,7 +441,7 @@ const ServicesPage = () => {
                     <div className="mt-10 pt-8 border-t border-slate-100 flex items-center justify-between">
                       <div>
                         <p className="text-sm text-slate-500">Starting from</p>
-                        <p className="text-3xl font-bold text-indigo-600">£{service.startingPrice}<span className="text-sm font-normal text-slate-400 ml-1">/month</span></p>
+                          <p className="text-3xl font-bold text-sky-600">£{service.startingPrice}<span className="text-sm font-normal text-slate-400 ml-1">/month</span></p>
                       </div>
                       <button className="bg-slate-900 text-white px-6 py-3 rounded-full font-bold hover:bg-slate-800 transition-all">
                         Enquire Now
@@ -474,10 +469,10 @@ const ServicesPage = () => {
 const AboutPage = () => {
   return (
     <div className="pt-20">
-      <section className="bg-indigo-600 py-24 text-white">
+      <section className="bg-sky-700 py-24 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">About DCCST IT</h1>
-          <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
+          <p className="text-xl text-sky-100 max-w-3xl mx-auto">
             A dedicated team of technology experts committed to empowering UK businesses through innovation and reliable support.
           </p>
         </div>
@@ -496,11 +491,11 @@ const AboutPage = () => {
               </p>
               <div className="grid grid-cols-2 gap-8 mt-10">
                 <div>
-                  <p className="text-4xl font-bold text-indigo-600 mb-2">10+</p>
+                  <p className="text-4xl font-bold text-sky-600 mb-2">10+</p>
                   <p className="text-sm text-slate-500 font-bold uppercase tracking-wider">Years Experience</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-bold text-indigo-600 mb-2">200+</p>
+                  <p className="text-4xl font-bold text-sky-600 mb-2">200+</p>
                   <p className="text-sm text-slate-500 font-bold uppercase tracking-wider">Clients Supported</p>
                 </div>
               </div>
@@ -522,7 +517,7 @@ const AboutPage = () => {
                 To provide innovative, secure, and scalable IT solutions that empower UK businesses to achieve their full potential, backed by exceptional local support.
               </p>
             </div>
-            <div className="bg-indigo-50 p-10 rounded-3xl">
+            <div className="bg-sky-50 p-10 rounded-3xl">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Vision</h3>
               <p className="text-slate-600 leading-relaxed">
                 To be the most trusted technology partner in the UK, recognised for our commitment to client success and our contribution to a secure digital economy.
@@ -548,7 +543,7 @@ const AboutPage = () => {
                   referrerPolicy="no-referrer"
                 />
                 <h4 className="font-bold text-slate-900 text-lg">{leader.name}</h4>
-                <p className="text-indigo-600 text-sm font-semibold mb-4">{leader.role}</p>
+                <p className="text-sky-600 text-sm font-semibold mb-4">{leader.role}</p>
                 <p className="text-slate-600 text-sm">{leader.bio}</p>
               </div>
             ))}
@@ -581,23 +576,23 @@ const AboutPage = () => {
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-center text-slate-300">
-                    <CheckCircle2 className="text-indigo-400 mr-3" size={20} />
+                    <CheckCircle2 className="text-sky-400 mr-3" size={20} />
                     Data Protection Officer (DPO) appointed
                   </li>
                   <li className="flex items-center text-slate-300">
-                    <CheckCircle2 className="text-indigo-400 mr-3" size={20} />
+                    <CheckCircle2 className="text-sky-400 mr-3" size={20} />
                     Regular security audits and risk assessments
                   </li>
                   <li className="flex items-center text-slate-300">
-                    <CheckCircle2 className="text-indigo-400 mr-3" size={20} />
+                    <CheckCircle2 className="text-sky-400 mr-3" size={20} />
                     Staff trained in data handling and security
                   </li>
                 </ul>
               </div>
               <div className="flex justify-center">
-                <div className="w-48 h-48 rounded-full border-4 border-indigo-500/30 flex items-center justify-center relative">
-                  <Shield className="text-indigo-400 w-20 h-20" />
-                  <div className="absolute inset-0 border-4 border-indigo-500 rounded-full animate-ping opacity-20" />
+                <div className="w-48 h-48 rounded-full border-4 border-sky-500/30 flex items-center justify-center relative">
+                  <Shield className="text-sky-400 w-20 h-20" />
+                  <div className="absolute inset-0 border-4 border-sky-500 rounded-full animate-ping opacity-20" />
                 </div>
               </div>
             </div>
@@ -622,10 +617,10 @@ const PricingPage = () => {
             {PRICING_TIERS.map((tier, i) => (
               <div 
                 key={i} 
-                className={`relative p-8 rounded-3xl bg-white border ${tier.isPopular ? 'border-indigo-600 shadow-2xl scale-105 z-10' : 'border-slate-100 shadow-sm'} flex flex-col`}
+                className={`relative p-8 rounded-3xl bg-white border ${tier.isPopular ? 'border-sky-600 shadow-2xl scale-105 z-10' : 'border-slate-100 shadow-sm'} flex flex-col`}
               >
                 {tier.isPopular && (
-                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-sky-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                     Most Popular
                   </span>
                 )}
@@ -640,20 +635,20 @@ const PricingPage = () => {
                 <div className="mb-8 text-left">
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Support Level</p>
                   <p className="text-sm text-slate-700 font-semibold mb-6 flex items-center">
-                    <Phone size={16} className="mr-2 text-indigo-600" /> {tier.supportLevel}
+                    <Phone size={16} className="mr-2 text-sky-600" /> {tier.supportLevel}
                   </p>
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">What's Included</p>
                   <ul className="space-y-4">
                     {tier.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start text-sm text-slate-600">
-                        <CheckCircle2 className="text-indigo-600 w-5 h-5 mr-3 shrink-0" />
+                        <CheckCircle2 className="text-sky-600 w-5 h-5 mr-3 shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="mt-auto">
-                  <button className={`w-full py-4 rounded-xl font-bold transition-all ${tier.isPopular ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-slate-100 text-slate-900 hover:bg-slate-200'}`}>
+                  <button className={`w-full py-4 rounded-xl font-bold transition-all ${tier.isPopular ? 'bg-sky-600 text-white hover:bg-sky-700' : 'bg-slate-100 text-slate-900 hover:bg-slate-200'}`}>
                     Choose {tier.name}
                   </button>
                 </div>
@@ -666,7 +661,7 @@ const PricingPage = () => {
             <p className="text-slate-600 mb-8">
               We understand that every business is unique. If our standard plans don't quite fit your requirements, we can create a bespoke package tailored specifically to your needs.
             </p>
-            <button className="text-indigo-600 font-bold flex items-center mx-auto hover:underline">
+              <button className="text-sky-600 font-bold flex items-center mx-auto hover:underline">
               Contact our Sales Team <ArrowRight className="ml-2 w-5 h-5" />
             </button>
           </div>
@@ -697,7 +692,7 @@ const ContactPage = () => {
 
               <div className="space-y-8 mb-12">
                 <div className="flex items-start">
-                  <div className="bg-indigo-100 p-3 rounded-xl text-indigo-600 mr-4">
+                  <div className="bg-sky-100 p-3 rounded-xl text-sky-600 mr-4">
                     <MapPin size={24} />
                   </div>
                   <div>
@@ -706,7 +701,7 @@ const ContactPage = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-indigo-100 p-3 rounded-xl text-indigo-600 mr-4">
+                  <div className="bg-sky-100 p-3 rounded-xl text-sky-600 mr-4">
                     <Phone size={24} />
                   </div>
                   <div>
@@ -715,7 +710,7 @@ const ContactPage = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-indigo-100 p-3 rounded-xl text-indigo-600 mr-4">
+                  <div className="bg-sky-100 p-3 rounded-xl text-sky-600 mr-4">
                     <Mail size={24} />
                   </div>
                   <div>
@@ -724,7 +719,7 @@ const ContactPage = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-indigo-100 p-3 rounded-xl text-indigo-600 mr-4">
+                  <div className="bg-sky-100 p-3 rounded-xl text-sky-600 mr-4">
                     <Shield size={24} />
                   </div>
                   <div>
@@ -751,30 +746,30 @@ const ContactPage = () => {
                   <p className="text-slate-600 mb-8">Thank you for contacting us. A member of our team will be in touch shortly.</p>
                   <button 
                     onClick={() => setSubmitted(false)}
-                    className="text-indigo-600 font-bold hover:underline"
+                    className="text-sky-600 font-bold hover:underline"
                   >
                     Send another message
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-bold text-slate-700 mb-2">First Name</label>
-                      <input type="text" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 mb-2">First Name</label>
+                        <input type="text" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all" />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-slate-700 mb-2">Last Name</label>
+                        <input type="text" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all" />
+                      </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-slate-700 mb-2">Last Name</label>
-                      <input type="text" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all" />
+                      <label className="block text-sm font-bold text-slate-700 mb-2">Business Email</label>
+                      <input type="email" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all" />
                     </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-2">Business Email</label>
-                    <input type="email" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-2">Service Required</label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all">
+                    <div>
+                      <label className="block text-sm font-bold text-slate-700 mb-2">Service Required</label>
+                      <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all">
                       <option>Managed IT Support</option>
                       <option>Cybersecurity</option>
                       <option>Cloud Migration</option>
@@ -782,20 +777,20 @@ const ContactPage = () => {
                       <option>Other</option>
                     </select>
                   </div>
-                  <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-2">Message</label>
-                    <textarea rows={4} required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"></textarea>
-                  </div>
-                  <div className="flex items-start">
-                    <input type="checkbox" required className="mt-1 mr-3 h-4 w-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-500" />
-                    <span className="text-xs text-slate-500">
-                      I consent to DCCST IT processing my personal data in accordance with the Privacy Policy. We will only use your details to respond to your enquiry.
-                    </span>
-                  </div>
-                  <button type="submit" className="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200">
-                    Send Message
-                  </button>
-                </form>
+                    <div>
+                      <label className="block text-sm font-bold text-slate-700 mb-2">Message</label>
+                      <textarea rows={4} required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"></textarea>
+                    </div>
+                    <div className="flex items-start">
+                      <input type="checkbox" required className="mt-1 mr-3 h-4 w-4 text-sky-600 border-slate-300 rounded focus:ring-sky-500" />
+                      <span className="text-xs text-slate-500">
+                        I consent to DCCST IT processing my personal data in accordance with the Privacy Policy. We will only use your details to respond to your enquiry.
+                      </span>
+                    </div>
+                    <button type="submit" className="w-full bg-sky-600 text-white py-4 rounded-xl font-bold hover:bg-sky-700 transition-all shadow-lg shadow-sky-200">
+                      Send Message
+                    </button>
+                  </form>
               )}
             </div>
           </div>
@@ -913,7 +908,7 @@ export default function App() {
   }, [activePage]);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-sky-100 selection:text-sky-900">
       <Navbar activePage={activePage} setActivePage={setActivePage} />
       
       <main>

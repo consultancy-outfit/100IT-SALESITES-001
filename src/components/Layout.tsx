@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Cpu, Phone, Mail, MapPin, Linkedin, Twitter, ArrowRight } from 'lucide-react';
 import { COMPANY_DETAILS } from '../constants';
+import Logo from '../assets/Disabled_Children _Community_Support_Team.svg';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,12 +21,12 @@ const Header = () => {
     <header className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center group-hover:bg-indigo-600 transition-colors">
-              <Cpu className="text-white w-6 h-6" />
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-all">
+              <img src={Logo} alt={COMPANY_DETAILS.name} className="w-9 h-9 object-contain" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">
-              Isaac Newton <span className="text-indigo-600">House</span>
+            <span className="text-sm sm:text-base font-semibold tracking-tight text-slate-900 leading-tight">
+              {COMPANY_DETAILS.name}
             </span>
           </Link>
 
@@ -35,8 +36,8 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-indigo-600 ${
-                  location.pathname === link.path ? 'text-indigo-600' : 'text-slate-600'
+                className={`text-sm font-medium transition-colors hover:text-sky-600 ${
+                  location.pathname === link.path ? 'text-sky-600' : 'text-slate-600'
                 }`}
               >
                 {link.name}
@@ -44,7 +45,7 @@ const Header = () => {
             ))}
             <Link
               to="/contact"
-              className="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-slate-800 transition-all flex items-center gap-2"
+              className="bg-sky-600 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-sky-700 transition-all flex items-center gap-2 shadow-md shadow-sky-200"
             >
               Get Started <ArrowRight className="w-4 h-4" />
             </Link>
@@ -75,7 +76,7 @@ const Header = () => {
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-4 text-base font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded-lg"
+                  className="block px-3 py-4 text-base font-medium text-slate-600 hover:text-sky-600 hover:bg-slate-50 rounded-lg"
                 >
                   {link.name}
                 </Link>
@@ -102,11 +103,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-                <Cpu className="text-slate-950 w-5 h-5" />
+              <div className="w-9 h-9 bg-white rounded flex items-center justify-center">
+                <img src={Logo} alt={COMPANY_DETAILS.name} className="w-8 h-8 object-contain" />
               </div>
-              <span className="text-xl font-bold tracking-tight text-white">
-                Isaac Newton House
+              <span className="text-lg font-bold tracking-tight text-white">
+                {COMPANY_DETAILS.name}
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
@@ -132,16 +133,16 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-6">Contact Details</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
-                <span>15 Queens Road, Donnington, Telford, England, TF2 8DB</span>
+                <MapPin className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                <span>{COMPANY_DETAILS.address}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-indigo-400 shrink-0" />
-                <span>0133 231 4215</span>
+                <Phone className="w-4 h-4 text-sky-400 shrink-0" />
+                <span>{COMPANY_DETAILS.phone}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-indigo-400 shrink-0" />
-                <span>info@disabledchildrencommunitysupportteam.co.uk</span>
+                <Mail className="w-4 h-4 text-sky-400 shrink-0" />
+                <span>{COMPANY_DETAILS.email}</span>
               </li>
             </ul>
           </div>
@@ -172,7 +173,7 @@ const Footer = () => {
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 font-sans selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="min-h-screen flex flex-col bg-slate-50 font-sans selection:bg-sky-100 selection:text-sky-900">
       <Header />
       <main className="flex-grow pt-20">
         {children}
