@@ -15,7 +15,7 @@ const Pricing: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl font-bold text-stone-900 mb-6"
           >
-            Transparent <span className="text-emerald-600">Pricing</span>
+            Transparent <span className="text-orange-600">Pricing</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -38,11 +38,11 @@ const Pricing: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               className={`bg-white rounded-[2.5rem] p-10 shadow-xl border ${
-                idx === 1 ? 'border-emerald-500 ring-4 ring-emerald-50' : 'border-stone-100'
+                idx === 1 ? 'border-orange-500 ring-4 ring-orange-50' : 'border-stone-100'
               } flex flex-col relative`}
             >
               {idx === 1 && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                   Most Popular
                 </div>
               )}
@@ -62,7 +62,7 @@ const Pricing: React.FC = () => {
                 <p className="text-sm font-bold text-stone-900 uppercase tracking-widest">What's Included</p>
                 {tier.features.map((feature) => (
                   <div key={feature} className="flex items-start space-x-3">
-                    <Check className="text-emerald-500 shrink-0 mt-0.5" size={18} />
+                    <Check className="text-orange-500 shrink-0 mt-0.5" size={18} />
                     <span className="text-stone-600 text-sm">{feature}</span>
                   </div>
                 ))}
@@ -75,7 +75,7 @@ const Pricing: React.FC = () => {
               <Link
                 to="/contact"
                 className={`w-full py-4 rounded-full font-bold text-center transition-all ${
-                  idx === 1 ? 'bg-emerald-600 text-white hover:bg-emerald-700' : 'bg-stone-900 text-white hover:bg-emerald-600'
+                  idx === 1 ? 'bg-orange-600 text-white hover:bg-orange-700' : 'bg-stone-900 text-white hover:bg-orange-600'
                 }`}
               >
                 {tier.cta}
@@ -98,7 +98,7 @@ const Pricing: React.FC = () => {
           ].map((faq, i) => (
             <div key={i} className="p-6 bg-white rounded-2xl border border-stone-100 shadow-sm">
               <div className="flex items-start space-x-4">
-                <HelpCircle className="text-emerald-500 shrink-0 mt-1" size={20} />
+                <HelpCircle className="text-orange-500 shrink-0 mt-1" size={20} />
                 <div>
                   <h4 className="font-bold text-stone-900 mb-2">{faq.q}</h4>
                   <p className="text-stone-600 text-sm leading-relaxed">{faq.a}</p>
@@ -118,7 +118,7 @@ const Pricing: React.FC = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center bg-emerald-600 text-white px-8 py-4 rounded-full font-bold hover:bg-emerald-700 transition-colors"
+            className="inline-flex items-center bg-orange-600 text-white px-8 py-4 rounded-full font-bold hover:bg-orange-700 transition-colors"
           >
             Request Custom Quote <ArrowRight className="ml-2" size={20} />
           </Link>

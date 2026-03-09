@@ -24,7 +24,7 @@ const Services: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl font-bold mb-6"
             >
-              Our <span className="text-emerald-500">IT Services</span>
+              Our <span className="text-orange-500">IT Services</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -53,12 +53,12 @@ const Services: React.FC = () => {
               <div className="grid lg:grid-cols-2">
                 <div className="p-8 md:p-12 space-y-8">
                   <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center">
+                    <div className="w-16 h-16 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center">
                       {iconMap[service.icon]}
                     </div>
                     <div>
                       <h2 className="text-3xl font-bold text-stone-900">{service.name}</h2>
-                      <p className="text-emerald-600 font-semibold">Starting from {service.startingPrice}</p>
+                      <p className="text-orange-600 font-semibold">Starting from {service.startingPrice}</p>
                     </div>
                   </div>
 
@@ -75,7 +75,7 @@ const Services: React.FC = () => {
                   <div className="pt-4">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center bg-stone-900 text-white px-8 py-4 rounded-full font-bold hover:bg-emerald-600 transition-colors group"
+                      className="inline-flex items-center bg-stone-900 text-white px-8 py-4 rounded-full font-bold hover:bg-orange-600 transition-colors group"
                     >
                       Enquire About This Service
                       <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
@@ -104,7 +104,7 @@ const Services: React.FC = () => {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {service.benefits.map((benefit, i) => (
                           <div key={i} className="flex items-center space-x-3">
-                            <CheckCircle2 className="text-emerald-500 shrink-0" size={20} />
+                            <CheckCircle2 className="text-orange-500 shrink-0" size={20} />
                             <span className="text-stone-600 text-sm font-medium">{benefit}</span>
                           </div>
                         ))}
@@ -119,7 +119,7 @@ const Services: React.FC = () => {
       </section>
 
       {/* Trust Banner */}
-      <section className="mt-24 bg-emerald-50 py-16">
+      <section className="mt-24 bg-orange-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold text-stone-900 mb-8">All our services include:</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -130,7 +130,7 @@ const Services: React.FC = () => {
               'Dedicated Manager'
             ].map((item) => (
               <div key={item} className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-emerald-600 shadow-sm">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-orange-600 shadow-sm">
                   <CheckCircle2 size={24} />
                 </div>
                 <span className="font-bold text-stone-700">{item}</span>

@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl font-bold mb-6"
             >
-              Let's <span className="text-emerald-500">Connect</span>
+              Let's <span className="text-orange-500">Connect</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center shrink-0">
                     <Phone size={20} />
                   </div>
                   <div>
@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center shrink-0">
                     <Mail size={20} />
                   </div>
                   <div>
@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center shrink-0">
                     <MapPin size={20} />
                   </div>
                   <div>
@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center shrink-0">
                     <Clock size={20} />
                   </div>
                   <div>
@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="bg-white px-4 py-2 rounded-full shadow-lg flex items-center space-x-2">
-                  <MapPin className="text-emerald-600" size={16} />
+                  <MapPin className="text-orange-600" size={16} />
                   <span className="text-xs font-bold text-stone-900">View on Google Maps</span>
                 </div>
               </div>
@@ -112,7 +112,7 @@ const Contact: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-20 space-y-6"
                 >
-                  <div className="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                  <div className="w-20 h-20 bg-orange-50 text-orange-600 rounded-full flex items-center justify-center mx-auto">
                     <CheckCircle2 size={48} />
                   </div>
                   <h2 className="text-3xl font-bold text-stone-900">Message Received!</h2>
@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="text-emerald-600 font-bold hover:underline"
+                    className="text-orange-600 font-bold hover:underline"
                   >
                     Send another message
                   </button>
@@ -135,7 +135,7 @@ const Contact: React.FC = () => {
                         required
                         type="text"
                         placeholder="John Smith"
-                        className="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                        className="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                       />
                     </div>
                     <div className="space-y-2">
@@ -144,7 +144,7 @@ const Contact: React.FC = () => {
                         required
                         type="email"
                         placeholder="john@company.co.uk"
-                        className="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                        className="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                       />
                     </div>
                   </div>
@@ -156,12 +156,12 @@ const Contact: React.FC = () => {
                         required
                         type="text"
                         placeholder="Your Business Ltd"
-                        className="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                        className="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                       />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-stone-900 uppercase tracking-widest">Service Required</label>
-                      <select className="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all appearance-none">
+                      <select className="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all appearance-none">
                         <option>Managed IT Support</option>
                         <option>Cybersecurity</option>
                         <option>Cloud Migration</option>
@@ -177,7 +177,7 @@ const Contact: React.FC = () => {
                       required
                       rows={5}
                       placeholder="Tell us about your IT challenges..."
-                      className="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all resize-none"
+                      className="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all resize-none"
                     ></textarea>
                   </div>
 
@@ -185,7 +185,7 @@ const Contact: React.FC = () => {
                     <input
                       required
                       type="checkbox"
-                      className="mt-1 w-4 h-4 text-emerald-600 border-stone-300 rounded focus:ring-emerald-500"
+                      className="mt-1 w-4 h-4 text-orange-600 border-stone-300 rounded focus:ring-orange-500"
                     />
                     <p className="text-xs text-stone-500 leading-relaxed">
                       I consent to Greater Manchester Ltd processing my data in accordance with their Privacy Policy. We will only use your details to respond to your enquiry.
@@ -194,7 +194,7 @@ const Contact: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-stone-900 text-white py-5 rounded-2xl font-bold text-lg flex items-center justify-center hover:bg-emerald-600 transition-all group"
+                    className="w-full bg-stone-900 text-white py-5 rounded-2xl font-bold text-lg flex items-center justify-center hover:bg-orange-600 transition-all group"
                   >
                     Send Message
                     <Send className="ml-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={20} />

@@ -15,7 +15,7 @@ const About: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl font-bold text-white mb-6"
             >
-              Our Story & <span className="text-emerald-500">Mission</span>
+              Our Story & <span className="text-orange-500">Mission</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ const About: React.FC = () => {
             </motion.p>
           </div>
         </div>
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-emerald-600/10 skew-x-12 translate-x-1/4"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-orange-600/10 skew-x-12 translate-x-1/4"></div>
       </section>
 
       {/* Mission/Vision */}
@@ -39,7 +39,7 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="bg-white p-12 rounded-[2.5rem] shadow-xl border border-stone-100"
           >
-            <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-8">
+            <div className="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-8">
               <Target size={32} />
             </div>
             <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
@@ -68,7 +68,7 @@ const About: React.FC = () => {
       {/* Core Values */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center mb-16">
-          <h2 className="text-sm font-bold text-emerald-600 uppercase tracking-[0.2em]">Our DNA</h2>
+          <h2 className="text-sm font-bold text-orange-600 uppercase tracking-[0.2em]">Our DNA</h2>
           <p className="text-4xl font-bold text-stone-900 mt-4">Core Values</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -79,7 +79,7 @@ const About: React.FC = () => {
             { icon: <Heart size={24} />, title: "Empathy", desc: "We understand the stress of IT issues and respond with care and urgency." }
           ].map((value, idx) => (
             <div key={idx} className="p-8 bg-stone-50 rounded-3xl border border-stone-100 hover:bg-white hover:shadow-lg transition-all">
-              <div className="text-emerald-600 mb-4">{value.icon}</div>
+              <div className="text-orange-600 mb-4">{value.icon}</div>
               <h3 className="text-xl font-bold mb-3">{value.title}</h3>
               <p className="text-stone-600 text-sm leading-relaxed">{value.desc}</p>
             </div>
@@ -92,7 +92,7 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="space-y-4">
-              <h2 className="text-sm font-bold text-emerald-600 uppercase tracking-[0.2em]">Our Team</h2>
+              <h2 className="text-sm font-bold text-orange-600 uppercase tracking-[0.2em]">Our Team</h2>
               <p className="text-4xl font-bold text-stone-900">Leadership Profiles</p>
             </div>
           </div>
@@ -112,7 +112,7 @@ const About: React.FC = () => {
                   />
                 </div>
                 <h3 className="text-2xl font-bold mb-1">{leader.name}</h3>
-                <p className="text-emerald-600 font-semibold mb-4">{leader.role}</p>
+                <p className="text-orange-600 font-semibold mb-4">{leader.role}</p>
                 <p className="text-stone-600 text-sm leading-relaxed">{leader.bio}</p>
               </div>
             ))}
@@ -124,7 +124,7 @@ const About: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="bg-stone-900 rounded-[3rem] p-12 md:p-20 text-white flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-2/3 space-y-8">
-            <h2 className="text-4xl font-bold">Commitment to <span className="text-emerald-500">GDPR Compliance</span></h2>
+            <h2 className="text-4xl font-bold">Commitment to <span className="text-orange-500">GDPR Compliance</span></h2>
             <p className="text-stone-400 text-lg leading-relaxed">
               As a UK-based company, we take data protection seriously. We are fully committed to the UK GDPR and the Data Protection Act 2018. All our processes, from data storage to remote support, are designed with privacy and security at their core.
             </p>
@@ -135,9 +135,9 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className="lg:w-1/3 flex justify-center">
-            <div className="w-48 h-48 bg-emerald-600/20 rounded-full flex items-center justify-center border border-emerald-500/30 relative">
-              <ShieldCheck size={80} className="text-emerald-500" />
-              <div className="absolute inset-0 animate-pulse bg-emerald-500/10 rounded-full"></div>
+            <div className="w-48 h-48 bg-orange-600/20 rounded-full flex items-center justify-center border border-orange-500/30 relative">
+              <ShieldCheck size={80} className="text-orange-500" />
+              <div className="absolute inset-0 animate-pulse bg-orange-500/10 rounded-full"></div>
             </div>
           </div>
         </div>
