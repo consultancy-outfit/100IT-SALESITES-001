@@ -18,6 +18,7 @@ import { AboutPage } from './components/AboutPage';
 import { PricingPage } from './components/PricingPage';
 import { ContactPage } from './components/ContactPage';
 import { LegalPage } from './components/LegalPage';
+import { LogoIcon } from './icon';
 
 export default function App() {
   const [page, setPage] = useState<Page>('home');
@@ -54,14 +55,7 @@ export default function App() {
             className="flex items-center gap-2 cursor-pointer" 
             onClick={() => setPage('home')}
           >
-            <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg">
-              <Shield size={24} />
-            </div>
-            <span className={`text-2xl font-display font-bold tracking-tight ${
-              scrolled || page !== 'home' ? 'text-slate-900' : 'text-white'
-            }`}>
-              Badminton <span className="text-emerald-500">Gardens</span>
-            </span>
+            <LogoIcon width={170} className="h-10" />
           </div>
 
           {/* Desktop Nav */}
@@ -156,12 +150,7 @@ export default function App() {
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-2">
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white">
-                  <Shield size={20} />
-                </div>
-                <span className="text-xl font-display font-bold tracking-tight">
-                  Badminton <span className="text-emerald-500">Gardens</span>
-                </span>
+                <LogoIcon width={190} className="h-15" />
               </div>
               <p className="text-slate-400 max-w-sm mb-8">
                 Premium IT services for the modern UK enterprise. We provide the technical foundations that allow your business to thrive in a digital-first world.
