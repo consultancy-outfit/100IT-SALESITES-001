@@ -31,13 +31,13 @@ const About: React.FC = () => {
       </section>
 
       {/* Mission/Vision */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 z-20">
         <div className="grid md:grid-cols-2 gap-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-12 rounded-[2.5rem] shadow-xl border border-stone-100"
+            className="bg-white p-12 rounded-[2.5rem] shadow-xl border border-stone-100 z-20"
           >
             <div className="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-8">
               <Target size={32} />
@@ -52,7 +52,7 @@ const About: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-12 rounded-[2.5rem] shadow-xl border border-stone-100"
+            className="bg-white p-12 rounded-[2.5rem] shadow-xl border border-stone-100 z-20"
           >
             <div className="w-14 h-14 bg-stone-50 text-stone-900 rounded-2xl flex items-center justify-center mb-8">
               <Eye size={32} />
