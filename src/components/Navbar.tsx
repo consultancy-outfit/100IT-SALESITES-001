@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { COMPANY_DETAILS } from "../constants";
@@ -17,6 +17,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -32,23 +33,21 @@ export default function Navbar() {
     <nav
       id="navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm py-3"
-          : "bg-transparent py-3"
+        scrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent "
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex justify-between items-center">
-          <Link
-            to="/"
-            className="w-[250px] h-[50px] overflow-hidden flex items-center cursor-pointer"
+          <div
+            className="w-[240px] h-[60px] overflow-hidden flex items-center cursor-pointer"
+            onClick={() => navigate("/")}
           >
             <img
               src={CompanyLogo}
               alt={`${COMPANY_DETAILS.name} logo`}
-              className="w-full h-full object-contain object-left"
+              className="w-60 h-20 object-cover object-center"
             />
-          </Link>
+          </div>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">

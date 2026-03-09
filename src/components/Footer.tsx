@@ -1,25 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 import { COMPANY_DETAILS } from "../constants";
 import CompanyLogo from "../assets/Greater Manchester_Specialist_Support_Service.svg";
 
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <footer id="footer" className="bg-slate-950 text-slate-300 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-4">
-            <Link
-              to="/"
-              className="w-[250px] h-[50px] overflow-hidden flex items-center cursor-pointer"
+            <div
+              className="w-[240px] h-[60px] overflow-hidden flex items-center cursor-pointer"
+              onClick={() => navigate("/")}
             >
               <img
                 src={CompanyLogo}
                 alt={`${COMPANY_DETAILS.name} logo`}
-                className="w-full h-full object-contain object-left"
+                className="w-60 h-20 object-cover object-center"
               />
-            </Link>
+            </div>
             <p className="text-sm leading-relaxed">
               Empowering Greater Manchester businesses with world-class IT
               infrastructure, proactive security, and strategic technology
