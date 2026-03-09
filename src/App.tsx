@@ -29,6 +29,7 @@ import {
   CASE_STUDIES,
 } from "./constants";
 import { Service, PricingPlan } from "./types";
+import { LogoIcon } from "./icon";
 
 // --- Components ---
 
@@ -57,13 +58,7 @@ const Navbar = ({
             className="flex items-center cursor-pointer"
             onClick={() => setActivePage("home")}
           >
-            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center mr-3">
-              <Network className="text-white w-6 h-6" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-zinc-900">
-              Barnsley Business{" "}
-              <span className="text-indigo-600">Innovation Center</span>
-            </span>
+            <LogoIcon width={80} className="h-8" />
           </div>
 
           {/* Desktop Nav */}
@@ -152,13 +147,7 @@ const Footer = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center mb-6">
-              <div className="w-8 shrink-0 h-8 bg-indigo-600 rounded flex items-center justify-center mr-2">
-                <Network className="text-white w-5 h-5" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-white">
-                Barnsley Business{" "}
-                <span className="text-indigo-600">Innovation Center</span>
-              </span>
+              <LogoIcon width={120} className="h-6" />
             </div>
             <p className="text-sm leading-relaxed mb-6">
               Empowering British businesses with world-class IT infrastructure,
