@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Monitor, Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Building2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Building2 } from 'lucide-react';
+import { LogoIcon } from '../icon';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,12 +9,9 @@ export default function Footer() {
     <footer className="bg-slate-900 text-slate-300 border-t border-slate-800">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="bg-brand-600 p-2 rounded-lg">
-                <Monitor className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-white">Attaining Independence</span>
+          <div className="space-y-4">
+            <Link to="/" className="flex items-center">
+              <LogoIcon width={190} className="h-12" />
             </Link>
             <p className="text-sm leading-6 max-w-xs">
               Empowering UK businesses with cutting-edge IT solutions, robust cybersecurity, and scalable cloud infrastructure.

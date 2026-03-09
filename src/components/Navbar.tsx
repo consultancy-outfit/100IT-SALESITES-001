@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Monitor, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
+import { LogoIcon } from '../icon';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -33,11 +34,8 @@ export default function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-2">
-            <div className="bg-brand-600 p-2 rounded-lg">
-              <Monitor className="h-6 w-6 text-white" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">Attaining Independence</span>
+          <Link to="/" className="-m-1.5 p-1.5 flex items-center">
+            <LogoIcon width={160} className="h-10" />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -84,11 +82,8 @@ export default function Navbar() {
             className="fixed inset-0 z-50 bg-white px-6 py-6 lg:hidden"
           >
             <div className="flex items-center justify-between">
-              <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-2">
-                <div className="bg-brand-600 p-2 rounded-lg">
-                  <Monitor className="h-6 w-6 text-white" />
-                </div>
-                <span className="text-xl font-bold tracking-tight text-slate-900">Attaining Independence</span>
+              <Link to="/" className="-m-1.5 p-1.5 flex items-center">
+                <LogoIcon width={160} className="h-9" />
               </Link>
               <button
                 type="button"
