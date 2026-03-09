@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Target, Eye, Heart, ShieldCheck, Award, Users } from 'lucide-react';
+import { IMAGES, LEADER_IMAGES } from '../constants/images';
 
 const values = [
   {
@@ -80,11 +81,11 @@ export default function About() {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="https://picsum.photos/seed/about-team/800/600" 
-                className="rounded-3xl shadow-2xl" 
-                alt="Our Team"
-                referrerPolicy="no-referrer"
+              <img
+                src={IMAGES.team}
+                className="rounded-3xl shadow-2xl w-full h-auto object-cover"
+                alt="Our team at Greater Manchester Specialist Support Service"
+                loading="lazy"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary-600 text-white p-8 rounded-2xl shadow-xl">
                 <div className="text-4xl font-bold mb-1">15+</div>
@@ -148,11 +149,11 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-8">
             {leadership.map((person, i) => (
               <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
-                <img 
-                  src={`https://picsum.photos/seed/leader-${i}/400/400`} 
-                  className="w-full h-64 object-cover" 
+                <img
+                  src={LEADER_IMAGES[i] ?? IMAGES.leader1}
+                  className="w-full h-64 object-cover"
                   alt={person.name}
-                  referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
                 <div className="p-8">
                   <h4 className="text-xl font-bold mb-1">{person.name}</h4>

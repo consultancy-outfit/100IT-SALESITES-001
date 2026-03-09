@@ -1,6 +1,7 @@
 import { useState, FormEvent } from "react";
 import { Mail, Phone, MapPin, Clock, Send, ShieldCheck } from "lucide-react";
 import { COMPANY_DETAILS } from "../constants";
+import { IMAGES } from "../constants/images";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -205,18 +206,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="aspect-video bg-slate-200 rounded-3xl overflow-hidden relative">
-                <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-medium text-center p-8">
-                  Interactive Map Placeholder <br /> (Manchester City Centre)
-                </div>
-                <img
-                  src="https://picsum.photos/seed/manchester-map/800/450?grayscale"
-                  className="w-full h-full object-cover opacity-50"
-                  alt="Map Location"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
+          
             </div>
           </div>
         </div>

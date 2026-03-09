@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Shield, Cloud, Cpu, Users, BarChart3, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { IMAGES } from '../constants/images';
 
 const benefits = [
   {
@@ -81,11 +82,11 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://picsum.photos/seed/it-office/800/800" 
-                  alt="Modern IT Office" 
+                <img
+                  src={IMAGES.hero}
+                  alt="Modern IT support and technology workspace"
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
+                  fetchPriority="high"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl max-w-xs hidden md:block">
@@ -152,12 +153,12 @@ export default function Home() {
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
-                  <img src="https://picsum.photos/seed/ind1/400/500" className="rounded-2xl w-full h-64 object-cover" alt="Industry 1" referrerPolicy="no-referrer" />
-                  <img src="https://picsum.photos/seed/ind2/400/300" className="rounded-2xl w-full h-40 object-cover" alt="Industry 2" referrerPolicy="no-referrer" />
+                  <img src={IMAGES.industry1} className="rounded-2xl w-full h-64 object-cover" alt="Business and technology" loading="lazy" />
+                  <img src={IMAGES.industry2} className="rounded-2xl w-full h-40 object-cover" alt="IT infrastructure" loading="lazy" />
                 </div>
                 <div className="space-y-4 pt-8">
-                  <img src="https://picsum.photos/seed/ind3/400/300" className="rounded-2xl w-full h-40 object-cover" alt="Industry 3" referrerPolicy="no-referrer" />
-                  <img src="https://picsum.photos/seed/ind4/400/500" className="rounded-2xl w-full h-64 object-cover" alt="Industry 4" referrerPolicy="no-referrer" />
+                  <img src={IMAGES.industry3} className="rounded-2xl w-full h-40 object-cover" alt="Modern workspace" loading="lazy" />
+                  <img src={IMAGES.industry4} className="rounded-2xl w-full h-64 object-cover" alt="Professional services" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -193,7 +194,7 @@ export default function Home() {
                 </blockquote>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary-400 overflow-hidden">
-                    <img src="https://picsum.photos/seed/ceo/100/100" alt="CEO" referrerPolicy="no-referrer" />
+                    <img src={IMAGES.testimonialAvatar} alt="Robert Thompson, CEO" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div>
                     <div className="font-bold">Robert Thompson</div>

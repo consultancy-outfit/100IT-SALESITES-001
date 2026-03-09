@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, ShieldCheck } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 import { COMPANY_DETAILS } from "../constants";
+import CompanyLogo from "../assets/Greater Manchester_Specialist_Support_Service.svg";
 
 export default function Footer() {
   return (
@@ -9,14 +10,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-4">
-            <div className="flex items-center gap-2 text-white">
-              <ShieldCheck className="w-8 h-8 text-primary-500" />
-              <span className="font-display font-bold text-xl leading-tight">
-                GM Specialist
-                <br />
-                Support
-              </span>
-            </div>
+            <Link
+              to="/"
+              className="w-[250px] h-[50px] overflow-hidden flex items-center cursor-pointer"
+            >
+              <img
+                src={CompanyLogo}
+                alt={`${COMPANY_DETAILS.name} logo`}
+                className="w-full h-full object-contain object-left"
+              />
+            </Link>
             <p className="text-sm leading-relaxed">
               Empowering Greater Manchester businesses with world-class IT
               infrastructure, proactive security, and strategic technology

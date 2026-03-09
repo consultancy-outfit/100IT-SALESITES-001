@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Cpu, Phone, Mail, MapPin, Linkedin, Twitter, ArrowRight } from 'lucide-react';
-import { COMPANY_DETAILS } from '../constants';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  Menu,
+  X,
+  Cpu,
+  Phone,
+  Mail,
+  MapPin,
+  Linkedin,
+  Twitter,
+  ArrowRight,
+} from "lucide-react";
+import { COMPANY_DETAILS } from "../constants";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'About', path: '/about' },
-    { name: 'Pricing', path: '/pricing' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "About", path: "/about" },
+    { name: "Pricing", path: "/pricing" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
@@ -36,7 +46,9 @@ const Header = () => {
                 key={link.name}
                 to={link.path}
                 className={`text-sm font-medium transition-colors hover:text-indigo-600 ${
-                  location.pathname === link.path ? 'text-indigo-600' : 'text-slate-600'
+                  location.pathname === link.path
+                    ? "text-indigo-600"
+                    : "text-slate-600"
                 }`}
               >
                 {link.name}
@@ -65,7 +77,7 @@ const Header = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
           >
@@ -110,21 +122,55 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
-              Premium IT services for the modern British enterprise. We blend technical excellence with strategic vision to drive your business forward.
+              Premium IT services for the modern British enterprise. We blend
+              technical excellence with strategic vision to drive your business
+              forward.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
-              <a href="#" className="hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-white transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-4 text-sm">
-              <li><Link to="/services" className="hover:text-white transition-colors">IT Services</Link></li>
-              <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing Plans</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition-colors">Contact Support</Link></li>
+              <li>
+                <Link
+                  to="/services"
+                  className="hover:text-white transition-colors"
+                >
+                  IT Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className="hover:text-white transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/pricing"
+                  className="hover:text-white transition-colors"
+                >
+                  Pricing Plans
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="hover:text-white transition-colors"
+                >
+                  Contact Support
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -149,11 +195,26 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-6">Legal</h4>
             <ul className="space-y-4 text-sm">
-              <li><Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
-              <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li>
+                <Link
+                  to="/terms"
+                  className="hover:text-white transition-colors"
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/privacy"
+                  className="hover:text-white transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
               <li className="pt-4 border-t border-slate-800">
                 <p className="text-xs text-slate-500">
-                  CRN: {COMPANY_DETAILS.crn}<br />
+                  CRN: {COMPANY_DETAILS.crn}
+                  <br />
                   Registered in England & Wales
                 </p>
               </li>
@@ -162,7 +223,10 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} Isaac Newton House. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Isaac Newton House. All rights
+            reserved.
+          </p>
           <p>VAT Registration: GB 123 4567 89 (Example)</p>
         </div>
       </div>
@@ -174,9 +238,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 font-sans selection:bg-indigo-100 selection:text-indigo-900">
       <Header />
-      <main className="flex-grow pt-20">
-        {children}
-      </main>
+      <main className="flex-grow pt-20">{children}</main>
       <Footer />
     </div>
   );

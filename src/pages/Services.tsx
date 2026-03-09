@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Shield, Cloud, Lock, Headphones, Network, Database, Server, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SERVICE_IMAGES } from '../constants/images';
 
 const services = [
   {
@@ -128,11 +129,11 @@ export default function Services() {
 
                 <div className={`relative ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <div className="aspect-video rounded-3xl overflow-hidden shadow-lg">
-                    <img 
-                      src={`https://picsum.photos/seed/service-${idx}/800/600`} 
-                      className="w-full h-full object-cover" 
+                    <img
+                      src={SERVICE_IMAGES[idx] ?? SERVICE_IMAGES[0]}
+                      className="w-full h-full object-cover"
                       alt={service.title}
-                      referrerPolicy="no-referrer"
+                      loading="lazy"
                     />
                   </div>
                   <div className="absolute -bottom-6 -right-6 bg-white p-8 rounded-2xl shadow-xl border border-slate-100 hidden md:block max-w-xs">
