@@ -38,7 +38,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 glass">
         <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center group">
-            <img src={Logo} alt="Mavyl Lodge" className="h-14 w-auto object-contain" />
+            <img src={Logo} alt="Mavyl Lodge" className="h-20 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
@@ -119,7 +119,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Brand & Description */}
           <div className="space-y-6">
             <div className="flex items-center">
-              <img src={Logo} alt="Mavyl Lodge" className="h-14 w-auto object-contain brightness-0 invert" />
+              <img src={Logo} alt="Mavyl Lodge" className="h-20 w-auto object-contain brightness-0 invert" />
             </div>
             <p className="text-sm leading-relaxed">
               Empowering UK businesses with cutting-edge IT solutions, robust cybersecurity, and scalable cloud infrastructure. Your trusted partner in digital transformation.
