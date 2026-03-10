@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { COMPANY_DETAILS, NAV_LINKS, LEGAL_LINKS } from './constants';
+import { Logo } from './assets';
 
 // --- Components ---
 
@@ -40,13 +41,10 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <div 
-          className="flex items-center gap-2 cursor-pointer group"
+          className="flex items-center cursor-pointer group"
           onClick={() => setActivePage('home')}
         >
-          <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center text-white group-hover:bg-brand-accent transition-colors">
-            <Zap size={24} />
-          </div>
-          <span className="text-2xl font-display font-bold text-brand-primary">Marram Green</span>
+          <img src={Logo} alt="Marram Green" className="h-10 w-auto object-contain" />
         </div>
 
         {/* Desktop Nav */}
@@ -113,9 +111,8 @@ const Footer = ({ setActivePage }: { setActivePage: (id: string) => void }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
-            <div className="flex items-center gap-2 text-white">
-              <Zap className="text-brand-accent" size={24} />
-              <span className="text-2xl font-display font-bold">Marram Green</span>
+            <div className="flex items-center text-white">
+              <img src={Logo} alt="Marram Green" className="h-10 w-auto object-contain brightness-0 invert" />
             </div>
             <p className="text-sm leading-relaxed">
               Empowering UK businesses through innovative IT solutions, robust cybersecurity, and scalable cloud infrastructure. Your trusted technology partner in London.
