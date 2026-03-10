@@ -43,7 +43,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
           <Link to="/" className="flex items-center  group">
-            <img src={RosewoodLogo} alt="Rosewood Lodge" className="h-20" />
+            <img
+              src={RosewoodLogo}
+              alt="Rosewood Lodge"
+              className="h-20 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -124,7 +128,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
             {/* Brand Column */}
             <div className="space-y-6">
               <Link to="/" className="flex items-center gap-2">
-                <img src={RosewoodLogo} alt="Rosewood Lodge" className="h-20" />
+                <img
+                  src={RosewoodLogo}
+                  alt="Rosewood Lodge"
+                  className="h-20 w-auto object-contain"
+                />
               </Link>
               <p className="text-slate-400 text-sm leading-relaxed">
                 Premium IT services for UK businesses. We provide the technology
