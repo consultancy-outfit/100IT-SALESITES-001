@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, Mail, MapPin, Shield, Cpu, ExternalLink } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, Shield, ExternalLink } from 'lucide-react';
+import { Logo } from './assets';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -36,13 +37,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Header */}
       <header className="sticky top-0 z-50 glass">
         <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white group-hover:rotate-12 transition-transform">
-              <Cpu size={24} />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">
-              Mavyl<span className="text-indigo-600">Lodge</span>
-            </span>
+          <Link to="/" className="flex items-center group">
+            <img src={Logo} alt="Mavyl Lodge" className="h-14 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
@@ -122,13 +118,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand & Description */}
           <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center text-white">
-                <Cpu size={18} />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-white">
-                Mavyl<span className="text-indigo-400">Lodge</span>
-              </span>
+            <div className="flex items-center">
+              <img src={Logo} alt="Mavyl Lodge" className="h-14 w-auto object-contain brightness-0 invert" />
             </div>
             <p className="text-sm leading-relaxed">
               Empowering UK businesses with cutting-edge IT solutions, robust cybersecurity, and scalable cloud infrastructure. Your trusted partner in digital transformation.
