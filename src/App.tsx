@@ -44,7 +44,7 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
           className="flex items-center cursor-pointer group"
           onClick={() => setActivePage('home')}
         >
-          <img src={Logo} alt="Marram Green" className="h-10 w-auto object-contain" />
+          <img src={Logo} alt="Marram Green" className="h-20 w-auto object-contain" />
         </div>
 
         {/* Desktop Nav */}
@@ -112,7 +112,7 @@ const Footer = ({ setActivePage }: { setActivePage: (id: string) => void }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
             <div className="flex items-center text-white">
-              <img src={Logo} alt="Marram Green" className="h-10 w-auto object-contain brightness-0 invert" />
+              <img src={Logo} alt="Marram Green" className="h-20 w-auto object-contain brightness-0 invert" />
             </div>
             <p className="text-sm leading-relaxed">
               Empowering UK businesses through innovative IT solutions, robust cybersecurity, and scalable cloud infrastructure. Your trusted technology partner in London.
