@@ -22,7 +22,7 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center">
-            <img src={Logo} alt={COMPANY_DETAILS.name} className="h-14 w-auto object-contain" />
+            <img src={Logo} alt={COMPANY_DETAILS.name} className="h-20 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
@@ -105,7 +105,7 @@ export const Footer = () => {
               <img
                 src={Logo}
                 alt={COMPANY_DETAILS.name}
-                className="h-14 w-auto object-contain brightness-0 invert"
+                className="h-20 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-sm leading-relaxed">
