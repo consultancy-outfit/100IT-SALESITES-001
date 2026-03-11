@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Cpu, Mail, Phone, MapPin, ChevronRight, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Menu, X, Mail, Phone, MapPin, ChevronRight, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { Logo } from '../assets';
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -56,12 +57,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container-custom flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-brand-500/20 group-hover:scale-110 transition-transform">
-              <Cpu size={24} />
-            </div>
-            <span className="text-xl font-display font-bold tracking-tight text-slate-900">
-              Jackson<span className="text-brand-600">Gardens</span>
-            </span>
+            <img
+              src={Logo}
+              alt={COMPANY_DETAILS.name}
+              className="h-20 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -141,12 +141,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {/* Brand & Info */}
             <div className="space-y-6">
               <Link to="/" className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white">
-                  <Cpu size={20} />
-                </div>
-                <span className="text-xl font-display font-bold tracking-tight text-white">
-                  Jackson<span className="text-brand-400">Gardens</span>
-                </span>
+                <img
+                  src={Logo}
+                  alt={COMPANY_DETAILS.name}
+                  className="h-20 w-auto object-contain brightness-0 invert"
+                />
               </Link>
               <p className="text-sm leading-relaxed text-slate-400">
                 Empowering British businesses with world-class IT solutions. From cloud infrastructure to cybersecurity, we are your trusted technology partner in the UK.
