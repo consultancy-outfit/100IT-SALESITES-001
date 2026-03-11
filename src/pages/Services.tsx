@@ -22,7 +22,7 @@ const services = [
       'Dedicated account manager'
     ],
     process: ['Audit', 'Onboarding', 'Monitoring', 'Optimization'],
-    color: 'bg-blue-50 text-blue-600 border-blue-100'
+    color: 'bg-brand-50 text-brand-700 border-brand-100'
   },
   {
     id: 'cybersecurity',
@@ -39,7 +39,7 @@ const services = [
       'Firewall & VPN management'
     ],
     process: ['Risk Assessment', 'Implementation', 'Training', 'Monitoring'],
-    color: 'bg-emerald-50 text-emerald-600 border-emerald-100'
+    color: 'bg-brand-50 text-brand-700 border-brand-100'
   },
   {
     id: 'cloud-migration',
@@ -73,7 +73,7 @@ const services = [
       'Network security audits'
     ],
     process: ['Site Survey', 'Design', 'Installation', 'Certification'],
-    color: 'bg-purple-50 text-purple-600 border-purple-100'
+    color: 'bg-brand-50 text-brand-700 border-brand-100'
   },
   {
     id: 'disaster-recovery',
@@ -107,7 +107,7 @@ const services = [
       'Vendor management'
     ],
     process: ['Discovery', 'Strategy', 'Execution', 'Review'],
-    color: 'bg-indigo-50 text-indigo-600 border-indigo-100'
+    color: 'bg-brand-50 text-brand-700 border-brand-100'
   },
   {
     id: 'unified-comm',
@@ -124,7 +124,7 @@ const services = [
       'Mobile app softphones'
     ],
     process: ['Evaluation', 'Provisioning', 'Training', 'Support'],
-    color: 'bg-rose-50 text-rose-600 border-rose-100'
+    color: 'bg-brand-50 text-brand-700 border-brand-100'
   }
 ];
 
@@ -132,7 +132,7 @@ export default function Services() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-slate-900 py-20 md:py-32 text-white relative overflow-hidden">
+      <section className="bg-ink py-20 md:py-32 text-white relative overflow-hidden">
         <div className="container-custom relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -200,7 +200,7 @@ export default function Services() {
                       <ul className="space-y-3">
                         {service.benefits.map((benefit, i) => (
                           <li key={i} className="flex items-start gap-3 text-slate-600">
-                            <Check size={18} className="text-emerald-500 mt-1 shrink-0" />
+                            <Check size={18} className="text-brand-600 mt-1 shrink-0" />
                             <span>{benefit}</span>
                           </li>
                         ))}

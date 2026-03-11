@@ -91,7 +91,7 @@ export default function About() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="p-10 rounded-[40px] bg-slate-900 text-white space-y-6 shadow-2xl shadow-slate-900/20"
+              className="p-10 rounded-[40px] bg-ink text-white space-y-6 shadow-2xl shadow-ink/20"
             >
               <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
                 <Eye size={24} />
@@ -191,7 +191,7 @@ export default function About() {
               >
                 <div className="relative mb-6 rounded-[32px] overflow-hidden aspect-square">
                   <img src={member.image} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900">{member.name}</h3>
                 <p className="text-brand-600 font-semibold mb-4">{member.role}</p>
@@ -203,10 +203,10 @@ export default function About() {
       </section>
 
       {/* GDPR Commitment */}
-      <section className="section-padding bg-slate-900 text-white">
+      <section className="section-padding bg-ink text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-bold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-sm font-bold uppercase tracking-widest">
               <ShieldCheck size={18} /> GDPR & Data Protection
             </div>
             <h2 className="text-3xl md:text-5xl font-bold">Our Commitment to Your Data</h2>

@@ -7,7 +7,7 @@ export default function GDPR() {
     <div className="bg-white py-20">
       <div className="container-custom max-w-4xl">
         <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-sm font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-sm font-bold uppercase tracking-widest">
             <ShieldCheck size={18} /> UK GDPR Compliance
           </div>
           <h1 className="text-4xl md:text-6xl font-bold">Data Protection Commitment</h1>
@@ -39,21 +39,21 @@ export default function GDPR() {
             <p>As a data processor for our clients, we maintain a comprehensive framework to ensure compliance:</p>
             <ul className="space-y-4">
               <li className="flex gap-4">
-                <div className="mt-1"><FileCheck size={20} className="text-emerald-500" /></div>
+                <div className="mt-1"><FileCheck size={20} className="text-brand-600" /></div>
                 <div>
                   <h4 className="font-bold text-slate-900">Data Processing Agreements (DPA)</h4>
                   <p>We provide clear DPAs for all clients, outlining our roles and responsibilities in handling their data.</p>
                 </div>
               </li>
               <li className="flex gap-4">
-                <div className="mt-1"><FileCheck size={20} className="text-emerald-500" /></div>
+                <div className="mt-1"><FileCheck size={20} className="text-brand-600" /></div>
                 <div>
                   <h4 className="font-bold text-slate-900">ICO Registration</h4>
                   <p>We are fully registered with the Information Commissioner's Office (ICO) and follow their codes of practice.</p>
                 </div>
               </li>
               <li className="flex gap-4">
-                <div className="mt-1"><FileCheck size={20} className="text-emerald-500" /></div>
+                <div className="mt-1"><FileCheck size={20} className="text-brand-600" /></div>
                 <div>
                   <h4 className="font-bold text-slate-900">Breach Notification</h4>
                   <p>In the unlikely event of a data breach, we have strict protocols to notify the ICO and affected clients within 72 hours.</p>

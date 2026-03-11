@@ -18,7 +18,7 @@ export default function Contact() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-slate-900 py-20 md:py-32 text-white relative overflow-hidden">
+      <section className="bg-ink py-20 md:py-32 text-white relative overflow-hidden">
         <div className="container-custom relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export default function Contact() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12 space-y-6"
                   >
-                    <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                    <div className="w-20 h-20 bg-brand-100 text-brand-700 rounded-full flex items-center justify-center mx-auto">
                       <CheckCircle2 size={40} />
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900">Message Sent Successfully!</h3>
@@ -189,14 +189,14 @@ export default function Contact() {
         
 
               {/* Emergency Support Box */}
-              <div className="p-8 rounded-[32px] bg-emerald-50 border border-emerald-100 space-y-4">
-                <div className="flex items-center gap-3 text-emerald-700 font-bold">
+              <div className="p-8 rounded-[32px] bg-brand-50 border border-brand-100 space-y-4">
+                <div className="flex items-center gap-3 text-brand-800 font-bold">
                   <AlertCircle size={20} /> Emergency Support
                 </div>
-                <p className="text-sm text-emerald-800 leading-relaxed">
+                <p className="text-sm text-brand-900 leading-relaxed">
                   Existing managed services clients can access 24/7 emergency support via their dedicated portal or priority phone line.
                 </p>
-                <a href="#" className="inline-block text-emerald-700 font-bold text-sm hover:underline">Client Portal Login &rarr;</a>
+                <a href="#" className="inline-block text-brand-800 font-bold text-sm hover:underline">Client Portal Login &rarr;</a>
               </div>
             </div>
           </div>

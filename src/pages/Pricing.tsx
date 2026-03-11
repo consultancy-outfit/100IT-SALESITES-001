@@ -144,7 +144,7 @@ export default function Pricing() {
                   className={`w-full py-4 rounded-2xl font-bold text-center transition-all ${
                     plan.popular 
                     ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-lg shadow-brand-500/25' 
-                    : 'bg-slate-900 text-white hover:bg-slate-800'
+                    : 'bg-ink text-white hover:bg-ink/90'
                   }`}
                 >
                   {plan.cta}
@@ -156,7 +156,7 @@ export default function Pricing() {
       </section>
 
       {/* Bespoke Section */}
-      <section className="section-padding bg-slate-900 text-white overflow-hidden relative">
+      <section className="section-padding bg-ink text-white overflow-hidden relative">
         <div className="container-custom relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 space-y-8">

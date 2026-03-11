@@ -92,7 +92,7 @@ export default function Home() {
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent"></div>
               </div>
               
               {/* Floating Stats Card */}
@@ -102,7 +102,7 @@ export default function Home() {
                 className="absolute -bottom-6 -left-6 z-20 glass p-6 rounded-2xl shadow-xl max-w-[200px]"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 bg-brand-100 text-brand-700 rounded-lg flex items-center justify-center">
                     <Zap size={18} />
                   </div>
                   <span className="text-xs font-bold text-slate-500 uppercase">Uptime</span>
@@ -169,12 +169,12 @@ export default function Home() {
                 desc: "Our London-based helpdesk ensures you're never left waiting. Average response time under 15 minutes."
               },
               {
-                icon: <Shield className="text-emerald-600" />,
+                icon: <Shield className="text-brand-700" />,
                 title: "Cybersecurity First",
                 desc: "We build security into every layer of your infrastructure, ensuring full GDPR and Cyber Essentials compliance."
               },
               {
-                icon: <BarChart className="text-indigo-600" />,
+                icon: <BarChart className="text-brand-700" />,
                 title: "Cost-Effective Scaling",
                 desc: "Predictable monthly billing in GBP with no hidden costs. Scale your IT as your business grows."
               }
@@ -196,7 +196,7 @@ export default function Home() {
       </section>
 
       {/* Case Studies Section */}
-      <section className="section-padding bg-slate-900 text-white overflow-hidden relative">
+      <section className="section-padding bg-ink text-white overflow-hidden relative">
         <div className="container-custom relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
             <div className="max-w-2xl">
@@ -221,7 +221,7 @@ export default function Home() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8 space-y-4">
                 <div className="inline-block px-3 py-1 rounded-full bg-brand-600 text-xs font-bold uppercase tracking-wider">Finance Sector</div>
                 <h3 className="text-2xl md:text-3xl font-bold">City Wealth Management</h3>
@@ -251,7 +251,7 @@ export default function Home() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8 space-y-4">
                 <div className="inline-block px-3 py-1 rounded-full bg-brand-600 text-xs font-bold uppercase tracking-wider">Logistics</div>
                 <h3 className="text-2xl md:text-3xl font-bold">Midlands Express Ltd</h3>
