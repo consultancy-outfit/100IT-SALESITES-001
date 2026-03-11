@@ -5,9 +5,11 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", sans-serif;
   
-  --color-brand-primary: #064e3b; /* Emerald 900 */
-  --color-brand-secondary: #065f46; /* Emerald 800 */
-  --color-brand-accent: #10b981; /* Emerald 500 */
+  /* Logo-driven palette (logo.svg: #A6CE39, #61BB56, #008041, #262626) */
+  --color-brand-primary: #008041;   /* deep logo green */
+  --color-brand-secondary: #61bb56; /* mid gradient green */
+  --color-brand-accent: #a6ce39;    /* light gradient green */
+  --color-brand-ink: #262626;       /* logo wordmark dark */
 }
 
 @layer base {
