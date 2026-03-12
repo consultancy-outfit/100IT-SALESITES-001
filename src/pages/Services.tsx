@@ -1,63 +1,126 @@
-import { motion } from 'motion/react';
-import { Shield, Cloud, Cpu, Headphones, Code, Database, ArrowRight, Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { motion } from "motion/react";
+import {
+  Shield,
+  Cloud,
+  Cpu,
+  Headphones,
+  Code,
+  Database,
+  ArrowRight,
+  Check,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Services() {
   const services = [
     {
       title: "Managed IT Support",
       icon: Headphones,
-      overview: "Comprehensive 24/7 technical support for your entire organisation, from desktop issues to server maintenance.",
-      target: "SMEs and mid-market enterprises looking for reliable, outsourced IT departments.",
-      process: ["Audit", "Onboarding", "Monitoring", "Proactive Maintenance", "Review"],
-      benefits: ["Reduced downtime", "Predictable monthly costs", "Access to senior expertise"],
-      price: "£45 per user/month"
+      overview:
+        "Comprehensive 24/7 technical support for your entire organisation, from desktop issues to server maintenance.",
+      target:
+        "SMEs and mid-market enterprises looking for reliable, outsourced IT departments.",
+      process: [
+        "Audit",
+        "Onboarding",
+        "Monitoring",
+        "Proactive Maintenance",
+        "Review",
+      ],
+      benefits: [
+        "Reduced downtime",
+        "Predictable monthly costs",
+        "Access to senior expertise",
+      ],
+      price: "£45 per user/month",
     },
     {
       title: "Cybersecurity Solutions",
       icon: Shield,
-      overview: "Multi-layered security strategies including endpoint protection, firewall management, and employee training.",
-      target: "Businesses handling sensitive data or operating in highly regulated UK sectors.",
-      process: ["Risk Assessment", "Implementation", "Training", "Continuous Monitoring", "Incident Response"],
-      benefits: ["GDPR compliance", "Protection against ransomware", "Peace of mind"],
-      price: "£250 per site/month"
+      overview:
+        "Multi-layered security strategies including endpoint protection, firewall management, and employee training.",
+      target:
+        "Businesses handling sensitive data or operating in highly regulated UK sectors.",
+      process: [
+        "Risk Assessment",
+        "Implementation",
+        "Training",
+        "Continuous Monitoring",
+        "Incident Response",
+      ],
+      benefits: [
+        "GDPR compliance",
+        "Protection against ransomware",
+        "Peace of mind",
+      ],
+      price: "£250 per site/month",
     },
     {
       title: "Cloud Infrastructure",
       icon: Cloud,
-      overview: "Strategic migration and management of cloud environments using Azure, AWS, or UK-based private clouds.",
-      target: "Organisations looking to modernise legacy systems and enable remote working.",
-      process: ["Strategy", "Migration", "Optimisation", "Security Hardening", "Scaling"],
+      overview:
+        "Strategic migration and management of cloud environments using Azure, AWS, or UK-based private clouds.",
+      target:
+        "Organisations looking to modernise legacy systems and enable remote working.",
+      process: [
+        "Strategy",
+        "Migration",
+        "Optimisation",
+        "Security Hardening",
+        "Scaling",
+      ],
       benefits: ["Scalability", "Remote accessibility", "Disaster recovery"],
-      price: "£500 setup + usage"
+      price: "£500 setup + usage",
     },
     {
       title: "IT Consultancy & Strategy",
       icon: Cpu,
-      overview: "High-level technology roadmaps and vCTO services to align your IT with your business goals.",
-      target: "Leadership teams needing strategic guidance for digital transformation.",
-      process: ["Discovery", "Gap Analysis", "Roadmap Design", "Budgeting", "Implementation Oversight"],
+      overview:
+        "High-level technology roadmaps and vCTO services to align your IT with your business goals.",
+      target:
+        "Leadership teams needing strategic guidance for digital transformation.",
+      process: [
+        "Discovery",
+        "Gap Analysis",
+        "Roadmap Design",
+        "Budgeting",
+        "Implementation Oversight",
+      ],
       benefits: ["Strategic alignment", "Cost optimisation", "Future-proofing"],
-      price: "£1,200 per day"
+      price: "£1,200 per day",
     },
     {
       title: "Custom Software Development",
       icon: Code,
-      overview: "Bespoke web and mobile applications designed to solve specific operational challenges.",
-      target: "Companies needing unique tools that off-the-shelf software cannot provide.",
+      overview:
+        "Bespoke web and mobile applications designed to solve specific operational challenges.",
+      target:
+        "Companies needing unique tools that off-the-shelf software cannot provide.",
       process: ["Scoping", "Design", "Development", "Testing", "Deployment"],
-      benefits: ["Competitive advantage", "Process automation", "Full ownership"],
-      price: "Project-based"
+      benefits: [
+        "Competitive advantage",
+        "Process automation",
+        "Full ownership",
+      ],
+      price: "Project-based",
     },
     {
       title: "Data Backup & Recovery",
       icon: Database,
-      overview: "Robust business continuity planning ensures your data is safe and recoverable in any scenario.",
-      target: "Any business where data loss would cause significant operational disruption.",
-      process: ["Audit", "Backup Strategy", "Implementation", "Testing", "Reporting"],
+      overview:
+        "Robust business continuity planning ensures your data is safe and recoverable in any scenario.",
+      target:
+        "Any business where data loss would cause significant operational disruption.",
+      process: [
+        "Audit",
+        "Backup Strategy",
+        "Implementation",
+        "Testing",
+        "Reporting",
+      ],
       benefits: ["Business continuity", "Compliance", "Data integrity"],
-      price: "£150 per TB/month"
-    }
+      price: "£150 per TB/month",
+    },
   ];
 
   return (
@@ -78,7 +141,8 @@ export default function Services() {
             transition={{ delay: 0.1 }}
             className="text-xl text-slate-400 max-w-3xl mx-auto"
           >
-            Tailored technology solutions designed to empower UK businesses with efficiency, security, and growth.
+            Tailored technology solutions designed to empower UK businesses with
+            efficiency, security, and growth.
           </motion.p>
         </div>
       </section>
@@ -93,7 +157,7 @@ export default function Services() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className={`flex flex-col lg:flex-row gap-12 items-start ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+                className={`flex flex-col lg:flex-row gap-12 items-start ${idx % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
               >
                 {/* Image/Icon Side */}
                 <div className="w-full lg:w-1/2">
@@ -114,8 +178,12 @@ export default function Services() {
                 {/* Content Side */}
                 <div className="w-full lg:w-1/2 space-y-8">
                   <div>
-                    <h2 className="text-3xl font-display font-bold text-slate-900 mb-4">{service.title}</h2>
-                    <p className="text-lg text-slate-600 leading-relaxed">{service.overview}</p>
+                    <h2 className="text-3xl font-display font-bold text-slate-900 mb-4">
+                      {service.title}
+                    </h2>
+                    <p className="text-lg text-slate-600 leading-relaxed">
+                      {service.overview}
+                    </p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -132,16 +200,23 @@ export default function Services() {
                         Key Benefits
                       </h4>
                       <ul className="text-sm text-slate-500 space-y-1">
-                        {service.benefits.map((b, i) => <li key={i}>• {b}</li>)}
+                        {service.benefits.map((b, i) => (
+                          <li key={i}>• {b}</li>
+                        ))}
                       </ul>
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-4">Our Process</h4>
+                    <h4 className="font-bold text-slate-900 mb-4">
+                      Our Process
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {service.process.map((step, i) => (
-                        <span key={i} className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full uppercase tracking-wider">
+                        <span
+                          key={i}
+                          className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full uppercase tracking-wider"
+                        >
                           {i + 1}. {step}
                         </span>
                       ))}
@@ -150,8 +225,12 @@ export default function Services() {
 
                   <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
                     <div>
-                      <span className="text-sm text-slate-500 block">Starting from</span>
-                      <span className="text-2xl font-display font-bold text-brand">{service.price}</span>
+                      <span className="text-sm text-slate-500 block">
+                        Starting from
+                      </span>
+                      <span className="text-2xl font-display font-bold text-brand">
+                        {service.price}
+                      </span>
                     </div>
                     <Link
                       to="/contact"
@@ -171,11 +250,17 @@ export default function Services() {
       {/* CTA */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-display font-bold mb-6 text-slate-900">Need a custom solution?</h2>
+          <h2 className="text-3xl font-display font-bold mb-6 text-slate-900">
+            Need a custom solution?
+          </h2>
           <p className="text-lg text-slate-600 mb-10">
-            Our experts are ready to design a bespoke IT strategy that fits your unique business requirements perfectly.
+            Our experts are ready to design a bespoke IT strategy that fits your
+            unique business requirements perfectly.
           </p>
-          <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all bg-brand rounded-full hover:bg-brand-dark shadow-xl shadow-slate-200">
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all bg-brand rounded-full hover:bg-brand-dark shadow-xl shadow-slate-200"
+          >
             Book a Free Audit
           </Link>
         </div>
