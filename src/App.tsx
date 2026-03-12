@@ -301,38 +301,14 @@ const Home = ({ setPage }: { setPage: (p: Page) => void }) => (
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div className="aspect-square bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl overflow-hidden shadow-2xl relative z-10">
+          <div className="aspect-square bg-slate-100 rounded-3xl overflow-hidden shadow-2xl relative z-10">
             <img 
-              src="https://picsum.photos/seed/it-office/800/800" 
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=800&fit=crop" 
               alt="Modern IT Office" 
-              className="w-full h-full object-cover mix-blend-overlay opacity-80"
+              className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 flex items-center justify-center p-12">
-              <div className="glass-panel p-8 rounded-2xl w-full max-w-sm">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white">
-                    <CheckCircle2 size={24} />
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-500 uppercase font-bold">System Status</p>
-                    <p className="text-lg font-bold">All Systems Operational</p>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-500 w-full" />
-                  </div>
-                  <div className="flex justify-between text-sm font-medium">
-                    <span>Uptime</span>
-                    <span>99.99%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-          <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-100 rounded-full blur-3xl -z-0 opacity-50" />
-          <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-indigo-100 rounded-full blur-3xl -z-0 opacity-50" />
         </motion.div>
       </div>
     </section>
