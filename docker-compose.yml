@@ -1,0 +1,15 @@
+services:
+  isaac-newton:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: isaac-newton-salesite
+    restart: unless-stopped
+    ports:
+      - "9018:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
