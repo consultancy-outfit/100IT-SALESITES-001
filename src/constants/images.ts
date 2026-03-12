@@ -24,9 +24,11 @@ export const IMAGES = {
   /** Services: tech / IT themed */
   service1: unsplash("1558494949-ef010cbdcc31", 800),
   service2: unsplash("1519389950473-47ba0277781c", 800),
-  service3: unsplash("1451187580459-43490279c0e6", 800),
+  // Cloud Infrastructure
+  service3: unsplash("1556761175-b413da4baf72", 800),
   service4: unsplash("1504384308090-c894fdcc538d", 800),
-  service5: unsplash("1557804506-669a67965ba3", 800),
+  // Disaster Recovery
+  service5: unsplash("1559748841-3b4c2fc88494", 800),
   service6: unsplash("1522071820081-009f0129c71c", 800),
   /** Contact: map / location placeholder */
   mapPlaceholder: unsplash("1524661135-423995f22d0f", 800),

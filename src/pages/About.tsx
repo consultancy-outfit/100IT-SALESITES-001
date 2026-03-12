@@ -151,7 +151,7 @@ export default function About() {
               <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
                 <img
                   src={LEADER_IMAGES[i] ?? IMAGES.leader1}
-                  className="w-full h-64 object-cover"
+                  className="w-full aspect-square object-cover"
                   alt={person.name}
                   loading="lazy"
                 />
