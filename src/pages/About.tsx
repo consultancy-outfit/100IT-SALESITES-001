@@ -123,27 +123,27 @@ export default function About() {
         <div className="grid md:grid-cols-3 gap-12">
           {[
             {
-              name: "Alex Thompson",
+              name: "Omar Khalid",
               role: "Founder & Managing Director",
               bio: "With over 15 years in the IT industry, Alex leads the company with a focus on strategic growth and technical excellence.",
-              img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
+              img: "https://images.unsplash.com/photo-1626303162938-a92a1bc24c2c?auto=format&fit=crop&q=80&w=800"
             },
             {
-              name: "Emma Thompson",
+              name: "Hamid Roshaan",
               role: "Head of Cybersecurity",
               bio: "Emma is a certified security expert dedicated to protecting our clients from evolving digital threats.",
-              img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400"
+              img: "https://images.unsplash.com/photo-1601730263526-229807bd34cc?auto=format&fit=crop&q=80&w=800"
             },
             {
-              name: "David Wilson",
+              name: "Tom Jackson",
               role: "Technical Director",
               bio: "David oversees our technical operations, ensuring that we deliver the most reliable and efficient solutions.",
-              img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400"
+              img: "https://images.unsplash.com/photo-1595860320513-01df382ebdb1?auto=format&fit=crop&q=80&w=800"
             }
           ].map((leader, i) => (
             <div key={i} className="space-y-6 text-center">
               <div className="rounded-[2.5rem] overflow-hidden aspect-square border border-slate-200 shadow-sm">
-                <img src={leader.img} alt={leader.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src={leader.img} alt={leader.name} className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-slate-900">{leader.name}</h3>
