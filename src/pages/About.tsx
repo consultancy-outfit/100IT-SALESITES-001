@@ -10,9 +10,9 @@ const values = [
 ];
 
 const team = [
-  { name: 'James Thompson', role: 'Managing Director', bio: '20+ years in enterprise IT architecture.' },
-  { name: 'Sarah Jenkins', role: 'Head of Cybersecurity', bio: 'Certified Ethical Hacker and compliance expert.' },
-  { name: 'David Miller', role: 'Cloud Strategy Lead', bio: 'Azure & AWS specialist with a focus on scalability.' },
+  { name: 'James Thompson', role: 'Managing Director', bio: '20+ years in enterprise IT architecture.', img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop' },
+  { name: 'Sarah Jenkins', role: 'Head of Cybersecurity', bio: 'Certified Ethical Hacker and compliance expert.', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop' },
+  { name: 'David Miller', role: 'Cloud Strategy Lead', bio: 'Azure & AWS specialist with a focus on scalability.', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop' },
 ];
 
 export function About() {
@@ -93,7 +93,7 @@ export function About() {
               <div key={member.name} className="group">
                 <div className="aspect-[4/5] bg-slate-200 rounded-3xl overflow-hidden mb-6">
                   <img 
-                    src={`https://picsum.photos/seed/${member.name}/400/500`} 
+                    src={member.img} 
                     alt={member.name} 
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                     referrerPolicy="no-referrer"

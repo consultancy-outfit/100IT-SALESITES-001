@@ -119,8 +119,18 @@ export function Home() {
               <div className="absolute -bottom-6 -left-6 bg-white p-8 rounded-2xl shadow-xl border border-slate-100 max-w-xs">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="flex -space-x-2">
-                    {[1,2,3].map(i => (
-                      <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-slate-200"></div>
+                    {[
+                      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop',
+                      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop',
+                      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',
+                    ].map((src, i) => (
+                      <img
+                        key={i}
+                        src={src}
+                        alt=""
+                        className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                        referrerPolicy="no-referrer"
+                      />
                     ))}
                   </div>
                   <span className="text-sm font-bold text-slate-900">500+ Happy Clients</span>
