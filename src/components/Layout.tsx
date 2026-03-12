@@ -42,11 +42,11 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20 items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-[250px] h-[60px] overflow-hidden flex items-center cursor-pointer">
+              <div className="w-[320px] h-[90px] overflow-hidden flex items-center cursor-pointer">
                 <img
                   src={EmmaLeGrandLogo}
                   alt={`${COMPANY_DETAILS.name} logo`}
-                  className="w-60 h-20 object-contain object-left"
+                  className="w-80 h-20 object-contain object-left"
                 />
               </div>
             </Link>
@@ -98,11 +98,11 @@ export default function Layout({ children }: { children: ReactNode }) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-1">
               <Link to="/" className="flex items-center space-x-2 mb-6">
-                <div className="w-[250px] h-[60px] overflow-hidden flex items-center cursor-pointer">
+                <div className="w-[320px] h-[90px] overflow-hidden flex items-center cursor-pointer">
                   <img
                     src={EmmaLeGrandLogo}
                     alt={`${COMPANY_DETAILS.name} logo`}
-                    className="w-60 h-20 object-contain object-left"
+                    className="w-100 h-20 object-contain object-left"
                   />
                 </div>
               </Link>

@@ -88,21 +88,41 @@ export default function About() {
           </div>
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { name: "Emma Le Grand", role: "Founder & CEO", bio: "With 20 years in enterprise IT, Emma leads our strategic vision and commitment to excellence." },
-              { name: "David Sterling", role: "Chief Technology Officer", bio: "A veteran systems architect specialising in secure cloud migrations and cybersecurity." },
-              { name: "Sophie Miller", role: "Head of Client Success", bio: "Sophie ensures our partners receive world-class support and measurable business value." }
+              {
+                name: "Ethan Walker",
+                role: "Founder & CEO",
+                bio: "With 20 years in enterprise IT, Ethan leads our strategic vision and commitment to excellence.",
+                image:
+                  "https://images.unsplash.com/photo-1762522926157-bcc04bf0b10a?fm=jpg&q=80&w=900&auto=format&fit=crop",
+              },
+              {
+                name: "Brandon Mitchell",
+                role: "Chief Technology Officer",
+                bio: "A veteran systems architect specializing in secure cloud migrations and cybersecurity.",
+                image:
+                  "https://images.unsplash.com/photo-1718391963402-e2011890093f?fm=jpg&q=80&w=900&auto=format&fit=crop",
+              },
+              {
+                name: "Lucas Hayes",
+                role: "Head of Client Success",
+                bio: "Lucas ensures our partners receive world-class support and measurable business value.",
+                image:
+                  "https://images.unsplash.com/photo-1722999780806-85aed85fe370?fm=jpg&q=80&w=900&auto=format&fit=crop",
+              },
             ].map((member, i) => (
               <div key={i} className="group">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden mb-6">
-                  <img 
-                    src={`https://picsum.photos/seed/leader-${i}/600/800`} 
-                    alt={member.name} 
+                  <img
+                    src={member.image}
+                    alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>
                 <h3 className="text-2xl mb-1">{member.name}</h3>
-                <p className="text-brand-emerald font-bold text-sm mb-4 uppercase tracking-wider">{member.role}</p>
+                <p className="text-brand-emerald font-bold text-sm mb-4 uppercase tracking-wider">
+                  {member.role}
+                </p>
                 <p className="text-slate-500 text-sm leading-relaxed">{member.bio}</p>
               </div>
             ))}
