@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import { COMPANY_DETAILS } from "../constants";
@@ -9,6 +9,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
 
   const navLinks = [
     { name: "Home", path: "/" },
