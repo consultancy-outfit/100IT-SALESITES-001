@@ -31,6 +31,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const location = useLocation();
 
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen bg-cyan-50 font-sans text-slate-900 selection:bg-cyan-100 selection:text-cyan-900">
       {/* Top Bar */}

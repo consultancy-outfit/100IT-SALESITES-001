@@ -23,23 +23,24 @@ const VALUES = [
 
 const LEADERSHIP = [
   {
-    name: "James Harrison",
+    name: "Andrew Collins",
     role: "Founder & CEO",
-    getBio: (companyName: string) => `With over 20 years in UK enterprise IT, James founded ${companyName} to bring high-level technology strategy to SMEs.`,
-    image: "https://picsum.photos/seed/ceo/400/400"
+    getBio: (companyName: string) =>
+      `With over 20 years in enterprise IT, Andrew founded ${companyName} to bring high-level technology strategy to growing businesses across the UK.`,
+    image: "https://unsplash.com/photos/WMD64tMfc4k/download?force=true",
   },
   {
-    name: "Dr. Elena Rossi",
+    name: "Jonathan Reed",
     role: "Chief Technology Officer",
-    bio: "A specialist in cybersecurity and cloud architecture, Elena leads our technical roadmap and security protocols.",
-    image: "https://picsum.photos/seed/cto/400/400"
+    bio: "Jonathan leads our cloud and cybersecurity strategy, ensuring every environment we manage is secure, resilient, and ready to scale.",
+    image: "https://unsplash.com/photos/lrcTvNUrhUc/download?force=true",
   },
   {
-    name: "Mark Thompson",
+    name: "Christopher Hayes",
     role: "Head of Managed Services",
-    bio: "Mark ensures our support desk delivers world-class responsiveness and resolution for every client.",
-    image: "https://picsum.photos/seed/ops/400/400"
-  }
+    bio: "Christopher oversees our managed services team, focused on fast responses, clear communication, and dependable day-to-day support.",
+    image: "https://unsplash.com/photos/hlU9Pg588ig/download?force=true",
+  },
 ];
 
 export default function About() {
@@ -136,7 +137,7 @@ export default function About() {
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="w-full aspect-square object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="w-full aspect-square object-cover  transition-all duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>
