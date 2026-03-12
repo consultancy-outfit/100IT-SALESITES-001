@@ -28,16 +28,16 @@ const values = [
 
 const leaders = [
   {
-    name: "Alistair Howse",
+    name: "Jonathan Brooks",
     role: "Founder & CEO",
-    bio: "With over 20 years in enterprise IT, Alistair founded Howse Garden to bring high-level technology solutions to the UK's SME sector.",
-    image: "https://picsum.photos/seed/ceo/400/400"
+    bio: "With over 20 years in enterprise IT, Jonathan founded Howse Garden to bring high-level technology solutions to the UK's SME sector.",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?fm=jpg&q=60&w=1600&auto=format&fit=crop&ixlib=rb-4.1.0"
   },
   {
-    name: "Eleanor Garden",
+    name: "Christopher Hayes",
     role: "Technical Director",
-    bio: "A specialist in cybersecurity and cloud architecture, Eleanor leads our technical strategy and compliance initiatives.",
-    image: "https://picsum.photos/seed/cto/400/400"
+    bio: "A specialist in cybersecurity and cloud architecture, Christopher leads our technical strategy and compliance initiatives.",
+    image: "https://images.unsplash.com/photo-1742321694004-7f3f5e2447f4?fm=jpg&q=60&w=1600&auto=format&fit=crop&ixlib=rb-4.1.0"
   }
 ];
 
@@ -90,7 +90,7 @@ export default function About() {
             </div>
             <div className="relative">
               <img 
-                src="https://picsum.photos/seed/team/800/600" 
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?fm=jpg&q=60&w=1600&auto=format&fit=crop&ixlib=rb-4.1.0" 
                 alt="Our Team" 
                 className="rounded-3xl shadow-2xl"
                 referrerPolicy="no-referrer"
