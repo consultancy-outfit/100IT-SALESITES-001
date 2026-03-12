@@ -155,7 +155,7 @@ const Pricing = () => {
                   className={`block w-full text-center py-4 rounded-xl font-bold transition-all ${
                     plan.popular 
                       ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-200' 
-                      : 'bg-zinc-900 text-white hover:bg-zinc-800'
+                      : 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-100'
                   }`}
                 >
                   {plan.cta}

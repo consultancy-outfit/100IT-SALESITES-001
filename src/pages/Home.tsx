@@ -118,11 +118,11 @@ const Home = () => {
       </section>
 
       {/* Industries */}
-      <section className="py-24 bg-zinc-900 text-white">
+      <section className="py-24 bg-zinc-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Industries We Empower</h2>
-            <p className="text-zinc-400 max-w-2xl mx-auto">Specialised IT solutions for the unique challenges of the UK's most dynamic sectors.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-zinc-900">Industries We Empower</h2>
+            <p className="text-zinc-600 max-w-2xl mx-auto">Specialised IT solutions for the unique challenges of the UK's most dynamic sectors.</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -134,9 +134,9 @@ const Home = () => {
               { title: 'Retail & E-commerce', desc: 'Omnichannel support and scalable cloud hosting for the UK\'s digital high street.' },
               { title: 'Non-Profit', desc: 'Cost-effective IT strategies that maximise impact for UK registered charities.' },
             ].map((industry, i) => (
-              <div key={i} className="p-8 rounded-2xl bg-zinc-800/50 border border-zinc-700 hover:border-indigo-500 transition-colors group">
-                <h3 className="text-xl font-semibold mb-4 group-hover:text-indigo-400 transition-colors">{industry.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{industry.desc}</p>
+              <div key={i} className="p-8 rounded-2xl bg-white border border-zinc-200 hover:border-indigo-300 transition-colors group shadow-sm">
+                <h3 className="text-xl font-semibold mb-4 text-zinc-900 group-hover:text-indigo-700 transition-colors">{industry.title}</h3>
+                <p className="text-zinc-600 text-sm leading-relaxed">{industry.desc}</p>
               </div>
             ))}
           </div>
@@ -217,7 +217,7 @@ const Home = () => {
           <p className="text-xl text-zinc-600 mb-12">Join hundreds of successful UK businesses powered by Oaklands Respite.</p>
           <Link
             to="/contact"
-            className="inline-flex items-center bg-zinc-900 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-zinc-800 transition-all shadow-xl"
+            className="inline-flex items-center bg-indigo-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200"
           >
             Get a Free Consultation
             <ArrowRight className="ml-3" />

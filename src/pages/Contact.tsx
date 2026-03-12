@@ -146,13 +146,13 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-indigo-600/5 group-hover:bg-transparent transition-colors" />
               </div>
 
-              <div className="p-6 bg-zinc-900 rounded-2xl text-white flex items-center space-x-4">
-                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-indigo-400">
+              <div className="p-6 bg-indigo-50 border border-indigo-100 rounded-2xl text-zinc-900 flex items-center space-x-4">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-indigo-600 border border-indigo-100">
                   <ShieldCheck size={24} />
                 </div>
                 <div>
                   <h4 className="font-bold">Secure Communication</h4>
-                  <p className="text-xs text-zinc-400">All messages are encrypted and handled in compliance with GDPR.</p>
+                  <p className="text-xs text-zinc-600">All messages are encrypted and handled in compliance with GDPR.</p>
                 </div>
               </div>
             </div>
