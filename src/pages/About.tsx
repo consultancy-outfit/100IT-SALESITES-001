@@ -36,22 +36,25 @@ const values = [
 
 const team = [
   {
-    name: "James Jackson",
+    name: "Michael Carter",
     role: "Founder & Managing Director",
     bio: "With over 20 years in UK IT consultancy, James founded Jackson Gardens to bring enterprise-level IT to SMEs.",
-    image: "https://picsum.photos/seed/leader1/400/400",
+    image:
+      "https://images.unsplash.com/photo-1649361927910-3a3087ee8b2c?auto=format&fit=crop&w=800&h=800&q=80",
   },
   {
-    name: "Eleanor Wright",
+    name: "Ethan Brooks",
     role: "Technical Director",
     bio: "A cybersecurity specialist with a background in government-level infrastructure and data protection.",
-    image: "https://picsum.photos/seed/leader2/400/400",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&h=800&q=80",
   },
   {
-    name: "Robert Chen",
+    name: "Ryan Mitchell",
     role: "Head of Cloud Services",
     bio: "Expert in AWS and Azure migrations, Robert leads our cloud strategy and infrastructure team.",
-    image: "https://picsum.photos/seed/leader3/400/400",
+    image:
+      "https://images.unsplash.com/photo-1659128103048-e41477d734a5?auto=format&fit=crop&w=800&h=800&q=80",
   },
 ];
 
@@ -240,7 +243,7 @@ export default function About() {
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>

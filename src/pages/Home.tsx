@@ -87,10 +87,10 @@ export default function Home() {
             >
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white/50">
                 <img 
-                  src="https://picsum.photos/seed/tech-office/800/600" 
+                  src="https://images.unsplash.com/photo-1480944657103-7fed22359e1d?auto=format&fit=crop&w=1200&h=900&q=80" 
                   alt="Modern IT Office" 
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent"></div>
               </div>
