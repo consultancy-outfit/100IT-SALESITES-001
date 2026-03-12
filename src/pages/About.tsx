@@ -100,14 +100,35 @@ export default function About() {
           <h2 className="text-3xl font-bold text-center mb-16">Our Leadership Team</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { name: 'Robert Monaveen', role: 'Founder & CEO', img: 'https://picsum.photos/seed/p1/300/400' },
-              { name: 'Siobhan O\'Reilly', role: 'Chief Technology Officer', img: 'https://picsum.photos/seed/p2/300/400' },
-              { name: 'Marcus Thorne', role: 'Director of Operations', img: 'https://picsum.photos/seed/p3/300/400' },
-              { name: 'Emma Watson', role: 'Head of Cybersecurity', img: 'https://picsum.photos/seed/p4/300/400' }
+              {
+                name: 'Robert Monaveen',
+                role: 'Founder & CEO',
+                img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&h=800&q=80',
+              },
+              {
+                name: 'Daniel O\'Reilly',
+                role: 'Chief Technology Officer',
+                img: 'https://images.unsplash.com/photo-1661874117621-5aac2cb6bc61?auto=format&fit=crop&w=600&h=800&q=80',
+              },
+              {
+                name: 'Marcus Thorne',
+                role: 'Director of Operations',
+                img: 'https://images.unsplash.com/photo-1745060594679-61578eb592f7?auto=format&fit=crop&w=600&h=800&q=80',
+              },
+              {
+                name: 'Oliver Watson',
+                role: 'Head of Cybersecurity',
+                img: 'https://images.unsplash.com/photo-1680633393353-46e8c483459e?auto=format&fit=crop&w=600&h=800&q=80',
+              }
             ].map((leader, i) => (
               <div key={i} className="group">
                 <div className="relative overflow-hidden rounded-2xl mb-4">
-                  <img src={leader.img} alt={leader.name} className="w-full aspect-[3/4] object-cover transition-transform group-hover:scale-105" referrerPolicy="no-referrer" />
+                  <img
+                    src={leader.img}
+                    alt={leader.name}
+                    className="w-full aspect-[3/4] object-cover transition-transform group-hover:scale-105"
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 <h3 className="text-lg font-bold">{leader.name}</h3>
