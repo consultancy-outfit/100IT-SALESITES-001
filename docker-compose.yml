@@ -1,0 +1,15 @@
+services:
+  greater-manchester-specialist-support-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: greater-manchester-specialist-support-service-salesite
+    restart: unless-stopped
+    ports:
+      - "9025:80"
+    networks:
+      - salesite
+
+networks:
+  salesite:
+    external: true
