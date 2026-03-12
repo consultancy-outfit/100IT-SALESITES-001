@@ -90,14 +90,14 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { name: 'Robert Sterling', role: 'Managing Director', bio: '20+ years of experience in UK enterprise IT strategy.' },
-              { name: 'Elena Rossi', role: 'Technical Director', bio: 'Expert in cloud architecture and cyber security compliance.' },
-              { name: 'Marcus Thorne', role: 'Operations Manager', bio: 'Dedicated to delivering world-class support and client satisfaction.' }
+              { name: 'Robert Sterling', role: 'Managing Director', bio: '20+ years of experience in UK enterprise IT strategy.', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop' },
+              { name: 'Elena Rossi', role: 'Technical Director', bio: 'Expert in cloud architecture and cyber security compliance.', img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=600&fit=crop' },
+              { name: 'Marcus Thorne', role: 'Operations Manager', bio: 'Dedicated to delivering world-class support and client satisfaction.', img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=600&fit=crop' }
             ].map((m, i) => (
               <div key={i} className="text-center group">
                 <div className="relative mb-6 overflow-hidden rounded-2xl aspect-square">
                   <img 
-                    src={`https://picsum.photos/seed/leader${i}/600/600`} 
+                    src={m.img} 
                     alt={m.name} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
