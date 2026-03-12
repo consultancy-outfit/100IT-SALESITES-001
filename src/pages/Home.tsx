@@ -113,7 +113,7 @@ export default function Home() {
                 <img
                   src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=1000"
                   alt="Modern IT Team Collaboration"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -155,7 +155,7 @@ export default function Home() {
           <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-stone-400 mb-8">
             Trusted by industry leaders across the UK
           </p>
-          <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale">
+          <div className="flex flex-wrap justify-center gap-12 opacity-50">
             {/* Logos placeholders */}
             <span className="text-2xl font-serif italic text-stone-900">
               TechCorp

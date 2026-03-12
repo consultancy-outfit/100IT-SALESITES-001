@@ -30,18 +30,18 @@ const VALUES = [
 
 const LEADERSHIP = [
   {
-    name: "James Fradel",
+    name: "Michael Carter",
     role: "Managing Director",
-    bio: "With over 20 years in UK IT infrastructure, James leads the strategic vision of Fradel Lodge.",
+    bio: "With over 20 years in IT infrastructure, Michael leads the strategic vision of Fradel Lodge.",
     image:
-      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1733348137468-90b917d2ebf1?auto=format&fit=crop&q=80&w=800",
   },
   {
-    name: "Eleanor Lodge",
+    name: "Ryan Cooper",
     role: "Technical Director",
-    bio: "A specialist in cybersecurity and cloud architecture, Eleanor ensures our technical delivery is world-class.",
+    bio: "A specialist in cybersecurity and cloud architecture, Ryan ensures our technical delivery is world-class.",
     image:
-      "https://images.unsplash.com/photo-1525130413817-d45c1d127c42?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1686063165043-45243dab25ab?auto=format&fit=crop&q=80&w=800",
   },
 ];
 
@@ -106,7 +106,7 @@ export default function About() {
                 <img
                   src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&q=80&w=800"
                   alt="Technology Strategy Meeting"
-                  className="w-full h-full object-cover grayscale"
+                  className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -196,12 +196,12 @@ export default function About() {
           </div>
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {LEADERSHIP.map((person, i) => (
-              <div key={i} className="group">
+              <div key={i}>
                 <div className="aspect-square rounded-3xl bg-stone-200 overflow-hidden mb-8 shadow-lg">
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-full object-cover transition-all duration-700"
                     referrerPolicy="no-referrer"
                   />
                 </div>
