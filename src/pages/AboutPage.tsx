@@ -133,13 +133,36 @@ export const AboutPage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { name: 'Dr. Richard Sterling', role: 'CEO & Founder', bio: 'Former systems architect with 20 years in enterprise IT.' },
-              { name: 'Elizabeth Howe', role: 'CTO', bio: 'Cybersecurity specialist and advocate for UK tech innovation.' },
-              { name: 'James Miller', role: 'Director of Operations', bio: 'Expert in managed services and client success strategies.' },
+              {
+                name: 'Michael Carter',
+                role: 'Chief Executive Officer',
+                bio: 'Seasoned technology leader focused on long-term client partnerships.',
+                image:
+                  'https://images.unsplash.com/photo-1556157382-97eda2d62296?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0',
+              },
+              {
+                name: 'David Johnson',
+                role: 'Chief Technology Officer',
+                bio: 'Entrepreneurial technologist with deep experience in cloud and cybersecurity.',
+                image:
+                  'https://images.unsplash.com/photo-1589832486202-cf43d3c2547b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0',
+              },
+              {
+                name: 'Alex Thompson',
+                role: 'Director of Operations',
+                bio: 'Operations specialist dedicated to reliable, always-on managed services.',
+                image:
+                  'https://images.unsplash.com/photo-1723990720522-e8e0d5f8c052?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0',
+              },
             ].map((member, i) => (
               <div key={i} className="group">
                 <div className="aspect-[4/5] rounded-3xl bg-slate-100 mb-6 overflow-hidden relative">
-                  <img src={`https://picsum.photos/seed/member${i}/600/800`} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" referrerPolicy="no-referrer" />
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-all duration-500"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
                 <p className="text-indigo-600 text-sm font-semibold mb-3">{member.role}</p>
