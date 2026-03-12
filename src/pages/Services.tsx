@@ -80,7 +80,7 @@ export const Services: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="bg-slate-900 py-20">
+      <section className="bg-brand-dark py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-white sm:text-5xl mb-6">Our IT Services</h1>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto">
@@ -105,7 +105,7 @@ export const Services: React.FC = () => {
                 }`}
               >
                 <div className="lg:w-1/2">
-                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-600 text-white shadow-lg mb-8">
+                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-red text-white shadow-lg mb-8">
                     {IconMap[service.icon]}
                   </div>
                   <h2 className="text-3xl font-bold text-slate-900 mb-4">{service.title}</h2>
@@ -122,7 +122,7 @@ export const Services: React.FC = () => {
                       <ul className="space-y-2">
                         {service.process.map((step, i) => (
                           <li key={i} className="flex items-center gap-2 text-slate-600 text-sm">
-                            <span className="h-1.5 w-1.5 rounded-full bg-indigo-600"></span>
+                            <span className="h-1.5 w-1.5 rounded-full bg-brand-red"></span>
                             {step}
                           </li>
                         ))}
@@ -144,9 +144,9 @@ export const Services: React.FC = () => {
                   <div className="mt-10 flex items-center gap-6">
                     <div>
                       <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">Starting From</p>
-                      <p className="text-2xl font-extrabold text-indigo-600">{service.startingPrice}</p>
+                      <p className="text-2xl font-extrabold text-brand-red">{service.startingPrice}</p>
                     </div>
-                    <button className="rounded-full bg-slate-900 px-8 py-3 text-sm font-bold text-white hover:bg-slate-800 transition-colors">
+                    <button className="rounded-full bg-brand-dark px-8 py-3 text-sm font-bold text-white hover:bg-brand-red transition-colors">
                       Enquire Now
                     </button>
                   </div>
@@ -154,7 +154,7 @@ export const Services: React.FC = () => {
 
                 <div className="lg:w-1/2">
                   <div className="relative">
-                    <div className="absolute -inset-4 rounded-3xl bg-indigo-600/5 blur-2xl"></div>
+                    <div className="absolute -inset-4 rounded-3xl bg-brand-red/5 blur-2xl"></div>
                     <img
                       src={`https://picsum.photos/seed/${service.id}/800/600`}
                       alt={service.title}
@@ -176,7 +176,7 @@ export const Services: React.FC = () => {
           <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
             We understand that every business is unique. Our team can design a bespoke IT package that fits your specific requirements and budget.
           </p>
-          <button className="rounded-full bg-indigo-600 px-10 py-4 text-lg font-bold text-white shadow-lg hover:bg-indigo-500 transition-all active:scale-95">
+          <button className="rounded-full bg-brand-red px-10 py-4 text-lg font-bold text-white shadow-lg hover:bg-brand-red-light transition-all active:scale-95">
             Request a Bespoke Quote
           </button>
         </div>

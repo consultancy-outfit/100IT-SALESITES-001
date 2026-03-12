@@ -7,9 +7,9 @@ export const About: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="relative py-24 bg-slate-900 overflow-hidden">
+      <section className="relative py-24 bg-brand-dark overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:20px_20px]"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#ED1C24_1px,transparent_1px)] [background-size:20px_20px]"></div>
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
@@ -34,14 +34,14 @@ export const About: React.FC = () => {
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="p-10 rounded-3xl bg-indigo-600 text-white shadow-xl">
+            <div className="p-10 rounded-3xl bg-brand-red text-white shadow-xl">
               <Target size={48} className="mb-6 opacity-80" />
               <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
-              <p className="text-lg text-indigo-100 leading-relaxed">
+              <p className="text-lg text-white/90 leading-relaxed">
                 To empower British enterprises by providing robust, secure, and independent IT infrastructures that foster innovation and sustainable growth. We believe technology should be an enabler, not a barrier.
               </p>
             </div>
-            <div className="p-10 rounded-3xl bg-slate-900 text-white shadow-xl">
+            <div className="p-10 rounded-3xl bg-brand-dark text-white shadow-xl">
               <Eye size={48} className="mb-6 opacity-80" />
               <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
               <p className="text-lg text-slate-300 leading-relaxed">
@@ -57,7 +57,7 @@ export const About: React.FC = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-600 text-sm font-bold mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red-muted text-brand-red text-sm font-bold mb-6">
                 <History size={16} /> Est. 2013
               </div>
               <h2 className="text-3xl font-bold text-slate-900 mb-6">A Decade of Excellence</h2>
@@ -94,10 +94,10 @@ export const About: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: <ShieldCheck className="text-indigo-600" />, title: "Integrity", desc: "Honest advice and transparent pricing, always." },
-              { icon: <Award className="text-indigo-600" />, title: "Excellence", desc: "Striving for the highest technical standards in every task." },
-              { icon: <Heart className="text-indigo-600" />, title: "Client First", desc: "Your business goals are our primary focus." },
-              { icon: <ShieldCheck className="text-indigo-600" />, title: "Compliance", desc: "Unwavering commitment to GDPR and UK law." }
+              { icon: <ShieldCheck className="text-brand-red" />, title: "Integrity", desc: "Honest advice and transparent pricing, always." },
+              { icon: <Award className="text-brand-red" />, title: "Excellence", desc: "Striving for the highest technical standards in every task." },
+              { icon: <Heart className="text-brand-red" />, title: "Client First", desc: "Your business goals are our primary focus." },
+              { icon: <ShieldCheck className="text-brand-red" />, title: "Compliance", desc: "Unwavering commitment to GDPR and UK law." }
             ].map((value, i) => (
               <div key={i} className="text-center p-8 rounded-2xl bg-slate-50 border border-slate-100">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm mb-6">
@@ -134,7 +134,7 @@ export const About: React.FC = () => {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">{member.name}</h3>
-                <p className="text-indigo-600 font-medium mb-4">{member.role}</p>
+                <p className="text-brand-red font-medium mb-4">{member.role}</p>
                 <p className="text-sm text-slate-500 leading-relaxed">{member.bio}</p>
               </div>
             ))}

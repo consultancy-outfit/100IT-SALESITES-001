@@ -20,7 +20,7 @@ export const Contact: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="bg-slate-900 py-20">
+      <section className="bg-brand-dark py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-white sm:text-5xl mb-6">Get in Touch</h1>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto">
@@ -46,7 +46,7 @@ export const Contact: React.FC = () => {
                     <input
                       type="text"
                       required
-                      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all"
                       placeholder="John Smith"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
@@ -57,7 +57,7 @@ export const Contact: React.FC = () => {
                     <input
                       type="email"
                       required
-                      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all"
                       placeholder="john@company.co.uk"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
@@ -68,7 +68,7 @@ export const Contact: React.FC = () => {
                   <label className="block text-sm font-bold text-slate-700 mb-2">Company Name</label>
                   <input
                     type="text"
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all"
                     placeholder="Your Business Ltd"
                     value={formState.company}
                     onChange={(e) => setFormState({ ...formState, company: e.target.value })}
@@ -79,7 +79,7 @@ export const Contact: React.FC = () => {
                   <textarea
                     required
                     rows={4}
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all"
                     placeholder="Tell us about your IT requirements..."
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
@@ -90,17 +90,17 @@ export const Contact: React.FC = () => {
                     type="checkbox"
                     required
                     id="consent"
-                    className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                    className="mt-1 h-4 w-4 rounded border-slate-300 text-brand-red focus:ring-brand-red"
                     checked={formState.consent}
                     onChange={(e) => setFormState({ ...formState, consent: e.target.checked })}
                   />
                   <label htmlFor="consent" className="text-sm text-slate-500">
-                    I consent to {COMPANY_DETAILS.name} processing my data in accordance with the <a href="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</a>.
+                    I consent to {COMPANY_DETAILS.name} processing my data in accordance with the <a href="/privacy" className="text-brand-red hover:underline">Privacy Policy</a>.
                   </label>
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-xl bg-indigo-600 py-4 text-white font-bold hover:bg-indigo-500 transition-all shadow-lg flex items-center justify-center gap-2 active:scale-95"
+                  className="w-full rounded-xl bg-brand-red py-4 text-white font-bold hover:bg-brand-red-light transition-all shadow-lg flex items-center justify-center gap-2 active:scale-95"
                 >
                   Send Enquiry <Send size={18} />
                 </button>
@@ -113,7 +113,7 @@ export const Contact: React.FC = () => {
                 <h2 className="text-2xl font-bold text-slate-900 mb-8">Contact Information</h2>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center text-indigo-600 shrink-0">
+                    <div className="h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center text-brand-red shrink-0">
                       <MapPin size={24} />
                     </div>
                     <div>
@@ -122,7 +122,7 @@ export const Contact: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center text-indigo-600 shrink-0">
+                    <div className="h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center text-brand-red shrink-0">
                       <Phone size={24} />
                     </div>
                     <div>
@@ -131,7 +131,7 @@ export const Contact: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center text-indigo-600 shrink-0">
+                    <div className="h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center text-brand-red shrink-0">
                       <Mail size={24} />
                     </div>
                     <div>
@@ -140,7 +140,7 @@ export const Contact: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center text-indigo-600 shrink-0">
+                    <div className="h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center text-brand-red shrink-0">
                       <Clock size={24} />
                     </div>
                     <div>

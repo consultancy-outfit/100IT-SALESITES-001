@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "motion/react";
 import {
   Menu,
   X,
-  Cpu,
   Mail,
   Phone,
   MapPin,
@@ -13,6 +12,7 @@ import {
   Github,
 } from "lucide-react";
 import { COMPANY_DETAILS, NAV_LINKS } from "../constants";
+import logoSvg from "../assets/ECL_Regaining _Independence_Service.svg";
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -27,18 +27,11 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-white transition-transform group-hover:scale-110">
-                <Cpu size={24} />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-slate-900">
-                <span className="md:hidden">{COMPANY_DETAILS.brand}</span>
-                <span className="hidden md:inline">
-                  {COMPANY_DETAILS.brand}{" "}
-                  <span className="text-indigo-600">
-                    {COMPANY_DETAILS.name.replace(COMPANY_DETAILS.brand, "").trim()}
-                  </span>
-                </span>
-              </span>
+              <img
+                src={logoSvg}
+                alt={COMPANY_DETAILS.name}
+                className="h-10 w-auto object-contain object-left transition-transform group-hover:opacity-90 md:h-12"
+              />
             </Link>
 
             {/* Desktop Nav */}
@@ -47,9 +40,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm font-medium transition-colors hover:text-indigo-600 ${
+                  className={`text-sm font-medium transition-colors hover:text-brand-red ${
                     location.pathname === link.path
-                      ? "text-indigo-600"
+                      ? "text-brand-red"
                       : "text-slate-600"
                   }`}
                 >
@@ -58,7 +51,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
               ))}
               <Link
                 to="/contact"
-                className="rounded-full bg-slate-900 px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-slate-800 hover:shadow-lg active:scale-95"
+                className="rounded-full bg-brand-dark px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-brand-red hover:shadow-lg active:scale-95"
               >
                 Get Started
               </Link>
@@ -88,7 +81,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
                   <Link
                     key={link.path}
                     to={link.path}
-                    className="block rounded-lg px-4 py-3 text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-indigo-600"
+                    className="block rounded-lg px-4 py-3 text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-brand-red"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
@@ -121,18 +114,11 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-6">
               <Link to="/" className="flex items-center gap-2">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-600 text-white transition-transform group-hover:scale-110">
-                  <Cpu size={24} />
-                </div>
-                <span className="text-lg font-bold tracking-tight text-slate-900">
-                  <span className="md:hidden">{COMPANY_DETAILS.brand}</span>
-                  <span className="hidden md:inline">
-                    {COMPANY_DETAILS.brand}{" "}
-                    <span className="text-indigo-600">
-                      {COMPANY_DETAILS.name.replace(COMPANY_DETAILS.brand, "").trim()}
-                    </span>
-                  </span>
-                </span>
+                <img
+                  src={logoSvg}
+                  alt={COMPANY_DETAILS.name}
+                  className="h-10 w-auto object-contain object-left md:h-12"
+                />
               </Link>
               <p className="text-sm leading-relaxed text-slate-500">
                 Empowering UK businesses through innovative IT solutions and
@@ -142,19 +128,19 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
               <div className="flex gap-4">
                 <a
                   href="#"
-                  className="text-slate-400 hover:text-indigo-600 transition-colors"
+                  className="text-slate-400 hover:text-brand-red transition-colors"
                 >
                   <Linkedin size={20} />
                 </a>
                 <a
                   href="#"
-                  className="text-slate-400 hover:text-indigo-600 transition-colors"
+                  className="text-slate-400 hover:text-brand-red transition-colors"
                 >
                   <Twitter size={20} />
                 </a>
                 <a
                   href="#"
-                  className="text-slate-400 hover:text-indigo-600 transition-colors"
+                  className="text-slate-400 hover:text-brand-red transition-colors"
                 >
                   <Github size={20} />
                 </a>
@@ -170,7 +156,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
                   <li key={link.path}>
                     <Link
                       to={link.path}
-                      className="text-sm text-slate-500 hover:text-indigo-600 transition-colors"
+                      className="text-sm text-slate-500 hover:text-brand-red transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -179,7 +165,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
                 <li>
                   <Link
                     to="/terms"
-                    className="text-sm text-slate-500 hover:text-indigo-600 transition-colors"
+                    className="text-sm text-slate-500 hover:text-brand-red transition-colors"
                   >
                     Terms & Conditions
                   </Link>
@@ -187,7 +173,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
                 <li>
                   <Link
                     to="/privacy"
-                    className="text-sm text-slate-500 hover:text-indigo-600 transition-colors"
+                    className="text-sm text-slate-500 hover:text-brand-red transition-colors"
                   >
                     Privacy Policy
                   </Link>
@@ -201,15 +187,15 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
               </h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-sm text-slate-500">
-                  <MapPin size={18} className="shrink-0 text-indigo-600" />
+                  <MapPin size={18} className="shrink-0 text-brand-red" />
                   <span>{COMPANY_DETAILS.address}</span>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-slate-500">
-                  <Phone size={18} className="shrink-0 text-indigo-600" />
+                  <Phone size={18} className="shrink-0 text-brand-red" />
                   <span>{COMPANY_DETAILS.phone}</span>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-slate-500">
-                  <Mail size={18} className="shrink-0 text-indigo-600" />
+                  <Mail size={18} className="shrink-0 text-brand-red" />
                   <span className="break-all">{COMPANY_DETAILS.email}</span>
                 </li>
               </ul>

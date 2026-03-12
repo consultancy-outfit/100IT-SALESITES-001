@@ -52,7 +52,7 @@ export const Pricing: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="bg-slate-900 py-20">
+      <section className="bg-brand-dark py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-white sm:text-5xl mb-6">Transparent Pricing</h1>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto">
@@ -73,12 +73,12 @@ export const Pricing: React.FC = () => {
                 transition={{ delay: i * 0.1 }}
                 className={`relative flex flex-col p-8 rounded-3xl border ${
                   tier.isPopular 
-                    ? 'border-indigo-600 shadow-2xl ring-1 ring-indigo-600' 
+                    ? 'border-brand-red shadow-2xl ring-1 ring-brand-red' 
                     : 'border-slate-200 shadow-sm'
                 } bg-white`}
               >
                 {tier.isPopular && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-red text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                     Most Popular
                   </div>
                 )}
@@ -111,8 +111,8 @@ export const Pricing: React.FC = () => {
                   <button
                     className={`w-full rounded-xl py-4 text-sm font-bold transition-all active:scale-95 ${
                       tier.isPopular
-                        ? 'bg-indigo-600 text-white hover:bg-indigo-500 shadow-lg shadow-indigo-200'
-                        : 'bg-slate-900 text-white hover:bg-slate-800'
+                        ? 'bg-brand-red text-white hover:bg-brand-red-light shadow-lg shadow-brand-red/20'
+                        : 'bg-brand-dark text-white hover:bg-brand-red'
                     }`}
                   >
                     Get Started

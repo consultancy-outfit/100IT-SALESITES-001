@@ -8,10 +8,10 @@ export const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 py-24 lg:py-32">
+      <section className="relative bg-brand-dark py-24 lg:py-32">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-indigo-600/20 blur-3xl"></div>
-          <div className="absolute top-1/2 -right-24 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl"></div>
+          <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-brand-red/20 blur-3xl"></div>
+          <div className="absolute top-1/2 -right-24 h-96 w-96 rounded-full bg-brand-red/10 blur-3xl"></div>
         </div>
         
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center lg:text-left">
@@ -21,11 +21,11 @@ export const Home: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block rounded-full bg-indigo-500/10 px-4 py-1.5 text-sm font-semibold text-indigo-400 ring-1 ring-inset ring-indigo-500/20 mb-6">
+              <span className="inline-block rounded-full bg-brand-red/10 px-4 py-1.5 text-sm font-semibold text-brand-red-light ring-1 ring-inset ring-brand-red/20 mb-6">
                 UK's Leading IT Specialists
               </span>
               <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl mb-6">
-                Regain Your <span className="text-indigo-400">Digital Independence</span>
+                Regain Your <span className="text-brand-red-light">Digital Independence</span>
               </h1>
               <p className="text-lg text-slate-300 mb-10 max-w-xl mx-auto lg:mx-0">
                 {COMPANY_DETAILS.brand} provides world-class IT services tailored for British enterprises. From cloud migration to cybersecurity, we help you master your technology stack.
@@ -33,7 +33,7 @@ export const Home: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
                   to="/services"
-                  className="rounded-full bg-indigo-600 px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:bg-indigo-500 hover:shadow-indigo-500/25 active:scale-95 flex items-center justify-center gap-2"
+                  className="rounded-full bg-brand-red px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:bg-brand-red-light hover:shadow-brand-red/25 active:scale-95 flex items-center justify-center gap-2"
                 >
                   Explore Services <ArrowRight size={20} />
                 </Link>
@@ -59,10 +59,10 @@ export const Home: React.FC = () => {
                   className="w-full h-auto object-cover"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6 p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
                   <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-full bg-indigo-500 flex items-center justify-center text-white">
+                    <div className="h-12 w-12 rounded-full bg-brand-red flex items-center justify-center text-white">
                       <BarChart3 size={24} />
                     </div>
                     <div>
@@ -92,17 +92,17 @@ export const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Shield className="text-indigo-600" size={32} />,
+                icon: <Shield className="text-brand-red" size={32} />,
                 title: "GDPR Compliant",
                 desc: "Full adherence to UK data protection laws and international security standards."
               },
               {
-                icon: <Zap className="text-indigo-600" size={32} />,
+                icon: <Zap className="text-brand-red" size={32} />,
                 title: "Rapid Response",
                 desc: "Average response time of under 15 minutes for critical system issues."
               },
               {
-                icon: <Users className="text-indigo-600" size={32} />,
+                icon: <Users className="text-brand-red" size={32} />,
                 title: "Local Support",
                 desc: "UK-based engineers available 24/7 to support your team onsite or remotely."
               }
@@ -170,9 +170,9 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="group relative overflow-hidden rounded-2xl bg-slate-900 p-8 text-white">
+            <div className="group relative overflow-hidden rounded-2xl bg-brand-dark p-8 text-white">
               <div className="relative z-10">
-                <span className="text-indigo-400 font-bold uppercase tracking-widest text-xs">Fintech Case Study</span>
+                <span className="text-brand-red-light font-bold uppercase tracking-widest text-xs">Fintech Case Study</span>
                 <h3 className="text-2xl font-bold mt-4 mb-6">Cloud Infrastructure Overhaul</h3>
                 <p className="text-slate-300 mb-8">Migrated a London-based fintech firm to a hybrid cloud environment, ensuring FCA compliance.</p>
                 <div className="flex items-baseline gap-2">
@@ -180,17 +180,17 @@ export const Home: React.FC = () => {
                   <span className="text-slate-400">Annual Savings</span>
                 </div>
               </div>
-              <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-indigo-600/20 blur-3xl group-hover:bg-indigo-600/30 transition-colors"></div>
+              <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-brand-red/20 blur-3xl group-hover:bg-brand-red/30 transition-colors"></div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-2xl bg-indigo-600 p-8 text-white">
+            <div className="group relative overflow-hidden rounded-2xl bg-brand-red p-8 text-white">
               <div className="relative z-10">
-                <span className="text-indigo-200 font-bold uppercase tracking-widest text-xs">Manufacturing Case Study</span>
+                <span className="text-brand-red-muted font-bold uppercase tracking-widest text-xs">Manufacturing Case Study</span>
                 <h3 className="text-2xl font-bold mt-4 mb-6">Cybersecurity Transformation</h3>
-                <p className="text-indigo-100 mb-8">Implemented a zero-trust architecture for a Midlands manufacturing group after a breach attempt.</p>
+                <p className="text-white/90 mb-8">Implemented a zero-trust architecture for a Midlands manufacturing group after a breach attempt.</p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-4xl font-extrabold text-white">0</span>
-                  <span className="text-indigo-200">Security Breaches Since</span>
+                  <span className="text-brand-red-muted">Security Breaches Since</span>
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 -ml-16 -mb-16 h-64 w-64 rounded-full bg-white/10 blur-3xl group-hover:bg-white/20 transition-colors"></div>
@@ -247,17 +247,17 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-indigo-600">
+      <section className="py-24 bg-brand-red">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
             Ready to Master Your Technology?
           </h2>
-          <p className="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Join hundreds of UK businesses that trust {COMPANY_DETAILS.brand} for their IT infrastructure and digital strategy.
           </p>
           <Link
             to="/contact"
-            className="inline-block rounded-full bg-white px-10 py-4 text-lg font-bold text-indigo-600 shadow-xl transition-all hover:bg-slate-50 active:scale-95"
+            className="inline-block rounded-full bg-white px-10 py-4 text-lg font-bold text-brand-red shadow-xl transition-all hover:bg-slate-50 active:scale-95"
           >
             Get a Free IT Audit
           </Link>
