@@ -695,8 +695,8 @@ const AboutPage = () => {
           </div>
           <div className="rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://picsum.photos/seed/team/800/600"
-              alt="Our Team"
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
+              alt="IT team collaboration and technology support"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
