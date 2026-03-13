@@ -626,7 +626,7 @@ const AboutPage = () => {
           </div>
           <div className="relative">
             <img
-              src="https://picsum.photos/seed/team/800/600"
+              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=500&h=400&fit=crop"
               alt="Our Team"
               className="rounded-3xl shadow-2xl"
               referrerPolicy="no-referrer"
@@ -674,25 +674,25 @@ const AboutPage = () => {
               {
                 name: "Eleanor Thompson",
                 role: "Founder & CEO",
-                img: "https://picsum.photos/seed/person1/400/400",
+                img: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop",
               },
               {
                 name: "David Miller",
                 role: "Chief Technology Officer",
-                img: "https://picsum.photos/seed/person2/400/400",
+                img: "https://images.unsplash.com/photo-1676989880361-091e12efc056?w=400&h=400&fit=crop",
               },
               {
                 name: "James Wilson",
                 role: "Head of Security",
-                img: "https://picsum.photos/seed/person3/400/400",
+                img: "https://images.unsplash.com/photo-1659128103048-e41477d734a5?w=400&h=400&fit=crop",
               },
             ].map((person, i) => (
               <div key={i} className="group">
-                <div className="aspect-square rounded-2xl overflow-hidden mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">
+                <div className="aspect-square rounded-2xl  overflow-hidden mb-4 transition-all duration-500">
                   <img
                     src={person.img}
                     alt={person.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                     referrerPolicy="no-referrer"
                   />
                 </div>
