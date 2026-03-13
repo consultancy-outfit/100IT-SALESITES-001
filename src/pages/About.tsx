@@ -39,16 +39,19 @@ const leadership = [
     name: 'David Cornwall',
     role: 'Founder & CEO',
     bio: 'With over 20 years in enterprise IT, David founded Cornwall-Place to bring corporate-level technology to British SMEs.',
+    url:'https://images.unsplash.com/photo-1728516687052-9e9ebee72f08?w=400&h=400&fit=crop'
   },
   {
     name: 'Sarah Miller',
     role: 'Chief Technology Officer',
     bio: 'A cybersecurity specialist with a passion for cloud architecture and digital transformation.',
+    url:'https://images.unsplash.com/photo-1590086782957-93c06ef21604?w=400&h=400&fit=crop'
   },
   {
     name: 'Mark Thompson',
     role: 'Head of Client Success',
     bio: 'Mark ensures that every client receives the proactive support and strategic guidance they deserve.',
+    url:'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop'
   },
 ];
 
@@ -157,9 +160,9 @@ export default function About() {
               <div key={idx} className="group">
                 <div className="aspect-[4/5] bg-slate-800 rounded-[2.5rem] mb-8 overflow-hidden relative">
                   <img
-                    src={`https://picsum.photos/seed/person${idx}/600/800`}
+                    src={person.url}
                     alt={person.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover transition-all duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>
