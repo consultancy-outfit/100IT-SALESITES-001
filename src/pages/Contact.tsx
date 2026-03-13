@@ -16,8 +16,8 @@ export function Contact() {
 
             <div className="space-y-8">
               <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center shrink-0">
-                  <MapPin className="w-6 h-6 text-indigo-600" />
+                <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center shrink-0">
+                  <MapPin className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 mb-1">Our Office</h4>
@@ -26,32 +26,32 @@ export function Contact() {
               </div>
 
               <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center shrink-0">
-                  <Phone className="w-6 h-6 text-indigo-600" />
+                <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center shrink-0">
+                  <Phone className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 mb-1">Phone Number</h4>
-                  <a href={`tel:${COMPANY_DETAILS.phone}`} className="text-slate-600 text-sm hover:text-indigo-600 transition-colors">
+                  <a href={`tel:${COMPANY_DETAILS.phone}`} className="text-slate-600 text-sm hover:text-red-600 transition-colors">
                     {COMPANY_DETAILS.phone}
                   </a>
                 </div>
               </div>
 
               <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center shrink-0">
-                  <Mail className="w-6 h-6 text-indigo-600" />
+                <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center shrink-0">
+                  <Mail className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 mb-1">Email Address</h4>
-                  <a href={`mailto:${COMPANY_DETAILS.email}`} className="text-slate-600 text-sm hover:text-indigo-600 transition-colors">
+                  <a href={`mailto:${COMPANY_DETAILS.email}`} className="text-slate-600 text-sm hover:text-red-600 transition-colors">
                     {COMPANY_DETAILS.email}
                   </a>
                 </div>
               </div>
 
               <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center shrink-0">
-                  <Clock className="w-6 h-6 text-indigo-600" />
+                <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center shrink-0">
+                  <Clock className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 mb-1">Business Hours</h4>
@@ -73,7 +73,7 @@ export function Contact() {
                   <label className="text-sm font-bold text-slate-900">First Name</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-50 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-red-600 focus:ring-4 focus:ring-red-50 outline-none transition-all"
                     placeholder="John"
                   />
                 </div>
@@ -81,7 +81,7 @@ export function Contact() {
                   <label className="text-sm font-bold text-slate-900">Last Name</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-50 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-red-600 focus:ring-4 focus:ring-red-50 outline-none transition-all"
                     placeholder="Doe"
                   />
                 </div>
@@ -91,14 +91,14 @@ export function Contact() {
                 <label className="text-sm font-bold text-slate-900">Email Address</label>
                 <input
                   type="email"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-50 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-red-600 focus:ring-4 focus:ring-red-50 outline-none transition-all"
                   placeholder="john@company.co.uk"
                 />
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-bold text-slate-900">Service Required</label>
-                <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-50 outline-none transition-all bg-white">
+                <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-red-600 focus:ring-4 focus:ring-red-50 outline-none transition-all bg-white">
                   <option>Managed IT Support</option>
                   <option>Cybersecurity</option>
                   <option>Cloud Migration</option>
@@ -111,21 +111,21 @@ export function Contact() {
                 <label className="text-sm font-bold text-slate-900">Message</label>
                 <textarea
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-50 outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-red-600 focus:ring-4 focus:ring-red-50 outline-none transition-all resize-none"
                   placeholder="Tell us about your requirements..."
                 ></textarea>
               </div>
 
               <div className="flex items-start gap-3">
-                <input type="checkbox" id="consent" className="mt-1 w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+                <input type="checkbox" id="consent" className="mt-1 w-4 h-4 rounded border-slate-300 text-red-600 focus:ring-red-500" />
                 <label htmlFor="consent" className="text-xs text-slate-500 leading-relaxed">
-                  I consent to Aspire IT Solutions storing my data to contact me regarding my enquiry. See our <a href="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</a> for more details.
+                  I consent to Aspire IT Solutions storing my data to contact me regarding my enquiry. See our <a href="/privacy" className="text-red-600 hover:underline">Privacy Policy</a> for more details.
                 </label>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100 active:scale-95 flex items-center justify-center gap-2"
+                className="w-full py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition-all shadow-lg shadow-red-100 active:scale-95 flex items-center justify-center gap-2"
               >
                 Send Message
                 <Send className="w-4 h-4" />

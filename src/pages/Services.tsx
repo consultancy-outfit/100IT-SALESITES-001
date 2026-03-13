@@ -36,7 +36,7 @@ export function Services() {
                 className={`flex flex-col lg:flex-row gap-12 lg:items-center ${isEven ? "" : "lg:flex-row-reverse"}`}
               >
                 <div className="flex-1 space-y-8">
-                  <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-indigo-50 text-indigo-600">
+                  <div className="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-red-50 text-red-600">
                     <Icon className="w-6 h-6" />
                     <span className="font-bold uppercase tracking-wider text-xs">Service Overview</span>
                   </div>
@@ -46,14 +46,14 @@ export function Services() {
                   <div className="grid sm:grid-cols-2 gap-8">
                     <div>
                       <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-600"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-red-600"></div>
                         Target Audience
                       </h4>
                       <p className="text-sm text-slate-600">{service.target}</p>
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-600"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-red-600"></div>
                         Key Benefits
                       </h4>
                       <ul className="space-y-2">
@@ -72,7 +72,7 @@ export function Services() {
                     <div className="flex flex-wrap gap-4">
                       {service.process.map((step, i) => (
                         <div key={i} className="flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-indigo-600 text-white text-[10px] font-bold flex items-center justify-center">
+                          <span className="w-6 h-6 rounded-full bg-red-600 text-white text-[10px] font-bold flex items-center justify-center">
                             {i + 1}
                           </span>
                           <span className="text-sm font-medium text-slate-700">{step}</span>
@@ -96,7 +96,7 @@ export function Services() {
 
                 <div className="flex-1">
                   <div className="relative">
-                    <div className="absolute -inset-4 bg-indigo-100 rounded-[2.5rem] -rotate-2"></div>
+                    <div className="absolute -inset-4 bg-red-100 rounded-[2.5rem] -rotate-2"></div>
                     <img
                       src={service.image}
                       alt={service.title}

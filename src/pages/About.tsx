@@ -22,12 +22,12 @@ export function About() {
 
         {/* Mission & Vision */}
         <div className="grid md:grid-cols-2 gap-8 mb-24">
-          <div className="p-10 rounded-3xl bg-indigo-600 text-white">
+          <div className="p-10 rounded-3xl bg-red-600 text-white">
             <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
               <Target className="w-6 h-6 text-white" />
             </div>
             <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
-            <p className="text-indigo-100 leading-relaxed">
+            <p className="text-red-100 leading-relaxed">
               To empower UK businesses by providing reliable, secure, and innovative technology solutions that drive growth and efficiency.
             </p>
           </div>
@@ -67,7 +67,7 @@ export function About() {
               referrerPolicy="no-referrer"
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
-              <div className="text-4xl font-bold text-indigo-600 mb-1">10+</div>
+              <div className="text-4xl font-bold text-red-600 mb-1">10+</div>
               <div className="text-sm font-bold text-slate-900">Years of Experience</div>
             </div>
           </div>
@@ -83,7 +83,7 @@ export function About() {
             {values.map((v, i) => (
               <div key={i} className="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 text-center">
                 <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center mx-auto mb-6">
-                  <v.icon className="w-6 h-6 text-indigo-600" />
+                  <v.icon className="w-6 h-6 text-red-600" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{v.title}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{v.desc}</p>

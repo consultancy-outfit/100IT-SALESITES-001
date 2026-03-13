@@ -27,13 +27,13 @@ export function Pricing() {
               }`}
             >
               {plan.popular && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                   Most Popular
                 </div>
               )}
               
               <div className="mb-8">
-                <h3 className={`text-xl font-bold mb-2 ${plan.popular ? "text-indigo-400" : "text-indigo-600"}`}>
+                <h3 className={`text-xl font-bold mb-2 }`}>
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline gap-1">
@@ -53,7 +53,7 @@ export function Pricing() {
                   <ul className="space-y-3">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-3 text-sm">
-                        <Check className={`w-4 h-4 ${plan.popular ? "text-indigo-400" : "text-indigo-600"}`} />
+                        <Check className={`w-4 h-4 ${plan.popular ? "text-red-400" : "text-red-600"}`} />
                         {feature}
                       </li>
                     ))}
@@ -75,7 +75,7 @@ export function Pricing() {
               <button
                 className={`w-full py-4 rounded-2xl font-bold transition-all active:scale-95 ${
                   plan.popular
-                    ? "bg-indigo-600 text-white hover:bg-indigo-700"
+                    ? "bg-red-600 text-white hover:bg-red-700"
                     : "bg-slate-900 text-white hover:bg-slate-800"
                 }`}
               >

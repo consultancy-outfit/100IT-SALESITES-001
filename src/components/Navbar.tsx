@@ -40,8 +40,8 @@ export function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-indigo-600 ${
-                  location.pathname === link.path ? "text-indigo-600" : "text-slate-600"
+                className={`text-sm font-medium transition-colors hover:text-red-600 ${
+                  location.pathname === link.path ? "text-red-600" : "text-slate-600"
                 }`}
               >
                 {link.name}
@@ -82,7 +82,7 @@ export function Navbar() {
                   key={link.path}
                   to={link.path}
                   className={`block px-3 py-4 text-base font-medium border-b border-slate-50 last:border-0 ${
-                    location.pathname === link.path ? "text-indigo-600" : "text-slate-600"
+                    location.pathname === link.path ? "text-red-600" : "text-slate-600"
                   }`}
                 >
                   {link.name}
@@ -91,7 +91,7 @@ export function Navbar() {
               <div className="pt-4">
                 <Link
                   to="/contact"
-                  className="block w-full text-center bg-indigo-600 text-white px-5 py-3 rounded-xl text-base font-semibold"
+                  className="block w-full text-center bg-red-600 text-white px-5 py-3 rounded-xl text-base font-semibold"
                 >
                   Get a Quote
                 </Link>
