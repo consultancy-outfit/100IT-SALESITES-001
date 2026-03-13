@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-900">
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-100">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#10b981,transparent_50%)] blur-3xl transform -translate-y-1/2"></div>
         </div>
@@ -23,7 +23,7 @@ const Home = () => {
               <span className="inline-block py-1 px-3 rounded-full bg-brand-accent/10 text-brand-accent text-xs font-bold uppercase tracking-wider mb-6 border border-brand-accent/20">
                 UK's Trusted IT Partner
               </span>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+              <h1 className="text-4xl md:text-6xl font-extrabold text-black leading-tight mb-6">
                 Empowering British Business Through <span className="text-brand-accent">Intelligent IT</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed">
@@ -32,13 +32,13 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/services"
-                  className="px-8 py-4 bg-brand-accent text-white rounded-full font-bold hover:bg-emerald-500 transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-accent/20"
+                  className="px-8 py-4 bg-brand-accent text-white rounded-full font-bold  transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-accent/20"
                 >
                   Explore Services <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="px-8 py-4 bg-white/10 text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all text-center"
+                  className="px-8 py-4 bg-slate-900 text-white border border-white/20 rounded-full font-bold  transition-all text-center"
                 >
                   Book a Consultation
                 </Link>
@@ -72,7 +72,7 @@ const Home = () => {
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Community Short Breaks?</h2>
-            <p className="text-slate-600 text-lg">
+            <p className="text-black text-lg">
               We don't just fix computers; we build strategic partnerships that drive growth and security for UK enterprises.
             </p>
           </div>
@@ -148,16 +148,16 @@ const Home = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">What Our Clients Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="p-8 rounded-2xl border border-slate-100 bg-slate-50 relative">
+              <div key={i} className="p-8 rounded-2xl border border-black-100 bg-black-50 relative">
                 <div className="text-6xl text-brand-accent/10 absolute top-4 right-8 font-serif">"</div>
-                <p className="text-slate-600 italic mb-8 relative z-10">"{t.content}"</p>
+                <p className="text-black-600 italic mb-8 relative z-10">"{t.content}"</p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-brand-primary flex items-center justify-center text-white font-bold">
                     {t.name.charAt(0)}
                   </div>
                   <div>
-                    <div className="font-bold text-slate-900">{t.name}</div>
-                    <div className="text-xs text-slate-500">{t.role}, {t.company}</div>
+                    <div className="font-bold text-black-900">{t.name}</div>
+                    <div className="text-xs text-black-500">{t.role}, {t.company}</div>
                   </div>
                 </div>
               </div>
@@ -167,13 +167,13 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding">
+      <section className="section-padding ">
         <div className="container-custom">
-          <div className="bg-brand-primary rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+          <div className="bg-slate-200 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
             <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Ready to Future-Proof Your Business?</h2>
-              <p className="text-slate-400 text-lg mb-10">
+              <h2 className="text-3xl md:text-5xl font-bold text-black mb-8">Ready to Future-Proof Your Business?</h2>
+              <p className="text-black-400 text-lg mb-10">
                 Join hundreds of UK businesses that trust Community Short Breaks for their IT needs. Let's start a conversation today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -185,7 +185,7 @@ const Home = () => {
                 </Link>
                 <Link
                   to="/pricing"
-                  className="px-10 py-4 bg-white/5 text-white border border-white/20 rounded-full font-bold hover:bg-white/10 transition-all"
+                  className="px-10 py-4 bg-brand-primary text-white border border-white/20 rounded-full font-bold hover:bg-white/10 transition-all"
                 >
                   View Pricing
                 </Link>

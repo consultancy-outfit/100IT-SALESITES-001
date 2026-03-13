@@ -9,10 +9,10 @@ const Pricing = () => {
   return (
     <Layout>
       {/* Header */}
-      <section className="pt-32 pb-16 bg-slate-900 text-white">
+      <section className="pt-32 pb-16 bg-slate-100 text-white">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Transparent Pricing</h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-black text-lg max-w-2xl mx-auto">
             Simple, scalable pricing plans designed to fit businesses of all sizes. No hidden fees, just expert IT support.
           </p>
         </div>
@@ -28,7 +28,7 @@ const Pricing = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className={`flex flex-col p-8 rounded-[2.5rem] border ${i === 1 ? 'border-brand-accent bg-slate-900 text-white shadow-2xl scale-105 z-10' : 'border-slate-200 bg-white text-slate-900'}`}
+                className={`flex flex-col p-8 rounded-[2.5rem] border ${i === 1 ? 'border-brand-accent bg-slate-100 text-white shadow-2xl scale-105 z-10' : 'border-slate-200 bg-white text-slate-900'}`}
               >
                 {i === 1 && (
                   <div className="bg-brand-accent text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full w-fit mb-6">
@@ -53,7 +53,7 @@ const Pricing = () => {
                   {plan.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <Check className={`w-5 h-5 shrink-0 ${i === 1 ? 'text-brand-accent' : 'text-emerald-500'}`} />
-                      <span className="text-sm">{feature}</span>
+                      <span className="text-sm text-slate-500">{feature}</span>
                     </div>
                   ))}
                   <div className="pt-4 border-t border-slate-200/10">
@@ -100,14 +100,14 @@ const Pricing = () => {
       {/* Custom Quote CTA */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="bg-slate-900 rounded-[3rem] p-12 text-center text-white">
+          <div className="bg-slate-100 rounded-[3rem] p-12 text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Need a Bespoke Solution?</h2>
             <p className="text-slate-400 mb-10 max-w-2xl mx-auto">
               If your requirements don't fit into our standard tiers, we can design a custom infrastructure and support package tailored specifically to your organisation.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-slate-100 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-100 transition-all"
             >
               Request a Custom Quote <ArrowRight className="w-5 h-5" />
             </Link>

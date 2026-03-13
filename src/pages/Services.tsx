@@ -17,7 +17,7 @@ const Services = () => {
   return (
     <Layout>
       {/* Header */}
-      <section className="pt-32 pb-16 bg-slate-900 text-white">
+      <section className="pt-32 pb-16 bg-slate-100 text-white">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Our IT Services</h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">

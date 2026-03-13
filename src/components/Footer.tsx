@@ -8,7 +8,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-16 pb-8">
+    <footer className="bg-slate-100 text-black-300 pt-16 pb-8">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand & Description */}
@@ -18,7 +18,7 @@ export const Footer = () => {
             <Icon className="h-12 w-auto" />
           </div>
             </Link>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-black-400 leading-relaxed">
               Empowering British businesses with cutting-edge IT solutions, robust cybersecurity, and strategic technology consultancy.
             </p>
             <div className="flex gap-4">

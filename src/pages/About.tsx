@@ -8,7 +8,7 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-slate-900 text-white">
+      <section className="pt-32 pb-16 bg-slate-100 text-white">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">About Community Short Breaks</h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
@@ -101,7 +101,7 @@ const About = () => {
               { title: 'Client-Centric', desc: 'Your business goals are the primary driver of our technology strategies.', icon: <Heart className="w-6 h-6" /> }
             ].map((value, i) => (
               <div key={i} className="text-center">
-                <div className="w-16 h-16 bg-slate-900 text-brand-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <div className="w-16 h-16 bg-slate-100 text-brand-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                   {value.icon}
                 </div>
                 <h4 className="text-xl font-bold mb-4">{value.title}</h4>
@@ -113,7 +113,7 @@ const About = () => {
       </section>
 
       {/* GDPR Commitment */}
-      <section className="section-padding bg-brand-primary text-white">
+      <section className="section-padding bg-slate-100 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <Shield className="w-16 h-16 text-brand-accent mx-auto mb-8" />
@@ -124,15 +124,15 @@ const About = () => {
             <div className="flex flex-wrap justify-center gap-8">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="text-brand-accent" />
-                <span>ICO Registered</span>
+                <span className="text-slate-900">ICO Registered</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="text-brand-accent" />
-                <span>Cyber Essentials Plus</span>
+                <span className="text-slate-900">Cyber Essentials Plus</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="text-brand-accent" />
-                <span>ISO 27001 Aligned</span>
+                <span className="text-slate-900">ISO 27001 Aligned</span>
               </div>
             </div>
           </div>
