@@ -94,16 +94,16 @@ const About: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
-              { name: "James Draycombe", role: "Founder & CEO", bio: "20+ years in IT infrastructure and strategic consultancy." },
-              { name: "Eleanor Vance", role: "Head of Cybersecurity", bio: "Former government security consultant specializing in threat mitigation." },
-              { name: "Robert Sterling", role: "Director of Operations", bio: "Expert in scaling managed services and client success management." }
+              { name: "James Draycombe", role: "Founder & CEO", bio: "20+ years in IT infrastructure and strategic consultancy.",url:'https://images.unsplash.com/photo-1623184663110-89ba5b565eb6?w=400&h=400&fit=crop' },
+              { name: "Eleanor Vance", role: "Head of Cybersecurity", bio: "Former government security consultant specializing in threat mitigation.",url:'https://images.unsplash.com/photo-1757620765404-a1ee66df5e27?w=400&h=400&fit=crop' },
+              { name: "Robert Sterling", role: "Director of Operations", bio: "Expert in scaling managed services and client success management." ,url:'https://images.unsplash.com/photo-1765438869229-f7f3b6a34cdb?w=400&h=400&fit=crop'}
             ].map((leader, i) => (
               <div key={i} className="group">
                 <div className="aspect-square rounded-2xl overflow-hidden mb-6 bg-zinc-200">
                   <img
-                    src={`https://picsum.photos/seed/leader${i}/800/800`}
+                    src={leader.url}
                     alt={leader.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover transition-all duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>
