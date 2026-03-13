@@ -169,11 +169,11 @@ const Home = () => {
                 role: "Operations Director, London Fintech"
               }
             ].map((t, i) => (
-              <div key={i} className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100">
+              <div key={i} className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between ">
                 <p className="text-lg text-slate-700 italic mb-8">"{t.quote}"</p>
                 <div className="flex items-center space-x-4">
                   <div className="h-12 w-12 bg-slate-200 rounded-full"></div>
-                  <div>
+                  <div >
                     <div className="font-bold text-slate-900">{t.author}</div>
                     <div className="text-sm text-slate-500">{t.role}</div>
                   </div>

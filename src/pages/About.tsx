@@ -111,13 +111,13 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
-              { name: "Alistair Haye", role: "Managing Director", img: "https://picsum.photos/seed/p1/400/400" },
-              { name: "Victoria Daisy", role: "Technical Director", img: "https://picsum.photos/seed/p2/400/400" },
-              { name: "Robert Sterling", role: "Head of Security", img: "https://picsum.photos/seed/p3/400/400" }
+              { name: "Alistair Haye", role: "Managing Director", img: "https://images.unsplash.com/photo-1659988018291-b13f9f1adf67?w=400&h=400&fit=crop" },
+              { name: "Victoria Daisy", role: "Technical Director", img: "https://images.unsplash.com/photo-1746194060000-3615371d42bf?w=400&h=400&fit=crop" },
+              { name: "Robert Sterling", role: "Head of Security", img: "https://images.unsplash.com/photo-1755145991843-61a73086ea42?w=400&h=400&fit=crop" }
             ].map((p, i) => (
               <div key={i} className="text-center group">
                 <div className="h-64 w-64 mx-auto bg-slate-800 rounded-full overflow-hidden mb-6 border-4 border-slate-800 group-hover:border-brand-accent transition-colors">
-                  <img src={p.img} alt={p.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+                  <img src={p.img} alt={p.name} className="w-full h-full object-cover transition-all" referrerPolicy="no-referrer" />
                 </div>
                 <h4 className="text-xl font-bold">{p.name}</h4>
                 <p className="text-brand-accent text-sm">{p.role}</p>

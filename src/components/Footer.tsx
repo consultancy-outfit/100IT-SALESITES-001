@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Brand & Mission */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-white/10 p-2 rounded-lg flex items-center justify-center">
+              <div className="bg-white p-2 rounded-lg flex items-center justify-center">
                 <Icon className="h-16 w-auto" />
               </div>
   

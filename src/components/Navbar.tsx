@@ -22,8 +22,8 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-brand-primary p-2 rounded-lg flex items-center justify-center">
-                <Icon className="h-10 w-auto" />
+              <div className=" rounded-lg flex items-center justify-center">
+                <Icon className="h-12 w-auto" />
               </div>
             
             </Link>
