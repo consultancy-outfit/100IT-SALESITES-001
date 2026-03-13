@@ -137,14 +137,14 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
-              { name: 'James Thompson', role: 'Chief Executive Officer', bio: '20+ years in IT infrastructure and strategic management.' },
-              { name: 'Eleanor Rigby', role: 'Chief Technical Officer', bio: 'Expert in cybersecurity and cloud architecture.' },
-              { name: 'Robert Wilson', role: 'Head of Client Success', bio: 'Dedicated to ensuring our clients receive world-class support.' }
+              { name: 'James Thompson', role: 'Chief Executive Officer', bio: '20+ years in IT infrastructure and strategic management.' ,url:'https://images.unsplash.com/photo-1613181013804-1dcba09e6a9d?w=400&h=400&fit=crop'},
+              { name: 'Thomas Miller', role: 'Chief Technical Officer', bio: 'Expert in cybersecurity and cloud architecture.' ,url:'https://images.unsplash.com/photo-1598017194369-20943ad9ff62?w=400&h=400&fit=crop'},
+              { name: 'Robert Wilson', role: 'Head of Client Success', bio: 'Dedicated to ensuring our clients receive world-class support.',url:'https://images.unsplash.com/photo-1722620195964-2679f3be48ab?w=400&h=400&fit=crop' }
             ].map((leader, idx) => (
               <div key={idx} className="group">
                 <div className="aspect-square rounded-3xl overflow-hidden bg-zinc-100 mb-6">
                   <img 
-                    src={`https://i.pravatar.cc/400?u=${leader.name}`}
+                    src={leader.url}
                     alt={leader.name}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
                     referrerPolicy="no-referrer"
