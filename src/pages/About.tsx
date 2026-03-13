@@ -62,13 +62,13 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: 'James Croft', role: 'Founder & CEO', bio: '20+ years in enterprise IT architecture.' },
-              { name: 'Eleanor Vance', role: 'Technical Director', bio: 'Cyber security specialist and GDPR consultant.' },
-              { name: 'Robert Miller', role: 'Head of Support', bio: 'Expert in managed services and client relations.' },
+              { name: 'James Croft', role: 'Founder & CEO', bio: '20+ years in enterprise IT architecture.',url:'https://images.unsplash.com/photo-1769071166454-9161676743c8?w=400&h=400&fit=crop' },
+              { name: 'Eleanor Vance', role: 'Technical Director', bio: 'Cyber security specialist and GDPR consultant.',url:'https://images.unsplash.com/photo-1692197393247-c76e1bd8f29e?w=400&h=400&fit=crop' },
+              { name: 'Robert Miller', role: 'Head of Support', bio: 'Expert in managed services and client relations.',url:'https://images.unsplash.com/photo-1723990720523-c32c1aed47d1?w=400&h=400&fit=crop' },
             ].map((leader, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center">
                 <div className="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-6 overflow-hidden">
-                  <img src={`https://picsum.photos/seed/leader${i}/200/200`} alt={leader.name} referrerPolicy="no-referrer" />
+                  <img src={leader.url} alt={leader.name} referrerPolicy="no-referrer" />
                 </div>
                 <h3 className="text-xl font-bold mb-1">{leader.name}</h3>
                 <p className="text-brand-emerald font-medium mb-4">{leader.role}</p>

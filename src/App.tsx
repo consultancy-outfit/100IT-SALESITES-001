@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React,{useEffect} from 'react';
+import { BrowserRouter as Router, Routes, Route,useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -11,12 +11,26 @@ import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import { motion, AnimatePresence } from 'motion/react';
 
+
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 export default function App() {
+
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
+        <ScrollToTop />
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
