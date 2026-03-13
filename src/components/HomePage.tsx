@@ -16,7 +16,7 @@ export const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-slate-950 text-white">
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-slate-700 text-white">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#10b981_0,transparent_50%)]"></div>
         </div>
@@ -147,7 +147,7 @@ export const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
       </section>
 
       {/* Case Studies */}
-      <section className="bg-slate-900 text-white py-20">
+      <section className="bg-slate-200 text-white py-20">
         <div className="section-padding">
           <SectionHeading 
             title="Measurable Results" 

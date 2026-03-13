@@ -14,7 +14,7 @@ export const AboutPage = () => {
       </section>
 
       {/* Mission/Vision */}
-      <section className="bg-slate-900 text-white py-20">
+      <section className="bg-slate-700 text-white py-20">
         <div className="section-padding grid md:grid-cols-2 gap-12">
           <div className="bg-slate-800 p-10 rounded-3xl border border-white/10">
             <Target className="text-emerald-500 mb-6" size={48} />
@@ -93,14 +93,14 @@ export const AboutPage = () => {
         <SectionHeading centered title="Our Leadership Team" subtitle="Meet the experts driving our vision forward." />
         <div className="grid md:grid-cols-3 gap-12">
           {[
-            { name: "James Badminton", role: "Founder & CEO", bio: "With over 20 years in IT consultancy, James leads our strategic vision with a focus on client growth." },
-            { name: "Eleanor Vance", role: "Chief Technology Officer", bio: "A specialist in cloud architecture and cybersecurity, Eleanor ensures our solutions are world-class." },
-            { name: "Robert Sterling", role: "Head of Managed Services", bio: "Robert oversees our UK support team, ensuring every client receives exceptional service 24/7." }
+            { name: "James Badminton", role: "Founder & CEO", bio: "With over 20 years in IT consultancy, James leads our strategic vision with a focus on client growth." ,url:'https://images.unsplash.com/photo-1706860049861-9d8be9dfee7a?w=400&h=400&fit=crop'},
+            { name: "Maten David", role: "Chief Technology Officer", bio: "A specialist in cloud architecture and cybersecurity, Eleanor ensures our solutions are world-class." ,url:'https://images.unsplash.com/photo-1652471943570-f3590a4e52ed?w=400&h=400&fit=crop'},
+            { name: "Robert Sterling", role: "Head of Managed Services", bio: "Robert oversees our UK support team, ensuring every client receives exceptional service 24/7.",url:'https://images.unsplash.com/photo-1644268756851-3f69ffb9553f?w=400&h=400&fit=crop' }
           ].map((leader, i) => (
             <div key={i} className="text-center">
               <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 border-4 border-emerald-500/20">
                 <img 
-                  src={`https://picsum.photos/seed/leader-${i}/300/300`} 
+                  src={leader.url} 
                   alt={leader.name} 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
