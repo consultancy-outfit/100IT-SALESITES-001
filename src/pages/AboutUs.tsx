@@ -101,9 +101,9 @@ export const AboutUs = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { name: 'James Sterling', role: 'CEO & Founder', image: 'https://picsum.photos/seed/ceo/400/400' },
-              { name: 'Dr. Elena Rossi', role: 'Chief Technology Officer', image: 'https://picsum.photos/seed/cto/400/400' },
-              { name: 'Mark Henderson', role: 'Head of Cybersecurity', image: 'https://picsum.photos/seed/cs/400/400' }
+              { name: 'James Sterling', role: 'CEO & Founder', image: 'https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=400&h=400&fit=crop' },
+              { name: 'David Miller', role: 'Chief Technology Officer', image: 'https://images.unsplash.com/photo-1576533247967-79124db83e48?w=400&h=400&fit=crop' },
+              { name: 'Mark Henderson', role: 'Head of Cybersecurity', image: 'https://images.unsplash.com/photo-1652471943570-f3590a4e52ed?w=400&h=400&fit=crop' }
             ].map((leader, i) => (
               <div key={i} className="group">
                 <div className="relative overflow-hidden rounded-3xl mb-6">
