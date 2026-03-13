@@ -73,12 +73,12 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { name: "James Harrison", role: "Managing Director", image: "https://i.pravatar.cc/300?u=james" },
-              { name: "Sarah Thompson", role: "Technical Director", image: "https://i.pravatar.cc/300?u=sarah" },
-              { name: "David Miller", role: "Head of Security", image: "https://i.pravatar.cc/300?u=david" }
+              { name: "James Harrison", role: "Managing Director", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" },
+              { name: "Jams Bond", role: "Technical Director", image: "https://images.unsplash.com/photo-1595860320513-01df382ebdb1?w=400&h=400&fit=crop" },
+              { name: "David Miller", role: "Head of Security", image: "https://images.unsplash.com/photo-1649503116494-b07b8f561c21?w=400&h=400&fit=crop" }
             ].map((member, i) => (
               <div key={i} className="text-center group">
-                <div className="aspect-square bg-zinc-100 rounded-3xl overflow-hidden mb-6 border border-zinc-200 grayscale group-hover:grayscale-0 transition-all">
+                <div className="aspect-square bg-zinc-100 rounded-3xl overflow-hidden mb-6 border border-zinc-200 transition-all">
                   <img src={member.image} alt={member.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <h4 className="text-xl font-bold text-zinc-900">{member.name}</h4>
