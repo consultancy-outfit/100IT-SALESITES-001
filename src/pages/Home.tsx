@@ -86,7 +86,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-40">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-brand-100/30 blur-[120px] rounded-full" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-100/30 blur-[120px] rounded-full" />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,11 +96,11 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold tracking-wide uppercase mb-6">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold tracking-wide uppercase mb-6">
                 Leading UK IT Consultancy
               </span>
               <h1 className="text-5xl lg:text-7xl font-display font-bold text-navy-900 leading-[1.1]">
-                Future-Proof Your <span className="text-brand-600">Business Technology</span>
+                Future-Proof Your <span className="text-blue-600">Business Technology</span>
               </h1>
               <p className="mt-6 text-xl text-slate-600 leading-relaxed">
                 Blessday House provides premium IT services, cybersecurity, and cloud solutions tailored for the unique needs of British enterprises.
@@ -137,7 +137,7 @@ export default function Home() {
             <ul className="space-y-4">
               {['24/7 UK-Based Monitoring', 'Bespoke Software Development', 'Cloud Migration Experts'].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-slate-700 font-medium">
-                  <CheckCircle2 className="w-5 h-5 text-brand-600" />
+                  <CheckCircle2 className="w-5 h-5 text-blue-600" />
                   {item}
                 </li>
               ))}
@@ -154,7 +154,7 @@ export default function Home() {
             </div>
             <div className="absolute -bottom-6 -left-6 glass p-6 rounded-xl shadow-xl hidden sm:block">
               <div className="flex items-center gap-4">
-                <div className="bg-brand-600 p-3 rounded-lg">
+                <div className="bg-blue-600 p-3 rounded-lg">
                   <BarChart3 className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -183,8 +183,8 @@ export default function Home() {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow"
               >
-                <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-6">
-                  <benefit.icon className="w-6 h-6 text-brand-600" />
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                  <benefit.icon className="w-6 h-6 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3">{benefit.title}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{benefit.description}</p>
@@ -197,7 +197,7 @@ export default function Home() {
       {/* Industries Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-navy-900 rounded-3xl p-8 lg:p-16 text-white overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-600/20 blur-[100px] rounded-full" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 blur-[100px] rounded-full" />
           <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-display font-bold mb-6">Industries We Serve Across the UK</h2>
@@ -205,7 +205,7 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 {industries.map((industry) => (
                   <div key={industry} className="flex items-center gap-2 text-slate-200">
-                    <Building2 className="w-4 h-4 text-brand-500" />
+                    <Building2 className="w-4 h-4 text-blue-500" />
                     <span className="text-sm font-medium">{industry}</span>
                   </div>
                 ))}
@@ -241,13 +241,13 @@ export default function Home() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {caseStudies.map((study) => (
-            <div key={study.company} className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-brand-500 transition-colors">
+            <div key={study.company} className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-blue-500 transition-colors">
               <div className="p-8">
-                <p className="text-xs font-bold text-brand-600 uppercase tracking-widest mb-2">{study.industry}</p>
+                <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">{study.industry}</p>
                 <h3 className="text-xl font-bold text-navy-900 mb-4">{study.company}</h3>
                 <p className="text-slate-600 text-sm mb-6">{study.description}</p>
                 <div className="pt-6 border-t border-slate-100">
-                  <p className="text-2xl font-bold text-brand-600">{study.result}</p>
+                  <p className="text-2xl font-bold text-blue-600">{study.result}</p>
                   <p className="text-xs text-slate-500 mt-1">Impact Delivered</p>
                 </div>
               </div>
@@ -265,7 +265,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-12">
             {testimonials.map((t) => (
               <div key={t.name} className="space-y-6">
-                <div className="flex gap-1 text-brand-500">
+                <div className="flex gap-1 text-blue-500">
                   {[...Array(5)].map((_, i) => <Zap key={i} className="w-4 h-4 fill-current" />)}
                 </div>
                 <p className="text-lg text-slate-300 italic">"{t.content}"</p>
@@ -281,16 +281,16 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-brand-600 rounded-3xl p-12 lg:p-20 text-center text-white relative overflow-hidden">
+        <div className="bg-blue-600 rounded-3xl p-12 lg:p-20 text-center text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 to-transparent opacity-50" />
           <div className="relative z-10 space-y-8">
             <h2 className="text-4xl lg:text-5xl font-display font-bold">Ready to Elevate Your IT Infrastructure?</h2>
-            <p className="text-xl text-brand-50 max-w-2xl mx-auto">Join hundreds of British businesses that trust Blessday House for their technology needs.</p>
+            <p className="text-xl text-blue-50 max-w-2xl mx-auto">Join hundreds of British businesses that trust Blessday House for their technology needs.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/contact" className="bg-white text-brand-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-brand-50 transition-colors">
+              <Link to="/contact" className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors">
                 Get a Free Consultation
               </Link>
-              <Link to="/pricing" className="bg-brand-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-brand-800 transition-colors">
+              <Link to="/pricing" className="bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-800 transition-colors">
                 View Pricing Plans
               </Link>
             </div>

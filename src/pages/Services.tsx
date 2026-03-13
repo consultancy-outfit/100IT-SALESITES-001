@@ -103,10 +103,10 @@ export default function Services() {
             {/* Visual Part */}
             <div className="flex-1 w-full">
               <div className="relative">
-                <div className="aspect-square rounded-3xl bg-brand-50 flex items-center justify-center p-12 overflow-hidden">
-                  <service.icon className="w-full h-full text-brand-600 opacity-20 absolute -bottom-10 -right-10 rotate-12" />
-                  <div className="relative z-10 bg-white p-8 rounded-2xl shadow-xl border border-brand-100">
-                    <service.icon className="w-16 h-16 text-brand-600 mb-6" />
+                <div className="aspect-square rounded-3xl bg-blue-50 flex items-center justify-center p-12 overflow-hidden">
+                  <service.icon className="w-full h-full text-blue-600 opacity-20 absolute -bottom-10 -right-10 rotate-12" />
+                  <div className="relative z-10 bg-white p-8 rounded-2xl shadow-xl border border-blue-100">
+                    <service.icon className="w-16 h-16 text-blue-600 mb-6" />
                     <h3 className="text-2xl font-bold text-navy-900 mb-4">{service.title}</h3>
                     <p className="text-slate-600 leading-relaxed">{service.overview}</p>
                   </div>
@@ -121,7 +121,7 @@ export default function Services() {
             <div className="flex-1 space-y-8">
               <div>
                 <h2 className="text-3xl font-display font-bold text-navy-900 mb-4">{service.title}</h2>
-                <div className="flex items-center gap-2 text-brand-600 font-semibold text-sm uppercase tracking-wider">
+                <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm uppercase tracking-wider">
                   <span>Ideal for:</span>
                   <span className="text-slate-600 normal-case tracking-normal font-medium">{service.target}</span>
                 </div>
@@ -130,13 +130,13 @@ export default function Services() {
               <div className="grid sm:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <h4 className="font-bold text-navy-900 flex items-center gap-2">
-                    <ArrowRight className="w-4 h-4 text-brand-600" />
+                    <ArrowRight className="w-4 h-4 text-blue-600" />
                     The Process
                   </h4>
                   <ul className="space-y-2">
                     {service.process.map((step) => (
                       <li key={step} className="text-slate-600 text-sm flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-500" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                         {step}
                       </li>
                     ))}
@@ -144,13 +144,13 @@ export default function Services() {
                 </div>
                 <div className="space-y-4">
                   <h4 className="font-bold text-navy-900 flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-600" />
+                    <CheckCircle2 className="w-4 h-4 text-blue-600" />
                     Key Benefits
                   </h4>
                   <ul className="space-y-2">
                     {service.benefits.map((benefit) => (
                       <li key={benefit} className="text-slate-600 text-sm flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-500" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                         {benefit}
                       </li>
                     ))}
@@ -176,7 +176,7 @@ export default function Services() {
           <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-10">
             Every business is unique. We offer bespoke IT packages tailored to your specific goals and budget.
           </p>
-          <Link to="/contact" className="btn-primary bg-brand-600 hover:bg-brand-700">
+          <Link to="/contact" className="btn-primary bg-blue-600 hover:bg-blue-700">
             Contact Our Experts
           </Link>
         </div>

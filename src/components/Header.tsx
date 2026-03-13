@@ -46,8 +46,8 @@ export default function Header() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-brand-600 ${
-                  location.pathname === item.href ? 'text-brand-600' : 'text-slate-600'
+                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
+                  location.pathname === item.href ? 'text-blue-600' : 'text-slate-600'
                 }`}
               >
                 {item.name}
@@ -82,7 +82,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block text-base font-medium text-slate-900 hover:text-brand-600"
+                  className="block text-base font-medium text-slate-900 hover:text-blue-600"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

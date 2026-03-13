@@ -89,19 +89,19 @@ export default function Pricing() {
               key={plan.name}
               className={`relative bg-white rounded-3xl border ${
                 plan.highlight 
-                  ? 'border-brand-500 shadow-2xl scale-105 z-10' 
+                  ? 'border-blue-500 shadow-2xl scale-105 z-10' 
                   : 'border-slate-200 shadow-sm'
               } p-8 flex flex-col h-full`}
             >
               {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                   Most Popular
                 </div>
               )}
 
               <div className="mb-8">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${
-                  plan.highlight ? 'bg-brand-600 text-white' : 'bg-brand-50 text-brand-600'
+                  plan.highlight ? 'bg-blue-600 text-white' : 'bg-blue-50 text-blue-600'
                 }`}>
                   <plan.icon className="w-6 h-6" />
                 </div>
@@ -130,7 +130,7 @@ export default function Pricing() {
                   <ul className="space-y-3">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3 text-sm text-slate-600">
-                        <Check className="w-4 h-4 text-brand-600 shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                         {feature}
                       </li>
                     ))}
@@ -149,7 +149,7 @@ export default function Pricing() {
                   to="/contact" 
                   className={`block w-full text-center py-4 rounded-xl font-bold transition-all ${
                     plan.highlight 
-                      ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-lg' 
+                      ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg' 
                       : 'bg-navy-900 text-white hover:bg-navy-950'
                   }`}
                 >
