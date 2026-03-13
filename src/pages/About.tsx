@@ -12,9 +12,9 @@ const About = () => {
   ];
 
   const leaders = [
-    { name: "James Harrison", role: "Managing Director", image: "https://picsum.photos/seed/leader1/400/400" },
-    { name: "Eleanor Wright", role: "Technical Director", image: "https://picsum.photos/seed/leader2/400/400" },
-    { name: "Robert Smith", role: "Head of Security", image: "https://picsum.photos/seed/leader3/400/400" },
+    { name: "James Harrison", role: "Managing Director", image: "https://images.unsplash.com/photo-1687934386408-ba56a7dce844?w=400&h=400&fit=crop" },
+    { name: "Smith Miller", role: "Technical Director", image: "https://images.unsplash.com/photo-1706859935646-4b4ced0b0542?w=400&h=400&fit=crop" },
+    { name: "Robert Smith", role: "Head of Security", image: "https://images.unsplash.com/photo-1733348137468-90b917d2ebf1?w=400&h=400&fit=crop" },
   ];
 
   return (
