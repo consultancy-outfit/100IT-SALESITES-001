@@ -127,9 +127,9 @@ export default function About() {
 
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { name: "David Wilson", role: "CEO & Founder", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" },
-              { name: "Sarah Chen", role: "Chief Technology Officer", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400" },
-              { name: "Marcus Thorne", role: "Head of Cybersecurity", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" }
+              { name: "David Wilson", role: "CEO & Founder", img: "https://images.unsplash.com/photo-1733348137551-dde596fd3cf5?w=400&h=400&fit=crop" },
+              { name: "Sarah Chen", role: "Chief Technology Officer", img: "https://images.unsplash.com/photo-1718209881007-c0ecdfc00f9d?w=400&h=400&fit=crop" },
+              { name: "Marcus Thorne", role: "Head of Cybersecurity", img: "https://images.unsplash.com/photo-1605228853085-7f27bf88c99a?w=400&h=400&fit=crop" }
             ].map((member, idx) => (
               <div key={idx} className="group">
                 <div className="relative rounded-3xl overflow-hidden mb-6 aspect-square">
