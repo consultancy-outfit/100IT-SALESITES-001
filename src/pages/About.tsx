@@ -144,16 +144,16 @@ export default function About() {
           </div>
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { name: 'David Thompson', role: 'Managing Director', bio: '20+ years in IT infrastructure and business strategy.' },
-              { name: 'Emma Richards', role: 'Technical Director', bio: 'Expert in cloud architecture and cyber security compliance.' },
-              { name: 'Marcus Chen', role: 'Head of Support', bio: 'Dedicated to delivering exceptional client experiences and rapid response.' },
+              { name: 'David Thompson', role: 'Managing Director', bio: '20+ years in IT infrastructure and business strategy.' ,url:'https://images.unsplash.com/photo-1770510067230-1059f0776b3a?w=400&h=400&fit=crop'},
+              { name: 'Emma Richards', role: 'Technical Director', bio: 'Expert in cloud architecture and cyber security compliance.',url:'https://images.unsplash.com/photo-1725001560406-8058477be33d?w=400&h=400&fit=crop' },
+              { name: 'Marcus Chen', role: 'Head of Support', bio: 'Dedicated to delivering exceptional client experiences and rapid response.',url:'https://images.unsplash.com/photo-1675869940341-d495d49010b5?w=400&h=400&fit=crop' },
             ].map((leader, i) => (
               <div key={i} className="text-center group">
                 <div className="w-48 h-48 bg-slate-300 rounded-full mx-auto mb-6 overflow-hidden border-4 border-white shadow-lg">
                   <img 
-                    src={`https://picsum.photos/seed/leader-${i}/400/400`} 
+                    src={leader.url} 
                     alt={leader.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover transition-all duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </div>
