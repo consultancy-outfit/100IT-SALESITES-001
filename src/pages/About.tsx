@@ -120,14 +120,14 @@ export const About: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
-              { name: "James Harrison", role: "Founder & CEO", bio: "20+ years in enterprise IT. Former infrastructure lead at a major UK bank." },
-              { name: "Eleanor Wright", role: "CTO", bio: "Cloud architecture specialist with a passion for cybersecurity and digital ethics." },
-              { name: "Sanjay Patel", role: "Head of Client Success", bio: `Dedicated to ensuring every ${COMPANY_DETAILS.brand} client receives world-class support and strategy.` }
+              { name: "James Harrison", role: "Founder & CEO", bio: "20+ years in enterprise IT. Former infrastructure lead at a major UK bank." ,url:'https://images.unsplash.com/photo-1706859935646-4b4ced0b0542?w=400&h=400&fit=crop'},
+              { name: "Andrew", role: "CTO", bio: "Cloud architecture specialist with a passion for cybersecurity and digital ethics." ,url:'https://images.unsplash.com/photo-1755140230126-ad433c37cb1d?w=400&h=400&fit=crop'},
+              { name: "Sanjay Patel", role: "Head of Client Success", bio: `Dedicated to ensuring every ${COMPANY_DETAILS.brand} client receives world-class support and strategy.`,url: 'https://images.unsplash.com/photo-1720805752653-10ddccea4c94?w=400&h=400&fit=crop'}
             ].map((member, i) => (
               <div key={i} className="group">
                 <div className="aspect-square rounded-3xl bg-slate-200 mb-6 overflow-hidden">
                   <img
-                    src={`https://picsum.photos/seed/leader-${i}/600/600`}
+                    src={member.url}
                     alt={member.name}
                     className="w-full h-full object-cover transition-transform group-hover:scale-105"
                     referrerPolicy="no-referrer"
