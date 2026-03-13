@@ -73,7 +73,7 @@ const Navbar = ({ activePage, setPage }: { activePage: Page, setPage: (p: Page) 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center cursor-pointer" onClick={() => setPage('home')}>
-            <BrandIcon className="h-36 w-36 text-blue-600 mr-2" />
+            <BrandIcon className="h-36 w-36 text-pink-600 mr-2" />
           </div>
           
           {/* Desktop Nav */}
@@ -82,8 +82,8 @@ const Navbar = ({ activePage, setPage }: { activePage: Page, setPage: (p: Page) 
               <button
                 key={item.id}
                 onClick={() => setPage(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  activePage === item.id ? 'text-blue-600' : 'text-slate-600'
+                className={`text-sm font-medium transition-colors hover:text-pink-600 ${
+                  activePage === item.id ? 'text-pink-600' : 'text-slate-600'
                 }`}
               >
                 {item.label}
@@ -91,7 +91,7 @@ const Navbar = ({ activePage, setPage }: { activePage: Page, setPage: (p: Page) 
             ))}
             <button 
               onClick={() => setPage('contact')}
-              className="bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-all shadow-sm shadow-blue-200"
+              className="bg-pink-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-pink-700 transition-all shadow-sm shadow-pink-200"
             >
               Get a Quote
             </button>
@@ -120,14 +120,14 @@ const Navbar = ({ activePage, setPage }: { activePage: Page, setPage: (p: Page) 
                 <button
                   key={item.id}
                   onClick={() => { setPage(item.id); setIsOpen(false); }}
-                  className="block w-full text-left px-3 py-4 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+                  className="block w-full text-left px-3 py-4 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-pink-600 rounded-md"
                 >
                   {item.label}
                 </button>
               ))}
               <button 
                 onClick={() => { setPage('contact'); setIsOpen(false); }}
-                className="w-full mt-4 bg-blue-600 text-white px-3 py-4 rounded-md text-base font-semibold"
+                className="w-full mt-4 bg-pink-600 text-white px-3 py-4 rounded-md text-base font-semibold"
               >
                 Get a Quote
               </button>
@@ -146,17 +146,17 @@ const Footer = ({ setPage }: { setPage: (p: Page) => void }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center text-white mb-6">
-              <BrandIcon className="h-12 w-47 text-blue-500 mr-2" />
+              <BrandIcon className="h-12 w-47 text-pink-500 mr-2" />
             </div>
             <p className="text-sm leading-relaxed mb-6">
               Providing enterprise-grade IT solutions and strategic support to businesses across the United Kingdom. Your credible partner in digital transformation.
             </p>
             <div className="flex space-x-4">
               {/* Social placeholders */}
-              <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
+              <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-pink-600 transition-colors cursor-pointer">
                 <span className="text-xs font-bold">in</span>
               </div>
-              <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
+              <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-pink-600 transition-colors cursor-pointer">
                 <span className="text-xs font-bold">X</span>
               </div>
             </div>
@@ -187,23 +187,23 @@ const Footer = ({ setPage }: { setPage: (p: Page) => void }) => {
             <h4 className="text-white font-semibold mb-6">Contact Details</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-blue-500 mr-3 shrink-0" />
+                <MapPin className="h-5 w-5 text-pink-500 mr-3 shrink-0" />
                 <span>{COMPANY_DETAILS.address}</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 text-blue-500 mr-3 shrink-0" />
+                <Phone className="h-5 w-5 text-pink-500 mr-3 shrink-0" />
                 <span>{COMPANY_DETAILS.phone}</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 text-blue-500 mr-3 shrink-0" />
+                <Mail className="h-5 w-5 text-pink-500 mr-3 shrink-0" />
                 <span>{COMPANY_DETAILS.email}</span>
               </li>
               <li className="flex items-center">
-                <Clock className="h-5 w-5 text-blue-500 mr-3 shrink-0" />
+                <Clock className="h-5 w-5 text-pink-500 mr-3 shrink-0" />
                 <span>{COMPANY_DETAILS.hours}</span>
               </li>
               <li className="flex items-center">
-                <Hash className="h-5 w-5 text-blue-500 mr-3 shrink-0" />
+                <Hash className="h-5 w-5 text-pink-500 mr-3 shrink-0" />
                 <span>CRN: {COMPANY_DETAILS.crn}</span>
               </li>
             </ul>
@@ -240,12 +240,12 @@ const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold tracking-wide uppercase mb-6">
-                <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2 animate-pulse"></span>
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-bold tracking-wide uppercase mb-6">
+                <span className="flex h-2 w-2 rounded-full bg-pink-600 mr-2 animate-pulse"></span>
                 Trusted UK IT Partner
               </div>
               <h1 className="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-                Empowering British Business Through <span className="text-blue-600">Smart IT.</span>
+                Empowering British Business Through <span className="text-pink-600">Smart IT.</span>
               </h1>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl">
                 Centurion Support Services provides proactive managed IT, robust cyber security, and strategic cloud solutions tailored for the UK market.
@@ -253,7 +253,7 @@ const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <button 
                   onClick={() => setPage('services')}
-                  className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all flex items-center justify-center shadow-lg shadow-blue-200"
+                  className="bg-pink-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-pink-700 transition-all flex items-center justify-center shadow-lg shadow-pink-200"
                 >
                   Explore Services <ChevronRight className="ml-2 h-5 w-5" />
                 </button>
@@ -284,7 +284,7 @@ const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
                   className="w-full h-auto"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-pink-600/20 to-transparent"></div>
               </div>
               {/* Floating Stat Card */}
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 max-w-xs">
@@ -300,7 +300,7 @@ const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
           </div>
         </div>
         {/* Abstract background elements */}
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-pink-100 rounded-full blur-3xl opacity-50"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
       </section>
 
@@ -314,23 +314,23 @@ const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
-                icon: <Shield className="h-8 w-8 text-blue-600" />, 
+                icon: <Shield className="h-8 w-8 text-pink-600" />, 
                 title: "Security First", 
                 desc: "Cyber security isn't an add-on; it's baked into every solution we provide." 
               },
               { 
-                icon: <Headset className="h-8 w-8 text-blue-600" />, 
+                icon: <Headset className="h-8 w-8 text-pink-600" />, 
                 title: "UK-Based Support", 
                 desc: "Real people, real expertise, right here in the UK. No offshore call centres." 
               },
               { 
-                icon: <Target className="h-8 w-8 text-blue-600" />, 
+                icon: <Target className="h-8 w-8 text-pink-600" />, 
                 title: "Strategic Focus", 
                 desc: "We align your IT roadmap with your business goals to drive measurable ROI." 
               }
             ].map((item, idx) => (
-              <div key={idx} className="p-8 rounded-2xl border border-slate-100 hover:border-blue-100 hover:shadow-lg transition-all group">
-                <div className="mb-6 p-3 bg-slate-50 rounded-xl w-fit group-hover:bg-blue-50 transition-colors">
+              <div key={idx} className="p-8 rounded-2xl border border-slate-100 hover:border-pink-100 hover:shadow-lg transition-all group">
+                <div className="mb-6 p-3 bg-slate-50 rounded-xl w-fit group-hover:bg-pink-50 transition-colors">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
@@ -358,7 +358,7 @@ const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
                   "Non-Profit"
                 ].map((industry, idx) => (
                   <div key={idx} className="flex items-center space-x-3">
-                    <CheckCircle2 className="h-5 w-5 text-blue-500" />
+                    <CheckCircle2 className="h-5 w-5 text-pink-500" />
                     <span className="font-medium">{industry}</span>
                   </div>
                 ))}
@@ -380,13 +380,13 @@ const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Measurable Results</h2>
               <p className="text-slate-600">Real-world impact for our UK clients. We deliver efficiency that translates directly to the bottom line.</p>
             </div>
-            <button onClick={() => setPage('services')} className="mt-6 md:mt-0 text-blue-600 font-bold flex items-center hover:underline">
+            <button onClick={() => setPage('services')} className="mt-6 md:mt-0 text-pink-600 font-bold flex items-center hover:underline">
               View all services <ArrowRight className="ml-2 h-4 w-4" />
             </button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-slate-50 rounded-3xl p-8 lg:p-12 border border-slate-100">
-              <div className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-4">Financial Sector</div>
+              <div className="text-pink-600 font-bold text-sm uppercase tracking-widest mb-4">Financial Sector</div>
               <h3 className="text-2xl font-bold text-slate-900 mb-6">Infrastructure Overhaul for London Wealth Manager</h3>
               <div className="grid grid-cols-2 gap-8 mb-8">
                 <div>
@@ -399,12 +399,12 @@ const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
                 </div>
               </div>
               <p className="text-slate-600 mb-8">Migrated legacy on-premise servers to a secure private cloud, reducing hardware maintenance costs and enabling secure remote work for 50+ staff.</p>
-              <button onClick={() => setPage('contact')} className="text-slate-900 font-bold flex items-center hover:text-blue-600 transition-colors">
+              <button onClick={() => setPage('contact')} className="text-slate-900 font-bold flex items-center hover:text-pink-600 transition-colors">
                 Read Case Study <ChevronRight className="ml-1 h-4 w-4" />
               </button>
             </div>
             <div className="bg-slate-50 rounded-3xl p-8 lg:p-12 border border-slate-100">
-              <div className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-4">Manufacturing</div>
+              <div className="text-pink-600 font-bold text-sm uppercase tracking-widest mb-4">Manufacturing</div>
               <h3 className="text-2xl font-bold text-slate-900 mb-6">Cyber Security Response & Hardening</h3>
               <div className="grid grid-cols-2 gap-8 mb-8">
                 <div>
@@ -417,7 +417,7 @@ const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
                 </div>
               </div>
               <p className="text-slate-600 mb-8">Implemented advanced endpoint protection and multi-factor authentication across three UK sites after a near-miss phishing attempt.</p>
-              <button onClick={() => setPage('contact')} className="text-slate-900 font-bold flex items-center hover:text-blue-600 transition-colors">
+              <button onClick={() => setPage('contact')} className="text-slate-900 font-bold flex items-center hover:text-pink-600 transition-colors">
                 Read Case Study <ChevronRight className="ml-1 h-4 w-4" />
               </button>
             </div>
@@ -465,28 +465,28 @@ const HomePage = ({ setPage }: { setPage: (p: Page) => void }) => {
       {/* CTA Section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-blue-600 rounded-3xl p-12 lg:p-20 text-center text-white relative overflow-hidden">
+          <div className="bg-pink-600 rounded-3xl p-12 lg:p-20 text-center text-white relative overflow-hidden">
             <div className="relative z-10">
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">Ready to Secure Your Digital Future?</h2>
-              <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">Join hundreds of UK businesses that trust Centurion for their IT support and strategy.</p>
+              <p className="text-pink-100 text-lg mb-10 max-w-2xl mx-auto">Join hundreds of UK businesses that trust Centurion for their IT support and strategy.</p>
               <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <button 
                   onClick={() => setPage('contact')}
-                  className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-blue-50 transition-all"
+                  className="bg-white text-pink-600 px-8 py-4 rounded-xl font-bold hover:bg-pink-50 transition-all"
                 >
                   Contact Us Today
                 </button>
                 <button 
                   onClick={() => setPage('pricing')}
-                  className="bg-blue-700 text-white border border-blue-500 px-8 py-4 rounded-xl font-bold hover:bg-blue-800 transition-all"
+                  className="bg-pink-700 text-white border border-pink-500 px-8 py-4 rounded-xl font-bold hover:bg-pink-800 transition-all"
                 >
                   View Pricing
                 </button>
               </div>
             </div>
             {/* Decorative circles */}
-            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500 rounded-full opacity-20"></div>
-            <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-blue-400 rounded-full opacity-20"></div>
+            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500 rounded-full opacity-20"></div>
+            <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-pink-400 rounded-full opacity-20"></div>
           </div>
         </div>
       </section>
@@ -575,7 +575,7 @@ const ServicesPage = ({ setPage }: { setPage: (p: Page) => void }) => {
                 className={`flex flex-col lg:flex-row gap-12 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className="lg:w-1/2">
-                  <div className="p-4 bg-blue-50 text-blue-600 rounded-2xl w-fit mb-6">
+                  <div className="p-4 bg-pink-50 text-pink-600 rounded-2xl w-fit mb-6">
                     {service.icon}
                   </div>
                   <h2 className="text-3xl font-bold text-slate-900 mb-4">{service.title}</h2>
@@ -592,7 +592,7 @@ const ServicesPage = ({ setPage }: { setPage: (p: Page) => void }) => {
                       <ul className="space-y-2">
                         {service.process.map((step, i) => (
                           <li key={i} className="flex items-center text-sm text-slate-600">
-                            <ChevronRight className="h-4 w-4 text-blue-500 mr-2" /> {step}
+                            <ChevronRight className="h-4 w-4 text-pink-500 mr-2" /> {step}
                           </li>
                         ))}
                       </ul>
@@ -615,7 +615,7 @@ const ServicesPage = ({ setPage }: { setPage: (p: Page) => void }) => {
                       <span className="text-2xl font-bold text-slate-900">{service.price}</span>
                       <span className="text-sm text-slate-500"> {service.title === 'Managed IT Support' || service.title === 'Cyber Security & Compliance' ? '/user/mo' : service.title === 'IT Consultancy' ? '/hr' : 'project'}</span>
                     </div>
-                    <button onClick={() => setPage('contact')} className="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all">
+                    <button onClick={() => setPage('contact')} className="bg-pink-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-pink-700 transition-all">
                       Enquire Now
                     </button>
                   </div>
@@ -645,7 +645,7 @@ const AboutPage = () => {
       <section className="bg-slate-900 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-8">Built on Trust, Driven by <span className="text-blue-500">Excellence.</span></h1>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-8">Built on Trust, Driven by <span className="text-pink-500">Excellence.</span></h1>
             <p className="text-xl text-slate-400 leading-relaxed">
               Centurion Support Services was founded with a single mission: to provide UK businesses with the enterprise-grade IT infrastructure they deserve, without the enterprise complexity.
             </p>
@@ -666,18 +666,18 @@ const AboutPage = () => {
               </p>
               <div className="grid grid-cols-2 gap-8 mt-12">
                 <div>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">10+</div>
+                  <div className="text-4xl font-bold text-pink-600 mb-2">10+</div>
                   <div className="text-sm text-slate-500 font-medium uppercase tracking-wider">Years Experience</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">250+</div>
+                  <div className="text-4xl font-bold text-pink-600 mb-2">250+</div>
                   <div className="text-sm text-slate-500 font-medium uppercase tracking-wider">Clients Supported</div>
                 </div>
               </div>
             </div>
             <div className="relative">
-              <img src="https://picsum.photos/seed/team/800/600" alt="Our Team" className="rounded-3xl shadow-2xl" referrerPolicy="no-referrer" />
-              <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-8 rounded-2xl shadow-xl">
+              <img src="https://images.unsplash.com/photo-1564510714747-69c3bc1fab41?w=800&h=600&fit=crop" alt="Our Team" className="rounded-3xl shadow-2xl" referrerPolicy="no-referrer" />
+              <div className="absolute -bottom-6 -right-6 bg-pink-600 text-white p-8 rounded-2xl shadow-xl">
                 <p className="text-lg font-bold">"Your success is our only metric."</p>
               </div>
             </div>
@@ -685,12 +685,12 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
             <div className="p-10 bg-slate-50 rounded-3xl border border-slate-100">
-              <Target className="h-10 w-10 text-blue-600 mb-6" />
+              <Target className="h-10 w-10 text-pink-600 mb-6" />
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h3>
               <p className="text-slate-600 leading-relaxed">To empower UK businesses by providing secure, scalable, and innovative IT solutions that drive efficiency and growth.</p>
             </div>
             <div className="p-10 bg-slate-50 rounded-3xl border border-slate-100">
-              <Award className="h-10 w-10 text-blue-600 mb-6" />
+              <Award className="h-10 w-10 text-pink-600 mb-6" />
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Vision</h3>
               <p className="text-slate-600 leading-relaxed">To be the UK's most trusted IT partner, known for our technical integrity, proactive support, and commitment to client success.</p>
             </div>
@@ -706,8 +706,8 @@ const AboutPage = () => {
                 { title: "Security", desc: "Protecting your data as if it were our own." }
               ].map((v, i) => (
                 <div key={i} className="text-center">
-                  <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 className="h-8 w-8 text-blue-600" />
+                  <div className="w-16 h-16 bg-pink-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="h-8 w-8 text-pink-600" />
                   </div>
                   <h4 className="text-xl font-bold text-slate-900 mb-3">{v.title}</h4>
                   <p className="text-slate-600 text-sm">{v.desc}</p>
@@ -733,7 +733,7 @@ const AboutPage = () => {
                 </div>
               </div>
               <div className="lg:w-1/3 flex justify-center">
-                <div className="w-48 h-48 bg-blue-600 rounded-full flex items-center justify-center text-white text-center p-6 shadow-xl">
+                <div className="w-48 h-48 bg-pink-600 rounded-full flex items-center justify-center text-white text-center p-6 shadow-xl">
                   <div>
                     <div className="text-3xl font-bold mb-1">100%</div>
                     <div className="text-xs font-medium uppercase tracking-wider">Compliance Record</div>
@@ -817,10 +817,10 @@ const PricingPage = ({ setPage }: { setPage: (p: Page) => void }) => {
             {plans.map((plan, idx) => (
               <div 
                 key={idx} 
-                className={`relative p-8 rounded-3xl border ${plan.popular ? 'border-blue-600 shadow-2xl scale-105 z-10' : 'border-slate-200 shadow-sm'} flex flex-col`}
+                className={`relative p-8 rounded-3xl border ${plan.popular ? 'border-pink-600 shadow-2xl scale-105 z-10' : 'border-slate-200 shadow-sm'} flex flex-col`}
               >
                 {plan.popular && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-pink-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                     Most Popular
                   </div>
                 )}
@@ -835,7 +835,7 @@ const PricingPage = ({ setPage }: { setPage: (p: Page) => void }) => {
                 <div className="space-y-4 mb-8 flex-grow">
                   {plan.features.map((f, i) => (
                     <div key={i} className="flex items-start text-sm text-slate-600">
-                      <CheckCircle2 className="h-5 w-5 text-blue-500 mr-3 shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-pink-500 mr-3 shrink-0" />
                       <span>{f}</span>
                     </div>
                   ))}
@@ -854,7 +854,7 @@ const PricingPage = ({ setPage }: { setPage: (p: Page) => void }) => {
                   onClick={() => setPage('contact')}
                   className={`w-full py-4 rounded-xl font-bold transition-all ${
                     plan.popular 
-                      ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-200' 
+                      ? 'bg-pink-600 text-white hover:bg-pink-700 shadow-lg shadow-pink-200' 
                       : 'bg-slate-900 text-white hover:bg-slate-800'
                   }`}
                 >
@@ -867,7 +867,7 @@ const PricingPage = ({ setPage }: { setPage: (p: Page) => void }) => {
           <div className="mt-20 bg-slate-50 rounded-3xl p-10 text-center border border-slate-100">
             <h3 className="text-2xl font-bold text-slate-900 mb-4">Need a Custom Solution?</h3>
             <p className="text-slate-600 mb-8 max-w-2xl mx-auto">For larger enterprises or specific project-based work, we offer bespoke pricing models. Contact our consultancy team for a detailed proposal.</p>
-            <button onClick={() => setPage('contact')} className="text-blue-600 font-bold flex items-center mx-auto hover:underline">
+            <button onClick={() => setPage('contact')} className="text-pink-600 font-bold flex items-center mx-auto hover:underline">
               Request Custom Quote <ArrowRight className="ml-2 h-4 w-4" />
             </button>
           </div>
@@ -903,8 +903,8 @@ const ContactPage = () => {
               <h2 className="text-3xl font-bold text-slate-900 mb-8">Contact Information</h2>
               <div className="space-y-8 mb-12">
                 <div className="flex items-start">
-                  <div className="p-3 bg-blue-50 rounded-xl mr-6">
-                    <MapPin className="h-6 w-6 text-blue-600" />
+                  <div className="p-3 bg-pink-50 rounded-xl mr-6">
+                    <MapPin className="h-6 w-6 text-pink-600" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">Registered Office</h4>
@@ -912,8 +912,8 @@ const ContactPage = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="p-3 bg-blue-50 rounded-xl mr-6">
-                    <Phone className="h-6 w-6 text-blue-600" />
+                  <div className="p-3 bg-pink-50 rounded-xl mr-6">
+                    <Phone className="h-6 w-6 text-pink-600" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">Phone Number</h4>
@@ -921,8 +921,8 @@ const ContactPage = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="p-3 bg-blue-50 rounded-xl mr-6">
-                    <Mail className="h-6 w-6 text-blue-600" />
+                  <div className="p-3 bg-pink-50 rounded-xl mr-6">
+                    <Mail className="h-6 w-6 text-pink-600" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">Email Address</h4>
@@ -930,8 +930,8 @@ const ContactPage = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="p-3 bg-blue-50 rounded-xl mr-6">
-                    <Clock className="h-6 w-6 text-blue-600" />
+                  <div className="p-3 bg-pink-50 rounded-xl mr-6">
+                    <Clock className="h-6 w-6 text-pink-600" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">Business Hours</h4>
@@ -963,27 +963,27 @@ const ContactPage = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">Message Sent!</h3>
                   <p className="text-slate-600">Thank you for contacting Centurion. One of our specialists will be in touch within 2 business hours.</p>
-                  <button onClick={() => setSubmitted(false)} className="mt-8 text-blue-600 font-bold hover:underline">Send another message</button>
+                  <button onClick={() => setSubmitted(false)} className="mt-8 text-pink-600 font-bold hover:underline">Send another message</button>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
-                      <input required type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="John Smith" />
+                      <input required type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all" placeholder="John Smith" />
                     </div>
                     <div>
                       <label className="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
-                      <input required type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="john@company.co.uk" />
+                      <input required type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all" placeholder="john@company.co.uk" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">Company Name</label>
-                    <input required type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="Acme Ltd" />
+                    <input required type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all" placeholder="Acme Ltd" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">How can we help?</label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white">
+                    <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all bg-white">
                       <option>Managed IT Support</option>
                       <option>Cyber Security Audit</option>
                       <option>Cloud Migration</option>
@@ -993,15 +993,15 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">Message</label>
-                    <textarea required rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="Tell us about your requirements..."></textarea>
+                    <textarea required rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all" placeholder="Tell us about your requirements..."></textarea>
                   </div>
                   <div className="flex items-start">
-                    <input required type="checkbox" className="mt-1 mr-3 h-4 w-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500" />
+                    <input required type="checkbox" className="mt-1 mr-3 h-4 w-4 text-pink-600 border-slate-300 rounded focus:ring-pink-500" />
                     <span className="text-xs text-slate-500 leading-relaxed">
-                      I consent to Centurion Support Services processing my data in accordance with the <button type="button" className="text-blue-600 hover:underline">Privacy Policy</button>. We will never share your details with third parties for marketing.
+                      I consent to Centurion Support Services processing my data in accordance with the <button type="button" className="text-pink-600 hover:underline">Privacy Policy</button>. We will never share your details with third parties for marketing.
                     </span>
                   </div>
-                  <button type="submit" className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
+                  <button type="submit" className="w-full bg-pink-600 text-white py-4 rounded-xl font-bold hover:bg-pink-700 transition-all shadow-lg shadow-pink-200">
                     Send Message
                   </button>
                 </form>
@@ -1128,7 +1128,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-pink-100 selection:text-pink-900">
       <Navbar activePage={page} setPage={setPage} />
       
       <main>
