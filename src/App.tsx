@@ -531,13 +531,13 @@ const AboutPage = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-24">
             {[
-              { name: 'David Thompson', role: 'Chief Executive Officer', bio: 'Over 20 years of experience in UK IT infrastructure and strategic management.' },
-              { name: 'Sarah Miller', role: 'Chief Technology Officer', bio: 'Expert in cybersecurity and cloud architecture with a passion for digital transformation.' },
-              { name: 'Robert Wilson', role: 'Head of Support Services', bio: 'Dedicated to delivering world-class customer service and technical support.' },
+              { name: 'David Thompson', role: 'Chief Executive Officer', bio: 'Over 20 years of experience in UK IT infrastructure and strategic management.',url:'https://images.unsplash.com/photo-1568316674077-d72ee56de61c?w=400&h=400&fit=crop'},
+              { name: 'Sarah Miller', role: 'Chief Technology Officer', bio: 'Expert in cybersecurity and cloud architecture with a passion for digital transformation.' ,url:'https://images.unsplash.com/photo-1628698965423-c11879e09f85?w=400&h=400&fit=crop'},
+              { name: 'Robert Wilson', role: 'Head of Support Services', bio: 'Dedicated to delivering world-class customer service and technical support.' ,url:'https://images.unsplash.com/photo-1615109398623-88346a601842?w=400&h=400&fit=crop'},
             ].map((leader, i) => (
               <div key={i} className="text-center">
                 <img 
-                  src={`https://picsum.photos/seed/leader-${i}/400/400`} 
+                  src={leader.url} 
                   alt={leader.name} 
                   className="w-32 h-32 rounded-full mx-auto mb-6 object-cover shadow-lg"
                   referrerPolicy="no-referrer"
