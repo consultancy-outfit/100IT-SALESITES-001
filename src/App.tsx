@@ -51,8 +51,8 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
               <button
                 key={item}
                 onClick={() => setActivePage(item)}
-                className={`text-sm font-medium transition-colors hover:text-emerald-600 ${
-                  activePage === item ? 'text-emerald-600' : 'text-slate-600'
+                className={`text-sm font-medium transition-colors hover:text-red-600 ${
+                  activePage === item ? 'text-red-600' : 'text-slate-600'
                 }`}
               >
                 {item}
@@ -85,7 +85,7 @@ const Navbar = ({ activePage, setActivePage }: { activePage: string, setActivePa
                     setActivePage(item);
                     setIsOpen(false);
                   }}
-                  className="block w-full text-left px-3 py-3 text-base font-medium text-slate-600 hover:text-emerald-600 hover:bg-slate-50 rounded-md"
+                  className="block w-full text-left px-3 py-3 text-base font-medium text-slate-600 hover:text-red-600 hover:bg-slate-50 rounded-md"
                 >
                   {item}
                 </button>
@@ -121,21 +121,21 @@ const Footer = ({ setActivePage }: { setActivePage: (page: string) => void }) =>
           <div>
             <h4 className="text-white font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-4 text-sm">
-              <li><button onClick={() => setActivePage('Home')} className="hover:text-emerald-400">Home</button></li>
-              <li><button onClick={() => setActivePage('Services')} className="hover:text-emerald-400">Services</button></li>
-              <li><button onClick={() => setActivePage('About Us')} className="hover:text-emerald-400">About Us</button></li>
-              <li><button onClick={() => setActivePage('Pricing')} className="hover:text-emerald-400">Pricing</button></li>
-              <li><button onClick={() => setActivePage('Contact Us')} className="hover:text-emerald-400">Contact Us</button></li>
+              <li><button onClick={() => setActivePage('Home')} className="hover:text-red-400">Home</button></li>
+              <li><button onClick={() => setActivePage('Services')} className="hover:text-red-400">Services</button></li>
+              <li><button onClick={() => setActivePage('About Us')} className="hover:text-red-400">About Us</button></li>
+              <li><button onClick={() => setActivePage('Pricing')} className="hover:text-red-400">Pricing</button></li>
+              <li><button onClick={() => setActivePage('Contact Us')} className="hover:text-red-400">Contact Us</button></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-6">Legal</h4>
             <ul className="space-y-4 text-sm">
-              <li><button onClick={() => setActivePage('Terms and Conditions')} className="hover:text-emerald-400">Terms & Conditions</button></li>
-              <li><button onClick={() => setActivePage('Privacy Policy')} className="hover:text-emerald-400">Privacy Policy</button></li>
-              <li><button onClick={() => setActivePage('Privacy Policy')} className="hover:text-emerald-400">GDPR Compliance</button></li>
-              <li><button onClick={() => setActivePage('Terms and Conditions')} className="hover:text-emerald-400">Cookie Policy</button></li>
+              <li><button onClick={() => setActivePage('Terms and Conditions')} className="hover:text-red-400">Terms & Conditions</button></li>
+              <li><button onClick={() => setActivePage('Privacy Policy')} className="hover:text-red-400">Privacy Policy</button></li>
+              <li><button onClick={() => setActivePage('Privacy Policy')} className="hover:text-red-400">GDPR Compliance</button></li>
+              <li><button onClick={() => setActivePage('Terms and Conditions')} className="hover:text-red-400">Cookie Policy</button></li>
             </ul>
           </div>
 
@@ -143,15 +143,15 @@ const Footer = ({ setActivePage }: { setActivePage: (page: string) => void }) =>
             <h4 className="text-white font-semibold mb-6">Company Details</h4>
             <div className="space-y-4 text-sm">
               <div className="flex items-start">
-                <MapPin className="w-4 h-4 mr-3 text-emerald-500 shrink-0 mt-1" />
+                <MapPin className="w-4 h-4 mr-3 text-red-500 shrink-0 mt-1" />
                 <span>{COMPANY_DETAILS.address}</span>
               </div>
               <div className="flex items-center">
-                <Phone className="w-4 h-4 mr-3 text-emerald-500 shrink-0" />
+                <Phone className="w-4 h-4 mr-3 text-red-500 shrink-0" />
                 <span>{COMPANY_DETAILS.phone}</span>
               </div>
               <div className="flex items-center">
-                <Mail className="w-4 h-4 mr-3 text-emerald-500 shrink-0" />
+                <Mail className="w-4 h-4 mr-3 text-red-500 shrink-0" />
                 <span>{COMPANY_DETAILS.email}</span>
               </div>
               <div className="pt-4 border-t border-slate-800">
@@ -200,11 +200,11 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest uppercase text-emerald-700 bg-emerald-100 rounded-full">
+              <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest uppercase text-red-700 bg-red-100 rounded-full">
                 Excellence in British IT
               </span>
               <h1 className="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-                Future-Proof Your <span className="text-emerald-600">Business Technology</span>
+                Future-Proof Your <span className="text-red-600">Business Technology</span>
               </h1>
               <p className="text-lg text-slate-600 mb-10 max-w-xl">
                 Cera Castleham Lodge provides elite IT consultancy and managed services 
@@ -214,7 +214,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
                   onClick={() => setActivePage('Services')}
-                  className="px-8 py-4 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-all flex items-center justify-center"
+                  className="px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all flex items-center justify-center"
                 >
                   Our Services <ArrowRight className="ml-2 w-5 h-5" />
                 </button>
@@ -234,13 +234,13 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
             >
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://picsum.photos/seed/it-office/800/600" 
+                  src="https://plus.unsplash.com/premium_photo-1667126444822-94fb21279436?w=800&h=600&fit=crop" 
                   alt="Modern IT Office" 
                   className="w-full h-auto"
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-emerald-600/10 rounded-full blur-3xl -z-10"></div>
+              <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-red-600/10 rounded-full blur-3xl -z-10"></div>
               <div className="absolute -top-6 -right-6 w-48 h-48 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
             </motion.div>
           </div>
@@ -259,8 +259,8 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, idx) => (
-              <div key={idx} className="p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:border-emerald-200 transition-colors">
-                <div className="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center text-white mb-6">
+              <div key={idx} className="p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:border-red-200 transition-colors">
+                <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center text-white mb-6">
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
@@ -284,7 +284,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
               <div className="grid grid-cols-2 gap-6">
                 {['Financial Services', 'Legal & Professional', 'Healthcare', 'Manufacturing', 'Retail & E-commerce', 'Education'].map((industry) => (
                   <div key={industry} className="flex items-center space-x-3">
-                    <CheckCircle2 className="text-emerald-500 w-5 h-5" />
+                    <CheckCircle2 className="text-red-500 w-5 h-5" />
                     <span className="text-sm font-medium">{industry}</span>
                   </div>
                 ))}
@@ -294,7 +294,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
               <div className="space-y-4">
                 <div className="h-48 rounded-xl bg-slate-800 flex items-center justify-center p-6 text-center">
                   <div>
-                    <div className="text-3xl font-bold text-emerald-500 mb-2">15+</div>
+                    <div className="text-3xl font-bold text-red-500 mb-2">15+</div>
                     <div className="text-xs uppercase tracking-wider text-slate-500">Years Experience</div>
                   </div>
                 </div>
@@ -308,7 +308,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
                 </div>
                 <div className="h-48 rounded-xl bg-slate-800 flex items-center justify-center p-6 text-center">
                   <div>
-                    <div className="text-3xl font-bold text-emerald-500 mb-2">99.9%</div>
+                    <div className="text-3xl font-bold text-red-500 mb-2">99.9%</div>
                     <div className="text-xs uppercase tracking-wider text-slate-500">Uptime Guaranteed</div>
                   </div>
                 </div>
@@ -327,15 +327,15 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {caseStudies.map((study, idx) => (
-              <div key={idx} className="p-10 rounded-3xl bg-emerald-900 text-white relative overflow-hidden group">
+              <div key={idx} className="p-10 rounded-3xl bg-red-900 text-white relative overflow-hidden group">
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold mb-4">{study.title}</h3>
-                  <p className="text-emerald-100/80 mb-8">{study.description}</p>
-                  <div className="inline-block px-6 py-3 bg-emerald-500/20 backdrop-blur-sm rounded-full border border-emerald-500/30 text-emerald-400 font-bold">
+                  <p className="text-red-100/80 mb-8">{study.description}</p>
+                  <div className="inline-block px-6 py-3 bg-red-500/20 backdrop-blur-sm rounded-full border border-red-500/30 text-red-400 font-bold">
                     {study.result}
                   </div>
                 </div>
-                <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-emerald-500/10 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+                <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-red-500/10 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
               </div>
             ))}
           </div>
@@ -352,14 +352,14 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
                 We pride ourselves on building long-term partnerships with our clients.
               </p>
               <div className="flex items-center space-x-2">
-                {[1,2,3,4,5].map(i => <Award key={i} className="w-5 h-5 text-emerald-500 fill-emerald-500" />)}
+                {[1,2,3,4,5].map(i => <Award key={i} className="w-5 h-5 text-red-500 fill-red-500" />)}
                 <span className="ml-2 font-semibold text-slate-900">4.9/5 Trust Score</span>
               </div>
             </div>
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
               {testimonials.map((t, idx) => (
                 <div key={idx} className="p-8 bg-white rounded-2xl shadow-sm border border-slate-100">
-                  <MessageSquare className="w-8 h-8 text-emerald-600/20 mb-6" />
+                  <MessageSquare className="w-8 h-8 text-red-600/20 mb-6" />
                   <p className="text-slate-600 italic mb-8">"{t.content}"</p>
                   <div>
                     <div className="font-bold text-slate-900">{t.name}</div>
@@ -373,15 +373,15 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-emerald-600">
+      <section className="py-24 bg-red-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-8">Ready to Elevate Your IT Strategy?</h2>
-          <p className="text-emerald-100 mb-12 max-w-2xl mx-auto text-lg">
+          <p className="text-red-100 mb-12 max-w-2xl mx-auto text-lg">
             Join hundreds of UK businesses that trust Cera Castleham Lodge for their technology needs.
           </p>
           <button 
             onClick={() => setActivePage('Contact Us')}
-            className="px-10 py-5 bg-white text-emerald-600 font-bold rounded-xl hover:bg-emerald-50 transition-all shadow-xl"
+            className="px-10 py-5 bg-white text-red-600 font-bold rounded-xl hover:bg-red-50 transition-all shadow-xl"
           >
             Get Started Today
           </button>
@@ -476,7 +476,7 @@ const ServicesPage = () => {
               className={`flex flex-col lg:flex-row gap-8 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
             >
               <div className="lg:w-1/2 p-10 lg:p-16">
-                <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center text-white mb-8">
+                <div className="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center text-white mb-8">
                   {getIcon(service.icon)}
                 </div>
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">{service.title}</h2>
@@ -490,7 +490,7 @@ const ServicesPage = () => {
                 <div className="flex items-center justify-between pt-8 border-t border-slate-100">
                   <div>
                     <span className="text-sm text-slate-400 block mb-1">Starting from</span>
-                    <span className="text-2xl font-bold text-emerald-600">{service.startingPrice}</span>
+                    <span className="text-2xl font-bold text-red-600">{service.startingPrice}</span>
                   </div>
                   <button className="px-6 py-3 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-all">
                     Learn More
@@ -501,26 +501,26 @@ const ServicesPage = () => {
               <div className="lg:w-1/2 bg-slate-900 p-10 lg:p-16 text-white flex flex-col justify-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                   <div>
-                    <h4 className="text-emerald-500 font-bold mb-6 flex items-center">
+                    <h4 className="text-red-500 font-bold mb-6 flex items-center">
                       <ChevronRight className="mr-2 w-4 h-4" /> The Process
                     </h4>
                     <ul className="space-y-4">
                       {service.process.map(step => (
                         <li key={step} className="flex items-start text-sm text-slate-300">
-                          <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-1.5 mr-3 shrink-0"></span>
+                          <span className="w-1.5 h-1.5 bg-red-500 rounded-full mt-1.5 mr-3 shrink-0"></span>
                           {step}
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-emerald-500 font-bold mb-6 flex items-center">
+                    <h4 className="text-red-500 font-bold mb-6 flex items-center">
                       <ChevronRight className="mr-2 w-4 h-4" /> Key Benefits
                     </h4>
                     <ul className="space-y-4">
                       {service.benefits.map(benefit => (
                         <li key={benefit} className="flex items-start text-sm text-slate-300">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-500 mr-3 shrink-0" />
+                          <CheckCircle2 className="w-4 h-4 text-red-500 mr-3 shrink-0" />
                           {benefit}
                         </li>
                       ))}
@@ -560,38 +560,38 @@ const AboutUsPage = () => {
             </p>
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <h4 className="text-emerald-600 font-bold text-3xl mb-1">150+</h4>
+                <h4 className="text-red-600 font-bold text-3xl mb-1">150+</h4>
                 <p className="text-sm text-slate-500 uppercase tracking-widest">Active Clients</p>
               </div>
               <div>
-                <h4 className="text-emerald-600 font-bold text-3xl mb-1">24/7</h4>
+                <h4 className="text-red-600 font-bold text-3xl mb-1">24/7</h4>
                 <p className="text-sm text-slate-500 uppercase tracking-widest">Support Coverage</p>
               </div>
             </div>
           </motion.div>
           <div className="mt-12 lg:mt-0 relative">
             <img 
-              src="https://picsum.photos/seed/team/800/600" 
+              src="https://images.unsplash.com/photo-1589988056073-12825ac756cc?w=800&h=600&fit=crop" 
               alt="Our Team" 
               className="rounded-3xl shadow-2xl"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-red-600/10 rounded-full blur-3xl -z-10"></div>
           </div>
         </div>
 
         {/* Mission & Vision */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
           <div className="p-12 rounded-3xl bg-slate-900 text-white">
-            <h3 className="text-2xl font-bold mb-6 text-emerald-500">Our Mission</h3>
+            <h3 className="text-2xl font-bold mb-6 text-red-500">Our Mission</h3>
             <p className="text-slate-400 text-lg leading-relaxed">
               To empower British businesses with innovative, secure, and scalable technology 
               solutions that drive sustainable growth and operational excellence.
             </p>
           </div>
-          <div className="p-12 rounded-3xl bg-emerald-600 text-white">
+          <div className="p-12 rounded-3xl bg-red-600 text-white">
             <h3 className="text-2xl font-bold mb-6">Our Vision</h3>
-            <p className="text-emerald-100 text-lg leading-relaxed">
+            <p className="text-red-100 text-lg leading-relaxed">
               To be the most trusted technology partner in the UK, recognised for our 
               unwavering commitment to client success and digital security.
             </p>
@@ -608,7 +608,7 @@ const AboutUsPage = () => {
               { title: "Innovation", desc: "We constantly explore new technologies to keep our clients ahead." }
             ].map((value, idx) => (
               <div key={idx} className="text-center p-8">
-                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mx-auto mb-6">
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-red-600 mx-auto mb-6">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h4 className="text-xl font-bold mb-4">{value.title}</h4>
@@ -621,7 +621,7 @@ const AboutUsPage = () => {
         {/* Compliance */}
         <div className="p-12 rounded-3xl border border-slate-200 bg-slate-50 flex flex-col md:flex-row items-center gap-12">
           <div className="shrink-0">
-            <Lock className="w-20 h-20 text-emerald-600" />
+            <Lock className="w-20 h-20 text-red-600" />
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">Commitment to GDPR & Security</h3>
@@ -678,10 +678,10 @@ const PricingPage = () => {
           {plans.map((plan) => (
             <div 
               key={plan.name}
-              className={`relative p-10 rounded-3xl bg-white border ${plan.isPopular ? 'border-emerald-500 shadow-xl scale-105 z-10' : 'border-slate-200 shadow-sm'} flex flex-col`}
+              className={`relative p-10 rounded-3xl bg-white border ${plan.isPopular ? 'border-red-500 shadow-xl scale-105 z-10' : 'border-slate-200 shadow-sm'} flex flex-col`}
             >
               {plan.isPopular && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                   Most Popular
                 </div>
               )}
@@ -698,7 +698,7 @@ const PricingPage = () => {
                 <ul className="space-y-4">
                   {plan.features.map(feature => (
                     <li key={feature} className="flex items-start text-sm text-slate-600">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 mr-3 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-red-500 mr-3 shrink-0 mt-0.5" />
                       {feature}
                     </li>
                   ))}
@@ -709,7 +709,7 @@ const PricingPage = () => {
                   <span className="text-xs font-bold text-slate-400 block mb-1">Support Level</span>
                   <span className="text-sm font-medium text-slate-900">{plan.support}</span>
                 </div>
-                <button className={`w-full py-4 rounded-xl font-bold transition-all ${plan.isPopular ? 'bg-emerald-600 text-white hover:bg-emerald-700' : 'bg-slate-100 text-slate-900 hover:bg-slate-200'}`}>
+                <button className={`w-full py-4 rounded-xl font-bold transition-all ${plan.isPopular ? 'bg-red-600 text-white hover:bg-red-700' : 'bg-slate-100 text-slate-900 hover:bg-slate-200'}`}>
                   {plan.price === 'Custom' ? 'Contact Sales' : 'Select Plan'}
                 </button>
               </div>
@@ -719,7 +719,7 @@ const PricingPage = () => {
 
         <div className="mt-20 text-center text-slate-500 text-sm">
           <p>* All plans require a minimum 12-month commitment. VAT is charged at 20%.</p>
-          <p>Need a bespoke plan? <button className="text-emerald-600 font-bold hover:underline">Talk to our consultants</button>.</p>
+          <p>Need a bespoke plan? <button className="text-red-600 font-bold hover:underline">Talk to our consultants</button>.</p>
         </div>
       </div>
     </div>
@@ -749,32 +749,32 @@ const ContactUsPage = () => {
           <div className="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm">
             {submitted ? (
               <div className="text-center py-20">
-                <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mx-auto mb-6">
+                <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center text-red-600 mx-auto mb-6">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Message Sent!</h3>
                 <p className="text-slate-600">Thank you for reaching out. We'll be in touch within 24 hours.</p>
-                <button onClick={() => setSubmitted(false)} className="mt-8 text-emerald-600 font-bold hover:underline">Send another message</button>
+                <button onClick={() => setSubmitted(false)} className="mt-8 text-red-600 font-bold hover:underline">Send another message</button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
-                    <input type="text" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all" />
+                    <input type="text" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
-                    <input type="email" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all" />
+                    <input type="email" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">Company Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all" />
+                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">How can we help?</label>
-                  <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all">
+                  <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all">
                     <option>Managed IT Support</option>
                     <option>Cybersecurity</option>
                     <option>Cloud Migration</option>
@@ -784,15 +784,15 @@ const ContactUsPage = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">Message</label>
-                  <textarea rows={4} required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"></textarea>
+                  <textarea rows={4} required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"></textarea>
                 </div>
                 <div className="flex items-start">
-                  <input type="checkbox" required className="mt-1 mr-3 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500" />
+                  <input type="checkbox" required className="mt-1 mr-3 rounded border-slate-300 text-red-600 focus:ring-red-500" />
                   <span className="text-sm text-slate-500">
-                    I consent to Cera Castleham Lodge processing my data in accordance with the <button type="button" className="text-emerald-600 hover:underline">Privacy Policy</button>.
+                    I consent to Cera Castleham Lodge processing my data in accordance with the <button type="button" className="text-red-600 hover:underline">Privacy Policy</button>.
                   </span>
                 </div>
-                <button type="submit" className="w-full py-4 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-all shadow-lg">
+                <button type="submit" className="w-full py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition-all shadow-lg">
                   Send Message
                 </button>
               </form>
@@ -806,7 +806,7 @@ const ContactUsPage = () => {
                 <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 mr-4 shrink-0">
+                    <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mr-4 shrink-0">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
@@ -815,7 +815,7 @@ const ContactUsPage = () => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 mr-4 shrink-0">
+                    <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mr-4 shrink-0">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
@@ -824,7 +824,7 @@ const ContactUsPage = () => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 mr-4 shrink-0">
+                    <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mr-4 shrink-0">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
@@ -833,7 +833,7 @@ const ContactUsPage = () => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 mr-4 shrink-0">
+                    <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mr-4 shrink-0">
                       <Clock className="w-5 h-5" />
                     </div>
                     <div>
