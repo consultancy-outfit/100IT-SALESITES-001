@@ -67,8 +67,8 @@ const Navbar = ({
               <button
                 key={item.id}
                 onClick={() => setActivePage(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-indigo-600 ${
-                  activePage === item.id ? "text-indigo-600" : "text-zinc-600"
+                className={`text-sm font-medium transition-colors hover:text-sky-600 ${
+                  activePage === item.id ? "text-sky-600" : "text-zinc-600"
                 }`}
               >
                 {item.name}
@@ -114,7 +114,7 @@ const Navbar = ({
                     setActivePage(item.id);
                     setIsOpen(false);
                   }}
-                  className="block w-full text-left px-3 py-4 text-base font-medium text-zinc-600 hover:text-indigo-600 hover:bg-zinc-50 rounded-lg"
+                  className="block w-full text-left px-3 py-4 text-base font-medium text-zinc-600 hover:text-sky-600 hover:bg-zinc-50 rounded-lg"
                 >
                   {item.name}
                 </button>
@@ -124,7 +124,7 @@ const Navbar = ({
                   setActivePage("contact");
                   setIsOpen(false);
                 }}
-                className="w-full mt-4 bg-indigo-600 text-white px-6 py-3 rounded-lg text-base font-medium"
+                className="w-full mt-4 bg-sky-600 text-white px-6 py-3 rounded-lg text-base font-medium"
               >
                 Get a Quote
               </button>
@@ -156,10 +156,10 @@ const Footer = ({
             </p>
             <div className="flex space-x-4">
               {/* Social placeholders */}
-              <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center hover:bg-indigo-600 transition-colors cursor-pointer">
+              <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center hover:bg-sky-600 transition-colors cursor-pointer">
                 <span className="text-xs font-bold text-white">In</span>
               </div>
-              <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center hover:bg-indigo-600 transition-colors cursor-pointer">
+              <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center hover:bg-sky-600 transition-colors cursor-pointer">
                 <span className="text-xs font-bold text-white">X</span>
               </div>
             </div>
@@ -253,19 +253,19 @@ const Footer = ({
             <h4 className="text-white font-semibold mb-6">Contact Info</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start">
-                <MapPin className="w-5 h-5 mr-3 text-indigo-500 shrink-0" />
+                <MapPin className="w-5 h-5 mr-3 text-sky-500 shrink-0" />
                 <span>{COMPANY_DETAILS.address}</span>
               </li>
               <li className="flex items-center">
-                <Phone className="w-5 h-5 mr-3 text-indigo-500 shrink-0" />
+                <Phone className="w-5 h-5 mr-3 text-sky-500 shrink-0" />
                 <span>{COMPANY_DETAILS.phone}</span>
               </li>
               <li className="flex items-center">
-                <Mail className="w-5 h-5 mr-3 text-indigo-500 shrink-0" />
+                <Mail className="w-5 h-5 mr-3 text-sky-500 shrink-0" />
                 <span className="break-all">{COMPANY_DETAILS.email}</span>
               </li>
               <li className="flex items-center">
-                <Lock className="w-5 h-5 mr-3 text-indigo-500 shrink-0" />
+                <Lock className="w-5 h-5 mr-3 text-sky-500 shrink-0" />
                 <span className="break-all">CRN: {COMPANY_DETAILS.crn}</span>
               </li>
             </ul>
@@ -308,12 +308,12 @@ const HomePage = ({
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-6">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-xs font-bold uppercase tracking-wider mb-6">
                 British IT Excellence
               </span>
               <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-zinc-900 mb-8 leading-[1.1]">
                 Modern IT Solutions for{" "}
-                <span className="text-indigo-600">UK Businesses</span>.
+                <span className="text-sky-600">UK Businesses</span>.
               </h1>
               <p className="text-xl text-zinc-600 mb-10 leading-relaxed max-w-xl">
                 From managed support to advanced cyber security, we provide the
@@ -323,7 +323,7 @@ const HomePage = ({
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => setActivePage("services")}
-                  className="bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-indigo-700 transition-all flex items-center justify-center"
+                  className="bg-sky-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-sky-700 transition-all flex items-center justify-center"
                 >
                   Explore Services <ArrowRight className="ml-2 w-5 h-5" />
                 </button>
@@ -367,23 +367,23 @@ const HomePage = ({
             >
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://picsum.photos/seed/it-office/800/600"
+                  src="https://picsum.photos/seed/it-/800/600"
                   alt="Modern IT Office"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-indigo-600/10 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-sky-600/10 mix-blend-multiply"></div>
               </div>
               {/* Decorative elements */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-indigo-600/10 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-indigo-600/20 rounded-full blur-3xl"></div>
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-sky-600/10 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-sky-600/20 rounded-full blur-3xl"></div>
 
-              <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-white p-6 rounded-xl shadow-xl hidden xl:block">
+              <div className="z-20 absolute top-1/2 -right-8 transform -translate-y-1/2 bg-white p-6 rounded-xl shadow-xl hidden xl:block">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
                     <CheckCircle2 className="text-emerald-600 w-6 h-6" />
                   </div>
-                  <div>
+                  <div >
                     <p className="text-xs text-zinc-500 font-bold uppercase tracking-widest">
                       Uptime Guarantee
                     </p>
@@ -430,10 +430,10 @@ const HomePage = ({
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-8 rounded-2xl border border-zinc-100 hover:border-indigo-100 hover:bg-zinc-50 transition-all group"
+                className="p-8 rounded-2xl border border-zinc-100 hover:border-sky-100 hover:bg-zinc-50 transition-all group"
               >
-                <div className="w-14 h-14 bg-indigo-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-colors">
-                  <item.icon className="text-indigo-600 w-7 h-7 group-hover:text-white transition-colors" />
+                <div className="w-14 h-14 bg-sky-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-sky-600 transition-colors">
+                  <item.icon className="text-sky-600 w-7 h-7 group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-xl font-bold text-zinc-900 mb-4">
                   {item.title}
@@ -466,7 +466,7 @@ const HomePage = ({
                     key={i}
                     className="flex items-center space-x-3 p-4 bg-white rounded-xl shadow-sm border border-zinc-100"
                   >
-                    <div className="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                    <div className="w-2 h-2 bg-sky-600 rounded-full"></div>
                     <span className="font-medium text-zinc-700">
                       {industry}
                     </span>
@@ -530,13 +530,13 @@ const HomePage = ({
                 </h3>
                 <div className="space-y-6">
                   <div>
-                    <p className="text-xs font-bold text-indigo-600 uppercase tracking-widest mb-2">
+                    <p className="text-xs font-bold text-sky-600 uppercase tracking-widest mb-2">
                       The Challenge
                     </p>
                     <p className="text-zinc-700">{study.challenge}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-indigo-600 uppercase tracking-widest mb-2">
+                    <p className="text-xs font-bold text-sky-600 uppercase tracking-widest mb-2">
                       Our Solution
                     </p>
                     <p className="text-zinc-700">{study.solution}</p>
@@ -557,13 +557,13 @@ const HomePage = ({
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-indigo-600 text-white">
+      <section className="py-24 bg-sky-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               Client Testimonials
             </h2>
-            <p className="text-indigo-100">
+            <p className="text-sky-100">
               What business leaders say about us.
             </p>
           </div>
@@ -575,7 +575,7 @@ const HomePage = ({
               >
                 <p className="text-lg italic mb-8">"{t.content}"</p>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-indigo-400 mr-4 overflow-hidden">
+                  <div className="w-12 h-12 rounded-full bg-sky-400 mr-4 overflow-hidden">
                     <img
                       src={`https://picsum.photos/seed/${t.name}/100/100`}
                       alt={t.name}
@@ -584,7 +584,7 @@ const HomePage = ({
                   </div>
                   <div>
                     <p className="font-bold">{t.name}</p>
-                    <p className="text-sm text-indigo-200">
+                    <p className="text-sm text-sky-200">
                       {t.role}, {t.company}
                     </p>
                   </div>
@@ -610,7 +610,7 @@ const HomePage = ({
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <button
                   onClick={() => setActivePage("contact")}
-                  className="bg-indigo-600 text-white px-10 py-4 rounded-full font-bold hover:bg-indigo-700 transition-all"
+                  className="bg-sky-600 text-white px-10 py-4 rounded-full font-bold hover:bg-sky-700 transition-all"
                 >
                   Get Started Now
                 </button>
@@ -623,7 +623,7 @@ const HomePage = ({
               </div>
             </div>
             {/* Decorative background circle */}
-            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-sky-600/20 rounded-full blur-3xl"></div>
           </div>
         </div>
       </section>
@@ -665,7 +665,7 @@ const ServicesPage = () => {
                 className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-16 items-center`}
               >
                 <div className="lg:w-1/2">
-                  <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-indigo-200">
+                  <div className="w-16 h-16 bg-sky-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-sky-200">
                     <Icon className="text-white w-8 h-8" />
                   </div>
                   <h2 className="text-3xl font-bold text-zinc-900 mb-6">
@@ -686,7 +686,7 @@ const ServicesPage = () => {
                       <h4 className="text-sm font-bold text-zinc-900 uppercase tracking-widest mb-4">
                         Starting From
                       </h4>
-                      <p className="text-2xl font-bold text-indigo-600">
+                      <p className="text-2xl font-bold text-sky-600">
                         {service.startingPrice}
                       </p>
                     </div>
@@ -737,7 +737,7 @@ const ServicesPage = () => {
                   </div>
                   {/* Decorative accent */}
                   <div
-                    className={`absolute -z-10 w-full h-full bg-indigo-100 rounded-3xl top-8 ${i % 2 === 0 ? "-left-8" : "-right-8"}`}
+                    className={`absolute -z-10 w-full h-full bg-sky-100 rounded-3xl top-8 ${i % 2 === 0 ? "-left-8" : "-right-8"}`}
                   ></div>
                 </div>
               </motion.div>
@@ -771,13 +771,13 @@ const AboutPage = () => {
             </p>
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <p className="text-4xl font-bold text-indigo-600 mb-2">10+</p>
+                <p className="text-4xl font-bold text-sky-600 mb-2">10+</p>
                 <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest">
                   Years Experience
                 </p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-indigo-600 mb-2">250+</p>
+                <p className="text-4xl font-bold text-sky-600 mb-2">250+</p>
                 <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest">
                   Clients Served
                 </p>
@@ -803,7 +803,7 @@ const AboutPage = () => {
         <div className="grid md:grid-cols-2 gap-12 mb-32">
           <div className="bg-zinc-50 p-12 rounded-[2.5rem]">
             <h3 className="text-2xl font-bold text-zinc-900 mb-6 flex items-center">
-              <Target className="mr-3 text-indigo-600" /> Our Mission
+              <Target className="mr-3 text-sky-600" /> Our Mission
             </h3>
             <p className="text-zinc-600 leading-relaxed">
               To empower UK organisations by delivering reliable, secure, and
@@ -813,7 +813,7 @@ const AboutPage = () => {
           </div>
           <div className="bg-zinc-900 p-12 rounded-[2.5rem] text-white">
             <h3 className="text-2xl font-bold mb-6 flex items-center">
-              <Cloud className="mr-3 text-indigo-400" /> Our Vision
+              <Cloud className="mr-3 text-sky-400" /> Our Vision
             </h3>
             <p className="text-zinc-400 leading-relaxed">
               To be the most trusted IT partner in the North of England,
@@ -847,8 +847,8 @@ const AboutPage = () => {
               },
             ].map((value, i) => (
               <div key={i} className="text-center">
-                <div className="w-16 h-16 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Award className="text-indigo-600 w-8 h-8" />
+                <div className="w-16 h-16 bg-sky-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Award className="text-sky-600 w-8 h-8" />
                 </div>
                 <h4 className="text-xl font-bold text-zinc-900 mb-3">
                   {value.title}
@@ -861,9 +861,9 @@ const AboutPage = () => {
           </div>
         </div>
 
-        <div className="bg-indigo-50 p-12 lg:p-20 rounded-[3rem]">
+        <div className="bg-sky-50 p-12 lg:p-20 rounded-[3rem]">
           <div className="max-w-3xl mx-auto text-center">
-            <ShieldCheck className="w-16 h-16 text-indigo-600 mx-auto mb-8" />
+            <ShieldCheck className="w-16 h-16 text-sky-600 mx-auto mb-8" />
             <h2 className="text-3xl font-bold text-zinc-900 mb-6">
               GDPR & Compliance
             </h2>
@@ -907,12 +907,12 @@ const PricingPage = ({
               key={i}
               className={`relative p-8 lg:p-10 rounded-3xl border ${
                 plan.isPopular
-                  ? "border-indigo-600 bg-zinc-900 text-white shadow-2xl scale-105 z-10"
+                  ? "border-sky-600 bg-zinc-900 text-white shadow-2xl scale-105 z-10"
                   : "border-zinc-200 bg-white text-zinc-900"
               }`}
             >
               {plan.isPopular && (
-                <span className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                <span className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-sky-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
                   Most Popular
                 </span>
               )}
@@ -943,7 +943,7 @@ const PricingPage = ({
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
                     <Check
-                      className={`w-5 h-5 mr-3 shrink-0 ${plan.isPopular ? "text-indigo-400" : "text-indigo-600"}`}
+                      className={`w-5 h-5 mr-3 shrink-0 ${plan.isPopular ? "text-sky-400" : "text-sky-600"}`}
                     />
                     <span className="text-sm">{feature}</span>
                   </li>
@@ -954,7 +954,7 @@ const PricingPage = ({
                 onClick={() => setActivePage("contact")}
                 className={`w-full py-4 rounded-full font-bold transition-all ${
                   plan.isPopular
-                    ? "bg-indigo-600 hover:bg-indigo-700 text-white"
+                    ? "bg-sky-600 hover:bg-sky-700 text-white"
                     : "bg-zinc-900 hover:bg-zinc-800 text-white"
                 }`}
               >
@@ -975,7 +975,7 @@ const PricingPage = ({
           </p>
           <button
             onClick={() => setActivePage("contact")}
-            className="text-indigo-600 font-bold flex items-center justify-center mx-auto hover:text-indigo-700"
+            className="text-sky-600 font-bold flex items-center justify-center mx-auto hover:text-sky-700"
           >
             Request a Custom Quote <ArrowRight className="ml-2 w-5 h-5" />
           </button>
@@ -1008,8 +1008,8 @@ const ContactPage = () => {
 
             <div className="space-y-8">
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mr-6 shrink-0">
-                  <MapPin className="text-indigo-600 w-6 h-6" />
+                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center mr-6 shrink-0">
+                  <MapPin className="text-sky-600 w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="font-bold text-zinc-900 mb-1">Our Office</h4>
@@ -1017,8 +1017,8 @@ const ContactPage = () => {
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mr-6 shrink-0">
-                  <Phone className="text-indigo-600 w-6 h-6" />
+                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center mr-6 shrink-0">
+                  <Phone className="text-sky-600 w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="font-bold text-zinc-900 mb-1">Phone</h4>
@@ -1026,8 +1026,8 @@ const ContactPage = () => {
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mr-6 shrink-0">
-                  <Mail className="text-indigo-600 w-6 h-6" />
+                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center mr-6 shrink-0">
+                  <Mail className="text-sky-600 w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="font-bold text-zinc-900 mb-1">Email</h4>
@@ -1037,8 +1037,8 @@ const ContactPage = () => {
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mr-6 shrink-0">
-                  <Clock className="text-indigo-600 w-6 h-6" />
+                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center mr-6 shrink-0">
+                  <Clock className="text-sky-600 w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="font-bold text-zinc-900 mb-1">
@@ -1073,7 +1073,7 @@ const ContactPage = () => {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-8 text-indigo-600 font-bold"
+                  className="mt-8 text-sky-600 font-bold"
                 >
                   Send another message
                 </button>
@@ -1088,7 +1088,7 @@ const ContactPage = () => {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-sky-600 focus:border-transparent outline-none transition-all"
                     />
                   </div>
                   <div>
@@ -1098,7 +1098,7 @@ const ContactPage = () => {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-sky-600 focus:border-transparent outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -1109,14 +1109,14 @@ const ContactPage = () => {
                   <input
                     type="email"
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-sky-600 focus:border-transparent outline-none transition-all"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-zinc-900 mb-2">
                     Service Required
                   </label>
-                  <select className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition-all">
+                  <select className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-sky-600 focus:border-transparent outline-none transition-all">
                     <option>Managed IT Support</option>
                     <option>Cloud Solutions</option>
                     <option>Cyber Security</option>
@@ -1132,7 +1132,7 @@ const ContactPage = () => {
                   <textarea
                     rows={4}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-sky-600 focus:border-transparent outline-none transition-all"
                   ></textarea>
                 </div>
                 <div className="flex items-start">
@@ -1145,7 +1145,7 @@ const ContactPage = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold hover:bg-indigo-700 transition-all"
+                  className="w-full bg-sky-600 text-white py-4 rounded-xl font-bold hover:bg-sky-700 transition-all"
                 >
                   Send Message
                 </button>
@@ -1352,7 +1352,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="min-h-screen bg-white font-sans selection:bg-sky-100 selection:text-sky-900">
       <Navbar activePage={activePage} setActivePage={setActivePage} />
       <main>{renderPage()}</main>
       <Footer setActivePage={setActivePage} />
